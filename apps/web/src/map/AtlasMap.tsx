@@ -57,7 +57,7 @@ export const AtlasMap = forwardRef<AtlasMapEngine | null, AtlasMapProps>(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.data]);
 
-    useImperativeHandle(ref, () => engineRef.current as AtlasMapEngine, [props.data]);
+    useImperativeHandle(ref, () => engineRef.current as AtlasMapEngine);
 
     useEffect(() => {
       engineRef.current?.setProjection(props.projection ?? 'equalEarth', props.centerLon ?? 0);

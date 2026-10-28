@@ -12,15 +12,24 @@ export default defineConfig({
   projects: [
     {
       name: 'desktop',
+      testIgnore: /perf\.spec\.ts/,
       use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
     },
-    { name: 'mobile', use: { ...devices['Pixel 7'] } },
+    { name: 'mobile', testIgnore: /perf\.spec\.ts/, use: { ...devices['Pixel 7'] } },
+    // Frame-time measurements run alone, after everything else: parallel tests would
+    // compete for the (software) rasteriser and distort the numbers.
+    {
+      name: 'perf',
+      testMatch: /perf\.spec\.ts/,
+      dependencies: ['desktop', 'mobile'],
+      use: { ...devices['Pixel 7'] },
+    },
   ],
   // Production-like: the real Hono server (CSP, cache headers) serving the built app.
   // Requires `pnpm build` first (CI does it; `pnpm test:e2e` at the root too).
   webServer: {
     command: 'node ../server/dist/server.mjs',
-    env: { STATIC_DIR: 'dist', PORT: String(port), HOST: '127.0.0.1' },
+    env: { STATIC_DIR: 'dist', PORT: String(port) },
     port,
     reuseExistingServer: !process.env.CI,
   },

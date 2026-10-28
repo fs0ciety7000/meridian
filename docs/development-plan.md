@@ -81,7 +81,7 @@ Découvertes en phase 0 : Coolify injecte `HOST=0.0.0.0` (le serveur lit donc `L
 | 1.9 | Page de démo `/lab/map` avec jeu de données fictif ; tests Playwright visuels (captures de référence) | TL + QA |
 
 **Critères d'acceptation**
-- 60 fps (p95 frame ≤ 16,7 ms) pendant pan/zoom sur profil Playwright « mobile milieu de gamme » (CPU ×4 throttling) ; aucune frame > 50 ms.
+- 60 fps pendant pan/zoom, mesuré en CI comme suit (révisé en phase 1, voir `apps/web/e2e/perf.spec.ts`) : (a) coût JavaScript d'une image de geste ≤ 4 ms avec le CPU ralenti ×4 ; (b) p95 ≤ 16,7 ms et aucune image > 50 ms pendant des gestes réels, en rastérisation **logicielle**. *Pourquoi* : le Chromium headless de la CI n'a pas de GPU, le ralentissement CPU y ralentit donc aussi la rastérisation qu'un téléphone fait sur GPU — le critère « CPU ×4 de bout en bout » n'y est pas mesurable honnêtement. Validation sur appareil réel : checklist de la phase 3.
 - Planter un camp **valide du premier coup** au doigt (émulation tactile) sur : Malte, Singapour, Tuvalu, Vatican (via loupe), Chili (pointe sud), Lesotho, Gambie — test E2E.
 - Antiméridien : route Fidji → Samoa tracée correctement.
 - Clavier seul : sélectionner « Bhoutan » et planter, sans souris.

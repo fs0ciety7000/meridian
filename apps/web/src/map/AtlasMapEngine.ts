@@ -112,6 +112,13 @@ export class AtlasMapEngine {
   private flying = 0;
   private frame = 0;
   private fastFrame = false;
+  /** Last full-quality frame and the camera it was drawn for (gesture frames reuse it). */
+  private frozen = document.createElement('canvas');
+  private frozenAt: ZoomTransform | null = null;
+  /** Whole world at scale 1: covers what a pan reveals beyond the frozen frame. */
+  private worldBitmap = document.createElement('canvas');
+  private worldBitmapReady = false;
+  private fullTimer = 0;
 
   private theme: ThemeName = currentTheme();
   private pal: MapPalette = mapPalette(this.theme);
@@ -192,7 +199,7 @@ export class AtlasMapEngine {
       attributeFilter: ['data-theme'],
     });
     this.colorScheme.addEventListener('change', this.refreshTheme);
-    document.fonts?.ready.then(() => this.requestDraw(false));
+    document.fonts?.ready.then(() => this.requestFullDraw(0));
     this.resize();
   }
 
@@ -310,6 +317,7 @@ export class AtlasMapEngine {
 
   destroy() {
     cancelAnimationFrame(this.frame);
+    clearTimeout(this.fullTimer);
     this.resizeObserver.disconnect();
     this.themeObserver.disconnect();
     this.colorScheme.removeEventListener('change', this.refreshTheme);
@@ -388,6 +396,8 @@ export class AtlasMapEngine {
     this.overlay.setProjection(this.projection);
     this.overlay.setHalos(this.microAimPoints());
     this.pickDirty = true;
+    this.frozenAt = null;
+    if (this.width) this.renderWorldBitmap();
     if (redraw) this.settle();
     else if (!this.paths['50m'] && this.opts.loadDetail) this.loadDetail();
   }
@@ -401,6 +411,7 @@ export class AtlasMapEngine {
       const idle = window.requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 1));
       idle(() => {
         this.buildDetailPaths();
+        this.frozenAt = null;
         this.settle();
       });
     });
@@ -424,6 +435,8 @@ export class AtlasMapEngine {
   private refreshTheme = () => {
     this.theme = currentTheme();
     this.pal = mapPalette(this.theme);
+    this.frozenAt = null;
+    this.renderWorldBitmap();
     this.requestDraw(false);
   };
 
@@ -437,6 +450,7 @@ export class AtlasMapEngine {
 
   private requestDraw(fast: boolean) {
     this.fastFrame = fast;
+    if (fast) clearTimeout(this.fullTimer);
     if (this.frame) return;
     this.frame = requestAnimationFrame(() => {
       this.frame = 0;
@@ -444,18 +458,81 @@ export class AtlasMapEngine {
     });
   }
 
+  /** Full-quality frame shortly after the camera settles; a new gesture cancels it. */
+  private requestFullDraw(delay = 80) {
+    clearTimeout(this.fullTimer);
+    this.fullTimer = window.setTimeout(() => {
+      if (this.interacting || this.flying) return;
+      this.requestDraw(false);
+    }, delay);
+  }
+
   private draw(fast: boolean) {
-    const [base, micro] = this.layersFor(this.lod);
     const view = this.view;
-    drawBase(this.base.getContext('2d')!, view, base, micro, this.statics, this.pal, {
-      fast,
-      oceanLabels: OCEANS,
-      projection: this.projection,
-      worldWidth: this.worldWidth,
-    });
+    if (fast && this.frozenAt && this.worldBitmapReady) this.drawFrozen();
+    else {
+      const [base, micro] = this.layersFor(this.lod);
+      drawBase(this.base.getContext('2d')!, view, base, micro, this.statics, this.pal, {
+        fast,
+        oceanLabels: OCEANS,
+        projection: this.projection,
+        worldWidth: this.worldWidth,
+      });
+      if (!fast) this.freeze();
+    }
     this.drawHighlightLayer();
     this.overlay.update(view);
     this.updateHaloVisibility();
+  }
+
+  /**
+   * Gesture frame (architecture §4.6): no geometry is rasterised, only two bitmaps are
+   * transformed: the whole world at scale 1, then the last full-quality frame on top.
+   */
+  private drawFrozen() {
+    const ctx = this.base.getContext('2d')!;
+    const { k, x, y } = this.transform;
+    const d = this.dpr;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, this.base.width, this.base.height);
+    ctx.imageSmoothingEnabled = true;
+    ctx.setTransform(k, 0, 0, k, d * x, d * y);
+    ctx.drawImage(this.worldBitmap, 0, 0);
+    const f = this.frozenAt!;
+    const r = k / f.k;
+    ctx.setTransform(r, 0, 0, r, d * x - r * d * f.x, d * y - r * d * f.y);
+    ctx.drawImage(this.frozen, 0, 0);
+  }
+
+  private freeze() {
+    this.frozen.width = this.base.width;
+    this.frozen.height = this.base.height;
+    const ctx = this.frozen.getContext('2d')!;
+    ctx.clearRect(0, 0, this.frozen.width, this.frozen.height);
+    ctx.drawImage(this.base, 0, 0);
+    this.frozenAt = this.transform;
+  }
+
+  /** Renders the whole world once at scale 1 (after load, resize, theme or projection change). */
+  private renderWorldBitmap() {
+    this.worldBitmap.width = this.base.width;
+    this.worldBitmap.height = this.base.height;
+    const [base, micro] = this.layersFor('110m');
+    drawBase(
+      this.worldBitmap.getContext('2d')!,
+      { k: 1, x: 0, y: 0, width: this.width, height: this.height, dpr: this.dpr },
+      base,
+      micro,
+      this.statics,
+      this.pal,
+      {
+        fast: false,
+        oceanLabels: [],
+        projection: this.projection,
+        worldWidth: this.worldWidth,
+      },
+    );
+    this.worldBitmapReady = true;
   }
 
   private drawHighlightLayer() {
@@ -470,7 +547,8 @@ export class AtlasMapEngine {
   private settle() {
     if (this.transform.k >= DETAIL_ZOOM) this.loadDetail();
     this.pickDirty = true;
-    this.requestDraw(false);
+    this.requestDraw(true);
+    this.requestFullDraw();
     this.opts.onCamera?.(this.camera);
   }
 
@@ -564,7 +642,7 @@ export class AtlasMapEngine {
     }
   }
 
-  private pickBufferAt(x: number, y: number, radius = 0) {
+  private pickBufferAt(x: number, y: number, radius = 0, minAlpha = radius ? 64 : 200) {
     this.ensurePickBuffer();
     const ctx = this.pickCanvas.getContext('2d', { willReadFrequently: true })!;
     const x0 = Math.max(0, Math.round(x) - radius);
@@ -575,7 +653,9 @@ export class AtlasMapEngine {
     for (let j = 0; j < size; j++) {
       for (let i = 0; i < size; i++) {
         const o = (j * size + i) * 4;
-        if (img[o + 3]! < 255) continue; // edge pixels are anti-aliased blends: ignore
+        // Partially covered pixels still identify thin capes and islets; a blend of two units
+        // can decode to the wrong id, but every candidate is re-validated by resolvePick.
+        if (img[o + 3]! < minAlpha) continue;
         const unit = this.pickUnits[pickIndex(img[o]!, img[o + 1]!, img[o + 2]!)];
         if (!unit) continue;
         const px = x0 + i;

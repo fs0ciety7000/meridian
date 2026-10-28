@@ -5,7 +5,7 @@ import type { AtlasMapEngine, CameraState, MapPick } from '../map/AtlasMapEngine
 import type { GeoData } from '../map/geodata';
 import { loadGeoData } from '../map/loadGeoData';
 import type { CampMarker, RouteLeg } from '../map/overlay';
-import type { ProjectionKind } from '../map/projection';
+import { bestCenterLon, type ProjectionKind } from '../map/projection';
 import { CompassRose } from '../ui/CompassRose';
 import { countryNames } from '../ui/countryNames';
 import { CountrySearch } from '../ui/CountrySearch';
@@ -80,6 +80,16 @@ export function MapLab() {
       .map((to, i) => ({ from: stops[i]!, to, animate: animateLast && i === stops.length - 2 }));
   }, [planted, animateLast]);
 
+  // Rotate the world so the route is never cut by the map edge (Fiji → Samoa).
+  const centerLon = useMemo(
+    () =>
+      bestCenterLon(
+        projection,
+        route.map((l) => [l.from, l.to]),
+      ),
+    [projection, route],
+  );
+
   const totalKm = useMemo(() => {
     const stops = [PORT.lonLat, ...planted.map((p) => p.lonLat)];
     return stops.slice(1).reduce((s, p, i) => s + haversineKm(stops[i]!, p), 0);
@@ -141,6 +151,7 @@ export function MapLab() {
         className={styles.map}
         data={data}
         projection={projection}
+        centerLon={centerLon}
         camps={camps}
         route={route}
         meridianLon={MERIDIAN}
