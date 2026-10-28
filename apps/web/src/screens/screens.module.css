@@ -591,6 +591,7 @@
 @media (max-width: 899px) {
   /* The static shell in index.html has the same height: no jump when React takes over (A1). */
   .launcher {
-    min-height: min(50dvh, 360px);
+    min-height: min(50dvh, 420px);
+    padding-bottom: max(var(--space-2), env(safe-area-inset-bottom));
   }
 }

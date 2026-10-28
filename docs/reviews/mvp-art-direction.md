@@ -78,7 +78,7 @@ Points C de la phase 2 : **C3** (chorégraphie) est soldé, à B3 près. **C4** 
 
 | Fichier | Écran |
 |---|---|
-| `01-pixel-launcher-first-time.png` | Lanceur, nouveau joueur (régénérée sur `8985250`) |
+| `01-pixel-launcher-first-time.png` | Lanceur, nouveau joueur, réglages sur deux lignes (régénérée sur `a4b4e8b`) |
 | `02-pixel-onboarding-leg1.png` | Étape 1, note de geste toujours affichée à 7 s (régénérée sur `8985250`) |
 | `03-pixel-false-trail-note.png` | Fausse piste et note de marge (B1 levé, régénérée sur `8985250`) |
 | `04-pixel-resolution-stamp.png` | Chorégraphie : tampon posé (montre C5) |
@@ -139,3 +139,23 @@ La police Fraunces limitée à l'axe `opsz` est conforme : le jeu n'utilisait ni
 ### Signature
 
 **❌ Pas encore signée.** B1, B2 et B3 sont levés, et C1, C10 et C11 sont soldés. La carte postale est désormais partageable sans réserve. Mais la coquille et le lanceur affiché avant les données introduisent un nouveau bloquant, **B4** : sur le tout premier écran, la mauvaise action principale s'affiche d'abord, puis la mise en page saute. La signature sera acquise dès que B4 sera levé, vérifié par le même relevé DOM en 4G simulée : ordre et position des boutons stables du premier rendu jusqu'à l'état final. A1 et A2, ainsi que C2 à C9 de la revue, restent à corriger avant la v1.1.
+
+### Vérification de B4 (build `a4b4e8b`)
+
+> Reconstruit hors du dépôt (port 4193). Pour chaque cas, le DOM est relevé toutes les 50 ms : position verticale de chaque bouton du lanceur, `aria-disabled`, fond, géométrie de la coquille. Quatre cas pour un nouveau joueur (Pixel 7 et desktop, sans limitation et en 4G simulée à 150 ms et 1,6 Mb/s avec CPU ×4, cache désactivé) et un cas pour un joueur qui revient (Pixel 7, 4G simulée).
+
+| # | Constat | Statut |
+|---|---|---|
+| B4 | Nouveau joueur : dès le premier rendu du lanceur (3,1 s en 4G simulée, 0,8 à 0,9 s sans limitation), les boutons sont dans l'ordre final et ne bougent plus jusqu'à la fin du relevé (12 s). En Pixel 7 : « Commencer le premier carnet » à 503 px, difficulté à 600, « Nouvelle expédition » à 653, carnet à 705. En desktop : 115, 212, 265, 317. Seul l'attribut `aria-disabled` tombe sur « Nouvelle expédition » quand le contenu est prêt. Le libellé est atténué tant que le bouton n'est pas actif : c'est un état honnête, pas un saut de mise en page. Joueur qui revient : « Nouvelle expédition » est l'action principale dès le premier rendu, et « Commencer le premier carnet » n'apparaît jamais. | **Levé.** |
+| A1 | Coquille mobile en `min(50dvh, 360px)` : le titre ne remonte plus que d'environ 55 px au remplacement par la feuille (contre environ 300 px avant). La feuille d'un nouveau joueur mesure environ 418 px. | **Soldé.** Suggestion : régler la coquille sur la hauteur de la feuille d'un nouveau joueur (token `launcher.sheet.minHeightSm` = `min(50dvh, 420px)`) pour supprimer ce dernier glissement. |
+| A2 | La coquille reprend les tokens. Avec un thème sombre au niveau du système et Atlas choisi par le joueur, `data-theme="atlas"` est posé dès la première mesure (74 ms) par `/theme-init.js`, fond `paper-100` : plus de coquille Nocturne. Les réglages sont sur deux lignes. | **Soldé.** Suggestion : sur Pixel 7, la deuxième ligne de réglages touche le bas de l'écran et la feuille défile encore de quelques pixels. Retirer `space-2` au padding bas de la feuille sur `sm`. |
+
+`01` est régénérée sur `a4b4e8b`. Les autres captures sont inchangées. Total : 12 PNG, 2,06 Mo.
+
+### Signature finale
+
+**✅ Revue AD du MVP signée.**
+
+B1 à B4 sont levés et vérifiés sur captures et relevés. C1, C10 et C11 sont soldés, ainsi que A1 et A2. La carte postale est jugée partageable du point de vue de la direction artistique. Le critère « partageable par au moins 70 % des testeurs » reste à mesurer en playtest. Les captures de référence sont figées dans `docs/reviews/reference/`. Restent à corriger avant la v1.1, sans bloquer le MVP : C2 à C9 de la revue (écran de défi, passeport, note de geste sur desktop, `CampBar` mobile, détails de la carte postale, longue-vue sur les petites îles, vol de caméra, récapitulatif) et les suggestions ci-dessus.
+
+*Art Director, 2026-10-28*
