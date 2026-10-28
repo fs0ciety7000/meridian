@@ -58,11 +58,11 @@ Agents responsables : **TL** Tech Lead · **AD** Art Director · **GD** Game Des
 | 0.5 | ✅ | 195 entités ; politique v1 (`docs/geo-policy-changelog.md`) — décision Taïwan encore ouverte |
 | 0.6 | ✅ | polices Fontsource (OFL), textures procédurales provisoires, planche d'épreuve à `/` |
 | 0.7 | ✅ | image unique (63 Mo), healthcheck, arrêt propre, volume `/data` testé |
-| 0.8 | ⏳ | **à faire par toi dans Coolify** — pas à pas : `docs/deployment.md` §3 |
-| 0.9 | ⏳ | **à faire par toi dans Cloudflare** — `docs/deployment.md` §4, vérification §5 |
+| 0.8 | ✅ | Coolify : projet *Meridian*, app `meridian` (Dockerfile, volume `/data`, health check), auto-deploy sur la branche courante — `docs/deployment.md` |
+| 0.9 | ✅ | DNS `meridian.cardormedia.com` proxifié ; Let's Encrypt émis ; en-têtes de cache et `cf-cache-status: HIT` vérifiés en ligne |
 | 0.10 | ✅ | Hono + SQLite retenu |
 
-Découverte en phase 0 : le quantum de coordonnées passe de 0,01° à **0,001°** (aucun point de la grille à 0,01° ne tombe dans le Vatican).
+Découvertes en phase 0 : Coolify injecte `HOST=0.0.0.0` (le serveur lit donc `LISTEN_HOST`) et sonde `localhost` (→ `::1` sous Alpine) ; le quantum de coordonnées passe de 0,01° à **0,001°** (aucun point de la grille à 0,01° ne tombe dans le Vatican).
 
 ---
 
