@@ -77,6 +77,58 @@ describe('generated geo data (development-plan phase 0 criteria)', () => {
     expect(pick([121.56, 25.03])).toEqual([null]); // Taipei: not plantable under policy v1
   });
 
+  // Natural Earth's countries layer folds these areas into a member's polygon (policy v2,
+  // docs/geo-policy-changelog.md): they must resolve to a single non-playable unit at every LOD.
+  describe.each([
+    ['Simferopol (Crimea)', [34.1, 44.95], 'B89', null],
+    ['Sevastopol (Crimea)', [33.52, 44.6], 'B89', null],
+    ['Laâyoune (Western Sahara)', [-13.2, 27.15], 'SAH', null],
+    ['Dakhla (Western Sahara)', [-15.95, 23.7], 'SAH', null],
+    ['Akrotiri (UK Sovereign Base Area)', [32.95, 34.6], 'WSB', 'GBR'],
+  ] as const)('%s', (_name, lonLat, unitId, entity) => {
+    const units = (fc: FeatureCollection<Geometry, GeoFeatureProps>) =>
+      fc.features.filter((f) => geoContains(f, [...lonLat])).map((f) => f.properties);
+
+    it.each([
+      ['110m + micro', () => [...units(lod110), ...units(micro)]],
+      ['50m + micro', () => [...units(lod50), ...units(micro)]],
+    ])('is covered once, by %s', (_lod, hits) => {
+      expect(hits().map((p) => [p.id, p.entity])).toEqual([[unitId, entity]]);
+    });
+
+    it('never resolves to a playable Russia, Morocco or Cyprus unit', () => {
+      for (const fc of [lod110, lod50, micro])
+        for (const p of units(fc)) {
+          expect(['RUS', 'MAR', 'CYP']).not.toContain(p.entity);
+          expect(p.kind).not.toBe('playable');
+        }
+    });
+
+    it('is recorded with the right plantability in entities.json', () => {
+      const t = territories.find((x) => x.id === unitId)!;
+      expect(t.plantable).toBe(entity !== null);
+      expect(t.sovereign).toBe(entity);
+    });
+  });
+
+  it('marks carved-out disputed areas as disputed (dotted borders)', () => {
+    for (const fc of [lod110, lod50])
+      for (const id of ['B89', 'SAH', 'B16'])
+        expect(fc.features.find((f) => f.properties.id === id)?.properties).toMatchObject({
+          entity: null,
+          kind: 'unplantable',
+          disputed: true,
+        });
+  });
+
+  it('keeps Morocco and Mauritania apart and Crimea off the Russian polygon', () => {
+    const morocco = entities.find((e) => e.iso3 === 'MAR')!;
+    expect(morocco.neighbors).not.toContain('MRT');
+    expect(morocco.mainBbox[1]).toBeGreaterThan(27.6); // Morocco proper ends at ~27°40′N
+    const russia = entities.find((e) => e.iso3 === 'RUS')!;
+    expect(russia.neighbors).toContain('UKR'); // land border outside Crimea
+  });
+
   it('keeps territories and unplantable units consistent', () => {
     for (const t of territories) {
       if (t.plantable) expect(t.sovereign, t.id).not.toBeNull();

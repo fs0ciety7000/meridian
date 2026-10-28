@@ -20,8 +20,22 @@ export interface GeoPolicy {
   sovereignCodes: Record<string, string>;
   unplantableTypes: string[];
   continentOverrides: Record<string, string>;
+  /** Keyed by Natural Earth BRK_A3; keys starting with "$" are comments. */
+  carveOuts: Record<string, CarveOut | string>;
   microStateMaxKm2: number;
 }
+
+export interface CarveOut {
+  name: string;
+  /** ADM0_A3 of the existing unit the area joins; absent → a new unit with id = BRK_A3. */
+  into?: string;
+}
+
+/** Policy carve-outs without the "$description" comment keys. */
+export const carveOutsOf = (policy: GeoPolicy): [string, CarveOut][] =>
+  Object.entries(policy.carveOuts).filter(
+    (e): e is [string, CarveOut] => !e[0].startsWith('$') && typeof e[1] === 'object',
+  );
 
 export type Classification =
   | { kind: 'playable'; entity: string }

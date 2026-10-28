@@ -1,5 +1,5 @@
 {
-  "version": "ne-5.1.2+policy-1+pipeline-3",
+  "version": "ne-5.1.2+policy-2+pipeline-4",
   "source": {
     "name": "Natural Earth",
     "version": "5.1.2"
@@ -8,23 +8,23 @@
     {
       "lod": "110m",
       "file": "world-110m.topo.json",
-      "sha256": "066af5b3a3aa2a37b6367d7292eae1716eba3d9deecdf0d7ecc402d0cd258665",
-      "bytes": 112051,
-      "bytesGz": 37057
+      "sha256": "c968fd9eec8a169304dea4492b39299407cf47eb9a8c7d8439865402a0a6af8c",
+      "bytes": 117424,
+      "bytesGz": 38686
     },
     {
       "lod": "50m",
       "file": "world-50m.topo.json",
-      "sha256": "a39bf97deb0860aa3366a5bebe5d3ac6de71289b5a4e1eb0f7173425220d6bd6",
-      "bytes": 750067,
-      "bytesGz": 226719
+      "sha256": "daf858ddc54b0488f6d4465195d14a926bd6915c8b7c0d1055a40843aefeac85",
+      "bytes": 754475,
+      "bytesGz": 227948
     },
     {
       "lod": "10m-micro",
       "file": "micro-10m.topo.json",
-      "sha256": "d76db31fe9531f23c3ca9102de356674dfad091ddad56f5dd86c0308d7cad7d1",
-      "bytes": 59729,
-      "bytesGz": 20154
+      "sha256": "25b54611c408edffa9e1034837c64aa9970d286ffb4df81fab5fd80ae79941db",
+      "bytes": 58090,
+      "bytesGz": 19647
     }
   ]
 }

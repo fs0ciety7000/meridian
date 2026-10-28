@@ -17,22 +17,23 @@ import {
   type Territory,
 } from '@meridian/content-schema';
 import { EARTH_RADIUS_KM } from '@meridian/geo';
-import { geoArea, geoBounds, geoContains } from 'd3-geo';
-import type { Feature, FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson';
+import { geoBounds, geoContains } from 'd3-geo';
+import type { FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson';
 import mapshaper from 'mapshaper';
 import polylabel from 'polylabel';
 import { neighbors } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
+import { carve, polygonArea, polygonsOf, type Cut, type NeFeature, type Unit } from './carve';
 import {
+  carveOutsOf,
   classify,
   continentOf,
   SUBREGION_M49,
-  type Classification,
   type GeoPolicy,
   type NeProps,
 } from './classify';
 
-const PIPELINE_VERSION = 3;
+const PIPELINE_VERSION = 4;
 const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '../../..');
 const cacheDir = resolve(here, '../.cache');
@@ -43,17 +44,18 @@ type Source = { url: string; sha256: string };
 const sources = JSON.parse(readFileSync(resolve(here, '../sources.json'), 'utf8')) as {
   version: string;
   files: Record<'110m' | '50m' | '10m', Source>;
+  disputedAreas: Record<'50m' | '10m', Source>;
 };
 const policy = JSON.parse(readFileSync(resolve(outDir, 'policy.json'), 'utf8')) as GeoPolicy;
 const dataVersion = `ne-${sources.version}+policy-${policy.version}+pipeline-${PIPELINE_VERSION}`;
 
-type NeFeature = Feature<Polygon | MultiPolygon, NeProps>;
+type AreaProps = NeProps & { BRK_A3: string; BRK_NAME: string };
 
 const sha256 = (data: string | Buffer) => createHash('sha256').update(data).digest('hex');
 
-async function load(scale: keyof typeof sources.files): Promise<NeFeature[]> {
-  const src = sources.files[scale];
-  const file = resolve(cacheDir, `ne_${scale}_admin_0_countries.geojson`);
+/** Downloads (once, into .cache) and checksum-verifies a pinned source. */
+async function fetchSource<P>(src: Source): Promise<FeatureCollection<Polygon | MultiPolygon, P>> {
+  const file = resolve(cacheDir, src.url.split('/').pop()!);
   if (!existsSync(file)) {
     mkdirSync(cacheDir, { recursive: true });
     console.log(`↓ ${src.url}`);
@@ -64,25 +66,25 @@ async function load(scale: keyof typeof sources.files): Promise<NeFeature[]> {
   const raw = readFileSync(file);
   const actual = sha256(raw);
   if (actual !== src.sha256)
-    throw new Error(`Checksum mismatch for ${scale}: ${actual} ≠ ${src.sha256}`);
-  const fc = JSON.parse(raw.toString('utf8')) as FeatureCollection<Polygon | MultiPolygon, NeProps>;
+    throw new Error(`Checksum mismatch for ${src.url}: ${actual} ≠ ${src.sha256}`);
+  return JSON.parse(raw.toString('utf8')) as FeatureCollection<Polygon | MultiPolygon, P>;
+}
+
+async function load(scale: keyof typeof sources.files): Promise<NeFeature[]> {
+  const fc = await fetchSource<NeProps>(sources.files[scale]);
   // Sort by unit id so that output never depends on source ordering.
   return [...fc.features].sort((a, b) => a.properties.ADM0_A3.localeCompare(b.properties.ADM0_A3));
 }
 
-const polygonsOf = (f: NeFeature): Position[][][] =>
-  f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
-
-/** Spherical area in steradians, robust to ring winding (d3 expects clockwise rings). */
-function polygonArea(rings: Position[][]): number {
-  const a = geoArea({ type: 'Polygon', coordinates: rings });
-  return Math.min(a, 4 * Math.PI - a);
+async function loadAreas(scale: keyof typeof sources.disputedAreas) {
+  const fc = await fetchSource<AreaProps>(sources.disputedAreas[scale]);
+  return new Map(fc.features.map((f) => [f.properties.BRK_A3, f]));
 }
 
 const round = (v: number, digits: number) => Number(v.toFixed(digits));
 
 const largestPolygon = (f: NeFeature): Position[][] =>
-  polygonsOf(f).reduce((best, p) => (polygonArea(p) > polygonArea(best) ? p : best));
+  polygonsOf(f.geometry).reduce((best, p) => (polygonArea(p) > polygonArea(best) ? p : best));
 
 /**
  * Pole of inaccessibility of the largest polygon, snapped to the gameplay coordinate grid
@@ -118,11 +120,6 @@ function bbox(geometry: Polygon | MultiPolygon): [number, number, number, number
   return [round(w, 3), round(s, 3), round(e, 3), round(n, 3)];
 }
 
-interface Unit {
-  feature: NeFeature;
-  c: Classification;
-}
-
 const toProps = ({ feature, c }: Unit) => ({
   id: feature.properties.ADM0_A3,
   entity: c.kind === 'unplantable' ? null : c.entity,
@@ -147,10 +144,64 @@ async function topo(units: Unit[], quantization: number): Promise<string> {
 }
 
 async function main() {
-  const [ne110, ne50, ne10] = await Promise.all([load('110m'), load('50m'), load('10m')]);
+  const [ne110, ne50, ne10, areas50, areas10] = await Promise.all([
+    load('110m'),
+    load('50m'),
+    load('10m'),
+    loadAreas('50m'),
+    loadAreas('10m'),
+  ]);
   const classifyAll = (fs: NeFeature[]): Unit[] =>
     fs.map((feature) => ({ feature, c: classify(feature.properties, policy) }));
-  const [u110, u50, u10] = [classifyAll(ne110), classifyAll(ne50), classifyAll(ne10)];
+  const raw = { '110m': classifyAll(ne110), '50m': classifyAll(ne50), '10m': classifyAll(ne10) };
+
+  // ── Cuts: every point is covered once, with the same plantability, at every LOD ──
+  const idOf = (u: Unit) => u.feature.properties.ADM0_A3;
+  const entityOfUnit = (u: Unit) => (u.c.kind === 'unplantable' ? null : u.c.entity);
+  const cutsFor = (lod: keyof typeof raw): Cut[] => {
+    const units = raw[lod];
+    const areas = lod === '10m' ? areas10 : areas50;
+    // 1. Policy carve-outs (Natural Earth disputed areas folded into a member's polygon).
+    const cuts: Cut[] = carveOutsOf(policy).map(([brk, co]) => {
+      const area = areas.get(brk);
+      if (!area) throw new Error(`carveOuts.${brk}: not in the ${lod} disputed-areas layer`);
+      const into = co.into && units.find((u) => idOf(u) === co.into);
+      if (co.into && !into) throw new Error(`carveOuts.${brk}: no unit ${co.into} in ${lod}`);
+      const dest: Unit = into || {
+        feature: {
+          type: 'Feature',
+          properties: { ...area.properties, ADM0_A3: brk, ADMIN: co.name, TYPE: 'Disputed' },
+          geometry: area.geometry,
+        },
+        c: { kind: 'unplantable', sovereign: null, reason: 'disputed' },
+      };
+      return { geometry: area.geometry, dest, victim: (u) => u.c.kind !== 'unplantable' };
+    });
+    // 2. Non-playable units that only exist at finer scales (Akrotiri, Bir Tawil…) are cut out
+    //    of the coarser polygons of other entities, so that the coarse layers agree with 10m.
+    if (lod !== '10m') {
+      const here = new Set(units.map(idOf));
+      const finer = lod === '110m' ? [...raw['50m'], ...raw['10m']] : raw['10m'];
+      const seen = new Set<string>();
+      for (const unit of finer) {
+        const id = idOf(unit);
+        if (unit.c.kind === 'playable' || here.has(id) || seen.has(id)) continue;
+        seen.add(id);
+        cuts.push({
+          geometry: unit.feature.geometry,
+          dest: unit,
+          victim: (u) => u.c.kind !== 'unplantable' && entityOfUnit(u) !== entityOfUnit(unit),
+        });
+      }
+    }
+    return cuts;
+  };
+  const carved = {
+    '110m': await carve(raw['110m'], cutsFor('110m')),
+    '50m': await carve(raw['50m'], cutsFor('50m')),
+    '10m': await carve(raw['10m'], cutsFor('10m')),
+  };
+  const [u110, u50, u10] = [carved['110m'].units, carved['50m'].units, carved['10m'].units];
 
   // ── Entities (computed on 10m for area, 50m/10m for shape metadata) ─────────────
   const members = [...policy.unMembers, ...policy.unObservers].sort();
@@ -166,7 +217,7 @@ async function main() {
     if (homes.length !== 1)
       errors.push(`${iso}: expected exactly one home unit in 10m, found ${homes.length}`);
     const sr = allOf(u10, iso).reduce(
-      (s, u) => s + polygonsOf(u.feature).reduce((t, p) => t + polygonArea(p), 0),
+      (s, u) => s + polygonsOf(u.feature.geometry).reduce((t, p) => t + polygonArea(p), 0),
       0,
     );
     areaKm2.set(iso, round(sr * EARTH_RADIUS_KM ** 2, 2));
@@ -245,8 +296,8 @@ async function main() {
   // ── TopoJSON per level of detail ──────────────────────────────────────────────
   // micro-10m: micro-states, playable units the 110m world view lacks (Cabo Verde, Mauritius,
   // Samoa…) and territories the 50m validation layer lacks.
-  const in50 = new Set(ne50.map((f) => f.properties.ADM0_A3));
-  const in110 = new Set(ne110.map((f) => f.properties.ADM0_A3));
+  const in50 = new Set(u50.map(idOf));
+  const in110 = new Set(u110.map(idOf));
   const micro = u10.filter(({ feature, c }) => {
     if (c.kind === 'unplantable') return false;
     const id = feature.properties.ADM0_A3;
@@ -286,6 +337,8 @@ async function main() {
   console.log(
     `${dataVersion}: ${entities.length} playable entities, ${territories.length} other units`,
   );
+  for (const lod of ['110m', '50m', '10m'] as const)
+    console.log(`  cuts ${lod.padEnd(4)} ${carved[lod].log.join(', ')}`);
   console.log(
     `  micro-states: ${entities
       .filter((e) => e.isMicroState)

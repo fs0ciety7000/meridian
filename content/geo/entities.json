@@ -1,5 +1,5 @@
 {
-  "dataVersion": "ne-5.1.2+policy-1+pipeline-3",
+  "dataVersion": "ne-5.1.2+policy-2+pipeline-4",
   "entities": [
     {
       "iso3": "AFG",
@@ -39,7 +39,7 @@
         "TKM",
         "UZB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "AGO",
@@ -77,7 +77,7 @@
         "NAM",
         "ZMB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ALB",
@@ -114,7 +114,7 @@
         "MKD",
         "MNE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "AND",
@@ -150,7 +150,7 @@
         "ESP",
         "FRA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ARE",
@@ -186,7 +186,7 @@
         "OMN",
         "SAU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ARG",
@@ -201,17 +201,17 @@
         "ARG"
       ],
       "aimPoint": [
-        -64.065,
-        -31.375
+        -64.069,
+        -31.396
       ],
       "bbox": [
-        -73.576,
+        -73.529,
         -55.032,
         -53.669,
         -21.803
       ],
       "mainBbox": [
-        -73.576,
+        -73.529,
         -52.357,
         -53.669,
         -21.803
@@ -225,7 +225,7 @@
         "PRY",
         "URY"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ARM",
@@ -263,7 +263,7 @@
         "IRN",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ATG",
@@ -296,7 +296,7 @@
       "areaKm2": 453.34,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "AUS",
@@ -335,7 +335,7 @@
       "areaKm2": 7706478.31,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "AUT",
@@ -377,7 +377,7 @@
         "SVK",
         "SVN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "AZE",
@@ -416,7 +416,7 @@
         "RUS",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BDI",
@@ -453,7 +453,7 @@
         "RWA",
         "TZA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BEL",
@@ -491,7 +491,7 @@
         "LUX",
         "NLD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BEN",
@@ -529,7 +529,7 @@
         "NGA",
         "TGO"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BFA",
@@ -569,7 +569,7 @@
         "NER",
         "TGO"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BGD",
@@ -605,7 +605,7 @@
         "IND",
         "MMR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BGR",
@@ -644,7 +644,7 @@
         "SRB",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BHR",
@@ -677,7 +677,7 @@
       "areaKm2": 689.42,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BHS",
@@ -710,7 +710,7 @@
       "areaKm2": 12631.97,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BIH",
@@ -747,7 +747,7 @@
         "MNE",
         "SRB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BLR",
@@ -786,7 +786,7 @@
         "RUS",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BLZ",
@@ -822,7 +822,7 @@
         "GTM",
         "MEX"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BOL",
@@ -861,7 +861,7 @@
         "PER",
         "PRY"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BRA",
@@ -905,7 +905,7 @@
         "URY",
         "VEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BRB",
@@ -938,7 +938,7 @@
       "areaKm2": 445.91,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BRN",
@@ -973,7 +973,7 @@
       "neighbors": [
         "MYS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BTN",
@@ -1009,7 +1009,7 @@
         "CHN",
         "IND"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "BWA",
@@ -1046,7 +1046,7 @@
         "ZAF",
         "ZWE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CAF",
@@ -1086,7 +1086,7 @@
         "SSD",
         "TCD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CAN",
@@ -1121,7 +1121,7 @@
       "neighbors": [
         "USA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CHE",
@@ -1160,7 +1160,7 @@
         "ITA",
         "LIE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CHL",
@@ -1197,7 +1197,7 @@
         "BOL",
         "PER"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CHN",
@@ -1247,7 +1247,7 @@
         "TJK",
         "VNM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CIV",
@@ -1286,7 +1286,7 @@
         "LBR",
         "MLI"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CMR",
@@ -1326,7 +1326,7 @@
         "NGA",
         "TCD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "COD",
@@ -1369,7 +1369,7 @@
         "UGA",
         "ZMB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "COG",
@@ -1408,7 +1408,7 @@
         "COD",
         "GAB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "COL",
@@ -1447,7 +1447,7 @@
         "PER",
         "VEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "COM",
@@ -1480,7 +1480,7 @@
       "areaKm2": 1678.78,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CPV",
@@ -1513,7 +1513,7 @@
       "areaKm2": 3940.35,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CRI",
@@ -1549,7 +1549,7 @@
         "NIC",
         "PAN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CUB",
@@ -1583,7 +1583,7 @@
       "areaKm2": 110287.47,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CYP",
@@ -1598,25 +1598,27 @@
         "CYP"
       ],
       "aimPoint": [
-        32.646,
-        34.914
+        32.636,
+        34.912
       ],
       "bbox": [
         32.301,
-        34.57,
+        34.577,
         34.05,
-        35.183
+        35.182
       ],
       "mainBbox": [
         32.301,
-        34.57,
-        34.05,
-        35.183
+        34.577,
+        33.816,
+        35.182
       ],
       "areaKm2": 5395.5,
       "isMicroState": false,
-      "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "neighbors": [
+        "GBR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "CZE",
@@ -1654,7 +1656,7 @@
         "POL",
         "SVK"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "DEU",
@@ -1697,7 +1699,7 @@
         "NLD",
         "POL"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "DJI",
@@ -1733,7 +1735,7 @@
         "ERI",
         "ETH"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "DMA",
@@ -1766,7 +1768,7 @@
       "areaKm2": 732.9,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "DNK",
@@ -1804,7 +1806,7 @@
       "neighbors": [
         "DEU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "DOM",
@@ -1839,7 +1841,7 @@
       "neighbors": [
         "HTI"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "DZA",
@@ -1879,7 +1881,7 @@
         "NER",
         "TUN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ECU",
@@ -1915,7 +1917,7 @@
         "COL",
         "PER"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "EGY",
@@ -1953,7 +1955,7 @@
         "PSE",
         "SDN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ERI",
@@ -1990,7 +1992,7 @@
         "ETH",
         "SDN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ESP",
@@ -2027,7 +2029,7 @@
         "FRA",
         "PRT"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "EST",
@@ -2063,7 +2065,7 @@
         "LVA",
         "RUS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ETH",
@@ -2103,7 +2105,7 @@
         "SOM",
         "SSD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "FIN",
@@ -2141,7 +2143,7 @@
         "RUS",
         "SWE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "FJI",
@@ -2174,7 +2176,7 @@
       "areaKm2": 18992.18,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "FRA",
@@ -2229,7 +2231,7 @@
         "NLD",
         "SUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "FSM",
@@ -2262,7 +2264,7 @@
       "areaKm2": 636.56,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GAB",
@@ -2299,7 +2301,7 @@
         "COG",
         "GNQ"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GBR",
@@ -2349,9 +2351,10 @@
       "areaKm2": 249194.3,
       "isMicroState": false,
       "neighbors": [
+        "CYP",
         "IRL"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GEO",
@@ -2389,7 +2392,7 @@
         "RUS",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GHA",
@@ -2426,7 +2429,7 @@
         "CIV",
         "TGO"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GIN",
@@ -2466,7 +2469,7 @@
         "SEN",
         "SLE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GMB",
@@ -2501,7 +2504,7 @@
       "neighbors": [
         "SEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GNB",
@@ -2537,7 +2540,7 @@
         "GIN",
         "SEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GNQ",
@@ -2573,7 +2576,7 @@
         "CMR",
         "GAB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GRC",
@@ -2611,7 +2614,7 @@
         "MKD",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GRD",
@@ -2644,7 +2647,7 @@
       "areaKm2": 348.62,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GTM",
@@ -2682,7 +2685,7 @@
         "MEX",
         "SLV"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "GUY",
@@ -2719,7 +2722,7 @@
         "SUR",
         "VEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "HND",
@@ -2756,7 +2759,7 @@
         "NIC",
         "SLV"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "HRV",
@@ -2795,7 +2798,7 @@
         "SRB",
         "SVN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "HTI",
@@ -2830,7 +2833,7 @@
       "neighbors": [
         "DOM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "HUN",
@@ -2871,7 +2874,7 @@
         "SVN",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "IDN",
@@ -2908,7 +2911,7 @@
         "PNG",
         "TLS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "IND",
@@ -2948,7 +2951,7 @@
         "NPL",
         "PAK"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "IRL",
@@ -2983,7 +2986,7 @@
       "neighbors": [
         "GBR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "IRN",
@@ -3024,7 +3027,7 @@
         "TKM",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "IRQ",
@@ -3064,7 +3067,7 @@
         "SYR",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ISL",
@@ -3097,7 +3100,7 @@
       "areaKm2": 101722.38,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ISR",
@@ -3112,31 +3115,30 @@
         "ISR"
       ],
       "aimPoint": [
-        34.855,
-        30.908
+        34.85,
+        30.9
       ],
       "bbox": [
         34.245,
         29.477,
-        35.888,
-        33.416
+        35.641,
+        33.271
       ],
       "mainBbox": [
         34.245,
         29.477,
-        35.888,
-        33.416
+        35.641,
+        33.271
       ],
-      "areaKm2": 22119.86,
+      "areaKm2": 20907.05,
       "isMicroState": false,
       "neighbors": [
         "EGY",
         "JOR",
         "LBN",
-        "PSE",
-        "SYR"
+        "PSE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ITA",
@@ -3176,7 +3178,7 @@
         "SVN",
         "VAT"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "JAM",
@@ -3209,7 +3211,7 @@
       "areaKm2": 11068.04,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "JOR",
@@ -3248,7 +3250,7 @@
         "SAU",
         "SYR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "JPN",
@@ -3281,7 +3283,7 @@
       "areaKm2": 373333.07,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KAZ",
@@ -3321,7 +3323,7 @@
         "TKM",
         "UZB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KEN",
@@ -3360,7 +3362,7 @@
         "TZA",
         "UGA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KGZ",
@@ -3398,7 +3400,7 @@
         "TJK",
         "UZB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KHM",
@@ -3435,7 +3437,7 @@
         "THA",
         "VNM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KIR",
@@ -3468,7 +3470,7 @@
       "areaKm2": 954.09,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KNA",
@@ -3501,7 +3503,7 @@
       "areaKm2": 265,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KOR",
@@ -3536,7 +3538,7 @@
       "neighbors": [
         "PRK"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "KWT",
@@ -3572,7 +3574,7 @@
         "IRQ",
         "SAU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LAO",
@@ -3611,7 +3613,7 @@
         "THA",
         "VNM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LBN",
@@ -3647,7 +3649,7 @@
         "ISR",
         "SYR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LBR",
@@ -3684,7 +3686,7 @@
         "GIN",
         "SLE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LBY",
@@ -3724,7 +3726,7 @@
         "TCD",
         "TUN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LCA",
@@ -3757,7 +3759,7 @@
       "areaKm2": 607.38,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LIE",
@@ -3793,7 +3795,7 @@
         "AUT",
         "CHE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LKA",
@@ -3826,7 +3828,7 @@
       "areaKm2": 66573.03,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LSO",
@@ -3861,7 +3863,7 @@
       "neighbors": [
         "ZAF"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LTU",
@@ -3899,7 +3901,7 @@
         "POL",
         "RUS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LUX",
@@ -3936,7 +3938,7 @@
         "DEU",
         "FRA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "LVA",
@@ -3974,7 +3976,7 @@
         "LTU",
         "RUS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MAR",
@@ -3989,27 +3991,27 @@
         "MAR"
       ],
       "aimPoint": [
-        -6.458,
-        31.881
+        -6.465,
+        31.878
       ],
       "bbox": [
-        -17.003,
-        21.421,
+        -13.176,
+        27.656,
         -1.066,
         35.93
       ],
       "mainBbox": [
-        -17.003,
-        21.421,
+        -13.176,
+        27.656,
         -1.066,
         35.93
       ],
-      "areaKm2": 592431.38,
+      "areaKm2": 414207.39,
       "isMicroState": false,
       "neighbors": [
         "DZA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MCO",
@@ -4044,7 +4046,7 @@
       "neighbors": [
         "FRA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MDA",
@@ -4080,7 +4082,7 @@
         "ROU",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MDG",
@@ -4113,7 +4115,7 @@
       "areaKm2": 594755.33,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MDV",
@@ -4146,7 +4148,7 @@
       "areaKm2": 109.22,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MEX",
@@ -4183,7 +4185,7 @@
         "GTM",
         "USA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MHL",
@@ -4216,7 +4218,7 @@
       "areaKm2": 165.53,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MKD",
@@ -4254,7 +4256,7 @@
         "GRC",
         "SRB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MLI",
@@ -4295,7 +4297,7 @@
         "NER",
         "SEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MLT",
@@ -4328,7 +4330,7 @@
       "areaKm2": 325.64,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MMR",
@@ -4367,7 +4369,7 @@
         "LAO",
         "THA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MNE",
@@ -4405,7 +4407,7 @@
         "HRV",
         "SRB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MNG",
@@ -4441,7 +4443,7 @@
         "CHN",
         "RUS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MOZ",
@@ -4481,7 +4483,7 @@
         "ZMB",
         "ZWE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MRT",
@@ -4518,7 +4520,7 @@
         "MLI",
         "SEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MUS",
@@ -4551,7 +4553,7 @@
       "areaKm2": 2020.26,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MWI",
@@ -4588,7 +4590,7 @@
         "TZA",
         "ZMB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "MYS",
@@ -4625,7 +4627,7 @@
         "IDN",
         "THA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NAM",
@@ -4663,7 +4665,7 @@
         "ZAF",
         "ZMB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NER",
@@ -4704,7 +4706,7 @@
         "NGA",
         "TCD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NGA",
@@ -4742,7 +4744,7 @@
         "NER",
         "TCD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NIC",
@@ -4778,7 +4780,7 @@
         "CRI",
         "HND"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NLD",
@@ -4819,7 +4821,7 @@
         "DEU",
         "FRA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NOR",
@@ -4856,7 +4858,7 @@
         "RUS",
         "SWE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NPL",
@@ -4892,7 +4894,7 @@
         "CHN",
         "IND"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NRU",
@@ -4925,7 +4927,7 @@
       "areaKm2": 28.9,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "NZL",
@@ -4960,7 +4962,7 @@
       "areaKm2": 268523.74,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "OMN",
@@ -4997,7 +4999,7 @@
         "SAU",
         "YEM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PAK",
@@ -5035,7 +5037,7 @@
         "IND",
         "IRN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PAN",
@@ -5071,7 +5073,7 @@
         "COL",
         "CRI"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PER",
@@ -5110,7 +5112,7 @@
         "COL",
         "ECU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PHL",
@@ -5143,7 +5145,7 @@
       "areaKm2": 294429.88,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PLW",
@@ -5176,7 +5178,7 @@
       "areaKm2": 494.04,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PNG",
@@ -5211,7 +5213,7 @@
       "neighbors": [
         "IDN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "POL",
@@ -5252,7 +5254,7 @@
         "SVK",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PRK",
@@ -5289,7 +5291,7 @@
         "KOR",
         "RUS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PRT",
@@ -5324,7 +5326,7 @@
       "neighbors": [
         "ESP"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PRY",
@@ -5361,7 +5363,7 @@
         "BOL",
         "BRA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "PSE",
@@ -5398,7 +5400,7 @@
         "ISR",
         "JOR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "QAT",
@@ -5433,7 +5435,7 @@
       "neighbors": [
         "SAU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ROU",
@@ -5472,7 +5474,7 @@
         "SRB",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "RUS",
@@ -5502,7 +5504,7 @@
         180,
         77.73
       ],
-      "areaKm2": 16886313.35,
+      "areaKm2": 16859279.46,
       "isMicroState": false,
       "neighbors": [
         "AZE",
@@ -5520,7 +5522,7 @@
         "PRK",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "RWA",
@@ -5558,7 +5560,7 @@
         "TZA",
         "UGA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SAU",
@@ -5599,7 +5601,7 @@
         "QAT",
         "YEM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SDN",
@@ -5640,7 +5642,7 @@
         "SSD",
         "TCD"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SEN",
@@ -5679,7 +5681,7 @@
         "MLI",
         "MRT"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SGP",
@@ -5712,7 +5714,7 @@
       "areaKm2": 512.79,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SLB",
@@ -5745,7 +5747,7 @@
       "areaKm2": 27312.02,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SLE",
@@ -5781,7 +5783,7 @@
         "GIN",
         "LBR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SLV",
@@ -5817,7 +5819,7 @@
         "GTM",
         "HND"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SMR",
@@ -5852,7 +5854,7 @@
       "neighbors": [
         "ITA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SOM",
@@ -5888,7 +5890,7 @@
         "ETH",
         "KEN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SRB",
@@ -5929,7 +5931,7 @@
         "MNE",
         "ROU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SSD",
@@ -5969,7 +5971,7 @@
         "SDN",
         "UGA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "STP",
@@ -6002,7 +6004,7 @@
       "areaKm2": 1041.81,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SUR",
@@ -6039,7 +6041,7 @@
         "FRA",
         "GUY"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SVK",
@@ -6078,7 +6080,7 @@
         "POL",
         "UKR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SVN",
@@ -6116,7 +6118,7 @@
         "HUN",
         "ITA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SWE",
@@ -6152,7 +6154,7 @@
         "FIN",
         "NOR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SWZ",
@@ -6188,7 +6190,7 @@
         "MOZ",
         "ZAF"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SYC",
@@ -6221,7 +6223,7 @@
       "areaKm2": 437.54,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "SYR",
@@ -6255,12 +6257,11 @@
       "isMicroState": false,
       "neighbors": [
         "IRQ",
-        "ISR",
         "JOR",
         "LBN",
         "TUR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TCD",
@@ -6300,7 +6301,7 @@
         "NGA",
         "SDN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TGO",
@@ -6337,7 +6338,7 @@
         "BFA",
         "GHA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "THA",
@@ -6375,7 +6376,7 @@
         "MMR",
         "MYS"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TJK",
@@ -6413,7 +6414,7 @@
         "KGZ",
         "UZB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TKM",
@@ -6451,7 +6452,7 @@
         "KAZ",
         "UZB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TLS",
@@ -6486,7 +6487,7 @@
       "neighbors": [
         "IDN"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TON",
@@ -6519,7 +6520,7 @@
       "areaKm2": 604.86,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TTO",
@@ -6552,7 +6553,7 @@
       "areaKm2": 5143.66,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TUN",
@@ -6588,7 +6589,7 @@
         "DZA",
         "LBY"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TUR",
@@ -6630,7 +6631,7 @@
         "IRQ",
         "SYR"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TUV",
@@ -6663,7 +6664,7 @@
       "areaKm2": 23.12,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "TZA",
@@ -6705,7 +6706,7 @@
         "UGA",
         "ZMB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "UGA",
@@ -6744,7 +6745,7 @@
         "SSD",
         "TZA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "UKR",
@@ -6785,7 +6786,7 @@
         "RUS",
         "SVK"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "URY",
@@ -6821,7 +6822,7 @@
         "ARG",
         "BRA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "USA",
@@ -6864,7 +6865,7 @@
         "CAN",
         "MEX"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "UZB",
@@ -6903,7 +6904,7 @@
         "TJK",
         "TKM"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "VAT",
@@ -6938,7 +6939,7 @@
       "neighbors": [
         "ITA"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "VCT",
@@ -6971,7 +6972,7 @@
       "areaKm2": 369.12,
       "isMicroState": true,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "VEN",
@@ -7008,7 +7009,7 @@
         "COL",
         "GUY"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "VNM",
@@ -7045,7 +7046,7 @@
         "KHM",
         "LAO"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "VUT",
@@ -7078,7 +7079,7 @@
       "areaKm2": 12338.88,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "WSM",
@@ -7111,7 +7112,7 @@
       "areaKm2": 2790.78,
       "isMicroState": false,
       "neighbors": [],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "YEM",
@@ -7147,7 +7148,7 @@
         "OMN",
         "SAU"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ZAF",
@@ -7187,7 +7188,7 @@
         "SWZ",
         "ZWE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ZMB",
@@ -7228,7 +7229,7 @@
         "TZA",
         "ZWE"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     },
     {
       "iso3": "ZWE",
@@ -7266,7 +7267,7 @@
         "ZAF",
         "ZMB"
       ],
-      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+      "dataVersion": "ne-5.1.2+policy-2+pipeline-4"
     }
   ],
   "territories": [
@@ -7325,6 +7326,22 @@
       "geomId": "ATF",
       "plantable": true,
       "reason": "dependency"
+    },
+    {
+      "id": "B16",
+      "name": "Golan Heights",
+      "sovereign": null,
+      "geomId": "B16",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "B89",
+      "name": "Crimea",
+      "sovereign": null,
+      "geomId": "B89",
+      "plantable": false,
+      "reason": "disputed"
     },
     {
       "id": "BJN",

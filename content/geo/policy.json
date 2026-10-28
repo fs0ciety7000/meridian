@@ -1,6 +1,6 @@
 {
   "$description": "Geo policy (docs/data-model.md §2.3). Source of truth for which map units are playable. Changing it requires game-designer + tech-lead approval and an entry in docs/geo-policy-changelog.md.",
-  "version": 1,
+  "version": 2,
   "unMembers": [
     "AFG",
     "AGO",
@@ -225,6 +225,12 @@
     "MDV": "AS",
     "MUS": "AF",
     "SYC": "AF"
+  },
+  "carveOuts": {
+    "$description": "Natural Earth disputed/breakaway areas (BRK_A3 of ne_*_admin_0_disputed_areas) that the admin-0 countries layer folds into a UN member's polygon although rule 3 makes them non-plantable. They are cut out at every level of detail; `into` merges the area into an existing unit, otherwise it becomes its own non-plantable unit (id = BRK_A3, dotted borders). See docs/geo-policy-changelog.md v2.",
+    "B19": { "name": "Western Sahara", "into": "SAH" },
+    "B89": { "name": "Crimea" },
+    "B16": { "name": "Golan Heights" }
   },
   "microStateMaxKm2": 2000
 }

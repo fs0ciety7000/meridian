@@ -430,6 +430,17 @@
         "note": "Grímsey, ~66°34′N."
       }
     },
+    "ISR": {
+      "borders": {
+        "value": ["EGY", "JOR", "LBN", "PSE", "SYR"],
+        "source": "https://en.wikipedia.org/wiki/Borders_of_Israel",
+        "note": "Israel and Syria share a border in both readings; the Golan Heights, non-plantable since geo policy v2, separate them in the map geometry."
+      },
+      "landBorders": {
+        "value": 5,
+        "source": "https://en.wikipedia.org/wiki/Borders_of_Israel"
+      }
+    },
     "KEN": {
       "population": {
         "value": 56432944,
@@ -709,6 +720,17 @@
         "value": 634431,
         "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SR",
         "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "SYR": {
+      "borders": {
+        "value": ["IRQ", "ISR", "JOR", "LBN", "TUR"],
+        "source": "https://en.wikipedia.org/wiki/Borders_of_Syria",
+        "note": "Israel and Syria share a border in both readings; the Golan Heights, non-plantable since geo policy v2, separate them in the map geometry."
+      },
+      "landBorders": {
+        "value": 5,
+        "source": "https://en.wikipedia.org/wiki/Borders_of_Syria"
       }
     },
     "TCD": {
