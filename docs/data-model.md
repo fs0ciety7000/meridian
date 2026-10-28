@@ -416,6 +416,18 @@ create table rarity_snapshots (
 );
 ```
 
+**Télémétrie (phase 3, base séparée `/data/telemetry.db`)** — schéma Zod `TelemetryBatch` / `TelemetryEvent` dans `packages/content-schema/src/telemetry.ts` ; tables créées par `apps/server/src/telemetry/store.ts` (SQL brut via `node:sqlite`, migrations par `PRAGMA user_version`, ADR 0001). Séparée de `meridian.db` : écritures fréquentes, valeur faible, purgeable sans toucher aux données des joueurs.
+```sql
+create table events (id integer primary key, day text not null,   -- 'YYYY-MM-DD', pas d'heure
+  session text not null,                                          -- aléatoire par lancement, jamais d'IP
+  type text not null, code text, payload text not null);          -- purgé après 180 jours
+create table prompt_stats (prompt_id text primary key, n, valid, sum_ms, sum_provisional_moves,
+  spyglass, tier_known, tier_trail, tier_frontier, tier_incognita);  -- agrégats permanents
+create table code_stats (code text primary key, started, finished, finished_first, abandoned, shares,
+  legs, valid_legs, sum_leg_ms, sum_duration_ms, sum_distance_km, sum_renown, sum_false_trails);
+create table plant_failures (reason text primary key, n);
+```
+
 **Règles serveur**
 - `POST /api/runs` (une transaction) : vérifier le jeton → reconstruire l'expédition (catalogue : table ; générée : `generateExpedition` depuis le code) et comparer le `hash` → **rejouer** le run avec `packages/engine` (versions `balance`/`library` référencées) → refuser toute divergence → `insert runs` → pour chaque étape valide, `insert or ignore` dans `prompt_answers` ; si la ligne est nouvelle, `answer_counts.n += 1`.
 - Le `attempt` est **déterminé par le serveur** (premier run terminé du joueur pour ce code), pas par le client.

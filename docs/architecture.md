@@ -279,6 +279,8 @@ Bibliothèque de consignes + catalogue embarqués dans l'app (≈ 50–100 Ko gz
 | `GET /api/expeditions` | catalogue (métadonnées) | `s-maxage=3600` |
 | `GET /api/expeditions/:code/board` | classement d'une expédition (catalogue) ou d'un défi (amis) | `s-maxage=60` |
 | `GET /api/health` | sonde Coolify | non |
+| `POST /api/telemetry` | lots d'événements de télémétrie anonyme (gameplay-systems §16), validés par Zod, stockés dans `telemetry.db` | non |
+| `GET /api/telemetry/summary` | indicateurs d'équilibrage (fausse piste par consigne, durée médiane par expédition, `plant_failed`), jeton `TELEMETRY_ADMIN_TOKEN` | non |
 
 - **Job interne** (`setInterval` / `croner`) : recalcul des instantanés de rareté toutes les 10 min.
 - **Anti-abus** : limite de débit par jeton et par IP (en-tête `CF-Connecting-IP`), une seule contribution aux statistiques de rareté par (joueur, consigne).
@@ -306,6 +308,7 @@ Le serveur Hono sert `/api/*` **et** les fichiers statiques du front (en-têtes 
 - **Volume persistant** `/data` → `meridian.db` (SQLite, WAL).
 - **Sidecar Litestream** (même compose) : réplication continue de `meridian.db` vers un bucket **Cloudflare R2** ; restauration automatique au démarrage si la base est absente.
 - Variables (secrets Coolify) : `JWT_SECRET`, `DATABASE_PATH=/data/meridian.db`, `PUBLIC_ORIGIN`, `R2_*` (Litestream).
+- Phase 3 : `TELEMETRY_ADMIN_TOKEN` (secret, optionnel ; sans lui `/api/telemetry/summary` répond 404). Télémétrie dans `/data/telemetry.db` (driver `node:sqlite`, ADR 0001) ; sauvegarde/restauration manuelles par `deploy/backup.sh` / `deploy/restore.sh` jusqu'à Litestream (`docs/deployment.md` §7).
 - Environnement de recette : second service Coolify sur une branche `staging` (sous-domaine distinct).
 
 ### 7.3 Cloudflare (`cardormedia.com`)

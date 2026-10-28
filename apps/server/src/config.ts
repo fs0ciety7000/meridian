@@ -10,6 +10,8 @@ export interface ServerConfig {
   dataDir: string | null;
   version: string;
   commit: string;
+  /** Bearer token for `GET /api/telemetry/summary`; the route is disabled (404) when unset. */
+  telemetryAdminToken: string | null;
 }
 
 /** Reads configuration from the environment (documented in docs/deployment.md). */
@@ -24,5 +26,6 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ServerConfig {
     dataDir: env.DATA_DIR ? resolve(env.DATA_DIR) : null,
     version: env.APP_VERSION ?? 'dev',
     commit: (env.GIT_COMMIT ?? 'unknown').slice(0, 12),
+    telemetryAdminToken: env.TELEMETRY_ADMIN_TOKEN?.trim() || null,
   };
 }

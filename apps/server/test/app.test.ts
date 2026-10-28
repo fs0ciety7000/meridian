@@ -22,6 +22,7 @@ const config = (over: Partial<ServerConfig> = {}): ServerConfig => ({
   dataDir: null,
   version: 'test',
   commit: 'abc',
+  telemetryAdminToken: null,
   ...over,
 });
 
@@ -108,5 +109,7 @@ describe('server', () => {
     expect(csp).toContain("script-src 'self' https://static.cloudflareinsights.com;");
     expect(csp).not.toContain('unsafe-eval');
     expect(res.headers.get('content-security-policy')).toContain("frame-ancestors 'none'");
+    // Telemetry is same-origin: connect-src 'self' covers POST /api/telemetry.
+    expect(csp).toMatch(/connect-src 'self'[ ;]/);
   });
 });

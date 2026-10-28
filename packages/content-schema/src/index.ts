@@ -4,6 +4,7 @@ import { ContinentCode, Iso3, LonLat } from './primitives';
 
 export * from './primitives';
 export * from './game';
+export * from './telemetry';
 
 /** data-model §2.1 — a state that can be given as an answer. */
 export const PlayableEntity = z.object({

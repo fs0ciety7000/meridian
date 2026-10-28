@@ -4,6 +4,7 @@ import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
 import { secureHeaders } from 'hono/secure-headers';
 import type { ServerConfig } from './config';
+import { createTelemetryApi } from './telemetry/routes';
 
 /**
  * Cache policy (architecture §7.4). Cloudflare honours these headers:
@@ -80,6 +81,9 @@ export function createApp(config: ServerConfig) {
       ok ? 200 : 503,
     );
   });
+
+  // Anonymous design telemetry (gameplay-systems §16). Same origin: CSP connect-src 'self'.
+  api.route('/telemetry', createTelemetryApi(config));
 
   api.all('*', (c) => c.json({ error: 'not_found' }, 404));
   app.route('/api', api);

@@ -27,6 +27,9 @@ jobs:
       - run: pnpm test
       - run: pnpm facts:check
       - run: pnpm forge:check
+      # Performance budgets (architecture §8): initial JS ≤ 180 kB gz, initial geo ≤ 80 kB gz.
+      - run: pnpm build
+      - run: pnpm budgets
 
   e2e:
     name: E2E (Playwright, production server)
@@ -79,4 +82,7 @@ jobs:
           for i in $(seq 1 20); do curl -fsS localhost:3000/api/health && break; sleep 1; done
           curl -fsS localhost:3000/api/health | grep '"status":"ok"'
           curl -fsSI localhost:3000/ | grep -i 'cache-control: no-cache'
+          curl -fsS -XPOST localhost:3000/api/telemetry -H 'content-type: application/json' \
+            -d '{"v":1,"session":"ci-smoke-test","events":[{"type":"plant_failed","reason":"ci"}]}' \
+            | grep '"stored":true'
           docker stop meridian

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^2.1.5",
+    "@meridian/content-schema": "workspace:*",
     "hono": "^4.13.14"
   },
   "devDependencies": {
