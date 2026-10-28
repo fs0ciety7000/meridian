@@ -91,3 +91,54 @@ Réserve de méthode : aucune capture Natural Earth I n'a été fournie. La déc
 **⚠️ Validé sous réserve.**
 
 La direction de la carte est validée : matières, traits, route, camps, instruments et thème Nocturne sont au niveau attendu. Le portail AD de la phase 1 est **franchi dès la levée des deux bloquants** (hachure non plantable hors vermillon ; halos invisibles au repos). La levée se vérifie en contre-revue sur les captures 01, 04, 05 et 07 régénérées, complétées des captures manquantes listées plus haut. Les points « à corriger » qui touchent la carte (méridien, route, survol, étiquettes, camp `planted`) doivent être soldés avant le début de la tâche 2.7. Ceux qui touchent le chrome (cadrage mobile, odomètre, coordonnées) sont reportés en phase 2, et le cadrage mobile à 70 % devient un critère bloquant de son portail.
+
+---
+
+## Contre-revue (2026-10-28)
+
+> **Matériel relu :** 14 captures (`review2/` : les 01 à 07 régénérées, plus 08 halo révélé, 09 loupe sur le Vatican, 10 états de camp, 11 tracé en cours, 12 focus clavier sur le Bhoutan, 13 mouvement réduit, 14 Natural Earth I). Vérifications ponctuelles dans `apps/web/src/map/{overlay.ts, render.ts}` et `apps/web/src/lab/MapLab.module.css`. Référence : `docs/design-system.md` v0.3.
+
+### Levée des bloquants
+
+| Élément | Constat | Gravité | Correction proposée avec token |
+|---|---|---|---|
+| Bloquant 1 : hachure des zones non plantables | **Levé.** `map-unplantable-hatch` (sépia à 135°) est appliqué partout : Antarctique (01, 03, 05, 14), Kosovo (04), Somaliland et Sahara occidental (10). Plus aucun vermillon. L'Antarctique redevient un bord de carte calme, et la hachure ne se confond plus avec la fausse piste. | — | — |
+| Bloquant 2 : halos des micro-États | **Levé.** Aucun halo au repos (01, 02, 05, 07 : la chaîne des Petites Antilles est enfin nette). Le halo se révèle autour du pointeur (08) et dans la loupe (09). | — | — |
+
+### Points « à corriger » du premier passage
+
+| Élément | Constat | Gravité | Correction proposée avec token |
+|---|---|---|---|
+| Étiquette et graduations du méridien | Conformes : libellé `ink-700` avec losange `meridian-500` ; graduations tous les 10°. L'implémentation pose 4 px **de chaque côté** (8 px au total), alors que `map.meridian.tickLength` = 4 visait la longueur totale. Élégant sur desktop (01), un peu appuyé sur mobile (05). | suggestion | Ramener à 2 px de part et d'autre, soit `map.meridian.tickLength` = 4 au total. La v0.3.1 précisera « longueur totale ». |
+| Tics de route et losange de traversée | Conformes : tics seulement sur les étapes passées (02, 06, 11), losange de 8 px à chaque traversée, sur l'étape passée comme sur l'étape courante (02, agrandi ; 06). | — | — |
+| Survol | Conforme : la Hongrie (04) est en `paper-300`, chaude, sans grisaille. | — | — |
+| Coordonnées et odomètre | Conformes : « 25,0° S · 134,0° E », `type-odometer`, `material-brass`. | — | — |
+| Camp `planted` | Conforme : plus d'ombre au sol (02, 10, 13). | — | — |
+| Étiquettes des océans | Couleur, taille et masquage au bord sont conformes (« Océan Indi… » a disparu). **Reste :** « Océan Austral » est toujours barré par le méridien (01, 02, 03, 05, 06, 14). Le détourage est peint dans le canvas, mais le méridien vit dans le SVG au-dessus : le détourage ne peut pas le couper. | à corriger | Écarter l'ancre de l'étiquette du méridien projeté, d'au moins la demi-largeur du texte + 8 px (`space-2`), sur l'axe des longitudes. Ou dessiner les étiquettes d'océans dans le calque SVG, au-dessus du méridien, avec le même détourage `map.label.haloWidth`. |
+| Étiquettes des parallèles | Présentes et bien composées. Trois défauts : (a) **pas de test de collision** : « Tropique du Cancer » chevauche « Océan Atlantique » (05, 06) ; (b) posées **sur les terres** avec un détourage `sea-100`, elles laissent une tache bleutée sur le papier (« Tropique du Cancer » sur l'Inde, 12 ; « Cercle polaire arctique » sur l'Alaska, 01 ; « Équateur » sur la Colombie, 10) ; (c) passent **sous le chrome** (« Tropique du Capricorne » sous l'échelle, 07). | à corriger | Ancrer chaque étiquette de parallèle sur le premier tronçon **maritime** visible depuis la gauche, détourage `sea-100` ; à défaut, détourage `paper-200` sur les terres. Masquer l'étiquette si sa boîte croise une étiquette d'océan ou une zone de chrome (mêmes rectangles que les futurs `fitInsets`). Priorité à l'étiquette d'océan. |
+| Camp `invalid` (10, agrandi) | Fanion gris déchiré, mais **la croix manque** (§6.3 : « fanion déchiré gris + croix »). Le remplissage `paper-400` ne fait que 1,39:1 sur `paper-200` ; seul le contour `ink-500` (4,61:1) porte la forme. L'état n'est donc distingué que par une nuance de gris et une déchirure de 2 px, presque la couleur seule. | à corriger | Ajouter une croix de 6 px, trait 1,25 px `ink-700` (7,96:1 sur `paper-200`), centrée sur le pied du mât à la place de la croix de visée. Token `camp-invalid-mark` = { size: 6, stroke: `ink-700`, width: 1.25 }. |
+
+### Nouveaux constats (captures inédites)
+
+| Élément | Constat | Gravité | Correction proposée avec token |
+|---|---|---|---|
+| Route au fort zoom (13, mouvement réduit, Japon) | Le grand cercle se casse en segments rectilignes avec un **angle visible** (au-dessus de la Corée). Le chemin est projeté une seule fois à l'échelle 1 puis agrandi par la matrice : l'échantillonnage adaptatif de d3 est calibré pour k = 1. Une route d'expédition doit rester une courbe d'encre à tous les zooms. Même risque pour le méridien. | à corriger | Recalculer les chemins de route et du méridien au `settle` (fin de geste) avec `projection.precision(0.5 / k)`, ou densifier les grands cercles par `geoInterpolate` à un pas de `map.route.sampleKm` = 50 km (nouveau token). Garder le chemin à k = 1 pendant le geste. |
+| Loupe (09) | Conforme et réussie : décalée au-dessus du doigt, cerclage double `ink-900` / `paper-100`, mire vermillon (sens « focus » autorisé), halo révélé, aucun nom de pays affiché. | — | — |
+| Focus clavier (12) | Conforme : le Bhoutan reçoit le style « sélection provisoire » (§10), et la `CampBar` annonce le nom et la distance. | — | — |
+| Mouvement réduit (13) | Conforme : route tracée d'un coup, fanion planté sans animation, odomètre à sa valeur finale. | — | — |
+| Tracé en cours (11) | La pointe d'encre et le segment courant sortent du cadre : la caméra ne recadre pas départ et arrivée avant le tracé. C'est la chorégraphie du §8, prévue en tâche 2.8 : je le note seulement. | suggestion (phase 2.8) | Recadrage `dur-ink` avant `dur-route`, suivant la séquence de référence du §8. |
+| Chrome : transparence du cartouche (07, 10) | Fond `paper-100` à 94 % : la carte transparaît (« Cercle polaire arctique » fantôme en 07, camp `historic` ① visible sous le cartouche en 10). Ce n'est pas du glassmorphisme (pas de flou), mais c'est du bruit, et cela masque à moitié un état de camp. | suggestion (chrome, phase 2.7) | Fond `paper-100` opaque. La caméra évite de poser un camp sous le chrome via les `fitInsets` (déjà reportés). |
+| Résidu d'information des halos | Au survol (08), les halos révélés ne désignent toujours que des États souverains : la fuite est réduite au voisinage du pointeur, pas supprimée. C'est le compromis accepté, mais à surveiller avec le Game Designer quand les consignes insulaires arriveront. | suggestion (phase 2, avec GD) | Étendre les halos révélés à **toute** île de moins de `microStateHaloPx` à l'écran, souveraine ou non (les dépendances renvoient leur entité ou « non plantable »). Un halo signifie alors « petite terre », pas « État ». |
+| Échelle graphique au-dessus des terres (11) | « 500 km » posé directement sur les côtes du Labrador perd en lisibilité. | suggestion | Détourage `paper-100` de 3 px (`map.label.haloWidth`) derrière le libellé de l'échelle. |
+
+### Projection : confirmation sur la capture 14
+
+La capture en Natural Earth I **confirme** la décision Equal Earth. À cadrage identique, Natural Earth I est plus haute : l'Antarctique passe sous la `CampBar` et l'Arctique touche le cartouche. Elle grossit visiblement la Russie, le Canada et l'Antarctique au détriment de l'Afrique. Rien dans son rendu (coins arrondis plus doux) ne compense la perte d'équivalence. **Equal Earth reste la projection par défaut.**
+
+### Verdict final du portail
+
+**✅ Validé : le portail « revue AD » de la phase 1 est franchi.**
+
+Les deux bloquants sont levés et vérifiés, les règles « une couleur = un sens » et « ne rien révéler du jeu » sont respectées, et les états de la carte non couverts au premier passage (loupe, focus, mouvement réduit) sont conformes. Il ne reste aucun point bloquant.
+
+Les quatre points « à corriger » restants sont du polissage cartographique : étiquette « Océan Austral » et méridien, collisions et détourage des parallèles, croix du camp `invalid`, échantillonnage des courbes au zoom. Ils doivent être soldés **avant la tâche 2.7** et seront vérifiés sur les captures 01, 05, 10 et 13. Toujours reportés au portail de la phase 2 : `fitInsets`, cadrage mobile ≥ 70 % et réduction du chrome mobile, ce dernier point restant **bloquant** à ce portail.
