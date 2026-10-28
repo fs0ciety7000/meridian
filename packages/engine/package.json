@@ -11,5 +11,8 @@
   "dependencies": {
     "@meridian/content-schema": "workspace:*",
     "@meridian/geo": "workspace:*"
+  },
+  "devDependencies": {
+    "fast-check": "^4.10.2"
   }
 }
