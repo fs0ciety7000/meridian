@@ -38,8 +38,8 @@ const STRINGS = {
   firstExpedition: { fr: 'Commencer le premier carnet', en: 'Start the first logbook' },
   orNewExpedition: { fr: 'ou une expédition au hasard :', en: 'or a random expedition:' },
   coachFirstLeg: {
-    fr: 'Touchez un pays d’Afrique, ajustez au besoin, puis appuyez sur le sceau rouge pour planter votre camp.',
-    en: 'Tap a country in Africa, adjust if needed, then press the red seal to pitch your camp.',
+    fr: 'Touchez un pays d’Afrique : le sceau, en bas à droite, rougit. Appuyez dessus pour planter votre camp.',
+    en: 'Tap a country in Africa: the seal, bottom right, turns red. Press it to pitch your camp.',
   },
   about: { fr: 'À propos', en: 'About' },
   soundOn: { fr: 'Son', en: 'Sound' },

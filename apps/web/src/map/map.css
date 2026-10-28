@@ -1,6 +1,11 @@
 /* AtlasMap layers (architecture §4.6, design-system §5–6). Plain CSS: the engine creates the DOM. */
-.atlas-map {
+/* Zero specificity: the screen's own class decides where the map sits (absolute, inset 0),
+   whatever order the stylesheets arrive in. */
+:where(.atlas-map) {
   position: relative;
+}
+
+.atlas-map {
   overflow: hidden;
   isolation: isolate;
   outline: none;

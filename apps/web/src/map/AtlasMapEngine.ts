@@ -263,7 +263,7 @@ export class AtlasMapEngine {
   /** Chrome margins (fitInsets, design-system §7): framing avoids cartouche and camp bar. */
   setInsets(insets: Insets) {
     this.insets = insets;
-    if (!this.userMoved && !this.flying) this.setTransform(this.homeTransform());
+    if (this.statics && !this.userMoved && !this.flying) this.setTransform(this.homeTransform());
   }
 
   /** Point the home view centres on in portrait (the current camp). */
@@ -302,6 +302,7 @@ export class AtlasMapEngine {
     );
     if (same) return;
     this.homeInsets = insets;
+    if (!this.width) return; // applied by the first resize
     this.rebuild(true);
     if (!this.userMoved) this.setTransform(this.homeTransform());
   }
@@ -354,6 +355,7 @@ export class AtlasMapEngine {
    * of the screen, so it is zoomed to fill about half the height and stays pannable.
    */
   private homeTransform(): ZoomTransform {
+    if (!this.statics) return zoomIdentity; // projection not built yet (host without size)
     const [[x0, y0], [x1, y1]] = geoPath(this.projection).bounds({ type: 'Sphere' });
     if (this.width / this.height >= 0.9) return zoomIdentity;
     // Portrait (design-system §7, phase 1 review): the world would fill a third of the screen.
@@ -372,6 +374,7 @@ export class AtlasMapEngine {
 
   /** Flies to a geographic box [west, south, east, north] (van Wijk interpolation). */
   flyToBounds([west, s, e, n]: [number, number, number, number], maxK = 24) {
+    if (!this.statics) return;
     const east = e < west ? e + 360 : e;
     const pts: [number, number][] = [];
     for (let i = 0; i <= 4; i++) {
@@ -396,6 +399,7 @@ export class AtlasMapEngine {
   }
 
   flyToPoint(lonLat: [number, number], k: number) {
+    if (!this.statics) return;
     const p = this.projection(lonLat);
     if (!p) return;
     this.flyToTransform(
@@ -643,6 +647,8 @@ export class AtlasMapEngine {
   }
 
   private draw(fast: boolean) {
+    // Nothing to draw before the host has a size (CSS may arrive after the engine).
+    if (!this.statics) return;
     if (this.interacting) this.gestureFrames.push(performance.now());
     const view = this.view;
     if (fast && this.frozenAt && this.worldBitmapReady) this.drawFrozen();
@@ -715,6 +721,7 @@ export class AtlasMapEngine {
   }
 
   private drawHighlightLayer() {
+    if (!this.statics) return;
     const [base, micro] = this.layersFor(this.lod);
     drawHighlight(this.highlight.getContext('2d')!, this.view, [base, micro], this.pal, {
       hover: this.hover,

@@ -49,11 +49,13 @@ export const useGame = create<GameStore>((set, get) => ({
     if (get().status !== 'idle') return;
     set({ status: 'loading' });
     try {
-      const [geo, content, stored] = await Promise.all([
-        loadGeoData(),
-        loadGameContent(),
-        loadRuns(),
-      ]);
+      // The map shows as soon as its geography arrives; facts and catalogue follow
+      // (LCP, development-plan §Phase 3: the launcher must not wait for the whole content).
+      const geoP = loadGeoData().then((geo) => {
+        set({ geo });
+        return geo;
+      });
+      const [geo, content, stored] = await Promise.all([geoP, loadGameContent(), loadRuns()]);
       // Ink dries offline 24 h after play (gameplay-systems §6.4).
       const now = nowIso();
       const dried: EngineEvent[] = [];
@@ -178,10 +180,16 @@ function report(state: RunState, action: Action, events: EngineEvent[]) {
           code,
           distanceKm: e.score.distanceKm,
           renown: e.score.renown,
-          durationMs:
-            Math.max(0, Date.parse(state.finishedAt ?? '') - Date.parse(state.startedAt)) || 0,
+          // Active time: the sum of the legs, not wall-clock (a run resumed days later, T3).
+          durationMs: Math.min(
+            86_400_000,
+            state.legs.reduce((s, l) => s + l.ms, 0),
+          ),
           falseTrails: state.legs.filter((l) => !l.valid).length,
           attempt: state.attempt,
+          meridianCrossings: state.legs.filter((l) => l.meridianCrossed).length,
+          missionsDone: state.missions.filter((m) => m.done).length,
+          missions: state.missions.length,
         });
     }
   }
@@ -200,6 +208,13 @@ function report(state: RunState, action: Action, events: EngineEvent[]) {
       provisionalMoves: Math.min(leg.provisionalMoves, 1000),
       spyglass: leg.spyglass,
       tier: leg.rarity?.tier ?? null,
+      attempt: state.attempt,
+      ...(leg.valid ? {} : { falseIso3: leg.pick.iso3 }),
     });
   }
+}
+
+/** A tap that cannot become a camp (sea, unplantable, already used): « Précis » criterion. */
+export function reportPlantFailed(reason: 'sea' | 'unplantable' | 'already_used') {
+  track({ type: 'plant_failed', reason });
 }

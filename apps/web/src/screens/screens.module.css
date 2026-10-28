@@ -561,3 +561,19 @@
 .about ul {
   padding-left: var(--space-5);
 }
+
+/* About: the page title outranks its section titles (AD review C10). */
+.about .launcherTitle {
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 899px) {
+  /* Launcher settings links: 44 px touch targets (AD review C11). */
+  .inlineLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

@@ -228,35 +228,59 @@ export async function renderPostcard(
     ctx.setLineDash([]);
     drawStamp(ctx, rarest, best.pick.iso3, 920, 130, 46, -0.12);
   }
-  // Round postmark: code + date of play
+  // Round postmark (AD review B2): 'MERIDIAN · code' along the ring, the date centred in the
+  // inner circle; it bites at most 24 px into the stamp frame and never touches the stamp.
+  const ink = `${C['ink-900']}b3`; // ink-900 at 70 %
+  const R = 66;
+  const pmX = 840 - R + 24;
+  const pmY = 140; // clear of the map frame (y = 210)
   ctx.save();
-  ctx.translate(790, 160);
-  ctx.rotate(-0.2);
-  ctx.strokeStyle = `${C['ink-900']}b3`;
+  ctx.translate(pmX, pmY);
+  ctx.rotate(-0.16);
+  ctx.strokeStyle = ink;
+  ctx.fillStyle = ink;
   ctx.lineWidth = 2.5;
   ctx.beginPath();
-  ctx.arc(0, 0, 62, 0, Math.PI * 2);
+  ctx.arc(0, 0, R, 0, Math.PI * 2);
   ctx.stroke();
   ctx.lineWidth = 1.2;
   ctx.beginPath();
-  ctx.arc(0, 0, 48, 0, Math.PI * 2);
+  ctx.arc(0, 0, R - 26, 0, Math.PI * 2);
   ctx.stroke();
-  ctx.fillStyle = `${C['ink-900']}b3`;
+  // Text on the ring, upper arc, centred on 12 o'clock.
+  const ring = `MERIDIAN · ${exp.code}`;
+  ctx.font = font(500, 14, tokens.font.mono);
   ctx.textAlign = 'center';
-  ctx.font = font(500, 15, tokens.font.mono);
-  ctx.fillText(exp.code, 0, -4);
+  ctx.textBaseline = 'middle';
+  const r = R - 13;
+  const chars = [...ring];
+  const widths = chars.map((ch) => ctx.measureText(ch).width + 1);
+  const total = widths.reduce((acc, w) => acc + w, 0);
+  let angle = -Math.PI / 2 - total / r / 2;
+  chars.forEach((ch, i) => {
+    const half = widths[i]! / 2 / r;
+    angle += half;
+    ctx.save();
+    ctx.rotate(angle);
+    ctx.translate(r, 0);
+    ctx.rotate(Math.PI / 2);
+    ctx.fillText(ch, 0, 0);
+    ctx.restore();
+    angle += half;
+  });
+  // Date in the inner circle.
   const date = new Date(run.finishedAt ?? run.startedAt);
-  ctx.fillText(
+  const [day, month, year] = [
+    date.getDate().toString().padStart(2, '0'),
     date
-      .toLocaleDateString(opts.locale === 'fr' ? 'fr-FR' : 'en-GB', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-      })
+      .toLocaleDateString(opts.locale === 'fr' ? 'fr-FR' : 'en-GB', { month: 'short' })
+      .replace('.', '')
       .toUpperCase(),
-    0,
-    16,
-  );
+    String(date.getFullYear()),
+  ];
+  ctx.font = font(500, 13, tokens.font.mono);
+  ctx.fillText(`${day} ${month}`, 0, -7);
+  ctx.fillText(year, 0, 10);
   ctx.restore();
 
   // Distance and renown

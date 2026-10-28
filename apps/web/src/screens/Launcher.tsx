@@ -21,11 +21,11 @@ export function Launcher() {
   const t = useT();
   const locale = useLocale((s) => s.locale);
   const setLocale = useLocale((s) => s.setLocale);
-  const { geo, content, runs, newCode } = useGame();
+  const { geo, content, runs, newCode, status } = useGame();
   const material = useMaterial();
   const sound = useSound();
   // Onboarding (development-plan 3.5): a first-time player starts with MER-0001.
-  const firstTime = runs.length === 0;
+  const firstTime = status === 'ready' && runs.length === 0;
   const engine = useRef<AtlasMapEngine | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>('normal');
   const [code, setCode] = useState('');
@@ -37,7 +37,10 @@ export function Launcher() {
   });
 
   const homeInsets = useMapInsets([view]);
-  const marks = useMemo(() => atlasMarks(runs, content!.deps.entities), [runs, content]);
+  const marks = useMemo(
+    () => (content ? atlasMarks(runs, content.deps.entities) : []),
+    [runs, content],
+  );
   const inProgress = runs
     .filter((r) => r.status === 'in_progress')
     .slice(-5)
@@ -58,16 +61,20 @@ export function Launcher() {
 
   return (
     <main className={styles.screen}>
-      <AtlasMap
-        onSlow={reportSlowDevice}
-        locale={locale}
-        ref={engine}
-        className={styles.map}
-        data={geo!}
-        marks={marks}
-        atlas
-        homeInsets={homeInsets}
-      />
+      {geo ? (
+        <AtlasMap
+          onSlow={reportSlowDevice}
+          locale={locale}
+          ref={engine}
+          className={styles.map}
+          data={geo}
+          marks={marks}
+          atlas
+          homeInsets={homeInsets}
+        />
+      ) : (
+        <div className={`${styles.map} paper`} aria-busy="true" />
+      )}
       <section
         className={styles.launcher}
         data-map-chrome
@@ -249,11 +256,11 @@ export function Launcher() {
               ← {t('home')}
             </button>
             <p className={styles.overline}>{t('catalog')}</p>
-            {content!.catalog.length === 0 ? (
+            {!content || content.catalog.length === 0 ? (
               <p className={styles.small}>{t('catalogEmpty')}</p>
             ) : (
               <ol className={styles.catalog}>
-                {content!.catalog.map((e) => (
+                {content.catalog.map((e) => (
                   <li key={e.code}>
                     <button
                       type="button"

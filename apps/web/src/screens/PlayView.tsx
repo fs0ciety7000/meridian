@@ -4,7 +4,7 @@ import type { PromptCategory } from '@meridian/content-schema';
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { formatNumber, useLocale, useT, type StringKey } from '../game/i18n';
 import { navigate } from '../game/router';
-import { useGame } from '../game/store';
+import { reportPlantFailed, useGame } from '../game/store';
 import { haptic, play } from '../game/sound';
 import { reportSlowDevice } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
@@ -18,7 +18,7 @@ import { CountrySearch } from '../ui/CountrySearch';
 import { CampBar } from '../ui/game/CampBar';
 import gameStyles from '../ui/game/game.module.css';
 import { LegLog } from '../ui/game/LegLog';
-import { MarginNote } from '../ui/game/MarginNote';
+import { MarginNote, type Note } from '../ui/game/MarginNote';
 import { MissionList, MissionOrders } from '../ui/game/MissionOrders';
 import { Odometer } from '../ui/game/Odometer';
 import { PromptCartouche } from '../ui/game/PromptCartouche';
@@ -63,9 +63,9 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   const [pick, setPick] = useState<MapPick | null>(null);
   const [hint, setHint] = useState<string | null>(null);
   // Onboarding: the very first leg of MER-0001 shows the gesture once (development-plan 3.5).
-  const [note, setNote] = useState<{ id: number; text: string } | null>(() =>
+  const [note, setNote] = useState<Note | null>(() =>
     run.expedition.code === 'MER-0001' && run.attempt === 'first' && run.legs.length === 0
-      ? { id: 1, text: t('coachFirstLeg') }
+      ? { id: 1, text: t('coachFirstLeg'), sticky: true }
       : null,
   );
   const [camera, setCamera] = useState<CameraState | null>(null);
@@ -203,6 +203,9 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   const finishResolution = useCallback(() => {
     setResolving(null);
     setTraced(0);
+    // The skipping tap also reached the map: drop whatever it selected (AD review C1).
+    engine.current?.setProvisional(null);
+    setPick(null);
     legStart.current = performance.now();
     moves.current = 0;
     // Back to the world, centred on the new camp, for the next prompt.
@@ -291,6 +294,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
     const prev = run.camp as [number, number];
     play('seal');
     haptic('plant');
+    setNote((n) => (n?.sticky ? null : n)); // the coach has done its job
     const events = dispatch(run.runId, {
       type: 'CONFIRM_CAMP',
       lonLat: pick.lonLat,
@@ -308,11 +312,17 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
       moves.current++;
       setPick(p && p.kind !== 'sea' ? p : null);
       if (!p) return setHint(null);
-      if (p.kind === 'sea') setHint(t('atSea'));
-      else if (p.kind === 'unplantable') setHint(t('unplantable'));
-      else if (p.entity && run.usedIso3.includes(p.entity))
+      // Every tap that cannot become a camp is reported (QA MVP review T1).
+      if (p.kind === 'sea') {
+        setHint(t('atSea'));
+        reportPlantFailed('sea');
+      } else if (p.kind === 'unplantable') {
+        setHint(t('unplantable'));
+        reportPlantFailed('unplantable');
+      } else if (p.entity && run.usedIso3.includes(p.entity)) {
         setHint(t('alreadyUsed', { name: nameOf(p.entity) }));
-      else if (p.snapped) setHint(t('snapped'));
+        reportPlantFailed('already_used');
+      } else if (p.snapped) setHint(t('snapped'));
       else setHint(null);
     },
     [resolving, run.usedIso3, t, nameOf],
@@ -355,7 +365,10 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   // ── Numbers ──────────────────────────────────────────────────────────────
   const totalKm = valid.reduce((s, l) => s + l.distanceKm, 0);
   const lastLegKm = resolving?.valid ? (shownLeg?.distanceKm ?? 0) : 0;
-  const odometerKm = traced && resolving?.valid ? totalKm - lastLegKm + traced : totalKm;
+  // Until the stamp lands, the odometer shows the previous total plus the ink traced so far:
+  // it only ever rolls forward (AD review B3).
+  const odometerKm =
+    resolving?.valid && resolving.phase !== 'stamp' ? totalKm - lastLegKm + traced : totalKm;
   const potential = pick?.entity ? haversineKm(run.camp, pick.lonLat) : null;
   const spyLeft = spyglassAllowance(run, deps) - run.spyglassLegs.length;
   const plantable =
@@ -472,7 +485,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
         </div>
       )}
 
-      <MarginNote note={note} />
+      <MarginNote note={note} hidden={logOpen && window.innerWidth < 900} />
 
       <div data-inset="bottom">
         <CampBar

@@ -15,9 +15,62 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Meridian" />
     <title>Meridian</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #f7f1e5;
+        color: #24232b;
+      }
+      .shell {
+        position: fixed;
+        inset: auto 0 0 0;
+        padding: 24px 16px 32px;
+        border-top: 1px solid #24232b;
+        font-family: Georgia, 'Iowan Old Style', serif;
+      }
+      .shell-over {
+        margin: 0;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #5b5866;
+      }
+      .shell-title {
+        margin: 4px 0 0;
+        font-size: 32px;
+        font-weight: 500;
+      }
+      @media (min-width: 900px) {
+        .shell {
+          inset: 24px auto auto 24px;
+          width: 300px;
+          border: 1px solid #24232b;
+          background: #f7f1e5;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        html,
+        body,
+        .shell {
+          background: #141b22;
+          color: #e9e1cf;
+          border-color: #e9e1cf;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!--
+      App shell (development-plan §Phase 3, LCP ≤ 2 s): painted from the HTML alone, before any
+      script or font; React replaces it on mount.
+    -->
+    <div id="root">
+      <div class="shell" aria-hidden="true">
+        <p class="shell-over">Atlas d’expédition</p>
+        <p class="shell-title">Meridian</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

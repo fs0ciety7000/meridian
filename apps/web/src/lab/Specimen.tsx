@@ -1,3 +1,5 @@
+// The specimen shows every Fraunces axis (SOFT, WONK): the full font, for this page only.
+import '@fontsource-variable/fraunces/full.css';
 import { tokens, type ColorToken, type ThemeName } from '@meridian/design-tokens';
 import { useEffect, useState } from 'react';
 import { Stamp, TIER_LABEL, type RarityTier } from '../ui/Stamp';
