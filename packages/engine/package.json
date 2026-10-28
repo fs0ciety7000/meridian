@@ -1,0 +1,15 @@
+{
+  "name": "@meridian/engine",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@meridian/content-schema": "workspace:*",
+    "@meridian/geo": "workspace:*"
+  }
+}

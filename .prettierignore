@@ -1,0 +1,6 @@
+pnpm-lock.yaml
+dist
+content/geo/*.json
+content/geo/*.topo.json
+docs
+.claude

@@ -1,0 +1,34 @@
+{
+  "name": "meridian",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @meridian/web dev",
+    "build": "pnpm --filter @meridian/design-tokens build && pnpm --filter @meridian/web build && pnpm --filter @meridian/server build",
+    "test": "vitest run",
+    "test:e2e": "pnpm --filter @meridian/web test:e2e",
+    "typecheck": "pnpm -r --parallel typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "geo": "pnpm --filter @meridian/geo-pipeline run build",
+    "geo:check": "pnpm --filter @meridian/geo-pipeline run check",
+    "textures": "pnpm --filter @meridian/web run textures"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.0.5"
+  }
+}

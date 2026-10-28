@@ -32,7 +32,7 @@ deploy/           Dockerfile multi-stage, docker-compose (app + Litestream), lit
 | une table / route serveur | `apps/server/src/db/schema.ts` (+ migration Drizzle), `apps/server/src/routes` (voir skill `data-model`) |
 | une variable d'environnement / un secret | `deploy/` + doc architecture §7.2 + secrets Coolify (jamais dans git) |
 
-## Interdits (vérifiés par eslint-plugin-boundaries)
+## Interdits (vérifiés par `eslint.config.js` : no-restricted-imports / -globals / -properties)
 - `packages/engine` importe le DOM, `fetch`, `Date.now()`, `Math.random()` → **interdit** (horloge et seed passent par les actions).
 - `map/` importe `features/` → interdit.
 - L'app importe `tools/` → interdit.

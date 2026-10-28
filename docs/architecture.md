@@ -52,7 +52,7 @@ Conséquences techniques :
 | Mobile | **PWA** installable + hors-ligne (vite-plugin-pwa / Workbox) ; **Capacitor** en phase 6 | React Native |
 | i18n | `Intl.DisplayNames` (noms de pays, zéro donnée) + **i18next** ; FR + EN dès le MVP | — |
 | Tests | **Vitest**, **Playwright** (E2E + régression visuelle) | Cypress |
-| Qualité | ESLint + Prettier + `eslint-plugin-boundaries` | — |
+| Qualité | ESLint + Prettier ; frontières via `no-restricted-imports` | — |
 | Monorepo | **pnpm workspaces** | Nx |
 
 ---
@@ -173,7 +173,7 @@ meridian/
 └── .claude/{agents,skills}/
 ```
 
-**Règles de frontière** (`eslint-plugin-boundaries`) :
+**Règles de frontière** (`no-restricted-imports` dans `eslint.config.js`) :
 - `packages/engine` n'importe que `packages/geo` et `packages/content-schema`.
 - `apps/web/src/map` n'importe pas `features/`.
 - `apps/server` importe `packages/*`, jamais `apps/web`.

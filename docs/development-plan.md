@@ -29,7 +29,7 @@ Agents responsables : **TL** Tech Lead · **AD** Art Director · **GD** Game Des
 
 | # | Tâche | Resp. |
 |---|---|---|
-| 0.1 | Monorepo pnpm : `apps/web`, `packages/{engine,geo,content-schema,design-tokens}`, `tools/*` ; TS strict, ESLint (+ boundaries), Prettier | TL |
+| 0.1 | Monorepo pnpm : `apps/web`, `packages/{engine,geo,content-schema,design-tokens}`, `tools/*` ; TS strict, ESLint (frontières via no-restricted-imports), Prettier | TL |
 | 0.2 | Vite + React 19 + Vitest + Playwright ; CI GitHub Actions (lint, typecheck, test, build) | TL |
 | 0.3 | `packages/design-tokens` : JSON de `design-system.md` §12 → `tokens.css` + `tokens.ts` | TL + AD |
 | 0.4 | `tools/geo-pipeline` : Natural Earth (version figée) → TopoJSON 110m/50m/10m-micro + métadonnées (aimPoint, voisins, îles, bbox) + manifeste | TL |

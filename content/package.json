@@ -1,0 +1,8 @@
+{
+  "name": "@meridian/content",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./geo/*": "./geo/*"
+  }
+}
