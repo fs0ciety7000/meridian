@@ -381,6 +381,14 @@
   line-height: 18px;
 }
 
+.legExplain {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--color-sepia-600);
+}
+
 .legResult {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -520,9 +528,8 @@
     border: 1px solid var(--color-paper-400);
     background: var(--color-paper-100);
     text-shadow: none;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+    /* Clamp on the text box itself so the padding stays clear (AD counter-review R1). */
+    max-height: calc(4 * 20px + 2 * var(--space-2) + 2px);
     overflow: hidden;
   }
 }

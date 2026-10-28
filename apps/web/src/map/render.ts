@@ -469,13 +469,35 @@ export function drawHighlight(
         f.outlineDash,
       );
     } else if (m.state === 'hint') {
-      // Dashed outline only: a wash would lighten land in Nocturne (phase 2 AD review).
-      paint(m.entity, null, pal['ink-700'], cs.hintOutlineWidth, cs.hintDash);
+      continue; // drawn below as one merged outline
     } else {
       const wash = cs.atlasWash[m.continent as 'AF'] ?? cs.atlasWash.AN;
       const opacity = cs.atlasWash.opacity * (0.6 + 0.4 * Math.min(1, m.intensity ?? 1));
       paint(m.entity, alpha(wash, opacity), null, 0);
     }
+  }
+  // Spyglass: one dashed outline around the merged sub-regions, no wash, no inner borders
+  // (phase 2 AD counter-review R4). Strokes are drawn at twice the width on a scratch canvas,
+  // then every hinted country is punched out: shared borders vanish, the outer half remains.
+  const hinted = marks.filter((m) => m.state === 'hint').flatMap((m) => pathsOf(m.entity));
+  if (hinted.length) {
+    const scratch = document.createElement('canvas');
+    scratch.width = ctx.canvas.width;
+    scratch.height = ctx.canvas.height;
+    const sc = scratch.getContext('2d')!;
+    sc.setTransform(dpr * k, 0, 0, dpr * k, dpr * x, dpr * y);
+    sc.lineJoin = 'round';
+    sc.strokeStyle = pal['ink-700'];
+    sc.lineWidth = (2 * cs.hintOutlineWidth) / k;
+    sc.setLineDash(cs.hintDash.map((d) => d / k));
+    for (const p of hinted) sc.stroke(p);
+    sc.globalCompositeOperation = 'destination-out';
+    sc.setLineDash([]);
+    for (const p of hinted) sc.fill(p);
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(scratch, 0, 0);
+    ctx.restore();
   }
   if (hover && hover !== selected) paint(hover, alpha(pal.hover, 0.85), pal['ink-700'], 1);
   if (selected) paint(selected, alpha(pal['vermilion-600'], 0.1), pal['vermilion-600'], 1.5);

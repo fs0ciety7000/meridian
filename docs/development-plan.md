@@ -137,6 +137,16 @@ Découvertes : le Vatican Natural Earth 10m (~110 m) est sous le pixel même à 
 
 ---
 
+### État de la phase 2 (2026-10-28)
+
+**Portail franchi.** Revue AD : ✅ validé sous réserve (`docs/reviews/phase-2-art-direction.md`) ; revue QA : critère atteint (`docs/reviews/phase-2-qa.md`). Déployé sur https://meridian.cardormedia.com.
+
+- Faits : 26 faits × 195 entités, relus par QA (`docs/reviews/facts-qa.md`) ; politique géo v2 (Crimée, Sahara occidental, Golan non plantables).
+- Moteur : 10 000 parties aléatoires (fast-check, `PROPERTY_RUNS=10000`) sans exception et déterministes ; générateur sans repli sur 1 850 graines ; codes MER- aller-retour sans perte.
+- Contenu : bibliothèque v1 (133 consignes, 120 ports), 30 expéditions du catalogue ; `BALANCE` v2.
+- E2E : partie complète, reprise après rechargement, défi entre deux navigateurs, part de la carte en portrait ≥ 70 %, perf.
+- **Reporté en phase 3** : chorégraphie (ordre tampon/tracé, vol vers la consigne suivante), tampons lisibles < 48 px, nom du palier au passeport, carte sur l'écran de défi, cadrage du récapitulatif sur toute la route, explication complète de fausse piste au-delà de 4 lignes (désormais dans le carnet), note de marge par-dessus le carnet ouvert, milliers en Plex Mono ; méridiens du catalogue (85 % de traversées) ; salience fondée sur les pages vues (Palestine) ; validation sur un vrai téléphone.
+
 ## Phase 3 — MVP public
 
 | # | Tâche | Resp. |

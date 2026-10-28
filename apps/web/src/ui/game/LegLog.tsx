@@ -50,6 +50,9 @@ export function LegLog({
                         g &&
                         ` — ${t('friend')} : ${nameOf(g.iso3)} ${g.valid ? `${formatNumber(locale, g.km)} km` : '✕'}`}
                     </span>
+                    {r && !r.valid && (
+                      <span className={styles.legExplain}>{def.explain[locale]}</span>
+                    )}
                   </span>
                   {r?.rarity && <Stamp tier={r.rarity.tier} code={r.pick.iso3} size={34} />}
                 </li>

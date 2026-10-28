@@ -79,3 +79,45 @@ La boucle de jeu est belle sur desktop : cartouche, sceau, fanions, route tiqué
 - **B3** levé : note de marge ancrée sur la hauteur mesurée de la `CampBar`, papier opaque, 4 lignes max ; « Toucher pour passer » dans la cartouche résolue ; `CampBar` sur deux lignes.
 - Faits aussi : contour à l'encre du palier pour les pays validés ; longue-vue en tirets `ink-700` sans lavis + recul de caméra ; odomètre desktop au token `type-odometer` ; séparateur des milliers.
 - Restent « à corriger » : chorégraphie (tampon après le tracé, vol vers l'étape suivante), lisibilité des tampons < 48 px, carte sur l'écran de défi, nom du palier au passeport, feuille basse du carnet. Contre-revue AD à faire sur des captures régénérées.
+
+---
+
+## Contre-revue (Art Director, 2026-10-28)
+
+> **Build relu :** `6e8bf80` reconstruit en local (`pnpm build`, serveur sur le port 4190). Même méthode que pour le premier passage : desktop 1440 × 900 et Pixel 7, Atlas et Nocturne, FR et EN. Captures régénérées hors dépôt (`scratchpad/ad2/v2/`), plus deux séries ajoutées : la longue-vue à t = 0,3 / 0,9 / 1,6 / 2,6 / 4 s, et la fausse piste FR et EN. Mesures faites par `engine.project()` sur le contour de la sphère.
+
+### Levée des bloquants
+
+| # | Constat | Statut |
+|---|---|---|
+| B1 cadrage portrait | Pixel 7, consigne au repos : sphère de y = 134 à 721 sur 839 px, soit **69,96 %** (affiché 0,70), identique dans les deux thèmes et les deux langues. Le premier passage mesurait 50 %. La bande de papier vide a disparu. L'expédition est centrée et le méridien entier est visible. Le récapitulatif mobile remplit la moitié haute sans bande vide. | **Levé.** Réserve : on est exactement au seuil. Une variation de chrome (cartouche sur 3 lignes, police de repli) le ferait passer dessous. Viser `map.fit.minMapHeightRatioSm` = 0.72 comme cible du moteur et garder 0.70 comme seuil du test E2E. |
+| B2 chrome mobile | Pendant une étape : cartouche, rose et `CampBar` (carnet, odomètre, recherche, longue-vue, sceau). L'enveloppe des ordres et l'onglet flottant ont disparu. Le carnet s'ouvre depuis la barre, avec une cible de 44 px. Sur desktop, l'enveloppe reste à sa place, ce qui est conforme. | **Levé.** |
+| B3 note de marge | La note est posée au-dessus de la `CampBar`, sur papier opaque cerné de `paper-400`. « Toucher pour passer » est passé dans le cartouche résolu. Plus aucun chevauchement avec la carte ou la barre, en FR comme en EN (`pixel-*-05a`). | **Levé**, sous trois réserves « à corriger » (R1 à R3). |
+
+### Corrections annexes
+
+| Point | Constat | Statut |
+|---|---|---|
+| Contour à l'encre du palier (C1) | Burkina Faso (Confins) est cerné d'outremer, la Côte d'Ivoire et le Bénin (Sentier) de vert-de-gris, en Atlas comme en Nocturne. Le palier se lit sur la carte et ne se confond plus avec la longue-vue. | Conforme. |
+| Longue-vue (C2) | Plus de lavis : le Nocturne n'éclaircit plus les terres. La caméra recule bien à k ≈ 1,2 sur desktop et revient au repos sur mobile. | Partiellement conforme : voir R4. |
+| Odomètre (C8) | 28 px sur desktop (`type-odometer`). Sur mobile, environ 22 px dans la `CampBar`. | Conforme. Rouleaux toujours absents : « plus tard ». |
+| Séparateur des milliers (C10) | « Renommée 22 674 » et « 17 459 km » en FR, « 17,459 » et « 22,674 » en EN. | Conforme sur le principe : voir R5 pour le rendu en Plex Mono. |
+
+### Réserves (à corriger, non bloquantes)
+
+| # | Écran | Constat | Règle | Correction proposée |
+|---|---|---|---|---|
+| R1 | Note de marge, `sm` | `-webkit-line-clamp: 4` est posé sur l'élément qui porte le padding : la moitié haute de la 5e ligne (« aussi Haïti et Vanuatu ») déborde dans le padding bas, sous le filet (`crop-note-fr`). | §4 (net, sans bavure d'interface) | Mettre le clamp sur un `<span>` intérieur, avec `display: -webkit-box`, `overflow: hidden` et `max-height: calc(4 × 20px)`, et laisser le padding sur le conteneur. |
+| R2 | Note de marge : fausse piste | À 4 lignes, l'explication est coupée avant sa chute (« … mais… »), et le texte complet n'est disponible nulle part : le carnet affiche seulement « fausse piste ». | §6.14, §10 (le résultat est annoncé) | Dans le carnet, la ligne de l'étape en fausse piste porte l'explication complète en `type-small`, italique `sepia-600`. La note de marge renvoie au carnet par « suite au carnet ». Sinon, limiter `explain` à 160 caractères côté contenu. |
+| R3 | Note et carnet ouvert, `sm` | La note reste au premier plan **par-dessus** le carnet ouvert et masque les ordres de mission (`pixel-nocturne-en-06`). | §6.14 (une seule à la fois), §6.7 | Ouvrir le carnet ferme la note (ou la masque tant qu'il est ouvert). Le carnet passe au-dessus de la note dans l'empilement. |
+| R4 | Longue-vue | Le rendu trace en tirets `ink-700` **chaque frontière** des pays des sous-régions indiquées, et non le contour extérieur de la sous-région. Pour « un pays sans accès à la mer », presque toute l'Afro-Eurasie se couvre de frontières épaisses (`spy-pixel-atlas-4000`). La carte s'alourdit, et seule une différence de couleur de trait (encre contre sépia) distingue la zone indiquée. | §1.3 (Calme), §5.4 | Fusionner chaque sous-région (`topojson.merge` sur les unités de la sous-région) et ne tracer que **son contour extérieur** : 1,5 px, `ink-700`, tirets 6-3. Les frontières intérieures restent en sépia. Token `map.countryState.hint.width` = 1.5. |
+| R5 | Récapitulatif FR | « 17 459 km » en IBM Plex Mono : l'espace insécable occupe une pleine chasse de chiffre, et l'écart ressemble à une double espace (`pixel-atlas-fr-08`). | §3 (chiffres d'instrument) | Composer chaque groupe de chiffres dans son propre `<span>`, séparé par une marge de `0.3ch`, sans caractère d'espace, ou utiliser U+202F en vérifiant qu'il existe dans le sous-ensemble Plex Mono. Même traitement dans l'odomètre. |
+| R6 | Récapitulatif | Le cadrage de la route ignore les bords : le camp 2 (Brésil) est coupé à gauche sur mobile, et l'Asie passe sous le panneau sur desktop. | §5.1, §6.10 | `flyToBounds` sur l'emprise de la route avec les insets mesurés (le panneau compte comme inset droit sur `lg` et comme inset bas sur `sm`). |
+
+Restent ouverts, comme indiqué dans le suivi du Tech Lead : C3 (ordre de la chorégraphie), C4 (tampons sous 48 px), C5 (palier au passeport), C6 (carte sur l'écran de défi), C7 en desktop (barre translucide et ombre en dur), C11 (feuille basse du carnet), et la section « plus tard ».
+
+### Verdict final du portail
+
+**⚠️ Validé sous réserve : le portail AD de la phase 2 est franchi.**
+
+Les trois bloquants sont levés et vérifiés sur captures régénérées, dans les deux thèmes et les deux langues. La carte remplit 70 % du portrait, le chrome mobile est réduit aux trois instruments, et la note de marge est lisible. Le palier se lit de nouveau sur la carte. Les réserves R1 à R6 et les points C3 à C6 doivent être soldés **avant le portail de la phase 3**, où ils seront revérifiés sur les mêmes captures (`pixel-*-02`, `-05a`, `-06`, `spy-*`, `-08`). C3 (chorégraphie) et R4 (longue-vue) sont prioritaires, car ils touchent la lecture du jeu.
