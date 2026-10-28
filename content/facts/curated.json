@@ -1,0 +1,300 @@
+{
+  "$description": "Hand-curated facts with their source. Every list is checked by qa-balance before use (verified: date). Edit only with a source.",
+  "retrieved": "2026-10-28",
+  "facts": {
+    "landlocked": {
+      "iso3": [
+        "AFG",
+        "AND",
+        "ARM",
+        "AUT",
+        "AZE",
+        "BDI",
+        "BFA",
+        "BLR",
+        "BOL",
+        "BTN",
+        "BWA",
+        "CAF",
+        "CHE",
+        "CZE",
+        "ETH",
+        "HUN",
+        "KAZ",
+        "KGZ",
+        "LAO",
+        "LIE",
+        "LSO",
+        "LUX",
+        "MDA",
+        "MKD",
+        "MLI",
+        "MNG",
+        "MWI",
+        "NER",
+        "NPL",
+        "PRY",
+        "RWA",
+        "SMR",
+        "SRB",
+        "SSD",
+        "SVK",
+        "SWZ",
+        "TCD",
+        "TJK",
+        "TKM",
+        "UGA",
+        "UZB",
+        "VAT",
+        "ZMB",
+        "ZWE"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Landlocked_country",
+      "note": "Caspian Sea countries (AZE, KAZ, TKM) are landlocked: the Caspian is not connected to the ocean."
+    },
+    "doubleLandlocked": {
+      "iso3": ["LIE", "UZB"],
+      "source": "https://en.wikipedia.org/wiki/Landlocked_country#Doubly_landlocked_countries"
+    },
+    "drivesOnLeft": {
+      "iso3": [
+        "ATG",
+        "AUS",
+        "BGD",
+        "BHS",
+        "BRB",
+        "BRN",
+        "BTN",
+        "BWA",
+        "CYP",
+        "DMA",
+        "FJI",
+        "GBR",
+        "GRD",
+        "GUY",
+        "IDN",
+        "IND",
+        "IRL",
+        "JAM",
+        "JPN",
+        "KEN",
+        "KIR",
+        "KNA",
+        "LCA",
+        "LKA",
+        "LSO",
+        "MDV",
+        "MLT",
+        "MOZ",
+        "MUS",
+        "MWI",
+        "MYS",
+        "NAM",
+        "NPL",
+        "NRU",
+        "NZL",
+        "PAK",
+        "PNG",
+        "SGP",
+        "SLB",
+        "SUR",
+        "SWZ",
+        "SYC",
+        "THA",
+        "TLS",
+        "TON",
+        "TTO",
+        "TUV",
+        "TZA",
+        "UGA",
+        "VCT",
+        "WSM",
+        "ZAF",
+        "ZMB",
+        "ZWE"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic",
+      "note": "Samoa switched to the left in 2009. Wikidata P1622 is only used as a cross-check (incomplete)."
+    },
+    "monarchy": {
+      "iso3": [
+        "AND",
+        "ARE",
+        "ATG",
+        "AUS",
+        "BEL",
+        "BHR",
+        "BHS",
+        "BLZ",
+        "BRN",
+        "BTN",
+        "CAN",
+        "DNK",
+        "ESP",
+        "GBR",
+        "GRD",
+        "JAM",
+        "JOR",
+        "JPN",
+        "KHM",
+        "KNA",
+        "KWT",
+        "LCA",
+        "LIE",
+        "LSO",
+        "LUX",
+        "MAR",
+        "MCO",
+        "MYS",
+        "NLD",
+        "NOR",
+        "NZL",
+        "OMN",
+        "PNG",
+        "QAT",
+        "SAU",
+        "SLB",
+        "SWE",
+        "SWZ",
+        "THA",
+        "TON",
+        "TUV",
+        "VAT",
+        "VCT"
+      ],
+      "source": "https://en.wikipedia.org/wiki/List_of_current_monarchies",
+      "note": "Commonwealth realms included; Andorra is a co-principality. To re-check before each content release (Caribbean realms may become republics)."
+    }
+  },
+  "overrides": {
+    "GMB": {
+      "highestPointM": {
+        "value": 53,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_the_Gambia",
+        "note": "unnamed point; missing in Wikidata"
+      }
+    },
+    "KIR": {
+      "crossesEquator": {
+        "value": true,
+        "source": "https://en.wikipedia.org/wiki/Equator#Equatorial_countries",
+        "note": "The equator runs between the atolls of the Gilbert and Line Islands."
+      }
+    },
+    "MDV": {
+      "crossesEquator": {
+        "value": true,
+        "source": "https://en.wikipedia.org/wiki/Equator#Equatorial_countries",
+        "note": "The equator runs through the Equatorial Channel, between the atolls."
+      }
+    },
+    "STP": {
+      "crossesEquator": {
+        "value": true,
+        "source": "https://en.wikipedia.org/wiki/Equator#Equatorial_countries",
+        "note": "The equator crosses Ilhéu das Rolas, absent from Natural Earth 10m."
+      }
+    }
+  },
+  "verified": null,
+  "memberOf": {
+    "$description": "Small, well-known memberships curated by hand (Wikidata misses the Kingdom of the Netherlands, lists Australia in ASEAN, keeps Angola in OPEC).",
+    "eu": {
+      "iso3": [
+        "AUT",
+        "BEL",
+        "BGR",
+        "CYP",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GRC",
+        "HRV",
+        "HUN",
+        "IRL",
+        "ITA",
+        "LTU",
+        "LUX",
+        "LVA",
+        "MLT",
+        "NLD",
+        "POL",
+        "PRT",
+        "ROU",
+        "SVK",
+        "SVN",
+        "SWE"
+      ],
+      "source": "https://european-union.europa.eu/principles-countries-history/eu-countries_en"
+    },
+    "nato": {
+      "iso3": [
+        "ALB",
+        "BEL",
+        "BGR",
+        "CAN",
+        "CZE",
+        "DEU",
+        "DNK",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GRC",
+        "HRV",
+        "HUN",
+        "ISL",
+        "ITA",
+        "LTU",
+        "LUX",
+        "LVA",
+        "MKD",
+        "MNE",
+        "NLD",
+        "NOR",
+        "POL",
+        "PRT",
+        "ROU",
+        "SVK",
+        "SVN",
+        "SWE",
+        "TUR",
+        "USA"
+      ],
+      "source": "https://www.nato.int/cps/en/natohq/nato_countries.htm"
+    },
+    "asean": {
+      "iso3": ["BRN", "IDN", "KHM", "LAO", "MMR", "MYS", "PHL", "SGP", "THA", "TLS", "VNM"],
+      "source": "https://asean.org/member-states/",
+      "note": "Timor-Leste admitted in October 2025."
+    },
+    "opec": {
+      "iso3": ["ARE", "COG", "DZA", "GAB", "GNQ", "IRN", "IRQ", "KWT", "LBY", "NGA", "SAU", "VEN"],
+      "source": "https://www.opec.org/opec_web/en/about_us/25.htm",
+      "note": "Angola left in January 2024."
+    }
+  },
+  "metroOverrides": {
+    "$description": "Non-geometric facts whose value depends on overseas parts: the metropolitan reading (prompt-forge rejects prompts that change between readings).",
+    "NLD": {
+      "highestPointM": {
+        "value": 322,
+        "source": "https://en.wikipedia.org/wiki/Vaalserberg",
+        "note": "Whole country: Mount Scenery, Saba (887 m per Wikidata 870)."
+      }
+    }
+  },
+  "salienceItem": {
+    "$description": "Item whose sitelinks measure notoriety when the ISO item is not the one people know.",
+    "NLD": {
+      "qid": "Q55",
+      "sitelinks": null,
+      "note": "P298 NLD points to the Kingdom of the Netherlands (Q29999); notoriety is that of the Netherlands (Q55)."
+    }
+  }
+}

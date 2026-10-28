@@ -1,0 +1,23 @@
+{
+  "name": "@meridian/facts-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "snapshot": "tsx src/snapshot.ts",
+    "build": "tsx src/build.ts",
+    "check": "tsx src/build.ts --check",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@meridian/content-schema": "workspace:*",
+    "@meridian/geo": "workspace:*",
+    "d3-geo": "^3.1.1",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.0",
+    "@types/geojson": "^7946.0.16",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5"
+  }
+}
