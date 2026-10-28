@@ -172,6 +172,28 @@ Découvertes : le Vatican Natural Earth 10m (~110 m) est sous le pixel même à 
 
 ---
 
+### État de la phase 3 (2026-10-28)
+
+**Livré et en ligne** (https://meridian.cardormedia.com) :
+- 3.1 PWA : installable, jeu entièrement hors-ligne après une visite (service worker généré au build, test E2E en coupant le réseau).
+- 3.2 Carte postale 1080×1350 partagée en image (feuille de partage) ou téléchargée.
+- 3.3 Accessibilité : 0 violation axe critique/sérieuse sur les 5 écrans (desktop et mobile), étape jouable au clavier seul (E2E).
+- 3.4 Son synthétisé (désactivé par défaut) et vibrations (camp, tampon).
+- 3.5 Onboarding : premier carnet MER-0001 proposé au nouveau joueur, note de geste à l'étape 1.
+- 3.6 Télémétrie anonyme (opt-out, Do Not Track) et résumé protégé `GET /api/telemetry/summary` ; kit de playtest `docs/playtest.md`, seuils d'alerte `docs/reviews/mvp-qa.md`.
+- 3.7 Matière allégée automatique (< 45 fps) ; budgets JS ≤ 180 Ko gz et géo ≤ 80 Ko gz en CI.
+- 3.8 Page « À propos » (vie privée, sources, licences, politique géographique) ; `docs/licenses.md`.
+- 3.9 Catalogue de 50 expéditions ; sauvegarde/restauration du volume testée (`deploy/backup.sh`, `restore.sh`).
+- Revues : QA MVP (contenu prêt pour le playtest), AD MVP (bloquants corrigés, signature en vérification).
+
+**Mesures** : LCP en production (4G simulée, CPU ×4) 2,0–3,1 s contre 6,4–9,5 s avant la coquille statique ; JS initial 159 Ko gz ; 43 tests E2E dont performance (p95 16,7 ms).
+
+**Reste, hors de portée de l'équipe logicielle** :
+- Playtests humains (≥ 15 joueurs × 10 expéditions, protocole `docs/playtest.md`) → critères « Jouable », « Précis », carte postale « partageable ».
+- Matrice d'appareils réels (Safari iOS 17+, Chrome Android 12+, desktop) → critère « Robuste » ; VoiceOver / NVDA.
+- Règle de cache Cloudflare pour `meridian.cardormedia.com/assets/*` (fichiers immuables, aujourd'hui `DYNAMIC`) : gain attendu sur le LCP au premier chargement ; non appliquée (modification de la zone partagée à valider par le propriétaire).
+- Publier la bibliothèque v1 (`content/library/published.json`) après le playtest.
+
 ## Phase 4 — v1.1 « L'encre sèche »
 
 | # | Tâche | Resp. |
