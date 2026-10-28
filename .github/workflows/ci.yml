@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, types, unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format:check
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+
+  e2e:
+    name: E2E (Playwright, production server)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @meridian/web exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: |
+            apps/web/playwright-report
+            apps/web/test-results
+          retention-days: 14
+
+  geo:
+    name: Geo data is reproducible
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - uses: actions/cache@v4
+        with:
+          path: tools/geo-pipeline/.cache
+          key: natural-earth-${{ hashFiles('tools/geo-pipeline/sources.json') }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm geo:check
+
+  docker:
+    name: Docker image builds and is healthy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f deploy/Dockerfile --build-arg SOURCE_COMMIT=${{ github.sha }} -t meridian:ci .
+      - name: Smoke test
+        run: |
+          docker run -d --name meridian -p 3000:3000 meridian:ci
+          for i in $(seq 1 20); do curl -fsS localhost:3000/api/health && break; sleep 1; done
+          curl -fsS localhost:3000/api/health | grep '"status":"ok"'
+          curl -fsSI localhost:3000/ | grep -i 'cache-control: no-cache'
+          docker stop meridian

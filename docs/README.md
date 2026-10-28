@@ -10,6 +10,7 @@ Un jeu de géographie, à jouer quand on veut, où l'on répond en **plantant un
 | 4a | [gameplay-systems.md](gameplay-systems.md) | Systems Designer | Game Designer, QA/Balance, Tech Lead |
 | 4b | [data-model.md](data-model.md) | Systems Designer + Tech Lead | QA/Balance |
 | 5 | [development-plan.md](development-plan.md) | Tech Lead | tous |
+| — | [deployment.md](deployment.md) | Tech Lead | — |
 
 Agents : `.claude/agents/` (art-director, game-designer, systems-designer, tech-lead, qa-balance).
 Skills : `.claude/skills/` (architecture, design-system, gameplay-systems, data-model, map-interaction).

@@ -16,8 +16,11 @@ export default defineConfig({
     },
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
   ],
+  // Production-like: the real Hono server (CSP, cache headers) serving the built app.
+  // Requires `pnpm build` first (CI does it; `pnpm test:e2e` at the root too).
   webServer: {
-    command: `pnpm exec vite preview --port ${port} --strictPort`,
+    command: 'node ../server/dist/server.mjs',
+    env: { STATIC_DIR: 'dist', PORT: String(port), HOST: '127.0.0.1' },
     port,
     reuseExistingServer: !process.env.CI,
   },

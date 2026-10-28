@@ -48,6 +48,24 @@ Agents responsables : **TL** Tech Lead · **AD** Art Director · **GD** Game Des
 
 ---
 
+### État de la phase 0 (2026-10-28)
+| # | État | Notes |
+|---|---|---|
+| 0.1 | ✅ | pnpm workspace ; frontières via `no-restricted-imports` |
+| 0.2 | ✅ | Vite 8 + React 19, Vitest 5, Playwright (contre le serveur de prod), CI GitHub Actions (4 jobs) |
+| 0.3 | ✅ | `tokens.json` → `tokens.css` (Atlas + Nocturne), contrastes testés |
+| 0.4 | ✅ | Natural Earth 5.1.2 épinglé, 110m 36 Ko gz / 50m 221 Ko gz / micro 20 Ko gz, reproductible (`geo:check`) |
+| 0.5 | ✅ | 195 entités ; politique v1 (`docs/geo-policy-changelog.md`) — décision Taïwan encore ouverte |
+| 0.6 | ✅ | polices Fontsource (OFL), textures procédurales provisoires, planche d'épreuve à `/` |
+| 0.7 | ✅ | image unique (63 Mo), healthcheck, arrêt propre, volume `/data` testé |
+| 0.8 | ⏳ | **à faire par toi dans Coolify** — pas à pas : `docs/deployment.md` §3 |
+| 0.9 | ⏳ | **à faire par toi dans Cloudflare** — `docs/deployment.md` §4, vérification §5 |
+| 0.10 | ✅ | Hono + SQLite retenu |
+
+Découverte en phase 0 : le quantum de coordonnées passe de 0,01° à **0,001°** (aucun point de la grille à 0,01° ne tombe dans le Vatican).
+
+---
+
 ## Phase 1 — Tranche verticale carte (le cœur de l'identité)
 
 | # | Tâche | Resp. |

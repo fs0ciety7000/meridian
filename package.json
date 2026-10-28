@@ -10,7 +10,7 @@
     "dev": "pnpm --filter @meridian/web dev",
     "build": "pnpm --filter @meridian/design-tokens build && pnpm --filter @meridian/web build && pnpm --filter @meridian/server build",
     "test": "vitest run",
-    "test:e2e": "pnpm --filter @meridian/web test:e2e",
+    "test:e2e": "pnpm build && pnpm --filter @meridian/web test:e2e",
     "typecheck": "pnpm -r --parallel typecheck",
     "lint": "eslint .",
     "format": "prettier --write .",

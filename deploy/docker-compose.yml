@@ -1,0 +1,19 @@
+# Local production-like run:  docker compose -f deploy/docker-compose.yml up --build
+# Coolify uses deploy/Dockerfile directly (see docs/deployment.md).
+services:
+  meridian:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+      args:
+        SOURCE_COMMIT: ${SOURCE_COMMIT:-local}
+    environment:
+      APP_VERSION: ${APP_VERSION:-local}
+    ports:
+      - '3000:3000'
+    volumes:
+      - meridian-data:/data
+    restart: unless-stopped
+
+volumes:
+  meridian-data:

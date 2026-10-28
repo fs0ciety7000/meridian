@@ -302,7 +302,7 @@ Choisir/générer une expédition (hors-ligne OK) → jouer (engine local, raret
 Le serveur Hono sert `/api/*` **et** les fichiers statiques du front (en-têtes de cache appropriés, voir 7.4). **Un seul conteneur applicatif** : simple à opérer sur Coolify.
 
 ### 7.2 Coolify (`coolify.fs0ciety.org`)
-- Ressource **Docker Compose** (ou Dockerfile) branchée sur le dépôt GitHub, déploiement automatique sur `main` (webhook / GitHub App Coolify). Les tests tournent dans GitHub Actions ; Coolify ne fait que construire et déployer.
+- Phases 0–3 : ressource **Dockerfile** (`deploy/Dockerfile`) branchée sur le dépôt GitHub, déploiement automatique sur `main` (webhook / GitHub App Coolify). Phase 4 : passage en **Docker Compose** pour ajouter le sidecar Litestream. Les tests tournent dans GitHub Actions ; Coolify ne fait que construire et déployer. Procédure pas à pas : `docs/deployment.md`.
 - **Volume persistant** `/data` → `meridian.db` (SQLite, WAL).
 - **Sidecar Litestream** (même compose) : réplication continue de `meridian.db` vers un bucket **Cloudflare R2** ; restauration automatique au démarrage si la base est absente.
 - Variables (secrets Coolify) : `JWT_SECRET`, `DATABASE_PATH=/data/meridian.db`, `PUBLIC_ORIGIN`, `R2_*` (Litestream).
