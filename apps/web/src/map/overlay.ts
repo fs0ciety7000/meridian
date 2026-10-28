@@ -5,6 +5,7 @@ import type { View } from './render';
 
 const ROUTE = tokens.map.route;
 const MERIDIAN = tokens.map.meridian;
+const INVALID = tokens.camp.invalidMark;
 
 export type CampState = 'provisional' | 'planted' | 'invalid' | 'historic' | 'start';
 
@@ -66,6 +67,17 @@ function campNode(camp: CampMarker): SVGGElement {
   flag.append(el('path', { class: 'atlas-camp__pennant', d: 'M0.75,-27 L15,-22 L0.75,-17 Z' }));
   if (camp.state === 'invalid')
     flag.append(el('path', { class: 'atlas-camp__tear', d: 'M7,-25 L9,-21 L6.5,-19' }));
+  if (camp.state === 'invalid') {
+    // The state must not rest on a shade of grey (1.39:1): an ink cross at the foot.
+    const h = INVALID.size / 2;
+    g.append(
+      el('path', {
+        class: 'atlas-camp__cross',
+        d: `M${-h},${-h - 6}L${h},${h - 6}M${h},${-h - 6}L${-h},${h - 6}`,
+        transform: 'translate(-8,0)',
+      }),
+    );
+  }
   pole.append(flag);
   g.append(pole);
   g.append(el('circle', { class: 'atlas-camp__foot', r: 1.6 }));
@@ -109,6 +121,21 @@ function legTicks(from: [number, number], to: [number, number], stepKm: number) 
     ]);
   }
   return ticks;
+}
+
+/**
+ * Great circle sampled every `stepKm`: paths are projected once at scale 1 and then
+ * magnified, so a densified line stays a curve up to ×40 (review phase 1).
+ */
+export function densify(
+  from: [number, number],
+  to: [number, number],
+  stepKm = ROUTE.sampleKm,
+): [number, number][] {
+  const km = geoDistance(from, to) * EARTH_RADIUS_KM;
+  const n = Math.max(1, Math.ceil(km / stepKm));
+  const at = geoInterpolate(from, to);
+  return Array.from({ length: n + 1 }, (_, i) => at(i / n) as [number, number]);
 }
 
 export interface HaloTarget {
@@ -206,7 +233,7 @@ export class Overlay {
     }
     const line = {
       type: 'LineString' as const,
-      coordinates: Array.from({ length: 37 }, (_, i) => [lon, -90 + i * 5]),
+      coordinates: Array.from({ length: 361 }, (_, i) => [lon, -90 + i * 0.5]),
     };
     this.meridianPath.setAttribute('d', geoPath(this.projection)(line) ?? '');
     this.computeRouteMarks();
@@ -266,7 +293,10 @@ export class Overlay {
       const isLast = i === this.legs.length - 1;
       const end =
         isLast && lastProgress < 1 ? geoInterpolate(leg.from, leg.to)(lastProgress) : leg.to;
-      const d = path({ type: 'LineString', coordinates: [leg.from, end] });
+      const d = path({
+        type: 'LineString',
+        coordinates: densify(leg.from, end as [number, number]),
+      });
       const cls = leg.ghost
         ? 'atlas-route__leg atlas-route__leg--ghost'
         : isLast

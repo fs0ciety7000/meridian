@@ -215,6 +215,13 @@
   stroke-width: 1.5;
 }
 
+.atlas-camp__cross {
+  fill: none;
+  stroke: var(--color-ink-700);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
 .atlas-camp__disc {
   fill: var(--color-paper-100);
   stroke: var(--color-ink-900);

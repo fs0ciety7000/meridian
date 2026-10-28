@@ -162,7 +162,7 @@ export function MapLab() {
         onRouteProgress={(km, done) => setTraced(done ? 0 : km)}
       />
 
-      <header className={styles.cartouche}>
+      <header className={styles.cartouche} data-map-chrome>
         <p className={styles.overline}>Laboratoire · Phase 1</p>
         <h1 className={styles.title}>Planter un camp</h1>
         <p className={styles.hint}>
@@ -170,22 +170,29 @@ export function MapLab() {
         </p>
       </header>
 
-      <div className={styles.searchBox}>
+      <div className={styles.searchBox} data-map-chrome>
         <CountrySearch names={names} onSelect={onSearch} />
       </div>
 
-      <div className={styles.compass}>
+      <div className={styles.compass} data-map-chrome>
         <CompassRose onReset={() => engine.current?.resetView()} />
       </div>
 
-      <section className={styles.odometer} aria-label="Distance parcourue">
+      <section className={styles.odometer} aria-label="Distance parcourue" data-map-chrome>
         <span className={styles.odometerValue}>{fmt.format(Math.round(odometerKm))}</span>
         <span className={styles.unit}> km</span>
       </section>
 
-      <div className={styles.scale}>{camera && <ScaleBar kmPerPx={camera.kmPerPx} />}</div>
+      <div className={styles.scale} data-map-chrome>
+        {camera && <ScaleBar kmPerPx={camera.kmPerPx} />}
+      </div>
 
-      <div className={styles.toggles} role="group" aria-label="Réglages du laboratoire">
+      <div
+        className={styles.toggles}
+        role="group"
+        aria-label="Réglages du laboratoire"
+        data-map-chrome
+      >
         <button
           type="button"
           className={styles.toggle}
@@ -216,7 +223,7 @@ export function MapLab() {
         </button>
       </div>
 
-      <section className={styles.campBar} aria-live="polite">
+      <section className={styles.campBar} aria-live="polite" data-map-chrome>
         <div className={styles.campInfo}>
           {pick ? (
             <>

@@ -233,6 +233,7 @@ export class AtlasMapEngine {
   }
 
   setMeridian(lon: number | null) {
+    this.meridianLon = lon;
     this.overlay.setMeridian(lon);
     this.overlay.update(this.view);
   }
@@ -461,6 +462,21 @@ export class AtlasMapEngine {
   }
 
   private pointer: [number, number] | null = null;
+  private meridianLon: number | null = null;
+
+  /** Interface chrome over the map (elements marked `data-map-chrome`), in map coordinates. */
+  private chromeRects() {
+    const host = this.host.getBoundingClientRect();
+    return [...document.querySelectorAll<HTMLElement>('[data-map-chrome]')].map((el) => {
+      const r = el.getBoundingClientRect();
+      return {
+        x: r.left - host.left - 6,
+        y: r.top - host.top - 6,
+        w: r.width + 12,
+        h: r.height + 12,
+      };
+    });
+  }
 
   /** Halos are invisible at rest; they appear within reach of the pointer (design-system §5.4 bis). */
   private revealHalos() {
@@ -520,6 +536,8 @@ export class AtlasMapEngine {
         oceanLabels: OCEANS,
         projection: this.projection,
         worldWidth: this.worldWidth,
+        meridianLon: this.meridianLon,
+        occlusions: fast ? [] : this.chromeRects(),
       });
       if (!fast) this.freeze();
     }

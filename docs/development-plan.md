@@ -91,6 +91,22 @@ Découvertes en phase 0 : Coolify injecte `HOST=0.0.0.0` (le serveur lit donc `L
 
 ---
 
+### État de la phase 1 (2026-10-28) — portail franchi
+| Critère | État | Preuve |
+|---|---|---|
+| Planter du premier coup au doigt : Malte, Singapour, Tuvalu, Vatican (loupe), cap Horn, Lesotho, Gambie | ✅ | `apps/web/e2e/map.spec.ts` (desktop + mobile) |
+| Antiméridien Fidji → Samoa | ✅ | rotation automatique de la projection (`bestCenterLon`) + E2E |
+| Clavier seul (Bhoutan) | ✅ | E2E |
+| Performance de geste | ✅ | `perf.spec.ts` : JS 0,3–0,6 ms/image (CPU ×4) ; p95 16,7–16,8 ms en rastérisation logicielle |
+| Revue AD | ✅ | `docs/reviews/phase-1-art-direction.md` (2 bloquants levés, 4 points soldés) |
+| Décision de projection | ✅ | **Equal Earth** (AD) |
+
+Découvertes : le Vatican Natural Earth 10m (~110 m) est sous le pixel même à ×40 → halos de micro-États qui recalent sur le point de visée ; Natural Earth 50m n'a pas l'îlot du cap Horn → recalage côtier tolérant aux pixels partiels ; le rendu Canvas sans GPU de la CI impose des bitmaps gelés pendant les gestes.
+
+**Reporté au portail de la phase 2 (bloquant, AD)** : `fitInsets` et carte ≥ 70 % de la hauteur en portrait, chrome mobile réduit à cartouche + `CampBar` (odomètre intégré) + rose. À valider aussi en phase 2 avec le Game Designer : halos autour des îles non souveraines (au survol, ils désignent encore les seuls États).
+
+---
+
 ## Phase 2 — Expéditions jouables (hors-ligne)
 
 | # | Tâche | Resp. |

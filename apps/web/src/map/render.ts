@@ -109,7 +109,21 @@ export interface DrawOptions {
   projection: GeoProjection;
   /** Width of the projected sphere at scale 1, to size labels. */
   worldWidth?: number;
+  /** Labels keep clear of the meridian of the expedition. */
+  meridianLon?: number | null;
+  /** Screen rectangles covered by interface chrome: no label goes underneath. */
+  occlusions?: Rect[];
 }
+
+export interface Rect {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+const overlaps = (a: Rect, b: Rect) =>
+  a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
 
 /** Base cartography (design-system §5.2), painted bottom to top. */
 export function drawBase(
@@ -211,7 +225,18 @@ export function drawBase(
   ctx.lineWidth = 1 * px;
   ctx.stroke(statics.sphere);
 
-  if (!opts.fast) drawLabels(ctx, view, pal, opts);
+  if (!opts.fast) {
+    // Land test in screen space against the projected land paths (labels must sit at sea).
+    const isLand = (sx: number, sy: number) => {
+      ctx.setTransform(dpr * k, 0, 0, dpr * k, dpr * x, dpr * y);
+      const hit = [base.land, base.unplantable, micro.land, micro.unplantable].some((p) =>
+        ctx.isPointInPath(p, sx * dpr, sy * dpr),
+      );
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return hit;
+    };
+    drawLabels(ctx, view, pal, opts, isLand);
+  }
 }
 
 const PARALLEL_LABELS: [number, string][] = [
@@ -226,7 +251,13 @@ const PARALLEL_LABELS: [number, string][] = [
  * Hydrography and remarkable parallels in italics (design-system §5.2–5.3): AA contrast
  * colour, a sea-coloured halo, and never a label cut by the screen edge.
  */
-function drawLabels(ctx: CanvasRenderingContext2D, view: View, pal: MapPalette, opts: DrawOptions) {
+function drawLabels(
+  ctx: CanvasRenderingContext2D,
+  view: View,
+  pal: MapPalette,
+  opts: DrawOptions,
+  isLand: (sx: number, sy: number) => boolean,
+) {
   const { k, x, y, dpr, width, height } = view;
   const L = pal.style.label;
   const size = Math.round(
@@ -243,36 +274,50 @@ function drawLabels(ctx: CanvasRenderingContext2D, view: View, pal: MapPalette, 
     const p = opts.projection(lonLat);
     return p ? ([p[0] * k + x, p[1] * k + y] as const) : null;
   };
-  const fits = (sx: number, sy: number, w: number, align: 'center' | 'left') => {
-    const left = align === 'center' ? sx - w / 2 : sx;
-    return left >= 4 && left + w <= width - 4 && sy >= size && sy <= height - size;
+  const placed: Rect[] = [...(opts.occlusions ?? [])];
+  const free = (r: Rect) =>
+    r.x >= 4 &&
+    r.x + r.w <= width - 4 &&
+    r.y >= 2 &&
+    r.y + r.h <= height - 2 &&
+    !placed.some((o) => overlaps(o, r));
+  const draw = (text: string, r: Rect) => {
+    placed.push(r);
+    ctx.strokeText(text, r.x, r.y + r.h / 2);
+    ctx.fillText(text, r.x, r.y + r.h / 2);
   };
+  ctx.textAlign = 'left';
 
+  // Oceans: keep clear of the meridian (half the label width + 8 px).
   ctx.font = `italic 400 ${size}px ${pal.font.map}`;
   spaced.letterSpacing = '0.18em';
-  ctx.textAlign = 'center';
   for (const label of opts.oceanLabels) {
     const p = screen(label.at);
     if (!p) continue;
     const w = ctx.measureText(label.text).width;
-    if (!fits(p[0], p[1], w, 'center')) continue;
-    ctx.strokeText(label.text, p[0], p[1]);
-    ctx.fillText(label.text, p[0], p[1]);
+    let cx = p[0];
+    if (opts.meridianLon != null) {
+      const m = screen([opts.meridianLon, label.at[1]]);
+      if (m && Math.abs(cx - m[0]) < w / 2 + 8) cx = m[0] + Math.sign(cx - m[0] || 1) * (w / 2 + 8);
+    }
+    const r = { x: cx - w / 2, y: p[1] - size * 0.7, w, h: size * 1.4 };
+    if (free(r)) draw(label.text, r);
   }
 
-  // Parallels: label at the first visible point of the line from the left.
-  ctx.font = `italic 400 ${Math.max(L.minPx, size - 2)}px ${pal.font.map}`;
+  // Parallels: the first stretch of open sea along the line, clear of labels and chrome.
+  const ps = Math.max(L.minPx, size - 2);
+  ctx.font = `italic 400 ${ps}px ${pal.font.map}`;
   spaced.letterSpacing = '0.08em';
-  ctx.textAlign = 'left';
   for (const [lat, text] of PARALLEL_LABELS) {
     const w = ctx.measureText(text).width;
     for (let lon = -180; lon <= 180; lon += 2.5) {
       const p = screen([lon, lat]);
-      if (!p || p[0] < 12) continue;
-      if (fits(p[0] + 4, p[1] - size * 0.7, w, 'left')) {
-        ctx.strokeText(text, p[0] + 4, p[1] - size * 0.7);
-        ctx.fillText(text, p[0] + 4, p[1] - size * 0.7);
-      }
+      if (!p) continue;
+      const r = { x: p[0] + 4, y: p[1] - ps * 1.5, w, h: ps * 1.4 };
+      if (!free(r)) continue;
+      const mid = r.y + r.h / 2;
+      if ([0, 0.5, 1].some((f) => isLand(r.x + f * r.w, mid))) continue;
+      draw(text, r);
       break;
     }
   }

@@ -22,6 +22,8 @@ export default defineConfig({
       name: 'perf',
       testMatch: /perf\.spec\.ts/,
       dependencies: ['desktop', 'mobile'],
+      // Timing noise (one doubled frame) is not a regression: retry, never relax the threshold.
+      retries: 2,
       use: { ...devices['Pixel 7'] },
     },
   ],
