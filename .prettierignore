@@ -4,3 +4,7 @@ content/geo/*.json
 content/geo/*.topo.json
 docs
 .claude
+content/facts/facts.json
+content/facts/wikidata-snapshot.json
+content/library/library-v*.json
+content/library/catalog.json

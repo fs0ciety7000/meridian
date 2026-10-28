@@ -1,0 +1,25 @@
+{
+  "catalogNumber": 2,
+  "title": {
+    "fr": "Le tour de l’Afrique",
+    "en": "Around Africa"
+  },
+  "theme": "Afrique",
+  "difficulty": "easy",
+  "start": "dakar",
+  "meridianLon": 20,
+  "legs": [
+    "society.french",
+    "water.landlocked",
+    "flag.black",
+    "climate.southern",
+    "borders.six-plus",
+    "society.commonwealth"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    }
+  ],
+  "designNote": "Toutes les consignes ont des réponses africaines : on peut boucler le continent sans le quitter."
+}

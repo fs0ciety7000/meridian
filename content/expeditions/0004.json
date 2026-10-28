@@ -1,0 +1,25 @@
+{
+  "catalogNumber": 4,
+  "title": {
+    "fr": "Mers du Sud",
+    "en": "Southern Seas"
+  },
+  "theme": "Pacifique",
+  "difficulty": "easy",
+  "start": "sydney",
+  "meridianLon": -175,
+  "legs": [
+    "water.island-nation",
+    "society.dollar",
+    "climate.southern",
+    "flag.red-white-blue",
+    "position.south-east",
+    "society.monarchy-left"
+  ],
+  "missions": [
+    {
+      "id": "southernSoul"
+    }
+  ],
+  "designNote": "Une boucle australe d'île en île, sans jamais remonter au nord de l'équateur."
+}

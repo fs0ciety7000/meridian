@@ -1,0 +1,35 @@
+{
+  "catalogNumber": 27,
+  "title": {
+    "fr": "Entre les tropiques",
+    "en": "Between the Tropics"
+  },
+  "theme": "Tropiques",
+  "difficulty": "expert",
+  "start": "belem",
+  "meridianLon": -20,
+  "legs": [
+    "climate.tropical-giant",
+    "flag.green-blue-no-red",
+    "borders.lone-neighbour",
+    "society.left-outside-commonwealth",
+    "relief.tropical-flatlands",
+    "position.ctx-other-continent"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    }
+  ],
+  "fallback": "water.island-right-hand",
+  "designNote": "La ceinture tropicale d'un océan à l'autre, avec un dernier saut de continent."
+}

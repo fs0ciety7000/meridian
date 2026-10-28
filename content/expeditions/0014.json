@@ -1,0 +1,31 @@
+{
+  "catalogNumber": 14,
+  "title": {
+    "fr": "L’océan Indien",
+    "en": "The Indian Ocean"
+  },
+  "theme": "Océan Indien",
+  "difficulty": "normal",
+  "start": "port-louis",
+  "meridianLon": 90,
+  "legs": [
+    "water.island-tropical",
+    "society.monarchy-left",
+    "climate.southern-tropics",
+    "flag.orange",
+    "water.island-large",
+    "society.dense"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 3
+      }
+    }
+  ],
+  "designNote": "De Maurice au Sri Lanka, les rivages de l'océan Indien ; l'orange de l'Inde attend à mi-route."
+}

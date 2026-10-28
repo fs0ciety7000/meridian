@@ -1,0 +1,32 @@
+{
+  "catalogNumber": 11,
+  "title": {
+    "fr": "L’arc du Pacifique",
+    "en": "The Pacific Arc"
+  },
+  "theme": "Pacifique",
+  "difficulty": "normal",
+  "start": "auckland",
+  "meridianLon": -150,
+  "legs": [
+    "water.island-tropical",
+    "society.dollar-republic",
+    "climate.southern-tropics",
+    "flag.southern-red-white-blue",
+    "water.island-monarchy",
+    "position.ctx-across-equator"
+  ],
+  "missions": [
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 7000
+      }
+    }
+  ],
+  "fallback": "relief.island-peaks",
+  "designNote": "Un arc d'archipels de part et d'autre de l'antiméridien, qui finit par franchir l'équateur."
+}

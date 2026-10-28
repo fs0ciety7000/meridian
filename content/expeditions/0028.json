@@ -1,0 +1,34 @@
+{
+  "catalogNumber": 28,
+  "title": {
+    "fr": "Le cartographe du vieux monde",
+    "en": "The Old World Cartographer"
+  },
+  "theme": "Eurasie",
+  "difficulty": "expert",
+  "start": "athenes",
+  "meridianLon": 50,
+  "legs": [
+    "borders.exactly-seven",
+    "flag.blue-white-only",
+    "water.landlocked-few-neighbours",
+    "society.tiny-republic",
+    "position.mid-large",
+    "relief.over-7000"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 9000
+      }
+    }
+  ],
+  "designNote": "Frontières, enclaves et micro-républiques de l'Europe à l'Asie centrale, jusqu'aux 7 000 m."
+}

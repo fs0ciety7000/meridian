@@ -91,12 +91,16 @@ function checkPrompt(p: PromptDef, input: ForgeInput, issues: Issue[]): PromptDe
 
   if (p.contextual) {
     // Every previous camp must leave enough answers, or the leg falls back (reported, not fatal).
+    // Each previous camp is paired with a real port (round robin), so `closerToPort` is
+    // judged on actual distances rather than on a port standing on the camp itself.
     const poor: string[] = [];
+    let i = 0;
     for (const [prev, e] of deps.entities) {
+      const port = input.ports.length ? input.ports[i++ % input.ports.length]!.lonLat : e.aimPoint;
       const ctx = {
         prevIso3: prev,
         prevLonLat: e.aimPoint,
-        portLonLat: e.aimPoint,
+        portLonLat: port,
         locale: 'en' as const,
       };
       if (validSet(p.predicate, deps, ctx).filter((c) => c !== prev).length < CONTEXT_MIN_ANSWERS)

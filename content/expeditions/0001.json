@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 1,
+  "title": {
+    "fr": "Premier carnet",
+    "en": "First Notebook"
+  },
+  "theme": "Initiation",
+  "difficulty": "easy",
+  "start": "rio-de-janeiro",
+  "meridianLon": -20,
+  "legs": [
+    "water.landlocked",
+    "society.drives-left",
+    "flag.red-white-blue",
+    "climate.southern",
+    "borders.six-plus",
+    "water.island-nation"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 2
+      }
+    }
+  ],
+  "designNote": "Six consignes aux réponses nombreuses et célèbres pour apprendre à planter son camp."
+}

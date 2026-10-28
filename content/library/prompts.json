@@ -1,0 +1,3418 @@
+{
+  "libraryVersion": 1,
+  "prompts": [
+    {
+      "id": "relief.over-6000",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays dont un sommet dépasse 6 000 m",
+        "en": "A country with a peak above 6,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un point culminant au-dessus de 6 000 m : seules l'Asie et les Amériques en offrent, de l'Himalaya à l'Aconcagua et au Denali.",
+        "en": "The highest point had to exceed 6,000 m: only Asia and the Americas have such peaks, from the Himalaya to Aconcagua and Denali."
+      },
+      "predicate": {
+        "fact": "highestPointM",
+        "gt": 6000
+      }
+    },
+    {
+      "id": "relief.over-5000",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays qui culmine au-delà de 5 000 m",
+        "en": "A country whose summit tops 5,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un point culminant au-dessus de 5 000 m : le Kilimandjaro (5 895 m) offre ce privilège à la Tanzanie, l'Elbrouz à la Russie.",
+        "en": "The highest point had to exceed 5,000 m: Kilimanjaro (5,895 m) gives Tanzania that honour, Mount Elbrus gives it to Russia."
+      },
+      "predicate": {
+        "fact": "highestPointM",
+        "gt": 5000
+      }
+    },
+    {
+      "id": "relief.over-7000",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays où un sommet dépasse 7 000 m",
+        "en": "A country with a peak above 7,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un sommet au-dessus de 7 000 m : tous se trouvent en Asie, de l'Hindou Kouch à l'Himalaya et au Pamir.",
+        "en": "A peak above 7,000 m was needed: every one of them is in Asia, from the Hindu Kush to the Himalaya and the Pamirs."
+      },
+      "predicate": {
+        "fact": "highestPointM",
+        "gt": 7000
+      },
+      "regional": ["AS"]
+    },
+    {
+      "id": "relief.four-thousanders",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays qui culmine entre 4 000 et 5 000 m",
+        "en": "A country topping out between 4,000 and 5,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un point culminant entre 4 000 et 5 000 m : c'est le cas de la France et de l'Italie avec le mont Blanc, mais aussi de la Malaisie ou du Guatemala.",
+        "en": "The highest point had to lie between 4,000 and 5,000 m: France and Italy qualify through Mont Blanc, and so do Malaysia and Guatemala."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "highestPointM",
+            "gte": 4000
+          },
+          {
+            "fact": "highestPointM",
+            "lt": 5000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.island-peaks",
+      "category": "relief",
+      "text": {
+        "fr": "Une île-nation dont un sommet dépasse 2 000 m",
+        "en": "An island nation with a peak above 2,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre culminant au-dessus de 2 000 m : le volcan Fogo du Cap-Vert ou le Karthala des Comores comptent.",
+        "en": "A country without land borders rising above 2,000 m was needed: Cape Verde's Fogo volcano and the Comoros' Karthala both count."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "highestPointM",
+            "gt": 2000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.landlocked-heights",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays enclavé qui culmine au-delà de 4 000 m",
+        "en": "A landlocked country rising above 4,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer dont le sommet dépasse 4 000 m : la Suisse, l'Éthiopie ou le Rwanda sont de la partie.",
+        "en": "A landlocked country with a summit above 4,000 m was needed: Switzerland, Ethiopia and Rwanda all qualify."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "highestPointM",
+            "gt": 4000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.small-but-high",
+      "category": "relief",
+      "text": {
+        "fr": "Moins de 50 000 km², un sommet au-delà de 2 500 m",
+        "en": "Under 50,000 km² with a peak above 2,500 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de moins de 50 000 km² dont le point culminant dépasse 2 500 m : le minuscule Lesotho n'a aucun point sous 1 400 m.",
+        "en": "A country under 50,000 km² with a summit above 2,500 m was needed: tiny Lesotho has no point lower than 1,400 m."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "lt": 50000
+          },
+          {
+            "fact": "highestPointM",
+            "gt": 2500
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.vast-and-low",
+      "category": "relief",
+      "text": {
+        "fr": "Plus d’un million de km², aucun sommet à 3 000 m",
+        "en": "Over a million km², no peak reaching 3,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de plus d'un million de km² dont le point culminant reste sous 3 000 m : le Brésil plafonne au pico da Neblina (2 994 m).",
+        "en": "A country over one million km² whose highest point stays below 3,000 m was needed: Brazil tops out at Pico da Neblina (2,994 m)."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "gt": 1000000
+          },
+          {
+            "fact": "highestPointM",
+            "lt": 3000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.southern-heights",
+      "category": "relief",
+      "text": {
+        "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
+        "en": "A southern-hemisphere country with a peak above 3,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
+        "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          },
+          {
+            "fact": "highestPointM",
+            "gt": 3000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.tropical-flatlands",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays tropical où rien ne dépasse 300 m",
+        "en": "A tropical country where nothing tops 300 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement.",
+        "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres."
+      },
+      "predicate": {
+        "all": [
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "highestPointM",
+            "lt": 300
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.crowded-lowlands",
+      "category": "relief",
+      "text": {
+        "fr": "Plus de 50 M d’habitants, aucun sommet à 3 000 m",
+        "en": "Over 50 million people, no peak reaching 3,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait plus de 50 millions d'habitants et un point culminant sous 3 000 m : l'Allemagne (Zugspitze, 2 962 m) passe de justesse.",
+        "en": "More than 50 million people and a highest point under 3,000 m were needed: Germany (Zugspitze, 2,962 m) just makes it."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "population",
+            "gt": 50000000
+          },
+          {
+            "fact": "highestPointM",
+            "lt": 3000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.tropical-island-peaks",
+      "category": "relief",
+      "text": {
+        "fr": "Une île tropicale dont un sommet passe 1 000 m",
+        "en": "A tropical island nation with a peak above 1,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
+        "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "highestPointM",
+            "gt": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.low-islands",
+      "category": "relief",
+      "text": {
+        "fr": "Moins de 200 000 insulaires, aucun sommet à 1 000 m",
+        "en": "Under 200,000 islanders, no peak reaching 1,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait une île-nation de moins de 200 000 habitants dont rien n'atteint 1 000 m : Tuvalu et les îles Marshall dépassent à peine le niveau de la mer.",
+        "en": "An island nation under 200,000 people with nothing reaching 1,000 m was needed: Tuvalu and the Marshall Islands barely rise above the sea."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "population",
+            "lt": 200000
+          },
+          {
+            "fact": "highestPointM",
+            "lt": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.coastal-giants",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays côtier qui culmine au-delà de 5 000 m",
+        "en": "A coastal country whose summit tops 5,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays ouvert sur la mer dont le point culminant dépasse 5 000 m : le Kenya, la Géorgie ou le Myanmar en font partie.",
+        "en": "A country with a coastline and a summit above 5,000 m was needed: Kenya, Georgia and Myanmar are among them."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": false
+          },
+          {
+            "fact": "highestPointM",
+            "gt": 5000
+          }
+        ]
+      }
+    },
+    {
+      "id": "relief.landlocked-mid-heights",
+      "category": "relief",
+      "text": {
+        "fr": "Un pays enclavé qui culmine entre 1 000 et 3 000 m",
+        "en": "A landlocked country topping out between 1,000 and 3,000 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer dont le point culminant est entre 1 000 et 3 000 m : la Hongrie, le Niger ou le Laos conviennent.",
+        "en": "A landlocked country whose highest point lies between 1,000 and 3,000 m was needed: Hungary, Niger and Laos qualify."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "highestPointM",
+            "gte": 1000
+          },
+          {
+            "fact": "highestPointM",
+            "lt": 3000
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.landlocked",
+      "category": "water",
+      "text": {
+        "fr": "Un pays sans accès à la mer",
+        "en": "A country with no access to the sea"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans aucun littoral maritime : le Kazakhstan est le plus vaste d'entre eux, la Caspienne étant un lac.",
+        "en": "A country with no sea coast at all was needed: Kazakhstan is the largest, the Caspian counting as a lake."
+      },
+      "predicate": {
+        "fact": "landlocked",
+        "eq": true
+      }
+    },
+    {
+      "id": "water.island-nation",
+      "category": "water",
+      "text": {
+        "fr": "Une nation sans frontière terrestre",
+        "en": "A nation with no land border"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans aucune frontière terrestre : de l'Australie à Nauru, l'océan est leur seule limite.",
+        "en": "A country with no land border at all was needed: from Australia to Nauru, the ocean is their only boundary."
+      },
+      "predicate": {
+        "fact": "hasLandBorder",
+        "eq": false
+      }
+    },
+    {
+      "id": "water.landlocked-giant",
+      "category": "water",
+      "text": {
+        "fr": "Un pays enclavé de plus de 500 000 km²",
+        "en": "A landlocked country over 500,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer de plus de 500 000 km² : la Mongolie, le Tchad ou la Bolivie en sont.",
+        "en": "A landlocked country larger than 500,000 km² was needed: Mongolia, Chad and Bolivia are among them."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "areaKm2",
+            "gt": 500000
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.landlocked-small",
+      "category": "water",
+      "text": {
+        "fr": "Un petit pays enclavé, moins de 50 000 km²",
+        "en": "A small landlocked country, under 50,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer de moins de 50 000 km² : du Vatican au Bhoutan, en passant par le Burundi.",
+        "en": "A landlocked country under 50,000 km² was needed: from the Vatican to Bhutan by way of Burundi."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 50000
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.landlocked-few-neighbours",
+      "category": "water",
+      "text": {
+        "fr": "Un pays enclavé qui n’a qu’un ou deux voisins",
+        "en": "A landlocked country with only one or two neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer bordé par au plus deux voisins : le Lesotho est entièrement entouré par l'Afrique du Sud.",
+        "en": "A landlocked country with at most two neighbours was needed: Lesotho is entirely surrounded by South Africa."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "landBorders",
+            "lte": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.landlocked-crowded",
+      "category": "water",
+      "text": {
+        "fr": "Un pays enclavé qui a au moins six voisins",
+        "en": "A landlocked country with six or more neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer touchant au moins six voisins : l'Autriche en a huit, la Zambie aussi.",
+        "en": "A landlocked country touching at least six neighbours was needed: Austria has eight, and so does Zambia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "landBorders",
+            "gte": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.landlocked-south",
+      "category": "water",
+      "text": {
+        "fr": "Un pays enclavé de l’hémisphère sud",
+        "en": "A landlocked country in the southern hemisphere"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer tout entier au sud de l'équateur : la Bolivie et le Paraguay sont les seuls hors d'Afrique.",
+        "en": "A landlocked country entirely south of the equator was needed: Bolivia and Paraguay are the only ones outside Africa."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": true
+          },
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          }
+        ]
+      },
+      "regional": ["AF", "SA"]
+    },
+    {
+      "id": "water.island-north",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation de l’hémisphère nord",
+        "en": "An island nation in the northern hemisphere"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur : de l'Islande à Palaos.",
+        "en": "A country without land borders lying entirely north of the equator was needed: from Iceland to Palau."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "hemisphereNS",
+            "eq": "N"
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-monarchy",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation qui a un monarque",
+        "en": "An island nation with a monarch"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre dont le chef d'État est un monarque : le Japon, Tonga ou la Jamaïque, royaume du Commonwealth.",
+        "en": "A country without land borders headed by a monarch was needed: Japan, Tonga or Jamaica, a Commonwealth realm."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "monarchy",
+            "eq": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-large",
+      "category": "water",
+      "text": {
+        "fr": "Une grande île-nation, plus de 50 000 km²",
+        "en": "A large island nation, over 50,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie.",
+        "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "areaKm2",
+            "gt": 50000
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-populous",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation de plus d’un million d’habitants",
+        "en": "An island nation of over a million people"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre de plus d'un million d'habitants : Maurice et Trinité-et-Tobago passent le seuil.",
+        "en": "A country without land borders and over a million inhabitants was needed: Mauritius and Trinidad and Tobago pass the mark."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "population",
+            "gt": 1000000
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-tropical",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation tout entière sous les tropiques",
+        "en": "An island nation lying wholly in the tropics"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
+        "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-beyond-tropics",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation qui déborde des tropiques",
+        "en": "An island nation reaching beyond the tropics"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne.",
+        "en": "A country without land borders not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "not": {
+              "all": [
+                {
+                  "fact": "northernmostLat",
+                  "lt": 23.44
+                },
+                {
+                  "fact": "southernmostLat",
+                  "gt": -23.44
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-right-hand",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation où l’on roule à droite",
+        "en": "An island nation that drives on the right"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines.",
+        "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "drivesOnLeft",
+            "eq": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.coast-crowded",
+      "category": "water",
+      "text": {
+        "fr": "Un pays côtier qui a au moins six voisins",
+        "en": "A coastal country with six or more neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait un pays ouvert sur la mer et touchant au moins six voisins : la Chine et la Russie en comptent quatorze chacune.",
+        "en": "A country with a coastline and at least six neighbours was needed: China and Russia have fourteen each."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": false
+          },
+          {
+            "fact": "landBorders",
+            "gte": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.coast-small",
+      "category": "water",
+      "text": {
+        "fr": "Moins de 30 000 km², un littoral et des voisins",
+        "en": "Under 30,000 km², a coastline and neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de moins de 30 000 km² ayant à la fois une côte et une frontière terrestre : Monaco, la Gambie ou le Belize.",
+        "en": "A country under 30,000 km² with both a coastline and a land border was needed: Monaco, the Gambia or Belize."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landlocked",
+            "eq": false
+          },
+          {
+            "fact": "hasLandBorder",
+            "eq": true
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 30000
+          }
+        ]
+      }
+    },
+    {
+      "id": "water.island-tiny",
+      "category": "water",
+      "text": {
+        "fr": "Une île-nation de moins de 150 000 habitants",
+        "en": "An island nation of under 150,000 people"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre de moins de 150 000 habitants : Nauru et Tuvalu en comptent à peine plus de 10 000.",
+        "en": "A country without land borders and fewer than 150,000 people was needed: Nauru and Tuvalu have barely more than 10,000."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "population",
+            "lt": 150000
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.six-plus",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a au moins six voisins",
+        "en": "A country with at least six neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait au moins six voisins terrestres : la Chine et la Russie détiennent le record avec quatorze chacune.",
+        "en": "At least six land neighbours were needed: China and Russia hold the record with fourteen each."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "gte": 6
+      }
+    },
+    {
+      "id": "borders.seven-plus",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a au moins sept voisins",
+        "en": "A country with at least seven neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait au moins sept voisins terrestres : la Hongrie en a sept, la Turquie huit, le Brésil dix.",
+        "en": "At least seven land neighbours were needed: Hungary has seven, Turkey eight, Brazil ten."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "gte": 7
+      }
+    },
+    {
+      "id": "borders.eight-plus",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a au moins huit voisins",
+        "en": "A country with at least eight neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait au moins huit voisins terrestres : la Tanzanie et l'Autriche en ont huit, l'Allemagne et la RD Congo neuf.",
+        "en": "At least eight land neighbours were needed: Tanzania and Austria have eight, Germany and DR Congo nine."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "gte": 8
+      }
+    },
+    {
+      "id": "borders.exactly-four",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a exactement quatre voisins",
+        "en": "A country with exactly four neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre.",
+        "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "eq": 4
+      }
+    },
+    {
+      "id": "borders.exactly-five",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a exactement cinq voisins",
+        "en": "A country with exactly five neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq.",
+        "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "eq": 5
+      }
+    },
+    {
+      "id": "borders.exactly-six",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a exactement six voisins",
+        "en": "A country with exactly six neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait exactement six voisins terrestres : l'Italie en a six, Saint-Marin et le Vatican compris.",
+        "en": "Exactly six land neighbours were needed: Italy has six, San Marino and the Vatican included."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "eq": 6
+      }
+    },
+    {
+      "id": "borders.exactly-seven",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays qui a exactement sept voisins",
+        "en": "A country with exactly seven neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait exactement sept voisins terrestres : la Pologne, l'Ukraine, l'Iran ou le Mali en ont sept.",
+        "en": "Exactly seven land neighbours were needed: Poland, Ukraine, Iran and Mali have seven each."
+      },
+      "predicate": {
+        "fact": "landBorders",
+        "eq": 7
+      }
+    },
+    {
+      "id": "borders.lone-neighbour",
+      "category": "borders",
+      "text": {
+        "fr": "Hors d’Europe, un pays qui n’a qu’un voisin",
+        "en": "Outside Europe, a country with a single neighbour"
+      },
+      "explain": {
+        "fr": "Il fallait un pays hors d'Europe n'ayant qu'un seul voisin terrestre : Haïti et la République dominicaine se partagent une île, comme le Timor oriental et l'Indonésie.",
+        "en": "A country outside Europe with a single land neighbour was needed: Haiti and the Dominican Republic share one island, as do East Timor and Indonesia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landBorders",
+            "eq": 1
+          },
+          {
+            "not": {
+              "fact": "continent",
+              "eq": "EU"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.eu-doorstep",
+      "category": "borders",
+      "text": {
+        "fr": "Hors de l’UE, un voisin d’un État membre",
+        "en": "Outside the EU, a neighbour of a member state"
+      },
+      "explain": {
+        "fr": "Il fallait un pays hors de l'Union européenne ayant une frontière avec un État membre : le Brésil touche la France par la Guyane, le Canada le Danemark par le Groenland.",
+        "en": "A non-EU country sharing a land border with a member state was needed: Brazil touches France through French Guiana, Canada touches Denmark through Greenland."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "borders",
+            "in": [
+              "AUT",
+              "BEL",
+              "BGR",
+              "CYP",
+              "CZE",
+              "DEU",
+              "DNK",
+              "ESP",
+              "EST",
+              "FIN",
+              "FRA",
+              "GRC",
+              "HRV",
+              "HUN",
+              "IRL",
+              "ITA",
+              "LTU",
+              "LUX",
+              "LVA",
+              "MLT",
+              "NLD",
+              "POL",
+              "PRT",
+              "ROU",
+              "SVK",
+              "SVN",
+              "SWE"
+            ]
+          },
+          {
+            "not": {
+              "fact": "memberOf",
+              "includes": "eu"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.nato-doorstep",
+      "category": "borders",
+      "text": {
+        "fr": "Hors de l’OTAN, un voisin d’un pays membre",
+        "en": "Outside NATO, a neighbour of a member"
+      },
+      "explain": {
+        "fr": "Il fallait un pays non membre de l'OTAN ayant une frontière avec un membre : le Mexique touche les États-Unis, le Maroc touche l'Espagne.",
+        "en": "A non-NATO country sharing a land border with a member was needed: Mexico touches the United States, Morocco touches Spain."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "borders",
+            "in": [
+              "ALB",
+              "BEL",
+              "BGR",
+              "CAN",
+              "CZE",
+              "DEU",
+              "DNK",
+              "ESP",
+              "EST",
+              "FIN",
+              "FRA",
+              "GBR",
+              "GRC",
+              "HRV",
+              "HUN",
+              "ISL",
+              "ITA",
+              "LTU",
+              "LUX",
+              "LVA",
+              "MKD",
+              "MNE",
+              "NLD",
+              "NOR",
+              "POL",
+              "PRT",
+              "ROU",
+              "SVK",
+              "SVN",
+              "SWE",
+              "TUR",
+              "USA"
+            ]
+          },
+          {
+            "not": {
+              "fact": "memberOf",
+              "includes": "nato"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.arab-league-doorstep",
+      "category": "borders",
+      "text": {
+        "fr": "Hors Ligue arabe, un voisin d’un pays membre",
+        "en": "Outside the Arab League, a neighbour of a member"
+      },
+      "explain": {
+        "fr": "Il fallait un pays non membre de la Ligue arabe voisin d'un membre : l'Espagne touche le Maroc à Ceuta, le Kenya touche la Somalie.",
+        "en": "A country outside the Arab League bordering a member was needed: Spain touches Morocco at Ceuta, Kenya touches Somalia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "borders",
+            "in": [
+              "ARE",
+              "BHR",
+              "COM",
+              "DJI",
+              "DZA",
+              "EGY",
+              "IRQ",
+              "JOR",
+              "KWT",
+              "LBN",
+              "LBY",
+              "MAR",
+              "MRT",
+              "OMN",
+              "PSE",
+              "QAT",
+              "SAU",
+              "SDN",
+              "SOM",
+              "SYR",
+              "TUN",
+              "YEM"
+            ]
+          },
+          {
+            "not": {
+              "fact": "memberOf",
+              "includes": "arabLeague"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.small-crowded",
+      "category": "borders",
+      "text": {
+        "fr": "Moins de 50 000 km², au moins quatre voisins",
+        "en": "Under 50,000 km², at least four neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de moins de 50 000 km² touchant au moins quatre voisins : la Suisse en a cinq, le Monténégro quatre.",
+        "en": "A country under 50,000 km² with at least four land neighbours was needed: Switzerland has five, Montenegro four."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "lt": 50000
+          },
+          {
+            "fact": "landBorders",
+            "gte": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.few-people-many-neighbours",
+      "category": "borders",
+      "text": {
+        "fr": "Moins de 10 M d’habitants, au moins cinq voisins",
+        "en": "Under 10 million people, at least five neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait moins de 10 millions d'habitants et au moins cinq voisins terrestres : le Laos, la Libye ou la Slovaquie conviennent.",
+        "en": "Fewer than 10 million people and at least five land neighbours were needed: Laos, Libya and Slovakia qualify."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "population",
+            "lt": 10000000
+          },
+          {
+            "fact": "landBorders",
+            "gte": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.tropical-pair",
+      "category": "borders",
+      "text": {
+        "fr": "Un pays tropical qui n’a que deux voisins",
+        "en": "A tropical country with just two neighbours"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier entre les tropiques ayant exactement deux voisins : le Costa Rica, le Panama ou la Sierra Leone.",
+        "en": "A country lying wholly between the tropics with exactly two land neighbours was needed: Costa Rica, Panama or Sierra Leone."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "landBorders",
+            "eq": 2
+          },
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "borders.china-neighbour",
+      "category": "borders",
+      "text": {
+        "fr": "Un voisin de la Chine",
+        "en": "A neighbour of China"
+      },
+      "explain": {
+        "fr": "Il fallait un pays ayant une frontière terrestre avec la Chine : elle en compte quatorze, record partagé avec la Russie.",
+        "en": "A country sharing a land border with China was needed: it has fourteen neighbours, a record shared with Russia."
+      },
+      "predicate": {
+        "fact": "borders",
+        "includes": "CHN"
+      },
+      "regional": ["AS", "EU"]
+    },
+    {
+      "id": "borders.russia-neighbour",
+      "category": "borders",
+      "text": {
+        "fr": "Un voisin de la Russie",
+        "en": "A neighbour of Russia"
+      },
+      "explain": {
+        "fr": "Il fallait un pays ayant une frontière terrestre avec la Russie : la Pologne et la Lituanie comptent, grâce à l'enclave de Kaliningrad.",
+        "en": "A country sharing a land border with Russia was needed: Poland and Lithuania count, thanks to the Kaliningrad exclave."
+      },
+      "predicate": {
+        "fact": "borders",
+        "includes": "RUS"
+      },
+      "regional": ["AS", "EU"]
+    },
+    {
+      "id": "borders.tanzania-neighbour",
+      "category": "borders",
+      "text": {
+        "fr": "Un voisin de la Tanzanie",
+        "en": "A neighbour of Tanzania"
+      },
+      "explain": {
+        "fr": "Il fallait un pays ayant une frontière terrestre avec la Tanzanie : elle en a huit, du Kenya au Mozambique, la RD Congo par le lac Tanganyika.",
+        "en": "A country sharing a land border with Tanzania was needed: it has eight, from Kenya to Mozambique, DR Congo across Lake Tanganyika."
+      },
+      "predicate": {
+        "fact": "borders",
+        "includes": "TZA"
+      },
+      "regional": ["AF"]
+    },
+    {
+      "id": "climate.capricorn",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays traversé par le tropique du Capricorne",
+        "en": "A country crossed by the Tropic of Capricorn"
+      },
+      "explain": {
+        "fr": "Il fallait un pays que coupe le tropique du Capricorne (23° 26′ S) : il traverse l'Amérique du Sud, l'Afrique australe, Madagascar et l'Australie.",
+        "en": "The country had to be crossed by the Tropic of Capricorn (23°26′ S): it runs through South America, southern Africa, Madagascar and Australia."
+      },
+      "predicate": {
+        "fact": "crossesTropicOfCapricorn",
+        "eq": true
+      }
+    },
+    {
+      "id": "climate.cancer",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays traversé par le tropique du Cancer",
+        "en": "A country crossed by the Tropic of Cancer"
+      },
+      "explain": {
+        "fr": "Il fallait un pays que coupe le tropique du Cancer (23° 26′ N) : il traverse le Sahara, l'Arabie, l'Inde, la Chine, le Mexique et les Bahamas.",
+        "en": "The country had to be crossed by the Tropic of Cancer (23°26′ N): it runs through the Sahara, Arabia, India, China, Mexico and the Bahamas."
+      },
+      "predicate": {
+        "fact": "crossesTropicOfCancer",
+        "eq": true
+      }
+    },
+    {
+      "id": "climate.either-tropic",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays traversé par l’un des deux tropiques",
+        "en": "A country crossed by either tropic"
+      },
+      "explain": {
+        "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
+        "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+      },
+      "predicate": {
+        "any": [
+          {
+            "fact": "crossesTropicOfCancer",
+            "eq": true
+          },
+          {
+            "fact": "crossesTropicOfCapricorn",
+            "eq": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.equator",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays traversé par l’équateur",
+        "en": "A country crossed by the equator"
+      },
+      "explain": {
+        "fr": "Il fallait un pays que coupe l'équateur : São Tomé-et-Principe n'y touche que par l'îlot das Rolas, les Maldives par un atoll du Sud.",
+        "en": "The country had to be crossed by the equator: São Tomé and Príncipe touches it only through Rolas islet, the Maldives through a southern atoll."
+      },
+      "predicate": {
+        "fact": "crossesEquator",
+        "eq": true
+      }
+    },
+    {
+      "id": "climate.southern",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays tout entier dans l’hémisphère sud",
+        "en": "A country entirely in the southern hemisphere"
+      },
+      "explain": {
+        "fr": "Il fallait un pays entièrement au sud de l'équateur : le Brésil ou l'Indonésie, à cheval sur les deux hémisphères, ne comptaient pas.",
+        "en": "The country had to lie entirely south of the equator: Brazil or Indonesia, straddling both hemispheres, did not count."
+      },
+      "predicate": {
+        "fact": "hemisphereNS",
+        "eq": "S"
+      }
+    },
+    {
+      "id": "climate.equatorial-north",
+      "category": "climate",
+      "text": {
+        "fr": "Entre l’équateur et le 10e parallèle nord",
+        "en": "Wholly between the equator and 10° N"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier entre l'équateur et 10° N, le domaine des pluies équatoriales : Singapour, le Suriname ou le Liberia.",
+        "en": "The country had to lie wholly between the equator and 10° N, the realm of equatorial rains: Singapore, Suriname or Liberia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereNS",
+            "eq": "N"
+          },
+          {
+            "fact": "northernmostLat",
+            "lt": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.tropical-giant",
+      "category": "climate",
+      "text": {
+        "fr": "Un géant tropical de plus d’un million de km²",
+        "en": "A tropical giant of over a million km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de plus d'un million de km² tout entier entre les tropiques : le Pérou, la Colombie ou l'Éthiopie.",
+        "en": "A country over one million km² lying wholly between the tropics was needed: Peru, Colombia or Ethiopia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "areaKm2",
+            "gt": 1000000
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.tropical-landlocked",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays enclavé tout entier sous les tropiques",
+        "en": "A landlocked country wholly in the tropics"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer tout entier entre les deux tropiques : la Bolivie, le Laos ou le Burkina Faso.",
+        "en": "A landlocked country lying entirely between the two tropics was needed: Bolivia, Laos or Burkina Faso."
+      },
+      "predicate": {
+        "all": [
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "landlocked",
+            "eq": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.north-of-50",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays qui s’étend au-delà de 50° N",
+        "en": "A country reaching north of 50° N"
+      },
+      "explain": {
+        "fr": "Il fallait un pays dont une partie se trouve au nord du 50e parallèle : Paris est un peu au sud, Lille un peu au nord.",
+        "en": "Part of the country had to lie north of the 50th parallel: Paris sits just south of it, London just north."
+      },
+      "predicate": {
+        "fact": "northernmostLat",
+        "gte": 50
+      }
+    },
+    {
+      "id": "climate.north-of-55",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays qui s’étend au-delà de 55° N",
+        "en": "A country reaching north of 55° N"
+      },
+      "explain": {
+        "fr": "Il fallait un pays dont une partie se trouve au nord du 55e parallèle : l'Allemagne et l'Irlande y touchent de justesse, comme le Kazakhstan.",
+        "en": "Part of the country had to lie north of the 55th parallel: Germany and Ireland just reach it, as does Kazakhstan."
+      },
+      "predicate": {
+        "fact": "northernmostLat",
+        "gte": 55
+      }
+    },
+    {
+      "id": "climate.deep-south",
+      "category": "climate",
+      "text": {
+        "fr": "Tout au sud de l’équateur, et passé 25° S",
+        "en": "Wholly south of the equator, reaching past 25° S"
+      },
+      "explain": {
+        "fr": "Il fallait un pays entièrement dans l'hémisphère sud qui descend au-delà de 25° S : l'Eswatini et le Paraguay comptent.",
+        "en": "The country had to lie entirely in the southern hemisphere and reach beyond 25° S: Eswatini and Paraguay count."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          },
+          {
+            "fact": "southernmostLat",
+            "lt": -25
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.southern-tropics",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays austral tout entier sous les tropiques",
+        "en": "A southern country lying wholly in the tropics"
+      },
+      "explain": {
+        "fr": "Il fallait un pays au sud de l'équateur sans sortir des tropiques : l'Angola, les Samoa ou le Pérou.",
+        "en": "The country had to lie south of the equator without leaving the tropics: Angola, Samoa or Peru."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          },
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.tropical-snow",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays tropical au sommet passé 4 500 m",
+        "en": "A tropical country with a peak above 4,500 m"
+      },
+      "explain": {
+        "fr": "Il fallait un pays entièrement entre les tropiques dont un sommet dépasse 4 500 m : des glaciers survivent encore sur le Kilimandjaro et le Rwenzori.",
+        "en": "A country wholly between the tropics with a peak above 4,500 m was needed: glaciers still survive on Kilimanjaro and the Rwenzori."
+      },
+      "predicate": {
+        "all": [
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "highestPointM",
+            "gte": 4500
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.subtropical-north",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays tout entier entre 20° N et 40° N",
+        "en": "A country wholly between 20° N and 40° N"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier entre les 20e et 40e parallèles nord, la ceinture des grands déserts : l'Égypte, l'Iran ou la Corée du Sud.",
+        "en": "The country had to lie wholly between 20° N and 40° N, the belt of great deserts: Egypt, Iran or South Korea."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "southernmostLat",
+            "gte": 20
+          },
+          {
+            "fact": "northernmostLat",
+            "lte": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.sahel-caribbean-belt",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays tout entier entre 10° N et 25° N",
+        "en": "A country wholly between 10° N and 25° N"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier entre les 10e et 25e parallèles nord : cette bande réunit le Sahel, l'Amérique centrale et les Caraïbes.",
+        "en": "The country had to lie wholly between 10° N and 25° N: this band links the Sahel, Central America and the Caribbean."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "southernmostLat",
+            "gte": 10
+          },
+          {
+            "fact": "northernmostLat",
+            "lte": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.tropical-populous",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays tropical de plus de 50 M d’habitants",
+        "en": "A tropical country of over 50 million people"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier entre les tropiques comptant plus de 50 millions d'habitants : le Nigeria, les Philippines ou la Colombie.",
+        "en": "A country lying wholly between the tropics with over 50 million people was needed: Nigeria, the Philippines or Colombia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "population",
+            "gt": 50000000
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.temperate-coast",
+      "category": "climate",
+      "text": {
+        "fr": "Un pays côtier tout entier entre 23° N et 40° N",
+        "en": "A coastal country wholly between 23° N and 40° N"
+      },
+      "explain": {
+        "fr": "Il fallait un pays ouvert sur la mer, tout entier entre le tropique du Cancer et le 40e parallèle nord : Malte, la Tunisie ou le Pakistan.",
+        "en": "A coastal country lying wholly between the Tropic of Cancer and 40° N was needed: Malta, Tunisia or Pakistan."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "southernmostLat",
+            "gte": 23.44
+          },
+          {
+            "fact": "landlocked",
+            "eq": false
+          },
+          {
+            "fact": "northernmostLat",
+            "lte": 40
+          }
+        ]
+      }
+    },
+    {
+      "id": "climate.tropical-specks",
+      "category": "climate",
+      "text": {
+        "fr": "Un confetti tropical de moins de 1 000 km²",
+        "en": "A tropical speck under 1,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de moins de 1 000 km² tout entier entre les tropiques : la Grenade, Palaos ou les Seychelles.",
+        "en": "A country under 1,000 km² lying wholly between the tropics was needed: Grenada, Palau or the Seychelles."
+      },
+      "predicate": {
+        "all": [
+          {
+            "all": [
+              {
+                "fact": "northernmostLat",
+                "lt": 23.44
+              },
+              {
+                "fact": "southernmostLat",
+                "gt": -23.44
+              }
+            ]
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.drives-left",
+      "category": "society",
+      "text": {
+        "fr": "Un pays où l’on roule à gauche",
+        "en": "A country that drives on the left"
+      },
+      "explain": {
+        "fr": "Il fallait un pays où l'on circule à gauche : plus d'un quart des pays, dont le Japon, la Thaïlande ou le Suriname, sans lien avec l'Empire britannique.",
+        "en": "The country had to drive on the left: over a quarter of countries do, including Japan, Thailand and Suriname, none of them former British colonies."
+      },
+      "predicate": {
+        "fact": "drivesOnLeft",
+        "eq": true
+      }
+    },
+    {
+      "id": "society.monarchy",
+      "category": "society",
+      "text": {
+        "fr": "Un pays qui a un monarque",
+        "en": "A country with a monarch"
+      },
+      "explain": {
+        "fr": "Il fallait un chef d'État monarque, roi, émir, sultan ou prince : Andorre a même deux coprinces, dont le président de la République française.",
+        "en": "The head of state had to be a monarch, king, emir, sultan or prince: Andorra even has two co-princes, one of them the French president."
+      },
+      "predicate": {
+        "fact": "monarchy",
+        "eq": true
+      }
+    },
+    {
+      "id": "society.dollar",
+      "category": "society",
+      "text": {
+        "fr": "Hors d’Europe, un pays qui paie en dollars",
+        "en": "Outside Europe, a country that pays in dollars"
+      },
+      "explain": {
+        "fr": "Il fallait une monnaie nommée dollar, hors d'Europe (les Pays-Bas l'utilisent aux Antilles) : l'Équateur et le Salvador ont adopté celui des États-Unis.",
+        "en": "The currency had to be called a dollar, outside Europe (the Netherlands uses it in the Caribbean): Ecuador and El Salvador adopted the US one."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "currencyDollar",
+            "eq": true
+          },
+          {
+            "not": {
+              "fact": "continent",
+              "eq": "EU"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.dollar-republic",
+      "category": "society",
+      "text": {
+        "fr": "Une république qui paie en dollars",
+        "en": "A republic that pays in dollars"
+      },
+      "explain": {
+        "fr": "Il fallait une république dont la monnaie s'appelle dollar : Singapour, les Fidji ou le Suriname ont chacun le leur.",
+        "en": "A republic whose currency is called a dollar was needed: Singapore, Fiji and Suriname each have their own."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "currencyDollar",
+            "eq": true
+          },
+          {
+            "fact": "monarchy",
+            "eq": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.french",
+      "category": "society",
+      "text": {
+        "fr": "Un pays où le français est langue officielle",
+        "en": "A country where French is an official language"
+      },
+      "explain": {
+        "fr": "Il fallait le français parmi les langues officielles : plus de la moitié de ces pays sont africains, mais Haïti et Vanuatu en sont aussi.",
+        "en": "French had to be an official language: more than half of these countries are African, but Haiti and Vanuatu count too."
+      },
+      "predicate": {
+        "fact": "officialLanguages",
+        "includes": "french"
+      }
+    },
+    {
+      "id": "society.spanish",
+      "category": "society",
+      "text": {
+        "fr": "Un pays où l’espagnol est langue officielle",
+        "en": "A country where Spanish is an official language"
+      },
+      "explain": {
+        "fr": "Il fallait l'espagnol parmi les langues officielles : la Guinée équatoriale est le seul pays hispanophone d'Afrique.",
+        "en": "Spanish had to be an official language: Equatorial Guinea is the only Spanish-speaking country in Africa."
+      },
+      "predicate": {
+        "fact": "officialLanguages",
+        "includes": "spanish"
+      }
+    },
+    {
+      "id": "society.portuguese",
+      "category": "society",
+      "text": {
+        "fr": "Un pays où le portugais est langue officielle",
+        "en": "A country where Portuguese is an official language"
+      },
+      "explain": {
+        "fr": "Il fallait le portugais parmi les langues officielles : on le parle sur quatre continents, du Brésil au Timor oriental.",
+        "en": "Portuguese had to be an official language: it is spoken on four continents, from Brazil to East Timor."
+      },
+      "predicate": {
+        "fact": "officialLanguages",
+        "includes": "portuguese"
+      }
+    },
+    {
+      "id": "society.euro",
+      "category": "society",
+      "text": {
+        "fr": "Un pays qui paie en euros",
+        "en": "A country that pays in euros"
+      },
+      "explain": {
+        "fr": "Il fallait l'euro comme monnaie : Monaco, Saint-Marin, le Vatican, Andorre et le Monténégro l'utilisent sans être membres de l'UE.",
+        "en": "The euro had to be the currency: Monaco, San Marino, the Vatican, Andorra and Montenegro use it without being EU members."
+      },
+      "predicate": {
+        "fact": "usesEuro",
+        "eq": true
+      },
+      "regional": ["EU", "AS"]
+    },
+    {
+      "id": "society.nato",
+      "category": "society",
+      "text": {
+        "fr": "Un membre de l’OTAN",
+        "en": "A NATO member"
+      },
+      "explain": {
+        "fr": "Il fallait un membre de l'Alliance atlantique : la Finlande (2023) et la Suède (2024) sont ses derniers arrivants.",
+        "en": "The country had to be a NATO member: Finland (2023) and Sweden (2024) are its newest members."
+      },
+      "predicate": {
+        "fact": "memberOf",
+        "includes": "nato"
+      }
+    },
+    {
+      "id": "society.commonwealth",
+      "category": "society",
+      "text": {
+        "fr": "Un membre du Commonwealth",
+        "en": "A Commonwealth member"
+      },
+      "explain": {
+        "fr": "Il fallait un membre du Commonwealth : le Gabon et le Togo, jamais colonisés par les Britanniques, l'ont rejoint en 2022.",
+        "en": "The country had to belong to the Commonwealth: Gabon and Togo, never British colonies, joined in 2022."
+      },
+      "predicate": {
+        "fact": "memberOf",
+        "includes": "commonwealth"
+      }
+    },
+    {
+      "id": "society.g20",
+      "category": "society",
+      "text": {
+        "fr": "Un pays membre du G20",
+        "en": "A G20 member country"
+      },
+      "explain": {
+        "fr": "Il fallait l'un des 19 pays du G20 (l'Union européenne et l'Union africaine en sont aussi membres) : l'Argentine et l'Afrique du Sud en font partie.",
+        "en": "The country had to be one of the G20's 19 member states (the EU and the African Union also sit at the table): Argentina and South Africa are in."
+      },
+      "predicate": {
+        "fact": "memberOf",
+        "includes": "g20"
+      }
+    },
+    {
+      "id": "society.opec",
+      "category": "society",
+      "text": {
+        "fr": "Un membre de l’OPEP",
+        "en": "An OPEC member"
+      },
+      "explain": {
+        "fr": "Il fallait un membre de l'Organisation des pays exportateurs de pétrole : le Gabon et la Guinée équatoriale en sont, l'Angola l'a quittée en 2024.",
+        "en": "The country had to be an OPEC member: Gabon and Equatorial Guinea belong, Angola left in 2024."
+      },
+      "predicate": {
+        "fact": "memberOf",
+        "includes": "opec"
+      }
+    },
+    {
+      "id": "society.arab-league",
+      "category": "society",
+      "text": {
+        "fr": "Un membre de la Ligue arabe",
+        "en": "An Arab League member"
+      },
+      "explain": {
+        "fr": "Il fallait un membre de la Ligue arabe : elle s'étend de la Mauritanie aux Comores et à Oman.",
+        "en": "The country had to be an Arab League member: it stretches from Mauritania to the Comoros and Oman."
+      },
+      "predicate": {
+        "fact": "memberOf",
+        "includes": "arabLeague"
+      },
+      "regional": ["AF", "AS"]
+    },
+    {
+      "id": "society.over-100m",
+      "category": "society",
+      "text": {
+        "fr": "Un pays de plus de 100 millions d’habitants",
+        "en": "A country of over 100 million people"
+      },
+      "explain": {
+        "fr": "Il fallait plus de 100 millions d'habitants : l'Éthiopie, la RD Congo et les Philippines ont franchi ce cap.",
+        "en": "More than 100 million inhabitants were needed: Ethiopia, DR Congo and the Philippines have passed that mark."
+      },
+      "predicate": {
+        "fact": "population",
+        "gt": 100000000
+      }
+    },
+    {
+      "id": "society.over-50m",
+      "category": "society",
+      "text": {
+        "fr": "Un pays de plus de 50 millions d’habitants",
+        "en": "A country of over 50 million people"
+      },
+      "explain": {
+        "fr": "Il fallait plus de 50 millions d'habitants : la Tanzanie, la Colombie ou la Corée du Sud dépassent ce seuil.",
+        "en": "More than 50 million inhabitants were needed: Tanzania, Colombia and South Korea are above that line."
+      },
+      "predicate": {
+        "fact": "population",
+        "gt": 50000000
+      }
+    },
+    {
+      "id": "society.under-1m",
+      "category": "society",
+      "text": {
+        "fr": "Un pays de moins d’un million d’habitants",
+        "en": "A country of under a million people"
+      },
+      "explain": {
+        "fr": "Il fallait moins d'un million d'habitants : le Luxembourg, l'Islande ou le Monténégro sont de ces petites nations.",
+        "en": "Fewer than a million inhabitants were needed: Luxembourg, Iceland and Montenegro are among these small nations."
+      },
+      "predicate": {
+        "fact": "population",
+        "lt": 1000000
+      }
+    },
+    {
+      "id": "society.tiny-left",
+      "category": "society",
+      "text": {
+        "fr": "Moins de 200 000 habitants, on roule à gauche",
+        "en": "Under 200,000 people, driving on the left"
+      },
+      "explain": {
+        "fr": "Il fallait moins de 200 000 habitants et une conduite à gauche : Nauru, Saint-Kitts-et-Nevis ou les Seychelles.",
+        "en": "Fewer than 200,000 people and left-hand traffic were needed: Nauru, Saint Kitts and Nevis or the Seychelles."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "population",
+            "lt": 200000
+          },
+          {
+            "fact": "drivesOnLeft",
+            "eq": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.tiny-republic",
+      "category": "society",
+      "text": {
+        "fr": "Une république de moins de 200 000 habitants",
+        "en": "A republic of under 200,000 people"
+      },
+      "explain": {
+        "fr": "Il fallait une république de moins de 200 000 habitants : Saint-Marin, l'une des plus anciennes républiques du monde, en est.",
+        "en": "A republic of fewer than 200,000 people was needed: San Marino, one of the world's oldest republics, is one."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "monarchy",
+            "eq": false
+          },
+          {
+            "fact": "population",
+            "lt": 200000
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.monarchy-left",
+      "category": "society",
+      "text": {
+        "fr": "Une monarchie où l’on roule à gauche",
+        "en": "A monarchy that drives on the left"
+      },
+      "explain": {
+        "fr": "Il fallait un monarque et une conduite à gauche : le Japon, la Thaïlande ou l'Eswatini.",
+        "en": "A monarch and left-hand traffic were needed: Japan, Thailand or Eswatini."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "monarchy",
+            "eq": true
+          },
+          {
+            "fact": "drivesOnLeft",
+            "eq": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.left-outside-commonwealth",
+      "category": "society",
+      "text": {
+        "fr": "Hors Commonwealth, on y roule à gauche",
+        "en": "Outside the Commonwealth, driving on the left"
+      },
+      "explain": {
+        "fr": "Il fallait un pays hors du Commonwealth où l'on roule à gauche : le Japon, l'Indonésie, le Suriname ou l'Irlande.",
+        "en": "A country outside the Commonwealth that drives on the left was needed: Japan, Indonesia, Suriname or Ireland."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "drivesOnLeft",
+            "eq": true
+          },
+          {
+            "not": {
+              "fact": "memberOf",
+              "includes": "commonwealth"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.commonwealth-right",
+      "category": "society",
+      "text": {
+        "fr": "Du Commonwealth, mais on y roule à droite",
+        "en": "In the Commonwealth, yet driving on the right"
+      },
+      "explain": {
+        "fr": "Il fallait un membre du Commonwealth où l'on roule à droite : le Canada, le Rwanda ou le Cameroun.",
+        "en": "A Commonwealth member that drives on the right was needed: Canada, Rwanda or Cameroon."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "drivesOnLeft",
+            "eq": false
+          },
+          {
+            "fact": "memberOf",
+            "includes": "commonwealth"
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.french-bilingual",
+      "category": "society",
+      "text": {
+        "fr": "Le français, officiel avec l’anglais ou l’allemand",
+        "en": "French official alongside English or German"
+      },
+      "explain": {
+        "fr": "Il fallait le français officiel aux côtés de l'anglais ou de l'allemand : le Canada, le Cameroun, la Suisse ou les Seychelles.",
+        "en": "French had to be official alongside English or German: Canada, Cameroon, Switzerland or the Seychelles."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "officialLanguages",
+            "includes": "french"
+          },
+          {
+            "any": [
+              {
+                "fact": "officialLanguages",
+                "includes": "english"
+              },
+              {
+                "fact": "officialLanguages",
+                "includes": "german"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.dense",
+      "category": "society",
+      "text": {
+        "fr": "Plus de 10 M d’habitants sur moins de 100 000 km²",
+        "en": "Over 10 million people on under 100,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait plus de 10 millions d'habitants sur moins de 100 000 km² : la Corée du Sud, le Rwanda ou Haïti.",
+        "en": "More than 10 million people on less than 100,000 km² were needed: South Korea, Rwanda or Haiti."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "population",
+            "gt": 10000000
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 100000
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.big-monarchy",
+      "category": "society",
+      "text": {
+        "fr": "Une monarchie de plus de 30 M d’habitants",
+        "en": "A monarchy of over 30 million people"
+      },
+      "explain": {
+        "fr": "Il fallait un monarque régnant sur plus de 30 millions d'habitants : le Canada, la Malaisie ou le Maroc.",
+        "en": "A monarch reigning over more than 30 million people was needed: Canada, Malaysia or Morocco."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "monarchy",
+            "eq": true
+          },
+          {
+            "fact": "population",
+            "gt": 30000000
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.iberian-south",
+      "category": "society",
+      "text": {
+        "fr": "Espagnol ou portugais, dans l’hémisphère sud",
+        "en": "Spanish or Portuguese, in the southern hemisphere"
+      },
+      "explain": {
+        "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili.",
+        "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile."
+      },
+      "predicate": {
+        "all": [
+          {
+            "any": [
+              {
+                "fact": "officialLanguages",
+                "includes": "spanish"
+              },
+              {
+                "fact": "officialLanguages",
+                "includes": "portuguese"
+              }
+            ]
+          },
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          }
+        ]
+      }
+    },
+    {
+      "id": "society.french-beyond-africa",
+      "category": "society",
+      "text": {
+        "fr": "Hors d’Afrique, le français y est officiel",
+        "en": "Outside Africa, French is official"
+      },
+      "explain": {
+        "fr": "Il fallait le français comme langue officielle hors d'Afrique : la Belgique, Haïti ou Vanuatu.",
+        "en": "French had to be official outside Africa: Belgium, Haiti or Vanuatu."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "officialLanguages",
+            "includes": "french"
+          },
+          {
+            "not": {
+              "fact": "continent",
+              "eq": "AF"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.orange",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau où flotte de l’orange",
+        "en": "A flag with a touch of orange"
+      },
+      "explain": {
+        "fr": "Il fallait de l'orange sur le drapeau : l'Irlande et la Côte d'Ivoire arborent les mêmes couleurs en miroir.",
+        "en": "The flag had to show orange: Ireland and Côte d'Ivoire fly the same colours in mirror image."
+      },
+      "predicate": {
+        "fact": "flagColors",
+        "includes": "orange"
+      }
+    },
+    {
+      "id": "flag.red-white-only",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau rouge et blanc, rien d’autre",
+        "en": "A red-and-white flag, nothing else"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou.",
+        "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "white"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "blue"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "yellow"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "green"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "black"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "orange"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "brown"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "grey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.blue-white-only",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau bleu et blanc, rien d’autre",
+        "en": "A blue-and-white flag, nothing else"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau uniquement bleu et blanc : la Grèce, la Finlande, Israël ou le Honduras.",
+        "en": "The flag had to be blue and white only: Greece, Finland, Israel or Honduras."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "blue"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "white"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "yellow"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "green"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "black"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "orange"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "brown"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "grey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.red-white-blue",
+      "category": "flag",
+      "text": {
+        "fr": "Bleu, blanc, rouge, et rien d’autre",
+        "en": "Red, white and blue, nothing else"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau uniquement bleu, blanc et rouge : la France, les États-Unis, la Thaïlande ou le Népal.",
+        "en": "The flag had to be red, white and blue only: France, the United States, Thailand or Nepal."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "white"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "blue"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "yellow"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "green"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "black"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "orange"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "brown"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "grey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.green-yellow-red",
+      "category": "flag",
+      "text": {
+        "fr": "Vert, jaune, rouge, et rien d’autre",
+        "en": "Green, yellow and red, nothing else"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau uniquement vert, jaune et rouge, les couleurs panafricaines : le Sénégal, mais aussi la Lituanie et la Bolivie.",
+        "en": "The flag had to be green, yellow and red only, the pan-African colours: Senegal, but also Lithuania and Bolivia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "green"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "yellow"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "white"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "blue"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "black"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "orange"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "brown"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "grey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.green-white-red",
+      "category": "flag",
+      "text": {
+        "fr": "Vert, blanc, rouge, et rien d’autre",
+        "en": "Green, white and red, nothing else"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau uniquement vert, blanc et rouge : l'Italie, la Hongrie, l'Iran ou Madagascar.",
+        "en": "The flag had to be green, white and red only: Italy, Hungary, Iran or Madagascar."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "green"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "white"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "blue"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "yellow"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "black"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "orange"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "brown"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "grey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.blue-yellow-red",
+      "category": "flag",
+      "text": {
+        "fr": "Bleu, jaune, rouge, et rien d’autre",
+        "en": "Blue, yellow and red, nothing else"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau uniquement bleu, jaune et rouge : la Roumanie et le Tchad ont des drapeaux presque identiques.",
+        "en": "The flag had to be blue, yellow and red only: Romania and Chad have almost identical flags."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "blue"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "yellow"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "white"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "green"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "black"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "orange"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "brown"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "grey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau sans la moindre touche de rouge",
+        "en": "A flag without a trace of red"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau sans rouge : le Brésil, la Suède, l'Argentine ou la Grèce.",
+        "en": "The flag had to have no red at all: Brazil, Sweden, Argentina or Greece."
+      },
+      "predicate": {
+        "not": {
+          "fact": "flagColors",
+          "includes": "red"
+        }
+      }
+    },
+    {
+      "id": "flag.no-red-no-white",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau sans rouge ni blanc",
+        "en": "A flag with neither red nor white"
+      },
+      "explain": {
+        "fr": "Il fallait un drapeau sans rouge ni blanc : l'Ukraine, la Suède, la Jamaïque ou le Kazakhstan.",
+        "en": "The flag had to have neither red nor white: Ukraine, Sweden, Jamaica or Kazakhstan."
+      },
+      "predicate": {
+        "all": [
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "white"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.black",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau où figure du noir",
+        "en": "A flag that shows black"
+      },
+      "explain": {
+        "fr": "Il fallait du noir sur le drapeau : l'Allemagne, l'Afrique du Sud, la Jamaïque ou l'Estonie.",
+        "en": "The flag had to show black: Germany, South Africa, Jamaica or Estonia."
+      },
+      "predicate": {
+        "fact": "flagColors",
+        "includes": "black"
+      }
+    },
+    {
+      "id": "flag.black-and-blue",
+      "category": "flag",
+      "text": {
+        "fr": "Un drapeau qui mêle noir et bleu",
+        "en": "A flag mixing black and blue"
+      },
+      "explain": {
+        "fr": "Il fallait du noir et du bleu sur le même drapeau : l'Estonie, le Botswana, les Bahamas ou la Corée du Sud.",
+        "en": "The flag had to show both black and blue: Estonia, Botswana, the Bahamas or South Korea."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "black"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "blue"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.yellow-no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Du jaune sur le drapeau, mais pas de rouge",
+        "en": "Yellow on the flag, but no red"
+      },
+      "explain": {
+        "fr": "Il fallait du jaune et aucun rouge : l'Argentine, l'Ukraine, la Suède ou le Vatican.",
+        "en": "The flag had to show yellow and no red: Argentina, Ukraine, Sweden or the Vatican."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "yellow"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.green-no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Du vert sur le drapeau, mais pas de rouge",
+        "en": "Green on the flag, but no red"
+      },
+      "explain": {
+        "fr": "Il fallait du vert et aucun rouge : le Brésil, l'Inde, l'Arabie saoudite ou le Nigeria.",
+        "en": "The flag had to show green and no red: Brazil, India, Saudi Arabia or Nigeria."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "green"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.green-blue-no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Vert et bleu sur le drapeau, sans rouge",
+        "en": "Green and blue on the flag, no red"
+      },
+      "explain": {
+        "fr": "Il fallait du vert et du bleu sans aucun rouge : le Brésil, le Rwanda, l'Inde ou la Sierra Leone.",
+        "en": "The flag had to show green and blue with no red: Brazil, Rwanda, India or Sierra Leone."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "green"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "blue"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.red-no-white-blue",
+      "category": "flag",
+      "text": {
+        "fr": "Du rouge sur le drapeau, ni blanc ni bleu",
+        "en": "Red on the flag, but neither white nor blue"
+      },
+      "explain": {
+        "fr": "Il fallait du rouge sans blanc ni bleu : la Chine, l'Allemagne, le Ghana ou l'Espagne.",
+        "en": "The flag had to show red with neither white nor blue: China, Germany, Ghana or Spain."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "white"
+            }
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "blue"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.southern-red-white-blue",
+      "category": "flag",
+      "text": {
+        "fr": "Austral, aux couleurs rouge, blanc et bleu",
+        "en": "Southern, flying red, white and blue"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier dans l'hémisphère sud dont le drapeau porte du rouge, du blanc et du bleu : l'Australie, le Chili ou la Namibie.",
+        "en": "A country entirely in the southern hemisphere whose flag shows red, white and blue was needed: Australia, Chile or Namibia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "red"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "white"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "blue"
+          },
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.southern-no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Austral, et pas de rouge sur le drapeau",
+        "en": "Southern, with no red on the flag"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda.",
+        "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda."
+      },
+      "predicate": {
+        "all": [
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          },
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.landlocked-yellow",
+      "category": "flag",
+      "text": {
+        "fr": "Un pays enclavé au drapeau marqué de jaune",
+        "en": "A landlocked country with yellow on its flag"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans accès à la mer dont le drapeau porte du jaune : la Mongolie, le Kazakhstan ou le Vatican.",
+        "en": "A landlocked country whose flag shows yellow was needed: Mongolia, Kazakhstan or the Vatican."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "yellow"
+          },
+          {
+            "fact": "landlocked",
+            "eq": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.island-black",
+      "category": "flag",
+      "text": {
+        "fr": "Une île-nation au drapeau marqué de noir",
+        "en": "An island nation with black on its flag"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu.",
+        "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "flagColors",
+            "includes": "black"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.tiny-no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Moins de 200 000 habitants, un drapeau sans rouge",
+        "en": "Under 200,000 people, a flag with no red"
+      },
+      "explain": {
+        "fr": "Il fallait moins de 200 000 habitants et aucun rouge sur le drapeau : Saint-Marin, le Vatican ou Palaos.",
+        "en": "Fewer than 200,000 people and no red on the flag were needed: San Marino, the Vatican or Palau."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "population",
+            "lt": 200000
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "flag.yellow-white-no-red",
+      "category": "flag",
+      "text": {
+        "fr": "Jaune et blanc sur le drapeau, sans rouge",
+        "en": "Yellow and white on the flag, no red"
+      },
+      "explain": {
+        "fr": "Il fallait du jaune et du blanc sans aucun rouge : l'Argentine, l'Uruguay, le Bhoutan ou le Vatican.",
+        "en": "The flag had to show yellow and white with no red: Argentina, Uruguay, Bhutan or the Vatican."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "flagColors",
+            "includes": "yellow"
+          },
+          {
+            "fact": "flagColors",
+            "includes": "white"
+          },
+          {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.giants",
+      "category": "position",
+      "text": {
+        "fr": "Un géant de plus de 2,5 millions de km²",
+        "en": "A giant of over 2.5 million km²"
+      },
+      "explain": {
+        "fr": "Il fallait plus de 2,5 millions de km² : le Kazakhstan, plus vaste pays sans littoral, en fait partie avec l'Argentine et l'Inde.",
+        "en": "More than 2.5 million km² were needed: Kazakhstan, the largest landlocked country, makes the list with Argentina and India."
+      },
+      "predicate": {
+        "fact": "areaKm2",
+        "gt": 2500000
+      }
+    },
+    {
+      "id": "position.large",
+      "category": "position",
+      "text": {
+        "fr": "Un pays entre 1 et 2 millions de km²",
+        "en": "A country between 1 and 2 million km²"
+      },
+      "explain": {
+        "fr": "Il fallait une superficie comprise entre 1 et 2 millions de km² : l'Indonésie, le Mexique ou la Mongolie.",
+        "en": "The area had to be between 1 and 2 million km²: Indonesia, Mexico or Mongolia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "gt": 1000000
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 2000000
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.mid-large",
+      "category": "position",
+      "text": {
+        "fr": "Un pays entre 700 000 et 1 million de km²",
+        "en": "A country between 700,000 and 1 million km²"
+      },
+      "explain": {
+        "fr": "Il fallait une superficie comprise entre 700 000 km² et 1 million de km² : la Turquie, le Chili ou le Nigeria.",
+        "en": "The area had to be between 700,000 and 1 million km²: Turkey, Chile or Nigeria."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "gt": 700000
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 1000000
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.mid-200k",
+      "category": "position",
+      "text": {
+        "fr": "Un pays entre 200 000 et 300 000 km²",
+        "en": "A country between 200,000 and 300,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait une superficie comprise entre 200 000 et 300 000 km² : le Royaume-Uni, la Nouvelle-Zélande ou le Ghana.",
+        "en": "The area had to be between 200,000 and 300,000 km²: the United Kingdom, New Zealand or Ghana."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "gt": 200000
+          },
+          {
+            "fact": "areaKm2",
+            "lt": 300000
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.under-1000",
+      "category": "position",
+      "text": {
+        "fr": "Un pays de moins de 1 000 km²",
+        "en": "A country under 1,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait moins de 1 000 km² : Singapour, Malte ou Saint-Kitts-et-Nevis, sans oublier le Vatican, moins d'un demi-km².",
+        "en": "Less than 1,000 km² was needed: Singapore, Malta or Saint Kitts and Nevis, not forgetting the Vatican at under half a km²."
+      },
+      "predicate": {
+        "fact": "areaKm2",
+        "lt": 1000
+      }
+    },
+    {
+      "id": "position.micro-beyond-europe",
+      "category": "position",
+      "text": {
+        "fr": "Hors d’Europe, moins de 1 000 km²",
+        "en": "Outside Europe, under 1,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays hors d'Europe de moins de 1 000 km² : Bahreïn, les Maldives ou la Grenade.",
+        "en": "A country outside Europe smaller than 1,000 km² was needed: Bahrain, the Maldives or Grenada."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "lt": 1000
+          },
+          {
+            "not": {
+              "fact": "continent",
+              "eq": "EU"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.prime-meridian",
+      "category": "position",
+      "text": {
+        "fr": "Un pays traversé par le méridien de Greenwich",
+        "en": "A country crossed by the Greenwich meridian"
+      },
+      "explain": {
+        "fr": "Il fallait un pays que coupe le méridien d'origine : de l'Angleterre au Ghana, il traverse huit pays d'Europe et d'Afrique.",
+        "en": "The prime meridian had to cross the country: from England to Ghana, it runs through eight countries in Europe and Africa."
+      },
+      "predicate": {
+        "fact": "crossesPrimeMeridian",
+        "eq": true
+      },
+      "regional": ["AF", "EU"]
+    },
+    {
+      "id": "position.west-beyond-americas",
+      "category": "position",
+      "text": {
+        "fr": "Hors Amériques, tout entier à l’ouest de Greenwich",
+        "en": "Outside the Americas, wholly west of Greenwich"
+      },
+      "explain": {
+        "fr": "Il fallait un pays hors des Amériques entièrement à l'ouest du méridien de Greenwich : l'Irlande, le Sénégal, mais aussi les Tonga et les Samoa.",
+        "en": "A country outside the Americas lying wholly west of the Greenwich meridian was needed: Ireland, Senegal, but also Tonga and Samoa."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereEW",
+            "eq": "W"
+          },
+          {
+            "not": {
+              "fact": "continent",
+              "eq": "NA"
+            }
+          },
+          {
+            "not": {
+              "fact": "continent",
+              "eq": "SA"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.south-east",
+      "category": "position",
+      "text": {
+        "fr": "Tout entier au sud de l’équateur et à l’est de Greenwich",
+        "en": "Wholly south of the equator and east of Greenwich"
+      },
+      "explain": {
+        "fr": "Il fallait un pays entièrement dans le quart sud-est du globe : l'Australie, l'Afrique australe ou les Salomon.",
+        "en": "The country had to lie wholly in the south-eastern quarter of the globe: Australia, southern Africa or the Solomon Islands."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          },
+          {
+            "fact": "hemisphereEW",
+            "eq": "E"
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.west-islands",
+      "category": "position",
+      "text": {
+        "fr": "Une île-nation tout entière à l’ouest de Greenwich",
+        "en": "An island nation wholly west of Greenwich"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre entièrement à l'ouest du méridien de Greenwich : les Caraïbes, l'Islande, le Cap-Vert ou les Samoa.",
+        "en": "A country without land borders lying wholly west of Greenwich was needed: the Caribbean, Iceland, Cape Verde or Samoa."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereEW",
+            "eq": "W"
+          },
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.north-east-islands",
+      "category": "position",
+      "text": {
+        "fr": "Une île-nation du quart nord-est du globe",
+        "en": "An island nation in the north-eastern quarter"
+      },
+      "explain": {
+        "fr": "Il fallait un pays sans frontière terrestre, tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte ou Palaos.",
+        "en": "A country without land borders lying wholly north of the equator and east of Greenwich was needed: Japan, Malta or Palau."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereEW",
+            "eq": "E"
+          },
+          {
+            "fact": "hasLandBorder",
+            "eq": false
+          },
+          {
+            "fact": "hemisphereNS",
+            "eq": "N"
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.small-west",
+      "category": "position",
+      "text": {
+        "fr": "Moins de 30 000 km², tout à l’ouest de Greenwich",
+        "en": "Under 30,000 km², wholly west of Greenwich"
+      },
+      "explain": {
+        "fr": "Il fallait un pays de moins de 30 000 km² entièrement à l'ouest de Greenwich : le Salvador, la Gambie ou les Samoa.",
+        "en": "A country under 30,000 km² lying wholly west of Greenwich was needed: El Salvador, the Gambia or Samoa."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "areaKm2",
+            "lt": 30000
+          },
+          {
+            "fact": "hemisphereEW",
+            "eq": "W"
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.big-south",
+      "category": "position",
+      "text": {
+        "fr": "Austral et vaste, plus de 500 000 km²",
+        "en": "Southern and vast, over 500,000 km²"
+      },
+      "explain": {
+        "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
+        "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+      },
+      "predicate": {
+        "all": [
+          {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          },
+          {
+            "fact": "areaKm2",
+            "gt": 500000
+          }
+        ]
+      }
+    },
+    {
+      "id": "position.pacific-isles",
+      "category": "position",
+      "text": {
+        "fr": "Un pays de Mélanésie, Micronésie ou Polynésie",
+        "en": "A country of Melanesia, Micronesia or Polynesia"
+      },
+      "explain": {
+        "fr": "Il fallait un pays des îles du Pacifique, de la Papouasie-Nouvelle-Guinée aux Samoa ; l'Australie et la Nouvelle-Zélande n'en font pas partie.",
+        "en": "A Pacific island country was needed, from Papua New Guinea to Samoa; Australia and New Zealand form a separate region."
+      },
+      "predicate": {
+        "fact": "subregion",
+        "in": ["054", "057", "061"]
+      },
+      "regional": ["OC"]
+    },
+    {
+      "id": "position.caribbean",
+      "category": "position",
+      "text": {
+        "fr": "Un pays des Caraïbes",
+        "en": "A Caribbean country"
+      },
+      "explain": {
+        "fr": "Il fallait un État insulaire des Caraïbes : de Cuba à la Grenade, en passant par les Bahamas, rattachées à la région.",
+        "en": "A Caribbean island state was needed: from Cuba to Grenada, including the Bahamas, counted in the region."
+      },
+      "predicate": {
+        "fact": "subregion",
+        "eq": "029"
+      },
+      "regional": ["NA"]
+    },
+    {
+      "id": "position.central-america",
+      "category": "position",
+      "text": {
+        "fr": "Un pays d’Amérique centrale",
+        "en": "A Central American country"
+      },
+      "explain": {
+        "fr": "Il fallait un pays d'Amérique centrale, du Mexique au Panama ; Cuba et les autres îles relèvent des Caraïbes.",
+        "en": "A Central American country was needed, from Mexico to Panama; Cuba and the other islands belong to the Caribbean."
+      },
+      "predicate": {
+        "fact": "subregion",
+        "eq": "013"
+      },
+      "regional": ["NA"]
+    },
+    {
+      "id": "borders.ctx-neighbour",
+      "category": "borders",
+      "text": {
+        "fr": "Un voisin de ton dernier camp",
+        "en": "A neighbour of your last camp"
+      },
+      "explain": {
+        "fr": "Il fallait un pays partageant une frontière terrestre avec le pays de ton dernier camp valide (ou du port).",
+        "en": "The country had to share a land border with the country of your last valid camp (or the port)."
+      },
+      "predicate": {
+        "ctx": {
+          "rule": "neighborOf"
+        }
+      },
+      "contextual": true
+    },
+    {
+      "id": "position.ctx-across-equator",
+      "category": "position",
+      "text": {
+        "fr": "Passe de l’autre côté de l’équateur",
+        "en": "Cross to the other side of the equator"
+      },
+      "explain": {
+        "fr": "Il fallait planter le camp dans l'hémisphère opposé (nord ou sud) à celui de ton dernier camp valide.",
+        "en": "The camp had to be planted in the opposite hemisphere (north or south) from your last valid camp."
+      },
+      "predicate": {
+        "ctx": {
+          "rule": "otherHemisphere",
+          "axis": "NS"
+        }
+      },
+      "contextual": true
+    },
+    {
+      "id": "position.ctx-across-greenwich",
+      "category": "position",
+      "text": {
+        "fr": "Passe de l’autre côté de Greenwich",
+        "en": "Cross to the other side of Greenwich"
+      },
+      "explain": {
+        "fr": "Il fallait planter le camp de l'autre côté du méridien de Greenwich (est ou ouest) par rapport à ton dernier camp valide.",
+        "en": "The camp had to be planted on the other side of the Greenwich meridian (east or west) from your last valid camp."
+      },
+      "predicate": {
+        "ctx": {
+          "rule": "otherHemisphere",
+          "axis": "EW"
+        }
+      },
+      "contextual": true
+    },
+    {
+      "id": "position.ctx-same-continent",
+      "category": "position",
+      "text": {
+        "fr": "Reste sur le même continent",
+        "en": "Stay on the same continent"
+      },
+      "explain": {
+        "fr": "Il fallait un pays du même continent que ton dernier camp valide.",
+        "en": "The country had to be on the same continent as your last valid camp."
+      },
+      "predicate": {
+        "ctx": {
+          "rule": "sameContinent"
+        }
+      },
+      "contextual": true
+    },
+    {
+      "id": "position.ctx-other-continent",
+      "category": "position",
+      "text": {
+        "fr": "Change de continent",
+        "en": "Move to another continent"
+      },
+      "explain": {
+        "fr": "Il fallait un pays d'un autre continent que celui de ton dernier camp valide.",
+        "en": "The country had to be on a different continent from your last valid camp."
+      },
+      "predicate": {
+        "ctx": {
+          "rule": "otherContinent"
+        }
+      },
+      "contextual": true
+    },
+    {
+      "id": "position.ctx-homeward",
+      "category": "position",
+      "text": {
+        "fr": "Rentre : plus près du port que ton dernier camp",
+        "en": "Head home: closer to port than your last camp"
+      },
+      "explain": {
+        "fr": "Il fallait planter le camp plus près du port de départ que ne l'était ton dernier camp valide.",
+        "en": "The camp had to be closer to the starting port than your last valid camp was."
+      },
+      "predicate": {
+        "ctx": {
+          "rule": "closerToPort"
+        }
+      },
+      "contextual": true
+    }
+  ]
+}

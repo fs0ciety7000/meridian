@@ -1,0 +1,37 @@
+{
+  "catalogNumber": 25,
+  "title": {
+    "fr": "Les oubliés",
+    "en": "The Forgotten"
+  },
+  "theme": "Pays méconnus",
+  "difficulty": "expert",
+  "start": "libreville",
+  "meridianLon": 40,
+  "legs": [
+    "borders.tropical-pair",
+    "society.portuguese",
+    "climate.equatorial-north",
+    "flag.southern-no-red",
+    "water.island-tiny",
+    "position.micro-beyond-europe"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 9000
+      }
+    }
+  ],
+  "designNote": "Des pays rarement cités, sur tous les continents, pour récompenser l'audace."
+}

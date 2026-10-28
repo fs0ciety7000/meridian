@@ -1,0 +1,37 @@
+{
+  "catalogNumber": 26,
+  "title": {
+    "fr": "Le grand tour austral",
+    "en": "The Great Southern Tour"
+  },
+  "theme": "Hémisphère sud",
+  "difficulty": "expert",
+  "start": "ushuaia",
+  "meridianLon": 0,
+  "legs": [
+    "climate.deep-south",
+    "flag.southern-no-red",
+    "relief.southern-heights",
+    "society.iberian-south",
+    "water.island-tiny",
+    "position.big-south"
+  ],
+  "missions": [
+    {
+      "id": "southernSoul"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 9000
+      }
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    }
+  ],
+  "designNote": "Un tour du monde sous l'équateur, de la Terre de Feu au Pacifique en passant par l'Afrique australe."
+}

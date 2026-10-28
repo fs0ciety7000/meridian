@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 16,
+  "title": {
+    "fr": "Sable et Sahel",
+    "en": "Sand and Sahel"
+  },
+  "theme": "Sahara",
+  "difficulty": "normal",
+  "start": "alger",
+  "meridianLon": 25,
+  "legs": [
+    "climate.cancer",
+    "society.arab-league",
+    "water.landlocked-crowded",
+    "flag.green-yellow-red",
+    "climate.sahel-caribbean-belt",
+    "borders.arab-league-doorstep"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Du Maghreb au Sahel en suivant le tropique du Cancer."
+}

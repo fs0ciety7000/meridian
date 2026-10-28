@@ -1,0 +1,38 @@
+{
+  "catalogNumber": 29,
+  "title": {
+    "fr": "Hautes terres oubliées",
+    "en": "Forgotten Highlands"
+  },
+  "theme": "Montagnes",
+  "difficulty": "expert",
+  "start": "la-paz",
+  "meridianLon": -30,
+  "legs": [
+    "relief.southern-heights",
+    "water.landlocked-south",
+    "flag.orange",
+    "relief.tropical-island-peaks",
+    "society.tiny-left",
+    "borders.ctx-neighbour"
+  ],
+  "missions": [
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 9000
+      }
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    },
+    {
+      "id": "equatorShuttle"
+    }
+  ],
+  "fallback": "climate.tropical-landlocked",
+  "designNote": "Des Andes à l'Afrique des Grands Lacs, puis les volcans des petites îles."
+}

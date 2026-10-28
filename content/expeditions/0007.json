@@ -1,0 +1,25 @@
+{
+  "catalogNumber": 7,
+  "title": {
+    "fr": "Grand Nord",
+    "en": "Far North"
+  },
+  "theme": "Nord",
+  "difficulty": "easy",
+  "start": "bergen",
+  "meridianLon": 40,
+  "legs": [
+    "climate.north-of-50",
+    "society.nato",
+    "flag.red-white-only",
+    "water.coast-crowded",
+    "climate.north-of-55",
+    "society.monarchy"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    }
+  ],
+  "designNote": "Une ronde des hautes latitudes, de la Norvège au Canada."
+}

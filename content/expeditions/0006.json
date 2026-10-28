@@ -1,0 +1,26 @@
+{
+  "catalogNumber": 6,
+  "title": {
+    "fr": "Le Nouveau Monde",
+    "en": "The New World"
+  },
+  "theme": "Amériques",
+  "difficulty": "easy",
+  "start": "new-york",
+  "meridianLon": -100,
+  "legs": [
+    "society.spanish",
+    "relief.over-6000",
+    "flag.red-white-blue",
+    "climate.either-tropic",
+    "society.dollar",
+    "position.ctx-same-continent"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    }
+  ],
+  "fallback": "water.island-nation",
+  "designNote": "Des Rocheuses aux Andes : la dernière étape interdit de quitter le continent."
+}

@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 8,
+  "title": {
+    "fr": "Mare Nostrum",
+    "en": "Mare Nostrum"
+  },
+  "theme": "Méditerranée",
+  "difficulty": "easy",
+  "start": "marseille",
+  "meridianLon": 35,
+  "legs": [
+    "society.euro",
+    "climate.subtropical-north",
+    "flag.red-no-white-blue",
+    "borders.eu-doorstep",
+    "society.monarchy",
+    "water.landlocked"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 2
+      }
+    }
+  ],
+  "designNote": "Autour de la Méditerranée, avec un saut vers le Maghreb ou le Levant."
+}

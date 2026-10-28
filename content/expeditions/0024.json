@@ -1,0 +1,31 @@
+{
+  "catalogNumber": 24,
+  "title": {
+    "fr": "Les Petites Antilles",
+    "en": "The Lesser Antilles"
+  },
+  "theme": "Caraïbes",
+  "difficulty": "expert",
+  "start": "bridgetown",
+  "meridianLon": -80,
+  "legs": [
+    "flag.island-black",
+    "society.tiny-left",
+    "position.small-west",
+    "water.island-tiny",
+    "relief.tropical-island-peaks",
+    "climate.equatorial-north"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "noFalseTrail"
+    }
+  ],
+  "designNote": "Un chapelet de micro-États qui se ressemblent tous ; seuls les drapeaux et les sommets les distinguent."
+}

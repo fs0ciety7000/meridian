@@ -1,0 +1,32 @@
+{
+  "catalogNumber": 21,
+  "title": {
+    "fr": "Le cap de Bonne-Espérance",
+    "en": "The Cape of Good Hope"
+  },
+  "theme": "Afrique australe",
+  "difficulty": "normal",
+  "start": "le-cap",
+  "meridianLon": 45,
+  "legs": [
+    "climate.capricorn",
+    "society.monarchy-left",
+    "flag.black-and-blue",
+    "climate.deep-south",
+    "position.big-south",
+    "position.ctx-same-continent"
+  ],
+  "missions": [
+    {
+      "id": "southernSoul"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 7000
+      }
+    }
+  ],
+  "fallback": "relief.southern-heights",
+  "designNote": "Autour du tropique du Capricorne, avec une échappée possible vers l'Australie ou l'Argentine."
+}

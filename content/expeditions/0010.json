@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 10,
+  "title": {
+    "fr": "Couronnes",
+    "en": "Crowns"
+  },
+  "theme": "Monarchies",
+  "difficulty": "easy",
+  "start": "copenhague",
+  "meridianLon": -30,
+  "legs": [
+    "society.monarchy",
+    "water.island-nation",
+    "flag.black",
+    "climate.north-of-50",
+    "society.under-1m",
+    "borders.exactly-four"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 2
+      }
+    }
+  ],
+  "designNote": "Des royaumes du Nord aux royaumes insulaires, puis retour en Europe."
+}

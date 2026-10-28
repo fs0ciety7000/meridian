@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 22,
+  "title": {
+    "fr": "Ambre et Baltique",
+    "en": "Amber and the Baltic"
+  },
+  "theme": "Europe centrale",
+  "difficulty": "normal",
+  "start": "gdansk",
+  "meridianLon": -5,
+  "legs": [
+    "borders.eight-plus",
+    "society.euro",
+    "water.landlocked-small",
+    "flag.green-white-red",
+    "borders.small-crowded",
+    "climate.north-of-55"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Les carrefours d'Europe centrale, là où chaque pays touche quatre voisins ou plus."
+}

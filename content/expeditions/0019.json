@@ -1,0 +1,34 @@
+{
+  "catalogNumber": 19,
+  "title": {
+    "fr": "Du Saint-Laurent au Rio Grande",
+    "en": "From the St Lawrence to the Rio Grande"
+  },
+  "theme": "Amérique du Nord",
+  "difficulty": "normal",
+  "start": "halifax",
+  "meridianLon": -95,
+  "legs": [
+    "society.commonwealth-right",
+    "climate.north-of-55",
+    "flag.red-white-only",
+    "borders.nato-doorstep",
+    "position.giants",
+    "society.spanish"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 3
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 7000
+      }
+    }
+  ],
+  "designNote": "Le Canada en point de départ, puis l'Europe et les géants du monde avant de redescendre vers les pays hispanophones."
+}

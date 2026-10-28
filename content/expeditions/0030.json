@@ -1,0 +1,38 @@
+{
+  "catalogNumber": 30,
+  "title": {
+    "fr": "Le tour du monde du cartographe",
+    "en": "The Cartographer’s World Tour"
+  },
+  "theme": "Tour du monde",
+  "difficulty": "expert",
+  "start": "reykjavik",
+  "meridianLon": 30,
+  "legs": [
+    "position.west-islands",
+    "society.commonwealth-right",
+    "climate.equatorial-north",
+    "flag.tiny-no-red",
+    "borders.tanzania-neighbour",
+    "position.ctx-other-continent"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 9000
+      }
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "fallback": "water.island-large",
+  "designNote": "Des îles de l'Atlantique aux Grands Lacs africains, en changeant de continent presque à chaque étape."
+}

@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 15,
+  "title": {
+    "fr": "Les Caraïbes",
+    "en": "The Caribbean"
+  },
+  "theme": "Caraïbes",
+  "difficulty": "normal",
+  "start": "la-havane",
+  "meridianLon": -60,
+  "legs": [
+    "water.island-north",
+    "society.dollar",
+    "flag.black-and-blue",
+    "climate.sahel-caribbean-belt",
+    "position.small-west",
+    "society.monarchy-left"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Un collier d'îles des Bahamas à Trinité ; audace : le Cap-Vert ou la Gambie de l'autre côté de l'Atlantique."
+}

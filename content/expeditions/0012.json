@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 12,
+  "title": {
+    "fr": "L’échine des Andes",
+    "en": "The Spine of the Andes"
+  },
+  "theme": "Andes",
+  "difficulty": "normal",
+  "start": "lima",
+  "meridianLon": -45,
+  "legs": [
+    "relief.over-6000",
+    "society.spanish",
+    "climate.tropical-snow",
+    "borders.exactly-five",
+    "relief.southern-heights",
+    "society.iberian-south"
+  ],
+  "missions": [
+    {
+      "id": "southernSoul"
+    },
+    {
+      "id": "noFalseTrail"
+    }
+  ],
+  "designNote": "Toute la route tient dans les Andes australes ; le piège est de remonter vers le Mexique."
+}

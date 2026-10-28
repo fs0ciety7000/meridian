@@ -1,0 +1,25 @@
+{
+  "catalogNumber": 3,
+  "title": {
+    "fr": "Traversée de l’Atlantique",
+    "en": "Crossing the Atlantic"
+  },
+  "theme": "Atlantique",
+  "difficulty": "easy",
+  "start": "lisbonne",
+  "meridianLon": -40,
+  "legs": [
+    "society.spanish",
+    "flag.red-white-blue",
+    "water.island-nation",
+    "society.nato",
+    "climate.north-of-50",
+    "borders.nato-doorstep"
+  ],
+  "missions": [
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Va-et-vient entre l'Europe et les Amériques, le méridien au milieu de l'océan."
+}

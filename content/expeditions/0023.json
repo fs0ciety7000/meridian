@@ -1,0 +1,31 @@
+{
+  "catalogNumber": 23,
+  "title": {
+    "fr": "Confettis du Pacifique",
+    "en": "Pacific Confetti"
+  },
+  "theme": "Micro-îles",
+  "difficulty": "expert",
+  "start": "tarawa",
+  "meridianLon": -165,
+  "legs": [
+    "relief.low-islands",
+    "society.tiny-republic",
+    "water.island-right-hand",
+    "flag.tiny-no-red",
+    "climate.tropical-specks",
+    "position.pacific-isles"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "noFalseTrail"
+    }
+  ],
+  "designNote": "Des atolls minuscules, souvent confondus : la difficulté est de ne jamais réutiliser le même."
+}

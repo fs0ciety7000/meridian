@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 20,
+  "title": {
+    "fr": "Les routes de l’encens",
+    "en": "The Incense Routes"
+  },
+  "theme": "Arabie",
+  "difficulty": "normal",
+  "start": "dubai",
+  "meridianLon": 30,
+  "legs": [
+    "climate.subtropical-north",
+    "society.big-monarchy",
+    "borders.arab-league-doorstep",
+    "flag.green-white-red",
+    "position.large",
+    "society.opec"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Des émirats du Golfe à la mer Rouge, sur les vieilles routes caravanières."
+}

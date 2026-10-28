@@ -1,0 +1,25 @@
+{
+  "catalogNumber": 5,
+  "title": {
+    "fr": "La route de la soie",
+    "en": "The Silk Road"
+  },
+  "theme": "Asie",
+  "difficulty": "easy",
+  "start": "istanbul",
+  "meridianLon": 75,
+  "legs": [
+    "water.landlocked",
+    "society.over-50m",
+    "relief.over-5000",
+    "flag.red-no-white-blue",
+    "borders.six-plus",
+    "climate.subtropical-north"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    }
+  ],
+  "designNote": "D'Istanbul vers la Chine par les steppes et les hauts plateaux."
+}

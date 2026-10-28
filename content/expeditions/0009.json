@@ -1,0 +1,29 @@
+{
+  "catalogNumber": 9,
+  "title": {
+    "fr": "Tour du monde express",
+    "en": "Express World Tour"
+  },
+  "theme": "Tour du monde",
+  "difficulty": "easy",
+  "start": "singapour",
+  "meridianLon": -60,
+  "legs": [
+    "society.commonwealth",
+    "climate.either-tropic",
+    "flag.no-red",
+    "water.island-nation",
+    "society.g20",
+    "position.ctx-other-continent"
+  ],
+  "missions": [
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 5000
+      }
+    }
+  ],
+  "fallback": "relief.over-5000",
+  "designNote": "De grands sauts entre continents, le dernier imposé par le contexte."
+}

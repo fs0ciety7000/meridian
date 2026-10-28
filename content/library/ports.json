@@ -1,0 +1,1084 @@
+{
+  "ports": [
+    {
+      "id": "dakar",
+      "name": {
+        "fr": "Dakar",
+        "en": "Dakar"
+      },
+      "iso3": "SEN",
+      "lonLat": [-17.444, 14.693]
+    },
+    {
+      "id": "casablanca",
+      "name": {
+        "fr": "Casablanca",
+        "en": "Casablanca"
+      },
+      "iso3": "MAR",
+      "lonLat": [-7.59, 33.573]
+    },
+    {
+      "id": "alger",
+      "name": {
+        "fr": "Alger",
+        "en": "Algiers"
+      },
+      "iso3": "DZA",
+      "lonLat": [3.059, 36.754]
+    },
+    {
+      "id": "tunis",
+      "name": {
+        "fr": "Tunis",
+        "en": "Tunis"
+      },
+      "iso3": "TUN",
+      "lonLat": [10.182, 36.806]
+    },
+    {
+      "id": "tripoli",
+      "name": {
+        "fr": "Tripoli",
+        "en": "Tripoli"
+      },
+      "iso3": "LBY",
+      "lonLat": [13.191, 32.887]
+    },
+    {
+      "id": "alexandrie",
+      "name": {
+        "fr": "Alexandrie",
+        "en": "Alexandria"
+      },
+      "iso3": "EGY",
+      "lonLat": [29.918, 31.2]
+    },
+    {
+      "id": "port-soudan",
+      "name": {
+        "fr": "Port-Soudan",
+        "en": "Port Sudan"
+      },
+      "iso3": "SDN",
+      "lonLat": [37.217, 19.616]
+    },
+    {
+      "id": "djibouti",
+      "name": {
+        "fr": "Djibouti",
+        "en": "Djibouti"
+      },
+      "iso3": "DJI",
+      "lonLat": [43.129, 11.566]
+    },
+    {
+      "id": "mombasa",
+      "name": {
+        "fr": "Mombasa",
+        "en": "Mombasa"
+      },
+      "iso3": "KEN",
+      "lonLat": [39.668, -4.043]
+    },
+    {
+      "id": "dar-es-salaam",
+      "name": {
+        "fr": "Dar es Salaam",
+        "en": "Dar es Salaam"
+      },
+      "iso3": "TZA",
+      "lonLat": [39.27, -6.792]
+    },
+    {
+      "id": "maputo",
+      "name": {
+        "fr": "Maputo",
+        "en": "Maputo"
+      },
+      "iso3": "MOZ",
+      "lonLat": [32.573, -25.966]
+    },
+    {
+      "id": "le-cap",
+      "name": {
+        "fr": "Le Cap",
+        "en": "Cape Town"
+      },
+      "iso3": "ZAF",
+      "lonLat": [18.424, -33.925]
+    },
+    {
+      "id": "walvis-bay",
+      "name": {
+        "fr": "Walvis Bay",
+        "en": "Walvis Bay"
+      },
+      "iso3": "NAM",
+      "lonLat": [14.505, -22.957]
+    },
+    {
+      "id": "luanda",
+      "name": {
+        "fr": "Luanda",
+        "en": "Luanda"
+      },
+      "iso3": "AGO",
+      "lonLat": [13.234, -8.839]
+    },
+    {
+      "id": "libreville",
+      "name": {
+        "fr": "Libreville",
+        "en": "Libreville"
+      },
+      "iso3": "GAB",
+      "lonLat": [9.458, 0.394]
+    },
+    {
+      "id": "douala",
+      "name": {
+        "fr": "Douala",
+        "en": "Douala"
+      },
+      "iso3": "CMR",
+      "lonLat": [9.704, 4.051]
+    },
+    {
+      "id": "lagos",
+      "name": {
+        "fr": "Lagos",
+        "en": "Lagos"
+      },
+      "iso3": "NGA",
+      "lonLat": [3.379, 6.524]
+    },
+    {
+      "id": "accra",
+      "name": {
+        "fr": "Accra",
+        "en": "Accra"
+      },
+      "iso3": "GHA",
+      "lonLat": [-0.187, 5.604]
+    },
+    {
+      "id": "abidjan",
+      "name": {
+        "fr": "Abidjan",
+        "en": "Abidjan"
+      },
+      "iso3": "CIV",
+      "lonLat": [-4.008, 5.345]
+    },
+    {
+      "id": "monrovia",
+      "name": {
+        "fr": "Monrovia",
+        "en": "Monrovia"
+      },
+      "iso3": "LBR",
+      "lonLat": [-10.781, 6.317]
+    },
+    {
+      "id": "port-louis",
+      "name": {
+        "fr": "Port-Louis",
+        "en": "Port Louis"
+      },
+      "iso3": "MUS",
+      "lonLat": [57.502, -20.162]
+    },
+    {
+      "id": "toamasina",
+      "name": {
+        "fr": "Toamasina",
+        "en": "Toamasina"
+      },
+      "iso3": "MDG",
+      "lonLat": [49.402, -18.149]
+    },
+    {
+      "id": "victoria-seychelles",
+      "name": {
+        "fr": "Victoria",
+        "en": "Victoria"
+      },
+      "iso3": "SYC",
+      "lonLat": [55.452, -4.62]
+    },
+    {
+      "id": "praia",
+      "name": {
+        "fr": "Praia",
+        "en": "Praia"
+      },
+      "iso3": "CPV",
+      "lonLat": [-23.51, 14.933]
+    },
+    {
+      "id": "addis-abeba",
+      "name": {
+        "fr": "Addis-Abeba",
+        "en": "Addis Ababa"
+      },
+      "iso3": "ETH",
+      "lonLat": [38.757, 9.03]
+    },
+    {
+      "id": "istanbul",
+      "name": {
+        "fr": "Istanbul",
+        "en": "Istanbul"
+      },
+      "iso3": "TUR",
+      "lonLat": [28.965, 41.029]
+    },
+    {
+      "id": "beyrouth",
+      "name": {
+        "fr": "Beyrouth",
+        "en": "Beirut"
+      },
+      "iso3": "LBN",
+      "lonLat": [35.518, 33.878]
+    },
+    {
+      "id": "dubai",
+      "name": {
+        "fr": "Dubaï",
+        "en": "Dubai"
+      },
+      "iso3": "ARE",
+      "lonLat": [55.316, 25.264]
+    },
+    {
+      "id": "mascate",
+      "name": {
+        "fr": "Mascate",
+        "en": "Muscat"
+      },
+      "iso3": "OMN",
+      "lonLat": [58.405, 23.588]
+    },
+    {
+      "id": "djeddah",
+      "name": {
+        "fr": "Djeddah",
+        "en": "Jeddah"
+      },
+      "iso3": "SAU",
+      "lonLat": [39.173, 21.543]
+    },
+    {
+      "id": "bandar-abbas",
+      "name": {
+        "fr": "Bandar Abbas",
+        "en": "Bandar Abbas"
+      },
+      "iso3": "IRN",
+      "lonLat": [56.26, 27.189]
+    },
+    {
+      "id": "karachi",
+      "name": {
+        "fr": "Karachi",
+        "en": "Karachi"
+      },
+      "iso3": "PAK",
+      "lonLat": [67.01, 24.861]
+    },
+    {
+      "id": "mumbai",
+      "name": {
+        "fr": "Bombay",
+        "en": "Mumbai"
+      },
+      "iso3": "IND",
+      "lonLat": [72.878, 19.076]
+    },
+    {
+      "id": "colombo",
+      "name": {
+        "fr": "Colombo",
+        "en": "Colombo"
+      },
+      "iso3": "LKA",
+      "lonLat": [79.861, 6.927]
+    },
+    {
+      "id": "male",
+      "name": {
+        "fr": "Malé",
+        "en": "Malé"
+      },
+      "iso3": "MDV",
+      "lonLat": [73.509, 4.175]
+    },
+    {
+      "id": "chittagong",
+      "name": {
+        "fr": "Chittagong",
+        "en": "Chittagong"
+      },
+      "iso3": "BGD",
+      "lonLat": [91.783, 22.357]
+    },
+    {
+      "id": "yangon",
+      "name": {
+        "fr": "Rangoun",
+        "en": "Yangon"
+      },
+      "iso3": "MMR",
+      "lonLat": [96.156, 16.84]
+    },
+    {
+      "id": "bangkok",
+      "name": {
+        "fr": "Bangkok",
+        "en": "Bangkok"
+      },
+      "iso3": "THA",
+      "lonLat": [100.502, 13.756]
+    },
+    {
+      "id": "singapour",
+      "name": {
+        "fr": "Singapour",
+        "en": "Singapore"
+      },
+      "iso3": "SGP",
+      "lonLat": [103.82, 1.352]
+    },
+    {
+      "id": "jakarta",
+      "name": {
+        "fr": "Jakarta",
+        "en": "Jakarta"
+      },
+      "iso3": "IDN",
+      "lonLat": [106.845, -6.208]
+    },
+    {
+      "id": "ho-chi-minh-ville",
+      "name": {
+        "fr": "Hô Chi Minh-Ville",
+        "en": "Ho Chi Minh City"
+      },
+      "iso3": "VNM",
+      "lonLat": [106.66, 10.762]
+    },
+    {
+      "id": "manille",
+      "name": {
+        "fr": "Manille",
+        "en": "Manila"
+      },
+      "iso3": "PHL",
+      "lonLat": [120.984, 14.599]
+    },
+    {
+      "id": "shanghai",
+      "name": {
+        "fr": "Shanghai",
+        "en": "Shanghai"
+      },
+      "iso3": "CHN",
+      "lonLat": [121.474, 31.23]
+    },
+    {
+      "id": "busan",
+      "name": {
+        "fr": "Busan",
+        "en": "Busan"
+      },
+      "iso3": "KOR",
+      "lonLat": [129.076, 35.18]
+    },
+    {
+      "id": "tokyo",
+      "name": {
+        "fr": "Tokyo",
+        "en": "Tokyo"
+      },
+      "iso3": "JPN",
+      "lonLat": [139.692, 35.69]
+    },
+    {
+      "id": "tachkent",
+      "name": {
+        "fr": "Tachkent",
+        "en": "Tashkent"
+      },
+      "iso3": "UZB",
+      "lonLat": [69.24, 41.311]
+    },
+    {
+      "id": "oulan-bator",
+      "name": {
+        "fr": "Oulan-Bator",
+        "en": "Ulaanbaatar"
+      },
+      "iso3": "MNG",
+      "lonLat": [106.918, 47.886]
+    },
+    {
+      "id": "katmandou",
+      "name": {
+        "fr": "Katmandou",
+        "en": "Kathmandu"
+      },
+      "iso3": "NPL",
+      "lonLat": [85.324, 27.717]
+    },
+    {
+      "id": "george-town",
+      "name": {
+        "fr": "George Town",
+        "en": "George Town"
+      },
+      "iso3": "MYS",
+      "lonLat": [100.331, 5.41]
+    },
+    {
+      "id": "dili",
+      "name": {
+        "fr": "Dili",
+        "en": "Dili"
+      },
+      "iso3": "TLS",
+      "lonLat": [125.567, -8.556]
+    },
+    {
+      "id": "lisbonne",
+      "name": {
+        "fr": "Lisbonne",
+        "en": "Lisbon"
+      },
+      "iso3": "PRT",
+      "lonLat": [-9.157, 38.744]
+    },
+    {
+      "id": "barcelone",
+      "name": {
+        "fr": "Barcelone",
+        "en": "Barcelona"
+      },
+      "iso3": "ESP",
+      "lonLat": [2.173, 41.385]
+    },
+    {
+      "id": "marseille",
+      "name": {
+        "fr": "Marseille",
+        "en": "Marseille"
+      },
+      "iso3": "FRA",
+      "lonLat": [5.37, 43.296]
+    },
+    {
+      "id": "genes",
+      "name": {
+        "fr": "Gênes",
+        "en": "Genoa"
+      },
+      "iso3": "ITA",
+      "lonLat": [8.946, 44.409]
+    },
+    {
+      "id": "athenes",
+      "name": {
+        "fr": "Athènes",
+        "en": "Athens"
+      },
+      "iso3": "GRC",
+      "lonLat": [23.728, 37.984]
+    },
+    {
+      "id": "la-valette",
+      "name": {
+        "fr": "La Valette",
+        "en": "Valletta"
+      },
+      "iso3": "MLT",
+      "lonLat": [14.514, 35.899]
+    },
+    {
+      "id": "amsterdam",
+      "name": {
+        "fr": "Amsterdam",
+        "en": "Amsterdam"
+      },
+      "iso3": "NLD",
+      "lonLat": [4.9, 52.373]
+    },
+    {
+      "id": "anvers",
+      "name": {
+        "fr": "Anvers",
+        "en": "Antwerp"
+      },
+      "iso3": "BEL",
+      "lonLat": [4.402, 51.219]
+    },
+    {
+      "id": "hambourg",
+      "name": {
+        "fr": "Hambourg",
+        "en": "Hamburg"
+      },
+      "iso3": "DEU",
+      "lonLat": [9.993, 53.551]
+    },
+    {
+      "id": "copenhague",
+      "name": {
+        "fr": "Copenhague",
+        "en": "Copenhagen"
+      },
+      "iso3": "DNK",
+      "lonLat": [12.56, 55.682]
+    },
+    {
+      "id": "bergen",
+      "name": {
+        "fr": "Bergen",
+        "en": "Bergen"
+      },
+      "iso3": "NOR",
+      "lonLat": [5.324, 60.393]
+    },
+    {
+      "id": "stockholm",
+      "name": {
+        "fr": "Stockholm",
+        "en": "Stockholm"
+      },
+      "iso3": "SWE",
+      "lonLat": [18.069, 59.315]
+    },
+    {
+      "id": "helsinki",
+      "name": {
+        "fr": "Helsinki",
+        "en": "Helsinki"
+      },
+      "iso3": "FIN",
+      "lonLat": [24.938, 60.17]
+    },
+    {
+      "id": "tallinn",
+      "name": {
+        "fr": "Tallinn",
+        "en": "Tallinn"
+      },
+      "iso3": "EST",
+      "lonLat": [24.754, 59.437]
+    },
+    {
+      "id": "saint-petersbourg",
+      "name": {
+        "fr": "Saint-Pétersbourg",
+        "en": "Saint Petersburg"
+      },
+      "iso3": "RUS",
+      "lonLat": [30.316, 59.939]
+    },
+    {
+      "id": "gdansk",
+      "name": {
+        "fr": "Gdańsk",
+        "en": "Gdańsk"
+      },
+      "iso3": "POL",
+      "lonLat": [18.646, 54.352]
+    },
+    {
+      "id": "londres",
+      "name": {
+        "fr": "Londres",
+        "en": "London"
+      },
+      "iso3": "GBR",
+      "lonLat": [-0.128, 51.507]
+    },
+    {
+      "id": "dublin",
+      "name": {
+        "fr": "Dublin",
+        "en": "Dublin"
+      },
+      "iso3": "IRL",
+      "lonLat": [-6.26, 53.35]
+    },
+    {
+      "id": "reykjavik",
+      "name": {
+        "fr": "Reykjavik",
+        "en": "Reykjavík"
+      },
+      "iso3": "ISL",
+      "lonLat": [-21.896, 64.146]
+    },
+    {
+      "id": "vladivostok",
+      "name": {
+        "fr": "Vladivostok",
+        "en": "Vladivostok"
+      },
+      "iso3": "RUS",
+      "lonLat": [131.886, 43.116]
+    },
+    {
+      "id": "vancouver",
+      "name": {
+        "fr": "Vancouver",
+        "en": "Vancouver"
+      },
+      "iso3": "CAN",
+      "lonLat": [-123.117, 49.279]
+    },
+    {
+      "id": "halifax",
+      "name": {
+        "fr": "Halifax",
+        "en": "Halifax"
+      },
+      "iso3": "CAN",
+      "lonLat": [-63.583, 44.641]
+    },
+    {
+      "id": "montreal",
+      "name": {
+        "fr": "Montréal",
+        "en": "Montreal"
+      },
+      "iso3": "CAN",
+      "lonLat": [-73.568, 45.502]
+    },
+    {
+      "id": "new-york",
+      "name": {
+        "fr": "New York",
+        "en": "New York"
+      },
+      "iso3": "USA",
+      "lonLat": [-73.968, 40.715]
+    },
+    {
+      "id": "san-francisco",
+      "name": {
+        "fr": "San Francisco",
+        "en": "San Francisco"
+      },
+      "iso3": "USA",
+      "lonLat": [-122.419, 37.775]
+    },
+    {
+      "id": "la-nouvelle-orleans",
+      "name": {
+        "fr": "La Nouvelle-Orléans",
+        "en": "New Orleans"
+      },
+      "iso3": "USA",
+      "lonLat": [-90.072, 29.951]
+    },
+    {
+      "id": "anchorage",
+      "name": {
+        "fr": "Anchorage",
+        "en": "Anchorage"
+      },
+      "iso3": "USA",
+      "lonLat": [-149.9, 61.218]
+    },
+    {
+      "id": "honolulu",
+      "name": {
+        "fr": "Honolulu",
+        "en": "Honolulu"
+      },
+      "iso3": "USA",
+      "lonLat": [-157.858, 21.307]
+    },
+    {
+      "id": "miami",
+      "name": {
+        "fr": "Miami",
+        "en": "Miami"
+      },
+      "iso3": "USA",
+      "lonLat": [-80.21, 25.776]
+    },
+    {
+      "id": "veracruz",
+      "name": {
+        "fr": "Veracruz",
+        "en": "Veracruz"
+      },
+      "iso3": "MEX",
+      "lonLat": [-96.134, 19.173]
+    },
+    {
+      "id": "la-havane",
+      "name": {
+        "fr": "La Havane",
+        "en": "Havana"
+      },
+      "iso3": "CUB",
+      "lonLat": [-82.366, 23.113]
+    },
+    {
+      "id": "kingston",
+      "name": {
+        "fr": "Kingston",
+        "en": "Kingston"
+      },
+      "iso3": "JAM",
+      "lonLat": [-76.793, 17.997]
+    },
+    {
+      "id": "port-au-prince",
+      "name": {
+        "fr": "Port-au-Prince",
+        "en": "Port-au-Prince"
+      },
+      "iso3": "HTI",
+      "lonLat": [-72.335, 18.594]
+    },
+    {
+      "id": "saint-domingue",
+      "name": {
+        "fr": "Saint-Domingue",
+        "en": "Santo Domingo"
+      },
+      "iso3": "DOM",
+      "lonLat": [-69.93, 18.486]
+    },
+    {
+      "id": "panama",
+      "name": {
+        "fr": "Panama",
+        "en": "Panama City"
+      },
+      "iso3": "PAN",
+      "lonLat": [-79.519, 8.983]
+    },
+    {
+      "id": "belize-city",
+      "name": {
+        "fr": "Belize City",
+        "en": "Belize City"
+      },
+      "iso3": "BLZ",
+      "lonLat": [-88.211, 17.514]
+    },
+    {
+      "id": "nassau",
+      "name": {
+        "fr": "Nassau",
+        "en": "Nassau"
+      },
+      "iso3": "BHS",
+      "lonLat": [-77.343, 25.048]
+    },
+    {
+      "id": "bridgetown",
+      "name": {
+        "fr": "Bridgetown",
+        "en": "Bridgetown"
+      },
+      "iso3": "BRB",
+      "lonLat": [-59.616, 13.097]
+    },
+    {
+      "id": "port-of-spain",
+      "name": {
+        "fr": "Port-d’Espagne",
+        "en": "Port of Spain"
+      },
+      "iso3": "TTO",
+      "lonLat": [-61.519, 10.66]
+    },
+    {
+      "id": "carthagene",
+      "name": {
+        "fr": "Carthagène des Indes",
+        "en": "Cartagena"
+      },
+      "iso3": "COL",
+      "lonLat": [-75.514, 10.391]
+    },
+    {
+      "id": "caracas",
+      "name": {
+        "fr": "Caracas",
+        "en": "Caracas"
+      },
+      "iso3": "VEN",
+      "lonLat": [-66.904, 10.481]
+    },
+    {
+      "id": "georgetown",
+      "name": {
+        "fr": "Georgetown",
+        "en": "Georgetown"
+      },
+      "iso3": "GUY",
+      "lonLat": [-58.155, 6.801]
+    },
+    {
+      "id": "paramaribo",
+      "name": {
+        "fr": "Paramaribo",
+        "en": "Paramaribo"
+      },
+      "iso3": "SUR",
+      "lonLat": [-55.204, 5.852]
+    },
+    {
+      "id": "belem",
+      "name": {
+        "fr": "Belém",
+        "en": "Belém"
+      },
+      "iso3": "BRA",
+      "lonLat": [-48.452, -1.418]
+    },
+    {
+      "id": "rio-de-janeiro",
+      "name": {
+        "fr": "Rio de Janeiro",
+        "en": "Rio de Janeiro"
+      },
+      "iso3": "BRA",
+      "lonLat": [-43.203, -22.931]
+    },
+    {
+      "id": "manaus",
+      "name": {
+        "fr": "Manaus",
+        "en": "Manaus"
+      },
+      "iso3": "BRA",
+      "lonLat": [-60.022, -3.119]
+    },
+    {
+      "id": "montevideo",
+      "name": {
+        "fr": "Montevideo",
+        "en": "Montevideo"
+      },
+      "iso3": "URY",
+      "lonLat": [-56.164, -34.901]
+    },
+    {
+      "id": "buenos-aires",
+      "name": {
+        "fr": "Buenos Aires",
+        "en": "Buenos Aires"
+      },
+      "iso3": "ARG",
+      "lonLat": [-58.382, -34.604]
+    },
+    {
+      "id": "ushuaia",
+      "name": {
+        "fr": "Ushuaïa",
+        "en": "Ushuaia"
+      },
+      "iso3": "ARG",
+      "lonLat": [-68.303, -54.801]
+    },
+    {
+      "id": "valparaiso",
+      "name": {
+        "fr": "Valparaíso",
+        "en": "Valparaíso"
+      },
+      "iso3": "CHL",
+      "lonLat": [-71.62, -33.047]
+    },
+    {
+      "id": "lima",
+      "name": {
+        "fr": "Lima",
+        "en": "Lima"
+      },
+      "iso3": "PER",
+      "lonLat": [-77.043, -12.046]
+    },
+    {
+      "id": "guayaquil",
+      "name": {
+        "fr": "Guayaquil",
+        "en": "Guayaquil"
+      },
+      "iso3": "ECU",
+      "lonLat": [-79.898, -2.18]
+    },
+    {
+      "id": "asuncion",
+      "name": {
+        "fr": "Asuncion",
+        "en": "Asunción"
+      },
+      "iso3": "PRY",
+      "lonLat": [-57.576, -25.264]
+    },
+    {
+      "id": "la-paz",
+      "name": {
+        "fr": "La Paz",
+        "en": "La Paz"
+      },
+      "iso3": "BOL",
+      "lonLat": [-68.119, -16.49]
+    },
+    {
+      "id": "sydney",
+      "name": {
+        "fr": "Sydney",
+        "en": "Sydney"
+      },
+      "iso3": "AUS",
+      "lonLat": [151.209, -33.869]
+    },
+    {
+      "id": "perth",
+      "name": {
+        "fr": "Perth",
+        "en": "Perth"
+      },
+      "iso3": "AUS",
+      "lonLat": [115.861, -31.952]
+    },
+    {
+      "id": "darwin",
+      "name": {
+        "fr": "Darwin",
+        "en": "Darwin"
+      },
+      "iso3": "AUS",
+      "lonLat": [130.888, -12.431]
+    },
+    {
+      "id": "auckland",
+      "name": {
+        "fr": "Auckland",
+        "en": "Auckland"
+      },
+      "iso3": "NZL",
+      "lonLat": [174.763, -36.854]
+    },
+    {
+      "id": "suva",
+      "name": {
+        "fr": "Suva",
+        "en": "Suva"
+      },
+      "iso3": "FJI",
+      "lonLat": [178.45, -18.128]
+    },
+    {
+      "id": "port-moresby",
+      "name": {
+        "fr": "Port Moresby",
+        "en": "Port Moresby"
+      },
+      "iso3": "PNG",
+      "lonLat": [147.18, -9.443]
+    },
+    {
+      "id": "honiara",
+      "name": {
+        "fr": "Honiara",
+        "en": "Honiara"
+      },
+      "iso3": "SLB",
+      "lonLat": [159.973, -9.439]
+    },
+    {
+      "id": "port-vila",
+      "name": {
+        "fr": "Port-Vila",
+        "en": "Port Vila"
+      },
+      "iso3": "VUT",
+      "lonLat": [168.322, -17.734]
+    },
+    {
+      "id": "nukualofa",
+      "name": {
+        "fr": "Nuku’alofa",
+        "en": "Nukuʻalofa"
+      },
+      "iso3": "TON",
+      "lonLat": [-175.204, -21.139]
+    },
+    {
+      "id": "apia",
+      "name": {
+        "fr": "Apia",
+        "en": "Apia"
+      },
+      "iso3": "WSM",
+      "lonLat": [-171.766, -13.834]
+    },
+    {
+      "id": "tarawa",
+      "name": {
+        "fr": "Tarawa-Sud",
+        "en": "South Tarawa"
+      },
+      "iso3": "KIR",
+      "lonLat": [173.017, 1.339]
+    },
+    {
+      "id": "majuro",
+      "name": {
+        "fr": "Majuro",
+        "en": "Majuro"
+      },
+      "iso3": "MHL",
+      "lonLat": [171.372, 7.1]
+    },
+    {
+      "id": "koror",
+      "name": {
+        "fr": "Koror",
+        "en": "Koror"
+      },
+      "iso3": "PLW",
+      "lonLat": [134.485, 7.347]
+    },
+    {
+      "id": "funafuti",
+      "name": {
+        "fr": "Funafuti",
+        "en": "Funafuti"
+      },
+      "iso3": "TUV",
+      "lonLat": [179.202, -8.521]
+    },
+    {
+      "id": "yaren",
+      "name": {
+        "fr": "Yaren",
+        "en": "Yaren"
+      },
+      "iso3": "NRU",
+      "lonLat": [166.92, -0.545]
+    },
+    {
+      "id": "palikir",
+      "name": {
+        "fr": "Palikir",
+        "en": "Palikir"
+      },
+      "iso3": "FSM",
+      "lonLat": [158.161, 6.917]
+    }
+  ]
+}

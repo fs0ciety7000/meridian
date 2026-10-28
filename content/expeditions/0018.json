@@ -1,0 +1,29 @@
+{
+  "catalogNumber": 18,
+  "title": {
+    "fr": "Archipels d’Asie",
+    "en": "Asian Archipelagos"
+  },
+  "theme": "Asie du Sud-Est",
+  "difficulty": "normal",
+  "start": "manille",
+  "meridianLon": 100,
+  "legs": [
+    "water.island-populous",
+    "society.monarchy-left",
+    "climate.equator",
+    "flag.red-white-only",
+    "position.north-east-islands",
+    "borders.ctx-neighbour"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "fallback": "society.over-100m",
+  "designNote": "D'île en île autour de la mer de Chine, puis un dernier pas chez le voisin."
+}
