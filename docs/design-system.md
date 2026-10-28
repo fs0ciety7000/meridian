@@ -2,7 +2,7 @@
 
 > **Auteur :** Art Director (`.claude/agents/art-director.md`)
 > **Relecteurs :** Tech Lead (faisabilité de rendu, budgets), QA/Balance (accessibilité)
-> **Statut :** v0.1 — à valider sur prototype
+> **Statut :** v0.2 — à valider sur prototype (révision : jeu à la demande, codes d'expédition)
 > **Prérequis :** `docs/architecture.md` (§4.6 matières), `docs/vision-and-innovations.md`
 
 Ce document est la **source de vérité visuelle**. Les tokens qu'il définit seront codés dans `packages/design-tokens` et exposés en variables CSS. Toute valeur visuelle en dur dans le code est un défaut.
@@ -12,7 +12,7 @@ Ce document est la **source de vérité visuelle**. Les tokens qu'il définit se
 ## 1. Direction artistique
 
 ### 1.1 Concept : « La table des cartes de l'expédition »
-Le joueur est penché sur une **table de cartographe** : un grand atlas ouvert au centre, entouré de ses instruments — un cartouche gravé qui énonce l'ordre du jour, un odomètre en laiton, un carnet de route, des tampons, une boîte de sceaux. L'interface n'est pas *posée sur* la carte : elle est **dans la marge** de la carte, comme les annotations d'un explorateur.
+Le joueur est penché sur une **table de cartographe** : un grand atlas ouvert au centre, entouré de ses instruments — un cartouche gravé qui énonce la consigne, un odomètre en laiton, un carnet de route, des tampons, une boîte de sceaux. L'interface n'est pas *posée sur* la carte : elle est **dans la marge** de la carte, comme les annotations d'un explorateur.
 
 ### 1.2 Références (pour l'esprit, jamais copiées)
 - Atlas de la fin XIXe–milieu XXe : Stieler, Times Atlas (1922), Bartholomew — lettrage en petites capitales, hydrographie en italique, *water lines*.
@@ -53,7 +53,7 @@ Si un élément est *brillant, ludique-cartoon, bruyant, flottant ou générique
 | `sepia-600` | `#6A513B` | frontières, annotations manuscrites |
 | `vermilion-600` | `#B5452B` | **route du joueur**, camp actif, focus, CTA principal |
 | `vermilion-700` | `#93361F` | état pressé |
-| `meridian-500` | `#A27624` | **méridien du jour**, sceaux de traversée (or) |
+| `meridian-500` | `#A27624` | **méridien de l'expédition**, sceaux de traversée (or) |
 | `danger-wash` | `#B5452B` @ 18 % + hachure | fausse piste (toujours avec motif, jamais couleur seule) |
 
 **Encres de rareté (tampons)** — toujours associées à une **forme** :
@@ -145,7 +145,7 @@ Règles : jamais plus de 2 graisses par écran ; pas de capitales pleines en Ins
 | Relief (optionnel) | ombrage gris-sépia multiply 12 %, uniquement à zoom ≥ ×3 |
 | Frontières | 0,6 px `sepia-600`, tiret 3-1,5 ; **frontières contestées** : pointillé 1-2 |
 | Traits de côte | 0,9 px `ink-900` + double 0,4 px décalé 1 px à 40 % (bavure d'encre) |
-| Méridien du jour | 1,5 px `meridian-500`, petites graduations dorées toutes les 10° de latitude, étiquette « MÉRIDIEN DU JOUR · 30° E » en petites capitales |
+| Méridien de l'expédition | 1,5 px `meridian-500`, petites graduations dorées toutes les 10° de latitude, étiquette « MÉRIDIEN · 30° E » en petites capitales |
 | Étiquettes | voir 5.3 |
 | Route | voir §6.4 |
 | Camps | voir §6.3 |
@@ -195,7 +195,7 @@ Chaque composant est spécifié par : rôle, anatomie, états, comportement mobi
 ### 6.4 Route d'expédition (`RouteLine`)
 - Grand cercle, 2 px `vermilion-600`, extrémités rondes ; segment en cours d'animation avec **pointe d'encre** (petit disque 3 px qui avance).
 - Segments passés : 1,5 px, opacité 85 %, avec **petites hachures transversales** tous les 500 km (comme les traits d'échelle d'une route de voyage).
-- Traversée du méridien du jour : un losange doré 8 px sur la ligne.
+- Traversée du méridien : un losange doré 8 px sur la ligne.
 - Fantôme (ami) : 1,5 px `ink-700` en tirets 2-4.
 
 ### 6.5 Odomètre de distance (`Odometer`)
@@ -204,7 +204,7 @@ Chaque composant est spécifié par : rôle, anatomie, états, comportement mobi
 - Placement : haut-gauche (desktop), intégré au-dessus de la `CampBar` (mobile).
 
 ### 6.6 Chronomètre (`ExpeditionClock`)
-- **Rôle** : temps écoulé (daily, non punitif) / temps restant (mode Sprint).
+- **Rôle** : temps écoulé (expédition standard, non punitif) / temps restant (mode Sprint).
 - **Forme** : petit **cadran solaire** circulaire 40 px : l'ombre du gnomon tourne. En Sprint, l'arc restant se vide et passe au vermillon sous 10 s (avec un tic sonore optionnel).
 - Le texte exact (`mm:ss`) est disponible au survol / lecteur d'écran.
 
@@ -215,7 +215,7 @@ Chaque composant est spécifié par : rôle, anatomie, états, comportement mobi
 ### 6.8 Tampon (`Stamp`)
 - 4 formes (§2.1) × encre ; contenu : code ISO3 en petites capitales + date + nom du palier.
 - Animation d'obtention : descend de 120 % à 100 % en 140 ms (ease `stamp`), micro-secousse de l'écran 2 px, rotation finale seedée, **retour haptique** léger, bruit sec de tampon.
-- « Encre fraîche » (provisoire) : bord légèrement baveux + brillance humide (dégradé spéculaire 6 %) ; « encre sèche » (figé) : mat. Transition visible à la première ouverture le lendemain.
+- « Encre fraîche » (provisoire) : bord légèrement baveux + brillance humide (dégradé spéculaire 6 %) ; « encre sèche » (figé, 24 h après la partie) : mat. Transition jouée à la première ouverture du passeport ou de l'accueil après le séchage (regroupée si plusieurs tampons ont séché).
 
 ### 6.9 Passeport (`PassportBook`)
 - Livre à double page ; une page = un pays : silhouette du pays gravée (trait seul) + 4 emplacements de tampon en filigrane.
@@ -226,7 +226,7 @@ Chaque composant est spécifié par : rôle, anatomie, états, comportement mobi
 - CTA : **« Envoyer la carte postale »** (partage) ; secondaire : « Ouvrir le passeport ».
 
 ### 6.11 Carte postale de partage (`ShareCard`)
-- 1080 × 1350 : recto façon carte postale ancienne — atlas Equal Earth centré sur la route, timbre en haut à droite (le tampon le plus rare du jour), oblitération ronde « MERIDIAN · EXP. 142 · 28 OCT 2026 », distance en Plex Mono, 6 mini-tampons. Aucune donnée personnelle par défaut.
+- 1080 × 1350 : recto façon carte postale ancienne — atlas Equal Earth centré sur la route, timbre en haut à droite (le tampon le plus rare de l'expédition), oblitération ronde « MERIDIAN · MER-7KQ2 · 28 OCT 2026 » (date de la partie), QR discret du lien de défi en option, distance en Plex Mono, 6 mini-tampons. Aucune donnée personnelle par défaut.
 
 ### 6.12 Recherche de pays (`CountrySearch`)
 - Combobox accessible façon **registre** : liste en Garamond, initiales en petites capitales, sélection = vol de caméra. Raccourci `/` sur desktop.
@@ -236,6 +236,16 @@ Chaque composant est spécifié par : rôle, anatomie, états, comportement mobi
 
 ### 6.14 Notes marginales (`MarginNote`) — remplace les toasts
 - Petite note manuscrite (Fraunces italique 15, `sepia-600`) qui apparaît dans la marge avec un trait de flèche à la plume vers l'élément concerné. Ex. « Fausse piste : le Népal n'a pas de littoral… mais il est enclavé ! » Durée 3,5 s, jamais plus d'une à la fois.
+
+### 6.15 Accueil / lanceur d'expédition (`ExpeditionLauncher`)
+- **Rôle** : choisir quoi jouer, sans quitter la carte. L'accueil **est** l'atlas personnel (planisphère encré) ; le lanceur est un cartouche dans la marge.
+- **Anatomie** : bouton principal **« Nouvelle expédition »** (sceau vermillon) + sélecteur de difficulté en trois crans gravés (Facile / Normal / Expert) ; lien **« Carnet d'expéditions »** (catalogue) ; champ **« J'ai un code »** (Plex Mono, format `MER-XXXX`, validation à la frappe) ; défis reçus en attente (enveloppes cachetées, max 3 visibles).
+- **Carnet d'expéditions** : liste façon table des matières d'atlas — numéro en Plex Mono, titre en Fraunces, thème en petites capitales, mini-carte de la région, état (non jouée / tampon le plus rare obtenu).
+- **Mobile** : feuille basse à 2 crans ; la carte reste visible au-dessus.
+
+### 6.16 Lien et écran de défi (`ChallengeCard`)
+- Quand on ouvre un lien de défi : cartouche « *Ana* te défie · MER-7KQ2 · 31 480 km » + bouton « Relever le défi ». La route de l'ami **n'est jamais montrée avant** que le joueur ait planté le camp correspondant.
+- Au récapitulatif : les deux routes superposées (vermillon pour le joueur, `ink-700` en tirets pour l'ami), comparaison étape par étape en tableau compact.
 
 ---
 

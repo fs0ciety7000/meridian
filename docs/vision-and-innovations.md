@@ -2,29 +2,29 @@
 
 > **Auteur :** Game Designer (`.claude/agents/game-designer.md`)
 > **Contributions :** Systems Designer (faisabilité des systèmes), Art Director (traduction visuelle)
-> **Statut :** v0.1 — à valider
+> **Statut :** v0.2 — révisée : jeu **à la demande** (pas de daily), expéditions identifiées par un code
 > **Prérequis :** `docs/architecture.md`
 
 ---
 
 ## 1. Vision
 
-> **Meridian est une expédition quotidienne de cinq minutes à travers un atlas vivant.**
-> Chaque jour, tout le monde part du même port avec les mêmes six consignes. Tu réponds en **plantant ton camp sur la carte**, n'importe où dans un pays qui convient. Plus tu vas loin, plus ta route est longue ; plus ton choix est rare, plus ton tampon est précieux. Ton passeport se remplit, ton atlas personnel s'encre, et ta route du jour devient une petite carte que tu as envie de montrer.
+> **Meridian, ce sont des expéditions de cinq minutes à travers un atlas vivant — quand tu veux, autant que tu veux.**
+> Chaque expédition part d'un port avec six consignes. Tu réponds en **plantant ton camp sur la carte**, n'importe où dans un pays qui convient. Plus tu vas loin, plus ta route est longue ; plus ton choix est rare, plus ton tampon est précieux. Chaque expédition a un **code** : envoie-le à un ami, il jouera exactement la même et vous comparerez vos routes. Ton passeport se remplit, ton atlas personnel s'encre, et chaque route devient une petite carte que tu as envie de montrer.
 
 ### Les trois promesses
 1. **Savoir, puis oser.** La culture géographique ouvre des options ; l'audace (choisir le pays lointain, l'île oubliée) les rend payantes.
 2. **La carte est le jeu.** On ne tape pas une réponse dans une liste : on la *pose* sur le monde. Chaque geste laisse une trace d'encre.
-3. **Un objet que l'on garde.** Chaque journée produit un artefact — une route, des tampons, une page d'atlas — qui a de la valeur esthétique, pas seulement un score.
+3. **Un objet que l'on garde.** Chaque expédition produit un artefact — une route, des tampons, une page d'atlas — qui a de la valeur esthétique, pas seulement un score.
 
 ### Public
-- **Cœur** : joueurs de daily games (Wordle, Worldle, Travle, Globle, Farflung) — sessions courtes, partage social.
+- **Cœur** : joueurs de jeux de géographie courts (Worldle, Travle, Globle, Farflung, GeoGuessr en session rapide) — sessions courtes, envie d'enchaîner, défis entre amis.
 - **Extension** : amateurs de cartes, de voyages, de collection (philatélie, carnets de voyage) qui viennent pour la beauté et restent pour la collection.
-- **Ton** : curieux, élégant, jamais condescendant. On apprend un fait par jour sans quiz scolaire.
+- **Ton** : curieux, élégant, jamais condescendant. On apprend un fait à chaque fausse piste, sans quiz scolaire.
 
 ### Piliers de design (arbitrage en cas de conflit, dans l'ordre)
 1. **Map-first** — si une décision éloigne le regard de la carte, elle est rejetée ou reformulée.
-2. **Équité du daily** — tout le monde joue la même expédition ; aucune mécanique ne dépend de la chance.
+2. **Équité d'une expédition** — un même code donne exactement le même défi à tous ; aucune mécanique ne dépend de la chance pendant la partie.
 3. **Lisible en 10 secondes** — un nouveau joueur comprend la première étape sans tutoriel textuel.
 4. **Profondeur optionnelle** — l'optimisation (placement du camp, rareté, objectifs) est une couche pour ceux qui la cherchent.
 5. **Premium sans friction** — pas de pub interstitielle, pas de dark patterns, pas de compte obligatoire.
@@ -43,13 +43,15 @@ Lire la consigne (cartouche)
    → Révélation : validité ✓/✗, route tracée à l'encre, km ajoutés, rareté estimée (tampon)
 ```
 
-### 2.2 Boucle quotidienne (≈ 4–6 min)
+### 2.2 Boucle d'une expédition (≈ 4–6 min) — enchaînable
 ```
-Ouvrir → Port de départ du jour + Méridien du jour
+Ouvrir → « Nouvelle expédition » (générée) ou une page du Carnet d'expéditions (catalogue) ou un code reçu
+   → Port de départ + Méridien de l'expédition
    → 6 étapes → Récapitulatif (route complète en vue globe, distance, tampons)
-   → Partage (texte + carte postale) → Passeport mis à jour
-   → Le lendemain : les tampons « sèchent » (rareté figée), nouvelle expédition
+   → Défier un ami (lien avec code) / carte postale → Passeport mis à jour
+   → « Repartir » (nouvelle expédition) — ou revenir plus tard : les tampons auront « séché » (rareté figée 24 h après la partie)
 ```
+Il n'y a ni rendez-vous quotidien ni série à protéger : on joue une expédition ou dix, aujourd'hui ou dans un mois. Ce qui fait revenir, c'est la collection, les défis reçus et le Carnet qui s'enrichit.
 
 ### 2.3 Boucle méta (semaines)
 ```
@@ -62,17 +64,17 @@ Collectionner des tampons (pays × rareté) → encrer l'atlas personnel
 
 ## 3. Différenciation
 
-| Farflung et les daily géo | Meridian |
+| Farflung et les jeux géo courts | Meridian |
 |---|---|
 | On choisit un pays (réponse discrète) | **On plante un camp à une position précise** : la distance dépend de *où* dans le pays → micro-décision spatiale à chaque étape |
 | Score = un nombre | Score + **artefact** : route dessinée, carte postale partageable, passeport |
-| Rareté affichée | **Rareté qui « sèche »** : provisoire pendant la journée, figée à minuit, le tampon change d'encre dans le passeport |
+| Rareté affichée | **Rareté qui « sèche »** : provisoire au moment de la partie, figée 24 h plus tard ; le tampon change d'encre dans le passeport |
 | Interface fonctionnelle | **Direction artistique d'atlas** : papier, encre, gravure, cartouches, tampons en relief |
 | Progression faible | **Atlas personnel** qui s'encre pays par pays + passeport à 4 niveaux par pays |
 | Mercator / listes | Projections d'atlas (Equal Earth), rotation vers l'expédition, globe au récapitulatif |
-| Rien ne relie les jours | **Méridien du jour** + ordres de mission + saisons thématiques |
+| Un puzzle par jour, puis plus rien | **Jeu illimité** + codes de défi + Carnet d'expéditions thématiques + méridien propre à chaque expédition |
 
-Une phrase pour le pitch : **« Le daily géo où ta réponse est un lieu, pas un mot. »**
+Une phrase pour le pitch : **« Le jeu de géo où ta réponse est un lieu, pas un mot. »**
 
 ---
 
@@ -92,7 +94,7 @@ Chaque idée est évaluée sur : **Valeur** (plaisir/différenciation), **Coût*
 - **Décision : MVP**.
 
 ### 4.3 Rareté dynamique (« l'encre sèche »)
-- **Principe** : 4 paliers selon la part des joueurs ayant fait le même choix pour la même consigne : **Route connue**, **Sentier**, **Confins**, **Terra incognita**. Provisoire en journée, figée à minuit.
+- **Principe** : 4 paliers selon la part des joueurs ayant fait le même choix pour la même **consigne** (toutes expéditions confondues : les consignes reviennent d'une expédition à l'autre) : **Route connue**, **Sentier**, **Confins**, **Terra incognita**. Provisoire au moment de jouer, figée 24 h plus tard.
 - **Amorçage** : estimation a priori (notoriété × nombre de réponses valides) tant que l'échantillon est faible.
 - **Décision : MVP en rareté estimée (hors-ligne) ; v1.1 dynamique** (backend).
 
@@ -106,20 +108,20 @@ Chaque idée est évaluée sur : **Valeur** (plaisir/différenciation), **Coût*
 - **Valeur** : progression la plus visuelle possible, fond d'écran de l'écran d'accueil.
 - **Décision : MVP (version simple : encré / non encré), v1.x (intensité selon nb de tampons)**.
 
-### 4.6 ★ Méridien du jour
+### 4.6 ★ Méridien de l'expédition
 - **Principe** : chaque expédition met en avant une longitude (ex. 30°E). Franchir ce méridien entre deux camps rapporte une **Traversée** (bonus fixe + marque sur la route). Donne son nom au jeu.
-- **Valeur** : objectif spatial simple, crée des routes variées, signature visuelle forte (ligne dorée).
+- **Valeur** : objectif spatial simple, crée des routes variées d'une expédition à l'autre, signature visuelle forte (ligne dorée).
 - **Décision : MVP**.
 
 ### 4.7 Ordres de mission (objectifs secondaires)
-- **Principe** : 3 ordres par jour, ex. « Change de continent 3 fois », « Plante 2 camps sur une île », « Franchis l'équateur aller-retour », « Ne quitte jamais l'hémisphère sud ». Récompense : **sceaux de cire** (monnaie de cosmétiques / titres).
+- **Principe** : 1 à 3 ordres par expédition, ex. « Change de continent 3 fois », « Plante 2 camps sur une île », « Franchis l'équateur aller-retour », « Ne quitte jamais l'hémisphère sud ». Récompense : **sceaux de cire** (monnaie de cosmétiques / titres).
 - **Risque** : pousser à des choix contradictoires avec la distance → c'est voulu (arbitrage), mais les ordres ne valent jamais plus de ~15 % du score.
 - **Décision : MVP (1 ordre), v1.1 (3 ordres)**.
 
 ### 4.8 Consignes contextuelles / mode chaîne
 - **Principe** : la consigne suivante dépend du camp précédent (« un voisin de ton dernier pays », « un pays dont le nom commence par la dernière lettre du précédent »).
-- **Tension** : dans le daily, des consignes divergentes rendent la rareté incomparable.
-- **Décision** : **Daily** = consignes fixes + **une seule étape contextuelle** (la 6e, « Retour au port » ou « Pays voisin ») dont la rareté est calculée par sous-groupe ; **Mode Chaîne** complet en v1.2.
+- **Tension** : des consignes qui divergent selon les réponses rendent la rareté et les défis moins comparables.
+- **Décision** : **Expédition** = consignes fixes + **une seule étape contextuelle** (la 6e, « Retour au port » ou « Pays voisin ») dont la rareté est calculée par sous-groupe ; **Mode Chaîne** complet en v1.2.
 
 ### 4.9 Biomes et climats
 - **Principe** : chaque pays porte des biomes dominants (Köppen simplifié : tropical, aride, tempéré, continental, polaire, montagne). Collection « Carnet naturaliste » ; ordres de mission (« traverse 4 climats »).
@@ -130,10 +132,10 @@ Chaque idée est évaluée sur : **Valeur** (plaisir/différenciation), **Coût*
 - **Coût** : contenu illustré important → générer d'abord en texte + vignette typographique, illustrations progressives.
 - **Décision : v1.1 (texte), v2 (illustrations)**.
 
-### 4.11 Fantôme d'expédition (versus asynchrone)
-- **Principe** : un lien de partage encode ta route ; ton ami la voit en pointillé sur sa carte pendant qu'il joue (après avoir planté chaque camp, pour éviter la copie). Comparaison étape par étape.
-- **Valeur** : social sans serveur temps réel, très map-first.
-- **Décision : v1.1** (encodage dans l'URL, aucun backend requis).
+### 4.11 Défi & fantôme d'expédition (versus asynchrone)
+- **Principe** : le lien de défi contient le code de l'expédition **et** ta route ; ton ami joue la même expédition, et ta route apparaît en pointillé sur sa carte **après** qu'il a planté chaque camp (pas de copie). Comparaison étape par étape au récapitulatif.
+- **Valeur** : sans rendez-vous quotidien, le défi entre amis devient le moteur social et d'acquisition. Aucun serveur temps réel, très map-first.
+- **Décision : MVP pour le défi par code (même expédition, comparaison des scores) ; v1.1 pour le fantôme sur la carte** (encodage dans l'URL, aucun backend requis).
 
 ### 4.12 Expédition commune (coopératif léger)
 - **Principe** : chaque semaine, la communauté (ou un groupe d'amis) cumule ses kilomètres vers un objectif (« faire 40 fois le tour de la Terre ») ; un tracé collectif apparaît sur la carte d'accueil.
@@ -153,7 +155,7 @@ Chaque idée est évaluée sur : **Valeur** (plaisir/différenciation), **Coût*
 - **Décision : MVP (outil interne, CLI)**.
 
 ### 4.16 Idées rejetées (et pourquoi)
-- **Chronomètre punitif sur le daily** : contraire à « savoir puis oser » et à l'accessibilité. Le temps est enregistré et affiché, jamais pénalisant (voir mode Sprint).
+- **Chronomètre punitif sur l'expédition standard** : contraire à « savoir puis oser » et à l'accessibilité. Le temps est enregistré et affiché, jamais pénalisant (voir mode Sprint).
 - **Indices payants** : contraire au pilier 5.
 - **Classement mondial au MVP** : triche facile, peu de valeur ; amis d'abord.
 
@@ -163,10 +165,10 @@ Chaque idée est évaluée sur : **Valeur** (plaisir/différenciation), **Coût*
 
 | Mode | Contenu | Statut |
 |---|---|---|
-| **Expédition du jour** (Daily) | Port de départ, 6 étapes, méridien du jour, 1–3 ordres de mission, rareté partagée | **MVP** |
-| **Entraînement** (Practice) | Expéditions procédurales, seed libre, difficulté réglable, rareté estimée, pas de tampon de passeport (tampons d'entraînement à part) | **MVP** |
-| **Archives** | Rejouer les expéditions passées (tampons gris « d'archive ») | v1.1 |
-| **Fantôme** | Jouer le daily contre la route d'un ami | v1.1 |
+| **Nouvelle expédition** | Expédition générée à la demande (graine aléatoire), difficulté Facile / Normal / Expert, 6 étapes, méridien, 1–3 ordres de mission, tampons et rareté partagée | **MVP** |
+| **Carnet d'expéditions** | Catalogue numéroté d'expéditions écrites à la main (thématiques : « Les îles oubliées », « Route de la soie »…), classement public par expédition | **MVP** (30 expéditions), enrichi en continu |
+| **Défi** | Jouer une expédition reçue par code/lien et comparer avec l'ami qui l'a envoyée | **MVP** (scores), v1.1 (fantôme sur la carte) |
+| **Rejouer** | Rejouer une expédition déjà faite : entraînement, sans tampon ni classement | **MVP** |
 | **Chaîne** | Consignes générées à partir du camp précédent, partie sans fin jusqu'à 3 fausses pistes | v1.2 |
 | **Sprint « Course contre le soleil »** | 10 consignes, chronomètre (cadran solaire), score = km/minute | v1.2 |
 | **Expédition commune** | Objectif hebdo coopératif | v2 |
@@ -188,28 +190,29 @@ Chaque idée est évaluée sur : **Valeur** (plaisir/différenciation), **Coût*
 ### 6.2 Cosmétiques (jamais d'avantage de jeu)
 Encres de route (sépia, indigo, vermillon, or), styles de camp (tente, fanion, cairn, ancre), papiers d'atlas, projections alternatives débloquées (Winkel Tripel, Natural Earth, Dymaxion en easter egg). Débloqués par sceaux ou jalons, **jamais achetables au MVP**.
 
-### 6.3 Série (streak)
-Série de jours joués, présentée comme un **journal de bord** (pages consécutives). Un « jour de repos » gratuit par semaine (le carnet reste ouvert) pour éviter l'anxiété de série.
+### 6.3 Journal de bord (pas de série)
+Sans rythme quotidien, pas de série à protéger (et pas d'anxiété associée). Le **journal de bord** liste les expéditions jouées, avec leur route miniature, et affiche des cumuls : expéditions, kilomètres, pays, tampons rares. Des **jalons** (10, 50, 100 expéditions…) remplacent la série.
 
 ---
 
 ## 7. Partage
 
-1. **Texte** (copier-coller universel) :
+1. **Lien de défi + texte** (copier-coller universel) :
 ```
-MERIDIAN · Expédition 142
+MERIDIAN · Expédition MER-7KQ2
 🧭 31 480 km · ✦ Méridien franchi
 ⬜🟫🟦🟪⬛🟦
-Route : Lisbonne → Mongolie → Bolivie → Nouvelle-Zélande → …
+Feras-tu mieux ? https://meridian.cardormedia.com/x/MER-7KQ2?r=…
 ```
+(la route n'est pas écrite en clair pour ne pas gâcher le défi)
 (les carrés codent les paliers de rareté, avec une forme alternative pour daltoniens dans les réglages)
 
-2. **Carte postale** (image 1080×1350) : la route sur l'atlas, les 6 tampons, la distance, le numéro d'expédition — générée côté client via `AtlasMap.snapshot()`. C'est l'outil d'acquisition principal : elle doit être **belle même pour quelqu'un qui ne connaît pas le jeu**.
+2. **Carte postale** (image 1080×1350) : la route sur l'atlas, les 6 tampons, la distance, le code d'expédition — générée côté client via `AtlasMap.snapshot()`. C'est l'outil d'acquisition principal : elle doit être **belle même pour quelqu'un qui ne connaît pas le jeu**.
 
 ---
 
 ## 8. Ce que le MVP doit prouver
 1. Planter un camp au doigt est **agréable et précis** (y compris pour Malte ou Tuvalu).
 2. La micro-décision « où dans le pays » est **comprise et appréciée** (tests : ≥ 50 % des joueurs déplacent au moins une fois leur camp provisoire dès la 3e expédition).
-3. La carte postale est **partagée spontanément** (objectif : ≥ 15 % des parties terminées).
-4. On revient le lendemain pour voir son tampon « sécher » (D1 ≥ 40 %).
+3. Le défi ou la carte postale est **partagé spontanément** (objectif : ≥ 15 % des parties terminées) et ≥ 30 % des défis reçus sont joués.
+4. On **enchaîne** (≥ 1,8 expédition par session en moyenne) et on revient (rétention J7 ≥ 25 %).

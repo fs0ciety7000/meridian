@@ -1,6 +1,6 @@
 # Meridian — documentation
 
-Un daily géographique où l'on répond en **plantant un camp sur un atlas d'expédition**.
+Un jeu de géographie, à jouer quand on veut, où l'on répond en **plantant un camp sur un atlas d'expédition**.
 
 | Ordre | Document | Auteur (agent) | Relecteurs |
 |---|---|---|---|

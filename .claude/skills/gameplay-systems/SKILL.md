@@ -1,6 +1,6 @@
 ---
 name: gameplay-systems
-description: Règles exactes du jeu Meridian — expédition de 6 étapes, camp libre, validation par prédicat, distance orthodromique quantifiée, méridien du jour, rareté par part cumulée avec prior bayésien, ordres de mission, longue-vue, Renommée, progression. À utiliser pour implémenter ou tester packages/engine, écrire/valider du contenu, ou évaluer un changement d'équilibrage.
+description: Règles exactes du jeu Meridian (à la demande, sans daily) — expéditions de 6 étapes identifiées par un code (catalogue ou générateur seedé), camp libre, validation par prédicat, distance orthodromique quantifiée, méridien, rareté par consigne (part cumulée, prior bayésien, séchage 24 h), 1re tentative vs rejeu, ordres de mission, longue-vue, Renommée, progression. À utiliser pour implémenter ou tester packages/engine, écrire/valider du contenu, ou évaluer un changement d'équilibrage.
 ---
 
 # Skill : gameplay-systems (Meridian)
@@ -14,7 +14,9 @@ Source de vérité : `docs/gameplay-systems.md` (propriétaire : agent `systems-
 4. Valide → `d = haversine(camp, lonLat, R=6371.0088)` ; `camp = lonLat` ; méridien franchi ? ; tampon (rareté).
    Fausse piste → `d = 0`, camp inchangé, pays consommé, `FALSE_TRAIL` avec texte `explain`.
 5. Rareté : trier par part décroissante (égalité → ISO3), part cumulée au point milieu `m`, paliers `m<.50` known, `<.80` trail, `<.95` frontier, sinon incognita ; `n_eff = n_obs + α·π`, `π ∝ salience^β`. Longue-vue → palier plafonné à frontier.
-6. Score : `base = Σ d·μ` (μ = 1 / 1,10 / 1,25 / 1,50) ; `méridien = min(k,2)·750` ; `ordres = base·0,05·nb` ; `Renommée = round(base + méridien + ordres)`.
+6. Rareté **par consigne**, une contribution par joueur (première rencontre) ; palier provisoire à la partie, figé 24 h après (`inkDryHours`). Rejeu d'un code déjà terminé : ni tampon, ni stats, ni classement.
+7. Générateur : `generateExpedition(seed, difficulty, library)` déterministe, contraintes de diversité, missions atteignables, repli catalogue après `generatorMaxRetries`.
+8. Score : `base = Σ d·μ` (μ = 1 / 1,10 / 1,25 / 1,50) ; `méridien = min(k,2)·750` ; `ordres = base·0,05·nb` ; `Renommée = round(base + méridien + ordres)`.
 
 ## Invariants à tester (property-based, fast-check)
 - Rejouer la même séquence d'actions donne un état et un score **identiques** (bit à bit après sérialisation).
@@ -23,6 +25,7 @@ Source de vérité : `docs/gameplay-systems.md` (propriétaire : agent `systems-
 - Une fausse piste ne modifie jamais `camp`.
 - Les proportions de paliers sur une distribution simulée suivent ≈ 50/30/15/5.
 - Le moteur n'appelle ni horloge, ni réseau, ni `Math.random`.
+- `generateExpedition` : même (seed, difficulté, libraryVersion) ⇒ même `hash` ; 100 000 graines ⇒ 0 expédition invalide ; `decode(encode(code)) = code`.
 
 ## Modifier une règle
 1. Mettre à jour `docs/gameplay-systems.md` (intention, formule, paramètres, cas limites, tests) — via `systems-designer`.
