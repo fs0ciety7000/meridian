@@ -28,8 +28,9 @@ declare global {
 }
 
 const fmt = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
+const deg = new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const coord = ([lon, lat]: [number, number]) =>
-  `${Math.abs(lat).toFixed(3)}° ${lat >= 0 ? 'N' : 'S'} · ${Math.abs(lon).toFixed(3)}° ${lon >= 0 ? 'E' : 'O'}`;
+  `${deg.format(Math.abs(lat))}° ${lat >= 0 ? 'N' : 'S'} · ${deg.format(Math.abs(lon))}° ${lon >= 0 ? 'E' : 'O'}`;
 
 /** Phase 1 vertical slice: the map, planting camps and drawing the route (development-plan 1.9). */
 export function MapLab() {

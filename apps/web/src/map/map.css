@@ -82,10 +82,28 @@
   font: 500 11px var(--font-map);
   letter-spacing: 0.16em;
   font-variant-caps: all-small-caps;
-  fill: var(--color-meridian-500);
+  /* Gold is never text below 18 px (contrast): ink label, gold diamond (review phase 1). */
+  fill: var(--color-ink-700);
+  paint-order: stroke;
+  stroke: var(--color-sea-100);
+  stroke-width: 3px;
+  stroke-linejoin: round;
   text-anchor: start;
+  dominant-baseline: central;
   transform-box: fill-box;
-  translate: 6px 0;
+  translate: 9px 0;
+}
+
+.atlas-meridian__marker {
+  fill: var(--color-meridian-500);
+  stroke: var(--color-paper-100);
+  stroke-width: 0.75;
+}
+
+.atlas-meridian__ticks {
+  fill: none;
+  stroke: var(--color-meridian-500);
+  stroke-width: 1;
 }
 
 /* Route (vermilion, reserved meaning) */
@@ -112,6 +130,19 @@
   fill: var(--color-vermilion-600);
 }
 
+.atlas-route__ticks {
+  fill: none;
+  stroke: var(--color-vermilion-600);
+  stroke-width: 1;
+  stroke-opacity: 0.85;
+}
+
+.atlas-route__crossing {
+  fill: var(--color-meridian-500);
+  stroke: var(--color-paper-100);
+  stroke-width: 0.75;
+}
+
 /* Micro-state halos: a discreet finger target */
 .atlas-halo {
   fill: none;
@@ -119,11 +150,6 @@
   stroke-opacity: 0.55;
   stroke-width: 0.75;
   stroke-dasharray: 2 2;
-  display: none;
-}
-
-.atlas-overlay--halos .atlas-halo {
-  display: inline;
 }
 
 /* Camps (design-system §6.3) */
@@ -165,8 +191,17 @@
   animation: atlas-flutter 2.4s var(--ease-ink) infinite alternate;
 }
 
-.atlas-camp--planted .atlas-camp__flag {
-  animation: atlas-plant var(--dur-paper) var(--ease-stamp) both;
+.atlas-camp--planted .atlas-camp__pole {
+  animation: atlas-plant var(--dur-quick) var(--ease-stamp) both;
+}
+
+.atlas-camp__ripple {
+  fill: none;
+  stroke: var(--color-vermilion-600);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: atlas-ripple var(--dur-ink) var(--ease-ink) both;
 }
 
 .atlas-camp--invalid .atlas-camp__pennant {
@@ -207,19 +242,34 @@
   }
 }
 
+/* The camp is driven 2 px into the ground (design-system §6.3). */
 @keyframes atlas-plant {
   from {
-    transform: translateY(-6px);
-    opacity: 0.4;
+    transform: translateY(-2px);
   }
   to {
     transform: translateY(0);
-    opacity: 1;
+  }
+}
+
+@keyframes atlas-ripple {
+  from {
+    transform: scale(0.2);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .atlas-camp__flag {
+  .atlas-camp__flag,
+  .atlas-camp__pole {
     animation: none !important;
+  }
+
+  .atlas-camp__ripple {
+    display: none;
   }
 }

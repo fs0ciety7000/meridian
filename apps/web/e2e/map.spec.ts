@@ -121,6 +121,23 @@ test.describe('planting at the first attempt (phase 1 gate)', () => {
 });
 
 test.describe('map behaviour', () => {
+  test('micro-state halos are invisible at rest and appear near the pointer', async ({ page }) => {
+    test.skip(!!test.info().project.use.hasTouch, 'pointer reveal is a mouse behaviour');
+    await ready(page);
+    const visibleHalos = () =>
+      page
+        .locator('.atlas-halo')
+        .evaluateAll(
+          (nodes) => nodes.filter((n) => (n as SVGElement).style.display !== 'none').length,
+        );
+    expect(await visibleHalos()).toBe(0);
+    const [x, y] = await project(page, [14.42, 35.9]);
+    await page.mouse.move(x + 20, y + 10);
+    await expect.poll(visibleHalos).toBeGreaterThan(0);
+    await page.mouse.move(5, 5);
+    await expect.poll(visibleHalos).toBe(0);
+  });
+
   test('a tap in the open ocean places nothing and explains why', async ({ page }) => {
     await ready(page);
     const [x, y] = await project(page, [-30, -5]);

@@ -9,9 +9,9 @@ import {
   type ZoomTransform,
 } from 'd3-zoom';
 import { EARTH_RADIUS_KM } from '@meridian/geo';
-import type { ThemeName } from '@meridian/design-tokens';
+import { tokens, type ThemeName } from '@meridian/design-tokens';
 import type { GeoData, GeoLayer } from './geodata';
-import { Overlay, type CampMarker, type RouteLeg } from './overlay';
+import { Overlay, type CampMarker, type HaloTarget, type RouteLeg } from './overlay';
 import { currentTheme, mapPalette, type MapPalette } from './palette';
 import { resolvePick, type PickResult } from './pick';
 import { makeProjection, type ProjectionKind } from './projection';
@@ -61,7 +61,8 @@ const DETAIL_ZOOM = 3;
 const TAP_SLOP_PX = 6;
 const LONG_PRESS_MS = 350;
 const SNAP_RADIUS_PX = 12;
-const HALO_PX = 22;
+const HALO_PX = tokens.map.halo.sizePx;
+const HALO_REVEAL_PX = tokens.map.halo.revealRadiusPx;
 const LOUPE_PX = 132;
 const LOUPE_ZOOM = 4;
 
@@ -395,6 +396,7 @@ export class AtlasMapEngine {
     if (this.data.layers['50m']) this.buildDetailPaths();
     this.overlay.setProjection(this.projection);
     this.overlay.setHalos(this.microAimPoints());
+    this.measureMicroStates();
     this.pickDirty = true;
     this.frozenAt = null;
     if (this.width) this.renderWorldBitmap();
@@ -426,10 +428,51 @@ export class AtlasMapEngine {
     this.paths.micro50 = buildLayerPaths(this.data.micro, this.projection, in50);
   }
 
-  private microAimPoints(): [number, number][] {
+  private microAimPoints(): HaloTarget[] {
     return [...this.data.entities.values()]
       .filter((e) => e.isMicroState)
-      .map((e) => e.aimPoint as [number, number]);
+      .map((e) => ({ id: e.iso3, lonLat: e.aimPoint as [number, number] }));
+  }
+
+  /** Projected size (px at scale 1) of each micro-state's main polygon. */
+  private microSize = new Map<string, number>();
+
+  private measureMicroStates() {
+    this.microSize.clear();
+    const path = geoPath(this.projection);
+    for (const e of this.data.entities.values()) {
+      if (!e.isMicroState) continue;
+      const [w, s, east, n] = e.mainBbox;
+      const corners: [number, number][] = [
+        [w, s],
+        [east, n],
+        [w, n],
+        [east, s],
+      ];
+      const [[x0, y0], [x1, y1]] = path.bounds({ type: 'MultiPoint', coordinates: corners });
+      this.microSize.set(e.iso3, Math.max(x1 - x0, y1 - y0));
+    }
+  }
+
+  /** Micro-states smaller than a finger at the current zoom: they get a halo target. */
+  private haloCandidates(): HaloTarget[] {
+    const k = this.transform.k;
+    return this.microAimPoints().filter((h) => (this.microSize.get(h.id) ?? 0) * k < HALO_PX);
+  }
+
+  private pointer: [number, number] | null = null;
+
+  /** Halos are invisible at rest; they appear within reach of the pointer (design-system §5.4 bis). */
+  private revealHalos() {
+    const ids = new Set<string>();
+    if (this.pointer) {
+      for (const h of this.haloCandidates()) {
+        const p = this.project(h.lonLat);
+        if (p && Math.hypot(p[0] - this.pointer[0], p[1] - this.pointer[1]) <= HALO_REVEAL_PX)
+          ids.add(h.id);
+      }
+    }
+    this.overlay.revealHalos(ids);
   }
 
   private refreshTheme = () => {
@@ -482,7 +525,7 @@ export class AtlasMapEngine {
     }
     this.drawHighlightLayer();
     this.overlay.update(view);
-    this.updateHaloVisibility();
+    this.revealHalos();
   }
 
   /**
@@ -550,13 +593,6 @@ export class AtlasMapEngine {
     this.requestDraw(true);
     this.requestFullDraw();
     this.opts.onCamera?.(this.camera);
-  }
-
-  private updateHaloVisibility() {
-    // A halo only matters while the micro-state is smaller than a finger target.
-    const k = this.transform.k;
-    const show = this.data.entities.size > 0;
-    this.overlay.svg.classList.toggle('atlas-overlay--halos', show && k < 12);
   }
 
   private setTransform(t: ZoomTransform) {
@@ -630,12 +666,11 @@ export class AtlasMapEngine {
       }
     }
     // Micro-state halos on top: a finger-sized target snapping to the aim point.
-    for (const e of this.data.entities.values()) {
-      if (!e.isMicroState || k >= 12) continue;
-      const p = this.projection(e.aimPoint as [number, number]);
+    for (const h of this.haloCandidates()) {
+      const p = this.projection(h.lonLat);
       if (!p) continue;
       ctx.fillStyle = pickColor(this.pickUnits.length);
-      this.pickUnits.push({ id: e.iso3, entity: e.iso3, halo: true });
+      this.pickUnits.push({ id: h.id, entity: h.id, halo: true });
       ctx.beginPath();
       ctx.arc(p[0], p[1], HALO_PX / 2 / k, 0, Math.PI * 2);
       ctx.fill();
@@ -750,7 +785,11 @@ export class AtlasMapEngine {
           clearTimeout(this.press.timer);
           this.press = null;
         }
-        if (e.pointerType === 'mouse' && e.buttons === 0 && !this.interacting) this.hoverAt(x, y);
+        if (e.pointerType === 'mouse') {
+          this.pointer = [x, y];
+          this.revealHalos();
+          if (e.buttons === 0 && !this.interacting) this.hoverAt(x, y);
+        }
       },
       { capture: true },
     );
@@ -790,6 +829,8 @@ export class AtlasMapEngine {
       finish(e);
     });
     h.addEventListener('pointerleave', () => {
+      this.pointer = null;
+      this.revealHalos();
       if (this.hover) {
         this.hover = null;
         this.drawHighlightLayer();
@@ -880,8 +921,24 @@ export class AtlasMapEngine {
       selected: null,
       clear: false,
     });
-    // Reticle
+    // Halo targets within the loupe, at their real finger size.
     ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+    ctx.setLineDash([2, 2]);
+    ctx.strokeStyle = this.pal['ink-500'];
+    ctx.lineWidth = 0.75;
+    for (const h of this.haloCandidates()) {
+      const p = this.projection(h.lonLat);
+      if (!p) continue;
+      const lx = p[0] * view.k + view.x;
+      const ly = p[1] * view.k + view.y;
+      if (lx < -20 || ly < -20 || lx > size + 20 || ly > size + 20) continue;
+      ctx.beginPath();
+      ctx.arc(lx, ly, HALO_PX / 2, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+
+    // Reticle
     ctx.strokeStyle = this.pal['vermilion-600'];
     ctx.lineWidth = 1;
     ctx.beginPath();

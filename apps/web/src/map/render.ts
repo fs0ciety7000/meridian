@@ -80,21 +80,23 @@ const alpha = (hex: string, a: number) =>
     .toString(16)
     .padStart(2, '0')}`;
 
+/** Unplantable hatching: thin sepia diagonals at 135°, spacing in screen pixels. */
 function hatchPattern(
   ctx: CanvasRenderingContext2D,
-  color: string,
+  pal: MapPalette,
   dpr: number,
 ): CanvasPattern | null {
-  const size = Math.round(6 * dpr);
+  const h = pal.style.unplantableHatch;
+  const size = Math.round(h.spacing * dpr);
   const tile = document.createElement('canvas');
   tile.width = tile.height = size;
   const t = tile.getContext('2d')!;
-  t.strokeStyle = alpha(color, 0.45);
-  t.lineWidth = dpr;
+  t.strokeStyle = pal.unplantableHatch;
+  t.lineWidth = h.width * dpr;
   t.beginPath();
   for (const o of [-size, 0, size]) {
-    t.moveTo(o, size);
-    t.lineTo(o + size, 0);
+    t.moveTo(o, 0);
+    t.lineTo(o + size, size);
   }
   t.stroke();
   return ctx.createPattern(tile, 'repeat');
@@ -169,7 +171,7 @@ export function drawBase(
     ctx.fill(layer.unplantable);
   }
   if (!opts.fast) {
-    const hatch = hatchPattern(ctx, pal.hatch, dpr);
+    const hatch = hatchPattern(ctx, pal, dpr);
     if (hatch) {
       hatch.setTransform(new DOMMatrix().scale(1 / (k * dpr)));
       ctx.fillStyle = hatch;
@@ -209,28 +211,72 @@ export function drawBase(
   ctx.lineWidth = 1 * px;
   ctx.stroke(statics.sphere);
 
-  // Ocean labels in screen space (hydrography in italics, design-system §5.3)
-  if (!opts.fast) {
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    // Label size follows the size of the world on screen (≈ 1/90 of its width), 9–15 px.
-    const sphereWidth = (opts.worldWidth ?? view.width) * k;
-    ctx.font = `italic 400 ${Math.round(Math.max(9, Math.min(15, sphereWidth / 90)))}px ${pal.font.map}`;
-    ctx.fillStyle = alpha(pal['ink-500'], 0.85);
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    if ('letterSpacing' in ctx)
-      (ctx as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing = '0.18em';
-    for (const label of opts.oceanLabels) {
-      const p = opts.projection(label.at);
-      if (!p) continue;
-      const sx = p[0] * k + x;
-      const sy = p[1] * k + y;
-      if (sx < -100 || sy < -20 || sx > view.width + 100 || sy > view.height + 20) continue;
-      ctx.fillText(label.text, sx, sy);
-    }
-    if ('letterSpacing' in ctx)
-      (ctx as CanvasRenderingContext2D & { letterSpacing: string }).letterSpacing = '0px';
+  if (!opts.fast) drawLabels(ctx, view, pal, opts);
+}
+
+const PARALLEL_LABELS: [number, string][] = [
+  [0, 'Équateur'],
+  [23.44, 'Tropique du Cancer'],
+  [-23.44, 'Tropique du Capricorne'],
+  [66.56, 'Cercle polaire arctique'],
+  [-66.56, 'Cercle polaire antarctique'],
+];
+
+/**
+ * Hydrography and remarkable parallels in italics (design-system §5.2–5.3): AA contrast
+ * colour, a sea-coloured halo, and never a label cut by the screen edge.
+ */
+function drawLabels(ctx: CanvasRenderingContext2D, view: View, pal: MapPalette, opts: DrawOptions) {
+  const { k, x, y, dpr, width, height } = view;
+  const L = pal.style.label;
+  const size = Math.round(
+    Math.max(L.minPx, Math.min(L.maxPx, ((opts.worldWidth ?? width) * k) / 90)),
+  );
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.textBaseline = 'middle';
+  ctx.lineJoin = 'round';
+  ctx.lineWidth = L.haloWidth * 2;
+  ctx.strokeStyle = pal['sea-100'];
+  ctx.fillStyle = pal.seaLabel;
+  const spaced = ctx as CanvasRenderingContext2D & { letterSpacing?: string };
+  const screen = (lonLat: [number, number]) => {
+    const p = opts.projection(lonLat);
+    return p ? ([p[0] * k + x, p[1] * k + y] as const) : null;
+  };
+  const fits = (sx: number, sy: number, w: number, align: 'center' | 'left') => {
+    const left = align === 'center' ? sx - w / 2 : sx;
+    return left >= 4 && left + w <= width - 4 && sy >= size && sy <= height - size;
+  };
+
+  ctx.font = `italic 400 ${size}px ${pal.font.map}`;
+  spaced.letterSpacing = '0.18em';
+  ctx.textAlign = 'center';
+  for (const label of opts.oceanLabels) {
+    const p = screen(label.at);
+    if (!p) continue;
+    const w = ctx.measureText(label.text).width;
+    if (!fits(p[0], p[1], w, 'center')) continue;
+    ctx.strokeText(label.text, p[0], p[1]);
+    ctx.fillText(label.text, p[0], p[1]);
   }
+
+  // Parallels: label at the first visible point of the line from the left.
+  ctx.font = `italic 400 ${Math.max(L.minPx, size - 2)}px ${pal.font.map}`;
+  spaced.letterSpacing = '0.08em';
+  ctx.textAlign = 'left';
+  for (const [lat, text] of PARALLEL_LABELS) {
+    const w = ctx.measureText(text).width;
+    for (let lon = -180; lon <= 180; lon += 2.5) {
+      const p = screen([lon, lat]);
+      if (!p || p[0] < 12) continue;
+      if (fits(p[0] + 4, p[1] - size * 0.7, w, 'left')) {
+        ctx.strokeText(text, p[0] + 4, p[1] - size * 0.7);
+        ctx.fillText(text, p[0] + 4, p[1] - size * 0.7);
+      }
+      break;
+    }
+  }
+  spaced.letterSpacing = '0px';
 }
 
 export interface HighlightOptions {
@@ -267,7 +313,7 @@ export function drawHighlight(
       }
     }
   };
-  if (hover && hover !== selected) paint(hover, alpha(pal['ink-900'], 0.06), pal['ink-700'], 1);
+  if (hover && hover !== selected) paint(hover, alpha(pal.hover, 0.85), pal['ink-700'], 1);
   if (selected) paint(selected, alpha(pal['vermilion-600'], 0.1), pal['vermilion-600'], 1.5);
 }
 

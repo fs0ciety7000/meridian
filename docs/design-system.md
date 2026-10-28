@@ -2,8 +2,14 @@
 
 > **Auteur :** Art Director (`.claude/agents/art-director.md`)
 > **Relecteurs :** Tech Lead (faisabilité de rendu, budgets), QA/Balance (accessibilité)
-> **Statut :** v0.2 — à valider sur prototype (révision : jeu à la demande, codes d'expédition)
+> **Statut :** v0.3 — validé sur prototype de phase 1 (revue `docs/reviews/phase-1-art-direction.md`)
 > **Prérequis :** `docs/architecture.md` (§4.6 matières), `docs/vision-and-innovations.md`
+
+**Révisions**
+| Version | Date | Changement |
+|---|---|---|
+| v0.2 | — | jeu à la demande, codes d'expédition |
+| v0.3 | 2026-10-28 | intégration de la revue AD de phase 1 : projection Equal Earth confirmée ; cadrage portrait (`fitInsets`) ; état « Non plantable » ; étiquette et graduations du méridien ; étiquettes d'océans accessibles ; graduations et losange de traversée de la route ; halos invisibles au repos ; matière laiton ; palette Nocturne complète |
 
 Ce document est la **source de vérité visuelle**. Les tokens qu'il définit seront codés dans `packages/design-tokens` et exposés en variables CSS. Toute valeur visuelle en dur dans le code est un défaut.
 
@@ -78,6 +84,17 @@ Contrastes calculés (WCAG 2.1) sur `paper-100` : `ink-900` 13,8:1 · `ink-700` 
 | `sepia-600` (frontières) | `#9C8467` |
 | `vermilion-600` (route) | `#E2694B` |
 | `meridian-500` | `#D9AE55` |
+| `paper-300` (terres survolées) | `#26343F` |
+| `paper-400` (séparateurs) | `#33424E` |
+| `sea-200` (lignes d'eau, lacs) | `#18232B` |
+| `sea-300` (trait des lignes d'eau) | `#2E4550` |
+| `ink-700` (texte secondaire) | `#C7BEAB` |
+| `ink-500` (graticule, légendes) | `#9A927F` |
+| `vermilion-700` (état pressé) | `#C9573B` |
+
+**Encres de rareté Nocturne** (mêmes formes qu'en Atlas) : sépia `#C29A6E` · vert-de-gris `#5FB3A1` · outremer `#8EA6E8` · cramoisi `#E07A93` (+ or `#D9AE55`).
+
+Contrastes calculés (WCAG 2.1) sur `paper-100` Nocturne `#141B22` : `ink-900` 13,3:1 · `ink-700` 9,41:1 · `ink-500` 5,62:1 · `vermilion-600` 5,3:1 · `vermilion-700` 4,06:1 (état pressé uniquement, jamais de texte) · `sepia-600` 4,9:1 · sépia 6,73:1 · vert-de-gris 6,99:1 · outremer 7,25:1 · cramoisi 6,1:1 · `meridian-500` 8,38:1.
 
 Le thème sombre conserve les textures (grain inversé, opacité réduite de moitié) ; ce n'est **pas** un mode « néon ».
 
@@ -122,7 +139,7 @@ Règles : jamais plus de 2 graisses par écran ; pas de capitales pleines en Ins
 | **Foulage** | `box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -1px 0 rgba(0,0,0,.06)` sur cartouches | simule le papier embossé |
 | **Bord de feuille** | `clip-path` à bord légèrement irrégulier (deckle) sur les panneaux principaux uniquement | max 2 éléments à bord irrégulier par écran |
 | **Ombre de papier** | `0 1px 1px rgba(36,35,43,.08), 0 6px 18px -6px rgba(36,35,43,.18)` | jamais d'ombre grise dure, jamais de flou > 24 px |
-| **Laiton** (odomètre, boussole) | dégradé linéaire 3 stops `#B08D57 → #E3C98F → #8F6D3A` + trait `ink-900` | réservé aux 2 instruments ; pas de laiton ailleurs |
+| **Laiton** (odomètre, boussole) | token `material-brass` : dégradé linéaire vertical 3 stops `#B08D57` → `#E3C98F` (45 %) → `#8F6D3A` + trait `ink-900` ; encre posée sur le laiton : `brass-ink` `#24232B`, **fixe dans les deux thèmes** | réservé aux 2 instruments ; pas de laiton ailleurs. `brass-ink` : 5,03:1 sur le stop clair, 3,27:1 sur le stop sombre ⇒ les chiffres sont centrés dans la bande claire, jamais sur le stop bas |
 | **Encre de tampon** | SVG du tampon + masque de bruit (encrage irrégulier 85–100 %), rotation aléatoire ±6° (seedée) | le tampon doit rester lisible à 32 px |
 
 ---
@@ -130,7 +147,10 @@ Règles : jamais plus de 2 graisses par écran ; pas de capitales pleines en Ins
 ## 5. Style de carte
 
 ### 5.1 Projection et cadrage
-- **Equal Earth** par défaut, monde entier visible au repos avec marge de 4 % ; rotation vers l'expédition en cours.
+- **Equal Earth** par défaut **et partout** (jeu, Atlas personnel, carte postale) — décision de phase 1 : projection équivalente (aires vraies), donc perception honnête des tailles de pays ; Natural Earth I, non équivalente, agrandit les hautes latitudes au détriment des tropiques. Natural Earth I n'existe que comme bascule de laboratoire, jamais dans l'interface produit.
+- Repos : monde entier visible avec marge de 4 % (`map.fit.marginRatio`) ; rotation vers l'expédition en cours.
+- Le cadrage de repos s'ajuste à la **zone libre réelle** : le moteur reçoit des `fitInsets` (haut/bas en px, hauteur du chrome) et ne cadre que dans cet espace.
+- **Portrait `sm`** : la règle des 70 % (§1.4) prime sur « monde entier visible ». Le repos cadre la sphère sur la **hauteur** de la zone libre et centre l'expédition en cours (les longitudes hors champ s'atteignent par pan) ; la sphère peut passer sous la marge haute du cartouche (les pôles sont la marge de l'atlas). Critère mesuré : sphère ≥ 70 % de la hauteur du viewport.
 - **Récapitulatif** : globe orthographique, ombrage doux (dégradé radial `sea-100 → sea-200`), halo d'atmosphère *papier* (pas de bleu ciel).
 - **Cadre** : filet double (1 px + 0,5 px, `ink-900` 60 %) autour de la carte en vue Atlas, avec **graduations de longitude/latitude** tous les 15° dans la marge (`type-coord`).
 
@@ -139,31 +159,43 @@ Règles : jamais plus de 2 graisses par écran ; pas de capitales pleines en Ins
 | Couche | Style |
 |---|---|
 | Océan | `sea-100` + grain |
-| Lignes d'eau | 3 contours décalés de la côte à 2 / 5 / 9 px écran, `sea-300`, opacité 60 / 35 / 18 %, épaisseur 0,6 px — **signature visuelle** |
-| Graticule | tous les 15°, 0,4 px, `ink-500` 25 % ; équateur, tropiques et cercles polaires en tirets 4-3 avec étiquette italique |
+| Lignes d'eau | 3 contours décalés de la côte à 2 / 5 / 9 px écran, `sea-300`, opacité 60 / 35 / 18 % (Nocturne : 85 / 50 / 26 %, `map.waterLines.opacityNocturne`, sinon la signature disparaît dans le sombre), épaisseur 0,6 px — **signature visuelle** |
+| Graticule | tous les 15°, 0,4 px, `ink-500` 25 % ; équateur, tropiques et cercles polaires en tirets 4-3 avec étiquette italique (`map-label-sea`, voir 5.3), posée près d'un bord de la vue, masquée si collision |
 | Terres | `paper-200` |
+| Non plantable | `paper-200` + `map-unplantable-hatch` : `sepia-600` 28 %, obliques **135°** (sens opposé à la fausse piste), pas 6 px, trait 0,75 px ; jamais de vermillon |
 | Relief (optionnel) | ombrage gris-sépia multiply 12 %, uniquement à zoom ≥ ×3 |
 | Frontières | 0,6 px `sepia-600`, tiret 3-1,5 ; **frontières contestées** : pointillé 1-2 |
 | Traits de côte | 0,9 px `ink-900` + double 0,4 px décalé 1 px à 40 % (bavure d'encre) |
-| Méridien de l'expédition | 1,5 px `meridian-500`, petites graduations dorées toutes les 10° de latitude, étiquette « MÉRIDIEN · 30° E » en petites capitales |
+| Méridien de l'expédition | 1,5 px `meridian-500` ; graduations perpendiculaires toutes les 10° de latitude (`map.meridian.tickEveryDeg` = 10), longueur 4 px écran (`map.meridian.tickLength`), 1 px `meridian-500` ; étiquette `map-meridian-label` : « MÉRIDIEN · 30° E » en `type-label-caps`, **texte `ink-700`** (7,53:1 sur `sea-100`), précédé d'un losange `meridian-500` de 6 px (graphique, 3,17:1 ≥ 3:1). L'or n'écrit jamais le libellé (règle §2.1) |
 | Étiquettes | voir 5.3 |
 | Route | voir §6.4 |
 | Camps | voir §6.3 |
 
 ### 5.3 Étiquettes
-- **En jeu** : aucune étiquette de pays par défaut (préserve la difficulté). Les océans sont étiquetés en *italique Garamond* espacé, `sea-300` → `ink-500`. Le nom du pays apparaît **après** le tap provisoire, dans le cartouche de sélection.
+- **En jeu** : aucune étiquette de pays par défaut (préserve la difficulté). Le nom du pays apparaît **après** le tap provisoire, dans le cartouche de sélection.
+- **Hydrographie** : océans et parallèles remarquables en *italique Garamond* espacé (`letter-spacing: .18em`), couleur `map-label-sea` — Atlas : `ink-700` à 80 % (aplati `#63636C`, **4,62:1** sur `sea-100`) ; Nocturne : `ink-500` à 85 % (aplati `#857F70`, **4,57:1** sur `sea-100`).
+  - Taille proportionnelle à la largeur du monde à l'écran, **minimum 11 px** (`map.label.minPx`), maximum 15 px.
+  - **Détourage** `sea-100` de 3 px (`map.label.haloWidth`) : coupe graticule, méridien et route sous la lettre.
+  - Une étiquette dont la boîte englobante n'est pas **entièrement** dans la vue est masquée (jamais de « Océan Atlan… » tronqué).
 - **Option « Atlas annoté »** (aide) et **vue Atlas personnel** : pays en petites capitales Garamond, taille proportionnelle à la surface projetée (3 paliers), placés au *pole of inaccessibility*, masqués si collision.
 
 ### 5.4 États d'un pays
 | État | Rendu |
 |---|---|
 | Repos | `paper-200` |
-| Survol (desktop) | `paper-300` + contour 1 px `ink-700` |
+| Survol (desktop) | `paper-300` + contour 1 px `ink-700` (jamais un voile d'encre : il grise en Atlas et éclaircit en Nocturne) |
 | Sélection provisoire | lavis `vermilion-600` 10 % + contour 1,5 px `vermilion-600` |
 | Validé | lavis de l'**encre du palier de rareté** 18 % (apparaît en fondu « l'encre se répand », 600 ms) |
 | Fausse piste | hachures obliques 45° `vermilion-700` 35 % + contour pointillé |
 | Atlas : non visité | hachures fines croisées `ink-500` 12 % (*terra incognita*) |
 | Atlas : visité | lavis aquarelle du continent |
+| Non plantable (Antarctique, territoires contestés ou non membres, cf. `docs/geo-policy-changelog.md`) | `map-unplantable-hatch` sans lavis ; au tap, libellé « Territoire non plantable » dans la `CampBar` (forme + texte, jamais la couleur seule). À distinguer : fausse piste = 45° `vermilion-700` ; terra incognita = croisées `ink-500` 12 % |
+
+### 5.4 bis Halos des micro-États
+- Rôle : cible tactile de `microStateHaloPx` = 22 px autour du point de visée d'un micro-État dont l'emprise projetée fait **moins de 22 px** à l'échelle courante (décision **par entité**, pas par seuil de zoom global).
+- **Invisibles au repos** : le halo vit dans le pick buffer. Un halo visible signalerait quelles îles sont des États et révélerait des réponses (§11.10).
+- Affichage visuel uniquement : (a) pour les halos à moins de `map-halo-reveal-radius` = 48 px du pointeur ou du doigt, en fondu `dur-quick` ; (b) dans la loupe ; (c) en option « Atlas annoté » et dans la vue Atlas personnel.
+- Rendu quand il est visible : cercle 0,75 px `ink-500` 55 %, tirets 2-2.
 
 ### 5.5 Instruments sur la carte
 - **Échelle graphique** (bas gauche) : barre alternée noir/blanc, **mise à jour avec le zoom**, en km (ou miles selon la locale). Fonctionnelle, pas décorative.
@@ -194,8 +226,8 @@ Chaque composant est spécifié par : rôle, anatomie, états, comportement mobi
 
 ### 6.4 Route d'expédition (`RouteLine`)
 - Grand cercle, 2 px `vermilion-600`, extrémités rondes ; segment en cours d'animation avec **pointe d'encre** (petit disque 3 px qui avance).
-- Segments passés : 1,5 px, opacité 85 %, avec **petites hachures transversales** tous les 500 km (comme les traits d'échelle d'une route de voyage).
-- Traversée du méridien : un losange doré 8 px sur la ligne.
+- Segments passés : 1,5 px, opacité 85 %, avec **petites hachures transversales** tous les 500 km (`map.route.tickEveryKm`), perpendiculaires à la ligne, longueur 5 px écran (`map.route.tickLength`), 1 px `vermilion-600` 85 % — comme les traits d'échelle d'une route de voyage. Jamais sur le segment courant.
+- Traversée du méridien : losange plein `meridian-500` de 8 px (`map.route.crossingMarkerSize`) cerné de 1 px `paper-100`, posé à l'intersection grand cercle × méridien. Seul endroit où l'or touche la route.
 - Fantôme (ami) : 1,5 px `ink-700` en tirets 2-4.
 
 ### 6.5 Odomètre de distance (`Odometer`)
@@ -342,10 +374,34 @@ Palette sonore « bureau d'expédition » : froissement de papier, plume, sceau 
   },
   "map": {
     "coast": { "width": 0.9, "echoWidth": 0.4, "echoOffset": 1 },
-    "waterLines": { "offsets": [2, 5, 9], "opacity": [0.6, 0.35, 0.18], "width": 0.6 },
+    "waterLines": { "offsets": [2, 5, 9], "opacity": [0.6, 0.35, 0.18], "opacityNocturne": [0.85, 0.5, 0.26], "width": 0.6 },
     "graticuleStepDeg": 15,
     "border": { "width": 0.6, "dash": [3, 1.5], "disputedDash": [1, 2] },
-    "route": { "width": 2, "pastWidth": 1.5, "tickEveryKm": 500 }
+    "route": { "width": 2, "pastWidth": 1.5, "tickEveryKm": 500, "tickLength": 5, "crossingMarkerSize": 8 },
+    "projection": "equalEarth",
+    "fit": { "marginRatio": 0.04, "minMapHeightRatioSm": 0.7 },
+    "unplantableHatch": { "color": "sepia-600", "opacity": 0.28, "angleDeg": 135, "spacing": 6, "width": 0.75 },
+    "meridian": { "width": 1.5, "tickEveryDeg": 10, "tickLength": 4, "label": { "color": "ink-700", "marker": "meridian-500", "markerSize": 6 } },
+    "label": {
+      "sea": { "atlas": { "color": "ink-700", "opacity": 0.8 }, "nocturne": { "color": "ink-500", "opacity": 0.85 } },
+      "minPx": 11, "maxPx": 15, "haloWidth": 3
+    },
+    "halo": { "sizePx": 22, "revealRadiusPx": 48 }
+  },
+  "material": {
+    "brass": { "stops": [["#B08D57", 0], ["#E3C98F", 0.45], ["#8F6D3A", 1]] },
+    "brassInk": "#24232B"
+  },
+  "themes": {
+    "nocturne": {
+      "paper": { "100": "#141B22", "200": "#1E2A33", "300": "#26343F", "400": "#33424E" },
+      "sea":   { "100": "#0F161C", "200": "#18232B", "300": "#2E4550" },
+      "ink":   { "900": "#E9E1CF", "700": "#C7BEAB", "500": "#9A927F" },
+      "sepia": { "600": "#9C8467" },
+      "vermilion": { "600": "#E2694B", "700": "#C9573B" },
+      "meridian":  { "500": "#D9AE55" },
+      "rarity": { "known": "#C29A6E", "trail": "#5FB3A1", "frontier": "#8EA6E8", "incognita": "#E07A93" }
+    }
   }
 }
 ```

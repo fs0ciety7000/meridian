@@ -23,6 +23,10 @@ for (const [k, v] of Object.entries(tokens.type)) {
 for (const [k, v] of Object.entries(tokens.space)) statics[`space-${k}`] = v;
 for (const [k, v] of Object.entries(tokens.radius)) statics[`radius-${k}`] = v;
 for (const [k, v] of Object.entries(tokens.shadow)) statics[`shadow-${k}`] = v;
+statics['material-brass'] = `linear-gradient(180deg, ${tokens.material.brass.stops
+  .map(([color, at]) => `${color} ${Number(at) * 100}%`)
+  .join(', ')})`;
+statics['material-brass-ink'] = tokens.material.brassInk;
 for (const [k, v] of Object.entries(tokens.motion.ease)) statics[`ease-${k}`] = v;
 for (const [k, v] of Object.entries(tokens.motion.duration)) statics[`dur-${k}`] = `${v}ms`;
 
