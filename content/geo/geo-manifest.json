@@ -1,0 +1,30 @@
+{
+  "version": "ne-5.1.2+policy-1+pipeline-3",
+  "source": {
+    "name": "Natural Earth",
+    "version": "5.1.2"
+  },
+  "files": [
+    {
+      "lod": "110m",
+      "file": "world-110m.topo.json",
+      "sha256": "066af5b3a3aa2a37b6367d7292eae1716eba3d9deecdf0d7ecc402d0cd258665",
+      "bytes": 112051,
+      "bytesGz": 37057
+    },
+    {
+      "lod": "50m",
+      "file": "world-50m.topo.json",
+      "sha256": "a39bf97deb0860aa3366a5bebe5d3ac6de71289b5a4e1eb0f7173425220d6bd6",
+      "bytes": 750067,
+      "bytesGz": 226719
+    },
+    {
+      "lod": "10m-micro",
+      "file": "micro-10m.topo.json",
+      "sha256": "d76db31fe9531f23c3ca9102de356674dfad091ddad56f5dd86c0308d7cad7d1",
+      "bytes": 59729,
+      "bytesGz": 20154
+    }
+  ]
+}

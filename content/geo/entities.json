@@ -1,0 +1,7778 @@
+{
+  "dataVersion": "ne-5.1.2+policy-1+pipeline-3",
+  "entities": [
+    {
+      "iso3": "AFG",
+      "iso2": "AF",
+      "m49": "004",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "AFG"
+      ],
+      "aimPoint": [
+        66.651,
+        34.327
+      ],
+      "bbox": [
+        60.486,
+        29.392,
+        74.891,
+        38.456
+      ],
+      "mainBbox": [
+        60.486,
+        29.392,
+        74.891,
+        38.456
+      ],
+      "areaKm2": 642392.96,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "IRN",
+        "PAK",
+        "TJK",
+        "TKM",
+        "UZB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "AGO",
+      "iso2": "AO",
+      "m49": "024",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "AGO"
+      ],
+      "aimPoint": [
+        17.766,
+        -13.185
+      ],
+      "bbox": [
+        11.743,
+        -18.02,
+        24.047,
+        -4.429
+      ],
+      "mainBbox": [
+        11.743,
+        -18.02,
+        24.047,
+        -5.855
+      ],
+      "areaKm2": 1249441.54,
+      "isMicroState": false,
+      "neighbors": [
+        "COD",
+        "COG",
+        "NAM",
+        "ZMB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ALB",
+      "iso2": "AL",
+      "m49": "008",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "ALB"
+      ],
+      "aimPoint": [
+        20.081,
+        40.672
+      ],
+      "bbox": [
+        19.281,
+        39.654,
+        21.031,
+        42.648
+      ],
+      "mainBbox": [
+        19.281,
+        39.654,
+        21.031,
+        42.648
+      ],
+      "areaKm2": 28298.41,
+      "isMicroState": false,
+      "neighbors": [
+        "GRC",
+        "MKD",
+        "MNE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "AND",
+      "iso2": "AD",
+      "m49": "020",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "AND"
+      ],
+      "aimPoint": [
+        1.537,
+        42.546
+      ],
+      "bbox": [
+        1.406,
+        42.429,
+        1.765,
+        42.649
+      ],
+      "mainBbox": [
+        1.406,
+        42.429,
+        1.765,
+        42.649
+      ],
+      "areaKm2": 451.5,
+      "isMicroState": true,
+      "neighbors": [
+        "ESP",
+        "FRA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ARE",
+      "iso2": "AE",
+      "m49": "784",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "ARE"
+      ],
+      "aimPoint": [
+        54.537,
+        23.49
+      ],
+      "bbox": [
+        51.568,
+        22.621,
+        56.388,
+        26.068
+      ],
+      "mainBbox": [
+        51.568,
+        22.621,
+        56.388,
+        26.068
+      ],
+      "areaKm2": 71246.88,
+      "isMicroState": false,
+      "neighbors": [
+        "OMN",
+        "SAU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ARG",
+      "iso2": "AR",
+      "m49": "032",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "ARG"
+      ],
+      "aimPoint": [
+        -64.065,
+        -31.375
+      ],
+      "bbox": [
+        -73.576,
+        -55.032,
+        -53.669,
+        -21.803
+      ],
+      "mainBbox": [
+        -73.576,
+        -52.357,
+        -53.669,
+        -21.803
+      ],
+      "areaKm2": 2783122.31,
+      "isMicroState": false,
+      "neighbors": [
+        "BOL",
+        "BRA",
+        "CHL",
+        "PRY",
+        "URY"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ARM",
+      "iso2": "AM",
+      "m49": "051",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "ARM"
+      ],
+      "aimPoint": [
+        44.57,
+        40.577
+      ],
+      "bbox": [
+        43.439,
+        38.869,
+        46.585,
+        41.291
+      ],
+      "mainBbox": [
+        43.439,
+        38.869,
+        46.585,
+        41.291
+      ],
+      "areaKm2": 29555.05,
+      "isMicroState": false,
+      "neighbors": [
+        "AZE",
+        "GEO",
+        "IRN",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ATG",
+      "iso2": "AG",
+      "m49": "028",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "ATG"
+      ],
+      "aimPoint": [
+        -61.805,
+        17.074
+      ],
+      "bbox": [
+        -62.348,
+        16.932,
+        -61.668,
+        17.728
+      ],
+      "mainBbox": [
+        -61.894,
+        16.989,
+        -61.668,
+        17.169
+      ],
+      "areaKm2": 453.34,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "AUS",
+      "iso2": "AU",
+      "m49": "036",
+      "subregionM49": "053",
+      "continent": "OC",
+      "continents": [
+        "AS",
+        "OC"
+      ],
+      "geomIds": [
+        "ATC",
+        "AUS",
+        "CSI",
+        "HMD",
+        "IOA",
+        "NFK"
+      ],
+      "aimPoint": [
+        132.417,
+        -23.135
+      ],
+      "bbox": [
+        112.908,
+        -54.749,
+        158.959,
+        -10.052
+      ],
+      "mainBbox": [
+        113.185,
+        -39.146,
+        153.617,
+        -10.707
+      ],
+      "areaKm2": 7706478.31,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "AUT",
+      "iso2": "AT",
+      "m49": "040",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "AUT"
+      ],
+      "aimPoint": [
+        15.326,
+        47.731
+      ],
+      "bbox": [
+        9.524,
+        46.4,
+        17.147,
+        49.001
+      ],
+      "mainBbox": [
+        9.524,
+        46.4,
+        17.147,
+        49.001
+      ],
+      "areaKm2": 83755.92,
+      "isMicroState": false,
+      "neighbors": [
+        "CHE",
+        "CZE",
+        "DEU",
+        "HUN",
+        "ITA",
+        "LIE",
+        "SVK",
+        "SVN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "AZE",
+      "iso2": "AZ",
+      "m49": "031",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "AZE"
+      ],
+      "aimPoint": [
+        48.46,
+        40.493
+      ],
+      "bbox": [
+        44.768,
+        38.399,
+        50.366,
+        41.891
+      ],
+      "mainBbox": [
+        45.001,
+        38.399,
+        50.366,
+        41.891
+      ],
+      "areaKm2": 86152.88,
+      "isMicroState": false,
+      "neighbors": [
+        "ARM",
+        "GEO",
+        "IRN",
+        "RUS",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BDI",
+      "iso2": "BI",
+      "m49": "108",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "BDI"
+      ],
+      "aimPoint": [
+        29.836,
+        -3.396
+      ],
+      "bbox": [
+        29.014,
+        -4.456,
+        30.811,
+        -2.313
+      ],
+      "mainBbox": [
+        29.014,
+        -4.456,
+        30.811,
+        -2.313
+      ],
+      "areaKm2": 27161.41,
+      "isMicroState": false,
+      "neighbors": [
+        "COD",
+        "RWA",
+        "TZA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BEL",
+      "iso2": "BE",
+      "m49": "056",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "BEL"
+      ],
+      "aimPoint": [
+        4.656,
+        50.776
+      ],
+      "bbox": [
+        2.525,
+        49.511,
+        6.364,
+        51.491
+      ],
+      "mainBbox": [
+        2.525,
+        49.511,
+        6.364,
+        51.491
+      ],
+      "areaKm2": 30561.52,
+      "isMicroState": false,
+      "neighbors": [
+        "DEU",
+        "FRA",
+        "LUX",
+        "NLD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BEN",
+      "iso2": "BJ",
+      "m49": "204",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "BEN"
+      ],
+      "aimPoint": [
+        2.383,
+        10.38
+      ],
+      "bbox": [
+        0.763,
+        6.217,
+        3.834,
+        12.384
+      ],
+      "mainBbox": [
+        0.763,
+        6.217,
+        3.834,
+        12.384
+      ],
+      "areaKm2": 116589.9,
+      "isMicroState": false,
+      "neighbors": [
+        "BFA",
+        "NER",
+        "NGA",
+        "TGO"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BFA",
+      "iso2": "BF",
+      "m49": "854",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "BFA"
+      ],
+      "aimPoint": [
+        -0.936,
+        12.82
+      ],
+      "bbox": [
+        -5.524,
+        9.425,
+        2.389,
+        15.078
+      ],
+      "mainBbox": [
+        -5.524,
+        9.425,
+        2.389,
+        15.078
+      ],
+      "areaKm2": 273827.33,
+      "isMicroState": false,
+      "neighbors": [
+        "BEN",
+        "CIV",
+        "GHA",
+        "MLI",
+        "NER",
+        "TGO"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BGD",
+      "iso2": "BD",
+      "m49": "050",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "BGD"
+      ],
+      "aimPoint": [
+        89.729,
+        24.296
+      ],
+      "bbox": [
+        88.023,
+        20.79,
+        92.632,
+        26.572
+      ],
+      "mainBbox": [
+        88.023,
+        20.79,
+        92.632,
+        26.572
+      ],
+      "areaKm2": 137217.42,
+      "isMicroState": false,
+      "neighbors": [
+        "IND",
+        "MMR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BGR",
+      "iso2": "BG",
+      "m49": "100",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "BGR"
+      ],
+      "aimPoint": [
+        25.227,
+        42.513
+      ],
+      "bbox": [
+        22.344,
+        41.244,
+        28.585,
+        44.238
+      ],
+      "mainBbox": [
+        22.344,
+        41.244,
+        28.585,
+        44.238
+      ],
+      "areaKm2": 112569.07,
+      "isMicroState": false,
+      "neighbors": [
+        "GRC",
+        "MKD",
+        "ROU",
+        "SRB",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BHR",
+      "iso2": "BH",
+      "m49": "048",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "BHR"
+      ],
+      "aimPoint": [
+        50.546,
+        25.985
+      ],
+      "bbox": [
+        50.381,
+        25.58,
+        50.82,
+        26.287
+      ],
+      "mainBbox": [
+        50.449,
+        25.79,
+        50.646,
+        26.243
+      ],
+      "areaKm2": 689.42,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BHS",
+      "iso2": "BS",
+      "m49": "044",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "BHS"
+      ],
+      "aimPoint": [
+        -78.025,
+        24.676
+      ],
+      "bbox": [
+        -78.986,
+        20.937,
+        -72.747,
+        26.94
+      ],
+      "mainBbox": [
+        -78.435,
+        24.287,
+        -77.735,
+        25.202
+      ],
+      "areaKm2": 12631.97,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BIH",
+      "iso2": "BA",
+      "m49": "070",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "BIH"
+      ],
+      "aimPoint": [
+        18.082,
+        44.077
+      ],
+      "bbox": [
+        15.737,
+        42.56,
+        19.584,
+        45.277
+      ],
+      "mainBbox": [
+        15.737,
+        42.56,
+        19.584,
+        45.277
+      ],
+      "areaKm2": 51721.46,
+      "isMicroState": false,
+      "neighbors": [
+        "HRV",
+        "MNE",
+        "SRB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BLR",
+      "iso2": "BY",
+      "m49": "112",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "BLR"
+      ],
+      "aimPoint": [
+        28.423,
+        53.777
+      ],
+      "bbox": [
+        23.175,
+        51.265,
+        32.71,
+        56.146
+      ],
+      "mainBbox": [
+        23.175,
+        51.265,
+        32.71,
+        56.146
+      ],
+      "areaKm2": 206631.82,
+      "isMicroState": false,
+      "neighbors": [
+        "LTU",
+        "LVA",
+        "POL",
+        "RUS",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BLZ",
+      "iso2": "BZ",
+      "m49": "084",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "BLZ"
+      ],
+      "aimPoint": [
+        -88.733,
+        16.969
+      ],
+      "bbox": [
+        -89.237,
+        15.889,
+        -87.789,
+        18.482
+      ],
+      "mainBbox": [
+        -89.237,
+        15.889,
+        -88.085,
+        18.482
+      ],
+      "areaKm2": 22373.29,
+      "isMicroState": false,
+      "neighbors": [
+        "GTM",
+        "MEX"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BOL",
+      "iso2": "BO",
+      "m49": "068",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "BOL"
+      ],
+      "aimPoint": [
+        -64.692,
+        -16.692
+      ],
+      "bbox": [
+        -69.646,
+        -22.892,
+        -57.496,
+        -9.71
+      ],
+      "mainBbox": [
+        -69.646,
+        -22.892,
+        -57.496,
+        -9.71
+      ],
+      "areaKm2": 1090456.9,
+      "isMicroState": false,
+      "neighbors": [
+        "ARG",
+        "BRA",
+        "CHL",
+        "PER",
+        "PRY"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BRA",
+      "iso2": "BR",
+      "m49": "076",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "BRA"
+      ],
+      "aimPoint": [
+        -49.041,
+        -12.638
+      ],
+      "bbox": [
+        -74.002,
+        -33.742,
+        -34.805,
+        5.258
+      ],
+      "mainBbox": [
+        -74.002,
+        -33.742,
+        -34.805,
+        5.258
+      ],
+      "areaKm2": 8504958.16,
+      "isMicroState": false,
+      "neighbors": [
+        "ARG",
+        "BOL",
+        "COL",
+        "FRA",
+        "GUY",
+        "PER",
+        "PRY",
+        "SUR",
+        "URY",
+        "VEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BRB",
+      "iso2": "BB",
+      "m49": "052",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "BRB"
+      ],
+      "aimPoint": [
+        -59.565,
+        13.157
+      ],
+      "bbox": [
+        -59.654,
+        13.051,
+        -59.427,
+        13.345
+      ],
+      "mainBbox": [
+        -59.654,
+        13.051,
+        -59.427,
+        13.345
+      ],
+      "areaKm2": 445.91,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BRN",
+      "iso2": "BN",
+      "m49": "096",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "BRN"
+      ],
+      "aimPoint": [
+        114.55,
+        4.456
+      ],
+      "bbox": [
+        114.064,
+        4.024,
+        115.327,
+        5.022
+      ],
+      "mainBbox": [
+        114.064,
+        4.024,
+        115.048,
+        5.022
+      ],
+      "areaKm2": 5741.88,
+      "isMicroState": false,
+      "neighbors": [
+        "MYS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BTN",
+      "iso2": "BT",
+      "m49": "064",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "BTN"
+      ],
+      "aimPoint": [
+        89.94,
+        27.5
+      ],
+      "bbox": [
+        88.739,
+        26.702,
+        92.083,
+        28.311
+      ],
+      "mainBbox": [
+        88.739,
+        26.702,
+        92.083,
+        28.311
+      ],
+      "areaKm2": 40487.56,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "IND"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "BWA",
+      "iso2": "BW",
+      "m49": "072",
+      "subregionM49": "018",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "BWA"
+      ],
+      "aimPoint": [
+        24.179,
+        -22.051
+      ],
+      "bbox": [
+        19.977,
+        -26.854,
+        29.365,
+        -17.788
+      ],
+      "mainBbox": [
+        19.977,
+        -26.854,
+        29.365,
+        -17.788
+      ],
+      "areaKm2": 580514.85,
+      "isMicroState": false,
+      "neighbors": [
+        "NAM",
+        "ZAF",
+        "ZWE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CAF",
+      "iso2": "CF",
+      "m49": "140",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "CAF"
+      ],
+      "aimPoint": [
+        21.738,
+        7.004
+      ],
+      "bbox": [
+        14.431,
+        2.27,
+        27.403,
+        10.996
+      ],
+      "mainBbox": [
+        14.431,
+        2.27,
+        27.403,
+        10.996
+      ],
+      "areaKm2": 620644.41,
+      "isMicroState": false,
+      "neighbors": [
+        "CMR",
+        "COD",
+        "COG",
+        "SDN",
+        "SSD",
+        "TCD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CAN",
+      "iso2": "CA",
+      "m49": "124",
+      "subregionM49": "021",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "CAN"
+      ],
+      "aimPoint": [
+        -119.082,
+        58.799
+      ],
+      "bbox": [
+        -141.002,
+        41.675,
+        -52.654,
+        83.116
+      ],
+      "mainBbox": [
+        -141.002,
+        41.675,
+        -55.673,
+        71.987
+      ],
+      "areaKm2": 9894500.88,
+      "isMicroState": false,
+      "neighbors": [
+        "USA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CHE",
+      "iso2": "CH",
+      "m49": "756",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "CHE"
+      ],
+      "aimPoint": [
+        7.509,
+        46.715
+      ],
+      "bbox": [
+        5.97,
+        45.83,
+        10.455,
+        47.776
+      ],
+      "mainBbox": [
+        5.97,
+        45.83,
+        10.455,
+        47.776
+      ],
+      "areaKm2": 41326.31,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "DEU",
+        "FRA",
+        "ITA",
+        "LIE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CHL",
+      "iso2": "CL",
+      "m49": "152",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "CHL"
+      ],
+      "aimPoint": [
+        -69.086,
+        -23.364
+      ],
+      "bbox": [
+        -109.434,
+        -55.892,
+        -66.436,
+        -17.506
+      ],
+      "mainBbox": [
+        -75.708,
+        -53.883,
+        -67.009,
+        -17.506
+      ],
+      "areaKm2": 736362.22,
+      "isMicroState": false,
+      "neighbors": [
+        "ARG",
+        "BOL",
+        "PER"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CHN",
+      "iso2": "CN",
+      "m49": "156",
+      "subregionM49": "030",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "CHN",
+        "HKG",
+        "MAC"
+      ],
+      "aimPoint": [
+        109.468,
+        32.456
+      ],
+      "bbox": [
+        73.607,
+        18.218,
+        134.752,
+        53.556
+      ],
+      "mainBbox": [
+        73.607,
+        20.264,
+        134.752,
+        53.556
+      ],
+      "areaKm2": 9374503.99,
+      "isMicroState": false,
+      "neighbors": [
+        "AFG",
+        "BTN",
+        "IND",
+        "KAZ",
+        "KGZ",
+        "LAO",
+        "MMR",
+        "MNG",
+        "NPL",
+        "PAK",
+        "PRK",
+        "RUS",
+        "TJK",
+        "VNM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CIV",
+      "iso2": "CI",
+      "m49": "384",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "CIV"
+      ],
+      "aimPoint": [
+        -5.507,
+        7.543
+      ],
+      "bbox": [
+        -8.604,
+        4.351,
+        -2.506,
+        10.724
+      ],
+      "mainBbox": [
+        -8.604,
+        4.351,
+        -2.506,
+        10.724
+      ],
+      "areaKm2": 322038.47,
+      "isMicroState": false,
+      "neighbors": [
+        "BFA",
+        "GHA",
+        "GIN",
+        "LBR",
+        "MLI"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CMR",
+      "iso2": "CM",
+      "m49": "120",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "CMR"
+      ],
+      "aimPoint": [
+        12.44,
+        4.538
+      ],
+      "bbox": [
+        8.533,
+        1.676,
+        16.183,
+        13.079
+      ],
+      "mainBbox": [
+        8.533,
+        1.676,
+        16.183,
+        13.079
+      ],
+      "areaKm2": 466331.97,
+      "isMicroState": false,
+      "neighbors": [
+        "CAF",
+        "COG",
+        "GAB",
+        "GNQ",
+        "NGA",
+        "TCD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "COD",
+      "iso2": "CD",
+      "m49": "180",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "COD"
+      ],
+      "aimPoint": [
+        23.241,
+        -1.858
+      ],
+      "bbox": [
+        12.214,
+        -13.454,
+        31.274,
+        5.312
+      ],
+      "mainBbox": [
+        12.214,
+        -13.454,
+        31.274,
+        5.312
+      ],
+      "areaKm2": 2335422.65,
+      "isMicroState": false,
+      "neighbors": [
+        "AGO",
+        "BDI",
+        "CAF",
+        "COG",
+        "RWA",
+        "SSD",
+        "TZA",
+        "UGA",
+        "ZMB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "COG",
+      "iso2": "CG",
+      "m49": "178",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "COG"
+      ],
+      "aimPoint": [
+        15.937,
+        0.081
+      ],
+      "bbox": [
+        11.13,
+        -5.004,
+        18.622,
+        3.687
+      ],
+      "mainBbox": [
+        11.13,
+        -5.004,
+        18.622,
+        3.687
+      ],
+      "areaKm2": 346428.75,
+      "isMicroState": false,
+      "neighbors": [
+        "AGO",
+        "CAF",
+        "CMR",
+        "COD",
+        "GAB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "COL",
+      "iso2": "CO",
+      "m49": "170",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "COL"
+      ],
+      "aimPoint": [
+        -73.283,
+        3.405
+      ],
+      "bbox": [
+        -79.025,
+        -4.236,
+        -66.876,
+        12.434
+      ],
+      "mainBbox": [
+        -79.025,
+        -4.236,
+        -66.876,
+        12.434
+      ],
+      "areaKm2": 1140094.89,
+      "isMicroState": false,
+      "neighbors": [
+        "BRA",
+        "ECU",
+        "PAN",
+        "PER",
+        "VEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "COM",
+      "iso2": "KM",
+      "m49": "174",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "COM"
+      ],
+      "aimPoint": [
+        43.345,
+        -11.757
+      ],
+      "bbox": [
+        43.213,
+        -12.38,
+        44.529,
+        -11.361
+      ],
+      "mainBbox": [
+        43.213,
+        -11.933,
+        43.499,
+        -11.361
+      ],
+      "areaKm2": 1678.78,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CPV",
+      "iso2": "CV",
+      "m49": "132",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "CPV"
+      ],
+      "aimPoint": [
+        -23.62,
+        15.049
+      ],
+      "bbox": [
+        -25.342,
+        14.818,
+        -22.682,
+        17.194
+      ],
+      "mainBbox": [
+        -23.785,
+        14.916,
+        -23.444,
+        15.329
+      ],
+      "areaKm2": 3940.35,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CRI",
+      "iso2": "CR",
+      "m49": "188",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "CRI"
+      ],
+      "aimPoint": [
+        -83.995,
+        10.081
+      ],
+      "bbox": [
+        -85.908,
+        8.071,
+        -82.564,
+        11.189
+      ],
+      "mainBbox": [
+        -85.908,
+        8.071,
+        -82.564,
+        11.189
+      ],
+      "areaKm2": 51360.18,
+      "isMicroState": false,
+      "neighbors": [
+        "NIC",
+        "PAN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CUB",
+      "iso2": "CU",
+      "m49": "192",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "CUB",
+        "USG"
+      ],
+      "aimPoint": [
+        -76.472,
+        20.611
+      ],
+      "bbox": [
+        -84.887,
+        19.855,
+        -74.137,
+        23.19
+      ],
+      "mainBbox": [
+        -84.887,
+        19.855,
+        -74.137,
+        23.19
+      ],
+      "areaKm2": 110287.47,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CYP",
+      "iso2": "CY",
+      "m49": "196",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "CYP"
+      ],
+      "aimPoint": [
+        32.646,
+        34.914
+      ],
+      "bbox": [
+        32.301,
+        34.57,
+        34.05,
+        35.183
+      ],
+      "mainBbox": [
+        32.301,
+        34.57,
+        34.05,
+        35.183
+      ],
+      "areaKm2": 5395.5,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "CZE",
+      "iso2": "CZ",
+      "m49": "203",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "CZE"
+      ],
+      "aimPoint": [
+        14.268,
+        49.773
+      ],
+      "bbox": [
+        12.09,
+        48.576,
+        18.832,
+        51.038
+      ],
+      "mainBbox": [
+        12.09,
+        48.576,
+        18.832,
+        51.038
+      ],
+      "areaKm2": 78497.15,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "DEU",
+        "POL",
+        "SVK"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "DEU",
+      "iso2": "DE",
+      "m49": "276",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "DEU"
+      ],
+      "aimPoint": [
+        9.636,
+        51.02
+      ],
+      "bbox": [
+        5.858,
+        47.279,
+        15.017,
+        55.059
+      ],
+      "mainBbox": [
+        5.858,
+        47.279,
+        15.017,
+        54.903
+      ],
+      "areaKm2": 356379.05,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "BEL",
+        "CHE",
+        "CZE",
+        "DNK",
+        "FRA",
+        "LUX",
+        "NLD",
+        "POL"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "DJI",
+      "iso2": "DJ",
+      "m49": "262",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "DJI"
+      ],
+      "aimPoint": [
+        42.163,
+        11.391
+      ],
+      "bbox": [
+        41.765,
+        10.941,
+        43.41,
+        12.709
+      ],
+      "mainBbox": [
+        41.765,
+        10.941,
+        43.41,
+        12.709
+      ],
+      "areaKm2": 21933.52,
+      "isMicroState": false,
+      "neighbors": [
+        "ERI",
+        "ETH"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "DMA",
+      "iso2": "DM",
+      "m49": "212",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "DMA"
+      ],
+      "aimPoint": [
+        -61.366,
+        15.491
+      ],
+      "bbox": [
+        -61.489,
+        15.202,
+        -61.249,
+        15.634
+      ],
+      "mainBbox": [
+        -61.489,
+        15.202,
+        -61.249,
+        15.634
+      ],
+      "areaKm2": 732.9,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "DNK",
+      "iso2": "DK",
+      "m49": "208",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU",
+        "NA"
+      ],
+      "geomIds": [
+        "DNK",
+        "FRO",
+        "GRL"
+      ],
+      "aimPoint": [
+        9.069,
+        55.94
+      ],
+      "bbox": [
+        8.121,
+        54.629,
+        15.137,
+        57.737
+      ],
+      "mainBbox": [
+        8.121,
+        54.806,
+        10.926,
+        57.737
+      ],
+      "areaKm2": 2181706.34,
+      "isMicroState": false,
+      "neighbors": [
+        "DEU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "DOM",
+      "iso2": "DO",
+      "m49": "214",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "DOM"
+      ],
+      "aimPoint": [
+        -70.901,
+        19.082
+      ],
+      "bbox": [
+        -72,
+        17.636,
+        -68.339,
+        19.914
+      ],
+      "mainBbox": [
+        -72,
+        17.636,
+        -68.339,
+        19.914
+      ],
+      "areaKm2": 48588.97,
+      "isMicroState": false,
+      "neighbors": [
+        "HTI"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "DZA",
+      "iso2": "DZ",
+      "m49": "012",
+      "subregionM49": "015",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "DZA"
+      ],
+      "aimPoint": [
+        3.15,
+        27.434
+      ],
+      "bbox": [
+        -8.683,
+        18.987,
+        11.968,
+        37.092
+      ],
+      "mainBbox": [
+        -8.683,
+        18.987,
+        11.968,
+        37.092
+      ],
+      "areaKm2": 2312301.92,
+      "isMicroState": false,
+      "neighbors": [
+        "LBY",
+        "MAR",
+        "MLI",
+        "MRT",
+        "NER",
+        "TUN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ECU",
+      "iso2": "EC",
+      "m49": "218",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "ECU"
+      ],
+      "aimPoint": [
+        -78.246,
+        -1.202
+      ],
+      "bbox": [
+        -91.654,
+        -4.991,
+        -75.25,
+        1.455
+      ],
+      "mainBbox": [
+        -80.963,
+        -4.991,
+        -75.25,
+        1.455
+      ],
+      "areaKm2": 256155.28,
+      "isMicroState": false,
+      "neighbors": [
+        "COL",
+        "PER"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "EGY",
+      "iso2": "EG",
+      "m49": "818",
+      "subregionM49": "015",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "EGY"
+      ],
+      "aimPoint": [
+        29.264,
+        26.282
+      ],
+      "bbox": [
+        24.703,
+        21.995,
+        36.871,
+        31.655
+      ],
+      "mainBbox": [
+        24.703,
+        21.995,
+        36.871,
+        31.655
+      ],
+      "areaKm2": 1002870.07,
+      "isMicroState": false,
+      "neighbors": [
+        "ISR",
+        "LBY",
+        "PSE",
+        "SDN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ERI",
+      "iso2": "ER",
+      "m49": "232",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "ERI"
+      ],
+      "aimPoint": [
+        38.059,
+        16.021
+      ],
+      "bbox": [
+        36.427,
+        12.377,
+        43.117,
+        18.005
+      ],
+      "mainBbox": [
+        36.427,
+        12.377,
+        43.117,
+        18.005
+      ],
+      "areaKm2": 122971.92,
+      "isMicroState": false,
+      "neighbors": [
+        "DJI",
+        "ETH",
+        "SDN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ESP",
+      "iso2": "ES",
+      "m49": "724",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "ESP"
+      ],
+      "aimPoint": [
+        -3.458,
+        39.975
+      ],
+      "bbox": [
+        -18.161,
+        27.646,
+        4.322,
+        43.765
+      ],
+      "mainBbox": [
+        -9.236,
+        36.026,
+        3.307,
+        43.765
+      ],
+      "areaKm2": 506327.39,
+      "isMicroState": false,
+      "neighbors": [
+        "AND",
+        "FRA",
+        "PRT"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "EST",
+      "iso2": "EE",
+      "m49": "233",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "EST"
+      ],
+      "aimPoint": [
+        26.507,
+        58.611
+      ],
+      "bbox": [
+        21.854,
+        57.525,
+        28.151,
+        59.639
+      ],
+      "mainBbox": [
+        23.432,
+        57.525,
+        28.151,
+        59.639
+      ],
+      "areaKm2": 45576.35,
+      "isMicroState": false,
+      "neighbors": [
+        "LVA",
+        "RUS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ETH",
+      "iso2": "ET",
+      "m49": "231",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "ETH"
+      ],
+      "aimPoint": [
+        38.435,
+        8.525
+      ],
+      "bbox": [
+        32.999,
+        3.456,
+        47.978,
+        14.852
+      ],
+      "mainBbox": [
+        32.999,
+        3.456,
+        47.978,
+        14.852
+      ],
+      "areaKm2": 1132067.54,
+      "isMicroState": false,
+      "neighbors": [
+        "DJI",
+        "ERI",
+        "KEN",
+        "SDN",
+        "SOM",
+        "SSD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "FIN",
+      "iso2": "FI",
+      "m49": "246",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "ALD",
+        "FIN"
+      ],
+      "aimPoint": [
+        27.408,
+        63.319
+      ],
+      "bbox": [
+        20.622,
+        59.816,
+        31.537,
+        70.065
+      ],
+      "mainBbox": [
+        20.622,
+        59.816,
+        31.537,
+        70.065
+      ],
+      "areaKm2": 331874.27,
+      "isMicroState": false,
+      "neighbors": [
+        "NOR",
+        "RUS",
+        "SWE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "FJI",
+      "iso2": "FJ",
+      "m49": "242",
+      "subregionM49": "054",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "FJI"
+      ],
+      "aimPoint": [
+        177.976,
+        -17.826
+      ],
+      "bbox": [
+        174.587,
+        -21.706,
+        -178.251,
+        -12.477
+      ],
+      "mainBbox": [
+        177.255,
+        -18.264,
+        178.668,
+        -17.313
+      ],
+      "areaKm2": 18992.18,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "FRA",
+      "iso2": "FR",
+      "m49": "250",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU",
+        "NA",
+        "OC"
+      ],
+      "geomIds": [
+        "ATF",
+        "BLM",
+        "CLP",
+        "FRA",
+        "MAF",
+        "NCL",
+        "PYF",
+        "SPM",
+        "WLF"
+      ],
+      "aimPoint": [
+        2.528,
+        46.723
+      ],
+      "bbox": [
+        -61.794,
+        -21.369,
+        55.839,
+        51.097
+      ],
+      "mainBbox": [
+        -4.763,
+        42.34,
+        8.14,
+        51.097
+      ],
+      "areaKm2": 665716.37,
+      "isMicroState": false,
+      "neighbors": [
+        "AND",
+        "BEL",
+        "BRA",
+        "CHE",
+        "DEU",
+        "ESP",
+        "ITA",
+        "LUX",
+        "MCO",
+        "NLD",
+        "SUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "FSM",
+      "iso2": "FM",
+      "m49": "583",
+      "subregionM49": "057",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "FSM"
+      ],
+      "aimPoint": [
+        158.234,
+        6.887
+      ],
+      "bbox": [
+        138.064,
+        0.918,
+        163.047,
+        9.776
+      ],
+      "mainBbox": [
+        158.126,
+        6.788,
+        158.339,
+        6.979
+      ],
+      "areaKm2": 636.56,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GAB",
+      "iso2": "GA",
+      "m49": "266",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "GAB"
+      ],
+      "aimPoint": [
+        11.417,
+        -0.638
+      ],
+      "bbox": [
+        8.703,
+        -3.916,
+        14.481,
+        2.302
+      ],
+      "mainBbox": [
+        8.703,
+        -3.916,
+        14.481,
+        2.302
+      ],
+      "areaKm2": 261133.52,
+      "isMicroState": false,
+      "neighbors": [
+        "CMR",
+        "COG",
+        "GNQ"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GBR",
+      "iso2": "GB",
+      "m49": "826",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "AS",
+        "EU",
+        "NA",
+        "OC"
+      ],
+      "geomIds": [
+        "AIA",
+        "BMU",
+        "CYM",
+        "ESB",
+        "GBR",
+        "GGY",
+        "IMN",
+        "JEY",
+        "MSR",
+        "PCN",
+        "SGS",
+        "SHN",
+        "TCA",
+        "VGB",
+        "WSB"
+      ],
+      "aimPoint": [
+        -1.274,
+        52.488
+      ],
+      "bbox": [
+        -8.145,
+        50.021,
+        1.747,
+        60.832
+      ],
+      "mainBbox": [
+        -6.134,
+        50.021,
+        1.747,
+        58.65
+      ],
+      "areaKm2": 249194.3,
+      "isMicroState": false,
+      "neighbors": [
+        "IRL"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GEO",
+      "iso2": "GE",
+      "m49": "268",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "GEO"
+      ],
+      "aimPoint": [
+        42.463,
+        42.364
+      ],
+      "bbox": [
+        39.978,
+        41.07,
+        46.673,
+        43.57
+      ],
+      "mainBbox": [
+        39.978,
+        41.07,
+        46.673,
+        43.57
+      ],
+      "areaKm2": 69462.18,
+      "isMicroState": false,
+      "neighbors": [
+        "ARM",
+        "AZE",
+        "RUS",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GHA",
+      "iso2": "GH",
+      "m49": "288",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "GHA"
+      ],
+      "aimPoint": [
+        -1.214,
+        7.017
+      ],
+      "bbox": [
+        -3.244,
+        4.762,
+        1.187,
+        11.167
+      ],
+      "mainBbox": [
+        -3.244,
+        4.762,
+        1.187,
+        11.167
+      ],
+      "areaKm2": 239676.43,
+      "isMicroState": false,
+      "neighbors": [
+        "BFA",
+        "CIV",
+        "TGO"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GIN",
+      "iso2": "GN",
+      "m49": "324",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "GIN"
+      ],
+      "aimPoint": [
+        -10.004,
+        10.675
+      ],
+      "bbox": [
+        -15.051,
+        7.216,
+        -7.681,
+        12.674
+      ],
+      "mainBbox": [
+        -15.051,
+        7.216,
+        -7.681,
+        12.674
+      ],
+      "areaKm2": 245290.03,
+      "isMicroState": false,
+      "neighbors": [
+        "CIV",
+        "GNB",
+        "LBR",
+        "MLI",
+        "SEN",
+        "SLE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GMB",
+      "iso2": "GM",
+      "m49": "270",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "GMB"
+      ],
+      "aimPoint": [
+        -15.323,
+        13.608
+      ],
+      "bbox": [
+        -16.825,
+        13.064,
+        -13.827,
+        13.812
+      ],
+      "mainBbox": [
+        -16.825,
+        13.064,
+        -13.827,
+        13.812
+      ],
+      "areaKm2": 10540.41,
+      "isMicroState": false,
+      "neighbors": [
+        "SEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GNB",
+      "iso2": "GW",
+      "m49": "624",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "GNB"
+      ],
+      "aimPoint": [
+        -14.557,
+        12.129
+      ],
+      "bbox": [
+        -16.712,
+        10.94,
+        -13.674,
+        12.68
+      ],
+      "mainBbox": [
+        -16.712,
+        10.94,
+        -13.674,
+        12.68
+      ],
+      "areaKm2": 32957.87,
+      "isMicroState": false,
+      "neighbors": [
+        "GIN",
+        "SEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GNQ",
+      "iso2": "GQ",
+      "m49": "226",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "GNQ"
+      ],
+      "aimPoint": [
+        10.567,
+        1.585
+      ],
+      "bbox": [
+        8.434,
+        0.96,
+        11.335,
+        3.758
+      ],
+      "mainBbox": [
+        9.386,
+        0.96,
+        11.335,
+        2.304
+      ],
+      "areaKm2": 26791.1,
+      "isMicroState": false,
+      "neighbors": [
+        "CMR",
+        "GAB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GRC",
+      "iso2": "GR",
+      "m49": "300",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "GRC"
+      ],
+      "aimPoint": [
+        21.651,
+        39.835
+      ],
+      "bbox": [
+        19.646,
+        34.934,
+        28.232,
+        41.744
+      ],
+      "mainBbox": [
+        20.001,
+        36.447,
+        26.625,
+        41.744
+      ],
+      "areaKm2": 131243.85,
+      "isMicroState": false,
+      "neighbors": [
+        "ALB",
+        "BGR",
+        "MKD",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GRD",
+      "iso2": "GD",
+      "m49": "308",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "GRD"
+      ],
+      "aimPoint": [
+        -61.686,
+        12.095
+      ],
+      "bbox": [
+        -61.791,
+        12.003,
+        -61.422,
+        12.53
+      ],
+      "mainBbox": [
+        -61.791,
+        12.003,
+        -61.603,
+        12.24
+      ],
+      "areaKm2": 348.62,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GTM",
+      "iso2": "GT",
+      "m49": "320",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "GTM"
+      ],
+      "aimPoint": [
+        -90.474,
+        14.996
+      ],
+      "bbox": [
+        -92.235,
+        13.737,
+        -88.228,
+        17.816
+      ],
+      "mainBbox": [
+        -92.235,
+        13.737,
+        -88.228,
+        17.816
+      ],
+      "areaKm2": 109192.47,
+      "isMicroState": false,
+      "neighbors": [
+        "BLZ",
+        "HND",
+        "MEX",
+        "SLV"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "GUY",
+      "iso2": "GY",
+      "m49": "328",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "GUY"
+      ],
+      "aimPoint": [
+        -58.654,
+        2.749
+      ],
+      "bbox": [
+        -61.391,
+        1.201,
+        -56.483,
+        8.549
+      ],
+      "mainBbox": [
+        -61.391,
+        1.201,
+        -56.483,
+        8.549
+      ],
+      "areaKm2": 212139.47,
+      "isMicroState": false,
+      "neighbors": [
+        "BRA",
+        "SUR",
+        "VEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "HND",
+      "iso2": "HN",
+      "m49": "340",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "HND"
+      ],
+      "aimPoint": [
+        -87.156,
+        14.734
+      ],
+      "bbox": [
+        -89.363,
+        12.979,
+        -83.158,
+        16.514
+      ],
+      "mainBbox": [
+        -89.363,
+        12.979,
+        -83.158,
+        16.024
+      ],
+      "areaKm2": 112641.8,
+      "isMicroState": false,
+      "neighbors": [
+        "GTM",
+        "NIC",
+        "SLV"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "HRV",
+      "iso2": "HR",
+      "m49": "191",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "HRV"
+      ],
+      "aimPoint": [
+        16.502,
+        45.825
+      ],
+      "bbox": [
+        13.517,
+        42.433,
+        19.401,
+        46.535
+      ],
+      "mainBbox": [
+        13.517,
+        42.938,
+        19.401,
+        46.535
+      ],
+      "areaKm2": 54899.58,
+      "isMicroState": false,
+      "neighbors": [
+        "BIH",
+        "HUN",
+        "MNE",
+        "SRB",
+        "SVN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "HTI",
+      "iso2": "HT",
+      "m49": "332",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "HTI"
+      ],
+      "aimPoint": [
+        -72.246,
+        19.231
+      ],
+      "bbox": [
+        -74.478,
+        18.039,
+        -71.645,
+        20.094
+      ],
+      "mainBbox": [
+        -74.478,
+        18.039,
+        -71.645,
+        19.928
+      ],
+      "areaKm2": 26974.23,
+      "isMicroState": false,
+      "neighbors": [
+        "DOM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "HUN",
+      "iso2": "HU",
+      "m49": "348",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "HUN"
+      ],
+      "aimPoint": [
+        20.502,
+        47.252
+      ],
+      "bbox": [
+        16.093,
+        45.753,
+        22.877,
+        48.553
+      ],
+      "mainBbox": [
+        16.093,
+        45.753,
+        22.877,
+        48.553
+      ],
+      "areaKm2": 92946.86,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "HRV",
+        "ROU",
+        "SRB",
+        "SVK",
+        "SVN",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "IDN",
+      "iso2": "ID",
+      "m49": "360",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "IDN"
+      ],
+      "aimPoint": [
+        114.164,
+        -0.963
+      ],
+      "bbox": [
+        95.207,
+        -10.91,
+        140.976,
+        5.907
+      ],
+      "mainBbox": [
+        108.906,
+        -4.17,
+        118.985,
+        4.371
+      ],
+      "areaKm2": 1888147.57,
+      "isMicroState": false,
+      "neighbors": [
+        "MYS",
+        "PNG",
+        "TLS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "IND",
+      "iso2": "IN",
+      "m49": "356",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "IND"
+      ],
+      "aimPoint": [
+        79.203,
+        22.356
+      ],
+      "bbox": [
+        68.165,
+        6.749,
+        97.344,
+        35.496
+      ],
+      "mainBbox": [
+        68.165,
+        8.078,
+        97.344,
+        35.496
+      ],
+      "areaKm2": 3158319.08,
+      "isMicroState": false,
+      "neighbors": [
+        "BGD",
+        "BTN",
+        "CHN",
+        "MMR",
+        "NPL",
+        "PAK"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "IRL",
+      "iso2": "IE",
+      "m49": "372",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "IRL"
+      ],
+      "aimPoint": [
+        -7.817,
+        53.112
+      ],
+      "bbox": [
+        -10.39,
+        51.474,
+        -6.027,
+        55.366
+      ],
+      "mainBbox": [
+        -10.39,
+        51.474,
+        -6.027,
+        55.366
+      ],
+      "areaKm2": 69160,
+      "isMicroState": false,
+      "neighbors": [
+        "GBR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "IRN",
+      "iso2": "IR",
+      "m49": "364",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "IRN"
+      ],
+      "aimPoint": [
+        55.668,
+        32.135
+      ],
+      "bbox": [
+        44.023,
+        25.102,
+        63.305,
+        39.769
+      ],
+      "mainBbox": [
+        44.023,
+        25.102,
+        63.305,
+        39.769
+      ],
+      "areaKm2": 1623489.09,
+      "isMicroState": false,
+      "neighbors": [
+        "AFG",
+        "ARM",
+        "AZE",
+        "IRQ",
+        "PAK",
+        "TKM",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "IRQ",
+      "iso2": "IQ",
+      "m49": "368",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "IRQ"
+      ],
+      "aimPoint": [
+        43.094,
+        33.262
+      ],
+      "bbox": [
+        38.774,
+        29.064,
+        48.546,
+        37.372
+      ],
+      "mainBbox": [
+        38.774,
+        29.064,
+        48.546,
+        37.372
+      ],
+      "areaKm2": 437585.53,
+      "isMicroState": false,
+      "neighbors": [
+        "IRN",
+        "JOR",
+        "KWT",
+        "SAU",
+        "SYR",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ISL",
+      "iso2": "IS",
+      "m49": "352",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "ISL"
+      ],
+      "aimPoint": [
+        -18.84,
+        64.68
+      ],
+      "bbox": [
+        -24.476,
+        63.407,
+        -13.556,
+        66.526
+      ],
+      "mainBbox": [
+        -24.476,
+        63.407,
+        -13.556,
+        66.526
+      ],
+      "areaKm2": 101722.38,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ISR",
+      "iso2": "IL",
+      "m49": "376",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "ISR"
+      ],
+      "aimPoint": [
+        34.855,
+        30.908
+      ],
+      "bbox": [
+        34.245,
+        29.477,
+        35.888,
+        33.416
+      ],
+      "mainBbox": [
+        34.245,
+        29.477,
+        35.888,
+        33.416
+      ],
+      "areaKm2": 22119.86,
+      "isMicroState": false,
+      "neighbors": [
+        "EGY",
+        "JOR",
+        "LBN",
+        "PSE",
+        "SYR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ITA",
+      "iso2": "IT",
+      "m49": "380",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "ITA"
+      ],
+      "aimPoint": [
+        10.873,
+        45.113
+      ],
+      "bbox": [
+        6.628,
+        36.688,
+        18.486,
+        47.082
+      ],
+      "mainBbox": [
+        6.628,
+        37.939,
+        18.486,
+        47.082
+      ],
+      "areaKm2": 300678.56,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "CHE",
+        "FRA",
+        "SMR",
+        "SVN",
+        "VAT"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "JAM",
+      "iso2": "JM",
+      "m49": "388",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "JAM"
+      ],
+      "aimPoint": [
+        -77.305,
+        18.144
+      ],
+      "bbox": [
+        -78.34,
+        17.715,
+        -76.211,
+        18.522
+      ],
+      "mainBbox": [
+        -78.34,
+        17.715,
+        -76.211,
+        18.522
+      ],
+      "areaKm2": 11068.04,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "JOR",
+      "iso2": "JO",
+      "m49": "400",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "JOR"
+      ],
+      "aimPoint": [
+        36.335,
+        30.746
+      ],
+      "bbox": [
+        34.951,
+        29.19,
+        39.293,
+        33.372
+      ],
+      "mainBbox": [
+        34.951,
+        29.19,
+        39.293,
+        33.372
+      ],
+      "areaKm2": 88940.95,
+      "isMicroState": false,
+      "neighbors": [
+        "IRQ",
+        "ISR",
+        "PSE",
+        "SAU",
+        "SYR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "JPN",
+      "iso2": "JP",
+      "m49": "392",
+      "subregionM49": "030",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "JPN"
+      ],
+      "aimPoint": [
+        139.515,
+        36.748
+      ],
+      "bbox": [
+        123.68,
+        24.266,
+        145.833,
+        45.51
+      ],
+      "mainBbox": [
+        130.889,
+        33.487,
+        141.993,
+        41.506
+      ],
+      "areaKm2": 373333.07,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KAZ",
+      "iso2": "KZ",
+      "m49": "398",
+      "subregionM49": "143",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "KAB",
+        "KAZ"
+      ],
+      "aimPoint": [
+        68.936,
+        48.45
+      ],
+      "bbox": [
+        46.609,
+        40.609,
+        87.323,
+        55.39
+      ],
+      "mainBbox": [
+        46.609,
+        40.609,
+        87.323,
+        55.39
+      ],
+      "areaKm2": 2712839.71,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "KGZ",
+        "RUS",
+        "TKM",
+        "UZB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KEN",
+      "iso2": "KE",
+      "m49": "404",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "KEN"
+      ],
+      "aimPoint": [
+        37.845,
+        0.438
+      ],
+      "bbox": [
+        33.9,
+        -4.692,
+        41.884,
+        5.492
+      ],
+      "mainBbox": [
+        33.9,
+        -4.692,
+        41.884,
+        5.492
+      ],
+      "areaKm2": 588320.24,
+      "isMicroState": false,
+      "neighbors": [
+        "ETH",
+        "SOM",
+        "SSD",
+        "TZA",
+        "UGA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KGZ",
+      "iso2": "KG",
+      "m49": "417",
+      "subregionM49": "143",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "KGZ"
+      ],
+      "aimPoint": [
+        74.566,
+        41.724
+      ],
+      "bbox": [
+        69.229,
+        39.208,
+        80.246,
+        43.24
+      ],
+      "mainBbox": [
+        69.229,
+        39.208,
+        80.246,
+        43.24
+      ],
+      "areaKm2": 198713.03,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "KAZ",
+        "TJK",
+        "UZB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KHM",
+      "iso2": "KH",
+      "m49": "116",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "KHM"
+      ],
+      "aimPoint": [
+        104.454,
+        12.621
+      ],
+      "bbox": [
+        102.32,
+        10.411,
+        107.605,
+        14.705
+      ],
+      "mainBbox": [
+        102.32,
+        10.411,
+        107.605,
+        14.705
+      ],
+      "areaKm2": 181754.11,
+      "isMicroState": false,
+      "neighbors": [
+        "LAO",
+        "THA",
+        "VNM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KIR",
+      "iso2": "KI",
+      "m49": "296",
+      "subregionM49": "057",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "KIR"
+      ],
+      "aimPoint": [
+        -157.379,
+        1.822
+      ],
+      "bbox": [
+        169.522,
+        -11.461,
+        -151.781,
+        4.723
+      ],
+      "mainBbox": [
+        -157.581,
+        1.709,
+        -157.175,
+        2.034
+      ],
+      "areaKm2": 954.09,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KNA",
+      "iso2": "KN",
+      "m49": "659",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "KNA"
+      ],
+      "aimPoint": [
+        -62.786,
+        17.35
+      ],
+      "bbox": [
+        -62.861,
+        17.101,
+        -62.537,
+        17.416
+      ],
+      "mainBbox": [
+        -62.861,
+        17.217,
+        -62.625,
+        17.416
+      ],
+      "areaKm2": 265,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KOR",
+      "iso2": "KR",
+      "m49": "410",
+      "subregionM49": "030",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "KOR"
+      ],
+      "aimPoint": [
+        128.1,
+        36.32
+      ],
+      "bbox": [
+        126.008,
+        33.202,
+        130.934,
+        38.623
+      ],
+      "mainBbox": [
+        126.161,
+        34.314,
+        129.573,
+        38.623
+      ],
+      "areaKm2": 98521.56,
+      "isMicroState": false,
+      "neighbors": [
+        "PRK"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "KWT",
+      "iso2": "KW",
+      "m49": "414",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "KWT"
+      ],
+      "aimPoint": [
+        47.307,
+        29.419
+      ],
+      "bbox": [
+        46.531,
+        28.533,
+        48.442,
+        30.097
+      ],
+      "mainBbox": [
+        46.531,
+        28.533,
+        48.442,
+        30.097
+      ],
+      "areaKm2": 17496.11,
+      "isMicroState": false,
+      "neighbors": [
+        "IRQ",
+        "SAU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LAO",
+      "iso2": "LA",
+      "m49": "418",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "LAO"
+      ],
+      "aimPoint": [
+        102.57,
+        19.637
+      ],
+      "bbox": [
+        100.115,
+        13.921,
+        107.653,
+        22.495
+      ],
+      "mainBbox": [
+        100.115,
+        13.921,
+        107.653,
+        22.495
+      ],
+      "areaKm2": 228826.99,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "KHM",
+        "MMR",
+        "THA",
+        "VNM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LBN",
+      "iso2": "LB",
+      "m49": "422",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "LBN"
+      ],
+      "aimPoint": [
+        36.026,
+        34.166
+      ],
+      "bbox": [
+        35.109,
+        33.076,
+        36.585,
+        34.679
+      ],
+      "mainBbox": [
+        35.109,
+        33.076,
+        36.585,
+        34.679
+      ],
+      "areaKm2": 10007.17,
+      "isMicroState": false,
+      "neighbors": [
+        "ISR",
+        "SYR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LBR",
+      "iso2": "LR",
+      "m49": "430",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "LBR"
+      ],
+      "aimPoint": [
+        -10.204,
+        7.011
+      ],
+      "bbox": [
+        -11.508,
+        4.351,
+        -7.4,
+        8.538
+      ],
+      "mainBbox": [
+        -11.508,
+        4.351,
+        -7.4,
+        8.538
+      ],
+      "areaKm2": 95709.57,
+      "isMicroState": false,
+      "neighbors": [
+        "CIV",
+        "GIN",
+        "SLE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LBY",
+      "iso2": "LY",
+      "m49": "434",
+      "subregionM49": "015",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "LBY"
+      ],
+      "aimPoint": [
+        20.583,
+        26.079
+      ],
+      "bbox": [
+        9.31,
+        19.497,
+        25.15,
+        33.182
+      ],
+      "mainBbox": [
+        9.31,
+        19.497,
+        25.15,
+        33.182
+      ],
+      "areaKm2": 1626533.4,
+      "isMicroState": false,
+      "neighbors": [
+        "DZA",
+        "EGY",
+        "NER",
+        "SDN",
+        "TCD",
+        "TUN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LCA",
+      "iso2": "LC",
+      "m49": "662",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "LCA"
+      ],
+      "aimPoint": [
+        -60.984,
+        13.871
+      ],
+      "bbox": [
+        -61.079,
+        13.715,
+        -60.883,
+        14.112
+      ],
+      "mainBbox": [
+        -61.079,
+        13.715,
+        -60.883,
+        14.112
+      ],
+      "areaKm2": 607.38,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LIE",
+      "iso2": "LI",
+      "m49": "438",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "LIE"
+      ],
+      "aimPoint": [
+        9.562,
+        47.105
+      ],
+      "bbox": [
+        9.476,
+        47.052,
+        9.616,
+        47.263
+      ],
+      "mainBbox": [
+        9.476,
+        47.052,
+        9.616,
+        47.263
+      ],
+      "areaKm2": 136.88,
+      "isMicroState": true,
+      "neighbors": [
+        "AUT",
+        "CHE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LKA",
+      "iso2": "LK",
+      "m49": "144",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "LKA"
+      ],
+      "aimPoint": [
+        80.847,
+        7.114
+      ],
+      "bbox": [
+        79.708,
+        5.949,
+        81.877,
+        9.813
+      ],
+      "mainBbox": [
+        79.708,
+        5.949,
+        81.877,
+        9.813
+      ],
+      "areaKm2": 66573.03,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LSO",
+      "iso2": "LS",
+      "m49": "426",
+      "subregionM49": "018",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "LSO"
+      ],
+      "aimPoint": [
+        28.456,
+        -29.407
+      ],
+      "bbox": [
+        27.052,
+        -30.642,
+        29.391,
+        -28.582
+      ],
+      "mainBbox": [
+        27.052,
+        -30.642,
+        29.391,
+        -28.582
+      ],
+      "areaKm2": 30143.13,
+      "isMicroState": false,
+      "neighbors": [
+        "ZAF"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LTU",
+      "iso2": "LT",
+      "m49": "440",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "LTU"
+      ],
+      "aimPoint": [
+        24.218,
+        55.108
+      ],
+      "bbox": [
+        20.9,
+        53.893,
+        26.776,
+        56.411
+      ],
+      "mainBbox": [
+        21.046,
+        53.893,
+        26.776,
+        56.411
+      ],
+      "areaKm2": 64641.7,
+      "isMicroState": false,
+      "neighbors": [
+        "BLR",
+        "LVA",
+        "POL",
+        "RUS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LUX",
+      "iso2": "LU",
+      "m49": "442",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "LUX"
+      ],
+      "aimPoint": [
+        6.096,
+        49.712
+      ],
+      "bbox": [
+        5.725,
+        49.445,
+        6.494,
+        50.167
+      ],
+      "mainBbox": [
+        5.725,
+        49.445,
+        6.494,
+        50.167
+      ],
+      "areaKm2": 2599.78,
+      "isMicroState": false,
+      "neighbors": [
+        "BEL",
+        "DEU",
+        "FRA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "LVA",
+      "iso2": "LV",
+      "m49": "428",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "LVA"
+      ],
+      "aimPoint": [
+        26.598,
+        56.636
+      ],
+      "bbox": [
+        21.015,
+        55.668,
+        28.202,
+        58.063
+      ],
+      "mainBbox": [
+        21.015,
+        55.668,
+        28.202,
+        58.063
+      ],
+      "areaKm2": 64259.13,
+      "isMicroState": false,
+      "neighbors": [
+        "BLR",
+        "EST",
+        "LTU",
+        "RUS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MAR",
+      "iso2": "MA",
+      "m49": "504",
+      "subregionM49": "015",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MAR"
+      ],
+      "aimPoint": [
+        -6.458,
+        31.881
+      ],
+      "bbox": [
+        -17.003,
+        21.421,
+        -1.066,
+        35.93
+      ],
+      "mainBbox": [
+        -17.003,
+        21.421,
+        -1.066,
+        35.93
+      ],
+      "areaKm2": 592431.38,
+      "isMicroState": false,
+      "neighbors": [
+        "DZA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MCO",
+      "iso2": "MC",
+      "m49": "492",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "MCO"
+      ],
+      "aimPoint": [
+        7.397,
+        43.739
+      ],
+      "bbox": [
+        7.366,
+        43.718,
+        7.437,
+        43.764
+      ],
+      "mainBbox": [
+        7.366,
+        43.718,
+        7.437,
+        43.764
+      ],
+      "areaKm2": 18.8,
+      "isMicroState": true,
+      "neighbors": [
+        "FRA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MDA",
+      "iso2": "MD",
+      "m49": "498",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "MDA"
+      ],
+      "aimPoint": [
+        28.493,
+        47.455
+      ],
+      "bbox": [
+        26.619,
+        45.45,
+        30.131,
+        48.478
+      ],
+      "mainBbox": [
+        26.619,
+        45.45,
+        30.131,
+        48.478
+      ],
+      "areaKm2": 33115.71,
+      "isMicroState": false,
+      "neighbors": [
+        "ROU",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MDG",
+      "iso2": "MG",
+      "m49": "450",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MDG"
+      ],
+      "aimPoint": [
+        46.694,
+        -18.38
+      ],
+      "bbox": [
+        43.257,
+        -25.571,
+        50.483,
+        -12.08
+      ],
+      "mainBbox": [
+        43.257,
+        -25.571,
+        50.483,
+        -12.08
+      ],
+      "areaKm2": 594755.33,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MDV",
+      "iso2": "MV",
+      "m49": "462",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "MDV"
+      ],
+      "aimPoint": [
+        73.508,
+        4.174
+      ],
+      "bbox": [
+        72.685,
+        -0.689,
+        73.753,
+        7.107
+      ],
+      "mainBbox": [
+        73.431,
+        4.162,
+        73.553,
+        4.243
+      ],
+      "areaKm2": 109.22,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MEX",
+      "iso2": "MX",
+      "m49": "484",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "MEX"
+      ],
+      "aimPoint": [
+        -101.749,
+        23.466
+      ],
+      "bbox": [
+        -118.401,
+        14.545,
+        -86.696,
+        32.715
+      ],
+      "mainBbox": [
+        -117.128,
+        14.545,
+        -86.772,
+        32.715
+      ],
+      "areaKm2": 1962244.66,
+      "isMicroState": false,
+      "neighbors": [
+        "BLZ",
+        "GTM",
+        "USA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MHL",
+      "iso2": "MH",
+      "m49": "584",
+      "subregionM49": "057",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "MHL"
+      ],
+      "aimPoint": [
+        171.261,
+        7.074
+      ],
+      "bbox": [
+        165.282,
+        4.574,
+        172.03,
+        14.611
+      ],
+      "mainBbox": [
+        171.036,
+        7.068,
+        171.394,
+        7.171
+      ],
+      "areaKm2": 165.53,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MKD",
+      "iso2": "MK",
+      "m49": "807",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "MKD"
+      ],
+      "aimPoint": [
+        21.468,
+        41.516
+      ],
+      "bbox": [
+        20.449,
+        40.85,
+        23.006,
+        42.358
+      ],
+      "mainBbox": [
+        20.449,
+        40.85,
+        23.006,
+        42.358
+      ],
+      "areaKm2": 25349.04,
+      "isMicroState": false,
+      "neighbors": [
+        "ALB",
+        "BGR",
+        "GRC",
+        "SRB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MLI",
+      "iso2": "ML",
+      "m49": "466",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MLI"
+      ],
+      "aimPoint": [
+        -2.033,
+        18.635
+      ],
+      "bbox": [
+        -12.281,
+        10.143,
+        4.235,
+        24.996
+      ],
+      "mainBbox": [
+        -12.281,
+        10.143,
+        4.235,
+        24.996
+      ],
+      "areaKm2": 1256813.45,
+      "isMicroState": false,
+      "neighbors": [
+        "BFA",
+        "CIV",
+        "DZA",
+        "GIN",
+        "MRT",
+        "NER",
+        "SEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MLT",
+      "iso2": "MT",
+      "m49": "470",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "MLT"
+      ],
+      "aimPoint": [
+        14.423,
+        35.896
+      ],
+      "bbox": [
+        14.184,
+        35.801,
+        14.567,
+        36.076
+      ],
+      "mainBbox": [
+        14.322,
+        35.801,
+        14.567,
+        35.994
+      ],
+      "areaKm2": 325.64,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MMR",
+      "iso2": "MM",
+      "m49": "104",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "MMR"
+      ],
+      "aimPoint": [
+        95.928,
+        21.63
+      ],
+      "bbox": [
+        92.18,
+        9.875,
+        101.147,
+        28.517
+      ],
+      "mainBbox": [
+        92.18,
+        10.035,
+        101.147,
+        28.517
+      ],
+      "areaKm2": 664957.06,
+      "isMicroState": false,
+      "neighbors": [
+        "BGD",
+        "CHN",
+        "IND",
+        "LAO",
+        "THA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MNE",
+      "iso2": "ME",
+      "m49": "499",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "MNE"
+      ],
+      "aimPoint": [
+        19.077,
+        42.771
+      ],
+      "bbox": [
+        18.436,
+        41.869,
+        20.348,
+        43.542
+      ],
+      "mainBbox": [
+        18.436,
+        41.869,
+        20.348,
+        43.542
+      ],
+      "areaKm2": 13704.09,
+      "isMicroState": false,
+      "neighbors": [
+        "ALB",
+        "BIH",
+        "HRV",
+        "SRB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MNG",
+      "iso2": "MN",
+      "m49": "496",
+      "subregionM49": "030",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "MNG"
+      ],
+      "aimPoint": [
+        104.805,
+        46.04
+      ],
+      "bbox": [
+        87.743,
+        41.596,
+        119.898,
+        52.117
+      ],
+      "mainBbox": [
+        87.743,
+        41.596,
+        119.898,
+        52.117
+      ],
+      "areaKm2": 1560538.39,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "RUS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MOZ",
+      "iso2": "MZ",
+      "m49": "508",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MOZ"
+      ],
+      "aimPoint": [
+        38.173,
+        -14.014
+      ],
+      "bbox": [
+        30.222,
+        -26.862,
+        40.845,
+        -10.464
+      ],
+      "mainBbox": [
+        30.222,
+        -26.862,
+        40.845,
+        -10.464
+      ],
+      "areaKm2": 791023,
+      "isMicroState": false,
+      "neighbors": [
+        "MWI",
+        "SWZ",
+        "TZA",
+        "ZAF",
+        "ZMB",
+        "ZWE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MRT",
+      "iso2": "MR",
+      "m49": "478",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MRT"
+      ],
+      "aimPoint": [
+        -9.754,
+        19.437
+      ],
+      "bbox": [
+        -17.064,
+        14.745,
+        -4.823,
+        27.286
+      ],
+      "mainBbox": [
+        -17.064,
+        14.745,
+        -4.823,
+        27.286
+      ],
+      "areaKm2": 1039356.78,
+      "isMicroState": false,
+      "neighbors": [
+        "DZA",
+        "MLI",
+        "SEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MUS",
+      "iso2": "MU",
+      "m49": "480",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MUS"
+      ],
+      "aimPoint": [
+        57.55,
+        -20.321
+      ],
+      "bbox": [
+        57.318,
+        -20.513,
+        57.792,
+        -19.99
+      ],
+      "mainBbox": [
+        57.318,
+        -20.513,
+        57.792,
+        -19.99
+      ],
+      "areaKm2": 2020.26,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MWI",
+      "iso2": "MW",
+      "m49": "454",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "MWI"
+      ],
+      "aimPoint": [
+        33.759,
+        -13.411
+      ],
+      "bbox": [
+        32.67,
+        -17.131,
+        35.893,
+        -9.395
+      ],
+      "mainBbox": [
+        32.67,
+        -17.131,
+        35.893,
+        -9.395
+      ],
+      "areaKm2": 119848.58,
+      "isMicroState": false,
+      "neighbors": [
+        "MOZ",
+        "TZA",
+        "ZMB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "MYS",
+      "iso2": "MY",
+      "m49": "458",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "MYS"
+      ],
+      "aimPoint": [
+        113.758,
+        2.46
+      ],
+      "bbox": [
+        99.646,
+        0.862,
+        119.266,
+        7.352
+      ],
+      "mainBbox": [
+        109.539,
+        0.862,
+        119.266,
+        6.99
+      ],
+      "areaKm2": 329335.09,
+      "isMicroState": false,
+      "neighbors": [
+        "BRN",
+        "IDN",
+        "THA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NAM",
+      "iso2": "NA",
+      "m49": "516",
+      "subregionM49": "018",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "NAM"
+      ],
+      "aimPoint": [
+        17.105,
+        -20.598
+      ],
+      "bbox": [
+        11.722,
+        -28.939,
+        25.259,
+        -16.968
+      ],
+      "mainBbox": [
+        11.722,
+        -28.939,
+        25.259,
+        -16.968
+      ],
+      "areaKm2": 824823.5,
+      "isMicroState": false,
+      "neighbors": [
+        "AGO",
+        "BWA",
+        "ZAF",
+        "ZMB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NER",
+      "iso2": "NE",
+      "m49": "562",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "NER"
+      ],
+      "aimPoint": [
+        10.444,
+        17.636
+      ],
+      "bbox": [
+        0.164,
+        11.696,
+        15.963,
+        23.518
+      ],
+      "mainBbox": [
+        0.164,
+        11.696,
+        15.963,
+        23.518
+      ],
+      "areaKm2": 1185159.52,
+      "isMicroState": false,
+      "neighbors": [
+        "BEN",
+        "BFA",
+        "DZA",
+        "LBY",
+        "MLI",
+        "NGA",
+        "TCD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NGA",
+      "iso2": "NG",
+      "m49": "566",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "NGA"
+      ],
+      "aimPoint": [
+        7.254,
+        9.37
+      ],
+      "bbox": [
+        2.686,
+        4.277,
+        14.627,
+        13.873
+      ],
+      "mainBbox": [
+        2.686,
+        4.277,
+        14.627,
+        13.873
+      ],
+      "areaKm2": 911219.58,
+      "isMicroState": false,
+      "neighbors": [
+        "BEN",
+        "CMR",
+        "NER",
+        "TCD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NIC",
+      "iso2": "NI",
+      "m49": "558",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "NIC"
+      ],
+      "aimPoint": [
+        -85.179,
+        12.55
+      ],
+      "bbox": [
+        -87.67,
+        10.735,
+        -83.158,
+        15.008
+      ],
+      "mainBbox": [
+        -87.67,
+        10.735,
+        -83.158,
+        15.008
+      ],
+      "areaKm2": 129176.48,
+      "isMicroState": false,
+      "neighbors": [
+        "CRI",
+        "HND"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NLD",
+      "iso2": "NL",
+      "m49": "528",
+      "subregionM49": "155",
+      "continent": "EU",
+      "continents": [
+        "EU",
+        "NA"
+      ],
+      "geomIds": [
+        "ABW",
+        "CUW",
+        "NLD",
+        "SXM"
+      ],
+      "aimPoint": [
+        5.304,
+        52.227
+      ],
+      "bbox": [
+        -68.371,
+        12.032,
+        7.197,
+        53.625
+      ],
+      "mainBbox": [
+        3.449,
+        50.75,
+        7.197,
+        53.441
+      ],
+      "areaKm2": 37913.01,
+      "isMicroState": false,
+      "neighbors": [
+        "BEL",
+        "DEU",
+        "FRA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NOR",
+      "iso2": "NO",
+      "m49": "578",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "NOR"
+      ],
+      "aimPoint": [
+        9.939,
+        61.518
+      ],
+      "bbox": [
+        -9.099,
+        58.021,
+        33.629,
+        80.478
+      ],
+      "mainBbox": [
+        4.91,
+        58.021,
+        30.961,
+        71.091
+      ],
+      "areaKm2": 379535.25,
+      "isMicroState": false,
+      "neighbors": [
+        "FIN",
+        "RUS",
+        "SWE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NPL",
+      "iso2": "NP",
+      "m49": "524",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "NPL"
+      ],
+      "aimPoint": [
+        81.998,
+        28.991
+      ],
+      "bbox": [
+        80.052,
+        26.36,
+        88.162,
+        30.387
+      ],
+      "mainBbox": [
+        80.052,
+        26.36,
+        88.162,
+        30.387
+      ],
+      "areaKm2": 147323.17,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "IND"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NRU",
+      "iso2": "NR",
+      "m49": "520",
+      "subregionM49": "057",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "NRU"
+      ],
+      "aimPoint": [
+        166.933,
+        -0.518
+      ],
+      "bbox": [
+        166.907,
+        -0.552,
+        166.958,
+        -0.49
+      ],
+      "mainBbox": [
+        166.907,
+        -0.552,
+        166.958,
+        -0.49
+      ],
+      "areaKm2": 28.9,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "NZL",
+      "iso2": "NZ",
+      "m49": "554",
+      "subregionM49": "053",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "COK",
+        "NIU",
+        "NZL"
+      ],
+      "aimPoint": [
+        169.11,
+        -45.281
+      ],
+      "bbox": [
+        165.889,
+        -52.57,
+        -171.186,
+        -8.546
+      ],
+      "mainBbox": [
+        166.478,
+        -46.631,
+        174.37,
+        -40.49
+      ],
+      "areaKm2": 268523.74,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "OMN",
+      "iso2": "OM",
+      "m49": "512",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "OMN"
+      ],
+      "aimPoint": [
+        57.354,
+        22.11
+      ],
+      "bbox": [
+        51.978,
+        16.648,
+        59.837,
+        26.356
+      ],
+      "mainBbox": [
+        51.978,
+        16.648,
+        59.837,
+        24.979
+      ],
+      "areaKm2": 312090.23,
+      "isMicroState": false,
+      "neighbors": [
+        "ARE",
+        "SAU",
+        "YEM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PAK",
+      "iso2": "PK",
+      "m49": "586",
+      "subregionM49": "034",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "PAK"
+      ],
+      "aimPoint": [
+        67.284,
+        27.768
+      ],
+      "bbox": [
+        60.843,
+        23.753,
+        77.049,
+        37.037
+      ],
+      "mainBbox": [
+        60.843,
+        23.753,
+        77.049,
+        37.037
+      ],
+      "areaKm2": 873936.31,
+      "isMicroState": false,
+      "neighbors": [
+        "AFG",
+        "CHN",
+        "IND",
+        "IRN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PAN",
+      "iso2": "PA",
+      "m49": "591",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "PAN"
+      ],
+      "aimPoint": [
+        -80.914,
+        8.358
+      ],
+      "bbox": [
+        -83.027,
+        7.22,
+        -77.196,
+        9.598
+      ],
+      "mainBbox": [
+        -83.027,
+        7.22,
+        -77.196,
+        9.598
+      ],
+      "areaKm2": 74842.94,
+      "isMicroState": false,
+      "neighbors": [
+        "COL",
+        "CRI"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PER",
+      "iso2": "PE",
+      "m49": "604",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "PER"
+      ],
+      "aimPoint": [
+        -73.04,
+        -12.99
+      ],
+      "bbox": [
+        -81.337,
+        -18.346,
+        -68.685,
+        -0.042
+      ],
+      "mainBbox": [
+        -81.337,
+        -18.346,
+        -68.685,
+        -0.042
+      ],
+      "areaKm2": 1295126.58,
+      "isMicroState": false,
+      "neighbors": [
+        "BOL",
+        "BRA",
+        "CHL",
+        "COL",
+        "ECU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PHL",
+      "iso2": "PH",
+      "m49": "608",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "PHL"
+      ],
+      "aimPoint": [
+        121.388,
+        16.965
+      ],
+      "bbox": [
+        116.97,
+        5.06,
+        126.593,
+        20.841
+      ],
+      "mainBbox": [
+        119.762,
+        12.567,
+        124.143,
+        18.615
+      ],
+      "areaKm2": 294429.88,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PLW",
+      "iso2": "PW",
+      "m49": "585",
+      "subregionM49": "057",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "PLW"
+      ],
+      "aimPoint": [
+        134.596,
+        7.572
+      ],
+      "bbox": [
+        131.131,
+        2.949,
+        134.727,
+        8.097
+      ],
+      "mainBbox": [
+        134.483,
+        7.356,
+        134.663,
+        7.734
+      ],
+      "areaKm2": 494.04,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PNG",
+      "iso2": "PG",
+      "m49": "598",
+      "subregionM49": "054",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "PNG"
+      ],
+      "aimPoint": [
+        143.007,
+        -5.54
+      ],
+      "bbox": [
+        140.862,
+        -11.631,
+        155.958,
+        -1.353
+      ],
+      "mainBbox": [
+        140.862,
+        -10.655,
+        150.85,
+        -2.61
+      ],
+      "areaKm2": 467150.62,
+      "isMicroState": false,
+      "neighbors": [
+        "IDN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "POL",
+      "iso2": "PL",
+      "m49": "616",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "POL"
+      ],
+      "aimPoint": [
+        20.497,
+        51.901
+      ],
+      "bbox": [
+        14.129,
+        49.021,
+        24.106,
+        54.838
+      ],
+      "mainBbox": [
+        14.129,
+        49.021,
+        24.106,
+        54.838
+      ],
+      "areaKm2": 312220.83,
+      "isMicroState": false,
+      "neighbors": [
+        "BLR",
+        "CZE",
+        "DEU",
+        "LTU",
+        "RUS",
+        "SVK",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PRK",
+      "iso2": "KP",
+      "m49": "408",
+      "subregionM49": "030",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "PRK"
+      ],
+      "aimPoint": [
+        126.421,
+        39.874
+      ],
+      "bbox": [
+        124.349,
+        37.719,
+        130.687,
+        42.998
+      ],
+      "mainBbox": [
+        124.349,
+        37.719,
+        130.687,
+        42.998
+      ],
+      "areaKm2": 122246.09,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "KOR",
+        "RUS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PRT",
+      "iso2": "PT",
+      "m49": "620",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "PRT"
+      ],
+      "aimPoint": [
+        -7.782,
+        40.694
+      ],
+      "bbox": [
+        -31.283,
+        32.648,
+        -6.213,
+        42.137
+      ],
+      "mainBbox": [
+        -9.48,
+        37.005,
+        -6.213,
+        42.137
+      ],
+      "areaKm2": 91303.48,
+      "isMicroState": false,
+      "neighbors": [
+        "ESP"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PRY",
+      "iso2": "PY",
+      "m49": "600",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "PRY"
+      ],
+      "aimPoint": [
+        -60.148,
+        -21.628
+      ],
+      "bbox": [
+        -62.651,
+        -27.554,
+        -54.242,
+        -19.286
+      ],
+      "mainBbox": [
+        -62.651,
+        -27.554,
+        -54.242,
+        -19.286
+      ],
+      "areaKm2": 400858.05,
+      "isMicroState": false,
+      "neighbors": [
+        "ARG",
+        "BOL",
+        "BRA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "PSE",
+      "iso2": "PS",
+      "m49": "275",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "PSX"
+      ],
+      "aimPoint": [
+        35.252,
+        32.141
+      ],
+      "bbox": [
+        34.198,
+        31.208,
+        35.572,
+        32.534
+      ],
+      "mainBbox": [
+        34.873,
+        31.351,
+        35.572,
+        32.534
+      ],
+      "areaKm2": 6078.79,
+      "isMicroState": false,
+      "neighbors": [
+        "EGY",
+        "ISR",
+        "JOR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "QAT",
+      "iso2": "QA",
+      "m49": "634",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "QAT"
+      ],
+      "aimPoint": [
+        51.202,
+        25.105
+      ],
+      "bbox": [
+        50.755,
+        24.565,
+        51.609,
+        26.153
+      ],
+      "mainBbox": [
+        50.755,
+        24.565,
+        51.609,
+        26.153
+      ],
+      "areaKm2": 11172.78,
+      "isMicroState": false,
+      "neighbors": [
+        "SAU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ROU",
+      "iso2": "RO",
+      "m49": "642",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "ROU"
+      ],
+      "aimPoint": [
+        25.144,
+        45.72
+      ],
+      "bbox": [
+        20.242,
+        43.671,
+        29.706,
+        48.263
+      ],
+      "mainBbox": [
+        20.242,
+        43.671,
+        29.706,
+        48.263
+      ],
+      "areaKm2": 235805.35,
+      "isMicroState": false,
+      "neighbors": [
+        "BGR",
+        "HUN",
+        "MDA",
+        "SRB",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "RUS",
+      "iso2": "RU",
+      "m49": "643",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "RUS"
+      ],
+      "aimPoint": [
+        94.483,
+        63.594
+      ],
+      "bbox": [
+        19.604,
+        41.199,
+        -169.729,
+        81.854
+      ],
+      "mainBbox": [
+        27.352,
+        41.199,
+        180,
+        77.73
+      ],
+      "areaKm2": 16886313.35,
+      "isMicroState": false,
+      "neighbors": [
+        "AZE",
+        "BLR",
+        "CHN",
+        "EST",
+        "FIN",
+        "GEO",
+        "KAZ",
+        "LTU",
+        "LVA",
+        "MNG",
+        "NOR",
+        "POL",
+        "PRK",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "RWA",
+      "iso2": "RW",
+      "m49": "646",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "RWA"
+      ],
+      "aimPoint": [
+        30.296,
+        -1.834
+      ],
+      "bbox": [
+        28.858,
+        -2.809,
+        30.877,
+        -1.063
+      ],
+      "mainBbox": [
+        28.858,
+        -2.809,
+        30.877,
+        -1.063
+      ],
+      "areaKm2": 25418.26,
+      "isMicroState": false,
+      "neighbors": [
+        "BDI",
+        "COD",
+        "TZA",
+        "UGA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SAU",
+      "iso2": "SA",
+      "m49": "682",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "SAU"
+      ],
+      "aimPoint": [
+        44.989,
+        23.506
+      ],
+      "bbox": [
+        34.616,
+        16.372,
+        55.641,
+        32.125
+      ],
+      "mainBbox": [
+        34.616,
+        16.372,
+        55.641,
+        32.125
+      ],
+      "areaKm2": 1926006.78,
+      "isMicroState": false,
+      "neighbors": [
+        "ARE",
+        "IRQ",
+        "JOR",
+        "KWT",
+        "OMN",
+        "QAT",
+        "YEM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SDN",
+      "iso2": "SD",
+      "m49": "729",
+      "subregionM49": "015",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SDN"
+      ],
+      "aimPoint": [
+        29.354,
+        16.63
+      ],
+      "bbox": [
+        21.825,
+        8.666,
+        38.609,
+        22.202
+      ],
+      "mainBbox": [
+        21.825,
+        8.666,
+        38.609,
+        22.202
+      ],
+      "areaKm2": 1861993.88,
+      "isMicroState": false,
+      "neighbors": [
+        "CAF",
+        "EGY",
+        "ERI",
+        "ETH",
+        "LBY",
+        "SSD",
+        "TCD"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SEN",
+      "iso2": "SN",
+      "m49": "686",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SEN"
+      ],
+      "aimPoint": [
+        -14.927,
+        15.209
+      ],
+      "bbox": [
+        -17.536,
+        12.328,
+        -11.382,
+        16.679
+      ],
+      "mainBbox": [
+        -17.536,
+        12.328,
+        -11.382,
+        16.679
+      ],
+      "areaKm2": 196942.21,
+      "isMicroState": false,
+      "neighbors": [
+        "GIN",
+        "GMB",
+        "GNB",
+        "MLI",
+        "MRT"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SGP",
+      "iso2": "SG",
+      "m49": "702",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "SGP"
+      ],
+      "aimPoint": [
+        103.82,
+        1.361
+      ],
+      "bbox": [
+        103.64,
+        1.264,
+        104.003,
+        1.449
+      ],
+      "mainBbox": [
+        103.64,
+        1.264,
+        104.003,
+        1.449
+      ],
+      "areaKm2": 512.79,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SLB",
+      "iso2": "SB",
+      "m49": "090",
+      "subregionM49": "054",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "SLB"
+      ],
+      "aimPoint": [
+        160.247,
+        -9.619
+      ],
+      "bbox": [
+        155.678,
+        -11.832,
+        166.929,
+        -6.609
+      ],
+      "mainBbox": [
+        159.607,
+        -9.929,
+        160.819,
+        -9.269
+      ],
+      "areaKm2": 27312.02,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SLE",
+      "iso2": "SL",
+      "m49": "694",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SLE"
+      ],
+      "aimPoint": [
+        -11.782,
+        8.676
+      ],
+      "bbox": [
+        -13.293,
+        6.907,
+        -10.283,
+        9.997
+      ],
+      "mainBbox": [
+        -13.293,
+        6.907,
+        -10.283,
+        9.997
+      ],
+      "areaKm2": 71911.8,
+      "isMicroState": false,
+      "neighbors": [
+        "GIN",
+        "LBR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SLV",
+      "iso2": "SV",
+      "m49": "222",
+      "subregionM49": "013",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "SLV"
+      ],
+      "aimPoint": [
+        -89.269,
+        13.911
+      ],
+      "bbox": [
+        -90.106,
+        13.164,
+        -87.715,
+        14.431
+      ],
+      "mainBbox": [
+        -90.106,
+        13.164,
+        -87.715,
+        14.431
+      ],
+      "areaKm2": 20615.89,
+      "isMicroState": false,
+      "neighbors": [
+        "GTM",
+        "HND"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SMR",
+      "iso2": "SM",
+      "m49": "674",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "SMR"
+      ],
+      "aimPoint": [
+        12.44,
+        43.932
+      ],
+      "bbox": [
+        12.386,
+        43.892,
+        12.492,
+        43.983
+      ],
+      "mainBbox": [
+        12.386,
+        43.892,
+        12.492,
+        43.983
+      ],
+      "areaKm2": 60.2,
+      "isMicroState": true,
+      "neighbors": [
+        "ITA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SOM",
+      "iso2": "SO",
+      "m49": "706",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SOM"
+      ],
+      "aimPoint": [
+        43.021,
+        2.561
+      ],
+      "bbox": [
+        40.964,
+        -1.695,
+        51.39,
+        11.984
+      ],
+      "mainBbox": [
+        40.964,
+        -1.695,
+        51.39,
+        11.984
+      ],
+      "areaKm2": 473871.33,
+      "isMicroState": false,
+      "neighbors": [
+        "ETH",
+        "KEN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SRB",
+      "iso2": "RS",
+      "m49": "688",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "SRB"
+      ],
+      "aimPoint": [
+        20.561,
+        44.233
+      ],
+      "bbox": [
+        18.839,
+        42.242,
+        22.977,
+        46.169
+      ],
+      "mainBbox": [
+        18.839,
+        42.242,
+        22.977,
+        46.169
+      ],
+      "areaKm2": 77470.54,
+      "isMicroState": false,
+      "neighbors": [
+        "BGR",
+        "BIH",
+        "HRV",
+        "HUN",
+        "MKD",
+        "MNE",
+        "ROU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SSD",
+      "iso2": "SS",
+      "m49": "728",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SDS"
+      ],
+      "aimPoint": [
+        30.488,
+        7.102
+      ],
+      "bbox": [
+        24.147,
+        3.491,
+        35.268,
+        12.223
+      ],
+      "mainBbox": [
+        24.147,
+        3.491,
+        35.268,
+        12.223
+      ],
+      "areaKm2": 629533.12,
+      "isMicroState": false,
+      "neighbors": [
+        "CAF",
+        "COD",
+        "ETH",
+        "KEN",
+        "SDN",
+        "UGA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "STP",
+      "iso2": "ST",
+      "m49": "678",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "STP"
+      ],
+      "aimPoint": [
+        6.6,
+        0.242
+      ],
+      "bbox": [
+        6.462,
+        0.024,
+        7.463,
+        1.7
+      ],
+      "mainBbox": [
+        6.462,
+        0.024,
+        6.761,
+        0.411
+      ],
+      "areaKm2": 1041.81,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SUR",
+      "iso2": "SR",
+      "m49": "740",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "SUR"
+      ],
+      "aimPoint": [
+        -55.963,
+        4.148
+      ],
+      "bbox": [
+        -58.054,
+        1.842,
+        -53.99,
+        5.993
+      ],
+      "mainBbox": [
+        -58.054,
+        1.842,
+        -53.99,
+        5.993
+      ],
+      "areaKm2": 145764.47,
+      "isMicroState": false,
+      "neighbors": [
+        "BRA",
+        "FRA",
+        "GUY"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SVK",
+      "iso2": "SK",
+      "m49": "703",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "SVK"
+      ],
+      "aimPoint": [
+        18.733,
+        48.731
+      ],
+      "bbox": [
+        16.863,
+        47.763,
+        22.539,
+        49.598
+      ],
+      "mainBbox": [
+        16.863,
+        47.763,
+        22.539,
+        49.598
+      ],
+      "areaKm2": 48308.25,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "CZE",
+        "HUN",
+        "POL",
+        "UKR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SVN",
+      "iso2": "SI",
+      "m49": "705",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "SVN"
+      ],
+      "aimPoint": [
+        14.897,
+        46.028
+      ],
+      "bbox": [
+        13.378,
+        45.428,
+        16.516,
+        46.863
+      ],
+      "mainBbox": [
+        13.378,
+        45.428,
+        16.516,
+        46.863
+      ],
+      "areaKm2": 20276.55,
+      "isMicroState": false,
+      "neighbors": [
+        "AUT",
+        "HRV",
+        "HUN",
+        "ITA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SWE",
+      "iso2": "SE",
+      "m49": "752",
+      "subregionM49": "154",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "SWE"
+      ],
+      "aimPoint": [
+        18.979,
+        65.833
+      ],
+      "bbox": [
+        11.147,
+        55.346,
+        24.155,
+        69.037
+      ],
+      "mainBbox": [
+        11.147,
+        55.346,
+        24.155,
+        69.037
+      ],
+      "areaKm2": 443498.65,
+      "isMicroState": false,
+      "neighbors": [
+        "FIN",
+        "NOR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SWZ",
+      "iso2": "SZ",
+      "m49": "748",
+      "subregionM49": "018",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SWZ"
+      ],
+      "aimPoint": [
+        31.445,
+        -26.559
+      ],
+      "bbox": [
+        30.788,
+        -27.31,
+        32.113,
+        -25.743
+      ],
+      "mainBbox": [
+        30.788,
+        -27.31,
+        32.113,
+        -25.743
+      ],
+      "areaKm2": 17142.7,
+      "isMicroState": false,
+      "neighbors": [
+        "MOZ",
+        "ZAF"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SYC",
+      "iso2": "SC",
+      "m49": "690",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "SYC"
+      ],
+      "aimPoint": [
+        55.43,
+        -4.639
+      ],
+      "bbox": [
+        46.207,
+        -9.756,
+        56.287,
+        -3.791
+      ],
+      "mainBbox": [
+        55.366,
+        -4.804,
+        55.538,
+        -4.561
+      ],
+      "areaKm2": 437.54,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "SYR",
+      "iso2": "SY",
+      "m49": "760",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "SYR"
+      ],
+      "aimPoint": [
+        38.162,
+        35.036
+      ],
+      "bbox": [
+        35.764,
+        32.317,
+        42.359,
+        37.297
+      ],
+      "mainBbox": [
+        35.764,
+        32.317,
+        42.359,
+        37.297
+      ],
+      "areaKm2": 185951.47,
+      "isMicroState": false,
+      "neighbors": [
+        "IRQ",
+        "ISR",
+        "JOR",
+        "LBN",
+        "TUR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TCD",
+      "iso2": "TD",
+      "m49": "148",
+      "subregionM49": "017",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "TCD"
+      ],
+      "aimPoint": [
+        19.451,
+        17.347
+      ],
+      "bbox": [
+        13.448,
+        7.475,
+        23.983,
+        23.445
+      ],
+      "mainBbox": [
+        13.448,
+        7.475,
+        23.983,
+        23.445
+      ],
+      "areaKm2": 1270722.68,
+      "isMicroState": false,
+      "neighbors": [
+        "CAF",
+        "CMR",
+        "LBY",
+        "NER",
+        "NGA",
+        "SDN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TGO",
+      "iso2": "TG",
+      "m49": "768",
+      "subregionM49": "011",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "TGO"
+      ],
+      "aimPoint": [
+        1.048,
+        8.862
+      ],
+      "bbox": [
+        -0.09,
+        6.089,
+        1.778,
+        11.116
+      ],
+      "mainBbox": [
+        -0.09,
+        6.089,
+        1.778,
+        11.116
+      ],
+      "areaKm2": 57101.63,
+      "isMicroState": false,
+      "neighbors": [
+        "BEN",
+        "BFA",
+        "GHA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "THA",
+      "iso2": "TH",
+      "m49": "764",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "THA"
+      ],
+      "aimPoint": [
+        101.358,
+        15.458
+      ],
+      "bbox": [
+        97.374,
+        5.637,
+        105.641,
+        20.424
+      ],
+      "mainBbox": [
+        97.374,
+        5.637,
+        105.641,
+        20.424
+      ],
+      "areaKm2": 516275.64,
+      "isMicroState": false,
+      "neighbors": [
+        "KHM",
+        "LAO",
+        "MMR",
+        "MYS"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TJK",
+      "iso2": "TJ",
+      "m49": "762",
+      "subregionM49": "143",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "TJK"
+      ],
+      "aimPoint": [
+        72.776,
+        38.337
+      ],
+      "bbox": [
+        67.35,
+        36.684,
+        75.119,
+        41.035
+      ],
+      "mainBbox": [
+        67.35,
+        36.684,
+        75.119,
+        41.035
+      ],
+      "areaKm2": 142135.9,
+      "isMicroState": false,
+      "neighbors": [
+        "AFG",
+        "CHN",
+        "KGZ",
+        "UZB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TKM",
+      "iso2": "TM",
+      "m49": "795",
+      "subregionM49": "143",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "TKM"
+      ],
+      "aimPoint": [
+        58.631,
+        39.851
+      ],
+      "bbox": [
+        52.494,
+        35.171,
+        66.629,
+        42.778
+      ],
+      "mainBbox": [
+        52.494,
+        35.171,
+        66.629,
+        42.778
+      ],
+      "areaKm2": 470450.5,
+      "isMicroState": false,
+      "neighbors": [
+        "AFG",
+        "IRN",
+        "KAZ",
+        "UZB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TLS",
+      "iso2": "TL",
+      "m49": "626",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "TLS"
+      ],
+      "aimPoint": [
+        125.471,
+        -8.9
+      ],
+      "bbox": [
+        124.036,
+        -9.512,
+        127.296,
+        -8.14
+      ],
+      "mainBbox": [
+        124.915,
+        -9.512,
+        127.296,
+        -8.316
+      ],
+      "areaKm2": 15145.19,
+      "isMicroState": false,
+      "neighbors": [
+        "IDN"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TON",
+      "iso2": "TO",
+      "m49": "776",
+      "subregionM49": "061",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "TON"
+      ],
+      "aimPoint": [
+        -175.16,
+        -21.211
+      ],
+      "bbox": [
+        -176.219,
+        -22.339,
+        -173.914,
+        -15.56
+      ],
+      "mainBbox": [
+        -175.365,
+        -21.268,
+        -175.051,
+        -21.063
+      ],
+      "areaKm2": 604.86,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TTO",
+      "iso2": "TT",
+      "m49": "780",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "TTO"
+      ],
+      "aimPoint": [
+        -61.249,
+        10.322
+      ],
+      "bbox": [
+        -61.906,
+        10.065,
+        -60.525,
+        11.325
+      ],
+      "mainBbox": [
+        -61.906,
+        10.065,
+        -60.918,
+        10.84
+      ],
+      "areaKm2": 5143.66,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TUN",
+      "iso2": "TN",
+      "m49": "788",
+      "subregionM49": "015",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "TUN"
+      ],
+      "aimPoint": [
+        9.563,
+        35.327
+      ],
+      "bbox": [
+        7.496,
+        30.229,
+        11.536,
+        37.34
+      ],
+      "mainBbox": [
+        7.496,
+        30.229,
+        11.536,
+        37.34
+      ],
+      "areaKm2": 156653.42,
+      "isMicroState": false,
+      "neighbors": [
+        "DZA",
+        "LBY"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TUR",
+      "iso2": "TR",
+      "m49": "792",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "TUR"
+      ],
+      "aimPoint": [
+        33.095,
+        39.057
+      ],
+      "bbox": [
+        25.669,
+        35.831,
+        44.817,
+        42.093
+      ],
+      "mainBbox": [
+        26.096,
+        35.831,
+        44.817,
+        42.063
+      ],
+      "areaKm2": 779425.83,
+      "isMicroState": false,
+      "neighbors": [
+        "ARM",
+        "AZE",
+        "BGR",
+        "GEO",
+        "GRC",
+        "IRN",
+        "IRQ",
+        "SYR"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TUV",
+      "iso2": "TV",
+      "m49": "798",
+      "subregionM49": "061",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "TUV"
+      ],
+      "aimPoint": [
+        179.211,
+        -8.519
+      ],
+      "bbox": [
+        176.125,
+        -9.421,
+        179.907,
+        -5.678
+      ],
+      "mainBbox": [
+        179.191,
+        -8.542,
+        179.218,
+        -8.461
+      ],
+      "areaKm2": 23.12,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "TZA",
+      "iso2": "TZ",
+      "m49": "834",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "TZA"
+      ],
+      "aimPoint": [
+        34.019,
+        -5.544
+      ],
+      "bbox": [
+        29.323,
+        -11.716,
+        40.464,
+        -0.995
+      ],
+      "mainBbox": [
+        29.323,
+        -11.716,
+        40.464,
+        -0.995
+      ],
+      "areaKm2": 945556.53,
+      "isMicroState": false,
+      "neighbors": [
+        "BDI",
+        "COD",
+        "KEN",
+        "MOZ",
+        "MWI",
+        "RWA",
+        "UGA",
+        "ZMB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "UGA",
+      "iso2": "UG",
+      "m49": "800",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "UGA"
+      ],
+      "aimPoint": [
+        33.016,
+        2.005
+      ],
+      "bbox": [
+        29.562,
+        -1.47,
+        34.978,
+        4.22
+      ],
+      "mainBbox": [
+        29.562,
+        -1.47,
+        34.978,
+        4.22
+      ],
+      "areaKm2": 242936.13,
+      "isMicroState": false,
+      "neighbors": [
+        "COD",
+        "KEN",
+        "RWA",
+        "SSD",
+        "TZA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "UKR",
+      "iso2": "UA",
+      "m49": "804",
+      "subregionM49": "151",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "UKR"
+      ],
+      "aimPoint": [
+        32.387,
+        49.593
+      ],
+      "bbox": [
+        22.132,
+        45.234,
+        40.128,
+        52.354
+      ],
+      "mainBbox": [
+        22.132,
+        45.234,
+        40.128,
+        52.354
+      ],
+      "areaKm2": 570179.15,
+      "isMicroState": false,
+      "neighbors": [
+        "BLR",
+        "HUN",
+        "MDA",
+        "POL",
+        "ROU",
+        "RUS",
+        "SVK"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "URY",
+      "iso2": "UY",
+      "m49": "858",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "URY"
+      ],
+      "aimPoint": [
+        -56.065,
+        -32.946
+      ],
+      "bbox": [
+        -58.438,
+        -34.933,
+        -53.126,
+        -30.101
+      ],
+      "mainBbox": [
+        -58.438,
+        -34.933,
+        -53.126,
+        -30.101
+      ],
+      "areaKm2": 177439.68,
+      "isMicroState": false,
+      "neighbors": [
+        "ARG",
+        "BRA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "USA",
+      "iso2": "US",
+      "m49": "840",
+      "subregionM49": "021",
+      "continent": "NA",
+      "continents": [
+        "NA",
+        "OC"
+      ],
+      "geomIds": [
+        "ASM",
+        "GUM",
+        "MNP",
+        "PRI",
+        "UMI",
+        "USA",
+        "VIR"
+      ],
+      "aimPoint": [
+        -98.101,
+        39.104
+      ],
+      "bbox": [
+        172.495,
+        18.964,
+        -66.987,
+        71.408
+      ],
+      "mainBbox": [
+        -124.71,
+        25.133,
+        -66.987,
+        49.37
+      ],
+      "areaKm2": 9458599.28,
+      "isMicroState": false,
+      "neighbors": [
+        "CAN",
+        "MEX"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "UZB",
+      "iso2": "UZ",
+      "m49": "860",
+      "subregionM49": "143",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "UZB"
+      ],
+      "aimPoint": [
+        64.027,
+        41.54
+      ],
+      "bbox": [
+        55.976,
+        37.172,
+        73.137,
+        45.555
+      ],
+      "mainBbox": [
+        55.976,
+        37.172,
+        73.137,
+        45.555
+      ],
+      "areaKm2": 447178.58,
+      "isMicroState": false,
+      "neighbors": [
+        "AFG",
+        "KAZ",
+        "KGZ",
+        "TJK",
+        "TKM"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "VAT",
+      "iso2": "VA",
+      "m49": "336",
+      "subregionM49": "039",
+      "continent": "EU",
+      "continents": [
+        "EU"
+      ],
+      "geomIds": [
+        "VAT"
+      ],
+      "aimPoint": [
+        12.453,
+        41.903
+      ],
+      "bbox": [
+        12.453,
+        41.903,
+        12.454,
+        41.904
+      ],
+      "mainBbox": [
+        12.453,
+        41.903,
+        12.454,
+        41.904
+      ],
+      "areaKm2": 0.01,
+      "isMicroState": true,
+      "neighbors": [
+        "ITA"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "VCT",
+      "iso2": "VC",
+      "m49": "670",
+      "subregionM49": "029",
+      "continent": "NA",
+      "continents": [
+        "NA"
+      ],
+      "geomIds": [
+        "VCT"
+      ],
+      "aimPoint": [
+        -61.203,
+        13.231
+      ],
+      "bbox": [
+        -61.46,
+        12.585,
+        -61.124,
+        13.381
+      ],
+      "mainBbox": [
+        -61.279,
+        13.133,
+        -61.124,
+        13.381
+      ],
+      "areaKm2": 369.12,
+      "isMicroState": true,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "VEN",
+      "iso2": "VE",
+      "m49": "862",
+      "subregionM49": "005",
+      "continent": "SA",
+      "continents": [
+        "SA"
+      ],
+      "geomIds": [
+        "VEN"
+      ],
+      "aimPoint": [
+        -64.238,
+        7.202
+      ],
+      "bbox": [
+        -73.366,
+        0.688,
+        -59.829,
+        12.178
+      ],
+      "mainBbox": [
+        -73.366,
+        0.688,
+        -59.829,
+        12.178
+      ],
+      "areaKm2": 916571.73,
+      "isMicroState": false,
+      "neighbors": [
+        "BRA",
+        "COL",
+        "GUY"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "VNM",
+      "iso2": "VN",
+      "m49": "704",
+      "subregionM49": "035",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "VNM"
+      ],
+      "aimPoint": [
+        105.382,
+        21.693
+      ],
+      "bbox": [
+        102.127,
+        8.583,
+        109.445,
+        23.345
+      ],
+      "mainBbox": [
+        102.127,
+        8.583,
+        109.445,
+        23.345
+      ],
+      "areaKm2": 329987.03,
+      "isMicroState": false,
+      "neighbors": [
+        "CHN",
+        "KHM",
+        "LAO"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "VUT",
+      "iso2": "VU",
+      "m49": "548",
+      "subregionM49": "054",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "VUT"
+      ],
+      "aimPoint": [
+        166.866,
+        -15.374
+      ],
+      "bbox": [
+        166.526,
+        -20.242,
+        169.896,
+        -13.709
+      ],
+      "mainBbox": [
+        166.526,
+        -15.635,
+        167.201,
+        -14.637
+      ],
+      "areaKm2": 12338.88,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "WSM",
+      "iso2": "WS",
+      "m49": "882",
+      "subregionM49": "061",
+      "continent": "OC",
+      "continents": [
+        "OC"
+      ],
+      "geomIds": [
+        "WSM"
+      ],
+      "aimPoint": [
+        -172.459,
+        -13.636
+      ],
+      "bbox": [
+        -172.779,
+        -14.047,
+        -171.45,
+        -13.465
+      ],
+      "mainBbox": [
+        -172.779,
+        -13.804,
+        -172.177,
+        -13.465
+      ],
+      "areaKm2": 2790.78,
+      "isMicroState": false,
+      "neighbors": [],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "YEM",
+      "iso2": "YE",
+      "m49": "887",
+      "subregionM49": "145",
+      "continent": "AS",
+      "continents": [
+        "AS"
+      ],
+      "geomIds": [
+        "YEM"
+      ],
+      "aimPoint": [
+        44.972,
+        15.297
+      ],
+      "bbox": [
+        42.549,
+        12.319,
+        54.511,
+        18.996
+      ],
+      "mainBbox": [
+        42.658,
+        12.608,
+        53.086,
+        18.996
+      ],
+      "areaKm2": 454650.1,
+      "isMicroState": false,
+      "neighbors": [
+        "OMN",
+        "SAU"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ZAF",
+      "iso2": "ZA",
+      "m49": "710",
+      "subregionM49": "018",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "ZAF"
+      ],
+      "aimPoint": [
+        23.323,
+        -30.231
+      ],
+      "bbox": [
+        16.448,
+        -46.963,
+        37.888,
+        -22.146
+      ],
+      "mainBbox": [
+        16.448,
+        -34.786,
+        32.886,
+        -22.146
+      ],
+      "areaKm2": 1221447.94,
+      "isMicroState": false,
+      "neighbors": [
+        "BWA",
+        "LSO",
+        "MOZ",
+        "NAM",
+        "SWZ",
+        "ZWE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ZMB",
+      "iso2": "ZM",
+      "m49": "894",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "ZMB"
+      ],
+      "aimPoint": [
+        26.148,
+        -14.738
+      ],
+      "bbox": [
+        21.979,
+        -18.042,
+        33.662,
+        -8.194
+      ],
+      "mainBbox": [
+        21.979,
+        -18.042,
+        33.662,
+        -8.194
+      ],
+      "areaKm2": 754730.71,
+      "isMicroState": false,
+      "neighbors": [
+        "AGO",
+        "COD",
+        "MOZ",
+        "MWI",
+        "NAM",
+        "TZA",
+        "ZWE"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    },
+    {
+      "iso3": "ZWE",
+      "iso2": "ZW",
+      "m49": "716",
+      "subregionM49": "014",
+      "continent": "AF",
+      "continents": [
+        "AF"
+      ],
+      "geomIds": [
+        "ZWE"
+      ],
+      "aimPoint": [
+        29.957,
+        -18.99
+      ],
+      "bbox": [
+        25.224,
+        -22.402,
+        33.007,
+        -15.643
+      ],
+      "mainBbox": [
+        25.224,
+        -22.402,
+        33.007,
+        -15.643
+      ],
+      "areaKm2": 390528.5,
+      "isMicroState": false,
+      "neighbors": [
+        "BWA",
+        "MOZ",
+        "ZAF",
+        "ZMB"
+      ],
+      "dataVersion": "ne-5.1.2+policy-1+pipeline-3"
+    }
+  ],
+  "territories": [
+    {
+      "id": "ABW",
+      "name": "Aruba",
+      "sovereign": "NLD",
+      "geomId": "ABW",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "AIA",
+      "name": "Anguilla",
+      "sovereign": "GBR",
+      "geomId": "AIA",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "ALD",
+      "name": "Aland",
+      "sovereign": "FIN",
+      "geomId": "ALD",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "ASM",
+      "name": "American Samoa",
+      "sovereign": "USA",
+      "geomId": "ASM",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "ATA",
+      "name": "Antarctica",
+      "sovereign": null,
+      "geomId": "ATA",
+      "plantable": false,
+      "reason": "antarctica"
+    },
+    {
+      "id": "ATC",
+      "name": "Ashmore and Cartier Islands",
+      "sovereign": "AUS",
+      "geomId": "ATC",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "ATF",
+      "name": "French Southern and Antarctic Lands",
+      "sovereign": "FRA",
+      "geomId": "ATF",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "BJN",
+      "name": "Bajo Nuevo Bank (Petrel Is.)",
+      "sovereign": null,
+      "geomId": "BJN",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "BLM",
+      "name": "Saint Barthelemy",
+      "sovereign": "FRA",
+      "geomId": "BLM",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "BMU",
+      "name": "Bermuda",
+      "sovereign": "GBR",
+      "geomId": "BMU",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "BRI",
+      "name": "Brazilian Island",
+      "sovereign": null,
+      "geomId": "BRI",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "BRT",
+      "name": "Bir Tawil",
+      "sovereign": null,
+      "geomId": "BRT",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "CLP",
+      "name": "Clipperton Island",
+      "sovereign": "FRA",
+      "geomId": "CLP",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "CNM",
+      "name": "Cyprus No Mans Area",
+      "sovereign": null,
+      "geomId": "CNM",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "COK",
+      "name": "Cook Islands",
+      "sovereign": "NZL",
+      "geomId": "COK",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "CSI",
+      "name": "Coral Sea Islands",
+      "sovereign": "AUS",
+      "geomId": "CSI",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "CUW",
+      "name": "Curaçao",
+      "sovereign": "NLD",
+      "geomId": "CUW",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "CYM",
+      "name": "Cayman Islands",
+      "sovereign": "GBR",
+      "geomId": "CYM",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "CYN",
+      "name": "Northern Cyprus",
+      "sovereign": null,
+      "geomId": "CYN",
+      "plantable": false,
+      "reason": "non-member"
+    },
+    {
+      "id": "ESB",
+      "name": "Dhekelia Sovereign Base Area",
+      "sovereign": "GBR",
+      "geomId": "ESB",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "FLK",
+      "name": "Falkland Islands",
+      "sovereign": "GBR",
+      "geomId": "FLK",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "FRO",
+      "name": "Faroe Islands",
+      "sovereign": "DNK",
+      "geomId": "FRO",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "GGY",
+      "name": "Guernsey",
+      "sovereign": "GBR",
+      "geomId": "GGY",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "GIB",
+      "name": "Gibraltar",
+      "sovereign": "GBR",
+      "geomId": "GIB",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "GRL",
+      "name": "Greenland",
+      "sovereign": "DNK",
+      "geomId": "GRL",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "GUM",
+      "name": "Guam",
+      "sovereign": "USA",
+      "geomId": "GUM",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "HKG",
+      "name": "Hong Kong S.A.R.",
+      "sovereign": "CHN",
+      "geomId": "HKG",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "HMD",
+      "name": "Heard Island and McDonald Islands",
+      "sovereign": "AUS",
+      "geomId": "HMD",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "IMN",
+      "name": "Isle of Man",
+      "sovereign": "GBR",
+      "geomId": "IMN",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "IOA",
+      "name": "Indian Ocean Territories",
+      "sovereign": "AUS",
+      "geomId": "IOA",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "IOT",
+      "name": "British Indian Ocean Territory",
+      "sovereign": "GBR",
+      "geomId": "IOT",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "JEY",
+      "name": "Jersey",
+      "sovereign": "GBR",
+      "geomId": "JEY",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "KAB",
+      "name": "Baykonur Cosmodrome",
+      "sovereign": "KAZ",
+      "geomId": "KAB",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "KAS",
+      "name": "Siachen Glacier",
+      "sovereign": null,
+      "geomId": "KAS",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "KOS",
+      "name": "Kosovo",
+      "sovereign": null,
+      "geomId": "KOS",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "MAC",
+      "name": "Macao S.A.R",
+      "sovereign": "CHN",
+      "geomId": "MAC",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "MAF",
+      "name": "Saint Martin",
+      "sovereign": "FRA",
+      "geomId": "MAF",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "MNP",
+      "name": "Northern Mariana Islands",
+      "sovereign": "USA",
+      "geomId": "MNP",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "MSR",
+      "name": "Montserrat",
+      "sovereign": "GBR",
+      "geomId": "MSR",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "NCL",
+      "name": "New Caledonia",
+      "sovereign": "FRA",
+      "geomId": "NCL",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "NFK",
+      "name": "Norfolk Island",
+      "sovereign": "AUS",
+      "geomId": "NFK",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "NIU",
+      "name": "Niue",
+      "sovereign": "NZL",
+      "geomId": "NIU",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "PCN",
+      "name": "Pitcairn Islands",
+      "sovereign": "GBR",
+      "geomId": "PCN",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "PGA",
+      "name": "Spratly Islands",
+      "sovereign": null,
+      "geomId": "PGA",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "PRI",
+      "name": "Puerto Rico",
+      "sovereign": "USA",
+      "geomId": "PRI",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "PYF",
+      "name": "French Polynesia",
+      "sovereign": "FRA",
+      "geomId": "PYF",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "SAH",
+      "name": "Western Sahara",
+      "sovereign": null,
+      "geomId": "SAH",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "SCR",
+      "name": "Scarborough Reef",
+      "sovereign": null,
+      "geomId": "SCR",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "SER",
+      "name": "Serranilla Bank",
+      "sovereign": null,
+      "geomId": "SER",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "SGS",
+      "name": "South Georgia and the Islands",
+      "sovereign": "GBR",
+      "geomId": "SGS",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "SHN",
+      "name": "Saint Helena",
+      "sovereign": "GBR",
+      "geomId": "SHN",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "SOL",
+      "name": "Somaliland",
+      "sovereign": null,
+      "geomId": "SOL",
+      "plantable": false,
+      "reason": "non-member"
+    },
+    {
+      "id": "SPI",
+      "name": "Southern Patagonian Ice Field",
+      "sovereign": null,
+      "geomId": "SPI",
+      "plantable": false,
+      "reason": "disputed"
+    },
+    {
+      "id": "SPM",
+      "name": "Saint Pierre and Miquelon",
+      "sovereign": "FRA",
+      "geomId": "SPM",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "SXM",
+      "name": "Sint Maarten",
+      "sovereign": "NLD",
+      "geomId": "SXM",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "TCA",
+      "name": "Turks and Caicos Islands",
+      "sovereign": "GBR",
+      "geomId": "TCA",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "TWN",
+      "name": "Taiwan",
+      "sovereign": null,
+      "geomId": "TWN",
+      "plantable": false,
+      "reason": "non-member"
+    },
+    {
+      "id": "UMI",
+      "name": "United States Minor Outlying Islands",
+      "sovereign": "USA",
+      "geomId": "UMI",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "USG",
+      "name": "US Naval Base Guantanamo Bay",
+      "sovereign": "CUB",
+      "geomId": "USG",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "VGB",
+      "name": "British Virgin Islands",
+      "sovereign": "GBR",
+      "geomId": "VGB",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "VIR",
+      "name": "United States Virgin Islands",
+      "sovereign": "USA",
+      "geomId": "VIR",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "WLF",
+      "name": "Wallis and Futuna",
+      "sovereign": "FRA",
+      "geomId": "WLF",
+      "plantable": true,
+      "reason": "dependency"
+    },
+    {
+      "id": "WSB",
+      "name": "Akrotiri Sovereign Base Area",
+      "sovereign": "GBR",
+      "geomId": "WSB",
+      "plantable": true,
+      "reason": "dependency"
+    }
+  ]
+}

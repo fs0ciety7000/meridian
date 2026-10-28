@@ -8,7 +8,7 @@ description: Règles exactes du jeu Meridian (à la demande, sans daily) — exp
 Source de vérité : `docs/gameplay-systems.md` (propriétaire : agent `systems-designer`). Constantes : `BALANCE` (§11) dans `packages/engine/src/balance.ts`.
 
 ## Résumé exécutable
-1. `CONFIRM_CAMP {lonLat, iso3}` → quantifier `lonLat` à 0,01°.
+1. `CONFIRM_CAMP {lonLat, iso3}` → quantifier `lonLat` à 0,001° (`quantize` de `@meridian/geo`), puis valider ce point quantifié.
 2. **Refus sans pénalité** si : non jouable, déjà utilisé, zone contestée → événement `CAMP_REFUSED`, état inchangé.
 3. `valid = evalPredicate(leg.predicate, facts[iso3], ctx)`.
 4. Valide → `d = haversine(camp, lonLat, R=6371.0088)` ; `camp = lonLat` ; méridien franchi ? ; tampon (rareté).

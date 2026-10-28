@@ -1,0 +1,24 @@
+{
+  "name": "@meridian/geo-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "check": "tsx src/build.ts --check",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@meridian/content-schema": "workspace:*",
+    "@meridian/geo": "workspace:*",
+    "d3-geo": "^3.1.1",
+    "mapshaper": "^0.7.100",
+    "polylabel": "^2.1.0",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/d3-geo": "^3.1.0",
+    "@types/geojson": "^7946.0.16",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5"
+  }
+}

@@ -9,7 +9,7 @@ Source de vérité : `docs/data-model.md` (propriétaires : `systems-designer` p
 
 ## Conventions
 - Pays : **ISO 3166-1 alpha-3** majuscules (`iso2` seulement pour `Intl.DisplayNames`).
-- Coordonnées : `[lon, lat]` WGS84 (ordre GeoJSON), quantifiées à 0,01° dans tout état persistant.
+- Coordonnées : `[lon, lat]` WGS84 (ordre GeoJSON), quantifiées à 0,001° (`BALANCE.coordQuantumDeg`) dans tout état persistant ; la validation porte sur le point quantifié.
 - Expéditions : code `MER-…` (catalogue `MER-NNNN`, générée = base32 Crockford seed+difficulté+libraryVersion+contrôle) ; horodatages : ISO 8601 UTC.
 - Textes joueur : objets `{ fr, en }` — jamais une seule langue.
 - Schémas : Zod dans `packages/content-schema`, types inférés (`z.infer`) ; jamais d'interface dupliquée à la main.

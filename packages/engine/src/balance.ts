@@ -5,7 +5,8 @@
 export const BALANCE = {
   version: 1,
   legsPerExpedition: 6,
-  coordQuantumDeg: 0.01,
+  /** 0.001° ≈ 110 m: the coarsest grid with points inside the Vatican (≈ 0.012° × 0.007°). */
+  coordQuantumDeg: 0.001,
   tierCutoffs: [0.5, 0.8, 0.95],
   tierMultipliers: { known: 1.0, trail: 1.1, frontier: 1.25, incognita: 1.5 },
   rarityPriorWeight: 200,

@@ -90,7 +90,7 @@ Pas de vies, pas de seconde chance au MVP : une étape ratée coûte la distance
 - Arrondi : au **kilomètre** à l'affichage ; le moteur conserve des flottants et arrondit le total final (`Math.round`) pour garantir l'égalité client/serveur.
 - Bornes : 0 ≤ d ≤ πR ≈ 20 015 km.
 - **Implication stratégique** : la distance dépend du *point* choisi dans le pays. Planter au cap Horn plutôt qu'à Santiago change tout. C'est voulu (« camp libre »).
-- **Anti-exploitation** : la position est quantifiée à 0,01° (≈ 1 km) avant calcul et stockage → pas de micro-optimisation au mètre, encodage de partage compact.
+- **Quantification** : la position est quantifiée à **0,001° (≈ 110 m)** avant validation, calcul et stockage → client et serveur valident et mesurent exactement le même point ; encodage de partage compact. *Pourquoi pas 0,01° (≈ 1 km)* : aucun point de cette grille ne tombe dans le Vatican (≈ 0,012° × 0,007°) — constaté par les tests du pipeline géo en phase 0. La validation (`geoContains`) porte sur le point **quantifié**.
 
 ---
 
@@ -223,7 +223,7 @@ Seule source de vérité, dans `packages/engine/src/balance.ts`. Toute modificat
 |---|---|---|
 | `legsPerExpedition` | 6 | |
 | `earthRadiusKm` | 6371.0088 | |
-| `coordQuantumDeg` | 0.01 | |
+| `coordQuantumDeg` | 0.001 | ≈ 110 m ; doit laisser un point de grille dans chaque micro-État (test du pipeline géo) |
 | `tierCutoffs` | [0.50, 0.80, 0.95] | parts cumulées |
 | `tierMultipliers` | [1.00, 1.10, 1.25, 1.50] | |
 | `rarityPriorWeight` (α) | 200 | |

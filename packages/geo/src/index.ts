@@ -22,10 +22,10 @@ export function wrapLon(lon: number): number {
 }
 
 /**
- * Quantizes coordinates to a grid (default 0.01° ≈ 1 km) so that client and server
+ * Quantizes coordinates to a grid (default 0.001° ≈ 110 m) so that client and server
  * compute identical distances from identical stored values.
  */
-export function quantize(p: LonLat, quantumDeg = 0.01): LonLat {
+export function quantize(p: LonLat, quantumDeg = 0.001): LonLat {
   const steps = Math.round(1 / quantumDeg);
   const q = (v: number) => Math.round(v * steps) / steps;
   return [q(wrapLon(p[0])), q(Math.max(-90, Math.min(90, p[1])))];

@@ -36,8 +36,12 @@ describe('wrapLon', () => {
 });
 
 describe('quantize', () => {
-  it('rounds to 0.01° by default', () => {
-    expect(quantize([2.34567, 48.85432])).toEqual([2.35, 48.85]);
+  it('rounds to 0.001° by default', () => {
+    expect(quantize([2.34567, 48.85432])).toEqual([2.346, 48.854]);
+  });
+
+  it('keeps a grid point inside the Vatican (≈ 0.012° × 0.007°)', () => {
+    expect(quantize([12.4523, 41.9038])).toEqual([12.452, 41.904]);
   });
 
   it('clamps latitude and wraps longitude', () => {

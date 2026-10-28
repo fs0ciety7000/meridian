@@ -42,10 +42,11 @@ interface PlayableEntity {
   continents: ContinentCode[];    // tous les continents touchés (missions)
   geomIds: string[];              // ids des géométries TopoJSON (métropole + territoires rattachés)
   aimPoint: LonLat;               // pole of inaccessibility de la plus grande partie (caméra, clavier)
-  bbox: [number, number, number, number];
+  bbox: [number, number, number, number];      // emprise complète (outre-mer inclus) ; ouest > est si l'antiméridien est traversé
+  mainBbox: [number, number, number, number];  // emprise du plus grand polygone : cadrage caméra
   areaKm2: number;
   isMicroState: boolean;          // < 2 000 km² → géométrie 10m + halo
-  neighbors: ISO3[];              // frontières terrestres partagées (métropole)
+  neighbors: ISO3[];              // frontières terrestres partagées, territoires inclus (la France borde le Brésil)
   salience: number;               // 0..1, notoriété (prior de rareté)
   dataVersion: string;
 }
@@ -235,7 +236,7 @@ interface RunState {
 
 interface LegResult {
   leg: number;
-  pick: { lonLat: LonLat; iso3: ISO3 };        // quantifié à 0,01°
+  pick: { lonLat: LonLat; iso3: ISO3 };        // quantifié à 0,001° (BALANCE.coordQuantumDeg)
   valid: boolean;
   distanceKm: number;                          // 0 si fausse piste
   meridianCrossed: boolean;
@@ -430,7 +431,7 @@ create table rarity_snapshots (
 Pour le lien de défi et le fantôme (sans backend) :
 ```
 v2.<expeditionCode>.<legs>
-legs = base64url( pour chaque étape : flags(1 o) + lon×100 (int24) + lat×100 (int24) )   → 7 o/étape, ~56 caractères
+legs = base64url( pour chaque étape : flags(1 o) + lon×1000 (int24) + lat×1000 (int24) )   → 7 o/étape, ~56 caractères
 ```
 L'ISO3 n'est pas encodé : il est redérivé par `geoContains`, ce qui empêche de fabriquer un code incohérent. Le score affiché au destinataire est **recalculé** localement à partir de la route (pas de score déclaratif). URL : `https://meridian.cardormedia.com/x/MER-7KQ2N?r=v2.MER-7KQ2N.AbC…` (sous-domaine à confirmer).
 

@@ -16,10 +16,17 @@ export const PlayableEntity = z.object({
   m49: z.string().regex(/^\d{3}$/),
   subregionM49: z.string().regex(/^\d{3}$/),
   continent: ContinentCode,
+  /**
+   * Continents touched by the entity's map units. Known limitation (phase 0): overseas parts merged
+   * into the home unit's MultiPolygon (e.g. French Guiana) are not classified per polygon yet.
+   */
   continents: z.array(ContinentCode).min(1),
   geomIds: z.array(z.string()).min(1),
   aimPoint: LonLat,
+  /** Full extent of the home unit (overseas parts included); west > east across the antimeridian. */
   bbox: z.tuple([z.number(), z.number(), z.number(), z.number()]),
+  /** Extent of the largest polygon only — what the camera frames when flying to the entity. */
+  mainBbox: z.tuple([z.number(), z.number(), z.number(), z.number()]),
   areaKm2: z.number().positive(),
   isMicroState: z.boolean(),
   neighbors: z.array(Iso3),

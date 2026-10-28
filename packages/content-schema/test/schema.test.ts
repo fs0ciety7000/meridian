@@ -24,6 +24,7 @@ describe('content-schema', () => {
       geomIds: ['MLT'],
       aimPoint: [14.42, 35.89],
       bbox: [14.18, 35.8, 14.57, 36.08],
+      mainBbox: [14.18, 35.8, 14.57, 36.08],
       areaKm2: 316,
       isMicroState: true,
       neighbors: [],
