@@ -51,7 +51,7 @@ ou `docker compose -f deploy/docker-compose.yml up --build`.
 | Variable | Défaut (image) | Rôle |
 |---|---|---|
 | `PORT` | `3000` | port HTTP du conteneur |
-| `HOST` | `0.0.0.0` | interface d'écoute |
+| `HOST` | `::` | interface d'écoute (double pile ; `localhost` résout en `::1` sous Alpine) |
 | `STATIC_DIR` | `/app/public` | front buildé |
 | `DATA_DIR` | `/data` | volume persistant ; `/api/health` renvoie **503** s'il n'est pas accessible en écriture |
 | `APP_VERSION` | `0.0.0` (build arg) | affiché dans `/api/health` |

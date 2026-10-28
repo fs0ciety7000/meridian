@@ -17,7 +17,8 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ServerConfig {
   const here = dirname(fileURLToPath(import.meta.url));
   return {
     port: Number(env.PORT ?? 3000),
-    host: env.HOST ?? '0.0.0.0',
+    // '::' is dual-stack: `localhost` resolves to ::1 first in Alpine (Coolify's health check).
+    host: env.HOST ?? '::',
     staticDir: resolve(env.STATIC_DIR ?? resolve(here, 'public')),
     dataDir: env.DATA_DIR ? resolve(env.DATA_DIR) : null,
     version: env.APP_VERSION ?? 'dev',

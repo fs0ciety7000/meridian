@@ -37,7 +37,7 @@ FROM ${NODE_IMAGE} AS runtime
 ARG SOURCE_COMMIT=unknown
 ARG APP_VERSION=0.0.0
 ENV NODE_ENV=production \
-    HOST=0.0.0.0 \
+    HOST=:: \
     PORT=3000 \
     STATIC_DIR=/app/public \
     DATA_DIR=/data \
@@ -53,5 +53,5 @@ RUN mkdir -p /data && chown node:node /data
 USER node
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-  CMD wget -qO- "http://127.0.0.1:${PORT}/api/health" >/dev/null || exit 1
+  CMD wget -qO- "http://localhost:${PORT}/api/health" >/dev/null || exit 1
 CMD ["node", "server.mjs"]
