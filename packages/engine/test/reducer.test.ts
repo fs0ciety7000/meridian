@@ -3,6 +3,7 @@ import type { Expedition } from '@meridian/content-schema';
 import {
   BALANCE,
   computeRarity,
+  dryInk,
   expeditionHash,
   freezeLeg,
   reduce,
@@ -211,6 +212,14 @@ describe('reduce', () => {
       deps,
     );
     expect(again.state).toBe(late.state);
+  });
+
+  it('dries the ink offline from the prior after 24 h', () => {
+    const { state } = run(PERFECT);
+    expect(dryInk(state, deps, '2026-10-28T20:00:00Z').state).toBe(state);
+    const dry = dryInk(state, deps, '2026-10-29T11:00:00Z').state;
+    expect(dry.legs.every((l) => l.rarity!.status === 'frozen')).toBe(true);
+    expect(dry.score!.final).toBe(true);
   });
 
   it('abandoning ends the run with the legs played so far', () => {

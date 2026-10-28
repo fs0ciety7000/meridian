@@ -1,4 +1,4 @@
-import { haversineKm, meridianCrossing, quantize } from '@meridian/geo';
+import { haversineKm, meridianCrossing, quantize, type LonLat } from '@meridian/geo';
 import { isContextual, evaluate, validSet } from './predicate';
 import { capTier, computeRarity } from './rarity';
 import { meridianCrossings, missionDone, type RouteView } from './missions';
@@ -279,4 +279,54 @@ export function reduce(
       return { state: next, events: [{ type: 'EXPEDITION_ABANDONED', score: next.score }] };
     }
   }
+}
+
+/**
+ * Offline ink drying (§6.4): without a rarity server, every stamp is re-estimated from the
+ * salience prior and frozen once `inkDryHours` have passed since it was played.
+ */
+export function dryInk(
+  state: RunState,
+  deps: EngineDeps,
+  now: string,
+): { state: RunState; events: EngineEvent[] } {
+  let current = state;
+  const events: EngineEvent[] = [];
+  let camp: { iso3: string; lonLat: LonLat } = {
+    iso3: state.expedition.start.iso3,
+    lonLat: state.expedition.start.lonLat,
+  };
+  for (const l of state.legs) {
+    const leg = state.expedition.legs[l.leg - 1]!;
+    const def = l.usedFallback && leg.fallback ? leg.fallback : leg;
+    if (
+      l.valid &&
+      l.rarity &&
+      l.rarity.status !== 'frozen' &&
+      hoursBetween(l.at, now) >= deps.balance.inkDryHours
+    ) {
+      const ctx: LegContext = {
+        prevIso3: camp.iso3,
+        prevLonLat: camp.lonLat,
+        portLonLat: state.expedition.start.lonLat,
+        locale: state.locale,
+      };
+      const snapshot = computeRarity(
+        def.promptId,
+        validSet(def.predicate, deps, ctx),
+        (c) => deps.facts.get(c)?.salience ?? 0,
+        {},
+        deps.balance,
+        now,
+        l.contextKey,
+      );
+      if (!snapshot.entries[l.pick.iso3])
+        snapshot.entries[l.pick.iso3] = { n: 0, share: 0, tier: 'incognita' };
+      const r = reduce(current, { type: 'APPLY_RARITY', snapshot, now }, deps);
+      current = r.state;
+      events.push(...r.events);
+    }
+    if (l.valid) camp = l.pick;
+  }
+  return { state: current, events };
 }

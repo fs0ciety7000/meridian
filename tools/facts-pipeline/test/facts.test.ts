@@ -74,7 +74,7 @@ describe('country facts (development-plan 2.2)', () => {
     expect(members('eu')).toBe(27);
     expect(members('nato')).toBe(32);
     expect(members('asean')).toBe(11);
-    expect(members('opec')).toBe(12);
+    expect(members('opec')).toBe(11); // the UAE left on 1 May 2026
   });
 
   it('gives every country a salience in [0, 1] with the well-known ones on top', () => {

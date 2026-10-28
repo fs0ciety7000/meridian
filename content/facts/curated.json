@@ -167,6 +167,196 @@
     }
   },
   "overrides": {
+    "AFG": {
+      "officialLanguages": {
+        "value": [],
+        "source": "https://en.wikipedia.org/wiki/Afghanistan",
+        "note": "Pashto and Dari (no key language); Wikidata noise."
+      }
+    },
+    "ALB": {
+      "population": {
+        "value": 2377128,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=AL",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "ATG": {
+      "officialLanguages": {
+        "value": ["english"],
+        "source": "https://en.wikipedia.org/wiki/Antigua_and_Barbuda",
+        "note": "English only (by convention)."
+      }
+    },
+    "BHR": {
+      "areaKm2": {
+        "value": 787,
+        "source": "https://en.wikipedia.org/wiki/Bahrain",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "BIH": {
+      "population": {
+        "value": 3164253,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BA",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "BTN": {
+      "flagColors": {
+        "value": ["orange", "white", "yellow"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Bhutan",
+        "note": "Yellow and orange with a white dragon; no black."
+      }
+    },
+    "BWA": {
+      "borders": {
+        "value": ["NAM", "ZAF", "ZMB", "ZWE"],
+        "source": "https://en.wikipedia.org/wiki/Botswana",
+        "note": "Kazungula border with Zambia."
+      },
+      "landBorders": {
+        "value": 4,
+        "source": "https://en.wikipedia.org/wiki/Botswana"
+      }
+    },
+    "CAN": {
+      "borders": {
+        "value": ["DNK", "USA"],
+        "source": "https://en.wikipedia.org/wiki/Hans_Island",
+        "note": "Land border with Denmark (Greenland) on Hans Island since the 2022 treaty (ratified)."
+      },
+      "landBorders": {
+        "value": 2,
+        "source": "https://en.wikipedia.org/wiki/Hans_Island"
+      },
+      "population": {
+        "value": 41262329,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=CA",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "CYP": {
+      "areaKm2": {
+        "value": 9251,
+        "source": "https://en.wikipedia.org/wiki/Cyprus",
+        "note": "De jure Republic of Cyprus (whole island); the de facto geometry excludes Northern Cyprus."
+      },
+      "borders": {
+        "value": ["GBR"],
+        "source": "https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia",
+        "note": "The Sovereign Base Areas count for the United Kingdom (policy v1). Northern Cyprus and the buffer zone are non-plantable."
+      },
+      "landBorders": {
+        "value": 1,
+        "source": "https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia"
+      },
+      "hasLandBorder": {
+        "value": true,
+        "source": "https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia"
+      }
+    },
+    "DJI": {
+      "borders": {
+        "value": ["ERI", "ETH", "SOM"],
+        "source": "https://en.wikipedia.org/wiki/Djibouti",
+        "note": "De jure: Somalia (Somaliland region)."
+      },
+      "landBorders": {
+        "value": 3,
+        "source": "https://en.wikipedia.org/wiki/Djibouti"
+      }
+    },
+    "DMA": {
+      "flagColors": {
+        "value": ["black", "green", "purple", "red", "white", "yellow"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Dominica",
+        "note": "Purple sisserou parrot on the red disc."
+      }
+    },
+    "DNK": {
+      "borders": {
+        "value": ["CAN", "DEU"],
+        "source": "https://en.wikipedia.org/wiki/Hans_Island",
+        "note": "Greenland shares Hans Island with Canada."
+      },
+      "landBorders": {
+        "value": 2,
+        "source": "https://en.wikipedia.org/wiki/Hans_Island"
+      },
+      "highestPointM": {
+        "value": 3694,
+        "source": "https://en.wikipedia.org/wiki/Gunnbj%C3%B8rn_Fjeld",
+        "note": "Whole Danish Realm: Gunnbjørn Fjeld, Greenland."
+      }
+    },
+    "ECU": {
+      "flagColors": {
+        "value": ["blue", "red", "yellow"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Ecuador",
+        "note": "Tricolour; coat-of-arms colours excluded as for COL/VEN/ESP/MEX."
+      }
+    },
+    "ERI": {
+      "officialLanguages": {
+        "value": [],
+        "source": "https://en.wikipedia.org/wiki/Eritrea",
+        "note": "No official language; Tigrinya, Arabic and English are working languages."
+      }
+    },
+    "ESP": {
+      "borders": {
+        "value": ["AND", "FRA", "MAR", "PRT"],
+        "source": "https://en.wikipedia.org/wiki/Spain",
+        "note": "Ceuta and Melilla border Morocco (merged into Morocco at 50m). Gibraltar excluded: disputed and non-plantable (policy v1)."
+      },
+      "landBorders": {
+        "value": 4,
+        "source": "https://en.wikipedia.org/wiki/Spain"
+      }
+    },
+    "FIN": {
+      "highestPointM": {
+        "value": 1324,
+        "source": "https://en.wikipedia.org/wiki/Halti",
+        "note": "Finnish side of Halti; the 1365 m summit is in Norway."
+      }
+    },
+    "FSM": {
+      "population": {
+        "value": 113160,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=FM",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "GAB": {
+      "population": {
+        "value": 2538952,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=GA",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "GBR": {
+      "borders": {
+        "value": ["CYP", "IRL"],
+        "source": "https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia",
+        "note": "Ireland + Cyprus via Akrotiri and Dhekelia. Gibraltar–Spain excluded (disputed, policy v1)."
+      },
+      "landBorders": {
+        "value": 2,
+        "source": "https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia"
+      },
+      "highestPointM": {
+        "value": 2935,
+        "source": "https://en.wikipedia.org/wiki/Mount_Paget",
+        "note": "Whole state incl. South Georgia (plantable dependency, policy v1)."
+      },
+      "memberOf": {
+        "value": ["commonwealth", "g20", "nato"],
+        "source": "https://en.wikipedia.org/wiki/Member_states_of_the_Commonwealth_of_Nations",
+        "note": "Wikidata misses the UK in the Commonwealth (56 members)."
+      }
+    },
     "GMB": {
       "highestPointM": {
         "value": 53,
@@ -174,11 +364,162 @@
         "note": "unnamed point; missing in Wikidata"
       }
     },
+    "GNB": {
+      "population": {
+        "value": 2201352,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=GW",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "GNQ": {
+      "hemisphereNS": {
+        "value": "both",
+        "source": "https://en.wikipedia.org/wiki/Annob%C3%B3n",
+        "note": "Annobón (1°26′S) is in the southern hemisphere; missing from Natural Earth 50m."
+      },
+      "southernmostLat": {
+        "value": -1.47,
+        "source": "https://en.wikipedia.org/wiki/Annob%C3%B3n",
+        "note": "Southern tip of Annobón, approx."
+      }
+    },
+    "GUY": {
+      "flagColors": {
+        "value": ["black", "green", "red", "white", "yellow"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Guyana",
+        "note": "White edge of the golden arrowhead."
+      }
+    },
+    "HND": {
+      "population": {
+        "value": 10825703,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=HN",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "IND": {
+      "population": {
+        "value": 1450935791,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=IN",
+        "note": "World Bank 2024; Wikidata (2020) placed India below China."
+      }
+    },
+    "IRN": {
+      "flagColors": {
+        "value": ["green", "red", "white"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Iran",
+        "note": "Green, white, red; no yellow."
+      }
+    },
+    "IRQ": {
+      "population": {
+        "value": 46042015,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=IQ",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "ISL": {
+      "crossesArcticCircle": {
+        "value": true,
+        "source": "https://en.wikipedia.org/wiki/Arctic_Circle",
+        "note": "The Arctic Circle passes through Grímsey (absent from Natural Earth 50m)."
+      },
+      "northernmostLat": {
+        "value": 66.57,
+        "source": "https://en.wikipedia.org/wiki/Gr%C3%ADmsey",
+        "note": "Grímsey, ~66°34′N."
+      }
+    },
+    "KEN": {
+      "population": {
+        "value": 56432944,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=KE",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "KGZ": {
+      "officialLanguages": {
+        "value": ["russian"],
+        "source": "https://en.wikipedia.org/wiki/Kyrgyzstan",
+        "note": "Kyrgyz (state) and Russian (official)."
+      }
+    },
     "KIR": {
       "crossesEquator": {
         "value": true,
         "source": "https://en.wikipedia.org/wiki/Equator#Equatorial_countries",
         "note": "The equator runs between the atolls of the Gilbert and Line Islands."
+      },
+      "hemisphereEW": {
+        "value": "both",
+        "source": "https://en.wikipedia.org/wiki/Kiribati",
+        "note": "Gilbert Islands (capital Tarawa) are east of 180°, Line Islands west: both readings. The geometric metro reading (around Kiritimati) wrongly gave W."
+      },
+      "areaKm2": {
+        "value": 811,
+        "source": "https://en.wikipedia.org/wiki/Kiribati",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "KWT": {
+      "highestPointM": {
+        "value": 306,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Kuwait",
+        "note": "Unnamed point in Jahra Governorate."
+      }
+    },
+    "LAO": {
+      "population": {
+        "value": 7769819,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=LA",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "LIE": {
+      "areaKm2": {
+        "value": 160,
+        "source": "https://en.wikipedia.org/wiki/Liechtenstein",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "LSO": {
+      "population": {
+        "value": 2337423,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=LS",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "MAR": {
+      "crossesTropicOfCancer": {
+        "value": false,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Morocco",
+        "note": "Only Western Sahara (disputed, non-plantable, data-model §2.3) reaches the Tropic; Morocco proper ends at ~27°40′N."
+      },
+      "southernmostLat": {
+        "value": 27.67,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Morocco",
+        "note": "Border with Western Sahara at ~27°40′N; the de facto geometry includes part of Western Sahara."
+      },
+      "areaKm2": {
+        "value": 446550,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Morocco",
+        "note": "Excluding Western Sahara."
+      },
+      "borders": {
+        "value": ["DZA", "ESP"],
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Morocco",
+        "note": "Algeria + Spain (Ceuta, Melilla). Western Sahara is disputed (no MRT border for Morocco proper)."
+      },
+      "landBorders": {
+        "value": 2,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Morocco"
+      }
+    },
+    "MCO": {
+      "areaKm2": {
+        "value": 2.08,
+        "source": "https://en.wikipedia.org/wiki/Monaco",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
       }
     },
     "MDV": {
@@ -186,6 +527,154 @@
         "value": true,
         "source": "https://en.wikipedia.org/wiki/Equator#Equatorial_countries",
         "note": "The equator runs through the Equatorial Channel, between the atolls."
+      },
+      "population": {
+        "value": 527799,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MV",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      },
+      "areaKm2": {
+        "value": 298,
+        "source": "https://en.wikipedia.org/wiki/Maldives",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "MHL": {
+      "population": {
+        "value": 37548,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MH",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "MOZ": {
+      "population": {
+        "value": 34631766,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MZ",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "MRT": {
+      "officialLanguages": {
+        "value": ["arabic"],
+        "source": "https://en.wikipedia.org/wiki/Mauritania",
+        "note": "Arabic only; French is not official."
+      }
+    },
+    "MWI": {
+      "population": {
+        "value": 21655286,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MW",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "NAM": {
+      "population": {
+        "value": 3030131,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NA",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "NER": {
+      "population": {
+        "value": 27032412,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NE",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "NIC": {
+      "population": {
+        "value": 6916140,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NI",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "NRU": {
+      "population": {
+        "value": 11947,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=NR",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      },
+      "areaKm2": {
+        "value": 21,
+        "source": "https://en.wikipedia.org/wiki/Nauru",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "PAK": {
+      "population": {
+        "value": 251269164,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PK",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "PLW": {
+      "population": {
+        "value": 17695,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PW",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "PNG": {
+      "population": {
+        "value": 10576502,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PG",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "SDN": {
+      "population": {
+        "value": 50448963,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SD",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "SEN": {
+      "highestPointM": {
+        "value": 648,
+        "source": "https://en.wikipedia.org/wiki/Geography_of_Senegal",
+        "note": "Baunez ridge near Nepen Diakha."
+      }
+    },
+    "SGP": {
+      "areaKm2": {
+        "value": 744,
+        "source": "https://en.wikipedia.org/wiki/Singapore",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "SLB": {
+      "population": {
+        "value": 819198,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SB",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "SLE": {
+      "population": {
+        "value": 8642022,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SL",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "SOM": {
+      "areaKm2": {
+        "value": 637657,
+        "source": "https://en.wikipedia.org/wiki/Somalia",
+        "note": "De jure Somalia including Somaliland (non-member, data-model §2.3)."
+      },
+      "borders": {
+        "value": ["DJI", "ETH", "KEN"],
+        "source": "https://en.wikipedia.org/wiki/Somalia",
+        "note": "De jure Somalia borders Djibouti through Somaliland (non-member)."
+      },
+      "landBorders": {
+        "value": 3,
+        "source": "https://en.wikipedia.org/wiki/Somalia"
+      },
+      "population": {
+        "value": 19009151,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SO",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
       }
     },
     "STP": {
@@ -193,10 +682,135 @@
         "value": true,
         "source": "https://en.wikipedia.org/wiki/Equator#Equatorial_countries",
         "note": "The equator crosses Ilhéu das Rolas, absent from Natural Earth 10m."
+      },
+      "hemisphereNS": {
+        "value": "both",
+        "source": "https://en.wikipedia.org/wiki/Ilh%C3%A9u_das_Rolas",
+        "note": "Ilhéu das Rolas straddles the equator, so part of the state is in the southern hemisphere."
+      },
+      "southernmostLat": {
+        "value": -0.01,
+        "source": "https://en.wikipedia.org/wiki/Ilh%C3%A9u_das_Rolas",
+        "note": "Southern tip of Ilhéu das Rolas, approx. (just south of the equator)."
+      },
+      "flagColors": {
+        "value": ["black", "green", "red", "yellow"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+        "note": "Two black stars."
+      },
+      "population": {
+        "value": 235536,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=ST",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "SUR": {
+      "population": {
+        "value": 634431,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SR",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "TCD": {
+      "crossesTropicOfCancer": {
+        "value": false,
+        "source": "https://en.wikipedia.org/wiki/Tropic_of_Cancer",
+        "note": "The Tropic only touches the northernmost point of Chad (23°26′N 15°59′E); no land straddles it."
+      }
+    },
+    "TJK": {
+      "population": {
+        "value": 10590927,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=TJ",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "TKM": {
+      "population": {
+        "value": 7494498,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=TM",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "TON": {
+      "areaKm2": {
+        "value": 748,
+        "source": "https://en.wikipedia.org/wiki/Tonga",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "TZA": {
+      "population": {
+        "value": 68560157,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=TZ",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "UKR": {
+      "areaKm2": {
+        "value": 603628,
+        "source": "https://en.wikipedia.org/wiki/Ukraine",
+        "note": "Internationally recognised borders including Crimea (UNGA res. 68/262); the de facto geometry assigns Crimea to Russia."
+      },
+      "southernmostLat": {
+        "value": 44.38,
+        "source": "https://en.wikipedia.org/wiki/Cape_Sarych",
+        "note": "Cape Sarych, Crimea (44°23′N)."
+      }
+    },
+    "URY": {
+      "officialLanguages": {
+        "value": ["spanish"],
+        "source": "https://en.wikipedia.org/wiki/Uruguay",
+        "note": "No de jure official language; Spanish de facto, same treatment as ARG/CHL/MEX."
+      }
+    },
+    "USA": {
+      "officialLanguages": {
+        "value": ["english"],
+        "source": "https://en.wikipedia.org/wiki/United_States",
+        "note": "English designated official by Executive Order 14224 (March 2025); Wikidata listed only Spanish."
+      }
+    },
+    "VAT": {
+      "areaKm2": {
+        "value": 0.49,
+        "source": "https://en.wikipedia.org/wiki/Vatican_City",
+        "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "YEM": {
+      "population": {
+        "value": 40583164,
+        "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=YE",
+        "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "ZMB": {
+      "borders": {
+        "value": ["AGO", "BWA", "COD", "MOZ", "MWI", "NAM", "TZA", "ZWE"],
+        "source": "https://en.wikipedia.org/wiki/Zambia",
+        "note": "Kazungula: ~150 m Botswana–Zambia border on the Zambezi, lost at 50m."
+      },
+      "landBorders": {
+        "value": 8,
+        "source": "https://en.wikipedia.org/wiki/Zambia"
+      }
+    },
+    "ZWE": {
+      "usesEuro": {
+        "value": false,
+        "source": "https://en.wikipedia.org/wiki/Zimbabwe",
+        "note": "De jure currency ZiG; de facto USD and rand. The euro was only in the 2009 multi-currency basket."
+      },
+      "flagColors": {
+        "value": ["black", "green", "red", "white", "yellow"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Zimbabwe",
+        "note": "White triangle at the hoist."
       }
     }
   },
-  "verified": null,
+  "verified": "2026-10-28 qa-balance",
   "memberOf": {
     "$description": "Small, well-known memberships curated by hand (Wikidata misses the Kingdom of the Netherlands, lists Australia in ASEAN, keeps Angola in OPEC).",
     "eu": {
@@ -274,18 +888,62 @@
       "note": "Timor-Leste admitted in October 2025."
     },
     "opec": {
-      "iso3": ["ARE", "COG", "DZA", "GAB", "GNQ", "IRN", "IRQ", "KWT", "LBY", "NGA", "SAU", "VEN"],
-      "source": "https://www.opec.org/opec_web/en/about_us/25.htm",
-      "note": "Angola left in January 2024."
+      "iso3": ["COG", "DZA", "GAB", "GNQ", "IRN", "IRQ", "KWT", "LBY", "NGA", "SAU", "VEN"],
+      "source": "https://en.wikipedia.org/wiki/OPEC",
+      "note": "Angola left in January 2024; the United Arab Emirates left on 1 May 2026 (11 members). Official list: https://www.opec.org/opec_web/en/about_us/25.htm"
     }
   },
   "metroOverrides": {
     "$description": "Non-geometric facts whose value depends on overseas parts: the metropolitan reading (prompt-forge rejects prompts that change between readings).",
+    "AUS": {
+      "highestPointM": {
+        "value": 2228,
+        "source": "https://en.wikipedia.org/wiki/Mount_Kosciuszko",
+        "note": "Whole state 2745 m is Mawson Peak (Heard Island); mainland: Mount Kosciuszko."
+      }
+    },
+    "DNK": {
+      "borders": {
+        "value": ["DEU"],
+        "source": "https://en.wikipedia.org/wiki/Denmark",
+        "note": "Metropolitan Denmark: Germany only."
+      },
+      "landBorders": {
+        "value": 1,
+        "source": "https://en.wikipedia.org/wiki/Denmark"
+      },
+      "highestPointM": {
+        "value": 171,
+        "source": "https://en.wikipedia.org/wiki/M%C3%B8llerh%C3%B8j",
+        "note": "Metropolitan Denmark: Møllehøj (170.86 m)."
+      }
+    },
+    "GBR": {
+      "borders": {
+        "value": ["IRL"],
+        "source": "https://en.wikipedia.org/wiki/Republic_of_Ireland%E2%80%93United_Kingdom_border",
+        "note": "Metropolitan UK: Ireland only."
+      },
+      "landBorders": {
+        "value": 1,
+        "source": "https://en.wikipedia.org/wiki/Republic_of_Ireland%E2%80%93United_Kingdom_border"
+      },
+      "highestPointM": {
+        "value": 1345,
+        "source": "https://en.wikipedia.org/wiki/Ben_Nevis",
+        "note": "Metropolitan UK: Ben Nevis."
+      }
+    },
     "NLD": {
       "highestPointM": {
         "value": 322,
         "source": "https://en.wikipedia.org/wiki/Vaalserberg",
         "note": "Whole country: Mount Scenery, Saba (887 m per Wikidata 870)."
+      },
+      "currencyDollar": {
+        "value": false,
+        "source": "https://en.wikipedia.org/wiki/Euro",
+        "note": "The US dollar is used only in the Caribbean Netherlands; European Netherlands uses the euro."
       }
     }
   },

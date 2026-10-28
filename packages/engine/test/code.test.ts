@@ -63,3 +63,21 @@ describe('expedition codes', () => {
       expect(decodeCode(s)).toBeNull();
   });
 });
+
+import { decodeShare, encodeShare } from '../src/index';
+
+describe('share codes', () => {
+  it('round-trips a route at 0.001° and rejects tampering', () => {
+    const picks: [number, number][] = [
+      [104.912, 47.9],
+      [-47.9, -15.8],
+      [179.999, -89.5],
+      [-180, 0.001],
+    ];
+    const s = encodeShare('MER-0042', picks);
+    expect(decodeShare(s)).toEqual({ code: 'MER-0042', picks });
+    expect(decodeShare('v2.MER-0042.')).toEqual({ code: 'MER-0042', picks: [] });
+    expect(decodeShare(s.slice(0, -3))).toBeNull();
+    expect(decodeShare('v1.MER-0042.AAAA')).toBeNull();
+  });
+});

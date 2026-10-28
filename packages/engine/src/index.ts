@@ -12,6 +12,7 @@ export { capTier, computeRarity, tierOfShare } from './rarity';
 export { meridianCrossings, MISSION_PARAMS, missionDone, type RouteView } from './missions';
 export {
   activeLeg,
+  dryInk,
   CONTEXT_MIN_ANSWERS,
   legContext,
   reduce,
@@ -31,3 +32,4 @@ export {
 } from './generator';
 export { hash32, mulberry32 } from './rng';
 export { canonicalJson, sha256 } from './sha256';
+export { decodeShare, encodeShare, type SharedRoute } from './share';
