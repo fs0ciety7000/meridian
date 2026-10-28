@@ -1,0 +1,15 @@
+{
+  "name": "@meridian/prompt-forge",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/cli.ts",
+    "check": "tsx src/cli.ts --check",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@meridian/content-schema": "workspace:*",
+    "@meridian/engine": "workspace:*",
+    "@meridian/geo": "workspace:*"
+  }
+}

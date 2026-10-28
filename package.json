@@ -19,7 +19,9 @@
     "geo:check": "pnpm --filter @meridian/geo-pipeline run check",
     "textures": "pnpm --filter @meridian/web run textures",
     "facts": "pnpm --filter @meridian/facts-pipeline run build",
-    "facts:check": "pnpm --filter @meridian/facts-pipeline run check"
+    "facts:check": "pnpm --filter @meridian/facts-pipeline run check",
+    "forge": "pnpm --filter @meridian/prompt-forge run build",
+    "forge:check": "pnpm --filter @meridian/prompt-forge run check"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -257,7 +257,7 @@ Les deux produisent le même objet `Expedition`. Le **code** suffit à reconstru
 - La bibliothèque est versionnée (`libraryVersion`), incluse dans le code d'expédition : une ancienne graine reste rejouable à l'identique.
 
 ### 5.3 Validation du contenu en CI (`tools/prompt-forge validate`)
-Chaque consigne : 8–60 réponses valides, ≥ 3 continents (sauf consigne régionale), faits sourcés, aucun fait `territorySensitive`. Chaque expédition du catalogue : contraintes de diversité, ordres atteignables. Le générateur est testé sur 100 000 graines : 0 expédition invalide.
+Chaque consigne : 8–60 réponses valides, ≥ 3 continents (sauf consigne régionale), faits sourcés, réponses identiques avec et sans les territoires d'outre-mer (lecture « entière » vs « métropole »). Chaque expédition du catalogue : contraintes de diversité, ordres atteignables. Le générateur est testé sur 100 000 graines : 0 expédition invalide.
 
 ### 5.4 Distribution
 Bibliothèque de consignes + catalogue embarqués dans l'app (≈ 50–100 Ko gz, mis en cache par le service worker) ; nouvelles entrées du catalogue récupérées via `/api/expeditions` (cache CDN).

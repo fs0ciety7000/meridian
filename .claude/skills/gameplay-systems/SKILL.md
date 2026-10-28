@@ -34,4 +34,4 @@ Source de vérité : `docs/gameplay-systems.md` (propriétaire : agent `systems-
 4. Faire valider l'effet par `qa-balance` (simulation).
 
 ## Contenu
-Une consigne est valide si : 8–60 réponses, ≥ 3 continents (sauf `regional`), faits sourcés, aucun fait `territorySensitive`, aucun territoire contesté. Vérifier avec `tools/prompt-forge validate <fichier>`.
+Une consigne est valide si : 8–60 réponses, ≥ 3 continents (sauf `regional`), faits sourcés, mêmes réponses avec et sans l'outre-mer, aucun territoire contesté. Vérifier avec `pnpm forge` (`--report` pour le détail par consigne).

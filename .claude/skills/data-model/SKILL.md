@@ -26,7 +26,7 @@ Source de vérité : `docs/data-model.md` (propriétaires : `systems-designer` p
 Entités jouables = 193 membres ONU + 2 observateurs ; territoires rattachés comptent pour l'État souverain ; territoires contestés affichés en pointillé, non plantables, jamais en consigne. Toute modification de cette politique exige l'accord du Game Designer et du Tech Lead et une entrée dans `docs/geo-policy-changelog.md`.
 
 ## Faits pays
-Chaque fait utilisé en consigne a une source `{ ref, retrieved }`. Un fait dont la valeur change selon l'inclusion des territoires est marqué `territorySensitive: true` et ne peut pas servir de consigne.
+Chaque fait utilisé en consigne a une source `{ ref, retrieved }`. Un fait dont la valeur change selon l'inclusion des territoires est marqué `territorySensitive: true` et publie une lecture `metro` ; une consigne qui l'utilise n'est acceptée que si ses réponses sont identiques dans les deux lectures.
 
 ## Sortie attendue
 Schéma + doc + migration(s) + tests cohérents, version incrémentée, aucune donnée joueur perdue.

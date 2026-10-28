@@ -202,6 +202,8 @@ export const CatalogEntry = z.object({
   start: z.string(), // port id
   meridianLon: z.number().int().multipleOf(5),
   legs: z.array(z.string()).length(6), // prompt ids
+  /** Required when leg 6 is contextual: the prompt used when the context leaves no answer. */
+  fallback: z.string().optional(),
   missions: z.array(MissionDef).max(3),
   designNote: z.string().optional(),
 });
@@ -209,7 +211,27 @@ export type CatalogEntry = z.infer<typeof CatalogEntry>;
 
 export const PromptLibrary = z.object({
   libraryVersion: z.number().int().positive(),
+  /** Facts version the `computed` blocks were derived from. */
+  dataVersion: z.string(),
   prompts: z.array(PromptDef),
   ports: z.array(Port),
 });
 export type PromptLibrary = z.infer<typeof PromptLibrary>;
+
+/** Hand-edited sources of the library (prompt-forge adds `computed` and merges them). */
+export const PromptsSource = z.object({
+  libraryVersion: z.number().int().positive(),
+  prompts: z.array(PromptDef.omit({ computed: true }).strict()),
+});
+export type PromptsSource = z.infer<typeof PromptsSource>;
+
+export const PortsSource = z.object({ ports: z.array(Port) });
+export type PortsSource = z.infer<typeof PortsSource>;
+
+/** Built catalogue: every entry frozen into a full Expedition. */
+export const CatalogFile = z.object({
+  libraryVersion: z.number().int().positive(),
+  dataVersion: z.string(),
+  expeditions: z.array(Expedition),
+});
+export type CatalogFile = z.infer<typeof CatalogFile>;

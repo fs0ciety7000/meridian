@@ -332,6 +332,9 @@ function build() {
           : (g.metro[id as keyof GeometryFacts] as FactValue);
       if (m !== undefined && JSON.stringify(m) !== JSON.stringify(w)) metro[id] = m;
     }
+    // An override states the truth for the state: it holds in both readings unless a
+    // metroOverride says otherwise (Kiribati's Gilbert Islands straddle the equator too).
+    for (const id of Object.keys(curated.overrides[e.iso3] ?? {})) delete metro[id];
     for (const [id, o] of Object.entries(curated.metroOverrides[e.iso3] ?? {})) {
       if (JSON.stringify(o.value) !== JSON.stringify(facts[id])) metro[id] = o.value;
     }

@@ -96,7 +96,8 @@ interface FactDef {
   unit?: string;                  // 'm', 'km2', 'hab'
   enumValues?: string[];
   category: PromptCategory;
-  territorySensitive: boolean;    // vrai si la valeur change selon qu'on inclut les territoires → interdit en consigne
+  territorySensitive: boolean;    // vrai si la valeur change pour au moins un pays selon qu'on inclut les territoires
+                                  // (lecture `metro` publiée) → prompt-forge vérifie chaque consigne qui l'utilise
   description: { fr: string; en: string };
 }
 type PromptCategory = 'relief' | 'water' | 'borders' | 'climate' | 'society' | 'flag' | 'position';
@@ -454,7 +455,7 @@ Un run est toujours rejouable avec les versions qu'il référence (les anciennes
 
 ## 10. Validations automatiques (CI)
 - Schémas Zod de tous les JSON de `content/`.
-- Chaque `PromptDef` : `validCount ∈ [8, 60]`, `continents ≥ 3` (sauf `regional`), aucun fait `territorySensitive`, aucun pays non jouable dans `validIso3`.
+- Chaque `PromptDef` : `validCount ∈ [8, 60]`, `continents ≥ 3` (sauf `regional`), ensemble de réponses identique en lecture entière et métropolitaine (sinon consigne ambiguë, rejetée), aucun pays non jouable dans `validIso3`.
 - Générateur : 100 000 graines × 3 difficultés → 0 expédition invalide ; codes aller-retour (encode/decode) sans perte.
 - Chaque `Expedition` du catalogue : 6 étapes, pas de catégorie identique consécutive, étape contextuelle avec `fallback`, chaque mission atteignable (recherche d'une route valide par `prompt-forge`), `hash` correct.
 - Géo : chaque `PlayableEntity.geomIds` existe dans les 3 LOD ; `aimPoint` contenu dans la géométrie.

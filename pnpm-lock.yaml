@@ -234,6 +234,18 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
 
+  tools/prompt-forge:
+    dependencies:
+      '@meridian/content-schema':
+        specifier: workspace:*
+        version: link:../../packages/content-schema
+      '@meridian/engine':
+        specifier: workspace:*
+        version: link:../../packages/engine
+      '@meridian/geo':
+        specifier: workspace:*
+        version: link:../../packages/geo
+
 packages:
 
   '@babel/code-frame@7.29.7':

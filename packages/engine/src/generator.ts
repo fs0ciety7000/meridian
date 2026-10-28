@@ -178,8 +178,10 @@ function attempt(
 
   // 3. Prompts.
   const [lo, hi] = PROMPT_RANGE[difficulty];
-  const live = library.prompts.filter((p) => !p.retiredBy && p.computed);
-  const pool = live.filter((p) => !p.contextual && difficultyOf(p) >= lo && difficultyOf(p) <= hi);
+  const live = library.prompts.filter((p) => !p.retiredBy);
+  const pool = live.filter(
+    (p) => !p.contextual && p.computed && difficultyOf(p) >= lo && difficultyOf(p) <= hi,
+  );
   const answersOf = (p: PromptDef) => p.computed!.validIso3;
   const chosen: PromptDef[] = [];
   for (let i = 0; i < b.legsPerExpedition; i++) {

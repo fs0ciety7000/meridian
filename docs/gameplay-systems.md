@@ -247,7 +247,7 @@ Seule source de vérité, dans `packages/engine/src/balance.ts`. Toute modificat
 ## 12. Règles d'entités jouables (résumé, détail dans `data-model.md`)
 
 - Une réponse = un **État jouable** (liste fermée, versionnée).
-- Les **territoires rattachés** (Guyane, Groenland, Porto Rico, Nouvelle-Calédonie…) **comptent pour leur État souverain** : on peut planter le camp de la France à La Réunion. Stratégiquement riche, à condition que les faits des consignes soient non ambigus (les faits marqués `territorySensitive` ne sont pas utilisables en consigne).
+- Les **territoires rattachés** (Guyane, Groenland, Porto Rico, Nouvelle-Calédonie…) **comptent pour leur État souverain** : on peut planter le camp de la France à La Réunion. Stratégiquement riche, à condition que les faits des consignes soient non ambigus (prompt-forge rejette toute consigne dont l'ensemble de réponses change selon qu'on compte ou non l'outre-mer).
 - Antarctique et zones contestées non plantables (refus sans pénalité, §3.2).
 
 ---
