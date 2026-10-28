@@ -7,7 +7,7 @@
   "theme": "Océan Indien",
   "difficulty": "normal",
   "start": "port-louis",
-  "meridianLon": 90,
+  "meridianLon": 150,
   "legs": [
     "water.island-tropical",
     "society.monarchy-left",

@@ -1,0 +1,25 @@
+{
+  "catalogNumber": 36,
+  "title": {
+    "fr": "La route de la mousson",
+    "en": "Monsoon Road"
+  },
+  "theme": "Tropiques",
+  "difficulty": "easy",
+  "start": "mumbai",
+  "meridianLon": 125,
+  "legs": [
+    "climate.cancer",
+    "society.over-100m",
+    "flag.green-no-red",
+    "water.island-tropical",
+    "borders.exactly-five",
+    "society.monarchy-left"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    }
+  ],
+  "designNote": "Facile, un cran plus exigeante que les autres. Route : de Mumbai sous le tropique du Cancer, vers les pays de plus de 100 M, un drapeau vert sans rouge, une île tropicale, cinq voisins, et une monarchie où l'on roule à gauche. Méridien à 125° E, de l'Indonésie à la Corée : le franchir, c'est oser l'Asie de l'Est ou le Pacifique. Ordre : deux traversées de l'équateur. Audace : Îles Salomon ou Saint-Vincent à l'étape 3. Pièges attendus : Viêt Nam ou Cuba pour le tropique du Cancer (il passe juste au nord des deux) ; Bangladesh pour le drapeau vert (son disque est rouge), alors que le Pakistan est valide."
+}

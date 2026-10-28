@@ -7,7 +7,7 @@
   "theme": "Afrique australe",
   "difficulty": "normal",
   "start": "le-cap",
-  "meridianLon": 45,
+  "meridianLon": 145,
   "legs": [
     "climate.capricorn",
     "society.monarchy-left",

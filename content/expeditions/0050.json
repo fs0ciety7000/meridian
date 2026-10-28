@@ -1,0 +1,37 @@
+{
+  "catalogNumber": 50,
+  "title": {
+    "fr": "Terra incognita",
+    "en": "Terra Incognita"
+  },
+  "theme": "Pays méconnus",
+  "difficulty": "expert",
+  "start": "paramaribo",
+  "meridianLon": 150,
+  "legs": [
+    "borders.tropical-pair",
+    "society.tiny-left",
+    "flag.green-yellow-red",
+    "water.landlocked-few-neighbours",
+    "climate.equatorial-north",
+    "position.small-west"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 16000
+      }
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Experte. Route : terra incognita depuis Paramaribo, pays tropical à deux voisins, minuscule où l'on roule à gauche, drapeau vert-jaune-rouge, enclavé à un ou deux voisins, entre l'équateur et 10° N, petit pays à l'ouest de Greenwich. Méridien à 150° E : le franchir, c'est oser le Pacifique. Ordres : cinq changements de continent, un saut de 16 000 km, deux traversées. Audace : Tuvalu ou Kiribati à l'étape 2, Bhoutan à l'étape 4. Pièges attendus : Guyana ou Suriname pour les deux voisins (ils en ont trois) ; Gabon pour l'étape 5 (il déborde au sud de l'équateur)."
+}

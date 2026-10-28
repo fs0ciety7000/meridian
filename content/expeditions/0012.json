@@ -7,7 +7,7 @@
   "theme": "Andes",
   "difficulty": "normal",
   "start": "lima",
-  "meridianLon": -45,
+  "meridianLon": 70,
   "legs": [
     "relief.over-6000",
     "society.spanish",

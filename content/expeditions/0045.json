@@ -1,0 +1,34 @@
+{
+  "catalogNumber": 45,
+  "title": {
+    "fr": "Mélanésie",
+    "en": "Melanesia"
+  },
+  "theme": "Pacifique ouest",
+  "difficulty": "expert",
+  "start": "suva",
+  "meridianLon": -135,
+  "legs": [
+    "relief.tropical-island-peaks",
+    "society.left-outside-commonwealth",
+    "flag.island-black",
+    "water.island-right-hand",
+    "climate.southern-tropics",
+    "position.west-beyond-americas"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 16000
+      }
+    },
+    {
+      "id": "noFalseTrail"
+    }
+  ],
+  "designNote": "Experte. Route : la Mélanésie et au-delà, pics insulaires tropicaux, conduite à gauche hors Commonwealth, drapeau marqué de noir, île où l'on roule à droite, austral et tout entier tropical, puis l'ouest de Greenwich hors Amériques. Méridien à 135° O : le franchir, c'est quitter le Pacifique occidental vers l'Atlantique. Ordres : deux traversées de l'équateur, un saut de 16 000 km, aucune fausse piste. Audace : l'étape 6 tente Tonga et Samoa, tout près, ou l'Afrique de l'Ouest et l'Islande, très loin. Pièges attendus : Îles Salomon pour le drapeau noir (vert, bleu, jaune seulement), alors que le Vanuatu est valide ; Fidji pour « on roule à droite » (à gauche)."
+}

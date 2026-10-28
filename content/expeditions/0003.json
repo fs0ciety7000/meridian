@@ -7,7 +7,7 @@
   "theme": "Atlantique",
   "difficulty": "easy",
   "start": "lisbonne",
-  "meridianLon": -40,
+  "meridianLon": -75,
   "legs": [
     "society.spanish",
     "flag.red-white-blue",

@@ -3347,6 +3347,23 @@
       "regional": ["NA"]
     },
     {
+      "id": "position.africa",
+      "category": "position",
+      "text": {
+        "fr": "Plante ton camp n’importe où en Afrique",
+        "en": "Pitch your camp anywhere in Africa"
+      },
+      "explain": {
+        "fr": "Il fallait l'un des 54 pays d'Afrique, Égypte et îles comprises. Les Canaries, Madère, la Réunion ou Mayotte sont africaines par la géographie, mais appartiennent à l'Espagne, au Portugal ou à la France.",
+        "en": "Any of Africa's 54 countries would do, Egypt and the islands included. The Canaries, Madeira, Réunion and Mayotte lie off Africa but belong to Spain, Portugal or France."
+      },
+      "predicate": {
+        "fact": "continent",
+        "eq": "AF"
+      },
+      "regional": ["AF"]
+    },
+    {
       "id": "borders.ctx-neighbour",
       "category": "borders",
       "text": {

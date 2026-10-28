@@ -7,7 +7,7 @@
   "theme": "Tour du monde",
   "difficulty": "expert",
   "start": "reykjavik",
-  "meridianLon": 30,
+  "meridianLon": -75,
   "legs": [
     "position.west-islands",
     "society.commonwealth-right",

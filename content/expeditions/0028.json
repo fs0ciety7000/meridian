@@ -7,7 +7,7 @@
   "theme": "Eurasie",
   "difficulty": "expert",
   "start": "athenes",
-  "meridianLon": 50,
+  "meridianLon": -60,
   "legs": [
     "borders.exactly-seven",
     "flag.blue-white-only",

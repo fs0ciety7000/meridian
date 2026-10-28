@@ -1,0 +1,37 @@
+{
+  "catalogNumber": 46,
+  "title": {
+    "fr": "Les petits États",
+    "en": "Small States"
+  },
+  "theme": "Micro-États",
+  "difficulty": "expert",
+  "start": "la-valette",
+  "meridianLon": -45,
+  "legs": [
+    "borders.small-crowded",
+    "society.tiny-republic",
+    "water.landlocked-small",
+    "flag.green-white-red",
+    "relief.island-peaks",
+    "position.small-west"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 16000
+      }
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Experte. Route : les petits États, du cœur de l'Europe aux îles : petit et entouré de voisins, république de moins de 150 000 habitants, petit pays enclavé, drapeau vert-blanc-rouge, pic insulaire, petit pays à l'ouest de Greenwich. Méridien à 45° O : le franchir, c'est oser les Antilles ou le Pacifique. Ordres : cinq changements de continent, un saut de 16 000 km, deux traversées. Audace : Palaos, Nauru ou Marshall à l'étape 2. Pièges attendus : Liechtenstein pour la république (principauté) ; Vatican pour « petit enclavé » (oui) mais non pour la république."
+}

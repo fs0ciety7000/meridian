@@ -1,0 +1,32 @@
+{
+  "catalogNumber": 44,
+  "title": {
+    "fr": "Au milieu du Pacifique",
+    "en": "Mid-Pacific"
+  },
+  "theme": "Pacifique",
+  "difficulty": "normal",
+  "start": "honolulu",
+  "meridianLon": -70,
+  "legs": [
+    "water.island-tropical",
+    "society.dollar-republic",
+    "climate.either-tropic",
+    "flag.blue-white-only",
+    "position.north-east-islands",
+    "position.ctx-homeward"
+  ],
+  "missions": [
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 14000
+      }
+    }
+  ],
+  "fallback": "society.commonwealth-right",
+  "designNote": "Normale. Route : d'Hawaï vers les îles tropicales, les républiques du dollar, les tropiques, un drapeau bleu et blanc, les îles du quart nord-est, et l'étape 6 rapproche du port (repli : Commonwealth à droite). Méridien à 70° O : le franchir, c'est rejoindre l'Atlantique. Ordres : deux traversées du méridien, un saut de 14 000 km. Audace : Micronésie ou Marshall. Pièges attendus : États-Unis pour « traversé par un tropique » (le Cancer passe en mer entre les îles d'Hawaï) ; Costa Rica pour le dollar."
+}

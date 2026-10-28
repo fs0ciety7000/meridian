@@ -1,0 +1,29 @@
+{
+  "catalogNumber": 39,
+  "title": {
+    "fr": "Entre deux océans",
+    "en": "Between Two Oceans"
+  },
+  "theme": "Isthmes",
+  "difficulty": "normal",
+  "start": "panama",
+  "meridianLon": 100,
+  "legs": [
+    "society.dollar-republic",
+    "climate.sahel-caribbean-belt",
+    "water.coast-small",
+    "flag.red-white-blue",
+    "relief.coastal-giants",
+    "borders.ctx-neighbour"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "fallback": "society.spanish",
+  "designNote": "Normale. Route : de Panama, entre deux océans, vers les républiques du dollar, la bande 10° N–25° N, un petit pays côtier à voisins, un drapeau bleu, blanc, rouge, un volcan côtier, puis l'étape 6 chez un voisin du dernier camp (repli : hispanophone). Méridien à 100° E : le franchir, c'est oser l'Asie. Ordres : deux traversées de l'équateur et deux du méridien. Audace : Kiribati, Nauru ou Timor oriental à l'étape 1. Pièges attendus : Costa Rica pour le dollar (colón) ; Venezuela pour 10° N–25° N (il déborde au sud)."
+}

@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 32,
+  "title": {
+    "fr": "Soleil levant",
+    "en": "Rising Sun"
+  },
+  "theme": "Asie-Pacifique",
+  "difficulty": "easy",
+  "start": "tokyo",
+  "meridianLon": -180,
+  "legs": [
+    "society.over-100m",
+    "water.island-north",
+    "flag.red-white-only",
+    "climate.either-tropic",
+    "society.monarchy",
+    "relief.over-5000"
+  ],
+  "missions": [
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 12000
+      }
+    }
+  ],
+  "designNote": "Facile. Route : de Tokyo vers les géants démographiques, les îles du Nord, un drapeau rouge et blanc (le Japon lui-même compte : planter chez soi rapporte peu), puis les tropiques et une monarchie, avant un sommet à 5 000 m. Méridien sur l'antiméridien (180°) : le franchir, c'est traverser le Pacifique vers les Amériques. Ordre : un saut de 12 000 km, que les Amériques ou l'Afrique australe offrent. Audace : Palaos ou Micronésie à l'étape 2. Pièges attendus : Indonésie pour l'île-nation du Nord (frontières terrestres à Timor et Bornéo, et elle déborde au sud) ; Corée du Sud pour « plus de 100 M » (51 M)."
+}

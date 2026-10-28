@@ -1,0 +1,32 @@
+{
+  "catalogNumber": 40,
+  "title": {
+    "fr": "Sur la ligne",
+    "en": "Along the Line"
+  },
+  "theme": "Équateur",
+  "difficulty": "normal",
+  "start": "jakarta",
+  "meridianLon": -150,
+  "legs": [
+    "climate.equator",
+    "water.island-populous",
+    "flag.red-white-only",
+    "borders.exactly-four",
+    "relief.tropical-island-peaks",
+    "position.ctx-across-equator"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    }
+  ],
+  "fallback": "society.over-100m",
+  "designNote": "Normale. Route : sur la ligne de l'équateur depuis Jakarta, puis une île-nation peuplée, un drapeau rouge et blanc, quatre voisins, un pic tropical insulaire, et l'étape 6 force à repasser l'équateur (repli : plus de 100 M). Méridien à 150° O, en Polynésie : le franchir demande d'oser les Amériques. Ordres : deux traversées de l'équateur, cinq changements de continent. Audace : Kiribati ou les Maldives à l'étape 1. Pièges attendus : Malaisie pour l'équateur (il passe au sud de Singapour, pas en Malaisie)."
+}

@@ -7,7 +7,7 @@
   "theme": "Pacifique",
   "difficulty": "easy",
   "start": "sydney",
-  "meridianLon": -175,
+  "meridianLon": -150,
   "legs": [
     "water.island-nation",
     "society.dollar",

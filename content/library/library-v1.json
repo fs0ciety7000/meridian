@@ -6604,6 +6604,87 @@
       }
     },
     {
+      "id": "position.africa",
+      "category": "position",
+      "text": {
+        "fr": "Plante ton camp n’importe où en Afrique",
+        "en": "Pitch your camp anywhere in Africa"
+      },
+      "explain": {
+        "fr": "Il fallait l'un des 54 pays d'Afrique, Égypte et îles comprises. Les Canaries, Madère, la Réunion ou Mayotte sont africaines par la géographie, mais appartiennent à l'Espagne, au Portugal ou à la France.",
+        "en": "Any of Africa's 54 countries would do, Egypt and the islands included. The Canaries, Madeira, Réunion and Mayotte lie off Africa but belong to Spain, Portugal or France."
+      },
+      "predicate": {
+        "fact": "continent",
+        "eq": "AF"
+      },
+      "regional": [
+        "AF"
+      ],
+      "computed": {
+        "validIso3": [
+          "AGO",
+          "BDI",
+          "BEN",
+          "BFA",
+          "BWA",
+          "CAF",
+          "CIV",
+          "CMR",
+          "COD",
+          "COG",
+          "COM",
+          "CPV",
+          "DJI",
+          "DZA",
+          "EGY",
+          "ERI",
+          "ETH",
+          "GAB",
+          "GHA",
+          "GIN",
+          "GMB",
+          "GNB",
+          "GNQ",
+          "KEN",
+          "LBR",
+          "LBY",
+          "LSO",
+          "MAR",
+          "MDG",
+          "MLI",
+          "MOZ",
+          "MRT",
+          "MUS",
+          "MWI",
+          "NAM",
+          "NER",
+          "NGA",
+          "RWA",
+          "SDN",
+          "SEN",
+          "SLE",
+          "SOM",
+          "SSD",
+          "STP",
+          "SWZ",
+          "SYC",
+          "TCD",
+          "TGO",
+          "TUN",
+          "TZA",
+          "UGA",
+          "ZAF",
+          "ZMB",
+          "ZWE"
+        ],
+        "validCount": 54,
+        "continents": 1,
+        "difficulty": 0.11,
+        "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
+      }
+    },
+    {
       "id": "borders.ctx-neighbour",
       "category": "borders",
       "text": {

@@ -7,14 +7,14 @@
   "theme": "Pays méconnus",
   "difficulty": "expert",
   "start": "libreville",
-  "meridianLon": 40,
+  "meridianLon": 105,
   "legs": [
     "borders.tropical-pair",
     "society.portuguese",
     "climate.equatorial-north",
     "flag.southern-no-red",
     "water.island-right-hand",
-    "position.micro-beyond-europe"
+    "relief.tropical-flatlands"
   ],
   "missions": [
     {
@@ -33,5 +33,5 @@
       }
     }
   ],
-  "designNote": "Des pays rarement cités, sur tous les continents, pour récompenser l'audace."
+  "designNote": "Des pays rarement cités, sur tous les continents, pour récompenser l'audace. Étape 6 : un pays tropical tout plat (Gambie, Maldives, Kiribati), seule consigne ≥ 0,8 exigée d'une expédition experte (elle remplace position.micro-beyond-europe, 0,64)."
 }

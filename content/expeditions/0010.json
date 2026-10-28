@@ -7,7 +7,7 @@
   "theme": "Monarchies",
   "difficulty": "easy",
   "start": "copenhague",
-  "meridianLon": -30,
+  "meridianLon": 135,
   "legs": [
     "society.monarchy",
     "water.island-nation",

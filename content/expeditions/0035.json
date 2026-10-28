@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 35,
+  "title": {
+    "fr": "La ceinture de feu",
+    "en": "Ring of Fire"
+  },
+  "theme": "Pacifique volcanique",
+  "difficulty": "easy",
+  "start": "vancouver",
+  "meridianLon": -170,
+  "legs": [
+    "relief.coastal-giants",
+    "society.spanish",
+    "water.island-tropical",
+    "flag.red-white-only",
+    "climate.either-tropic",
+    "society.g20"
+  ],
+  "missions": [
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 12000
+      }
+    }
+  ],
+  "designNote": "Facile. Route : autour de la ceinture de feu, des volcans côtiers des Andes et du Mexique aux îles tropicales, puis un drapeau rouge et blanc, les tropiques et le G20. Méridien à 170° O, en plein Pacifique : le franchir, c'est passer en Asie ou en Océanie. Ordre : un saut de 12 000 km. Audace : une île-nation tropicale lointaine (Comores, Maldives, Seychelles). Pièges attendus : Brésil pour l'espagnol ; Japon pour « tout entier sous les tropiques »."
+}

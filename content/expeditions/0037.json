@@ -1,0 +1,29 @@
+{
+  "catalogNumber": 37,
+  "title": {
+    "fr": "Du Nil à l’Indus",
+    "en": "From the Nile to the Indus"
+  },
+  "theme": "Croissant aride",
+  "difficulty": "normal",
+  "start": "alexandrie",
+  "meridianLon": 70,
+  "legs": [
+    "climate.subtropical-north",
+    "society.arab-league",
+    "flag.green-white-red",
+    "borders.seven-plus",
+    "relief.landlocked-heights",
+    "position.ctx-homeward"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "fallback": "society.over-50m",
+  "designNote": "Normale. Route : le long du croissant aride, entre 20° N et 40° N, puis la Ligue arabe, un drapeau vert, blanc, rouge, sept voisins, les hauts plateaux enclavés d'Asie centrale, et l'étape 6 ramène vers le port (repli : plus de 50 M d'habitants). Méridien à 70° E, sur l'Indus : le franchir, c'est passer du monde arabe à l'Asie centrale et au sous-continent. Ordres : rester au nord, franchir deux fois l'Indus. Audace : Comores à l'étape 2 (hémisphère sud : incompatible avec l'ordre, à choisir en connaissance de cause). Pièges attendus : Turquie pour « entre 20° N et 40° N » (elle déborde au nord) ; Iran pour la Ligue arabe."
+}

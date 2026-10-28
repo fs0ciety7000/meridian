@@ -1,0 +1,35 @@
+{
+  "catalogNumber": 47,
+  "title": {
+    "fr": "Les îles de l’Atlantique",
+    "en": "Atlantic Islands"
+  },
+  "theme": "Atlantique insulaire",
+  "difficulty": "expert",
+  "start": "praia",
+  "meridianLon": 140,
+  "legs": [
+    "society.portuguese",
+    "position.west-islands",
+    "flag.blue-yellow-red",
+    "water.island-tiny",
+    "climate.equatorial-north",
+    "borders.ctx-neighbour"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "meridianWeaver"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 16000
+      }
+    }
+  ],
+  "fallback": "borders.lone-neighbour",
+  "designNote": "Experte. Route : les îles de l'Atlantique depuis Praia, lusophonie, îles à l'ouest de Greenwich, drapeau bleu-jaune-rouge, minuscule île-nation, entre l'équateur et 10° N, puis un voisin du dernier camp (repli : un seul voisin, hors d'Europe). Méridien à 140° E : le franchir est un pari de l'autre côté du monde. Ordres : deux traversées de l'équateur et du méridien, un saut de 16 000 km. Audace : Timor oriental à l'étape 1, Tuvalu ou Kiribati à l'étape 4. Pièges attendus : Guinée-Bissau pour l'île à l'ouest de Greenwich (les Bijagos ne suffisent pas, elle a des voisins) ; Sao Tomé-et-Principe pour l'ouest (il est à l'est de Greenwich)."
+}

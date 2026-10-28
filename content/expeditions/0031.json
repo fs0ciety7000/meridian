@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 31,
+  "title": {
+    "fr": "Brumes et grand large",
+    "en": "Mist and Open Sea"
+  },
+  "theme": "Îles du Nord",
+  "difficulty": "easy",
+  "start": "londres",
+  "meridianLon": -60,
+  "legs": [
+    "water.island-north",
+    "society.nato",
+    "flag.red-white-blue",
+    "climate.either-tropic",
+    "borders.six-plus",
+    "society.monarchy"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    }
+  ],
+  "designNote": "Facile. Route : de Londres vers les îles du Nord (Islande, Japon, Malte, Antilles), puis l'OTAN, un drapeau tricolore, et un grand saut vers les tropiques. Méridien à 60° O, au milieu de l'Atlantique : le franchir, c'est oser les Caraïbes ou les Amériques. Audace : île-nation du Nord lointaine (Micronésie, Palaos, Marshall). Pièges attendus : Royaume-Uni et Irlande ne comptent pas comme « île-nation » (frontière terrestre en Irlande) ; Brésil ou Indonésie pour « traversé par un tropique » (le Brésil oui, l'Indonésie non)."
+}

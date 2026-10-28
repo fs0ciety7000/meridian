@@ -7,14 +7,14 @@
   "theme": "Initiation",
   "difficulty": "easy",
   "start": "rio-de-janeiro",
-  "meridianLon": -20,
+  "meridianLon": -30,
   "legs": [
-    "water.landlocked",
-    "society.drives-left",
-    "flag.red-white-blue",
-    "climate.southern",
+    "position.africa",
+    "water.island-nation",
     "borders.six-plus",
-    "water.island-nation"
+    "society.monarchy",
+    "flag.red-white-blue",
+    "climate.southern"
   ],
   "missions": [
     {
@@ -24,5 +24,5 @@
       }
     }
   ],
-  "designNote": "Six consignes aux réponses nombreuses et célèbres pour apprendre à planter son camp."
+  "designNote": "Premier contact, de la carte vers le savoir. Méridien à 30° O, au milieu de l'Atlantique : quel que soit le pays d'Afrique choisi, le premier saut le franchit, et le joueur découvre le bonus sans l'avoir cherché. Étape 1 (position.africa, 54 réponses) : impossible de rater, on apprend le geste (viser, planter, confirmer) et la distance qui se compte. Étape 2 (water.island-nation, 38) : un fait qui se lit sur la carte, une île entourée d'eau ; Madagascar est tout près, le Japon ou l'Islande paient l'audace. Étape 3 (borders.six-plus, 34) : encore la carte, on compte les frontières (Brésil, Chine, Allemagne, RD Congo). Étape 4 (society.monarchy, 43) : premier fait invisible sur la carte, mais réponses nombreuses et célèbres (Royaume-Uni, Japon, Espagne, Maroc, Thaïlande). Étape 5 (flag.red-white-blue, 31) : les drapeaux, avec des réponses connues de tous (France, États-Unis, Russie). Étape 6 (climate.southern, 34) : la seule marche un peu plus haute, une ligne (l'équateur) et le mot « tout entier » ; la fausse piste probable (Brésil, Indonésie, Kenya) est expliquée. Un seul ordre, continentHopper 4, que la route naturelle accomplit."
 }

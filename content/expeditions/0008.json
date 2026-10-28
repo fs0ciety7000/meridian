@@ -7,7 +7,7 @@
   "theme": "Méditerranée",
   "difficulty": "easy",
   "start": "marseille",
-  "meridianLon": 35,
+  "meridianLon": 75,
   "legs": [
     "society.euro",
     "climate.subtropical-north",

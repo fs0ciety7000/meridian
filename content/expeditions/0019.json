@@ -7,7 +7,7 @@
   "theme": "Amérique du Nord",
   "difficulty": "normal",
   "start": "halifax",
-  "meridianLon": -95,
+  "meridianLon": 110,
   "legs": [
     "society.commonwealth-right",
     "climate.north-of-55",

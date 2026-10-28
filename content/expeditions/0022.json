@@ -7,7 +7,7 @@
   "theme": "Europe centrale",
   "difficulty": "normal",
   "start": "gdansk",
-  "meridianLon": -5,
+  "meridianLon": -30,
   "legs": [
     "borders.eight-plus",
     "society.euro",

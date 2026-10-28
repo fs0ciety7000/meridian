@@ -1,0 +1,28 @@
+{
+  "catalogNumber": 38,
+  "title": {
+    "fr": "Nuits blanches",
+    "en": "White Nights"
+  },
+  "theme": "Haut Nord",
+  "difficulty": "normal",
+  "start": "helsinki",
+  "meridianLon": -75,
+  "legs": [
+    "climate.north-of-55",
+    "flag.blue-white-only",
+    "borders.russia-neighbour",
+    "water.island-beyond-tropics",
+    "position.giants",
+    "society.over-100m"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Normale. Route : sous les nuits blanches, au-delà de 55° N, puis un drapeau bleu et blanc, un voisin de la Russie, une île au-delà des tropiques, un géant et un pays de plus de 100 M. Une seule consigne régionale (voisin de la Russie). Méridien à 75° O : le franchir, c'est passer en Amérique (Honduras, Nicaragua, Canada). Ordres : rester au nord, franchir deux fois. Audace : Micronésie pour le bleu et blanc. Pièges attendus : Argentine pour bleu et blanc (soleil jaune) ; Royaume-Uni pour « île au-delà des tropiques » (frontière terrestre)."
+}

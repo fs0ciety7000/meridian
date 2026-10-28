@@ -7,7 +7,7 @@
   "theme": "Tour du monde",
   "difficulty": "easy",
   "start": "singapour",
-  "meridianLon": -60,
+  "meridianLon": 150,
   "legs": [
     "society.commonwealth",
     "climate.either-tropic",

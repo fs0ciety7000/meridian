@@ -1,0 +1,35 @@
+{
+  "catalogNumber": 43,
+  "title": {
+    "fr": "Cordillère et Pacifique",
+    "en": "Cordillera and Pacific"
+  },
+  "theme": "Pacifique sud-américain",
+  "difficulty": "normal",
+  "start": "valparaiso",
+  "meridianLon": 140,
+  "legs": [
+    "relief.southern-heights",
+    "society.iberian-south",
+    "water.island-beyond-tropics",
+    "flag.black-and-blue",
+    "climate.temperate-coast",
+    "position.ctx-other-continent"
+  ],
+  "missions": [
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 14000
+      }
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    }
+  ],
+  "fallback": "position.big-south",
+  "designNote": "Normale. Route : de la cordillère vers le Pacifique, un sommet austral passé 3 000 m, l'espagnol ou le portugais au Sud, une île au-delà des tropiques, un drapeau noir et bleu, une côte tempérée entre 23° N et 40° N, et l'étape 6 force à changer de continent (repli : grand pays du Sud). Méridien à 140° E, de la Nouvelle-Guinée au Japon : le franchir est un vrai détour. Ordres : un saut de 14 000 km, cinq changements de continent. Audace : Lesotho ou Eswatini pour le drapeau. Pièges attendus : Brésil pour « au Sud » (il déborde au nord)."
+}

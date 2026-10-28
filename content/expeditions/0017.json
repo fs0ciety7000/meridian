@@ -7,7 +7,7 @@
   "theme": "Montagnes",
   "difficulty": "normal",
   "start": "katmandou",
-  "meridianLon": 60,
+  "meridianLon": -70,
   "legs": [
     "relief.landlocked-heights",
     "society.over-100m",

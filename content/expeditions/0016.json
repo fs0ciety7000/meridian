@@ -7,7 +7,7 @@
   "theme": "Sahara",
   "difficulty": "normal",
   "start": "alger",
-  "meridianLon": 25,
+  "meridianLon": 55,
   "legs": [
     "climate.cancer",
     "society.arab-league",

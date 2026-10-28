@@ -7,7 +7,7 @@
   "theme": "Tropiques",
   "difficulty": "expert",
   "start": "belem",
-  "meridianLon": -20,
+  "meridianLon": 130,
   "legs": [
     "climate.tropical-giant",
     "flag.green-blue-no-red",

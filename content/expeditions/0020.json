@@ -7,7 +7,7 @@
   "theme": "Arabie",
   "difficulty": "normal",
   "start": "dubai",
-  "meridianLon": 30,
+  "meridianLon": 105,
   "legs": [
     "climate.subtropical-north",
     "society.big-monarchy",

@@ -7,7 +7,7 @@
   "theme": "Pacifique",
   "difficulty": "normal",
   "start": "auckland",
-  "meridianLon": -150,
+  "meridianLon": -140,
   "legs": [
     "water.island-tropical",
     "society.dollar-republic",

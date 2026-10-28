@@ -7,7 +7,7 @@
   "theme": "Nord",
   "difficulty": "easy",
   "start": "bergen",
-  "meridianLon": 40,
+  "meridianLon": -65,
   "legs": [
     "climate.north-of-50",
     "society.nato",

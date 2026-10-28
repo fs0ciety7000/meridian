@@ -1,0 +1,31 @@
+{
+  "catalogNumber": 42,
+  "title": {
+    "fr": "Les mers australes",
+    "en": "Southern Seas"
+  },
+  "theme": "Océan Indien austral",
+  "difficulty": "normal",
+  "start": "perth",
+  "meridianLon": -120,
+  "legs": [
+    "climate.southern-tropics",
+    "society.monarchy-left",
+    "water.island-large",
+    "flag.southern-red-white-blue",
+    "position.big-south",
+    "borders.exactly-five"
+  ],
+  "missions": [
+    {
+      "id": "southernSoul"
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 14000
+      }
+    }
+  ],
+  "designNote": "Normale. Route : les mers australes depuis Perth, entre tropique et équateur côté sud, puis une monarchie où l'on roule à gauche, une grande île, un drapeau austral bleu-blanc-rouge, un grand pays du Sud et cinq voisins. Méridien à 120° O : le franchir, c'est passer en Amérique du Sud. Ordres : ne jamais quitter le Sud (l'étape 2 tente le Royaume-Uni ou le Japon), un saut de 14 000 km. Audace : Tonga, Tuvalu ou Samoa. Pièges attendus : Madagascar pour « tout entier sous les tropiques » (elle déborde au sud)."
+}

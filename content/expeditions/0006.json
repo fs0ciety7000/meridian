@@ -7,7 +7,7 @@
   "theme": "Amériques",
   "difficulty": "easy",
   "start": "new-york",
-  "meridianLon": -100,
+  "meridianLon": -115,
   "legs": [
     "society.spanish",
     "relief.over-6000",

@@ -7,7 +7,7 @@
   "theme": "Caraïbes",
   "difficulty": "normal",
   "start": "la-havane",
-  "meridianLon": -60,
+  "meridianLon": -125,
   "legs": [
     "water.island-north",
     "society.dollar",

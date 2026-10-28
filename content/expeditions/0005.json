@@ -7,7 +7,7 @@
   "theme": "Asie",
   "difficulty": "easy",
   "start": "istanbul",
-  "meridianLon": 75,
+  "meridianLon": 90,
   "legs": [
     "water.landlocked",
     "society.over-50m",

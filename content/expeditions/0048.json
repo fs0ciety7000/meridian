@@ -1,0 +1,38 @@
+{
+  "catalogNumber": 48,
+  "title": {
+    "fr": "Steppes et déserts",
+    "en": "Steppes and Deserts"
+  },
+  "theme": "Asie centrale",
+  "difficulty": "expert",
+  "start": "oulan-bator",
+  "meridianLon": -50,
+  "legs": [
+    "water.landlocked-giant",
+    "relief.vast-and-low",
+    "flag.blue-yellow-red",
+    "society.big-monarchy",
+    "relief.tropical-flatlands",
+    "borders.ctx-neighbour"
+  ],
+  "missions": [
+    {
+      "id": "northernSoul"
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 16000
+      }
+    }
+  ],
+  "fallback": "borders.exactly-seven",
+  "designNote": "Experte. Route : steppes et déserts depuis Oulan-Bator, géants enclavés, immensités sans sommet de 3 000 m, drapeau bleu-jaune-rouge (la Mongolie du port compte), grande monarchie, pays tropical tout plat, puis un voisin du dernier camp (repli : sept voisins). Méridien à 50° O : le franchir, c'est passer par le Brésil ou la Colombie. Ordres : rester au nord, cinq changements de continent, un saut de 16 000 km. Audace : Kiribati, Tuvalu ou Marshall à l'étape 5. Pièges attendus : Chine pour l'étape 2 (sommets) ; Roumanie et Tchad presque identiques, deux réponses valides."
+}

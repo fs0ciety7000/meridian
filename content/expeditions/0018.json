@@ -7,7 +7,7 @@
   "theme": "Asie du Sud-Est",
   "difficulty": "normal",
   "start": "manille",
-  "meridianLon": 100,
+  "meridianLon": 165,
   "legs": [
     "water.island-populous",
     "society.monarchy-left",

@@ -7,7 +7,7 @@
   "theme": "Micro-îles",
   "difficulty": "expert",
   "start": "tarawa",
-  "meridianLon": -165,
+  "meridianLon": -70,
   "legs": [
     "relief.low-islands",
     "society.tiny-republic",

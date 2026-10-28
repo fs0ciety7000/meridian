@@ -7,7 +7,7 @@
   "theme": "Afrique",
   "difficulty": "easy",
   "start": "dakar",
-  "meridianLon": 20,
+  "meridianLon": -60,
   "legs": [
     "society.french",
     "water.landlocked",

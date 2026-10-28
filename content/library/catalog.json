@@ -25,42 +25,74 @@
           -22.931
         ]
       },
-      "meridianLon": -20,
+      "meridianLon": -30,
       "legs": [
         {
           "index": 1,
-          "promptId": "water.landlocked",
+          "promptId": "position.africa",
           "predicate": {
-            "fact": "landlocked",
-            "eq": true
+            "fact": "continent",
+            "eq": "AF"
           },
           "text": {
-            "fr": "Un pays sans accès à la mer",
-            "en": "A country with no access to the sea"
+            "fr": "Plante ton camp n’importe où en Afrique",
+            "en": "Pitch your camp anywhere in Africa"
           },
           "explain": {
-            "fr": "Il fallait un pays sans aucun littoral maritime : le Kazakhstan est le plus vaste d'entre eux, la Caspienne étant un lac.",
-            "en": "A country with no sea coast at all was needed: Kazakhstan is the largest, the Caspian counting as a lake."
+            "fr": "Il fallait l'un des 54 pays d'Afrique, Égypte et îles comprises. Les Canaries, Madère, la Réunion ou Mayotte sont africaines par la géographie, mais appartiennent à l'Espagne, au Portugal ou à la France.",
+            "en": "Any of Africa's 54 countries would do, Egypt and the islands included. The Canaries, Madeira, Réunion and Mayotte lie off Africa but belong to Spain, Portugal or France."
           }
         },
         {
           "index": 2,
-          "promptId": "society.drives-left",
+          "promptId": "water.island-nation",
           "predicate": {
-            "fact": "drivesOnLeft",
-            "eq": true
+            "fact": "hasLandBorder",
+            "eq": false
           },
           "text": {
-            "fr": "Un pays où l’on roule à gauche",
-            "en": "A country that drives on the left"
+            "fr": "Une nation sans frontière terrestre",
+            "en": "A nation with no land border"
           },
           "explain": {
-            "fr": "Il fallait un pays où l'on circule à gauche : plus d'un quart des pays, dont le Japon, la Thaïlande ou le Suriname, sans lien avec l'Empire britannique.",
-            "en": "The country had to drive on the left: over a quarter of countries do, including Japan, Thailand and Suriname, none of them former British colonies."
+            "fr": "Il fallait un pays sans aucune frontière terrestre : de l'Australie à Nauru, l'océan est leur seule limite.",
+            "en": "A country with no land border at all was needed: from Australia to Nauru, the ocean is their only boundary."
           }
         },
         {
           "index": 3,
+          "promptId": "borders.six-plus",
+          "predicate": {
+            "fact": "landBorders",
+            "gte": 6
+          },
+          "text": {
+            "fr": "Un pays qui a au moins six voisins",
+            "en": "A country with at least six neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait au moins six voisins terrestres : la Chine et la Russie détiennent le record avec quatorze chacune.",
+            "en": "At least six land neighbours were needed: China and Russia hold the record with fourteen each."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "society.monarchy",
+          "predicate": {
+            "fact": "monarchy",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays qui a un monarque",
+            "en": "A country with a monarch"
+          },
+          "explain": {
+            "fr": "Il fallait un chef d'État monarque, roi, émir, sultan ou prince : Andorre a même deux coprinces, dont le président de la République française.",
+            "en": "The head of state had to be a monarch, king, emir, sultan or prince: Andorra even has two co-princes, one of them the French president."
+          }
+        },
+        {
+          "index": 5,
           "promptId": "flag.red-white-blue",
           "predicate": {
             "all": [
@@ -124,7 +156,7 @@
           }
         },
         {
-          "index": 4,
+          "index": 6,
           "promptId": "climate.southern",
           "predicate": {
             "fact": "hemisphereNS",
@@ -138,38 +170,6 @@
             "fr": "Il fallait un pays entièrement au sud de l'équateur : le Brésil ou l'Indonésie, à cheval sur les deux hémisphères, ne comptaient pas.",
             "en": "The country had to lie entirely south of the equator: Brazil or Indonesia, straddling both hemispheres, did not count."
           }
-        },
-        {
-          "index": 5,
-          "promptId": "borders.six-plus",
-          "predicate": {
-            "fact": "landBorders",
-            "gte": 6
-          },
-          "text": {
-            "fr": "Un pays qui a au moins six voisins",
-            "en": "A country with at least six neighbours"
-          },
-          "explain": {
-            "fr": "Il fallait au moins six voisins terrestres : la Chine et la Russie détiennent le record avec quatorze chacune.",
-            "en": "At least six land neighbours were needed: China and Russia hold the record with fourteen each."
-          }
-        },
-        {
-          "index": 6,
-          "promptId": "water.island-nation",
-          "predicate": {
-            "fact": "hasLandBorder",
-            "eq": false
-          },
-          "text": {
-            "fr": "Une nation sans frontière terrestre",
-            "en": "A nation with no land border"
-          },
-          "explain": {
-            "fr": "Il fallait un pays sans aucune frontière terrestre : de l'Australie à Nauru, l'océan est leur seule limite.",
-            "en": "A country with no land border at all was needed: from Australia to Nauru, the ocean is their only boundary."
-          }
         }
       ],
       "missions": [
@@ -181,7 +181,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "fb3c35da15b761ee09cd72a3fccb1b476d6f772bfda9a7902daaad15a4a3bbbf"
+      "hash": "140854e2d6bf4c67fd81aa4113b039f275fd8533c52eab51ccedb914eb86ab28"
     },
     {
       "code": "MER-0002",
@@ -206,7 +206,7 @@
           14.693
         ]
       },
-      "meridianLon": 20,
+      "meridianLon": -60,
       "legs": [
         {
           "index": 1,
@@ -321,7 +321,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "9c2e6ee682e9d60c62525ba8f19f3ba2d3b9c80bc5e05bb8058a791192bb8ac1"
+      "hash": "c4eb0415f3d6ddb95c71eda4ca3599c7a8b1c64b9a6677af38166dfbdc3a3a05"
     },
     {
       "code": "MER-0003",
@@ -346,7 +346,7 @@
           38.744
         ]
       },
-      "meridianLon": -40,
+      "meridianLon": -75,
       "legs": [
         {
           "index": 1,
@@ -542,7 +542,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "b6acc69bbe602699f92b97c007053b5992b00f29e280d63ff891e6fc7673b77a"
+      "hash": "39f25fcc0bd9bd393d95f341a6a7216e26a7782d9b9c6c03a49237330da85cf4"
     },
     {
       "code": "MER-0004",
@@ -567,7 +567,7 @@
           -33.869
         ]
       },
-      "meridianLon": -175,
+      "meridianLon": -150,
       "legs": [
         {
           "index": 1,
@@ -746,7 +746,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "47b6fa8620a27a52677c5829799ece79fa53d7351bbb8ece29d9511af5a009f9"
+      "hash": "0a8d211a82ff67d3f69a1fbd647363def66f28cac7ddfcff14631d43d994fd7a"
     },
     {
       "code": "MER-0005",
@@ -771,7 +771,7 @@
           41.029
         ]
       },
-      "meridianLon": 75,
+      "meridianLon": 90,
       "legs": [
         {
           "index": 1,
@@ -900,7 +900,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "e14d7b9fea6b0011febbe53e7a1901a7086b8a74564b07b9cc349b67e119fe64"
+      "hash": "f25bf286d6e3b7ea52556a90956d37c9226769509d90a37d55deac09db34e556"
     },
     {
       "code": "MER-0006",
@@ -925,7 +925,7 @@
           40.715
         ]
       },
-      "meridianLon": -100,
+      "meridianLon": -115,
       "legs": [
         {
           "index": 1,
@@ -1112,7 +1112,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "e8a4665033c015b29f555d4c2f4077d0bbb2bbc9d19d3fc84ab84f68152550e5"
+      "hash": "e92dbc48c33925f35951b928a42c2841bf7eeeba928aabf8604df68340620775"
     },
     {
       "code": "MER-0007",
@@ -1137,7 +1137,7 @@
           60.393
         ]
       },
-      "meridianLon": 40,
+      "meridianLon": -65,
       "legs": [
         {
           "index": 1,
@@ -1300,7 +1300,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "d5b95b8b4296ad69aab4180df62ac95424b6180566fd9dea457f4eabc7c587dd"
+      "hash": "0482ed168411a9e37a957fb69c0f0aae05241d3d49a3c8c1cf3a10f4a6012fd4"
     },
     {
       "code": "MER-0008",
@@ -1325,7 +1325,7 @@
           43.296
         ]
       },
-      "meridianLon": 35,
+      "meridianLon": 75,
       "legs": [
         {
           "index": 1,
@@ -1495,7 +1495,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "0906764b6755585a6856a7c1fe638cd87d1d109ae5d7a91261cf933cade57fcc"
+      "hash": "7f75fc91fadb48c95641e4e2f7d565c2eccbeb842d2514e8c1c5df21924ef63a"
     },
     {
       "code": "MER-0009",
@@ -1520,7 +1520,7 @@
           1.352
         ]
       },
-      "meridianLon": -60,
+      "meridianLon": 150,
       "legs": [
         {
           "index": 1,
@@ -1654,7 +1654,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "565ccb26435e2eebfa90498a3f6267dfb06a1348c2edcb00287d4501112cf462"
+      "hash": "4fe2f488f4ae760991790d4af042d6bf4e1ce0fb4c946370409f152d67d70b30"
     },
     {
       "code": "MER-0010",
@@ -1679,7 +1679,7 @@
           55.682
         ]
       },
-      "meridianLon": -30,
+      "meridianLon": 135,
       "legs": [
         {
           "index": 1,
@@ -1787,7 +1787,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "4647112a9b5f28291dce554a778733dd297b8413b233da9e28acd20d2813e908"
+      "hash": "34fd595fff8c83c4a2bf8cf320f4752a25c093a29e42e77e2aec62c434838d3c"
     },
     {
       "code": "MER-0011",
@@ -1812,7 +1812,7 @@
           -36.854
         ]
       },
-      "meridianLon": -150,
+      "meridianLon": -140,
       "legs": [
         {
           "index": 1,
@@ -2012,7 +2012,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "fa58a39133a708a5a360231c5f9a3e6c1df9bb1fee08f1e6beb7bd717c4fab9c"
+      "hash": "3f307ff322ee8470b92e644fafb3c74bd2ae38518f879037963b542b328105f6"
     },
     {
       "code": "MER-0012",
@@ -2037,7 +2037,7 @@
           -12.046
         ]
       },
-      "meridianLon": -45,
+      "meridianLon": 70,
       "legs": [
         {
           "index": 1,
@@ -2201,7 +2201,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "11db1485ba9d3fa0505cc01f6ad6d653c58eae145a43b41e16d7675c992335b6"
+      "hash": "3858de5beb36e29692dd8e89632abdf3b40748da2ca36f259b8cde5b79a00ebd"
     },
     {
       "code": "MER-0013",
@@ -2226,7 +2226,7 @@
           6.524
         ]
       },
-      "meridianLon": -20,
+      "meridianLon": 0,
       "legs": [
         {
           "index": 1,
@@ -2430,14 +2430,17 @@
       ],
       "missions": [
         {
-          "id": "meridianWeaver"
+          "id": "longHaul",
+          "params": {
+            "km": 14000
+          }
         },
         {
           "id": "equatorShuttle"
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "71304efe26619066fc8e14a71ea0336d2b193f07e27de434e8263aee75d23ffd"
+      "hash": "2f0bb978355073fa1f2c4b526b9427922f52eada12aaa7bf419eafd9b9fd789e"
     },
     {
       "code": "MER-0014",
@@ -2462,7 +2465,7 @@
           -20.162
         ]
       },
-      "meridianLon": 90,
+      "meridianLon": 150,
       "legs": [
         {
           "index": 1,
@@ -2621,7 +2624,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "52225a4da8692404273c67e99d2a72ade58ad5a4ffd1bccb142300bc08411bdc"
+      "hash": "5c25f38b3eafc040b92949cc823dd3537c3f89124c2c528c2191f1944a4f0c01"
     },
     {
       "code": "MER-0015",
@@ -2646,7 +2649,7 @@
           23.113
         ]
       },
-      "meridianLon": -60,
+      "meridianLon": -125,
       "legs": [
         {
           "index": 1,
@@ -2826,7 +2829,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "26ec4fb6a656ccf46479e759cf2060575fcc78997fd077aa98f0a4b2496cf424"
+      "hash": "ec53d0fc5c97e001eea69f49603885f67b268e045a2bc1ced9a322ee8806e45a"
     },
     {
       "code": "MER-0016",
@@ -2851,7 +2854,7 @@
           36.754
         ]
       },
-      "meridianLon": 25,
+      "meridianLon": 55,
       "legs": [
         {
           "index": 1,
@@ -3056,7 +3059,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "fdecb8e6ef8dba9a9b2b7f28f2fa1cf5658465d440a894b44b25c7501c1ae234"
+      "hash": "f2278c80bf7b08413a10d4ad1f259175c9c80483a3ea2bbee7b0d400eb8591f8"
     },
     {
       "code": "MER-0017",
@@ -3081,7 +3084,7 @@
           27.717
         ]
       },
-      "meridianLon": 60,
+      "meridianLon": -70,
       "legs": [
         {
           "index": 1,
@@ -3235,7 +3238,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "0bd012bd0b95dfaef160c83240b346dcaf3715b7bf82f5d015d9437576070c3b"
+      "hash": "284518eceb82646ff8ff7cab38b0c965489ab3e48824a4b6c21ea09f83c6ed1d"
     },
     {
       "code": "MER-0018",
@@ -3260,7 +3263,7 @@
           14.599
         ]
       },
-      "meridianLon": 100,
+      "meridianLon": 165,
       "legs": [
         {
           "index": 1,
@@ -3506,7 +3509,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "b7a44fd9a5c061d36991e1a865d0cddd653fc7643101c297bd8e8bcf410a8184"
+      "hash": "49bc0fb99618643a1ec4717f0b19eaf356c39c6782356090fb280841b0997ab0"
     },
     {
       "code": "MER-0019",
@@ -3531,7 +3534,7 @@
           44.641
         ]
       },
-      "meridianLon": -95,
+      "meridianLon": 110,
       "legs": [
         {
           "index": 1,
@@ -3746,7 +3749,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "da82da125126190720bf21d4fd250c1791164b9bdf99e9fc106be17e2758dc4b"
+      "hash": "c0fa9ef34f63c8a79f7017a24c8fbb8b5436b8a698d104777184b469c5bab0f1"
     },
     {
       "code": "MER-0020",
@@ -3771,7 +3774,7 @@
           25.264
         ]
       },
-      "meridianLon": 30,
+      "meridianLon": 105,
       "legs": [
         {
           "index": 1,
@@ -3984,7 +3987,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "8a97cfa2e0e8ed8aed88ac0c5e936c2e93b1a313067935d248d98221dd534bf2"
+      "hash": "b0b54b2401402ff31fe76f5ba2f5dd30f20e63033fe6777a8fb91211e0487708"
     },
     {
       "code": "MER-0021",
@@ -4009,7 +4012,7 @@
           -33.925
         ]
       },
-      "meridianLon": 45,
+      "meridianLon": 145,
       "legs": [
         {
           "index": 1,
@@ -4180,7 +4183,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "29dd5e0f6497d157f536bfdd392d557ef5c1a272942e82baf24fc5f297a5cb6a"
+      "hash": "07eece31ddc63476d694ae59f878b1b7791ac1675186ff7a8bc9935d1b224b3b"
     },
     {
       "code": "MER-0022",
@@ -4205,7 +4208,7 @@
           54.352
         ]
       },
-      "meridianLon": -5,
+      "meridianLon": -30,
       "legs": [
         {
           "index": 1,
@@ -4377,7 +4380,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "aa141bccef31eb45eed959ca1ebb2ba79a9b187ea1c8ee9979638c083fbad284"
+      "hash": "11cf26e9f301ef1557dcf5f0ac95860ea07d727a4cd1c7e092983c6880c72eb9"
     },
     {
       "code": "MER-0023",
@@ -4402,7 +4405,7 @@
           1.339
         ]
       },
-      "meridianLon": -165,
+      "meridianLon": -70,
       "legs": [
         {
           "index": 1,
@@ -4571,7 +4574,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "8a4bc478526d0f62fbfeb870c4c1208b63ebf8605ec329aa0979624ecbbf9f38"
+      "hash": "6aae536464a830107033930beeba29e6dd107b64d33dde066914473b0eaf8f50"
     },
     {
       "code": "MER-0024",
@@ -4596,7 +4599,7 @@
           13.097
         ]
       },
-      "meridianLon": -80,
+      "meridianLon": 20,
       "legs": [
         {
           "index": 1,
@@ -4767,7 +4770,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "2022558d5aa09a1123681520e6fbaa8b58c151c54afbb94d6fdb61433ebc1ff6"
+      "hash": "9be629b207170211b9fd66f22015d48c24be1bd408ac4a09aa00c2841ecb39b3"
     },
     {
       "code": "MER-0025",
@@ -4792,7 +4795,7 @@
           0.394
         ]
       },
-      "meridianLon": 40,
+      "meridianLon": 105,
       "legs": [
         {
           "index": 1,
@@ -4918,28 +4921,34 @@
         },
         {
           "index": 6,
-          "promptId": "position.micro-beyond-europe",
+          "promptId": "relief.tropical-flatlands",
           "predicate": {
             "all": [
               {
-                "fact": "areaKm2",
-                "lt": 1500
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
               },
               {
-                "not": {
-                  "fact": "continent",
-                  "eq": "EU"
-                }
+                "fact": "highestPointM",
+                "lt": 300
               }
             ]
           },
           "text": {
-            "fr": "Hors d’Europe, moins de 1 500 km²",
-            "en": "Outside Europe, under 1,500 km²"
+            "fr": "Un pays tropical où rien ne dépasse 300 m",
+            "en": "A tropical country where nothing tops 300 m"
           },
           "explain": {
-            "fr": "Il fallait un pays hors d'Europe de moins de 1 500 km² : Bahreïn, les Maldives ou São Tomé-et-Principe.",
-            "en": "A country outside Europe smaller than 1,500 km² was needed: Bahrain, the Maldives or São Tomé and Príncipe."
+            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement.",
+            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres."
           }
         }
       ],
@@ -4961,7 +4970,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "ceabc4a08ecffed14d6b2c3bbd7cd3c05e7da82a1b82c23218f1a9be1ef38384"
+      "hash": "ea6860cd804a510a0b8f153320de7044a407941de7dca32eb14102d001d75f6a"
     },
     {
       "code": "MER-0026",
@@ -4986,7 +4995,7 @@
           -54.801
         ]
       },
-      "meridianLon": 0,
+      "meridianLon": 60,
       "legs": [
         {
           "index": 1,
@@ -5161,7 +5170,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "4c1b3565aa321f63d31a0d835e60634cc8d4e6715900bbfb9e536de14d5015c0"
+      "hash": "edb3fe2db4bd96fe11c1a6a036d1caa80e6d96129ad503586e75fb9dee0847ad"
     },
     {
       "code": "MER-0027",
@@ -5186,7 +5195,7 @@
           -1.418
         ]
       },
-      "meridianLon": -20,
+      "meridianLon": 130,
       "legs": [
         {
           "index": 1,
@@ -5390,7 +5399,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "c5ec8d74a0d7f34fe4e1e0d6f44a1cf3ca8a8a79f03330053be843913f816626"
+      "hash": "270b272baab1fa83c0593f18dc6c25296f318c1f5d3923a332b3a5010cb5c30a"
     },
     {
       "code": "MER-0028",
@@ -5415,7 +5424,7 @@
           37.984
         ]
       },
-      "meridianLon": 50,
+      "meridianLon": -60,
       "legs": [
         {
           "index": 1,
@@ -5603,7 +5612,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "3ad575c4f6ae31e5f4873169937463eb1b925c76c377b90bfc39afd09a4621eb"
+      "hash": "71d0c17ef05da3f697e3ee5f5d5b985db0612e19260b85bc7246b146105cfa9d"
     },
     {
       "code": "MER-0029",
@@ -5628,7 +5637,7 @@
           -16.49
         ]
       },
-      "meridianLon": -30,
+      "meridianLon": -180,
       "legs": [
         {
           "index": 1,
@@ -5821,7 +5830,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "7095eec639436c6b446d7817be44905dadc1c7bac8ef4c6a66c4f985b6924a3c"
+      "hash": "20aa8e938a0ea6142ef9051657509192444325a5ab48d4641be4baa1f65830ea"
     },
     {
       "code": "MER-0030",
@@ -5846,7 +5855,7 @@
           64.146
         ]
       },
-      "meridianLon": 30,
+      "meridianLon": -75,
       "legs": [
         {
           "index": 1,
@@ -6021,7 +6030,4505 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "e22e057b99f6713daf471f663b816a82c458251198430f67c3ebfb1255412580"
+      "hash": "e5c034245cd4896b16969d90276174b2bc4df4c85924bd0ce8b0d0dfe832db11"
+    },
+    {
+      "code": "MER-0031",
+      "source": "catalog",
+      "catalogNumber": 31,
+      "title": {
+        "fr": "Brumes et grand large",
+        "en": "Mist and Open Sea"
+      },
+      "theme": "Îles du Nord",
+      "difficulty": "easy",
+      "libraryVersion": 1,
+      "start": {
+        "id": "londres",
+        "name": {
+          "fr": "Londres",
+          "en": "London"
+        },
+        "iso3": "GBR",
+        "lonLat": [
+          -0.128,
+          51.507
+        ]
+      },
+      "meridianLon": -60,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "water.island-north",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "fact": "hemisphereNS",
+                "eq": "N"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation de l’hémisphère nord",
+            "en": "An island nation in the northern hemisphere"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques.",
+            "en": "An island state lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.nato",
+          "predicate": {
+            "fact": "memberOf",
+            "includes": "nato"
+          },
+          "text": {
+            "fr": "Un membre de l’OTAN",
+            "en": "A NATO member"
+          },
+          "explain": {
+            "fr": "Il fallait un membre de l'Alliance atlantique : la Finlande (2023) et la Suède (2024) sont ses derniers arrivants.",
+            "en": "The country had to be a NATO member: Finland (2023) and Sweden (2024) are its newest members."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.red-white-blue",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Bleu, blanc, rouge seulement, hors armoiries",
+            "en": "Red, white and blue only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement bleu, blanc et rouge : la France, les États-Unis, la Thaïlande ou le Népal. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be red, white and blue only: France, the United States, Thailand or Nepal. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "climate.either-tropic",
+          "predicate": {
+            "any": [
+              {
+                "fact": "crossesTropicOfCancer",
+                "eq": true
+              },
+              {
+                "fact": "crossesTropicOfCapricorn",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays traversé par l’un des deux tropiques",
+            "en": "A country crossed by either tropic"
+          },
+          "explain": {
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "borders.six-plus",
+          "predicate": {
+            "fact": "landBorders",
+            "gte": 6
+          },
+          "text": {
+            "fr": "Un pays qui a au moins six voisins",
+            "en": "A country with at least six neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait au moins six voisins terrestres : la Chine et la Russie détiennent le record avec quatorze chacune.",
+            "en": "At least six land neighbours were needed: China and Russia hold the record with fourteen each."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "society.monarchy",
+          "predicate": {
+            "fact": "monarchy",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays qui a un monarque",
+            "en": "A country with a monarch"
+          },
+          "explain": {
+            "fr": "Il fallait un chef d'État monarque, roi, émir, sultan ou prince : Andorre a même deux coprinces, dont le président de la République française.",
+            "en": "The head of state had to be a monarch, king, emir, sultan or prince: Andorra even has two co-princes, one of them the French president."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 4
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "eafd3f54aebe99e405b777e2fe24266679b442bbb5d56aeaacf2e3ba8162e5f7"
+    },
+    {
+      "code": "MER-0032",
+      "source": "catalog",
+      "catalogNumber": 32,
+      "title": {
+        "fr": "Soleil levant",
+        "en": "Rising Sun"
+      },
+      "theme": "Asie-Pacifique",
+      "difficulty": "easy",
+      "libraryVersion": 1,
+      "start": {
+        "id": "tokyo",
+        "name": {
+          "fr": "Tokyo",
+          "en": "Tokyo"
+        },
+        "iso3": "JPN",
+        "lonLat": [
+          139.692,
+          35.69
+        ]
+      },
+      "meridianLon": -180,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "society.over-100m",
+          "predicate": {
+            "fact": "population",
+            "gt": 100000000
+          },
+          "text": {
+            "fr": "Un pays de plus de 100 millions d’habitants",
+            "en": "A country of over 100 million people"
+          },
+          "explain": {
+            "fr": "Il fallait plus de 100 millions d'habitants : l'Éthiopie, la RD Congo et les Philippines ont franchi ce cap.",
+            "en": "More than 100 million inhabitants were needed: Ethiopia, DR Congo and the Philippines have passed that mark."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "water.island-north",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "fact": "hemisphereNS",
+                "eq": "N"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation de l’hémisphère nord",
+            "en": "An island nation in the northern hemisphere"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques.",
+            "en": "An island state lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.red-white-only",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Rouge et blanc seulement, hors armoiries",
+            "en": "Red and white only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "climate.either-tropic",
+          "predicate": {
+            "any": [
+              {
+                "fact": "crossesTropicOfCancer",
+                "eq": true
+              },
+              {
+                "fact": "crossesTropicOfCapricorn",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays traversé par l’un des deux tropiques",
+            "en": "A country crossed by either tropic"
+          },
+          "explain": {
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "society.monarchy",
+          "predicate": {
+            "fact": "monarchy",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays qui a un monarque",
+            "en": "A country with a monarch"
+          },
+          "explain": {
+            "fr": "Il fallait un chef d'État monarque, roi, émir, sultan ou prince : Andorre a même deux coprinces, dont le président de la République française.",
+            "en": "The head of state had to be a monarch, king, emir, sultan or prince: Andorra even has two co-princes, one of them the French president."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "relief.over-5000",
+          "predicate": {
+            "fact": "highestPointM",
+            "gt": 5000
+          },
+          "text": {
+            "fr": "Un pays qui culmine au-delà de 5 000 m",
+            "en": "A country whose summit tops 5,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un point culminant au-dessus de 5 000 m : le Kilimandjaro (5 895 m) offre ce privilège à la Tanzanie, l'Elbrouz à la Russie.",
+            "en": "The highest point had to exceed 5,000 m: Kilimanjaro (5,895 m) gives Tanzania that honour, Mount Elbrus gives it to Russia."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 12000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "4b8a28a066ef1fcb03590f0cab3501664a2e452a89237a3076fed6b4b4840f80"
+    },
+    {
+      "code": "MER-0033",
+      "source": "catalog",
+      "catalogNumber": 33,
+      "title": {
+        "fr": "Tango et pampa",
+        "en": "Tango and Pampas"
+      },
+      "theme": "Cône sud",
+      "difficulty": "easy",
+      "libraryVersion": 1,
+      "start": {
+        "id": "buenos-aires",
+        "name": {
+          "fr": "Buenos Aires",
+          "en": "Buenos Aires"
+        },
+        "iso3": "ARG",
+        "lonLat": [
+          -58.382,
+          -34.604
+        ]
+      },
+      "meridianLon": 75,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "society.spanish",
+          "predicate": {
+            "fact": "officialLanguages",
+            "includes": "spanish"
+          },
+          "text": {
+            "fr": "Un pays où l’espagnol est langue officielle",
+            "en": "A country where Spanish is an official language"
+          },
+          "explain": {
+            "fr": "Il fallait l'espagnol parmi les langues officielles : la Guinée équatoriale est le seul pays hispanophone d'Afrique.",
+            "en": "Spanish had to be an official language: Equatorial Guinea is the only Spanish-speaking country in Africa."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "climate.southern",
+          "predicate": {
+            "fact": "hemisphereNS",
+            "eq": "S"
+          },
+          "text": {
+            "fr": "Un pays tout entier dans l’hémisphère sud",
+            "en": "A country entirely in the southern hemisphere"
+          },
+          "explain": {
+            "fr": "Il fallait un pays entièrement au sud de l'équateur : le Brésil ou l'Indonésie, à cheval sur les deux hémisphères, ne comptaient pas.",
+            "en": "The country had to lie entirely south of the equator: Brazil or Indonesia, straddling both hemispheres, did not count."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.no-red",
+          "predicate": {
+            "not": {
+              "fact": "flagColors",
+              "includes": "red"
+            }
+          },
+          "text": {
+            "fr": "Pas de rouge sur le drapeau, hors armoiries",
+            "en": "No red on the flag, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau sans rouge : le Brésil, la Suède, l'Argentine ou la Grèce. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to have no red at all: Brazil, Sweden, Argentina or Greece. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "borders.exactly-five",
+          "predicate": {
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 5
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "AND"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MAR"
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays qui a exactement cinq voisins",
+            "en": "A country with exactly five neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "water.landlocked",
+          "predicate": {
+            "fact": "landlocked",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays sans accès à la mer",
+            "en": "A country with no access to the sea"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans aucun littoral maritime : le Kazakhstan est le plus vaste d'entre eux, la Caspienne étant un lac.",
+            "en": "A country with no sea coast at all was needed: Kazakhstan is the largest, the Caspian counting as a lake."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-across-equator",
+          "predicate": {
+            "ctx": {
+              "rule": "otherHemisphere",
+              "axis": "NS"
+            }
+          },
+          "text": {
+            "fr": "Passe de l’autre côté de l’équateur",
+            "en": "Cross to the other side of the equator"
+          },
+          "explain": {
+            "fr": "Il fallait planter le camp dans l'hémisphère opposé (nord ou sud) à celui de ton dernier camp valide.",
+            "en": "The camp had to be planted in the opposite hemisphere (north or south) from your last valid camp."
+          },
+          "fallback": {
+            "promptId": "society.over-50m",
+            "predicate": {
+              "fact": "population",
+              "gt": 50000000
+            },
+            "text": {
+              "fr": "Un pays de plus de 50 millions d’habitants",
+              "en": "A country of over 50 million people"
+            },
+            "explain": {
+              "fr": "Il fallait plus de 50 millions d'habitants : la Tanzanie, la Colombie ou la Corée du Sud dépassent ce seuil.",
+              "en": "More than 50 million inhabitants were needed: Tanzania, Colombia and South Korea are above that line."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "5e30aeabd3bd19502ad1a44dd7e9a7b0317d8ebd667bafcb77a83179263b459d"
+    },
+    {
+      "code": "MER-0034",
+      "source": "catalog",
+      "catalogNumber": 34,
+      "title": {
+        "fr": "Les savanes de l’Est",
+        "en": "Eastern Savannas"
+      },
+      "theme": "Afrique de l’Est",
+      "difficulty": "easy",
+      "libraryVersion": 1,
+      "start": {
+        "id": "mombasa",
+        "name": {
+          "fr": "Mombasa",
+          "en": "Mombasa"
+        },
+        "iso3": "KEN",
+        "lonLat": [
+          39.668,
+          -4.043
+        ]
+      },
+      "meridianLon": -10,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "society.commonwealth",
+          "predicate": {
+            "fact": "memberOf",
+            "includes": "commonwealth"
+          },
+          "text": {
+            "fr": "Un membre du Commonwealth",
+            "en": "A Commonwealth member"
+          },
+          "explain": {
+            "fr": "Il fallait un membre du Commonwealth : le Gabon et le Togo, jamais colonisés par les Britanniques, l'ont rejoint en 2022.",
+            "en": "The country had to belong to the Commonwealth: Gabon and Togo, never British colonies, joined in 2022."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "water.landlocked",
+          "predicate": {
+            "fact": "landlocked",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays sans accès à la mer",
+            "en": "A country with no access to the sea"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans aucun littoral maritime : le Kazakhstan est le plus vaste d'entre eux, la Caspienne étant un lac.",
+            "en": "A country with no sea coast at all was needed: Kazakhstan is the largest, the Caspian counting as a lake."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.black",
+          "predicate": {
+            "fact": "flagColors",
+            "includes": "black"
+          },
+          "text": {
+            "fr": "Un drapeau où figure du noir",
+            "en": "A flag that shows black"
+          },
+          "explain": {
+            "fr": "Il fallait du noir sur le drapeau : l'Allemagne, l'Afrique du Sud, la Jamaïque ou l'Estonie. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to show black: Germany, South Africa, Jamaica or Estonia. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "borders.exactly-four",
+          "predicate": {
+            "fact": "landBorders",
+            "eq": 4
+          },
+          "text": {
+            "fr": "Un pays qui a exactement quatre voisins",
+            "en": "A country with exactly four neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre.",
+            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "relief.over-5000",
+          "predicate": {
+            "fact": "highestPointM",
+            "gt": 5000
+          },
+          "text": {
+            "fr": "Un pays qui culmine au-delà de 5 000 m",
+            "en": "A country whose summit tops 5,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un point culminant au-dessus de 5 000 m : le Kilimandjaro (5 895 m) offre ce privilège à la Tanzanie, l'Elbrouz à la Russie.",
+            "en": "The highest point had to exceed 5,000 m: Kilimanjaro (5,895 m) gives Tanzania that honour, Mount Elbrus gives it to Russia."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-other-continent",
+          "predicate": {
+            "ctx": {
+              "rule": "otherContinent"
+            }
+          },
+          "text": {
+            "fr": "Change de continent",
+            "en": "Move to another continent"
+          },
+          "explain": {
+            "fr": "Il fallait un pays d'un autre continent que celui de ton dernier camp valide. Convention ONU : la Turquie, Chypre, le Caucase et le Kazakhstan comptent en Asie, la Russie en Europe, l'Égypte en Afrique, le Panama en Amérique du Nord.",
+            "en": "The country had to be on a different continent from your last valid camp. UN convention: Turkey, Cyprus, the Caucasus and Kazakhstan count as Asia, Russia as Europe, Egypt as Africa, Panama as North America."
+          },
+          "fallback": {
+            "promptId": "flag.red-white-blue",
+            "predicate": {
+              "all": [
+                {
+                  "fact": "flagColors",
+                  "includes": "red"
+                },
+                {
+                  "fact": "flagColors",
+                  "includes": "white"
+                },
+                {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                },
+                {
+                  "not": {
+                    "fact": "flagColors",
+                    "includes": "yellow"
+                  }
+                },
+                {
+                  "not": {
+                    "fact": "flagColors",
+                    "includes": "green"
+                  }
+                },
+                {
+                  "not": {
+                    "fact": "flagColors",
+                    "includes": "black"
+                  }
+                },
+                {
+                  "not": {
+                    "fact": "flagColors",
+                    "includes": "orange"
+                  }
+                },
+                {
+                  "not": {
+                    "fact": "flagColors",
+                    "includes": "brown"
+                  }
+                },
+                {
+                  "not": {
+                    "fact": "flagColors",
+                    "includes": "grey"
+                  }
+                }
+              ]
+            },
+            "text": {
+              "fr": "Bleu, blanc, rouge seulement, hors armoiries",
+              "en": "Red, white and blue only, coats of arms aside"
+            },
+            "explain": {
+              "fr": "Il fallait un drapeau uniquement bleu, blanc et rouge : la France, les États-Unis, la Thaïlande ou le Népal. Les armoiries (écus, blasons) ne comptent pas.",
+              "en": "The flag had to be red, white and blue only: France, the United States, Thailand or Nepal. Coats of arms do not count."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 4
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "582c35400e9919ade64455d6884fac9e67d329adbdf077238d993931936fec19"
+    },
+    {
+      "code": "MER-0035",
+      "source": "catalog",
+      "catalogNumber": 35,
+      "title": {
+        "fr": "La ceinture de feu",
+        "en": "Ring of Fire"
+      },
+      "theme": "Pacifique volcanique",
+      "difficulty": "easy",
+      "libraryVersion": 1,
+      "start": {
+        "id": "vancouver",
+        "name": {
+          "fr": "Vancouver",
+          "en": "Vancouver"
+        },
+        "iso3": "CAN",
+        "lonLat": [
+          -123.117,
+          49.279
+        ]
+      },
+      "meridianLon": -170,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "relief.coastal-giants",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": false
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 5000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays côtier qui culmine au-delà de 5 000 m",
+            "en": "A coastal country whose summit tops 5,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays ouvert sur la mer dont le point culminant dépasse 5 000 m : le Kenya, la Géorgie ou le Myanmar en font partie.",
+            "en": "A country with a coastline and a summit above 5,000 m was needed: Kenya, Georgia and Myanmar are among them."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.spanish",
+          "predicate": {
+            "fact": "officialLanguages",
+            "includes": "spanish"
+          },
+          "text": {
+            "fr": "Un pays où l’espagnol est langue officielle",
+            "en": "A country where Spanish is an official language"
+          },
+          "explain": {
+            "fr": "Il fallait l'espagnol parmi les langues officielles : la Guinée équatoriale est le seul pays hispanophone d'Afrique.",
+            "en": "Spanish had to be an official language: Equatorial Guinea is the only Spanish-speaking country in Africa."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "water.island-tropical",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation tout entière sous les tropiques",
+            "en": "An island nation lying wholly in the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.red-white-only",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Rouge et blanc seulement, hors armoiries",
+            "en": "Red and white only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "climate.either-tropic",
+          "predicate": {
+            "any": [
+              {
+                "fact": "crossesTropicOfCancer",
+                "eq": true
+              },
+              {
+                "fact": "crossesTropicOfCapricorn",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays traversé par l’un des deux tropiques",
+            "en": "A country crossed by either tropic"
+          },
+          "explain": {
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "society.g20",
+          "predicate": {
+            "fact": "memberOf",
+            "includes": "g20"
+          },
+          "text": {
+            "fr": "Un pays membre du G20",
+            "en": "A G20 member country"
+          },
+          "explain": {
+            "fr": "Il fallait l'un des 19 pays du G20 (l'Union européenne et l'Union africaine en sont aussi membres) : l'Argentine et l'Afrique du Sud en font partie.",
+            "en": "The country had to be one of the G20's 19 member states (the EU and the African Union also sit at the table): Argentina and South Africa are in."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 12000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "41d80eab9d17f2cc7f7c10ca6596c1cefe583d17ea141b9986e443fbc6535384"
+    },
+    {
+      "code": "MER-0036",
+      "source": "catalog",
+      "catalogNumber": 36,
+      "title": {
+        "fr": "La route de la mousson",
+        "en": "Monsoon Road"
+      },
+      "theme": "Tropiques",
+      "difficulty": "easy",
+      "libraryVersion": 1,
+      "start": {
+        "id": "mumbai",
+        "name": {
+          "fr": "Bombay",
+          "en": "Mumbai"
+        },
+        "iso3": "IND",
+        "lonLat": [
+          72.878,
+          19.076
+        ]
+      },
+      "meridianLon": 125,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "climate.cancer",
+          "predicate": {
+            "fact": "crossesTropicOfCancer",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays traversé par le tropique du Cancer",
+            "en": "A country crossed by the Tropic of Cancer"
+          },
+          "explain": {
+            "fr": "Il fallait un pays que coupe le tropique du Cancer (23° 26′ N) : il traverse le Sahara, l'Arabie, l'Inde, la Chine, le Mexique et les Bahamas.",
+            "en": "The country had to be crossed by the Tropic of Cancer (23°26′ N): it runs through the Sahara, Arabia, India, China, Mexico and the Bahamas."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.over-100m",
+          "predicate": {
+            "fact": "population",
+            "gt": 100000000
+          },
+          "text": {
+            "fr": "Un pays de plus de 100 millions d’habitants",
+            "en": "A country of over 100 million people"
+          },
+          "explain": {
+            "fr": "Il fallait plus de 100 millions d'habitants : l'Éthiopie, la RD Congo et les Philippines ont franchi ce cap.",
+            "en": "More than 100 million inhabitants were needed: Ethiopia, DR Congo and the Philippines have passed that mark."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.green-no-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "green"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "red"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Du vert sur le drapeau, mais pas de rouge",
+            "en": "Green on the flag, but no red"
+          },
+          "explain": {
+            "fr": "Il fallait du vert et aucun rouge : le Brésil, l'Inde, l'Arabie saoudite ou le Nigeria. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to show green and no red: Brazil, India, Saudi Arabia or Nigeria. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "water.island-tropical",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation tout entière sous les tropiques",
+            "en": "An island nation lying wholly in the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "borders.exactly-five",
+          "predicate": {
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 5
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "AND"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MAR"
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays qui a exactement cinq voisins",
+            "en": "A country with exactly five neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "society.monarchy-left",
+          "predicate": {
+            "all": [
+              {
+                "fact": "monarchy",
+                "eq": true
+              },
+              {
+                "fact": "drivesOnLeft",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une monarchie où l’on roule à gauche",
+            "en": "A monarchy that drives on the left"
+          },
+          "explain": {
+            "fr": "Il fallait un monarque et une conduite à gauche : le Japon, la Thaïlande ou l'Eswatini.",
+            "en": "A monarch and left-hand traffic were needed: Japan, Thailand or Eswatini."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "4e6b94936c9047c0dc38bc739e3f270ff0d60f5cfad27b601e79b8af457d6fb2"
+    },
+    {
+      "code": "MER-0037",
+      "source": "catalog",
+      "catalogNumber": 37,
+      "title": {
+        "fr": "Du Nil à l’Indus",
+        "en": "From the Nile to the Indus"
+      },
+      "theme": "Croissant aride",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "alexandrie",
+        "name": {
+          "fr": "Alexandrie",
+          "en": "Alexandria"
+        },
+        "iso3": "EGY",
+        "lonLat": [
+          29.918,
+          31.2
+        ]
+      },
+      "meridianLon": 70,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "climate.subtropical-north",
+          "predicate": {
+            "all": [
+              {
+                "fact": "southernmostLat",
+                "gte": 20
+              },
+              {
+                "fact": "northernmostLat",
+                "lte": 40
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays tout entier entre 20° N et 40° N",
+            "en": "A country wholly between 20° N and 40° N"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier entre les 20e et 40e parallèles nord, la ceinture des grands déserts : l'Égypte, l'Iran ou la Corée du Sud.",
+            "en": "The country had to lie wholly between 20° N and 40° N, the belt of great deserts: Egypt, Iran or South Korea."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.arab-league",
+          "predicate": {
+            "fact": "memberOf",
+            "includes": "arabLeague"
+          },
+          "text": {
+            "fr": "Un membre de la Ligue arabe",
+            "en": "An Arab League member"
+          },
+          "explain": {
+            "fr": "Il fallait un membre de la Ligue arabe : elle s'étend de la Mauritanie aux Comores et à Oman.",
+            "en": "The country had to be an Arab League member: it stretches from Mauritania to the Comoros and Oman."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.green-white-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "green"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Vert, blanc, rouge seulement, hors armoiries",
+            "en": "Green, white and red only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement vert, blanc et rouge : l'Italie, la Hongrie, l'Iran ou Madagascar. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be green, white and red only: Italy, Hungary, Iran or Madagascar. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "borders.seven-plus",
+          "predicate": {
+            "fact": "landBorders",
+            "gte": 7
+          },
+          "text": {
+            "fr": "Un pays qui a au moins sept voisins",
+            "en": "A country with at least seven neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait au moins sept voisins terrestres : la Hongrie en a sept, la Turquie huit, le Brésil dix.",
+            "en": "At least seven land neighbours were needed: Hungary has seven, Turkey eight, Brazil ten."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "relief.landlocked-heights",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": true
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 4000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays enclavé qui culmine au-delà de 4 000 m",
+            "en": "A landlocked country rising above 4,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer dont le sommet dépasse 4 000 m : la Suisse, l'Éthiopie ou le Rwanda sont de la partie.",
+            "en": "A landlocked country with a summit above 4,000 m was needed: Switzerland, Ethiopia and Rwanda all qualify."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-homeward",
+          "predicate": {
+            "ctx": {
+              "rule": "closerToPort"
+            }
+          },
+          "text": {
+            "fr": "Rentre : plus près du port que ton dernier camp",
+            "en": "Head home: closer to port than your last camp"
+          },
+          "explain": {
+            "fr": "Il fallait planter le camp plus près du port de départ que ne l'était ton dernier camp valide.",
+            "en": "The camp had to be closer to the starting port than your last valid camp was."
+          },
+          "fallback": {
+            "promptId": "society.over-50m",
+            "predicate": {
+              "fact": "population",
+              "gt": 50000000
+            },
+            "text": {
+              "fr": "Un pays de plus de 50 millions d’habitants",
+              "en": "A country of over 50 million people"
+            },
+            "explain": {
+              "fr": "Il fallait plus de 50 millions d'habitants : la Tanzanie, la Colombie ou la Corée du Sud dépassent ce seuil.",
+              "en": "More than 50 million inhabitants were needed: Tanzania, Colombia and South Korea are above that line."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "northernSoul"
+        },
+        {
+          "id": "meridianWeaver"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "d048d40418c984f6d7639847fc7452bc42c3e8adad40c69f0acf5c1d4d711101"
+    },
+    {
+      "code": "MER-0038",
+      "source": "catalog",
+      "catalogNumber": 38,
+      "title": {
+        "fr": "Nuits blanches",
+        "en": "White Nights"
+      },
+      "theme": "Haut Nord",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "helsinki",
+        "name": {
+          "fr": "Helsinki",
+          "en": "Helsinki"
+        },
+        "iso3": "FIN",
+        "lonLat": [
+          24.938,
+          60.17
+        ]
+      },
+      "meridianLon": -75,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "climate.north-of-55",
+          "predicate": {
+            "fact": "northernmostLat",
+            "gte": 55
+          },
+          "text": {
+            "fr": "Un pays qui s’étend au-delà de 55° N",
+            "en": "A country reaching north of 55° N"
+          },
+          "explain": {
+            "fr": "Il fallait un pays dont une partie se trouve au nord du 55e parallèle : l'Allemagne et l'Irlande y touchent de justesse, comme le Kazakhstan.",
+            "en": "Part of the country had to lie north of the 55th parallel: Germany and Ireland just reach it, as does Kazakhstan."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "flag.blue-white-only",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "red"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Bleu et blanc seulement, hors armoiries",
+            "en": "Blue and white only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement bleu et blanc : la Grèce, la Finlande, Israël ou le Honduras. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be blue and white only: Greece, Finland, Israel or Honduras. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "borders.russia-neighbour",
+          "predicate": {
+            "fact": "borders",
+            "includes": "RUS"
+          },
+          "text": {
+            "fr": "Un voisin de la Russie",
+            "en": "A neighbour of Russia"
+          },
+          "explain": {
+            "fr": "Il fallait un pays ayant une frontière terrestre avec la Russie : la Pologne et la Lituanie comptent, grâce à l'enclave de Kaliningrad.",
+            "en": "A country sharing a land border with Russia was needed: Poland and Lithuania count, thanks to the Kaliningrad exclave."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "water.island-beyond-tropics",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "all": [
+                    {
+                      "fact": "northernmostLat",
+                      "lt": 23.5
+                    },
+                    {
+                      "fact": "southernmostLat",
+                      "gt": -23.44
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation qui déborde des tropiques",
+            "en": "An island nation reaching beyond the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée.",
+            "en": "An island state not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "position.giants",
+          "predicate": {
+            "fact": "areaKm2",
+            "gt": 2500000
+          },
+          "text": {
+            "fr": "Un géant de plus de 2,5 millions de km²",
+            "en": "A giant of over 2.5 million km²"
+          },
+          "explain": {
+            "fr": "Il fallait plus de 2,5 millions de km² : le Kazakhstan, plus vaste pays sans littoral, en fait partie avec l'Argentine et l'Inde.",
+            "en": "More than 2.5 million km² were needed: Kazakhstan, the largest landlocked country, makes the list with Argentina and India."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "society.over-100m",
+          "predicate": {
+            "fact": "population",
+            "gt": 100000000
+          },
+          "text": {
+            "fr": "Un pays de plus de 100 millions d’habitants",
+            "en": "A country of over 100 million people"
+          },
+          "explain": {
+            "fr": "Il fallait plus de 100 millions d'habitants : l'Éthiopie, la RD Congo et les Philippines ont franchi ce cap.",
+            "en": "More than 100 million inhabitants were needed: Ethiopia, DR Congo and the Philippines have passed that mark."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "northernSoul"
+        },
+        {
+          "id": "meridianWeaver"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "6ff9fd11d6cbf2350addc7596c31bcbd60479e4e0ccaf35fa437ecb1baa6d218"
+    },
+    {
+      "code": "MER-0039",
+      "source": "catalog",
+      "catalogNumber": 39,
+      "title": {
+        "fr": "Entre deux océans",
+        "en": "Between Two Oceans"
+      },
+      "theme": "Isthmes",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "panama",
+        "name": {
+          "fr": "Panama",
+          "en": "Panama City"
+        },
+        "iso3": "PAN",
+        "lonLat": [
+          -79.519,
+          8.983
+        ]
+      },
+      "meridianLon": 100,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "society.dollar-republic",
+          "predicate": {
+            "all": [
+              {
+                "fact": "currencyDollar",
+                "eq": true
+              },
+              {
+                "fact": "monarchy",
+                "eq": false
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une république qui paie en dollars",
+            "en": "A republic that pays in dollars"
+          },
+          "explain": {
+            "fr": "Il fallait une république dont la monnaie s'appelle dollar : Singapour, les Fidji ou le Suriname ont chacun le leur.",
+            "en": "A republic whose currency is called a dollar was needed: Singapore, Fiji and Suriname each have their own."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "climate.sahel-caribbean-belt",
+          "predicate": {
+            "all": [
+              {
+                "fact": "southernmostLat",
+                "gte": 10
+              },
+              {
+                "fact": "northernmostLat",
+                "lte": 25
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays tout entier entre 10° N et 25° N",
+            "en": "A country wholly between 10° N and 25° N"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier entre les 10e et 25e parallèles nord : cette bande réunit le Sahel, l'Amérique centrale et les Caraïbes.",
+            "en": "The country had to lie wholly between 10° N and 25° N: this band links the Sahel, Central America and the Caribbean."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "water.coast-small",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": false
+              },
+              {
+                "fact": "hasLandBorder",
+                "eq": true
+              },
+              {
+                "fact": "areaKm2",
+                "lt": 30000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Moins de 30 000 km², un littoral et des voisins",
+            "en": "Under 30,000 km², a coastline and neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait un pays de moins de 30 000 km² ayant à la fois une côte et une frontière terrestre : Monaco, la Gambie ou le Belize.",
+            "en": "A country under 30,000 km² with both a coastline and a land border was needed: Monaco, the Gambia or Belize."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.red-white-blue",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Bleu, blanc, rouge seulement, hors armoiries",
+            "en": "Red, white and blue only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement bleu, blanc et rouge : la France, les États-Unis, la Thaïlande ou le Népal. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be red, white and blue only: France, the United States, Thailand or Nepal. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "relief.coastal-giants",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": false
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 5000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays côtier qui culmine au-delà de 5 000 m",
+            "en": "A coastal country whose summit tops 5,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays ouvert sur la mer dont le point culminant dépasse 5 000 m : le Kenya, la Géorgie ou le Myanmar en font partie.",
+            "en": "A country with a coastline and a summit above 5,000 m was needed: Kenya, Georgia and Myanmar are among them."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "borders.ctx-neighbour",
+          "predicate": {
+            "ctx": {
+              "rule": "neighborOf"
+            }
+          },
+          "text": {
+            "fr": "Un voisin de ton dernier camp",
+            "en": "A neighbour of your last camp"
+          },
+          "explain": {
+            "fr": "Il fallait un pays partageant une frontière terrestre avec le pays de ton dernier camp valide (ou du port).",
+            "en": "The country had to share a land border with the country of your last valid camp (or the port)."
+          },
+          "fallback": {
+            "promptId": "society.spanish",
+            "predicate": {
+              "fact": "officialLanguages",
+              "includes": "spanish"
+            },
+            "text": {
+              "fr": "Un pays où l’espagnol est langue officielle",
+              "en": "A country where Spanish is an official language"
+            },
+            "explain": {
+              "fr": "Il fallait l'espagnol parmi les langues officielles : la Guinée équatoriale est le seul pays hispanophone d'Afrique.",
+              "en": "Spanish had to be an official language: Equatorial Guinea is the only Spanish-speaking country in Africa."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        },
+        {
+          "id": "meridianWeaver"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "0310f8aea3836ea85b8ce85daaee9743354e4227bc272de0db90e4f44743ccbc"
+    },
+    {
+      "code": "MER-0040",
+      "source": "catalog",
+      "catalogNumber": 40,
+      "title": {
+        "fr": "Sur la ligne",
+        "en": "Along the Line"
+      },
+      "theme": "Équateur",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "jakarta",
+        "name": {
+          "fr": "Jakarta",
+          "en": "Jakarta"
+        },
+        "iso3": "IDN",
+        "lonLat": [
+          106.845,
+          -6.208
+        ]
+      },
+      "meridianLon": -150,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "climate.equator",
+          "predicate": {
+            "fact": "crossesEquator",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays traversé par l’équateur",
+            "en": "A country crossed by the equator"
+          },
+          "explain": {
+            "fr": "Il fallait un pays que coupe l'équateur : São Tomé-et-Principe n'y touche que par l'îlot das Rolas ; aux Maldives et à Kiribati, il passe en mer, entre deux groupes d'atolls du pays.",
+            "en": "The country had to be crossed by the equator: São Tomé and Príncipe touches it only through Rolas islet; in the Maldives and Kiribati it runs through the sea between two groups of the country's atolls."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "water.island-populous",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "fact": "population",
+                "gt": 1000000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation de plus d’un million d’habitants",
+            "en": "An island nation of over a million people"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil.",
+            "en": "An island state of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.red-white-only",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Rouge et blanc seulement, hors armoiries",
+            "en": "Red and white only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "borders.exactly-four",
+          "predicate": {
+            "fact": "landBorders",
+            "eq": 4
+          },
+          "text": {
+            "fr": "Un pays qui a exactement quatre voisins",
+            "en": "A country with exactly four neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre.",
+            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "relief.tropical-island-peaks",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 1000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île tropicale dont un sommet passe 1 000 m",
+            "en": "A tropical island nation with a peak above 1,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
+            "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-across-equator",
+          "predicate": {
+            "ctx": {
+              "rule": "otherHemisphere",
+              "axis": "NS"
+            }
+          },
+          "text": {
+            "fr": "Passe de l’autre côté de l’équateur",
+            "en": "Cross to the other side of the equator"
+          },
+          "explain": {
+            "fr": "Il fallait planter le camp dans l'hémisphère opposé (nord ou sud) à celui de ton dernier camp valide.",
+            "en": "The camp had to be planted in the opposite hemisphere (north or south) from your last valid camp."
+          },
+          "fallback": {
+            "promptId": "society.over-100m",
+            "predicate": {
+              "fact": "population",
+              "gt": 100000000
+            },
+            "text": {
+              "fr": "Un pays de plus de 100 millions d’habitants",
+              "en": "A country of over 100 million people"
+            },
+            "explain": {
+              "fr": "Il fallait plus de 100 millions d'habitants : l'Éthiopie, la RD Congo et les Philippines ont franchi ce cap.",
+              "en": "More than 100 million inhabitants were needed: Ethiopia, DR Congo and the Philippines have passed that mark."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        },
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "8ebe3ead492bc638f2285d3197dcef31a4179f7ace00b956786e6dc17346925b"
+    },
+    {
+      "code": "MER-0041",
+      "source": "catalog",
+      "catalogNumber": 41,
+      "title": {
+        "fr": "Au cœur des terres",
+        "en": "Heart of the Land"
+      },
+      "theme": "Pays enclavés",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "tachkent",
+        "name": {
+          "fr": "Tachkent",
+          "en": "Tashkent"
+        },
+        "iso3": "UZB",
+        "lonLat": [
+          69.24,
+          41.311
+        ]
+      },
+      "meridianLon": -30,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "water.landlocked-giant",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": true
+              },
+              {
+                "fact": "areaKm2",
+                "gt": 500000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays enclavé de plus de 500 000 km²",
+            "en": "A landlocked country over 500,000 km²"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer de plus de 500 000 km² : la Mongolie, le Tchad ou la Bolivie en sont.",
+            "en": "A landlocked country larger than 500,000 km² was needed: Mongolia, Chad and Bolivia are among them."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "borders.exactly-five",
+          "predicate": {
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 5
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "AND"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MAR"
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays qui a exactement cinq voisins",
+            "en": "A country with exactly five neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "climate.tropical-landlocked",
+          "predicate": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              },
+              {
+                "fact": "landlocked",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays enclavé tout entier sous les tropiques",
+            "en": "A landlocked country wholly in the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer tout entier entre les deux tropiques : la Bolivie, le Laos ou le Burkina Faso.",
+            "en": "A landlocked country lying entirely between the two tropics was needed: Bolivia, Laos or Burkina Faso."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.red-white-only",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Rouge et blanc seulement, hors armoiries",
+            "en": "Red and white only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "society.opec",
+          "predicate": {
+            "fact": "memberOf",
+            "includes": "opec"
+          },
+          "text": {
+            "fr": "Un membre de l’OPEP",
+            "en": "An OPEC member"
+          },
+          "explain": {
+            "fr": "Il fallait un membre de l'Organisation des pays exportateurs de pétrole : le Gabon et la Guinée équatoriale en sont, l'Angola l'a quittée en 2024.",
+            "en": "The country had to be an OPEC member: Gabon and Equatorial Guinea belong, Angola left in 2024."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "water.landlocked-small",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": true
+              },
+              {
+                "fact": "areaKm2",
+                "lt": 50000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un petit pays enclavé, moins de 50 000 km²",
+            "en": "A small landlocked country, under 50,000 km²"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer de moins de 50 000 km² : du Vatican au Bhoutan, en passant par le Burundi.",
+            "en": "A landlocked country under 50,000 km² was needed: from the Vatican to Bhutan by way of Burundi."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        },
+        {
+          "id": "meridianWeaver"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "a7d9b1ca369c7e62bff4bae4987cc9e9cd187dce419083234a5d6b3e53fbc289"
+    },
+    {
+      "code": "MER-0042",
+      "source": "catalog",
+      "catalogNumber": 42,
+      "title": {
+        "fr": "Les mers australes",
+        "en": "Southern Seas"
+      },
+      "theme": "Océan Indien austral",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "perth",
+        "name": {
+          "fr": "Perth",
+          "en": "Perth"
+        },
+        "iso3": "AUS",
+        "lonLat": [
+          115.861,
+          -31.952
+        ]
+      },
+      "meridianLon": -120,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "climate.southern-tropics",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereNS",
+                "eq": "S"
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays austral tout entier sous les tropiques",
+            "en": "A southern country lying wholly in the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un pays au sud de l'équateur sans sortir des tropiques : l'Angola, les Samoa ou le Pérou.",
+            "en": "The country had to lie south of the equator without leaving the tropics: Angola, Samoa or Peru."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.monarchy-left",
+          "predicate": {
+            "all": [
+              {
+                "fact": "monarchy",
+                "eq": true
+              },
+              {
+                "fact": "drivesOnLeft",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une monarchie où l’on roule à gauche",
+            "en": "A monarchy that drives on the left"
+          },
+          "explain": {
+            "fr": "Il fallait un monarque et une conduite à gauche : le Japon, la Thaïlande ou l'Eswatini.",
+            "en": "A monarch and left-hand traffic were needed: Japan, Thailand or Eswatini."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "water.island-large",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "fact": "areaKm2",
+                "gt": 50000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une grande île-nation, plus de 50 000 km²",
+            "en": "A large island nation, over 50,000 km²"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie.",
+            "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.southern-red-white-blue",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "fact": "hemisphereNS",
+                "eq": "S"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Austral, aux couleurs rouge, blanc et bleu",
+            "en": "Southern, flying red, white and blue"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud dont le drapeau porte du rouge, du blanc et du bleu : l'Australie, le Chili ou la Namibie. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "A country entirely in the southern hemisphere whose flag shows red, white and blue was needed: Australia, Chile or Namibia. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "position.big-south",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereNS",
+                "eq": "S"
+              },
+              {
+                "fact": "areaKm2",
+                "gt": 500000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Austral et vaste, plus de 500 000 km²",
+            "en": "Southern and vast, over 500,000 km²"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
+            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "borders.exactly-five",
+          "predicate": {
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 5
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "AND"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MAR"
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays qui a exactement cinq voisins",
+            "en": "A country with exactly five neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "southernSoul"
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 14000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "2d0a2b1238dab211ecb44f984b8da7979d5df6ec8f4829ffb0ce235a97e1cccb"
+    },
+    {
+      "code": "MER-0043",
+      "source": "catalog",
+      "catalogNumber": 43,
+      "title": {
+        "fr": "Cordillère et Pacifique",
+        "en": "Cordillera and Pacific"
+      },
+      "theme": "Pacifique sud-américain",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "valparaiso",
+        "name": {
+          "fr": "Valparaíso",
+          "en": "Valparaíso"
+        },
+        "iso3": "CHL",
+        "lonLat": [
+          -71.62,
+          -33.047
+        ]
+      },
+      "meridianLon": 140,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "relief.southern-heights",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereNS",
+                "eq": "S"
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 3000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
+            "en": "A southern-hemisphere country with a peak above 3,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
+            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.iberian-south",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "officialLanguages",
+                    "includes": "spanish"
+                  },
+                  {
+                    "fact": "officialLanguages",
+                    "includes": "portuguese"
+                  }
+                ]
+              },
+              {
+                "fact": "hemisphereNS",
+                "eq": "S"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Espagnol ou portugais, dans l’hémisphère sud",
+            "en": "Spanish or Portuguese, in the southern hemisphere"
+          },
+          "explain": {
+            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili.",
+            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "water.island-beyond-tropics",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "not": {
+                  "all": [
+                    {
+                      "fact": "northernmostLat",
+                      "lt": 23.5
+                    },
+                    {
+                      "fact": "southernmostLat",
+                      "gt": -23.44
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation qui déborde des tropiques",
+            "en": "An island nation reaching beyond the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée.",
+            "en": "An island state not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.black-and-blue",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "black"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un drapeau qui mêle noir et bleu",
+            "en": "A flag mixing black and blue"
+          },
+          "explain": {
+            "fr": "Il fallait du noir et du bleu sur le même drapeau : l'Estonie, le Botswana, les Bahamas ou la Corée du Sud. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to show both black and blue: Estonia, Botswana, the Bahamas or South Korea. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "climate.temperate-coast",
+          "predicate": {
+            "all": [
+              {
+                "fact": "southernmostLat",
+                "gte": 23.44
+              },
+              {
+                "fact": "landlocked",
+                "eq": false
+              },
+              {
+                "fact": "northernmostLat",
+                "lte": 40
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays côtier tout entier entre 23° N et 40° N",
+            "en": "A coastal country wholly between 23° N and 40° N"
+          },
+          "explain": {
+            "fr": "Il fallait un pays ouvert sur la mer, tout entier entre le tropique du Cancer et le 40e parallèle nord : Malte, la Tunisie ou le Pakistan.",
+            "en": "A coastal country lying wholly between the Tropic of Cancer and 40° N was needed: Malta, Tunisia or Pakistan."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-other-continent",
+          "predicate": {
+            "ctx": {
+              "rule": "otherContinent"
+            }
+          },
+          "text": {
+            "fr": "Change de continent",
+            "en": "Move to another continent"
+          },
+          "explain": {
+            "fr": "Il fallait un pays d'un autre continent que celui de ton dernier camp valide. Convention ONU : la Turquie, Chypre, le Caucase et le Kazakhstan comptent en Asie, la Russie en Europe, l'Égypte en Afrique, le Panama en Amérique du Nord.",
+            "en": "The country had to be on a different continent from your last valid camp. UN convention: Turkey, Cyprus, the Caucasus and Kazakhstan count as Asia, Russia as Europe, Egypt as Africa, Panama as North America."
+          },
+          "fallback": {
+            "promptId": "position.big-south",
+            "predicate": {
+              "all": [
+                {
+                  "fact": "hemisphereNS",
+                  "eq": "S"
+                },
+                {
+                  "fact": "areaKm2",
+                  "gt": 500000
+                }
+              ]
+            },
+            "text": {
+              "fr": "Austral et vaste, plus de 500 000 km²",
+              "en": "Southern and vast, over 500,000 km²"
+            },
+            "explain": {
+              "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
+              "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 14000
+          }
+        },
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "b0acb6bad85eca93fb4176931334c58d9da4db2965fcb96217da084fa202f3c1"
+    },
+    {
+      "code": "MER-0044",
+      "source": "catalog",
+      "catalogNumber": 44,
+      "title": {
+        "fr": "Au milieu du Pacifique",
+        "en": "Mid-Pacific"
+      },
+      "theme": "Pacifique",
+      "difficulty": "normal",
+      "libraryVersion": 1,
+      "start": {
+        "id": "honolulu",
+        "name": {
+          "fr": "Honolulu",
+          "en": "Honolulu"
+        },
+        "iso3": "USA",
+        "lonLat": [
+          -157.858,
+          21.307
+        ]
+      },
+      "meridianLon": -70,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "water.island-tropical",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation tout entière sous les tropiques",
+            "en": "An island nation lying wholly in the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.dollar-republic",
+          "predicate": {
+            "all": [
+              {
+                "fact": "currencyDollar",
+                "eq": true
+              },
+              {
+                "fact": "monarchy",
+                "eq": false
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une république qui paie en dollars",
+            "en": "A republic that pays in dollars"
+          },
+          "explain": {
+            "fr": "Il fallait une république dont la monnaie s'appelle dollar : Singapour, les Fidji ou le Suriname ont chacun le leur.",
+            "en": "A republic whose currency is called a dollar was needed: Singapore, Fiji and Suriname each have their own."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "climate.either-tropic",
+          "predicate": {
+            "any": [
+              {
+                "fact": "crossesTropicOfCancer",
+                "eq": true
+              },
+              {
+                "fact": "crossesTropicOfCapricorn",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays traversé par l’un des deux tropiques",
+            "en": "A country crossed by either tropic"
+          },
+          "explain": {
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.blue-white-only",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "red"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Bleu et blanc seulement, hors armoiries",
+            "en": "Blue and white only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement bleu et blanc : la Grèce, la Finlande, Israël ou le Honduras. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be blue and white only: Greece, Finland, Israel or Honduras. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "position.north-east-islands",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereEW",
+                "eq": "E"
+              },
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "fact": "hemisphereNS",
+                "eq": "N"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation du quart nord-est du globe",
+            "en": "An island nation in the north-eastern quarter"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte, Chypre ou Palaos.",
+            "en": "An island state lying wholly north of the equator and east of Greenwich was needed: Japan, Malta, Cyprus or Palau."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-homeward",
+          "predicate": {
+            "ctx": {
+              "rule": "closerToPort"
+            }
+          },
+          "text": {
+            "fr": "Rentre : plus près du port que ton dernier camp",
+            "en": "Head home: closer to port than your last camp"
+          },
+          "explain": {
+            "fr": "Il fallait planter le camp plus près du port de départ que ne l'était ton dernier camp valide.",
+            "en": "The camp had to be closer to the starting port than your last valid camp was."
+          },
+          "fallback": {
+            "promptId": "society.commonwealth-right",
+            "predicate": {
+              "all": [
+                {
+                  "fact": "drivesOnLeft",
+                  "eq": false
+                },
+                {
+                  "fact": "memberOf",
+                  "includes": "commonwealth"
+                }
+              ]
+            },
+            "text": {
+              "fr": "Du Commonwealth, mais on y roule à droite",
+              "en": "In the Commonwealth, yet driving on the right"
+            },
+            "explain": {
+              "fr": "Il fallait un membre du Commonwealth où l'on roule à droite : le Canada, le Rwanda ou le Cameroun.",
+              "en": "A Commonwealth member that drives on the right was needed: Canada, Rwanda or Cameroon."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "meridianWeaver"
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 14000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "e4e9108256975e8e78c3260d96da7da03ca617d516357b6ce4cacfa5842978a4"
+    },
+    {
+      "code": "MER-0045",
+      "source": "catalog",
+      "catalogNumber": 45,
+      "title": {
+        "fr": "Mélanésie",
+        "en": "Melanesia"
+      },
+      "theme": "Pacifique ouest",
+      "difficulty": "expert",
+      "libraryVersion": 1,
+      "start": {
+        "id": "suva",
+        "name": {
+          "fr": "Suva",
+          "en": "Suva"
+        },
+        "iso3": "FJI",
+        "lonLat": [
+          178.45,
+          -18.128
+        ]
+      },
+      "meridianLon": -135,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "relief.tropical-island-peaks",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 1000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île tropicale dont un sommet passe 1 000 m",
+            "en": "A tropical island nation with a peak above 1,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
+            "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.left-outside-commonwealth",
+          "predicate": {
+            "all": [
+              {
+                "fact": "drivesOnLeft",
+                "eq": true
+              },
+              {
+                "not": {
+                  "fact": "memberOf",
+                  "includes": "commonwealth"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Hors Commonwealth, on y roule à gauche",
+            "en": "Outside the Commonwealth, driving on the left"
+          },
+          "explain": {
+            "fr": "Il fallait un pays hors du Commonwealth où l'on roule à gauche : le Japon, l'Indonésie, le Suriname ou l'Irlande.",
+            "en": "A country outside the Commonwealth that drives on the left was needed: Japan, Indonesia, Suriname or Ireland."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.island-black",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "fact": "flagColors",
+                "includes": "black"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation au drapeau marqué de noir",
+            "en": "An island nation with black on its flag"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "water.island-right-hand",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "fact": "drivesOnLeft",
+                "eq": false
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation où l’on roule à droite",
+            "en": "An island nation that drives on the right"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines.",
+            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "climate.southern-tropics",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereNS",
+                "eq": "S"
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays austral tout entier sous les tropiques",
+            "en": "A southern country lying wholly in the tropics"
+          },
+          "explain": {
+            "fr": "Il fallait un pays au sud de l'équateur sans sortir des tropiques : l'Angola, les Samoa ou le Pérou.",
+            "en": "The country had to lie south of the equator without leaving the tropics: Angola, Samoa or Peru."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.west-beyond-americas",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereEW",
+                "eq": "W"
+              },
+              {
+                "not": {
+                  "fact": "continent",
+                  "eq": "NA"
+                }
+              },
+              {
+                "not": {
+                  "fact": "continent",
+                  "eq": "SA"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Hors Amériques, tout entier à l’ouest de Greenwich",
+            "en": "Outside the Americas, wholly west of Greenwich"
+          },
+          "explain": {
+            "fr": "Il fallait un pays hors des Amériques entièrement à l'ouest du méridien de Greenwich : l'Irlande, le Sénégal, mais aussi les Tonga et les Samoa.",
+            "en": "A country outside the Americas lying wholly west of the Greenwich meridian was needed: Ireland, Senegal, but also Tonga and Samoa."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 16000
+          }
+        },
+        {
+          "id": "noFalseTrail"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "a98f199d22a0af05ecca1b1e89868cb20382d0c26e4669ac14545d66fb079323"
+    },
+    {
+      "code": "MER-0046",
+      "source": "catalog",
+      "catalogNumber": 46,
+      "title": {
+        "fr": "Les petits États",
+        "en": "Small States"
+      },
+      "theme": "Micro-États",
+      "difficulty": "expert",
+      "libraryVersion": 1,
+      "start": {
+        "id": "la-valette",
+        "name": {
+          "fr": "La Valette",
+          "en": "Valletta"
+        },
+        "iso3": "MLT",
+        "lonLat": [
+          14.514,
+          35.899
+        ]
+      },
+      "meridianLon": -45,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "borders.small-crowded",
+          "predicate": {
+            "all": [
+              {
+                "fact": "areaKm2",
+                "lt": 50000
+              },
+              {
+                "fact": "landBorders",
+                "gte": 4
+              }
+            ]
+          },
+          "text": {
+            "fr": "Moins de 50 000 km², au moins quatre voisins",
+            "en": "Under 50,000 km², at least four neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait un pays de moins de 50 000 km² touchant au moins quatre voisins : la Suisse en a cinq, le Monténégro quatre.",
+            "en": "A country under 50,000 km² with at least four land neighbours was needed: Switzerland has five, Montenegro four."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.tiny-republic",
+          "predicate": {
+            "all": [
+              {
+                "fact": "monarchy",
+                "eq": false
+              },
+              {
+                "fact": "population",
+                "lt": 150000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une république de moins de 150 000 habitants",
+            "en": "A republic of under 150,000 people"
+          },
+          "explain": {
+            "fr": "Il fallait une république de moins de 150 000 habitants : Saint-Marin, l'une des plus anciennes républiques du monde, en est.",
+            "en": "A republic of fewer than 150,000 people was needed: San Marino, one of the world's oldest republics, is one."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "water.landlocked-small",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": true
+              },
+              {
+                "fact": "areaKm2",
+                "lt": 50000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un petit pays enclavé, moins de 50 000 km²",
+            "en": "A small landlocked country, under 50,000 km²"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer de moins de 50 000 km² : du Vatican au Bhoutan, en passant par le Burundi.",
+            "en": "A landlocked country under 50,000 km² was needed: from the Vatican to Bhutan by way of Burundi."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "flag.green-white-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "green"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "yellow"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Vert, blanc, rouge seulement, hors armoiries",
+            "en": "Green, white and red only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement vert, blanc et rouge : l'Italie, la Hongrie, l'Iran ou Madagascar. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be green, white and red only: Italy, Hungary, Iran or Madagascar. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "relief.island-peaks",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "fact": "highestPointM",
+                "gt": 2000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation dont un sommet dépasse 2 000 m",
+            "en": "An island nation with a peak above 2,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre culminant au-dessus de 2 000 m : le volcan Fogo du Cap-Vert ou le Karthala des Comores comptent.",
+            "en": "A country without land borders rising above 2,000 m was needed: Cape Verde's Fogo volcano and the Comoros' Karthala both count."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.small-west",
+          "predicate": {
+            "all": [
+              {
+                "fact": "areaKm2",
+                "lt": 30000
+              },
+              {
+                "fact": "hemisphereEW",
+                "eq": "W"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Moins de 30 000 km², tout à l’ouest de Greenwich",
+            "en": "Under 30,000 km², wholly west of Greenwich"
+          },
+          "explain": {
+            "fr": "Il fallait un pays de moins de 30 000 km² entièrement à l'ouest de Greenwich : le Salvador, la Gambie ou les Samoa.",
+            "en": "A country under 30,000 km² lying wholly west of Greenwich was needed: El Salvador, the Gambia or Samoa."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 16000
+          }
+        },
+        {
+          "id": "meridianWeaver"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "200d84f2e7978f91009b8b7de2f13b0c6369f27b8d7f34d65fd4038d2b74fd80"
+    },
+    {
+      "code": "MER-0047",
+      "source": "catalog",
+      "catalogNumber": 47,
+      "title": {
+        "fr": "Les îles de l’Atlantique",
+        "en": "Atlantic Islands"
+      },
+      "theme": "Atlantique insulaire",
+      "difficulty": "expert",
+      "libraryVersion": 1,
+      "start": {
+        "id": "praia",
+        "name": {
+          "fr": "Praia",
+          "en": "Praia"
+        },
+        "iso3": "CPV",
+        "lonLat": [
+          -23.51,
+          14.933
+        ]
+      },
+      "meridianLon": 140,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "society.portuguese",
+          "predicate": {
+            "fact": "officialLanguages",
+            "includes": "portuguese"
+          },
+          "text": {
+            "fr": "Un pays où le portugais est langue officielle",
+            "en": "A country where Portuguese is an official language"
+          },
+          "explain": {
+            "fr": "Il fallait le portugais parmi les langues officielles : on le parle sur quatre continents, du Brésil au Timor oriental.",
+            "en": "Portuguese had to be an official language: it is spoken on four continents, from Brazil to East Timor."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "position.west-islands",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereEW",
+                "eq": "W"
+              },
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation tout entière à l’ouest de Greenwich",
+            "en": "An island nation wholly west of Greenwich"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre entièrement à l'ouest du méridien de Greenwich : les Caraïbes, l'Islande, le Cap-Vert ou les Samoa.",
+            "en": "A country without land borders lying wholly west of Greenwich was needed: the Caribbean, Iceland, Cape Verde or Samoa."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.blue-yellow-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "yellow"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "white"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Bleu, jaune, rouge seulement, hors armoiries",
+            "en": "Blue, yellow and red only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement bleu, jaune et rouge : la Roumanie et le Tchad ont des drapeaux presque identiques. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be blue, yellow and red only: Romania and Chad have almost identical flags. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "water.island-tiny",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "fact": "population",
+                "lt": 150000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation de moins de 150 000 habitants",
+            "en": "An island nation of under 150,000 people"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans frontière terrestre de moins de 150 000 habitants : Nauru et Tuvalu en comptent à peine plus de 10 000.",
+            "en": "A country without land borders and fewer than 150,000 people was needed: Nauru and Tuvalu have barely more than 10,000."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "climate.equatorial-north",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereNS",
+                "eq": "N"
+              },
+              {
+                "fact": "northernmostLat",
+                "lte": 10
+              }
+            ]
+          },
+          "text": {
+            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "en": "Wholly between the equator and 10° N"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier entre l'équateur et 10° N, le domaine des pluies équatoriales : Singapour, le Suriname ou le Liberia.",
+            "en": "The country had to lie wholly between the equator and 10° N, the realm of equatorial rains: Singapore, Suriname or Liberia."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "borders.ctx-neighbour",
+          "predicate": {
+            "ctx": {
+              "rule": "neighborOf"
+            }
+          },
+          "text": {
+            "fr": "Un voisin de ton dernier camp",
+            "en": "A neighbour of your last camp"
+          },
+          "explain": {
+            "fr": "Il fallait un pays partageant une frontière terrestre avec le pays de ton dernier camp valide (ou du port).",
+            "en": "The country had to share a land border with the country of your last valid camp (or the port)."
+          },
+          "fallback": {
+            "promptId": "borders.lone-neighbour",
+            "predicate": {
+              "all": [
+                {
+                  "fact": "landBorders",
+                  "eq": 1
+                },
+                {
+                  "not": {
+                    "fact": "continent",
+                    "eq": "EU"
+                  }
+                }
+              ]
+            },
+            "text": {
+              "fr": "Hors d’Europe, un pays qui n’a qu’un voisin",
+              "en": "Outside Europe, a country with a single neighbour"
+            },
+            "explain": {
+              "fr": "Il fallait un pays hors d'Europe n'ayant qu'un seul voisin terrestre : Haïti et la République dominicaine se partagent une île, comme le Timor oriental et l'Indonésie.",
+              "en": "A country outside Europe with a single land neighbour was needed: Haiti and the Dominican Republic share one island, as do East Timor and Indonesia."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        },
+        {
+          "id": "meridianWeaver"
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 16000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "d8bb9dbbcb39d5e06031125443b6bdc56cdd8705b65b522b7ca20948258adb2f"
+    },
+    {
+      "code": "MER-0048",
+      "source": "catalog",
+      "catalogNumber": 48,
+      "title": {
+        "fr": "Steppes et déserts",
+        "en": "Steppes and Deserts"
+      },
+      "theme": "Asie centrale",
+      "difficulty": "expert",
+      "libraryVersion": 1,
+      "start": {
+        "id": "oulan-bator",
+        "name": {
+          "fr": "Oulan-Bator",
+          "en": "Ulaanbaatar"
+        },
+        "iso3": "MNG",
+        "lonLat": [
+          106.918,
+          47.886
+        ]
+      },
+      "meridianLon": -50,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "water.landlocked-giant",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": true
+              },
+              {
+                "fact": "areaKm2",
+                "gt": 500000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays enclavé de plus de 500 000 km²",
+            "en": "A landlocked country over 500,000 km²"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer de plus de 500 000 km² : la Mongolie, le Tchad ou la Bolivie en sont.",
+            "en": "A landlocked country larger than 500,000 km² was needed: Mongolia, Chad and Bolivia are among them."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "relief.vast-and-low",
+          "predicate": {
+            "all": [
+              {
+                "fact": "areaKm2",
+                "gt": 1000000
+              },
+              {
+                "fact": "highestPointM",
+                "lt": 3000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Plus d’un million de km², aucun sommet à 3 000 m",
+            "en": "Over a million km², no peak reaching 3,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays de plus d'un million de km² dont le point culminant reste sous 3 000 m : le Brésil plafonne au pico da Neblina (2 994 m).",
+            "en": "A country over one million km² whose highest point stays below 3,000 m was needed: Brazil tops out at Pico da Neblina (2,994 m)."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.blue-yellow-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "blue"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "yellow"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "white"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "green"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Bleu, jaune, rouge seulement, hors armoiries",
+            "en": "Blue, yellow and red only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement bleu, jaune et rouge : la Roumanie et le Tchad ont des drapeaux presque identiques. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be blue, yellow and red only: Romania and Chad have almost identical flags. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "society.big-monarchy",
+          "predicate": {
+            "all": [
+              {
+                "fact": "monarchy",
+                "eq": true
+              },
+              {
+                "fact": "population",
+                "gt": 30000000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une monarchie de plus de 30 M d’habitants",
+            "en": "A monarchy of over 30 million people"
+          },
+          "explain": {
+            "fr": "Il fallait un monarque régnant sur plus de 30 millions d'habitants : le Canada, la Malaisie ou le Maroc.",
+            "en": "A monarch reigning over more than 30 million people was needed: Canada, Malaysia or Morocco."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "relief.tropical-flatlands",
+          "predicate": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              },
+              {
+                "fact": "highestPointM",
+                "lt": 300
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays tropical où rien ne dépasse 300 m",
+            "en": "A tropical country where nothing tops 300 m"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement.",
+            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "borders.ctx-neighbour",
+          "predicate": {
+            "ctx": {
+              "rule": "neighborOf"
+            }
+          },
+          "text": {
+            "fr": "Un voisin de ton dernier camp",
+            "en": "A neighbour of your last camp"
+          },
+          "explain": {
+            "fr": "Il fallait un pays partageant une frontière terrestre avec le pays de ton dernier camp valide (ou du port).",
+            "en": "The country had to share a land border with the country of your last valid camp (or the port)."
+          },
+          "fallback": {
+            "promptId": "borders.exactly-seven",
+            "predicate": {
+              "fact": "landBorders",
+              "eq": 7
+            },
+            "text": {
+              "fr": "Un pays qui a exactement sept voisins",
+              "en": "A country with exactly seven neighbours"
+            },
+            "explain": {
+              "fr": "Il fallait exactement sept voisins terrestres : la Pologne, l'Ukraine, l'Iran ou le Mali en ont sept.",
+              "en": "Exactly seven land neighbours were needed: Poland, Ukraine, Iran and Mali have seven each."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "northernSoul"
+        },
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 16000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "a05a8f8bba61d9438a8c7b3754a516b2f9a582be66a20817fa2feafe8f27cc2c"
+    },
+    {
+      "code": "MER-0049",
+      "source": "catalog",
+      "catalogNumber": 49,
+      "title": {
+        "fr": "Les îles oubliées",
+        "en": "Forgotten Isles"
+      },
+      "theme": "Océan Indien",
+      "difficulty": "expert",
+      "libraryVersion": 1,
+      "start": {
+        "id": "victoria-seychelles",
+        "name": {
+          "fr": "Victoria",
+          "en": "Victoria"
+        },
+        "iso3": "SYC",
+        "lonLat": [
+          55.452,
+          -4.62
+        ]
+      },
+      "meridianLon": 135,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "society.french-bilingual",
+          "predicate": {
+            "all": [
+              {
+                "fact": "officialLanguages",
+                "includes": "french"
+              },
+              {
+                "any": [
+                  {
+                    "fact": "officialLanguages",
+                    "includes": "english"
+                  },
+                  {
+                    "fact": "officialLanguages",
+                    "includes": "german"
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Le français, officiel avec l’anglais ou l’allemand",
+            "en": "French official alongside English or German"
+          },
+          "explain": {
+            "fr": "Il fallait le français officiel aux côtés de l'anglais ou de l'allemand : le Canada, le Cameroun, la Suisse ou les Seychelles.",
+            "en": "French had to be official alongside English or German: Canada, Cameroon, Switzerland or the Seychelles."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "relief.low-islands",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "fact": "population",
+                "lt": 200000
+              },
+              {
+                "fact": "highestPointM",
+                "lt": 1000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Moins de 200 000 insulaires, aucun sommet à 1 000 m",
+            "en": "Under 200,000 islanders, no peak reaching 1,000 m"
+          },
+          "explain": {
+            "fr": "Il fallait une île-nation de moins de 200 000 habitants dont rien n'atteint 1 000 m : Tuvalu et les îles Marshall dépassent à peine le niveau de la mer.",
+            "en": "An island nation under 200,000 people with nothing reaching 1,000 m was needed: Tuvalu and the Marshall Islands barely rise above the sea."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.yellow-white-no-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "yellow"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "white"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "red"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Jaune et blanc, sans rouge, hors armoiries",
+            "en": "Yellow and white, no red, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait du jaune et du blanc sans aucun rouge : l'Argentine, l'Uruguay, le Bhoutan ou le Vatican. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to show yellow and white with no red: Argentina, Uruguay, Bhutan or the Vatican. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "water.island-populous",
+          "predicate": {
+            "all": [
+              {
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GBR"
+                      },
+                      {
+                        "fact": "landBorders",
+                        "eq": 1
+                      },
+                      {
+                        "not": {
+                          "fact": "continent",
+                          "eq": "EU"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "fact": "population",
+                "gt": 1000000
+              }
+            ]
+          },
+          "text": {
+            "fr": "Une île-nation de plus d’un million d’habitants",
+            "en": "An island nation of over a million people"
+          },
+          "explain": {
+            "fr": "Il fallait un État insulaire de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil.",
+            "en": "An island state of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "climate.capricorn",
+          "predicate": {
+            "fact": "crossesTropicOfCapricorn",
+            "eq": true
+          },
+          "text": {
+            "fr": "Un pays traversé par le tropique du Capricorne",
+            "en": "A country crossed by the Tropic of Capricorn"
+          },
+          "explain": {
+            "fr": "Il fallait un pays que coupe le tropique du Capricorne (23° 26′ S) : il traverse l'Amérique du Sud, l'Afrique australe, Madagascar et l'Australie.",
+            "en": "The country had to be crossed by the Tropic of Capricorn (23°26′ S): it runs through South America, southern Africa, Madagascar and Australia."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.ctx-other-continent",
+          "predicate": {
+            "ctx": {
+              "rule": "otherContinent"
+            }
+          },
+          "text": {
+            "fr": "Change de continent",
+            "en": "Move to another continent"
+          },
+          "explain": {
+            "fr": "Il fallait un pays d'un autre continent que celui de ton dernier camp valide. Convention ONU : la Turquie, Chypre, le Caucase et le Kazakhstan comptent en Asie, la Russie en Europe, l'Égypte en Afrique, le Panama en Amérique du Nord.",
+            "en": "The country had to be on a different continent from your last valid camp. UN convention: Turkey, Cyprus, the Caucasus and Kazakhstan count as Asia, Russia as Europe, Egypt as Africa, Panama as North America."
+          },
+          "fallback": {
+            "promptId": "climate.tropical-populous",
+            "predicate": {
+              "all": [
+                {
+                  "all": [
+                    {
+                      "fact": "northernmostLat",
+                      "lt": 23.5
+                    },
+                    {
+                      "fact": "southernmostLat",
+                      "gt": -23.44
+                    }
+                  ]
+                },
+                {
+                  "fact": "population",
+                  "gt": 50000000
+                }
+              ]
+            },
+            "text": {
+              "fr": "Un pays tropical de plus de 50 M d’habitants",
+              "en": "A tropical country of over 50 million people"
+            },
+            "explain": {
+              "fr": "Il fallait un pays tout entier entre les tropiques comptant plus de 50 millions d'habitants : le Nigeria, les Philippines ou la Colombie.",
+              "en": "A country lying wholly between the tropics with over 50 million people was needed: Nigeria, the Philippines or Colombia."
+            }
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "equatorShuttle"
+        },
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 16000
+          }
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "f854ceb358d25eda9b2fa44d4ef904eba44e239187d7e1fdceb25a3a0e345c87"
+    },
+    {
+      "code": "MER-0050",
+      "source": "catalog",
+      "catalogNumber": 50,
+      "title": {
+        "fr": "Terra incognita",
+        "en": "Terra Incognita"
+      },
+      "theme": "Pays méconnus",
+      "difficulty": "expert",
+      "libraryVersion": 1,
+      "start": {
+        "id": "paramaribo",
+        "name": {
+          "fr": "Paramaribo",
+          "en": "Paramaribo"
+        },
+        "iso3": "SUR",
+        "lonLat": [
+          -55.204,
+          5.852
+        ]
+      },
+      "meridianLon": 150,
+      "legs": [
+        {
+          "index": 1,
+          "promptId": "borders.tropical-pair",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landBorders",
+                "eq": 2
+              },
+              {
+                "all": [
+                  {
+                    "fact": "northernmostLat",
+                    "lt": 23.5
+                  },
+                  {
+                    "fact": "southernmostLat",
+                    "gt": -23.44
+                  }
+                ]
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays tropical qui n’a que deux voisins",
+            "en": "A tropical country with just two neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier entre les tropiques ayant exactement deux voisins : le Costa Rica, le Panama ou la Sierra Leone.",
+            "en": "A country lying wholly between the tropics with exactly two land neighbours was needed: Costa Rica, Panama or Sierra Leone."
+          }
+        },
+        {
+          "index": 2,
+          "promptId": "society.tiny-left",
+          "predicate": {
+            "all": [
+              {
+                "fact": "population",
+                "lt": 150000
+              },
+              {
+                "fact": "drivesOnLeft",
+                "eq": true
+              }
+            ]
+          },
+          "text": {
+            "fr": "Moins de 150 000 habitants, on roule à gauche",
+            "en": "Under 150,000 people, driving on the left"
+          },
+          "explain": {
+            "fr": "Il fallait moins de 150 000 habitants et une conduite à gauche : Nauru, Saint-Kitts-et-Nevis ou les Seychelles.",
+            "en": "Fewer than 150,000 people and left-hand traffic were needed: Nauru, Saint Kitts and Nevis or the Seychelles."
+          }
+        },
+        {
+          "index": 3,
+          "promptId": "flag.green-yellow-red",
+          "predicate": {
+            "all": [
+              {
+                "fact": "flagColors",
+                "includes": "green"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "yellow"
+              },
+              {
+                "fact": "flagColors",
+                "includes": "red"
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "white"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "blue"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "black"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "orange"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "brown"
+                }
+              },
+              {
+                "not": {
+                  "fact": "flagColors",
+                  "includes": "grey"
+                }
+              }
+            ]
+          },
+          "text": {
+            "fr": "Vert, jaune, rouge seulement, hors armoiries",
+            "en": "Green, yellow and red only, coats of arms aside"
+          },
+          "explain": {
+            "fr": "Il fallait un drapeau uniquement vert, jaune et rouge, les couleurs panafricaines : le Sénégal, mais aussi la Lituanie et la Bolivie. Les armoiries (écus, blasons) ne comptent pas.",
+            "en": "The flag had to be green, yellow and red only, the pan-African colours: Senegal, but also Lithuania and Bolivia. Coats of arms do not count."
+          }
+        },
+        {
+          "index": 4,
+          "promptId": "water.landlocked-few-neighbours",
+          "predicate": {
+            "all": [
+              {
+                "fact": "landlocked",
+                "eq": true
+              },
+              {
+                "fact": "landBorders",
+                "lte": 2
+              }
+            ]
+          },
+          "text": {
+            "fr": "Un pays enclavé qui n’a qu’un ou deux voisins",
+            "en": "A landlocked country with only one or two neighbours"
+          },
+          "explain": {
+            "fr": "Il fallait un pays sans accès à la mer bordé par au plus deux voisins : le Lesotho est entièrement entouré par l'Afrique du Sud.",
+            "en": "A landlocked country with at most two neighbours was needed: Lesotho is entirely surrounded by South Africa."
+          }
+        },
+        {
+          "index": 5,
+          "promptId": "climate.equatorial-north",
+          "predicate": {
+            "all": [
+              {
+                "fact": "hemisphereNS",
+                "eq": "N"
+              },
+              {
+                "fact": "northernmostLat",
+                "lte": 10
+              }
+            ]
+          },
+          "text": {
+            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "en": "Wholly between the equator and 10° N"
+          },
+          "explain": {
+            "fr": "Il fallait un pays tout entier entre l'équateur et 10° N, le domaine des pluies équatoriales : Singapour, le Suriname ou le Liberia.",
+            "en": "The country had to lie wholly between the equator and 10° N, the realm of equatorial rains: Singapore, Suriname or Liberia."
+          }
+        },
+        {
+          "index": 6,
+          "promptId": "position.small-west",
+          "predicate": {
+            "all": [
+              {
+                "fact": "areaKm2",
+                "lt": 30000
+              },
+              {
+                "fact": "hemisphereEW",
+                "eq": "W"
+              }
+            ]
+          },
+          "text": {
+            "fr": "Moins de 30 000 km², tout à l’ouest de Greenwich",
+            "en": "Under 30,000 km², wholly west of Greenwich"
+          },
+          "explain": {
+            "fr": "Il fallait un pays de moins de 30 000 km² entièrement à l'ouest de Greenwich : le Salvador, la Gambie ou les Samoa.",
+            "en": "A country under 30,000 km² lying wholly west of Greenwich was needed: El Salvador, the Gambia or Samoa."
+          }
+        }
+      ],
+      "missions": [
+        {
+          "id": "continentHopper",
+          "params": {
+            "n": 5
+          }
+        },
+        {
+          "id": "longHaul",
+          "params": {
+            "km": 16000
+          }
+        },
+        {
+          "id": "meridianWeaver"
+        }
+      ],
+      "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
+      "hash": "eff012a48178c7f37fee9918a70606dbe104884f12f1d4287d15616e0759209c"
     }
   ]
 }

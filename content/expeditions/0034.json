@@ -1,0 +1,29 @@
+{
+  "catalogNumber": 34,
+  "title": {
+    "fr": "Les savanes de l’Est",
+    "en": "Eastern Savannas"
+  },
+  "theme": "Afrique de l’Est",
+  "difficulty": "easy",
+  "start": "mombasa",
+  "meridianLon": -10,
+  "legs": [
+    "society.commonwealth",
+    "water.landlocked",
+    "flag.black",
+    "borders.exactly-four",
+    "relief.over-5000",
+    "position.ctx-other-continent"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 4
+      }
+    }
+  ],
+  "fallback": "flag.red-white-blue",
+  "designNote": "Facile. Route : de Mombasa vers le Commonwealth, l'Afrique des grands lacs sans mer, un drapeau marqué de noir, puis on compte quatre voisins, on grimpe au Kilimandjaro ou au Kenya, et l'étape 6 force à changer de continent (repli : bleu, blanc, rouge). Méridien à 10° O : le franchir, c'est quitter l'Afrique de l'Est pour l'Atlantique ou les Amériques. Audace : un pays du Commonwealth du Pacifique (Tuvalu, Nauru). Pièges attendus : Rwanda et Burundi sont enclavés, l'Éthiopie aussi ; la Tanzanie n'a pas exactement quatre voisins (elle en a huit)."
+}

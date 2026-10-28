@@ -1,0 +1,31 @@
+{
+  "catalogNumber": 41,
+  "title": {
+    "fr": "Au cœur des terres",
+    "en": "Heart of the Land"
+  },
+  "theme": "Pays enclavés",
+  "difficulty": "normal",
+  "start": "tachkent",
+  "meridianLon": -30,
+  "legs": [
+    "water.landlocked-giant",
+    "borders.exactly-five",
+    "climate.tropical-landlocked",
+    "flag.red-white-only",
+    "society.opec",
+    "water.landlocked-small"
+  ],
+  "missions": [
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    },
+    {
+      "id": "meridianWeaver"
+    }
+  ],
+  "designNote": "Normale. Route : au cœur des terres, de Tachkent (double enclavement) vers les géants enclavés, cinq voisins, l'Afrique tropicale sans mer, un drapeau rouge et blanc, l'OPEP, et un petit pays enclavé. Méridien à 30° O, dans l'Atlantique : seules les Amériques le font franchir (Bolivie, Pérou, Canada, Venezuela), d'où l'ordre « deux traversées ». Ordres : cinq changements de continent, deux traversées. Audace : Bolivie à l'étape 1 ou 3. Pièges attendus : Liban pour le drapeau (le cèdre est vert) ; Équateur, Qatar ou Angola pour l'OPEP (tous trois l'ont quittée)."
+}

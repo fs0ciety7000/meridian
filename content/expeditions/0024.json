@@ -7,7 +7,7 @@
   "theme": "Caraïbes",
   "difficulty": "expert",
   "start": "bridgetown",
-  "meridianLon": -80,
+  "meridianLon": 20,
   "legs": [
     "flag.island-black",
     "society.tiny-left",

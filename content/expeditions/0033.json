@@ -1,0 +1,26 @@
+{
+  "catalogNumber": 33,
+  "title": {
+    "fr": "Tango et pampa",
+    "en": "Tango and Pampas"
+  },
+  "theme": "Cône sud",
+  "difficulty": "easy",
+  "start": "buenos-aires",
+  "meridianLon": 75,
+  "legs": [
+    "society.spanish",
+    "climate.southern",
+    "flag.no-red",
+    "borders.exactly-five",
+    "water.landlocked",
+    "position.ctx-across-equator"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    }
+  ],
+  "fallback": "society.over-50m",
+  "designNote": "Facile. Route : de Buenos Aires vers les pays hispanophones, le Sud entier, un drapeau sans rouge, puis on compte les voisins, on cherche un pays enclavé, et l'étape 6 renvoie de l'autre côté de l'équateur. Étape 6 contextuelle (repli : plus de 50 M d'habitants). Méridien à 75° E, dans l'océan Indien : le franchir demande d'oser l'Asie. Ordre : deux traversées de l'équateur, que l'étape 6 aide à réussir. Audace : Guinée équatoriale à l'étape 1. Pièges attendus : Brésil pour « hispanophone » ou pour « tout entier au sud » ; Uruguay pour « exactement cinq voisins » (il en a deux)."
+}

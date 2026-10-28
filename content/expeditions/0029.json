@@ -7,7 +7,7 @@
   "theme": "Montagnes",
   "difficulty": "expert",
   "start": "la-paz",
-  "meridianLon": -30,
+  "meridianLon": -180,
   "legs": [
     "relief.southern-heights",
     "water.landlocked-south",

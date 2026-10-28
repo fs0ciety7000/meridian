@@ -7,7 +7,7 @@
   "theme": "Greenwich",
   "difficulty": "normal",
   "start": "lagos",
-  "meridianLon": -20,
+  "meridianLon": 0,
   "legs": [
     "position.prime-meridian",
     "society.french",
@@ -18,12 +18,15 @@
   ],
   "missions": [
     {
-      "id": "meridianWeaver"
+      "id": "longHaul",
+      "params": {
+        "km": 14000
+      }
     },
     {
       "id": "equatorShuttle"
     }
   ],
   "fallback": "water.coast-small",
-  "designNote": "On coud le méridien de Greenwich et l'équateur dans le golfe de Guinée."
+  "designNote": "On coud le méridien de Greenwich et l'équateur dans le golfe de Guinée. Le méridien de l'expédition est Greenwich lui-même (exception assumée à la règle des 40° du port) : la consigne « Passe de l'autre côté de Greenwich » rapporte aussi le bonus. L'ordre « deux traversées » devenait automatique, il est remplacé par un long saut de 14 000 km (Samoa ou Tonga, à l'étape 5)."
 }

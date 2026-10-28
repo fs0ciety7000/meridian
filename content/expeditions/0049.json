@@ -1,0 +1,38 @@
+{
+  "catalogNumber": 49,
+  "title": {
+    "fr": "Les îles oubliées",
+    "en": "Forgotten Isles"
+  },
+  "theme": "Océan Indien",
+  "difficulty": "expert",
+  "start": "victoria-seychelles",
+  "meridianLon": 135,
+  "legs": [
+    "society.french-bilingual",
+    "relief.low-islands",
+    "flag.yellow-white-no-red",
+    "water.island-populous",
+    "climate.capricorn",
+    "position.ctx-other-continent"
+  ],
+  "missions": [
+    {
+      "id": "equatorShuttle"
+    },
+    {
+      "id": "continentHopper",
+      "params": {
+        "n": 5
+      }
+    },
+    {
+      "id": "longHaul",
+      "params": {
+        "km": 16000
+      }
+    }
+  ],
+  "fallback": "climate.tropical-populous",
+  "designNote": "Experte. Route : les îles oubliées de l'océan Indien depuis Victoria, français officiel avec l'anglais ou l'allemand, île basse, drapeau jaune et blanc sans rouge, île-nation peuplée, tropique du Capricorne, puis l'étape 6 force à changer de continent (repli : tropical et peuplé). Méridien à 135° E : le franchir, c'est passer l'Australie ou le Japon. Ordres : deux traversées de l'équateur, cinq changements de continent, un saut de 16 000 km. Audace : Tuvalu, Nauru ou Palaos à l'étape 2. Pièges attendus : Maldives pour l'île basse (plus de 200 000 habitants) ; Madagascar pour le français bilingue (le français y est officiel avec le malgache)."
+}

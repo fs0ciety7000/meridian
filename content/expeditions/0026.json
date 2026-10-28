@@ -7,7 +7,7 @@
   "theme": "Hémisphère sud",
   "difficulty": "expert",
   "start": "ushuaia",
-  "meridianLon": 0,
+  "meridianLon": 60,
   "legs": [
     "climate.deep-south",
     "flag.southern-no-red",
