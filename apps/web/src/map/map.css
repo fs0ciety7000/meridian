@@ -280,3 +280,8 @@
     display: none;
   }
 }
+
+/* Light material (design-system §10): textures off, on demand or on slow devices. */
+:root[data-material='light'] .atlas-map__texture {
+  background-image: none;
+}

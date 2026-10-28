@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { formatNumber, useLocale, useT, type StringKey } from '../game/i18n';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
+import { reportSlowDevice } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine, CameraState, MapPick } from '../map/AtlasMapEngine';
 import type { CampMarker, RouteLeg } from '../map/overlay';
@@ -377,6 +378,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
       style={{ '--chrome-bottom': `${insets.bottom || 100}px` } as CSSProperties}
     >
       <AtlasMap
+        onSlow={reportSlowDevice}
         ref={engine}
         locale={locale}
         className={styles.map}

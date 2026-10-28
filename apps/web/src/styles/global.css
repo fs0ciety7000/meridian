@@ -44,3 +44,8 @@ body {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* Light material (design-system §10): textures off, on demand or on slow devices. */
+:root[data-material='light'] .paper {
+  background-image: none;
+}

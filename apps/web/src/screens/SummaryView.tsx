@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { digitGroups, formatNumber, useLocale, useT } from '../game/i18n';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
+import { reportSlowDevice } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine } from '../map/AtlasMapEngine';
 import type { CampMarker, RouteLeg } from '../map/overlay';
@@ -123,6 +124,7 @@ export function SummaryView({
   return (
     <main className={styles.screen}>
       <AtlasMap
+        onSlow={reportSlowDevice}
         insets={insets}
         homeFocus={run.camp as [number, number]}
         ref={engine}

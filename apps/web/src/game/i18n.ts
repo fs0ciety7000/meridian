@@ -34,6 +34,8 @@ const STRINGS = {
     fr: 'Touchez la carte pour poser un camp provisoire',
     en: 'Tap the map to pitch a provisional camp',
   },
+  lightMaterial: { fr: 'Matière allégée', en: 'Light material' },
+  fullMaterial: { fr: 'Matière complète', en: 'Full material' },
   tapMapShort: { fr: 'Touchez un pays', en: 'Tap a country' },
   atSea: {
     fr: 'En mer : rapprochez-vous d’une côte, ou maintenez le doigt pour la loupe.',

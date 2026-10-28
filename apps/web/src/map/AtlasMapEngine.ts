@@ -57,6 +57,8 @@ export interface AtlasMapOptions {
   onPick?: (pick: MapPick | null) => void;
   onConfirm?: (pick: MapPick) => void;
   onCamera?: (camera: CameraState) => void;
+  /** Gestures run below 45 fps (development-plan 3.7): the app may lighten the material. */
+  onSlow?: () => void;
 }
 
 interface PickUnit {
@@ -137,6 +139,9 @@ export class AtlasMapEngine {
   private homeInsets: Insets = { top: 0, right: 0, bottom: 0, left: 0 };
   /** True once the player moved the camera: insets no longer re-home the view. */
   private userMoved = false;
+  /** Frame timestamps of the current gesture, and how many gestures ran slow. */
+  private gestureFrames: number[] = [];
+  private slowGestures = 0;
   private homeFocus: [number, number] | null = null;
   private locale: MapLocale = document.documentElement.lang === 'en' ? 'en' : 'fr';
 
@@ -194,6 +199,7 @@ export class AtlasMapEngine {
       .on('end', () => {
         if (this.flying) return;
         this.interacting = false;
+        this.measureGesture();
         this.settle();
       });
     this.selection = select(this.surface);
@@ -611,6 +617,22 @@ export class AtlasMapEngine {
     });
   }
 
+  /**
+   * Median frame interval of the gesture that just ended; two gestures slower than 45 fps
+   * report the device as slow once (the app then switches to the light material).
+   */
+  private measureGesture() {
+    const t = this.gestureFrames;
+    this.gestureFrames = [];
+    if (t.length < 20 || !this.opts.onSlow) return;
+    const dt = t
+      .slice(1)
+      .map((v, i) => v - t[i]!)
+      .sort((a, b) => a - b);
+    const median = dt[Math.floor(dt.length / 2)]!;
+    if (median > 1000 / 45 && ++this.slowGestures === 2) this.opts.onSlow();
+  }
+
   /** Full-quality frame shortly after the camera settles; a new gesture cancels it. */
   private requestFullDraw(delay = 80) {
     clearTimeout(this.fullTimer);
@@ -621,6 +643,7 @@ export class AtlasMapEngine {
   }
 
   private draw(fast: boolean) {
+    if (this.interacting) this.gestureFrames.push(performance.now());
     const view = this.view;
     if (fast && this.frozenAt && this.worldBitmapReady) this.drawFrozen();
     else {

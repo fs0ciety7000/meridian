@@ -6,6 +6,7 @@ import { formatNumber, useLocale, useT } from '../game/i18n';
 import { atlasMarks, lifetimeKm } from '../game/progress';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
+import { reportSlowDevice, setMaterial, useMaterial } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine } from '../map/AtlasMapEngine';
 import styles from './screens.module.css';
@@ -20,6 +21,7 @@ export function Launcher() {
   const locale = useLocale((s) => s.locale);
   const setLocale = useLocale((s) => s.setLocale);
   const { geo, content, runs, newCode } = useGame();
+  const material = useMaterial();
   const engine = useRef<AtlasMapEngine | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>('normal');
   const [code, setCode] = useState('');
@@ -53,6 +55,7 @@ export function Launcher() {
   return (
     <main className={styles.screen}>
       <AtlasMap
+        onSlow={reportSlowDevice}
         locale={locale}
         ref={engine}
         className={styles.map}
@@ -201,6 +204,14 @@ export function Launcher() {
                 }}
               >
                 {t('theme')}
+              </button>{' '}
+              ·{' '}
+              <button
+                type="button"
+                className={styles.inlineLink}
+                onClick={() => setMaterial(material === 'light' ? 'full' : 'light')}
+              >
+                {t(material === 'light' ? 'fullMaterial' : 'lightMaterial')}
               </button>
             </p>
           </>

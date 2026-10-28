@@ -34,6 +34,7 @@ export interface AtlasMapProps {
   onConfirm?: (pick: MapPick) => void;
   onCamera?: (camera: CameraState) => void;
   onRouteProgress?: (km: number, done: boolean) => void;
+  onSlow?: () => void;
 }
 
 /**
@@ -57,6 +58,7 @@ export const AtlasMap = forwardRef<AtlasMapEngine | null, AtlasMapProps>(
         onPick: (p) => callbacks.current.onPick?.(p),
         onConfirm: (p) => callbacks.current.onConfirm?.(p),
         onCamera: (c) => callbacks.current.onCamera?.(c),
+        onSlow: () => callbacks.current.onSlow?.(),
       };
       const engine = new AtlasMapEngine(hostRef.current!, opts);
       engineRef.current = engine;
