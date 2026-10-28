@@ -97,7 +97,6 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   const exp = run.expedition;
   const active = activeLeg(run, deps);
 
-
   const shownLeg = resolving ? run.legs[resolving.leg - 1] : null;
   const legDef = resolving
     ? (() => {
@@ -469,7 +468,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
 
       {searchOpen && (
         <div className={styles.searchBox} data-map-chrome>
-          <CountrySearch names={names} onSelect={onSearch} />
+          <CountrySearch names={names} onSelect={onSearch} autoFocus />
         </div>
       )}
 
@@ -533,9 +532,9 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
             className={gameStyles.tool}
             onClick={lookThroughSpyglass}
             disabled={spyLeft <= 0 || run.spyglassLegs.includes(run.currentLeg) || !!resolving}
-            aria-label={t('spyglassLeft', { n: spyLeft })}
             title={t('spyglassLeft', { n: spyLeft })}
           >
+            <span className={styles.srOnly}>{t('spyglass')}</span>
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
               <path
                 d="m3 15 12-7 2 3.5-12 7zM15 8l4-2 2 3.5-4 2"

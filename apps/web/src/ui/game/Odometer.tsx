@@ -8,14 +8,18 @@ export function Odometer({ km, gain, label }: { km: number; gain?: number | null
   return (
     <section className={styles.odometer} aria-label={label} data-map-chrome>
       {gain ? <span className={styles.gain}>+ {formatNumber(locale, gain)}</span> : null}
-      <span className={styles.odometerValue} aria-label={formatNumber(locale, km)}>
+      <span className={screens.srOnly}>{formatNumber(locale, km)} km</span>
+      <span className={styles.odometerValue} aria-hidden="true">
         {digitGroups(km).map((g, i) => (
-          <span key={i} className={screens.digitGroup} aria-hidden="true">
+          <span key={i} className={screens.digitGroup}>
             {g}
           </span>
         ))}
       </span>
-      <span className={styles.unit}> km</span>
+      <span className={styles.unit} aria-hidden="true">
+        {' '}
+        km
+      </span>
     </section>
   );
 }

@@ -179,9 +179,10 @@ export function SummaryView({
           {t(run.status === 'abandoned' ? 'abandoned' : 'completed')}
         </h1>
         <p className={styles.bigDistance}>
-          <span aria-label={formatNumber(locale, score.distanceKm)}>
+          <span className={styles.srOnly}>{formatNumber(locale, score.distanceKm)}</span>
+          <span aria-hidden="true">
             {digitGroups(score.distanceKm).map((g, i) => (
-              <span key={i} className={styles.digitGroup} aria-hidden="true">
+              <span key={i} className={styles.digitGroup}>
                 {g}
               </span>
             ))}

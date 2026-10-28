@@ -5,13 +5,15 @@ import styles from './CountrySearch.module.css';
 interface Props {
   names: CountryName[];
   onSelect: (iso3: string) => void;
+  /** Focus the field on mount (opened by the '/' shortcut or the search button). */
+  autoFocus?: boolean;
 }
 
 /**
  * Country search as an ARIA combobox, styled like an atlas register (design-system §6.12).
  * A complete alternative to pointing at the map (accessibility, architecture §4.4).
  */
-export function CountrySearch({ names, onSelect }: Props) {
+export function CountrySearch({ names, onSelect, autoFocus = false }: Props) {
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(0);
   const listId = useId();
@@ -49,6 +51,7 @@ export function CountrySearch({ names, onSelect }: Props) {
         id={`${listId}-input`}
         className={styles.input}
         type="search"
+        autoFocus={autoFocus}
         role="combobox"
         aria-expanded={open}
         aria-controls={listId}
