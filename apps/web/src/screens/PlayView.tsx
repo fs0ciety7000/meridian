@@ -1,7 +1,7 @@
 import { haversineKm } from '@meridian/geo';
 import { activeLeg, spyglassAllowance, type EngineEvent, type RunState } from '@meridian/engine';
 import type { PromptCategory } from '@meridian/content-schema';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { formatNumber, useLocale, useT, type StringKey } from '../game/i18n';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
@@ -275,6 +275,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
     const used = events.find((e) => e.type === 'SPYGLASS_USED');
     if (used?.type === 'SPYGLASS_USED') {
       setSpy({ leg: used.leg, subregions: used.subregions });
+      engine.current?.resetView(); // step back so the outlined regions are visible
       say(t('spyglassNote'));
     }
   };
@@ -337,7 +338,11 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   }, [run.currentLeg, resolving, exp.code]);
 
   return (
-    <main className={styles.screen} onClick={resolving ? finishResolution : undefined}>
+    <main
+      className={styles.screen}
+      onClick={resolving ? finishResolution : undefined}
+      style={{ '--chrome-bottom': `${insets.bottom || 100}px` } as CSSProperties}
+    >
       <AtlasMap
         ref={engine}
         locale={locale}
@@ -349,6 +354,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
         meridianLon={exp.meridianLon}
         marks={marks}
         insets={insets}
+        homeFocus={run.camp as [number, number]}
         onPick={onPick}
         onConfirm={plant}
         onCamera={setCamera}
@@ -361,6 +367,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
           text={legDef.text[locale]}
           category={category}
           resolved={resolvedInfo}
+          hint={resolving ? t('skip') : null}
         />
       </div>
 
@@ -414,17 +421,32 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
       <div data-inset="bottom">
         <CampBar
           title={pick ? (pick.entity ? nameOf(pick.entity) : t('unplantable')) : null}
-          detail={
-            pick
-              ? `${coord(pick.lonLat)}${potential !== null ? ` · +${formatNumber(locale, potential)} km` : ''}`
-              : null
-          }
-          placeholder={t('tapMap')}
+          detail={pick ? coord(pick.lonLat) : null}
+          gain={potential !== null ? `+${formatNumber(locale, potential)} km` : null}
+          placeholder={window.innerWidth < 600 ? t('tapMapShort') : t('tapMap')}
           note={hint}
           canPlant={plantable}
           plantLabel={t('plant')}
           onPlant={plant}
         >
+          <button
+            type="button"
+            className={`${gameStyles.tool} ${gameStyles.mobileOnly}`}
+            onClick={() => setLogOpen((o) => !o)}
+            aria-expanded={logOpen}
+            aria-label={t('log')}
+            title={t('log')}
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path
+                d="M6 3h11a1 1 0 0 1 1 1v16l-3-2-3 2V3M6 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
           <Odometer
             km={odometerKm}
             gain={resolving?.valid && traced ? Math.round(lastLegKm) : null}
@@ -470,8 +492,6 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
           </button>
         </CampBar>
       </div>
-
-      {resolving && <p className={styles.skip}>{t('skip')}</p>}
     </main>
   );
 }

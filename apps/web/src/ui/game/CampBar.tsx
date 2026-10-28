@@ -4,6 +4,8 @@ import styles from './game.module.css';
 export interface CampBarProps {
   title: string | null;
   detail: string | null;
+  /** Potential distance from the previous camp (kept on one line on phones). */
+  gain?: string | null;
   placeholder: string;
   note: string | null;
   canPlant: boolean;
@@ -21,7 +23,13 @@ export function CampBar(p: CampBarProps) {
         {p.title ? (
           <>
             <p className={styles.country}>{p.title}</p>
-            {p.detail && <p className={styles.coord}>{p.detail}</p>}
+            {(p.detail || p.gain) && (
+              <p className={styles.coord}>
+                {p.detail && <span className={styles.coordText}>{p.detail}</span>}
+                {p.detail && p.gain && <span className={styles.coordText}> · </span>}
+                {p.gain}
+              </p>
+            )}
           </>
         ) : (
           <p className={styles.placeholder}>{p.placeholder}</p>

@@ -137,6 +137,7 @@ export class AtlasMapEngine {
   private homeInsets: Insets = { top: 0, right: 0, bottom: 0, left: 0 };
   /** True once the player moved the camera: insets no longer re-home the view. */
   private userMoved = false;
+  private homeFocus: [number, number] | null = null;
   private locale: MapLocale = document.documentElement.lang === 'en' ? 'en' : 'fr';
 
   private press: {
@@ -256,6 +257,12 @@ export class AtlasMapEngine {
   /** Chrome margins (fitInsets, design-system §7): framing avoids cartouche and camp bar. */
   setInsets(insets: Insets) {
     this.insets = insets;
+    if (!this.userMoved && !this.flying) this.setTransform(this.homeTransform());
+  }
+
+  /** Point the home view centres on in portrait (the current camp). */
+  setHomeFocus(lonLat: [number, number] | null) {
+    this.homeFocus = lonLat;
   }
 
   private labelHost() {
@@ -333,6 +340,7 @@ export class AtlasMapEngine {
 
   resetView() {
     this.flyToTransform(this.homeTransform());
+    this.userMoved = false; // back home: chrome changes may re-frame it again
   }
 
   /**
@@ -341,17 +349,19 @@ export class AtlasMapEngine {
    */
   private homeTransform(): ZoomTransform {
     const [[x0, y0], [x1, y1]] = geoPath(this.projection).bounds({ type: 'Sphere' });
-    const { top, bottom } = this.homeInsets;
+    if (this.width / this.height >= 0.9) return zoomIdentity;
+    // Portrait (design-system §7, phase 1 review): the world would fill a third of the screen.
+    // It is zoomed so the map fills ≥ 70 % of the height and most of the area the chrome
+    // leaves free, centred in that area on the current camp, and stays pannable.
+    const top = Math.max(this.homeInsets.top, this.insets.top);
+    const bottom = Math.max(this.homeInsets.bottom, this.insets.bottom);
     const freeH = Math.max(120, this.height - top - bottom);
-    // Portrait: the world would fill a third of the screen, so it is zoomed to fill half the
-    // height, or most of the free area when a bottom sheet covers part of it; it stays pannable.
-    const target = top || bottom ? freeH * 0.85 : this.height * 0.5;
-    const k = this.width / this.height < 0.9 ? Math.min(2.6, Math.max(1, target / (y1 - y0))) : 1;
-    if (k === 1) return zoomIdentity;
-    // Zoom around the centre of the world as fitted in the free area.
-    const cx = (x0 + x1) / 2;
+    const target = Math.max(this.height * tokens.map.fit.minMapHeightRatioSm, freeH * 0.92);
+    const k = Math.min(tokens.map.fit.maxHomeKSm, Math.max(1, target / (y1 - y0)));
+    const focus = this.homeFocus ? this.projection(this.homeFocus) : null;
+    const fx = focus ? focus[0] : (x0 + x1) / 2;
     const cy = (y0 + y1) / 2;
-    return zoomIdentity.translate(cx * (1 - k), cy * (1 - k)).scale(k);
+    return zoomIdentity.translate(this.width / 2 - k * fx, top + freeH / 2 - k * cy).scale(k);
   }
 
   /** Flies to a geographic box [west, south, east, north] (van Wijk interpolation). */
@@ -717,6 +727,8 @@ export class AtlasMapEngine {
       (this.height / 2 - target.y) / target.k,
       w / target.k,
     ];
+    // A framed view (leg, search) must not be undone by a later chrome resize.
+    this.userMoved = true;
     if (this.reducedMotion) {
       this.setTransform(target);
       return;

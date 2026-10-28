@@ -11,9 +11,18 @@ export interface CartoucheProps {
   /** Folded to one line with the result of the leg (design-system §6.1 `resolved`). */
   resolved?: { tier: RarityTier | null; iso3: string; label: string } | null;
   onClick?: () => void;
+  /** Small italic hint under a resolved leg ("tap to skip"). */
+  hint?: string | null;
 }
 
-export function PromptCartouche({ overline, text, category, resolved, onClick }: CartoucheProps) {
+export function PromptCartouche({
+  overline,
+  text,
+  category,
+  resolved,
+  onClick,
+  hint,
+}: CartoucheProps) {
   return (
     <header
       className={`${styles.cartouche} ${resolved ? styles.cartoucheResolved : ''}`}
@@ -26,6 +35,7 @@ export function PromptCartouche({ overline, text, category, resolved, onClick }:
           {text}
         </h1>
         {resolved && <p className={styles.resolvedLabel}>{resolved.label}</p>}
+        {hint && <p className={styles.cartoucheHint}>{hint}</p>}
       </div>
       <div className={styles.cartoucheSide}>
         {resolved?.tier ? (

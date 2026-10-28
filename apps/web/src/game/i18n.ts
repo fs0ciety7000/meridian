@@ -34,6 +34,7 @@ const STRINGS = {
     fr: 'Touchez la carte pour poser un camp provisoire',
     en: 'Tap the map to pitch a provisional camp',
   },
+  tapMapShort: { fr: 'Touchez un pays', en: 'Tap a country' },
   atSea: {
     fr: 'En mer : rapprochez-vous d’une côte, ou maintenez le doigt pour la loupe.',
     en: 'At sea: move closer to a coast, or press and hold for the loupe.',
@@ -165,5 +166,6 @@ export function formatNumber(locale: Locale, n: number) {
         maximumFractionDigits: 0,
       })),
     );
-  return f.format(Math.round(n));
+  // French groups thousands with U+202F, missing from some of our fonts: use a no-break space.
+  return f.format(Math.round(n)).replace(/\u202f/g, '\u00a0');
 }

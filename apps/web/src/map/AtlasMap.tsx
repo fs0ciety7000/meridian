@@ -25,6 +25,8 @@ export interface AtlasMapProps {
   atlas?: boolean;
   insets?: Insets;
   locale?: 'fr' | 'en';
+  /** Portrait home view centres on this point (current camp). */
+  homeFocus?: [number, number] | null;
   /** Chrome margins the world view is fitted around (launcher). */
   homeInsets?: Insets;
   className?: string | undefined;
@@ -89,6 +91,10 @@ export const AtlasMap = forwardRef<AtlasMapEngine | null, AtlasMapProps>(
     useEffect(() => {
       engineRef.current?.setMarks(props.marks ?? [], props.atlas ?? false);
     }, [props.marks, props.atlas]);
+
+    useEffect(() => {
+      engineRef.current?.setHomeFocus(props.homeFocus ?? null);
+    }, [props.homeFocus]);
 
     useEffect(() => {
       if (props.insets) engineRef.current?.setInsets(props.insets);

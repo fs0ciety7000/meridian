@@ -454,7 +454,10 @@ export function drawHighlight(
   }
   for (const m of marks) {
     if (m.state === 'valid') {
-      paint(m.entity, alpha(pal[`rarity-${m.tier}`], cs.validOpacity), null, 0);
+      // Wash + outline in the tier ink: an 18 % wash alone greys out (Frontier ultramarine)
+      // and would read like the spyglass veil (phase 2 AD review).
+      const ink = pal[`rarity-${m.tier}`];
+      paint(m.entity, alpha(ink, cs.validOpacity), ink, cs.validOutlineWidth);
     } else if (m.state === 'falseTrail') {
       const f = cs.falseTrail;
       const color = alpha(pal[f.color as 'vermilion-700'], f.opacity);
@@ -466,7 +469,8 @@ export function drawHighlight(
         f.outlineDash,
       );
     } else if (m.state === 'hint') {
-      paint(m.entity, alpha(pal['ink-500'], cs.hintOpacity), null, 0);
+      // Dashed outline only: a wash would lighten land in Nocturne (phase 2 AD review).
+      paint(m.entity, null, pal['ink-700'], cs.hintOutlineWidth, cs.hintDash);
     } else {
       const wash = cs.atlasWash[m.continent as 'AF'] ?? cs.atlasWash.AN;
       const opacity = cs.atlasWash.opacity * (0.6 + 0.4 * Math.min(1, m.intensity ?? 1));

@@ -91,3 +91,23 @@ test('rejects a mistyped code and opens a catalogue code', async ({ page }) => {
   await input.fill('MER-7KQ2NZZZZ');
   await expect(page.getByText(/Unreadable code/)).toBeVisible();
 });
+
+test('portrait: the map fills at least 70 % of the height during a leg', async ({ page }) => {
+  test.skip(!test.info().project.use.isMobile, 'portrait phones only');
+  await startNew(page);
+  await page.waitForTimeout(800);
+  const ratio = await page.evaluate(() => {
+    const e = window.__meridian!.engine!;
+    let lo = Infinity;
+    let hi = -Infinity;
+    for (let lat = -90; lat <= 90; lat++)
+      for (const lon of [-179.9, 0, 179.9]) {
+        const q = e.project([lon, lat]);
+        if (q) [lo, hi] = [Math.min(lo, q[1]), Math.max(hi, q[1])];
+      }
+    return (Math.min(innerHeight, hi) - Math.max(0, lo)) / innerHeight;
+  });
+  expect(ratio).toBeGreaterThanOrEqual(0.699);
+  // Mobile chrome: cartouche, camp bar, compass — no floating log tab nor mission envelope.
+  await expect(page.getByRole('button', { name: 'Mission orders' })).toBeHidden();
+});

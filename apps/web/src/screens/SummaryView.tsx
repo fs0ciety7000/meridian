@@ -11,6 +11,7 @@ import type { CountryMark } from '../map/render';
 import { MissionList } from '../ui/game/MissionOrders';
 import { Stamp } from '../ui/Stamp';
 import styles from './screens.module.css';
+import { useMapInsets } from './useMapInsets';
 
 const SHARE_INK = { known: '🟤', trail: '🟢', frontier: '🔵', incognita: '⭐' } as const;
 
@@ -42,6 +43,7 @@ export function SummaryView({
   const nameOf = (iso3: string) => deps.nameOf?.(iso3, locale) ?? iso3;
   const engine = useRef<AtlasMapEngine | null>(null);
   const [copied, setCopied] = useState(false);
+  const insets = useMapInsets([]);
   const score = run.score!;
   const exp = run.expedition;
 
@@ -108,6 +110,8 @@ export function SummaryView({
   return (
     <main className={styles.screen}>
       <AtlasMap
+        insets={insets}
+        homeFocus={run.camp as [number, number]}
         ref={engine}
         locale={locale}
         className={styles.map}
@@ -118,7 +122,12 @@ export function SummaryView({
         meridianLon={exp.meridianLon}
         marks={marks}
       />
-      <section className={styles.summary} data-map-chrome aria-labelledby="summary-title">
+      <section
+        className={styles.summary}
+        data-map-chrome
+        data-inset="panel"
+        aria-labelledby="summary-title"
+      >
         <p className={styles.overline}>
           {exp.title?.[locale] ?? exp.code} · {exp.code}
         </p>
