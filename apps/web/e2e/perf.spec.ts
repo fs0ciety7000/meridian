@@ -14,7 +14,7 @@ import { expect, test, type Page } from '@playwright/test';
 test.skip(({ browserName }) => browserName !== 'chromium', 'needs the Chrome DevTools Protocol');
 
 async function openDetailedView(page: Page) {
-  await page.goto('/');
+  await page.goto('/lab/map');
   await page.waitForFunction(() => window.__meridianLab?.engine);
   // The detailed (50m) layer over Europe is the heaviest case.
   await page.evaluate(() => window.__meridianLab!.engine!.flyToPoint([10, 48], 4));

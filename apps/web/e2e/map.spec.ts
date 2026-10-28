@@ -6,7 +6,7 @@ import { expect, test, type Page } from '@playwright/test';
  */
 
 const ready = async (page: Page) => {
-  await page.goto('/');
+  await page.goto('/lab/map');
   await page.waitForFunction(() => window.__meridianLab?.engine);
   await page.waitForTimeout(300);
 };

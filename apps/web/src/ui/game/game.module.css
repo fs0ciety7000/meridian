@@ -1,0 +1,472 @@
+/* Expedition chrome (design-system §6): marginalia around a map that keeps ≥ 70 % of the
+   screen. Mobile: cartouche + camp bar (with odometer) + compass only (§7 density rule). */
+
+.overline {
+  margin: 0;
+  font-family: var(--font-map);
+  font-size: var(--type-label-caps-size);
+  line-height: var(--type-label-caps-line);
+  letter-spacing: var(--type-label-caps-tracking);
+  font-variant-caps: all-small-caps;
+  font-weight: 500;
+  color: var(--color-ink-700);
+}
+
+.cartouche {
+  position: absolute;
+  top: max(var(--space-2), env(safe-area-inset-top));
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: min(560px, calc(100% - 2 * var(--space-4)));
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-ink-900);
+  outline: 0.5px solid var(--color-ink-900);
+  outline-offset: -4px;
+  background: var(--color-paper-100);
+  box-shadow: var(--shadow-paper), var(--shadow-emboss);
+  animation: unfold var(--dur-paper) var(--ease-ink);
+  transform-origin: top center;
+}
+
+@keyframes unfold {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.cartoucheBody {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.cartoucheSide {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  min-height: 40px;
+  color: var(--color-ink-700);
+}
+
+.prompt {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: var(--type-cartouche-size);
+  line-height: var(--type-cartouche-line);
+  font-weight: 500;
+  font-variation-settings: 'opsz' 36;
+  text-wrap: balance;
+}
+
+.cartoucheResolved .prompt {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-ink-700);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resolvedLabel {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--color-ink-900);
+}
+
+.stampIn {
+  animation: stampDown 140ms var(--ease-stamp) both;
+}
+
+@keyframes stampDown {
+  from {
+    scale: 1.2;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.falseMark {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--color-vermilion-700);
+}
+
+/* ── Camp bar ─────────────────────────────────────────────────────────── */
+.campBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 88px;
+  padding: var(--space-3) var(--space-4) max(var(--space-3), env(safe-area-inset-bottom));
+  border-top: 1px solid var(--color-ink-900);
+  background: color-mix(in srgb, var(--color-paper-100) 96%, transparent);
+  box-shadow: 0 -6px 18px -8px rgb(36 35 43 / 0.25);
+}
+
+.campInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.country {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.coord {
+  margin: 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-coord-size);
+  line-height: var(--type-coord-line);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-700);
+}
+
+.placeholder {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-ink-700);
+}
+
+.note {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-sepia-600);
+}
+
+.seal {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: var(--radius-seal);
+  color: var(--color-paper-100);
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--color-vermilion-600),
+    var(--color-vermilion-700)
+  );
+  box-shadow:
+    var(--shadow-paper),
+    inset 0 -2px 0 rgb(0 0 0 / 0.2),
+    inset 0 2px 0 rgb(255 255 255 / 0.18);
+  cursor: pointer;
+  transition: transform var(--dur-quick) var(--ease-stamp);
+}
+
+.seal:active:not(:disabled) {
+  transform: translateY(2px);
+}
+
+.seal:disabled {
+  background: var(--color-paper-300);
+  color: var(--color-ink-500);
+  box-shadow: none;
+  cursor: default;
+}
+
+.seal:focus-visible,
+.tool:focus-visible,
+.envelope:focus-visible,
+.legLogTab:focus-visible {
+  outline: 2px solid var(--color-vermilion-600);
+  outline-offset: 2px;
+}
+
+.tool {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 var(--space-1);
+  border: 1px solid var(--color-paper-400);
+  border-radius: var(--radius-seal);
+  background: var(--color-paper-100);
+  color: var(--color-ink-900);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tool:disabled {
+  color: var(--color-ink-500);
+  cursor: default;
+}
+
+.toolBadge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* ── Odometer ─────────────────────────────────────────────────────────── */
+.odometer {
+  position: relative;
+  flex: none;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--color-ink-900);
+  border-radius: var(--radius-paper);
+  background: var(--material-brass);
+  box-shadow: var(--shadow-paper);
+  white-space: nowrap;
+}
+
+.odometerValue {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--material-brass-ink);
+}
+
+.unit {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--material-brass-ink);
+}
+
+.gain {
+  position: absolute;
+  right: var(--space-1);
+  bottom: 100%;
+  margin-bottom: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-ink-900);
+  animation: gainFade 1.6s var(--ease-ink) both;
+}
+
+@keyframes gainFade {
+  0% {
+    opacity: 0;
+    translate: 0 4px;
+  }
+  20%,
+  70% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ── Margin note ──────────────────────────────────────────────────────── */
+.marginNote {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: calc(100px + env(safe-area-inset-bottom));
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-sepia-600);
+  text-shadow:
+    0 0 3px var(--color-paper-100),
+    0 0 6px var(--color-paper-100);
+  pointer-events: none;
+}
+
+.marginNote:empty {
+  display: none;
+}
+
+/* ── Route log ────────────────────────────────────────────────────────── */
+.legLog {
+  position: absolute;
+  left: var(--space-2);
+  top: calc(max(var(--space-2), env(safe-area-inset-top)) + 96px);
+  max-width: min(360px, calc(100% - 2 * var(--space-2)));
+}
+
+.legLogTab {
+  min-height: 32px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-ink-900);
+  border-radius: var(--radius-paper);
+  background: var(--color-paper-100);
+  font-family: var(--font-map);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-900);
+  cursor: pointer;
+}
+
+.legPanel {
+  margin-top: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-ink-900);
+  background:
+    repeating-linear-gradient(transparent 0 23px, var(--color-sea-200) 23px 24px),
+    var(--color-paper-100);
+  box-shadow: var(--shadow-paper);
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.legList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.missionInline {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.missionInline ul {
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 48px;
+}
+
+.legNo {
+  flex: none;
+  width: 22px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-ink-700);
+}
+
+.legText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.legPrompt {
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.legResult {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-700);
+}
+
+/* ── Missions ─────────────────────────────────────────────────────────── */
+.missions {
+  display: none;
+  position: absolute;
+  right: var(--space-3);
+  top: calc(max(var(--space-2), env(safe-area-inset-top)) + 96px + 56px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-1);
+}
+
+.envelope {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-ink-900);
+  border-radius: var(--radius-paper);
+  background: var(--color-paper-100);
+  color: var(--color-ink-900);
+  cursor: pointer;
+}
+
+.missionList {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  max-width: 260px;
+  list-style: none;
+  border: 1px solid var(--color-ink-900);
+  background: var(--color-paper-100);
+  box-shadow: var(--shadow-paper);
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (min-width: 900px) {
+  .cartouche {
+    top: var(--space-5);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .campBar {
+    left: 50%;
+    right: auto;
+    bottom: var(--space-5);
+    translate: -50% 0;
+    width: 600px;
+    border: 1px solid var(--color-ink-900);
+    border-radius: var(--radius-paper);
+    box-shadow: var(--shadow-paper);
+    padding-bottom: var(--space-3);
+  }
+
+  .legLog {
+    left: var(--space-5);
+    top: calc(var(--space-5) + 112px);
+    width: 300px;
+  }
+
+  .marginNote {
+    left: auto;
+    right: var(--space-5);
+    bottom: auto;
+    top: calc(var(--space-5) + 120px);
+    width: 280px;
+  }
+
+  .missions {
+    display: flex;
+    right: var(--space-5);
+    top: calc(var(--space-5) + 64px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cartouche,
+  .stampIn,
+  .gain {
+    animation-duration: 1ms;
+  }
+}

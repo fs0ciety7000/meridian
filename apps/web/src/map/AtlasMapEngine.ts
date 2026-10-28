@@ -22,6 +22,9 @@ import {
   drawHighlight,
   pickColor,
   pickIndex,
+  type CountryMark,
+  type MapLocale,
+  OCEAN_LABELS,
   type LayerPaths,
   type StaticPaths,
   type View,
@@ -36,6 +39,13 @@ export interface CameraState {
   k: number;
   lod: '110m' | '50m';
   kmPerPx: number;
+}
+
+export interface Insets {
+  top: number;
+  right: number;
+  bottom: number;
+  left: number;
 }
 
 export interface AtlasMapOptions {
@@ -65,14 +75,6 @@ const HALO_PX = tokens.map.halo.sizePx;
 const HALO_REVEAL_PX = tokens.map.halo.revealRadiusPx;
 const LOUPE_PX = 132;
 const LOUPE_ZOOM = 4;
-
-const OCEANS = [
-  { text: 'Océan Pacifique', at: [-150, 8] as [number, number] },
-  { text: 'Océan Pacifique', at: [152, 14] as [number, number] },
-  { text: 'Océan Atlantique', at: [-38, 22] as [number, number] },
-  { text: 'Océan Indien', at: [80, -22] as [number, number] },
-  { text: 'Océan Austral', at: [20, -58] as [number, number] },
-];
 
 /**
  * The atlas map (architecture §4): Canvas for the cartography, a second canvas for hover and
@@ -127,6 +129,15 @@ export class AtlasMapEngine {
   private selected: string | null = null;
   private provisional: MapPick | null = null;
   private camps: CampMarker[] = [];
+  private marks: CountryMark[] = [];
+  private atlasMode = false;
+  /** Screen margins covered by chrome: framing centres targets in the remaining area. */
+  private insets: Insets = { top: 0, right: 0, bottom: 0, left: 0 };
+  /** Chrome margins the world view itself is fitted around (launcher, atlas). */
+  private homeInsets: Insets = { top: 0, right: 0, bottom: 0, left: 0 };
+  /** True once the player moved the camera: insets no longer re-home the view. */
+  private userMoved = false;
+  private locale: MapLocale = document.documentElement.lang === 'en' ? 'en' : 'fr';
 
   private press: {
     id: number;
@@ -175,8 +186,9 @@ export class AtlasMapEngine {
 
     this.zoomBehavior = zoom<HTMLDivElement, unknown>()
       .scaleExtent([1, MAX_ZOOM])
-      .on('start', () => {
+      .on('start', (e: D3ZoomEvent<HTMLDivElement, unknown>) => {
         if (!this.flying) this.interacting = true;
+        if (e.sourceEvent) this.userMoved = true;
       })
       .on('zoom', (e: D3ZoomEvent<HTMLDivElement, unknown>) => {
         this.transform = e.transform;
@@ -238,6 +250,41 @@ export class AtlasMapEngine {
     this.overlay.update(this.view);
   }
 
+  /** Country states that persist across frames: played legs, personal atlas. */
+  setMarks(marks: CountryMark[], atlas = false) {
+    this.marks = marks;
+    this.atlasMode = atlas;
+    this.drawHighlightLayer();
+  }
+
+  /** Chrome margins (fitInsets, design-system §7): framing avoids cartouche and camp bar. */
+  setInsets(insets: Insets) {
+    this.insets = insets;
+  }
+
+  /** Language of the map's own labels (oceans, parallels). */
+  setLocale(locale: MapLocale) {
+    if (locale === this.locale) return;
+    this.locale = locale;
+    this.frozenAt = null;
+    this.requestDraw(false);
+  }
+
+  /**
+   * Fits the world view to the area left free by the chrome (launcher panel, bottom sheet).
+   * Rebuilds the projection, so it is meant for screens whose chrome rarely changes size.
+   */
+  setHomeInsets(insets: Insets) {
+    const a = this.homeInsets;
+    const same = (['top', 'right', 'bottom', 'left'] as const).every(
+      (k) => Math.abs(a[k] - insets[k]) < 4,
+    );
+    if (same) return;
+    this.homeInsets = insets;
+    this.rebuild(true);
+    if (!this.userMoved) this.setTransform(this.homeTransform());
+  }
+
   /** Places (or clears) the provisional camp, e.g. from the country search. */
   setProvisional(pick: MapPick | null) {
     this.provisional = pick;
@@ -271,20 +318,26 @@ export class AtlasMapEngine {
    * of the screen, so it is zoomed to fill about half the height and stays pannable.
    */
   private homeTransform(): ZoomTransform {
-    const [[, y0], [, y1]] = geoPath(this.projection).bounds({ type: 'Sphere' });
-    const worldH = y1 - y0;
-    const k =
-      this.width / this.height < 0.9 ? Math.min(2.6, Math.max(1, (this.height * 0.5) / worldH)) : 1;
+    const [[x0, y0], [x1, y1]] = geoPath(this.projection).bounds({ type: 'Sphere' });
+    const { top, bottom } = this.homeInsets;
+    const freeH = Math.max(120, this.height - top - bottom);
+    // Portrait: the world would fill a third of the screen, so it is zoomed to fill half the
+    // height, or most of the free area when a bottom sheet covers part of it; it stays pannable.
+    const target = top || bottom ? freeH * 0.85 : this.height * 0.5;
+    const k = this.width / this.height < 0.9 ? Math.min(2.6, Math.max(1, target / (y1 - y0))) : 1;
     if (k === 1) return zoomIdentity;
-    return zoomIdentity.translate((this.width * (1 - k)) / 2, (this.height * (1 - k)) / 2).scale(k);
+    // Zoom around the centre of the world as fitted in the free area.
+    const cx = (x0 + x1) / 2;
+    const cy = (y0 + y1) / 2;
+    return zoomIdentity.translate(cx * (1 - k), cy * (1 - k)).scale(k);
   }
 
   /** Flies to a geographic box [west, south, east, north] (van Wijk interpolation). */
-  flyToBounds([w, s, e, n]: [number, number, number, number], maxK = 24) {
-    const east = e < w ? e + 360 : e;
+  flyToBounds([west, s, e, n]: [number, number, number, number], maxK = 24) {
+    const east = e < west ? e + 360 : e;
     const pts: [number, number][] = [];
     for (let i = 0; i <= 4; i++) {
-      const lon = w + ((east - w) * i) / 4;
+      const lon = west + ((east - west) * i) / 4;
       pts.push([lon > 180 ? lon - 360 : lon, s], [lon > 180 ? lon - 360 : lon, n]);
     }
     const [[x0, y0], [x1, y1]] = geoPath(this.projection).bounds({
@@ -293,11 +346,14 @@ export class AtlasMapEngine {
     });
     const dx = Math.max(x1 - x0, 1);
     const dy = Math.max(y1 - y0, 1);
-    const k = Math.max(1, Math.min(maxK, 0.7 / Math.max(dx / this.width, dy / this.height)));
+    const { top, right, bottom, left } = this.insets;
+    const w = Math.max(80, this.width - left - right);
+    const h = Math.max(80, this.height - top - bottom);
+    const k = Math.max(1, Math.min(maxK, 0.8 / Math.max(dx / w, dy / h)));
     const cx = (x0 + x1) / 2;
     const cy = (y0 + y1) / 2;
     this.flyToTransform(
-      zoomIdentity.translate(this.width / 2 - k * cx, this.height / 2 - k * cy).scale(k),
+      zoomIdentity.translate(left + w / 2 - k * cx, top + h / 2 - k * cy).scale(k),
     );
   }
 
@@ -385,7 +441,13 @@ export class AtlasMapEngine {
   }
 
   private rebuild(redraw: boolean) {
-    this.projection = makeProjection(this.kind, this.width, this.height, this.centerLon);
+    this.projection = makeProjection(
+      this.kind,
+      this.width,
+      this.height,
+      this.centerLon,
+      this.homeInsets,
+    );
     this.statics = buildStaticPaths(this.projection);
     const [[x0], [x1]] = geoPath(this.projection).bounds({ type: 'Sphere' });
     this.worldWidth = x1 - x0;
@@ -533,7 +595,8 @@ export class AtlasMapEngine {
       const [base, micro] = this.layersFor(this.lod);
       drawBase(this.base.getContext('2d')!, view, base, micro, this.statics, this.pal, {
         fast,
-        oceanLabels: OCEANS,
+        oceanLabels: OCEAN_LABELS[this.locale],
+        locale: this.locale,
         projection: this.projection,
         worldWidth: this.worldWidth,
         meridianLon: this.meridianLon,
@@ -601,6 +664,8 @@ export class AtlasMapEngine {
     drawHighlight(this.highlight.getContext('2d')!, this.view, [base, micro], this.pal, {
       hover: this.hover,
       selected: this.selected,
+      marks: this.marks,
+      atlas: this.atlasMode,
     });
   }
 
@@ -938,6 +1003,7 @@ export class AtlasMapEngine {
       hover: this.pickBufferAt(x, y)[0]?.unit.entity ?? null,
       selected: null,
       clear: false,
+      marks: this.marks,
     });
     // Halo targets within the loupe, at their real finger size.
     ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);

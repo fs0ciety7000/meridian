@@ -3,12 +3,14 @@ import {
   AtlasMapEngine,
   type AtlasMapOptions,
   type CameraState,
+  type Insets,
   type MapPick,
 } from './AtlasMapEngine';
 import type { GeoData } from './geodata';
 import { loadDetailLayer } from './loadGeoData';
 import type { CampMarker, RouteLeg } from './overlay';
 import type { ProjectionKind } from './projection';
+import type { CountryMark } from './render';
 import './map.css';
 
 export interface AtlasMapProps {
@@ -18,6 +20,13 @@ export interface AtlasMapProps {
   camps?: CampMarker[];
   route?: RouteLeg[];
   meridianLon?: number | null;
+  marks?: CountryMark[];
+  /** Personal atlas view: unvisited countries hatched as terra incognita. */
+  atlas?: boolean;
+  insets?: Insets;
+  locale?: 'fr' | 'en';
+  /** Chrome margins the world view is fitted around (launcher). */
+  homeInsets?: Insets;
   className?: string | undefined;
   onPick?: (pick: MapPick | null) => void;
   onConfirm?: (pick: MapPick) => void;
@@ -76,6 +85,22 @@ export const AtlasMap = forwardRef<AtlasMapEngine | null, AtlasMapProps>(
     useEffect(() => {
       engineRef.current?.setMeridian(props.meridianLon ?? null);
     }, [props.meridianLon]);
+
+    useEffect(() => {
+      engineRef.current?.setMarks(props.marks ?? [], props.atlas ?? false);
+    }, [props.marks, props.atlas]);
+
+    useEffect(() => {
+      if (props.insets) engineRef.current?.setInsets(props.insets);
+    }, [props.insets]);
+
+    useEffect(() => {
+      if (props.locale) engineRef.current?.setLocale(props.locale);
+    }, [props.locale]);
+
+    useEffect(() => {
+      if (props.homeInsets) engineRef.current?.setHomeInsets(props.homeInsets);
+    }, [props.homeInsets]);
 
     return <div ref={hostRef} className={props.className} />;
   },

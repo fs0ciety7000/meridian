@@ -28,9 +28,10 @@ function octagon(cx: number, cy: number, r: number): string {
 const STAR = '50,38 53,47 62,47 55,52 58,61 50,55.5 42,61 45,52 38,47 47,47';
 
 interface StampProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
+  className?: string | undefined;
   tier: RarityTier;
   code: string;
-  caption?: string;
+  caption?: string | undefined;
   rotationDeg?: number;
   size?: number;
 }

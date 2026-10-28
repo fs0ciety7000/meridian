@@ -80,6 +80,37 @@ const alpha = (hex: string, a: number) =>
     .toString(16)
     .padStart(2, '0')}`;
 
+/** Diagonal hatching tile, spacing and width in screen pixels (45° or 135°). */
+function hatch(
+  ctx: CanvasRenderingContext2D,
+  color: string,
+  spacing: number,
+  width: number,
+  dpr: number,
+  angleDeg: number,
+  cross = false,
+): CanvasPattern | null {
+  const size = Math.round(spacing * dpr);
+  const tile = document.createElement('canvas');
+  tile.width = tile.height = size;
+  const t = tile.getContext('2d')!;
+  t.strokeStyle = color;
+  t.lineWidth = width * dpr;
+  t.beginPath();
+  for (const o of [-size, 0, size]) {
+    if (angleDeg === 135 || cross) {
+      t.moveTo(o, 0);
+      t.lineTo(o + size, size);
+    }
+    if (angleDeg === 45 || cross) {
+      t.moveTo(o, size);
+      t.lineTo(o + size, 0);
+    }
+  }
+  t.stroke();
+  return ctx.createPattern(tile, 'repeat');
+}
+
 /** Unplantable hatching: thin sepia diagonals at 135°, spacing in screen pixels. */
 function hatchPattern(
   ctx: CanvasRenderingContext2D,
@@ -87,19 +118,7 @@ function hatchPattern(
   dpr: number,
 ): CanvasPattern | null {
   const h = pal.style.unplantableHatch;
-  const size = Math.round(h.spacing * dpr);
-  const tile = document.createElement('canvas');
-  tile.width = tile.height = size;
-  const t = tile.getContext('2d')!;
-  t.strokeStyle = pal.unplantableHatch;
-  t.lineWidth = h.width * dpr;
-  t.beginPath();
-  for (const o of [-size, 0, size]) {
-    t.moveTo(o, 0);
-    t.lineTo(o + size, size);
-  }
-  t.stroke();
-  return ctx.createPattern(tile, 'repeat');
+  return hatch(ctx, pal.unplantableHatch, h.spacing, h.width, dpr, h.angleDeg);
 }
 
 export interface DrawOptions {
@@ -113,6 +132,7 @@ export interface DrawOptions {
   meridianLon?: number | null;
   /** Screen rectangles covered by interface chrome: no label goes underneath. */
   occlusions?: Rect[];
+  locale?: MapLocale;
 }
 
 export interface Rect {
@@ -239,13 +259,41 @@ export function drawBase(
   }
 }
 
-const PARALLEL_LABELS: [number, string][] = [
-  [0, 'Équateur'],
-  [23.44, 'Tropique du Cancer'],
-  [-23.44, 'Tropique du Capricorne'],
-  [66.56, 'Cercle polaire arctique'],
-  [-66.56, 'Cercle polaire antarctique'],
-];
+export type MapLocale = 'fr' | 'en';
+
+const PARALLEL_LABELS: Record<MapLocale, [number, string][]> = {
+  fr: [
+    [0, 'Équateur'],
+    [23.44, 'Tropique du Cancer'],
+    [-23.44, 'Tropique du Capricorne'],
+    [66.56, 'Cercle polaire arctique'],
+    [-66.56, 'Cercle polaire antarctique'],
+  ],
+  en: [
+    [0, 'Equator'],
+    [23.44, 'Tropic of Cancer'],
+    [-23.44, 'Tropic of Capricorn'],
+    [66.56, 'Arctic Circle'],
+    [-66.56, 'Antarctic Circle'],
+  ],
+};
+
+export const OCEAN_LABELS: Record<MapLocale, { text: string; at: [number, number] }[]> = {
+  fr: [
+    { text: 'Océan Pacifique', at: [-150, 8] },
+    { text: 'Océan Pacifique', at: [152, 14] },
+    { text: 'Océan Atlantique', at: [-38, 22] },
+    { text: 'Océan Indien', at: [80, -22] },
+    { text: 'Océan Austral', at: [20, -58] },
+  ],
+  en: [
+    { text: 'Pacific Ocean', at: [-150, 8] },
+    { text: 'Pacific Ocean', at: [152, 14] },
+    { text: 'Atlantic Ocean', at: [-38, 22] },
+    { text: 'Indian Ocean', at: [80, -22] },
+    { text: 'Southern Ocean', at: [20, -58] },
+  ],
+};
 
 /**
  * Hydrography and remarkable parallels in italics (design-system §5.2–5.3): AA contrast
@@ -308,7 +356,7 @@ function drawLabels(
   const ps = Math.max(L.minPx, size - 2);
   ctx.font = `italic 400 ${ps}px ${pal.font.map}`;
   spaced.letterSpacing = '0.08em';
-  for (const [lat, text] of PARALLEL_LABELS) {
+  for (const [lat, text] of PARALLEL_LABELS[opts.locale ?? 'fr']) {
     const w = ctx.measureText(text).width;
     for (let lon = -180; lon <= 180; lon += 2.5) {
       const p = screen([lon, lat]);
@@ -329,7 +377,18 @@ export interface HighlightOptions {
   selected: string | null;
   /** false when painting over an existing frame (the loupe draws base + highlight on one canvas). */
   clear?: boolean;
+  /** Persistent country states: played legs, personal atlas (design-system §5.4). */
+  marks?: CountryMark[];
+  /** Atlas view: every country without a mark is hatched as terra incognita. */
+  atlas?: boolean;
 }
+
+export type CountryMark =
+  | { entity: string; state: 'valid'; tier: 'known' | 'trail' | 'frontier' | 'incognita' }
+  | { entity: string; state: 'falseTrail' }
+  /** Spyglass veil: every country of a hinted sub-region, answers or not (gameplay §9). */
+  | { entity: string; state: 'hint' }
+  | { entity: string; state: 'visited'; continent: string; intensity?: number };
 
 /** Hover and selection washes on their own canvas, so they never force a base redraw. */
 export function drawHighlight(
@@ -337,27 +396,83 @@ export function drawHighlight(
   view: View,
   layers: LayerPaths[],
   pal: MapPalette,
-  { hover, selected, clear = true }: HighlightOptions,
+  { hover, selected, clear = true, marks = [], atlas = false }: HighlightOptions,
 ) {
   const { k, x, y, dpr } = view;
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   if (clear) ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   ctx.setTransform(dpr * k, 0, 0, dpr * k, dpr * x, dpr * y);
   ctx.lineJoin = 'round';
-  const paint = (entityOrUnit: string, fill: string, stroke: string, width: number) => {
-    for (const layer of layers) {
-      for (const unit of layer.units) {
-        if (unit.entity !== entityOrUnit && unit.id !== entityOrUnit) continue;
-        const path = layer.unitPaths.get(unit.id);
-        if (!path) continue;
+  const pathsOf = (entityOrUnit: string) =>
+    layers.flatMap((layer) =>
+      layer.units
+        .filter((u) => u.entity === entityOrUnit || u.id === entityOrUnit)
+        .map((u) => layer.unitPaths.get(u.id))
+        .filter((p): p is Path2D => !!p),
+    );
+  const paint = (
+    entityOrUnit: string,
+    fill: string | CanvasPattern | null,
+    stroke: string | null,
+    width: number,
+    dash?: readonly number[],
+  ) => {
+    for (const path of pathsOf(entityOrUnit)) {
+      if (fill) {
         ctx.fillStyle = fill;
         ctx.fill(path);
+      }
+      if (stroke) {
         ctx.strokeStyle = stroke;
         ctx.lineWidth = width / k;
+        ctx.setLineDash(dash ? dash.map((d) => d / k) : []);
         ctx.stroke(path);
       }
     }
+    ctx.setLineDash([]);
   };
+  const pattern = (p: CanvasPattern | null) => {
+    p?.setTransform(new DOMMatrix().scale(1 / (k * dpr)));
+    return p;
+  };
+  const cs = pal.style.countryState;
+  if (atlas) {
+    const u = cs.unvisited;
+    const fill = pattern(
+      hatch(ctx, alpha(pal[u.color as 'ink-500'], u.opacity), u.spacing, u.width, dpr, 45, true),
+    );
+    const marked = new Set(marks.map((m) => m.entity));
+    for (const layer of layers)
+      for (const unit of layer.units)
+        if (unit.kind !== 'unplantable' && unit.entity && !marked.has(unit.entity)) {
+          const path = layer.unitPaths.get(unit.id);
+          if (path && fill) {
+            ctx.fillStyle = fill;
+            ctx.fill(path);
+          }
+        }
+  }
+  for (const m of marks) {
+    if (m.state === 'valid') {
+      paint(m.entity, alpha(pal[`rarity-${m.tier}`], cs.validOpacity), null, 0);
+    } else if (m.state === 'falseTrail') {
+      const f = cs.falseTrail;
+      const color = alpha(pal[f.color as 'vermilion-700'], f.opacity);
+      paint(
+        m.entity,
+        pattern(hatch(ctx, color, f.spacing, f.width, dpr, f.angleDeg)),
+        color,
+        1,
+        f.outlineDash,
+      );
+    } else if (m.state === 'hint') {
+      paint(m.entity, alpha(pal['ink-500'], cs.hintOpacity), null, 0);
+    } else {
+      const wash = cs.atlasWash[m.continent as 'AF'] ?? cs.atlasWash.AN;
+      const opacity = cs.atlasWash.opacity * (0.6 + 0.4 * Math.min(1, m.intensity ?? 1));
+      paint(m.entity, alpha(wash, opacity), null, 0);
+    }
+  }
   if (hover && hover !== selected) paint(hover, alpha(pal.hover, 0.85), pal['ink-700'], 1);
   if (selected) paint(selected, alpha(pal['vermilion-600'], 0.1), pal['vermilion-600'], 1.5);
 }

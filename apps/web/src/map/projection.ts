@@ -12,16 +12,20 @@ export function makeProjection(
   width: number,
   height: number,
   centerLon = 0,
+  /** Margins covered by chrome: the world is fitted to the remaining area (fitInsets). */
+  insets = { top: 0, right: 0, bottom: 0, left: 0 },
 ): GeoProjection {
   const projection = (kind === 'naturalEarth' ? geoNaturalEarth1() : geoEqualEarth()).rotate([
     -centerLon,
     0,
   ]);
   const margin = Math.max(16, Math.round(Math.min(width, height) * 0.04));
+  const w = Math.max(120, width - insets.left - insets.right);
+  const h = Math.max(120, height - insets.top - insets.bottom);
   return projection.fitExtent(
     [
-      [margin, margin],
-      [width - margin, height - margin],
+      [insets.left + margin, insets.top + margin],
+      [insets.left + w - margin, insets.top + h - margin],
     ],
     { type: 'Sphere' },
   );

@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./geo/*": "./geo/*"
+    "./geo/*": "./geo/*",
+    "./facts/*": "./facts/*",
+    "./library/*": "./library/*"
   }
 }
