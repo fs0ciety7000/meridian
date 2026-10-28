@@ -39,11 +39,17 @@ export function useMapInsets(deps: unknown[]): Insets {
         right: 0,
       };
       if (panel) {
-        if (w >= 900) next.left = Math.round(panel.right + 8);
-        else next.bottom = Math.round(h - panel.top);
+        if (w < 900) next.bottom = Math.round(h - panel.top);
+        else if (panel.left > w / 2) next.right = Math.round(w - panel.left + 8);
+        else next.left = Math.round(panel.right + 8);
       }
       setInsets((p) =>
-        p.top === next.top && p.bottom === next.bottom && p.left === next.left ? p : next,
+        p.top === next.top &&
+        p.bottom === next.bottom &&
+        p.left === next.left &&
+        p.right === next.right
+          ? p
+          : next,
       );
     };
     measure();

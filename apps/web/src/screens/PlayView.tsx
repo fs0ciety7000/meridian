@@ -31,7 +31,13 @@ const TIER_KEY = {
   incognita: 'tierIncognita',
 } as const;
 /** Resolution choreography budget (design-system §8: ≤ 3.5 s, skippable). */
-const RESOLVE_MS = { valid: 2600, falseTrail: 3200, reduced: 900 };
+/**
+ * Resolution choreography (design-system §8, ≤ 3.5 s, skippable): camera frames the leg →
+ * the route is inked → the country wash and the stamp land → back to the world for the next
+ * prompt. A false trail skips the tracing and lets the margin note be read.
+ */
+const CHOREO_MS = { flight: 650, traceMax: 1900, stamp: 950, falseTrail: 2800, reduced: 900 };
+type Phase = 'flight' | 'trace' | 'stamp';
 
 declare global {
   interface Window {
@@ -61,7 +67,9 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   const [searchOpen, setSearchOpen] = useState(false);
   const [spy, setSpy] = useState<{ leg: number; subregions: string[] } | null>(null);
   /** The leg being resolved (choreography), or null while playing. */
-  const [resolving, setResolving] = useState<{ leg: number; valid: boolean } | null>(null);
+  const [resolving, setResolving] = useState<{ leg: number; valid: boolean; phase: Phase } | null>(
+    null,
+  );
   const legStart = useRef(0);
   /** Leg to frame once the projection has settled (prev camp → new camp). */
   const [frame, setFrame] = useState<[[number, number], [number, number]] | null>(null);
@@ -141,8 +149,10 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
     const legs = stops.slice(1).map((to, i) => ({
       from: stops[i]!,
       to,
-      animate: !!resolving?.valid && i === stops.length - 2,
+      animate: resolving?.phase === 'trace' && i === stops.length - 2,
     }));
+    // While the camera flies, the new leg is not drawn yet: the ink starts once framed.
+    if (resolving?.valid && resolving.phase === 'flight') legs.pop();
     return [...ghostLegs, ...legs];
   }, [stops, resolving, ghostLegs]);
 
@@ -155,7 +165,9 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   );
 
   const marks: CountryMark[] = useMemo(() => {
-    const out: CountryMark[] = run.legs.map((l) =>
+    // The wash of the leg being resolved lands with its stamp, after the route is inked.
+    const shown = resolving && resolving.phase !== 'stamp' ? run.legs.slice(0, -1) : run.legs;
+    const out: CountryMark[] = shown.map((l) =>
       l.valid
         ? { entity: l.pick.iso3, state: 'valid', tier: l.rarity?.tier ?? 'known' }
         : { entity: l.pick.iso3, state: 'falseTrail' },
@@ -185,18 +197,31 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
     setTraced(0);
     legStart.current = performance.now();
     moves.current = 0;
-  }, []);
+    // Back to the world, centred on the new camp, for the next prompt.
+    if (run.currentLeg <= 6) engine.current?.resetView();
+  }, [run.currentLeg]);
+
+  const advance = useCallback(
+    (from: Phase) =>
+      setResolving((r) =>
+        r && r.phase === from ? { ...r, phase: from === 'flight' ? 'trace' : 'stamp' } : r,
+      ),
+    [],
+  );
 
   useEffect(() => {
     if (!resolving) return;
-    const ms = reduced
-      ? RESOLVE_MS.reduced
-      : resolving.valid
-        ? RESOLVE_MS.valid
-        : RESOLVE_MS.falseTrail;
-    const timer = window.setTimeout(finishResolution, ms);
+    let ms: number;
+    let next: () => void = finishResolution;
+    if (reduced) ms = CHOREO_MS.reduced;
+    else if (!resolving.valid) ms = CHOREO_MS.falseTrail;
+    else if (resolving.phase === 'flight') [ms, next] = [CHOREO_MS.flight, () => advance('flight')];
+    // The overlay reports the end of the tracing; this is only the safety net.
+    else if (resolving.phase === 'trace') [ms, next] = [CHOREO_MS.traceMax, () => advance('trace')];
+    else ms = CHOREO_MS.stamp;
+    const timer = window.setTimeout(next, ms);
     return () => clearTimeout(timer);
-  }, [resolving, reduced, finishResolution]);
+  }, [resolving, reduced, finishResolution, advance]);
 
   const react = useCallback(
     (events: EngineEvent[], prev: [number, number]) => {
@@ -221,7 +246,11 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
             ? falseTrail.leg
             : 0;
       if (!leg) return;
-      setResolving({ leg, valid: !!planted });
+      setResolving({
+        leg,
+        valid: !!planted,
+        phase: planted && !reduced ? 'flight' : 'stamp',
+      });
       engine.current?.setProvisional(null);
       setPick(null);
       setHint(null);
@@ -237,7 +266,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
         say(`${t('falseTrail', { name: nameOf(falseTrail.iso3) })} ${def.explain[locale]}`);
       }
     },
-    [t, pick, nameOf, say, exp, run.legs, locale],
+    [t, pick, nameOf, say, exp, run.legs, locale, reduced],
   );
 
   const plant = useCallback(() => {
@@ -326,8 +355,12 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
       ? {
           tier: shownLeg.valid ? (shownLeg.rarity?.tier ?? 'known') : null,
           iso3: shownLeg.pick.iso3,
+          // The stamp lands only once the route is inked.
+          pending: resolving.phase !== 'stamp',
           label: shownLeg.valid
-            ? `${nameOf(shownLeg.pick.iso3)} · ${t(TIER_KEY[shownLeg.rarity?.tier ?? 'known'])}${run.attempt === 'replay' ? '' : ` (${t('estimated')})`}`
+            ? resolving.phase !== 'stamp'
+              ? nameOf(shownLeg.pick.iso3)
+              : `${nameOf(shownLeg.pick.iso3)} · ${t(TIER_KEY[shownLeg.rarity?.tier ?? 'known'])}${run.attempt === 'replay' ? '' : ` (${t('estimated')})`}`
             : t('falseTrail', { name: nameOf(shownLeg.pick.iso3) }),
         }
       : null;
@@ -358,7 +391,10 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
         onPick={onPick}
         onConfirm={plant}
         onCamera={setCamera}
-        onRouteProgress={(km, done) => setTraced(done ? 0 : km)}
+        onRouteProgress={(km, done) => {
+          setTraced(done ? 0 : km);
+          if (done) advance('trace');
+        }}
       />
 
       <div data-inset="top">

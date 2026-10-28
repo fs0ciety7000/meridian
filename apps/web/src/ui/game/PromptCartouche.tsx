@@ -9,7 +9,7 @@ export interface CartoucheProps {
   text: string;
   category: PromptCategory;
   /** Folded to one line with the result of the leg (design-system §6.1 `resolved`). */
-  resolved?: { tier: RarityTier | null; iso3: string; label: string } | null;
+  resolved?: { tier: RarityTier | null; iso3: string; label: string; pending?: boolean } | null;
   onClick?: () => void;
   /** Small italic hint under a resolved leg ("tap to skip"). */
   hint?: string | null;
@@ -38,7 +38,9 @@ export function PromptCartouche({
         {hint && <p className={styles.cartoucheHint}>{hint}</p>}
       </div>
       <div className={styles.cartoucheSide}>
-        {resolved?.tier ? (
+        {resolved?.pending ? (
+          <CategoryIcon category={category} />
+        ) : resolved?.tier ? (
           <Stamp
             tier={resolved.tier}
             code={resolved.iso3}

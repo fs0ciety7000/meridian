@@ -453,8 +453,19 @@
 
 .slot {
   display: grid;
-  place-items: center;
-  aspect-ratio: 1;
+  justify-items: center;
+  align-content: start;
+  gap: 2px;
+}
+
+.slotLabel {
+  font-family: var(--font-map);
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: var(--color-ink-700);
 }
 
 .slotEmpty {
@@ -511,4 +522,22 @@
   .skip {
     bottom: calc(var(--space-5) + 120px);
   }
+}
+
+/* Monospaced figures: thousands separated by a quarter-digit gap, not a full-width space. */
+.digitGroup + .digitGroup {
+  margin-left: 0.25ch;
+}
+
+.challengeOverlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  pointer-events: none;
+}
+
+.challengeOverlay > * {
+  pointer-events: auto;
 }

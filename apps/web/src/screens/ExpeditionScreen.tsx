@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { replayShared } from '../game/challenge';
 import { formatNumber, useLocale, useT } from '../game/i18n';
 import { navigate } from '../game/router';
+import { AtlasMap } from '../map/AtlasMap';
 import { useGame } from '../game/store';
 import { PlayView } from './PlayView';
 import styles from './screens.module.css';
@@ -87,20 +88,40 @@ export function ExpeditionScreen({ rawCode, share }: { rawCode: string; share: s
   if (!run && share) {
     const km = friend?.score?.distanceKm ?? friend?.legs.reduce((s, l) => s + l.distanceKm, 0) ?? 0;
     return (
-      <main className={`${styles.message} paper`}>
-        <section className={styles.challengeCard}>
-          <p className={styles.overline}>{expedition.title?.[locale] ?? expedition.code}</p>
-          <h1 className={styles.challengeTitle}>
-            {t('challengeFrom', { code: expedition.code, km: formatNumber(locale, km) })}
-          </h1>
-          <button
-            type="button"
-            className={styles.primary}
-            onClick={() => setRunId(start(expedition, share ?? undefined).runId)}
-          >
-            {t('acceptChallenge')}
-          </button>
-        </section>
+      <main className={styles.screen}>
+        {/* The atlas behind the card: port and meridian only — the friend's route stays
+            hidden until the player has played each leg (design-system §6.16). */}
+        <AtlasMap
+          className={styles.map}
+          data={geo!}
+          locale={locale}
+          camps={[
+            { id: 'port', lonLat: expedition.start.lonLat as [number, number], state: 'start' },
+          ]}
+          meridianLon={expedition.meridianLon}
+          homeFocus={expedition.start.lonLat as [number, number]}
+        />
+        <div className={styles.challengeOverlay}>
+          <section className={styles.challengeCard} data-map-chrome>
+            <p className={styles.overline}>{expedition.title?.[locale] ?? expedition.code}</p>
+            <h1 className={styles.challengeTitle}>
+              {t('challengeFrom', { code: expedition.code, km: formatNumber(locale, km) })}
+            </h1>
+            <p className={styles.small}>
+              {t('departure', { name: expedition.start.name[locale] })} ·{' '}
+              {t('meridian', {
+                lon: `${Math.abs(expedition.meridianLon)}° ${expedition.meridianLon < 0 ? (locale === 'fr' ? 'O' : 'W') : 'E'}`,
+              })}
+            </p>
+            <button
+              type="button"
+              className={styles.primary}
+              onClick={() => setRunId(start(expedition, share ?? undefined).runId)}
+            >
+              {t('acceptChallenge')}
+            </button>
+          </section>
+        </div>
       </main>
     );
   }

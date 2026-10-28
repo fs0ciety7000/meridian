@@ -8,6 +8,13 @@ import { countryNames } from '../ui/countryNames';
 import { Stamp } from '../ui/Stamp';
 import styles from './screens.module.css';
 
+const TIER_KEY = {
+  known: 'tierKnown',
+  trail: 'tierTrail',
+  frontier: 'tierFrontier',
+  incognita: 'tierIncognita',
+} as const;
+
 /** Passport (design-system §6.9): one page per state, four slots (one per tier). */
 export function PassportScreen() {
   const t = useT();
@@ -58,6 +65,7 @@ export function PassportScreen() {
                         ) : (
                           <span className={styles.slotEmpty} aria-hidden="true" />
                         )}
+                        <span className={styles.slotLabel}>{t(TIER_KEY[tier])}</span>
                       </div>
                     );
                   })}

@@ -169,3 +169,12 @@ export function formatNumber(locale: Locale, n: number) {
   // French groups thousands with U+202F, missing from some of our fonts: use a no-break space.
   return f.format(Math.round(n)).replace(/\u202f/g, '\u00a0');
 }
+
+/** Integer split in groups of three for monospaced display (odometer, summary distance). */
+export function digitGroups(n: number): string[] {
+  const s = String(Math.max(0, Math.round(n)));
+  const head = s.length % 3 || 3;
+  const out = [s.slice(0, head)];
+  for (let i = head; i < s.length; i += 3) out.push(s.slice(i, i + 3));
+  return out;
+}

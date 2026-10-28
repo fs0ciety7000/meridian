@@ -41,6 +41,7 @@ interface StampProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
  */
 export function Stamp({ tier, code, caption, rotationDeg = 0, size = 96, ...rest }: StampProps) {
   const ink = `var(--color-rarity-${tier})`;
+  const small = size < 56;
   const common = { fill: 'none', stroke: ink, vectorEffect: 'non-scaling-stroke' as const };
   return (
     <svg
@@ -70,23 +71,25 @@ export function Stamp({ tier, code, caption, rotationDeg = 0, size = 96, ...rest
         <>
           <polygon points={rosette(50, 50, 48, 42)} strokeWidth="2" {...common} />
           <circle cx="50" cy="50" r="36" strokeWidth="1" {...common} />
-          <polygon points={STAR} fill="var(--color-meridian-500)" />
+          {!small && <polygon points={STAR} fill="var(--color-meridian-500)" />}
         </>
       )}
       <text
         x="50"
-        y={tier === 'incognita' ? 34 : 47}
+        y={small ? 50 : tier === 'incognita' ? 34 : 47}
+        dominantBaseline={small ? 'central' : undefined}
         textAnchor="middle"
         fill={ink}
         style={{
-          font: '500 15px var(--font-map)',
+          // Below 56 px the code is all there is room for: set it large (AD review C4).
+          font: `${small ? 600 : 500} ${small ? 26 : 15}px var(--font-map)`,
           letterSpacing: '0.12em',
           fontVariantCaps: 'all-small-caps',
         }}
       >
         {code}
       </text>
-      {caption && (
+      {caption && !small && (
         <text
           x="50"
           y={tier === 'incognita' ? 75 : 64}

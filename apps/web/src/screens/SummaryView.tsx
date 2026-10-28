@@ -1,12 +1,12 @@
 import { encodeShare, type RunState } from '@meridian/engine';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { formatNumber, useLocale, useT } from '../game/i18n';
+import { digitGroups, formatNumber, useLocale, useT } from '../game/i18n';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine } from '../map/AtlasMapEngine';
 import type { CampMarker, RouteLeg } from '../map/overlay';
-import { bestCenterLon } from '../map/projection';
+import { bestCenterLon, pointsBounds } from '../map/projection';
 import type { CountryMark } from '../map/render';
 import { MissionList } from '../ui/game/MissionOrders';
 import { Stamp } from '../ui/Stamp';
@@ -87,6 +87,19 @@ export function SummaryView({
     window.__meridian = { engine: engine.current };
   });
 
+  // Frame the whole route in the area the summary panel leaves free (AD counter-review R6).
+  const stops = useMemo(
+    () => [
+      exp.start.lonLat as [number, number],
+      ...run.legs.filter((l) => l.valid).map((l) => l.pick.lonLat as [number, number]),
+    ],
+    [exp, run.legs],
+  );
+  useEffect(() => {
+    if (!insets.bottom && !insets.left && !insets.right) return;
+    engine.current?.flyToBounds(pointsBounds(stops, centerLon), 6);
+  }, [insets, stops, centerLon]);
+
   const shareUrl = `${location.origin}/x/${exp.code}?r=${encodeShare(
     exp.code,
     run.legs.map((l) => l.pick.lonLat),
@@ -135,7 +148,13 @@ export function SummaryView({
           {t(run.status === 'abandoned' ? 'abandoned' : 'completed')}
         </h1>
         <p className={styles.bigDistance}>
-          {formatNumber(locale, score.distanceKm)}
+          <span aria-label={formatNumber(locale, score.distanceKm)}>
+            {digitGroups(score.distanceKm).map((g, i) => (
+              <span key={i} className={styles.digitGroup} aria-hidden="true">
+                {g}
+              </span>
+            ))}
+          </span>
           <span className={styles.bigUnit}> km</span>
         </p>
         <p className={styles.renown}>

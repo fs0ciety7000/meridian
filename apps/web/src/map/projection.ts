@@ -65,3 +65,22 @@ export function bestCenterLon(
   }
   return best;
 }
+
+/**
+ * Geographic box [west, south, east, north] around a set of points, measured around
+ * `centerLon` so a route across the antimeridian gets west > east (flyToBounds convention).
+ */
+export function pointsBounds(
+  points: readonly (readonly [number, number])[],
+  centerLon: number,
+): [number, number, number, number] {
+  const wrap = (lon: number) => ((((lon + 180) % 360) + 360) % 360) - 180;
+  const rel = points.map(([lon]) => wrap(lon - centerLon));
+  const lats = points.map(([, lat]) => lat);
+  return [
+    wrap(centerLon + Math.min(...rel)),
+    Math.min(...lats),
+    wrap(centerLon + Math.max(...rel)),
+    Math.max(...lats),
+  ];
+}
