@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { EARTH_RADIUS_KM, haversineKm, quantize, wrapLon } from '../src/index';
+import { EARTH_RADIUS_KM, haversineKm, meridianCrossing, quantize, wrapLon } from '../src/index';
 
 describe('haversineKm', () => {
   it('is zero for identical points', () => {
@@ -46,5 +46,21 @@ describe('quantize', () => {
 
   it('clamps latitude and wraps longitude', () => {
     expect(quantize([181, 95])).toEqual([-179, 90]);
+  });
+});
+
+describe('meridianCrossing', () => {
+  it('finds where Lisbon → Mongolia crosses 30° E', () => {
+    const at = meridianCrossing([-9.14, 38.72], [104.8, 46.0], 30);
+    expect(at).not.toBeNull();
+    expect(at![0]).toBeCloseTo(30, 1);
+  });
+
+  it('ignores the antimeridian of the meridian (Fiji → Samoa vs 0°)', () => {
+    expect(meridianCrossing([178, -17.8], [-172.1, -13.8], 0)).toBeNull();
+  });
+
+  it('returns null for a leg entirely on one side', () => {
+    expect(meridianCrossing([2.35, 48.86], [-3.7, 40.4], 30)).toBeNull();
   });
 });

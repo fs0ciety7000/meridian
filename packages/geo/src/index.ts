@@ -1,3 +1,5 @@
+import { geoInterpolate } from 'd3-geo';
+
 /** [longitude, latitude] in decimal degrees, WGS84 — always GeoJSON order. */
 export type LonLat = readonly [lon: number, lat: number];
 
@@ -29,4 +31,26 @@ export function quantize(p: LonLat, quantumDeg = 0.001): LonLat {
   const steps = Math.round(1 / quantumDeg);
   const q = (v: number) => Math.round(v * steps) / steps;
   return [q(wrapLon(p[0])), q(Math.max(-90, Math.min(90, p[1])))];
+}
+
+/** Points along the great circle from `from` to `to` (d3-geo interpolation). */
+export { geoInterpolate as greatCircle } from 'd3-geo';
+
+/**
+ * Where the minor great-circle arc between two points crosses the meridian half-plane at
+ * `meridian` (not its antimeridian), or null (gameplay-systems §5). Sampled at 128 steps.
+ */
+export function meridianCrossing(from: LonLat, to: LonLat, meridian: number): LonLat | null {
+  const at = geoInterpolate([from[0], from[1]], [to[0], to[1]]);
+  let prev = at(0);
+  for (let i = 1; i <= 128; i++) {
+    const cur = at(i / 128);
+    const a = wrapLon(prev[0] - meridian);
+    const b = wrapLon(cur[0] - meridian);
+    if (a !== 0 && Math.sign(a) !== Math.sign(b) && Math.abs(a - b) < 90) {
+      return at((i - 1 + Math.abs(a) / (Math.abs(a) + Math.abs(b))) / 128);
+    }
+    prev = cur;
+  }
+  return null;
 }

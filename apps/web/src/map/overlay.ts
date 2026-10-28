@@ -1,5 +1,5 @@
 import { geoDistance, geoInterpolate, geoPath, type GeoProjection } from 'd3-geo';
-import { EARTH_RADIUS_KM } from '@meridian/geo';
+import { EARTH_RADIUS_KM, meridianCrossing } from '@meridian/geo';
 import { tokens } from '@meridian/design-tokens';
 import type { View } from './render';
 
@@ -86,28 +86,6 @@ function campNode(camp: CampMarker): SVGGElement {
 }
 
 const easeInk = (t: number) => 1 - Math.pow(1 - t, 3);
-
-const wrap = (lon: number) => ((((lon + 180) % 360) + 360) % 360) - 180;
-
-/** Where a great-circle leg crosses the meridian half-plane (not its antimeridian), if it does. */
-export function meridianCrossing(
-  from: [number, number],
-  to: [number, number],
-  meridian: number,
-): [number, number] | null {
-  const at = geoInterpolate(from, to);
-  let prev = at(0) as [number, number];
-  for (let i = 1; i <= 128; i++) {
-    const cur = at(i / 128) as [number, number];
-    const a = wrap(prev[0] - meridian);
-    const b = wrap(cur[0] - meridian);
-    if (a !== 0 && Math.sign(a) !== Math.sign(b) && Math.abs(a - b) < 90) {
-      return at((i - 1 + Math.abs(a) / (Math.abs(a) + Math.abs(b))) / 128) as [number, number];
-    }
-    prev = cur;
-  }
-  return null;
-}
 
 /** Points every `stepKm` along a leg, with a point just after each one to orient the tick. */
 function legTicks(from: [number, number], to: [number, number], stepKm: number) {
@@ -273,7 +251,7 @@ export class Overlay {
     if (this.meridianLon === null) return;
     const s = ROUTE.crossingMarkerSize / 2;
     for (const leg of lastDone ? real : real.slice(0, -1)) {
-      const at = meridianCrossing(leg.from, leg.to, this.meridianLon);
+      const at = meridianCrossing(leg.from, leg.to, this.meridianLon) as [number, number] | null;
       if (!at) continue;
       const node = el('path', {
         class: 'atlas-route__crossing',
