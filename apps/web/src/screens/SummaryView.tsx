@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { digitGroups, formatNumber, useLocale, useT } from '../game/i18n';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
+import { track } from '../game/telemetry';
 import { reportSlowDevice } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine } from '../map/AtlasMapEngine';
@@ -10,6 +11,7 @@ import type { CampMarker, RouteLeg } from '../map/overlay';
 import { bestCenterLon, pointsBounds } from '../map/projection';
 import type { CountryMark } from '../map/render';
 import { MissionList } from '../ui/game/MissionOrders';
+import { renderPostcard } from '../ui/game/postcard';
 import { Stamp } from '../ui/Stamp';
 import styles from './screens.module.css';
 import { useMapInsets } from './useMapInsets';
@@ -105,13 +107,31 @@ export function SummaryView({
     exp.code,
     run.legs.map((l) => l.pick.lonLat),
   )}`;
+  const postcard = () =>
+    renderPostcard(run, geo!, {
+      locale,
+      title: exp.title?.[locale] ?? exp.code,
+      distanceGroups: digitGroups(score.distanceKm),
+      renownLabel: `${t('renown')} ${formatNumber(locale, score.renown)}`,
+    });
+  const fileName = `meridian-${exp.code.toLowerCase()}.png`;
+
   const share = async () => {
     const stamps = run.legs
       .map((l) => (l.valid ? SHARE_INK[l.rarity?.tier ?? 'known'] : '✖️'))
       .join('');
     const text = `Meridian ${exp.code} — ${formatNumber(locale, score.distanceKm)} km · ${t('renown')} ${formatNumber(locale, score.renown)}\n${stamps}${run.spyglassLegs.length ? ' 🔭' : ''}`;
     try {
-      if (navigator.share) await navigator.share({ text, url: shareUrl });
+      // The postcard image when the share sheet takes files (phones), else text + link.
+      const file =
+        'canShare' in navigator
+          ? new File([await postcard()], fileName, { type: 'image/png' })
+          : null;
+      track({ type: 'share', code: exp.code, kind: file ? 'postcard' : 'link' });
+      if (file && navigator.canShare({ files: [file] }))
+        await navigator.share({ files: [file], text: `${text}\n${shareUrl}` });
+      else if (typeof navigator.share === 'function')
+        await navigator.share({ text, url: shareUrl });
       else {
         await navigator.clipboard.writeText(`${text}\n${shareUrl}`);
         setCopied(true);
@@ -119,6 +139,15 @@ export function SummaryView({
     } catch {
       /* share sheet dismissed */
     }
+  };
+
+  const download = async () => {
+    const url = URL.createObjectURL(await postcard());
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
   };
 
   return (
@@ -226,6 +255,9 @@ export function SummaryView({
         <div className={styles.actions}>
           <button type="button" className={styles.primary} onClick={share}>
             {t('share')}
+          </button>
+          <button type="button" className={styles.ghostButton} onClick={download}>
+            {t('download')}
           </button>
           <button type="button" className={styles.ghostButton} onClick={onReplay}>
             {t('replay')}

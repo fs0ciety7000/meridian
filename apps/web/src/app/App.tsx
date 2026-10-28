@@ -3,6 +3,7 @@ import { useLocale, useT } from '../game/i18n';
 import { useLocation } from '../game/router';
 import { useGame } from '../game/store';
 import { ExpeditionScreen } from '../screens/ExpeditionScreen';
+import { AboutScreen } from '../screens/AboutScreen';
 import { Launcher } from '../screens/Launcher';
 import { PassportScreen } from '../screens/PassportScreen';
 import styles from '../screens/screens.module.css';
@@ -45,5 +46,6 @@ function Game({ path, share }: { path: string; share: string | null }) {
   const x = /^\/x\/([^/]+)$/.exec(path);
   if (x) return <ExpeditionScreen key={x[1]} rawCode={decodeURIComponent(x[1]!)} share={share} />;
   if (path === '/passeport' || path === '/passport') return <PassportScreen />;
+  if (path === '/a-propos' || path === '/about') return <AboutScreen />;
   return <Launcher />;
 }

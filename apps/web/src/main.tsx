@@ -5,6 +5,7 @@ import '@meridian/design-tokens/tokens.css';
 import './styles/global.css';
 import { App } from './app/App';
 import { applyMaterial } from './game/material';
+import { initTelemetry } from './game/telemetry';
 
 // Theme chosen by the player (else prefers-color-scheme decides).
 try {
@@ -15,6 +16,7 @@ try {
 }
 
 applyMaterial();
+initTelemetry();
 
 const root = document.getElementById('root');
 if (!root) throw new Error('#root missing in index.html');

@@ -1,12 +1,19 @@
 import type { MissionDef } from '@meridian/content-schema';
 import type { MissionResult } from '@meridian/engine';
 import { useState } from 'react';
-import { useT, type StringKey } from '../../game/i18n';
+import { formatNumber, useLocale, useT, type StringKey } from '../../game/i18n';
 import styles from './game.module.css';
 
 export function useMissionText() {
   const t = useT();
-  return (m: MissionDef) => t(`mission_${m.id}` as StringKey, m.params ?? {});
+  const locale = useLocale((s) => s.locale);
+  return (m: MissionDef) =>
+    t(
+      `mission_${m.id}` as StringKey,
+      Object.fromEntries(
+        Object.entries(m.params ?? {}).map(([k, v]) => [k, formatNumber(locale, v)]),
+      ),
+    );
 }
 
 /** Sealed envelope with 1–3 orders (design-system §6.13). */

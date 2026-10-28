@@ -1,5 +1,7 @@
 import type { PromptCategory } from '@meridian/content-schema';
 import type { RarityTier } from '@meridian/engine';
+import { useEffect } from 'react';
+import { play } from '../../game/sound';
 import { Stamp } from '../Stamp';
 import { CategoryIcon } from './CategoryIcon';
 import styles from './game.module.css';
@@ -23,6 +25,11 @@ export function PromptCartouche({
   onClick,
   hint,
 }: CartoucheProps) {
+  // Paper unfolds with each new prompt.
+  useEffect(() => {
+    if (!resolved) play('paper');
+  }, [text, resolved]);
+
   return (
     <header
       className={`${styles.cartouche} ${resolved ? styles.cartoucheResolved : ''}`}

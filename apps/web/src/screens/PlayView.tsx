@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties }
 import { formatNumber, useLocale, useT, type StringKey } from '../game/i18n';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
+import { haptic, play } from '../game/sound';
 import { reportSlowDevice } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine, CameraState, MapPick } from '../map/AtlasMapEngine';
@@ -61,7 +62,12 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   const engine = useRef<AtlasMapEngine | null>(null);
   const [pick, setPick] = useState<MapPick | null>(null);
   const [hint, setHint] = useState<string | null>(null);
-  const [note, setNote] = useState<{ id: number; text: string } | null>(null);
+  // Onboarding: the very first leg of MER-0001 shows the gesture once (development-plan 3.5).
+  const [note, setNote] = useState<{ id: number; text: string } | null>(() =>
+    run.expedition.code === 'MER-0001' && run.attempt === 'first' && run.legs.length === 0
+      ? { id: 1, text: t('coachFirstLeg') }
+      : null,
+  );
   const [camera, setCamera] = useState<CameraState | null>(null);
   const [traced, setTraced] = useState(0);
   const [logOpen, setLogOpen] = useState(() => window.innerWidth >= 900);
@@ -90,6 +96,8 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
 
   const exp = run.expedition;
   const active = activeLeg(run, deps);
+
+
   const shownLeg = resolving ? run.legs[resolving.leg - 1] : null;
   const legDef = resolving
     ? (() => {
@@ -210,6 +218,14 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
     [],
   );
 
+  // The stamp lands: sound and haptics, once per leg.
+  useEffect(() => {
+    if (resolving?.phase === 'stamp' && resolving.valid) {
+      play('stamp');
+      haptic('stamp');
+    }
+  }, [resolving?.phase, resolving?.valid]);
+
   useEffect(() => {
     if (!resolving) return;
     let ms: number;
@@ -261,6 +277,7 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
         setFrame([prev, to]);
         if (events.some((x) => x.type === 'MERIDIAN_CROSSED')) say(t('meridianCrossed'));
       } else if (falseTrail?.type === 'FALSE_TRAIL') {
+        play('falseTrail');
         const l = exp.legs[leg - 1]!;
         const def =
           run.legs.length >= leg && run.legs[leg - 1]?.usedFallback && l.fallback ? l.fallback : l;
@@ -273,6 +290,8 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   const plant = useCallback(() => {
     if (!pick || resolving) return;
     const prev = run.camp as [number, number];
+    play('seal');
+    haptic('plant');
     const events = dispatch(run.runId, {
       type: 'CONFIRM_CAMP',
       lonLat: pick.lonLat,

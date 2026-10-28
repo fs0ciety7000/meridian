@@ -6,6 +6,7 @@ import { formatNumber, useLocale, useT } from '../game/i18n';
 import { atlasMarks, lifetimeKm } from '../game/progress';
 import { navigate } from '../game/router';
 import { useGame } from '../game/store';
+import { setSound, useSound } from '../game/sound';
 import { reportSlowDevice, setMaterial, useMaterial } from '../game/material';
 import { AtlasMap } from '../map/AtlasMap';
 import type { AtlasMapEngine } from '../map/AtlasMapEngine';
@@ -22,6 +23,9 @@ export function Launcher() {
   const setLocale = useLocale((s) => s.setLocale);
   const { geo, content, runs, newCode } = useGame();
   const material = useMaterial();
+  const sound = useSound();
+  // Onboarding (development-plan 3.5): a first-time player starts with MER-0001.
+  const firstTime = runs.length === 0;
   const engine = useRef<AtlasMapEngine | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>('normal');
   const [code, setCode] = useState('');
@@ -77,6 +81,18 @@ export function Launcher() {
 
         {view === 'home' ? (
           <>
+            {firstTime && (
+              <>
+                <button
+                  type="button"
+                  className={styles.primary}
+                  onClick={() => navigate('/x/MER-0001')}
+                >
+                  {t('firstExpedition')}
+                </button>
+                <p className={styles.small}>{t('orNewExpedition')}</p>
+              </>
+            )}
             <div className={styles.difficulty} role="radiogroup" aria-label={t('newExpedition')}>
               {DIFFICULTIES.map((d) => (
                 <button
@@ -93,7 +109,7 @@ export function Launcher() {
             </div>
             <button
               type="button"
-              className={styles.primary}
+              className={firstTime ? styles.ghostButton : styles.primary}
               onClick={start}
               disabled={!content?.latestLibrary}
             >
@@ -212,6 +228,18 @@ export function Launcher() {
                 onClick={() => setMaterial(material === 'light' ? 'full' : 'light')}
               >
                 {t(material === 'light' ? 'fullMaterial' : 'lightMaterial')}
+              </button>{' '}
+              ·{' '}
+              <button type="button" className={styles.inlineLink} onClick={() => setSound(!sound)}>
+                {t(sound ? 'soundOff' : 'soundOn')}
+              </button>{' '}
+              ·{' '}
+              <button
+                type="button"
+                className={styles.inlineLink}
+                onClick={() => navigate('/a-propos')}
+              >
+                {t('about')}
               </button>
             </p>
           </>

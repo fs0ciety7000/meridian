@@ -541,3 +541,23 @@
 .challengeOverlay > * {
   pointer-events: auto;
 }
+
+.about {
+  max-width: 680px;
+  margin: 0 auto;
+  font-family: var(--font-map);
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-ink-900);
+}
+
+.about h2 {
+  margin: var(--space-6) 0 var(--space-2);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.about ul {
+  padding-left: var(--space-5);
+}

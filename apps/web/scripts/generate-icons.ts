@@ -22,5 +22,9 @@ for (const size of [192, 512]) {
   await sharp(svg, { density: 600 }).resize(size, size).png().toFile(`${out}/icon-${size}.png`);
   await sharp(maskable(size)).png().toFile(`${out}/maskable-${size}.png`);
 }
-await sharp(svg, { density: 600 }).resize(180, 180).flatten({ background: '#F7F1E5' }).png().toFile(`${out}/apple-touch-icon.png`);
+await sharp(svg, { density: 600 })
+  .resize(180, 180)
+  .flatten({ background: '#F7F1E5' })
+  .png()
+  .toFile(`${out}/apple-touch-icon.png`);
 console.log('icons written to public/icons');

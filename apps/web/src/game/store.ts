@@ -14,6 +14,7 @@ import { loadGeoData } from '../map/loadGeoData';
 import { loadGameContent, newSeed, resolveExpedition, type GameContent } from './content';
 import { loadRuns, saveRun } from './db';
 import { useLocale } from './i18n';
+import { track } from './telemetry';
 
 interface GameStore {
   status: 'idle' | 'loading' | 'ready' | 'error';
@@ -97,6 +98,12 @@ export const useGame = create<GameStore>((set, get) => ({
     );
     set({ runs: [...runs, state] });
     void saveRun(state);
+    track({
+      type: 'expedition_started',
+      code: expedition.code,
+      difficulty: expedition.difficulty,
+      source: challengeFrom ? 'challenge' : expedition.source,
+    });
     return state;
   },
 
@@ -110,6 +117,7 @@ export const useGame = create<GameStore>((set, get) => ({
       void saveRun(r.state);
     }
     set({ events: { id: events.id + 1, list: r.events } });
+    report(r.state, action, r.events);
     return r.events;
   },
 
@@ -155,3 +163,43 @@ window.__meridianTest = {
     return [...content.deps.entities.keys()].filter((c) => !ok.has(c) && !run.usedIso3.includes(c));
   },
 };
+
+/** Anonymous balancing statistics (gameplay-systems §16), derived from engine events. */
+function report(state: RunState, action: Action, events: EngineEvent[]) {
+  const code = state.expedition.code;
+  for (const e of events) {
+    if (e.type === 'CAMP_REFUSED') track({ type: 'plant_failed', reason: e.reason });
+    else if (e.type === 'EXPEDITION_COMPLETED' || e.type === 'EXPEDITION_ABANDONED') {
+      if (e.type === 'EXPEDITION_ABANDONED')
+        track({ type: 'abandoned', code, leg: state.currentLeg });
+      else
+        track({
+          type: 'expedition_finished',
+          code,
+          distanceKm: e.score.distanceKm,
+          renown: e.score.renown,
+          durationMs:
+            Math.max(0, Date.parse(state.finishedAt ?? '') - Date.parse(state.startedAt)) || 0,
+          falseTrails: state.legs.filter((l) => !l.valid).length,
+          attempt: state.attempt,
+        });
+    }
+  }
+  if (
+    action.type === 'CONFIRM_CAMP' &&
+    events.some((e) => e.type === 'CAMP_PLANTED' || e.type === 'FALSE_TRAIL')
+  ) {
+    const leg = state.legs.at(-1)!;
+    track({
+      type: 'leg_resolved',
+      code,
+      leg: leg.leg,
+      promptId: leg.promptId,
+      valid: leg.valid,
+      ms: Math.min(leg.ms, 86_400_000),
+      provisionalMoves: Math.min(leg.provisionalMoves, 1000),
+      spyglass: leg.spyglass,
+      tier: leg.rarity?.tier ?? null,
+    });
+  }
+}
