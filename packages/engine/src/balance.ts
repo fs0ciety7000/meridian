@@ -3,7 +3,7 @@
  * Any change goes through qa-balance and bumps `version`.
  */
 export const BALANCE = {
-  version: 1,
+  version: 2,
   legsPerExpedition: 6,
   /** 0.001° ≈ 110 m: the coarsest grid with points inside the Vatican (≈ 0.012° × 0.007°). */
   coordQuantumDeg: 0.001,

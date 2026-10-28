@@ -254,6 +254,11 @@
       "hasLandBorder": {
         "value": true,
         "source": "https://en.wikipedia.org/wiki/Akrotiri_and_Dhekelia"
+      },
+      "flagColors": {
+        "value": ["brown", "green", "orange", "white"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Cyprus",
+        "note": "Copper-coloured island (#D57800): read as orange as well as brown, so that flag.orange accepts it. Olive branches green."
       }
     },
     "DJI": {
@@ -395,6 +400,13 @@
         "value": 10825703,
         "source": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=HN",
         "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
+      }
+    },
+    "HRV": {
+      "flagColors": {
+        "value": ["blue", "red", "white"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Croatia",
+        "note": "Red-white-blue tricolour. The coat of arms in the centre is not counted (flag rule: fields and simple charges, coats of arms aside), as for ESP, SRB, SVK, SVN."
       }
     },
     "IND": {
@@ -632,6 +644,20 @@
         "note": "World Bank 2024; Wikidata value was stale or off by more than 10%."
       }
     },
+    "PRT": {
+      "flagColors": {
+        "value": ["green", "red"],
+        "source": "https://en.wikipedia.org/wiki/Flag_of_Portugal",
+        "note": "Green and red field. The armillary sphere and the shield form the lesser coat of arms, not counted (flag rule: coats of arms aside)."
+      }
+    },
+    "SAU": {
+      "areaKm2": {
+        "value": 2149690,
+        "source": "https://en.wikipedia.org/wiki/Saudi_Arabia",
+        "note": "Official area; the Natural Earth polygon gives 1,925,880 km2 (-10 %) and put Saudi Arabia in the 1-2 million km2 band."
+      }
+    },
     "SDN": {
       "population": {
         "value": 50448963,
@@ -799,6 +825,13 @@
         "value": 0.49,
         "source": "https://en.wikipedia.org/wiki/Vatican_City",
         "note": "Official land area; the Natural Earth micro-state polygon is off by more than 10%."
+      }
+    },
+    "VNM": {
+      "population": {
+        "value": 101300000,
+        "source": "https://en.wikipedia.org/wiki/Demographics_of_Vietnam",
+        "note": "GSO 2024 average population (101.3 M); Vietnam passed 100 M in 2023. Wikidata value (2019 census, 96.2 M) was stale."
       }
     },
     "YEM": {

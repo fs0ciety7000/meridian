@@ -45,7 +45,8 @@ const MISSION_IDS: readonly MissionId[] = [
 ];
 export const CONTEXTUAL_LEG_PROBABILITY = 0.3;
 export const MAX_ANSWER_OVERLAP = 0.6;
-export const MIN_MERIDIAN_DISTANCE_DEG = 20;
+/** QA phase 2: at 20°, 85 % of catalogue routes crossed the meridian anyway (target 30–60 %). */
+export const MIN_MERIDIAN_DISTANCE_DEG = 40;
 
 const difficultyOf = (p: PromptDef) => p.computed?.difficulty ?? 0.5;
 

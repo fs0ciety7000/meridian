@@ -13,7 +13,7 @@
     "society.portuguese",
     "climate.equatorial-north",
     "flag.southern-no-red",
-    "water.island-tiny",
+    "water.island-right-hand",
     "position.micro-beyond-europe"
   ],
   "missions": [
@@ -23,13 +23,13 @@
     {
       "id": "continentHopper",
       "params": {
-        "n": 4
+        "n": 5
       }
     },
     {
       "id": "longHaul",
       "params": {
-        "km": 9000
+        "km": 16000
       }
     }
   ],

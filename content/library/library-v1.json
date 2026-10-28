@@ -420,7 +420,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -514,7 +514,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -1062,14 +1062,36 @@
         "en": "An island nation in the northern hemisphere"
       },
       "explain": {
-        "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur : de l'Islande à Palaos.",
-        "en": "A country without land borders lying entirely north of the equator was needed: from Iceland to Palau."
+        "fr": "Il fallait un État insulaire tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques.",
+        "en": "An island state lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases."
       },
       "predicate": {
         "all": [
           {
-            "fact": "hasLandBorder",
-            "eq": false
+            "any": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GBR"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 1
+                  },
+                  {
+                    "not": {
+                      "fact": "continent",
+                      "eq": "EU"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           {
             "fact": "hemisphereNS",
@@ -1085,6 +1107,7 @@
           "BRB",
           "CPV",
           "CUB",
+          "CYP",
           "DMA",
           "FSM",
           "GRD",
@@ -1102,9 +1125,9 @@
           "TTO",
           "VCT"
         ],
-        "validCount": 22,
+        "validCount": 23,
         "continents": 5,
-        "difficulty": 0.42,
+        "difficulty": 0.4,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -1202,14 +1225,36 @@
         "en": "An island nation of over a million people"
       },
       "explain": {
-        "fr": "Il fallait un pays sans frontière terrestre de plus d'un million d'habitants : Maurice et Trinité-et-Tobago passent le seuil.",
-        "en": "A country without land borders and over a million inhabitants was needed: Mauritius and Trinidad and Tobago pass the mark."
+        "fr": "Il fallait un État insulaire de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil.",
+        "en": "An island state of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark."
       },
       "predicate": {
         "all": [
           {
-            "fact": "hasLandBorder",
-            "eq": false
+            "any": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GBR"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 1
+                  },
+                  {
+                    "not": {
+                      "fact": "continent",
+                      "eq": "EU"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           {
             "fact": "population",
@@ -1222,6 +1267,7 @@
           "AUS",
           "BHR",
           "CUB",
+          "CYP",
           "JAM",
           "JPN",
           "LKA",
@@ -1232,9 +1278,9 @@
           "SGP",
           "TTO"
         ],
-        "validCount": 12,
+        "validCount": 13,
         "continents": 4,
-        "difficulty": 0.57,
+        "difficulty": 0.55,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -1259,7 +1305,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -1316,21 +1362,43 @@
         "en": "An island nation reaching beyond the tropics"
       },
       "explain": {
-        "fr": "Il fallait un pays sans frontière terrestre qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne.",
-        "en": "A country without land borders not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn."
+        "fr": "Il fallait un État insulaire qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée.",
+        "en": "An island state not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean."
       },
       "predicate": {
         "all": [
           {
-            "fact": "hasLandBorder",
-            "eq": false
+            "any": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GBR"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 1
+                  },
+                  {
+                    "not": {
+                      "fact": "continent",
+                      "eq": "EU"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           {
             "not": {
               "all": [
                 {
                   "fact": "northernmostLat",
-                  "lt": 23.44
+                  "lt": 23.5
                 },
                 {
                   "fact": "southernmostLat",
@@ -1346,15 +1414,16 @@
           "AUS",
           "BHR",
           "BHS",
+          "CYP",
           "ISL",
           "JPN",
           "MDG",
           "MLT",
           "NZL"
         ],
-        "validCount": 8,
+        "validCount": 9,
         "continents": 5,
-        "difficulty": 0.68,
+        "difficulty": 0.65,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -1747,12 +1816,28 @@
         "en": "A country with exactly five neighbours"
       },
       "explain": {
-        "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq.",
-        "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five."
+        "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
+        "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
       },
       "predicate": {
-        "fact": "landBorders",
-        "eq": 5
+        "any": [
+          {
+            "fact": "landBorders",
+            "eq": 5
+          },
+          {
+            "all": [
+              {
+                "fact": "borders",
+                "includes": "AND"
+              },
+              {
+                "fact": "borders",
+                "includes": "MAR"
+              }
+            ]
+          }
+        ]
       },
       "computed": {
         "validIso3": [
@@ -1765,6 +1850,7 @@
           "CIV",
           "COG",
           "COL",
+          "ESP",
           "HRV",
           "ISR",
           "JOR",
@@ -1780,9 +1866,9 @@
           "UGA",
           "UZB"
         ],
-        "validCount": 23,
+        "validCount": 24,
         "continents": 4,
-        "difficulty": 0.35,
+        "difficulty": 0.32,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -2189,51 +2275,6 @@
       }
     },
     {
-      "id": "borders.few-people-many-neighbours",
-      "category": "borders",
-      "text": {
-        "fr": "Moins de 10 M d’habitants, au moins cinq voisins",
-        "en": "Under 10 million people, at least five neighbours"
-      },
-      "explain": {
-        "fr": "Il fallait moins de 10 millions d'habitants et au moins cinq voisins terrestres : le Laos, la Libye ou la Slovaquie conviennent.",
-        "en": "Fewer than 10 million people and at least five land neighbours were needed: Laos, Libya and Slovakia qualify."
-      },
-      "predicate": {
-        "all": [
-          {
-            "fact": "population",
-            "lt": 10000000
-          },
-          {
-            "fact": "landBorders",
-            "gte": 5
-          }
-        ]
-      },
-      "computed": {
-        "validIso3": [
-          "AUT",
-          "BGR",
-          "BLR",
-          "CAF",
-          "CHE",
-          "COG",
-          "HRV",
-          "HUN",
-          "ISR",
-          "LAO",
-          "LBY",
-          "SRB",
-          "SVK"
-        ],
-        "validCount": 13,
-        "continents": 3,
-        "difficulty": 0.52,
-        "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
-      }
-    },
-    {
       "id": "borders.tropical-pair",
       "category": "borders",
       "text": {
@@ -2254,7 +2295,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -2540,8 +2581,8 @@
         "en": "A country crossed by the equator"
       },
       "explain": {
-        "fr": "Il fallait un pays que coupe l'équateur : São Tomé-et-Principe n'y touche que par l'îlot das Rolas, les Maldives par un atoll du Sud.",
-        "en": "The country had to be crossed by the equator: São Tomé and Príncipe touches it only through Rolas islet, the Maldives through a southern atoll."
+        "fr": "Il fallait un pays que coupe l'équateur : São Tomé-et-Principe n'y touche que par l'îlot das Rolas ; aux Maldives et à Kiribati, il passe en mer, entre deux groupes d'atolls du pays.",
+        "en": "The country had to be crossed by the equator: São Tomé and Príncipe touches it only through Rolas islet; in the Maldives and Kiribati it runs through the sea between two groups of the country's atolls."
       },
       "predicate": {
         "fact": "crossesEquator",
@@ -2646,7 +2687,7 @@
           },
           {
             "fact": "northernmostLat",
-            "lt": 10
+            "lte": 10
           }
         ]
       },
@@ -2661,11 +2702,12 @@
           "PAN",
           "PLW",
           "SGP",
+          "SLE",
           "SUR"
         ],
-        "validCount": 10,
+        "validCount": 11,
         "continents": 5,
-        "difficulty": 0.76,
+        "difficulty": 0.73,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -2686,7 +2728,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -2709,11 +2751,12 @@
           "ETH",
           "IDN",
           "PER",
-          "SDN"
+          "SDN",
+          "TCD"
         ],
-        "validCount": 8,
+        "validCount": 9,
         "continents": 3,
-        "difficulty": 0.72,
+        "difficulty": 0.68,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -2734,7 +2777,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -2759,13 +2802,14 @@
           "MWI",
           "RWA",
           "SSD",
+          "TCD",
           "UGA",
           "ZMB",
           "ZWE"
         ],
-        "validCount": 12,
+        "validCount": 13,
         "continents": 3,
-        "difficulty": 0.68,
+        "difficulty": 0.65,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -2924,7 +2968,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -2981,7 +3025,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -3149,7 +3193,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -3239,12 +3283,12 @@
       "id": "climate.tropical-specks",
       "category": "climate",
       "text": {
-        "fr": "Un confetti tropical de moins de 1 000 km²",
-        "en": "A tropical speck under 1,000 km²"
+        "fr": "Un confetti tropical de moins de 1 500 km²",
+        "en": "A tropical speck under 1,500 km²"
       },
       "explain": {
-        "fr": "Il fallait un pays de moins de 1 000 km² tout entier entre les tropiques : la Grenade, Palaos ou les Seychelles.",
-        "en": "A country under 1,000 km² lying wholly between the tropics was needed: Grenada, Palau or the Seychelles."
+        "fr": "Il fallait un pays de moins de 1 500 km² tout entier entre les tropiques : la Grenade, Palaos ou les Seychelles.",
+        "en": "A country under 1,500 km² lying wholly between the tropics was needed: Grenada, Palau or the Seychelles."
       },
       "predicate": {
         "all": [
@@ -3252,7 +3296,7 @@
             "all": [
               {
                 "fact": "northernmostLat",
-                "lt": 23.44
+                "lt": 23.5
               },
               {
                 "fact": "southernmostLat",
@@ -3262,7 +3306,7 @@
           },
           {
             "fact": "areaKm2",
-            "lt": 1000
+            "lt": 1500
           }
         ]
       },
@@ -3281,14 +3325,15 @@
           "NRU",
           "PLW",
           "SGP",
+          "STP",
           "SYC",
           "TON",
           "TUV",
           "VCT"
         ],
-        "validCount": 17,
+        "validCount": 18,
         "continents": 4,
-        "difficulty": 0.69,
+        "difficulty": 0.67,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -3561,26 +3606,34 @@
       "id": "society.french",
       "category": "society",
       "text": {
-        "fr": "Un pays où le français est langue officielle",
-        "en": "A country where French is an official language"
+        "fr": "Hors Afrique de l’Ouest, le français y est officiel",
+        "en": "Outside West Africa, French is official"
       },
       "explain": {
-        "fr": "Il fallait le français parmi les langues officielles : plus de la moitié de ces pays sont africains, mais Haïti et Vanuatu en sont aussi.",
-        "en": "French had to be an official language: more than half of these countries are African, but Haiti and Vanuatu count too."
+        "fr": "Il fallait le français parmi les langues officielles, hors Afrique de l'Ouest (où le Burkina Faso, le Mali et le Niger en ont fait une simple langue de travail) : du Cameroun à Madagascar, mais aussi Haïti et Vanuatu.",
+        "en": "French had to be an official language, outside West Africa (where Burkina Faso, Mali and Niger have made it a mere working language): from Cameroon to Madagascar, and Haiti and Vanuatu too."
       },
       "predicate": {
-        "fact": "officialLanguages",
-        "includes": "french"
+        "all": [
+          {
+            "fact": "officialLanguages",
+            "includes": "french"
+          },
+          {
+            "not": {
+              "fact": "subregion",
+              "eq": "011"
+            }
+          }
+        ]
       },
       "computed": {
         "validIso3": [
           "BDI",
           "BEL",
-          "BEN",
           "CAF",
           "CAN",
           "CHE",
-          "CIV",
           "CMR",
           "COD",
           "COG",
@@ -3588,7 +3641,6 @@
           "DJI",
           "FRA",
           "GAB",
-          "GIN",
           "GNQ",
           "HTI",
           "LUX",
@@ -3596,15 +3648,13 @@
           "MDG",
           "MUS",
           "RWA",
-          "SEN",
           "SYC",
           "TCD",
-          "TGO",
           "VUT"
         ],
-        "validCount": 27,
+        "validCount": 22,
         "continents": 4,
-        "difficulty": 0.29,
+        "difficulty": 0.35,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -4034,11 +4084,12 @@
           "PAK",
           "PHL",
           "RUS",
-          "USA"
+          "USA",
+          "VNM"
         ],
-        "validCount": 15,
+        "validCount": 16,
         "continents": 5,
-        "difficulty": 0.42,
+        "difficulty": 0.4,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -4162,18 +4213,18 @@
       "id": "society.tiny-left",
       "category": "society",
       "text": {
-        "fr": "Moins de 200 000 habitants, on roule à gauche",
-        "en": "Under 200,000 people, driving on the left"
+        "fr": "Moins de 150 000 habitants, on roule à gauche",
+        "en": "Under 150,000 people, driving on the left"
       },
       "explain": {
-        "fr": "Il fallait moins de 200 000 habitants et une conduite à gauche : Nauru, Saint-Kitts-et-Nevis ou les Seychelles.",
-        "en": "Fewer than 200,000 people and left-hand traffic were needed: Nauru, Saint Kitts and Nevis or the Seychelles."
+        "fr": "Il fallait moins de 150 000 habitants et une conduite à gauche : Nauru, Saint-Kitts-et-Nevis ou les Seychelles.",
+        "en": "Fewer than 150,000 people and left-hand traffic were needed: Nauru, Saint Kitts and Nevis or the Seychelles."
       },
       "predicate": {
         "all": [
           {
             "fact": "population",
-            "lt": 200000
+            "lt": 150000
           },
           {
             "fact": "drivesOnLeft",
@@ -4188,16 +4239,15 @@
           "GRD",
           "KIR",
           "KNA",
-          "LCA",
           "NRU",
           "SYC",
           "TON",
           "TUV",
           "VCT"
         ],
-        "validCount": 11,
+        "validCount": 10,
         "continents": 3,
-        "difficulty": 0.87,
+        "difficulty": 0.9,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -4205,12 +4255,12 @@
       "id": "society.tiny-republic",
       "category": "society",
       "text": {
-        "fr": "Une république de moins de 200 000 habitants",
-        "en": "A republic of under 200,000 people"
+        "fr": "Une république de moins de 150 000 habitants",
+        "en": "A republic of under 150,000 people"
       },
       "explain": {
-        "fr": "Il fallait une république de moins de 200 000 habitants : Saint-Marin, l'une des plus anciennes républiques du monde, en est.",
-        "en": "A republic of fewer than 200,000 people was needed: San Marino, one of the world's oldest republics, is one."
+        "fr": "Il fallait une république de moins de 150 000 habitants : Saint-Marin, l'une des plus anciennes républiques du monde, en est.",
+        "en": "A republic of fewer than 150,000 people was needed: San Marino, one of the world's oldest republics, is one."
       },
       "predicate": {
         "all": [
@@ -4220,7 +4270,7 @@
           },
           {
             "fact": "population",
-            "lt": 200000
+            "lt": 150000
           }
         ]
       },
@@ -4431,50 +4481,6 @@
       }
     },
     {
-      "id": "society.dense",
-      "category": "society",
-      "text": {
-        "fr": "Plus de 10 M d’habitants sur moins de 100 000 km²",
-        "en": "Over 10 million people on under 100,000 km²"
-      },
-      "explain": {
-        "fr": "Il fallait plus de 10 millions d'habitants sur moins de 100 000 km² : la Corée du Sud, le Rwanda ou Haïti.",
-        "en": "More than 10 million people on less than 100,000 km² were needed: South Korea, Rwanda or Haiti."
-      },
-      "predicate": {
-        "all": [
-          {
-            "fact": "population",
-            "gt": 10000000
-          },
-          {
-            "fact": "areaKm2",
-            "lt": 100000
-          }
-        ]
-      },
-      "computed": {
-        "validIso3": [
-          "AZE",
-          "BDI",
-          "BEL",
-          "CZE",
-          "DOM",
-          "HTI",
-          "JOR",
-          "KOR",
-          "LKA",
-          "NLD",
-          "PRT",
-          "RWA"
-        ],
-        "validCount": 12,
-        "continents": 4,
-        "difficulty": 0.55,
-        "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
-      }
-    },
-    {
       "id": "society.big-monarchy",
       "category": "society",
       "text": {
@@ -4613,8 +4619,8 @@
         "en": "A flag with a touch of orange"
       },
       "explain": {
-        "fr": "Il fallait de l'orange sur le drapeau : l'Irlande et la Côte d'Ivoire arborent les mêmes couleurs en miroir.",
-        "en": "The flag had to show orange: Ireland and Côte d'Ivoire fly the same colours in mirror image."
+        "fr": "Il fallait de l'orange sur le drapeau : l'Irlande et la Côte d'Ivoire arborent les mêmes couleurs en miroir. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show orange: Ireland and Côte d'Ivoire fly the same colours in mirror image. Coats of arms do not count."
       },
       "predicate": {
         "fact": "flagColors",
@@ -4625,6 +4631,7 @@
           "ARM",
           "BTN",
           "CIV",
+          "CYP",
           "IND",
           "IRL",
           "LKA",
@@ -4632,9 +4639,9 @@
           "NER",
           "ZMB"
         ],
-        "validCount": 9,
+        "validCount": 10,
         "continents": 4,
-        "difficulty": 0.71,
+        "difficulty": 0.67,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -4642,12 +4649,12 @@
       "id": "flag.red-white-only",
       "category": "flag",
       "text": {
-        "fr": "Un drapeau rouge et blanc, rien d’autre",
-        "en": "A red-and-white flag, nothing else"
+        "fr": "Rouge et blanc seulement, hors armoiries",
+        "en": "Red and white only, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou.",
-        "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru."
+        "fr": "Il fallait un drapeau uniquement rouge et blanc : le Japon, le Canada, la Suisse ou le Pérou. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to be red and white only: Japan, Canada, Switzerland or Peru. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -4734,12 +4741,12 @@
       "id": "flag.blue-white-only",
       "category": "flag",
       "text": {
-        "fr": "Un drapeau bleu et blanc, rien d’autre",
-        "en": "A blue-and-white flag, nothing else"
+        "fr": "Bleu et blanc seulement, hors armoiries",
+        "en": "Blue and white only, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau uniquement bleu et blanc : la Grèce, la Finlande, Israël ou le Honduras.",
-        "en": "The flag had to be blue and white only: Greece, Finland, Israel or Honduras."
+        "fr": "Il fallait un drapeau uniquement bleu et blanc : la Grèce, la Finlande, Israël ou le Honduras. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to be blue and white only: Greece, Finland, Israel or Honduras. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -4818,12 +4825,12 @@
       "id": "flag.red-white-blue",
       "category": "flag",
       "text": {
-        "fr": "Bleu, blanc, rouge, et rien d’autre",
-        "en": "Red, white and blue, nothing else"
+        "fr": "Bleu, blanc, rouge seulement, hors armoiries",
+        "en": "Red, white and blue only, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau uniquement bleu, blanc et rouge : la France, les États-Unis, la Thaïlande ou le Népal.",
-        "en": "The flag had to be red, white and blue only: France, the United States, Thailand or Nepal."
+        "fr": "Il fallait un drapeau uniquement bleu, blanc et rouge : la France, les États-Unis, la Thaïlande ou le Népal. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to be red, white and blue only: France, the United States, Thailand or Nepal. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -4889,6 +4896,7 @@
           "FJI",
           "FRA",
           "GBR",
+          "HRV",
           "HTI",
           "ISL",
           "KHM",
@@ -4910,9 +4918,9 @@
           "USA",
           "WSM"
         ],
-        "validCount": 30,
+        "validCount": 31,
         "continents": 6,
-        "difficulty": 0.22,
+        "difficulty": 0.21,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -4920,12 +4928,12 @@
       "id": "flag.green-yellow-red",
       "category": "flag",
       "text": {
-        "fr": "Vert, jaune, rouge, et rien d’autre",
-        "en": "Green, yellow and red, nothing else"
+        "fr": "Vert, jaune, rouge seulement, hors armoiries",
+        "en": "Green, yellow and red only, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau uniquement vert, jaune et rouge, les couleurs panafricaines : le Sénégal, mais aussi la Lituanie et la Bolivie.",
-        "en": "The flag had to be green, yellow and red only, the pan-African colours: Senegal, but also Lithuania and Bolivia."
+        "fr": "Il fallait un drapeau uniquement vert, jaune et rouge, les couleurs panafricaines : le Sénégal, mais aussi la Lituanie et la Bolivie. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to be green, yellow and red only, the pan-African colours: Senegal, but also Lithuania and Bolivia. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -4991,12 +4999,11 @@
           "LTU",
           "MLI",
           "MRT",
-          "PRT",
           "SEN"
         ],
-        "validCount": 12,
+        "validCount": 11,
         "continents": 4,
-        "difficulty": 0.65,
+        "difficulty": 0.72,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -5004,12 +5011,12 @@
       "id": "flag.green-white-red",
       "category": "flag",
       "text": {
-        "fr": "Vert, blanc, rouge, et rien d’autre",
-        "en": "Green, white and red, nothing else"
+        "fr": "Vert, blanc, rouge seulement, hors armoiries",
+        "en": "Green, white and red only, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau uniquement vert, blanc et rouge : l'Italie, la Hongrie, l'Iran ou Madagascar.",
-        "en": "The flag had to be green, white and red only: Italy, Hungary, Iran or Madagascar."
+        "fr": "Il fallait un drapeau uniquement vert, blanc et rouge : l'Italie, la Hongrie, l'Iran ou Madagascar. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to be green, white and red only: Italy, Hungary, Iran or Madagascar. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5088,12 +5095,12 @@
       "id": "flag.blue-yellow-red",
       "category": "flag",
       "text": {
-        "fr": "Bleu, jaune, rouge, et rien d’autre",
-        "en": "Blue, yellow and red, nothing else"
+        "fr": "Bleu, jaune, rouge seulement, hors armoiries",
+        "en": "Blue, yellow and red only, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau uniquement bleu, jaune et rouge : la Roumanie et le Tchad ont des drapeaux presque identiques.",
-        "en": "The flag had to be blue, yellow and red only: Romania and Chad have almost identical flags."
+        "fr": "Il fallait un drapeau uniquement bleu, jaune et rouge : la Roumanie et le Tchad ont des drapeaux presque identiques. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to be blue, yellow and red only: Romania and Chad have almost identical flags. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5169,12 +5176,12 @@
       "id": "flag.no-red",
       "category": "flag",
       "text": {
-        "fr": "Un drapeau sans la moindre touche de rouge",
-        "en": "A flag without a trace of red"
+        "fr": "Pas de rouge sur le drapeau, hors armoiries",
+        "en": "No red on the flag, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait un drapeau sans rouge : le Brésil, la Suède, l'Argentine ou la Grèce.",
-        "en": "The flag had to have no red at all: Brazil, Sweden, Argentina or Greece."
+        "fr": "Il fallait un drapeau sans rouge : le Brésil, la Suède, l'Argentine ou la Grèce. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to have no red at all: Brazil, Sweden, Argentina or Greece. Coats of arms do not count."
       },
       "predicate": {
         "not": {
@@ -5243,8 +5250,8 @@
         "en": "A flag with neither red nor white"
       },
       "explain": {
-        "fr": "Il fallait un drapeau sans rouge ni blanc : l'Ukraine, la Suède, la Jamaïque ou le Kazakhstan.",
-        "en": "The flag had to have neither red nor white: Ukraine, Sweden, Jamaica or Kazakhstan."
+        "fr": "Il fallait un drapeau sans rouge ni blanc : l'Ukraine, la Suède, la Jamaïque ou le Kazakhstan. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to have neither red nor white: Ukraine, Sweden, Jamaica or Kazakhstan. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5290,8 +5297,8 @@
         "en": "A flag that shows black"
       },
       "explain": {
-        "fr": "Il fallait du noir sur le drapeau : l'Allemagne, l'Afrique du Sud, la Jamaïque ou l'Estonie.",
-        "en": "The flag had to show black: Germany, South Africa, Jamaica or Estonia."
+        "fr": "Il fallait du noir sur le drapeau : l'Allemagne, l'Afrique du Sud, la Jamaïque ou l'Estonie. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show black: Germany, South Africa, Jamaica or Estonia. Coats of arms do not count."
       },
       "predicate": {
         "fact": "flagColors",
@@ -5316,7 +5323,6 @@
           "GHA",
           "GNB",
           "GUY",
-          "HRV",
           "IRQ",
           "JAM",
           "JOR",
@@ -5346,9 +5352,9 @@
           "ZMB",
           "ZWE"
         ],
-        "validCount": 46,
+        "validCount": 45,
         "continents": 6,
-        "difficulty": 0.12,
+        "difficulty": 0.13,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -5360,8 +5366,8 @@
         "en": "A flag mixing black and blue"
       },
       "explain": {
-        "fr": "Il fallait du noir et du bleu sur le même drapeau : l'Estonie, le Botswana, les Bahamas ou la Corée du Sud.",
-        "en": "The flag had to show both black and blue: Estonia, Botswana, the Bahamas or South Korea."
+        "fr": "Il fallait du noir et du bleu sur le même drapeau : l'Estonie, le Botswana, les Bahamas ou la Corée du Sud. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show both black and blue: Estonia, Botswana, the Bahamas or South Korea. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5382,7 +5388,6 @@
           "BRB",
           "BWA",
           "EST",
-          "HRV",
           "KOR",
           "LCA",
           "LSO",
@@ -5391,9 +5396,9 @@
           "TZA",
           "ZAF"
         ],
-        "validCount": 13,
+        "validCount": 12,
         "continents": 4,
-        "difficulty": 0.57,
+        "difficulty": 0.62,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -5401,12 +5406,12 @@
       "id": "flag.yellow-no-red",
       "category": "flag",
       "text": {
-        "fr": "Du jaune sur le drapeau, mais pas de rouge",
-        "en": "Yellow on the flag, but no red"
+        "fr": "Du jaune, pas de rouge, hors armoiries",
+        "en": "Yellow but no red, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait du jaune et aucun rouge : l'Argentine, l'Ukraine, la Suède ou le Vatican.",
-        "en": "The flag had to show yellow and no red: Argentina, Ukraine, Sweden or the Vatican."
+        "fr": "Il fallait du jaune et aucun rouge : l'Argentine, l'Ukraine, la Suède ou le Vatican. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show yellow and no red: Argentina, Ukraine, Sweden or the Vatican. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5459,8 +5464,8 @@
         "en": "Green on the flag, but no red"
       },
       "explain": {
-        "fr": "Il fallait du vert et aucun rouge : le Brésil, l'Inde, l'Arabie saoudite ou le Nigeria.",
-        "en": "The flag had to show green and no red: Brazil, India, Saudi Arabia or Nigeria."
+        "fr": "Il fallait du vert et aucun rouge : le Brésil, l'Inde, l'Arabie saoudite ou le Nigeria. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show green and no red: Brazil, India, Saudi Arabia or Nigeria. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5510,8 +5515,8 @@
         "en": "Green and blue on the flag, no red"
       },
       "explain": {
-        "fr": "Il fallait du vert et du bleu sans aucun rouge : le Brésil, le Rwanda, l'Inde ou la Sierra Leone.",
-        "en": "The flag had to show green and blue with no red: Brazil, Rwanda, India or Sierra Leone."
+        "fr": "Il fallait du vert et du bleu sans aucun rouge : le Brésil, le Rwanda, l'Inde ou la Sierra Leone. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show green and blue with no red: Brazil, Rwanda, India or Sierra Leone. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5553,12 +5558,12 @@
       "id": "flag.red-no-white-blue",
       "category": "flag",
       "text": {
-        "fr": "Du rouge sur le drapeau, ni blanc ni bleu",
-        "en": "Red on the flag, but neither white nor blue"
+        "fr": "Du rouge, ni blanc ni bleu, hors armoiries",
+        "en": "Red, but neither white nor blue, arms aside"
       },
       "explain": {
-        "fr": "Il fallait du rouge sans blanc ni bleu : la Chine, l'Allemagne, le Ghana ou l'Espagne.",
-        "en": "The flag had to show red with neither white nor blue: China, Germany, Ghana or Spain."
+        "fr": "Il fallait du rouge sans blanc ni bleu : la Chine, l'Allemagne, le Ghana ou l'Espagne. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show red with neither white nor blue: China, Germany, Ghana or Spain. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5628,8 +5633,8 @@
         "en": "Southern, flying red, white and blue"
       },
       "explain": {
-        "fr": "Il fallait un pays tout entier dans l'hémisphère sud dont le drapeau porte du rouge, du blanc et du bleu : l'Australie, le Chili ou la Namibie.",
-        "en": "A country entirely in the southern hemisphere whose flag shows red, white and blue was needed: Australia, Chile or Namibia."
+        "fr": "Il fallait un pays tout entier dans l'hémisphère sud dont le drapeau porte du rouge, du blanc et du bleu : l'Australie, le Chili ou la Namibie. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "A country entirely in the southern hemisphere whose flag shows red, white and blue was needed: Australia, Chile or Namibia. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5680,8 +5685,8 @@
         "en": "Southern, with no red on the flag"
       },
       "explain": {
-        "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda.",
-        "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda."
+        "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5722,8 +5727,8 @@
         "en": "A landlocked country with yellow on its flag"
       },
       "explain": {
-        "fr": "Il fallait un pays sans accès à la mer dont le drapeau porte du jaune : la Mongolie, le Kazakhstan ou le Vatican.",
-        "en": "A landlocked country whose flag shows yellow was needed: Mongolia, Kazakhstan or the Vatican."
+        "fr": "Il fallait un pays sans accès à la mer dont le drapeau porte du jaune : la Mongolie, le Kazakhstan ou le Vatican. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "A landlocked country whose flag shows yellow was needed: Mongolia, Kazakhstan or the Vatican. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5776,8 +5781,8 @@
         "en": "An island nation with black on its flag"
       },
       "explain": {
-        "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu.",
-        "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu."
+        "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5814,12 +5819,12 @@
       "id": "flag.tiny-no-red",
       "category": "flag",
       "text": {
-        "fr": "Moins de 200 000 habitants, un drapeau sans rouge",
-        "en": "Under 200,000 people, a flag with no red"
+        "fr": "Moins de 200 000 habitants, un drapeau sans rouge (hors armoiries)",
+        "en": "Under 200,000 people, no red on the flag (arms aside)"
       },
       "explain": {
-        "fr": "Il fallait moins de 200 000 habitants et aucun rouge sur le drapeau : Saint-Marin, le Vatican ou Palaos.",
-        "en": "Fewer than 200,000 people and no red on the flag were needed: San Marino, the Vatican or Palau."
+        "fr": "Il fallait moins de 200 000 habitants et aucun rouge sur le drapeau : Saint-Marin, le Vatican ou Palaos. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "Fewer than 200,000 people and no red on the flag were needed: San Marino, the Vatican or Palau. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5856,12 +5861,12 @@
       "id": "flag.yellow-white-no-red",
       "category": "flag",
       "text": {
-        "fr": "Jaune et blanc sur le drapeau, sans rouge",
-        "en": "Yellow and white on the flag, no red"
+        "fr": "Jaune et blanc, sans rouge, hors armoiries",
+        "en": "Yellow and white, no red, coats of arms aside"
       },
       "explain": {
-        "fr": "Il fallait du jaune et du blanc sans aucun rouge : l'Argentine, l'Uruguay, le Bhoutan ou le Vatican.",
-        "en": "The flag had to show yellow and white with no red: Argentina, Uruguay, Bhutan or the Vatican."
+        "fr": "Il fallait du jaune et du blanc sans aucun rouge : l'Argentine, l'Uruguay, le Bhoutan ou le Vatican. Les armoiries (écus, blasons) ne comptent pas.",
+        "en": "The flag had to show yellow and white with no red: Argentina, Uruguay, Bhutan or the Vatican. Coats of arms do not count."
       },
       "predicate": {
         "all": [
@@ -5971,14 +5976,13 @@
           "MRT",
           "NER",
           "PER",
-          "SAU",
           "SDN",
           "TCD",
           "ZAF"
         ],
-        "validCount": 18,
+        "validCount": 17,
         "continents": 4,
-        "difficulty": 0.41,
+        "difficulty": 0.43,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -6024,64 +6028,19 @@
       }
     },
     {
-      "id": "position.mid-200k",
-      "category": "position",
-      "text": {
-        "fr": "Un pays entre 200 000 et 300 000 km²",
-        "en": "A country between 200,000 and 300,000 km²"
-      },
-      "explain": {
-        "fr": "Il fallait une superficie comprise entre 200 000 et 300 000 km² : le Royaume-Uni, la Nouvelle-Zélande ou le Ghana.",
-        "en": "The area had to be between 200,000 and 300,000 km²: the United Kingdom, New Zealand or Ghana."
-      },
-      "predicate": {
-        "all": [
-          {
-            "fact": "areaKm2",
-            "gt": 200000
-          },
-          {
-            "fact": "areaKm2",
-            "lt": 300000
-          }
-        ]
-      },
-      "computed": {
-        "validIso3": [
-          "BFA",
-          "BLR",
-          "ECU",
-          "GAB",
-          "GBR",
-          "GHA",
-          "GIN",
-          "GUY",
-          "LAO",
-          "NZL",
-          "PHL",
-          "ROU",
-          "UGA"
-        ],
-        "validCount": 13,
-        "continents": 5,
-        "difficulty": 0.55,
-        "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
-      }
-    },
-    {
       "id": "position.under-1000",
       "category": "position",
       "text": {
-        "fr": "Un pays de moins de 1 000 km²",
-        "en": "A country under 1,000 km²"
+        "fr": "Un pays de moins de 1 500 km²",
+        "en": "A country under 1,500 km²"
       },
       "explain": {
-        "fr": "Il fallait moins de 1 000 km² : Singapour, Malte ou Saint-Kitts-et-Nevis, sans oublier le Vatican, moins d'un demi-km².",
-        "en": "Less than 1,000 km² was needed: Singapore, Malta or Saint Kitts and Nevis, not forgetting the Vatican at under half a km²."
+        "fr": "Il fallait moins de 1 500 km² : Singapour, Malte ou São Tomé-et-Principe, sans oublier le Vatican, moins d'un demi-km².",
+        "en": "Less than 1,500 km² was needed: Singapore, Malta or São Tomé and Príncipe, not forgetting the Vatican at under half a km²."
       },
       "predicate": {
         "fact": "areaKm2",
-        "lt": 1000
+        "lt": 1500
       },
       "computed": {
         "validIso3": [
@@ -6104,15 +6063,16 @@
           "PLW",
           "SGP",
           "SMR",
+          "STP",
           "SYC",
           "TON",
           "TUV",
           "VAT",
           "VCT"
         ],
-        "validCount": 24,
+        "validCount": 25,
         "continents": 5,
-        "difficulty": 0.44,
+        "difficulty": 0.43,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -6120,18 +6080,18 @@
       "id": "position.micro-beyond-europe",
       "category": "position",
       "text": {
-        "fr": "Hors d’Europe, moins de 1 000 km²",
-        "en": "Outside Europe, under 1,000 km²"
+        "fr": "Hors d’Europe, moins de 1 500 km²",
+        "en": "Outside Europe, under 1,500 km²"
       },
       "explain": {
-        "fr": "Il fallait un pays hors d'Europe de moins de 1 000 km² : Bahreïn, les Maldives ou la Grenade.",
-        "en": "A country outside Europe smaller than 1,000 km² was needed: Bahrain, the Maldives or Grenada."
+        "fr": "Il fallait un pays hors d'Europe de moins de 1 500 km² : Bahreïn, les Maldives ou São Tomé-et-Principe.",
+        "en": "A country outside Europe smaller than 1,500 km² was needed: Bahrain, the Maldives or São Tomé and Príncipe."
       },
       "predicate": {
         "all": [
           {
             "fact": "areaKm2",
-            "lt": 1000
+            "lt": 1500
           },
           {
             "not": {
@@ -6157,14 +6117,15 @@
           "NRU",
           "PLW",
           "SGP",
+          "STP",
           "SYC",
           "TON",
           "TUV",
           "VCT"
         ],
-        "validCount": 18,
+        "validCount": 19,
         "continents": 4,
-        "difficulty": 0.65,
+        "difficulty": 0.64,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -6370,8 +6331,8 @@
         "en": "An island nation in the north-eastern quarter"
       },
       "explain": {
-        "fr": "Il fallait un pays sans frontière terrestre, tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte ou Palaos.",
-        "en": "A country without land borders lying wholly north of the equator and east of Greenwich was needed: Japan, Malta or Palau."
+        "fr": "Il fallait un État insulaire tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte, Chypre ou Palaos.",
+        "en": "An island state lying wholly north of the equator and east of Greenwich was needed: Japan, Malta, Cyprus or Palau."
       },
       "predicate": {
         "all": [
@@ -6380,8 +6341,30 @@
             "eq": "E"
           },
           {
-            "fact": "hasLandBorder",
-            "eq": false
+            "any": [
+              {
+                "fact": "hasLandBorder",
+                "eq": false
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GBR"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 1
+                  },
+                  {
+                    "not": {
+                      "fact": "continent",
+                      "eq": "EU"
+                    }
+                  }
+                ]
+              }
+            ]
           },
           {
             "fact": "hemisphereNS",
@@ -6392,6 +6375,7 @@
       "computed": {
         "validIso3": [
           "BHR",
+          "CYP",
           "FSM",
           "JPN",
           "LKA",
@@ -6401,9 +6385,9 @@
           "PLW",
           "SGP"
         ],
-        "validCount": 9,
+        "validCount": 10,
         "continents": 3,
-        "difficulty": 0.71,
+        "difficulty": 0.67,
         "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4"
       }
     },
@@ -6505,12 +6489,12 @@
       "id": "position.pacific-isles",
       "category": "position",
       "text": {
-        "fr": "Un pays de Mélanésie, Micronésie ou Polynésie",
-        "en": "A country of Melanesia, Micronesia or Polynesia"
+        "fr": "Un pays insulaire du Pacifique, hors Australie et Nouvelle-Zélande",
+        "en": "A Pacific island country, other than Australia and New Zealand"
       },
       "explain": {
-        "fr": "Il fallait un pays des îles du Pacifique, de la Papouasie-Nouvelle-Guinée aux Samoa ; l'Australie et la Nouvelle-Zélande n'en font pas partie.",
-        "en": "A Pacific island country was needed, from Papua New Guinea to Samoa; Australia and New Zealand form a separate region."
+        "fr": "Il fallait un pays de Mélanésie, Micronésie ou Polynésie, de la Papouasie-Nouvelle-Guinée aux Samoa ; l'Australie et la Nouvelle-Zélande forment une région à part.",
+        "en": "A country of Melanesia, Micronesia or Polynesia was needed, from Papua New Guinea to Samoa; Australia and New Zealand form a separate region."
       },
       "predicate": {
         "fact": "subregion",
@@ -6548,8 +6532,8 @@
       "id": "position.caribbean",
       "category": "position",
       "text": {
-        "fr": "Un pays des Caraïbes",
-        "en": "A Caribbean country"
+        "fr": "Un État insulaire des Caraïbes",
+        "en": "A Caribbean island state"
       },
       "explain": {
         "fr": "Il fallait un État insulaire des Caraïbes : de Cuba à la Grenade, en passant par les Bahamas, rattachées à la région.",
@@ -6588,8 +6572,8 @@
       "id": "position.central-america",
       "category": "position",
       "text": {
-        "fr": "Un pays d’Amérique centrale",
-        "en": "A Central American country"
+        "fr": "Un pays d’Amérique centrale, Mexique compris",
+        "en": "A Central American country, Mexico included"
       },
       "explain": {
         "fr": "Il fallait un pays d'Amérique centrale, du Mexique au Panama ; Cuba et les autres îles relèvent des Caraïbes.",
@@ -6683,8 +6667,8 @@
         "en": "Stay on the same continent"
       },
       "explain": {
-        "fr": "Il fallait un pays du même continent que ton dernier camp valide.",
-        "en": "The country had to be on the same continent as your last valid camp."
+        "fr": "Il fallait un pays du même continent que ton dernier camp valide. Convention ONU : la Turquie, Chypre, le Caucase et le Kazakhstan comptent en Asie, la Russie en Europe, l'Égypte en Afrique, le Panama en Amérique du Nord.",
+        "en": "The country had to be on the same continent as your last valid camp. UN convention: Turkey, Cyprus, the Caucasus and Kazakhstan count as Asia, Russia as Europe, Egypt as Africa, Panama as North America."
       },
       "predicate": {
         "ctx": {
@@ -6701,8 +6685,8 @@
         "en": "Move to another continent"
       },
       "explain": {
-        "fr": "Il fallait un pays d'un autre continent que celui de ton dernier camp valide.",
-        "en": "The country had to be on a different continent from your last valid camp."
+        "fr": "Il fallait un pays d'un autre continent que celui de ton dernier camp valide. Convention ONU : la Turquie, Chypre, le Caucase et le Kazakhstan comptent en Asie, la Russie en Europe, l'Égypte en Afrique, le Panama en Amérique du Nord.",
+        "en": "The country had to be on a different continent from your last valid camp. UN convention: Turkey, Cyprus, the Caucasus and Kazakhstan count as Asia, Russia as Europe, Egypt as Africa, Panama as North America."
       },
       "predicate": {
         "ctx": {

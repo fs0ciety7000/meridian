@@ -53,6 +53,13 @@ describe('predicates', () => {
     };
     expect(evaluate({ ctx: { rule: 'neighborOf' } }, 'ESP', deps, ctx)).toBe(true);
     expect(evaluate({ ctx: { rule: 'neighborOf' } }, 'PRT', deps, ctx)).toBe(false);
+    // De jure borders from the facts, not the de facto map (Golan carved out of Israel).
+    expect(
+      evaluate({ ctx: { rule: 'neighborOf' } }, 'ISR', deps, { ...ctx, prevIso3: 'SYR' }),
+    ).toBe(true);
+    expect(
+      evaluate({ ctx: { rule: 'neighborOf' } }, 'MAR', deps, { ...ctx, prevIso3: 'ESP' }),
+    ).toBe(true);
     expect(evaluate({ ctx: { rule: 'sameContinent' } }, 'DEU', deps, ctx)).toBe(true);
     expect(evaluate({ ctx: { rule: 'otherContinent' } }, 'DEU', deps, ctx)).toBe(false);
     expect(evaluate({ ctx: { rule: 'otherHemisphere', axis: 'NS' } }, 'ARG', deps, ctx)).toBe(true);

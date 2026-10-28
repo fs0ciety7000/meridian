@@ -20,13 +20,13 @@
     {
       "id": "longHaul",
       "params": {
-        "km": 9000
+        "km": 16000
       }
     },
     {
       "id": "continentHopper",
       "params": {
-        "n": 4
+        "n": 5
       }
     },
     {

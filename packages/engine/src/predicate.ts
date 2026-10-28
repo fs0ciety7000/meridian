@@ -51,8 +51,14 @@ function evalContext(
   const at: LonLat = ctx.pick ?? entity.aimPoint;
   const prev = deps.entities.get(ctx.prevIso3);
   switch (rule.rule) {
-    case 'neighborOf':
-      return entity.neighbors.includes(ctx.prevIso3);
+    case 'neighborOf': {
+      // The sourced `borders` fact (de jure, curated) is the rule everywhere else; the map's
+      // shared-arc neighbours are only a fallback (QA phase 2: ISR–SYR, ESP–MAR…).
+      const borders = deps.facts.get(entity.iso3)?.facts.borders;
+      return Array.isArray(borders)
+        ? borders.includes(ctx.prevIso3)
+        : entity.neighbors.includes(ctx.prevIso3);
+    }
     case 'otherHemisphere': {
       const axis = rule.axis === 'NS' ? 1 : 0;
       const a = Math.sign(at[axis]);

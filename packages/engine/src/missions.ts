@@ -10,9 +10,11 @@ export interface RouteView {
 }
 
 /** Default parameters, by difficulty, for missions that take one (gameplay-systems §8.1). */
+// QA phase 2: with [2, 3, 4] and [5 000, 7 000, 9 000] km, 92 % and 97 % of simulated players
+// fulfilled the order without aiming for it (median longest leg 14 347 km).
 export const MISSION_PARAMS = {
-  continentHopper: { n: [2, 3, 4] },
-  longHaul: { km: [5000, 7000, 9000] },
+  continentHopper: { n: [4, 5, 5] },
+  longHaul: { km: [12000, 14000, 16000] },
 } as const;
 
 export function meridianCrossings(route: RouteView): number {

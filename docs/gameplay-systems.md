@@ -174,11 +174,11 @@ Chaque étape est contextuelle ; partie sans fin ; 3 fausses pistes = fin. Score
 ### 8.1 Catalogue (prédicats sur la route complète)
 | Id | Texte | Évaluation |
 |---|---|---|
-| `continentHopper(n)` | « Change de continent au moins *n* fois » | nb de transitions de continent entre camps valides consécutifs (port inclus) |
+| `continentHopper(n)` | « Change de continent au moins *n* fois » | nb de transitions de continent entre camps valides consécutifs (port inclus) ; n = 4 / 5 / 5 selon la difficulté |
 | `islander(n)` | « Plante *n* camps sur une île » | camp dans un polygone insulaire (`island=true` au niveau du polygone, pas du pays) |
 | `equatorShuttle` | « Franchis l'équateur à l'aller et au retour » | ≥ 2 traversées d'équateur |
 | `southernSoul` | « Ne quitte jamais l'hémisphère sud » | tous les camps valides lat < 0 |
-| `longHaul(km)` | « Une étape de plus de *km* » | max(d) ≥ km |
+| `longHaul(km)` | « Une étape de plus de *km* » | max(d) ≥ km ; km = 12 000 / 14 000 / 16 000 selon la difficulté (revue QA phase 2) |
 | `noFalseTrail` | « Aucune fausse piste » | — |
 | `coastHugger(n)` | « *n* camps à moins de 50 km d'une côte » | distance au trait de côte (pré-calculée en raster de distance) |
 | `meridianWeaver` | « Franchis deux fois le méridien » | ≥ 2 traversées |
@@ -274,7 +274,7 @@ Seule source de vérité, dans `packages/engine/src/balance.ts`. Toute modificat
 `generateExpedition(seed, difficulty, library) → Expedition`, dans `packages/engine`, déterministe (PRNG mulberry32 seedé).
 
 1. **Port** : tiré parmi ~120 ports (pondéré pour varier les continents).
-2. **Méridien** : multiple de 5 tiré uniformément, rejeté s'il est à moins de 20° du port (sinon trivial).
+2. **Méridien** : multiple de 5 tiré uniformément, rejeté s'il est à moins de 40° du port (sinon trivial ; 20° donnait 85 % de traversées, revue QA phase 2).
 3. **Consignes** : 6 tirées de la bibliothèque selon la difficulté :
 
 | Difficulté | Consignes éligibles (`difficulty` calculée par prompt-forge, 0–1) | Ordres de mission | Longue-vue |

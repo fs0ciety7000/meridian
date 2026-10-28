@@ -12,7 +12,7 @@
     "climate.capricorn",
     "society.monarchy-left",
     "flag.black-and-blue",
-    "climate.deep-south",
+    "relief.landlocked-mid-heights",
     "position.big-south",
     "position.ctx-same-continent"
   ],
@@ -23,7 +23,7 @@
     {
       "id": "longHaul",
       "params": {
-        "km": 7000
+        "km": 14000
       }
     }
   ],

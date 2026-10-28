@@ -6673,6 +6673,7 @@
     "flagColors": [
      "brown",
      "green",
+     "orange",
      "white"
     ],
     "memberOf": [
@@ -6779,7 +6780,7 @@
      "retrieved": "2026-10-28"
     },
     "flagColors": {
-     "ref": "wikidata:Q229#P163/P462",
+     "ref": "https://en.wikipedia.org/wiki/Flag_of_Cyprus",
      "retrieved": "2026-10-28"
     },
     "memberOf": {
@@ -11396,11 +11397,9 @@
     "currencyDollar": false,
     "officialLanguages": [],
     "flagColors": [
-     "black",
      "blue",
      "red",
-     "white",
-     "yellow"
+     "white"
     ],
     "memberOf": [
      "eu",
@@ -11506,7 +11505,7 @@
      "retrieved": "2026-10-28"
     },
     "flagColors": {
-     "ref": "wikidata:Q224#P163/P462",
+     "ref": "https://en.wikipedia.org/wiki/Flag_of_Croatia",
      "retrieved": "2026-10-28"
     },
     "memberOf": {
@@ -21769,8 +21768,7 @@
     ],
     "flagColors": [
      "green",
-     "red",
-     "yellow"
+     "red"
     ],
     "memberOf": [
      "eu",
@@ -21878,7 +21876,7 @@
      "retrieved": "2026-10-28"
     },
     "flagColors": {
-     "ref": "wikidata:Q45#P163/P462",
+     "ref": "https://en.wikipedia.org/wiki/Flag_of_Portugal",
      "retrieved": "2026-10-28"
     },
     "memberOf": {
@@ -22809,7 +22807,7 @@
   {
    "iso3": "SAU",
    "facts": {
-    "areaKm2": 1925880,
+    "areaKm2": 2149690,
     "northernmostLat": 32.12,
     "southernmostLat": 16.37,
     "crossesEquator": false,
@@ -22856,8 +22854,8 @@
    "metro": {},
    "sources": {
     "areaKm2": {
-     "ref": "geometry:natural-earth-5.1.2",
-     "retrieved": "ne-5.1.2+policy-2+pipeline-4"
+     "ref": "https://en.wikipedia.org/wiki/Saudi_Arabia",
+     "retrieved": "2026-10-28"
     },
     "northernmostLat": {
      "ref": "geometry:natural-earth-5.1.2",
@@ -28720,7 +28718,7 @@
     "doubleLandlocked": false,
     "drivesOnLeft": false,
     "monarchy": false,
-    "population": 96208984,
+    "population": 101300000,
     "highestPointM": 3143,
     "usesEuro": false,
     "currencyDollar": false,
@@ -28812,8 +28810,8 @@
      "retrieved": "2026-10-28"
     },
     "population": {
-     "ref": "wikidata:Q881#P1082",
-     "retrieved": "2026-10-28 (value of 2019)"
+     "ref": "https://en.wikipedia.org/wiki/Demographics_of_Vietnam",
+     "retrieved": "2026-10-28"
     },
     "highestPointM": {
      "ref": "wikidata:Q881#P610",

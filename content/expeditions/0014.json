@@ -14,7 +14,7 @@
     "climate.southern-tropics",
     "flag.orange",
     "water.island-large",
-    "society.dense"
+    "society.over-100m"
   ],
   "missions": [
     {
@@ -23,7 +23,7 @@
     {
       "id": "continentHopper",
       "params": {
-        "n": 3
+        "n": 5
       }
     }
   ],
