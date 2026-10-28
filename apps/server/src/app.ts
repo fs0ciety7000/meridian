@@ -42,12 +42,13 @@ export function createApp(config: ServerConfig) {
     secureHeaders({
       contentSecurityPolicy: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'"],
+        // Cloudflare Web Analytics (cookieless RUM beacon injected by the zone).
+        scriptSrc: ["'self'", 'https://static.cloudflareinsights.com'],
         // React sets inline style attributes (stamp rotation, swatches).
         styleSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: ["'self'", 'data:', 'blob:'],
         fontSrc: ["'self'"],
-        connectSrc: ["'self'"],
+        connectSrc: ["'self'", 'https://cloudflareinsights.com'],
         workerSrc: ["'self'"],
         manifestSrc: ["'self'"],
         objectSrc: ["'none'"],

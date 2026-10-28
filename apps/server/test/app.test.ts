@@ -104,7 +104,9 @@ describe('server', () => {
   it('sends security headers with a strict CSP', async () => {
     const res = await createApp(config()).request('/');
     expect(res.headers.get('x-content-type-options')).toBe('nosniff');
-    expect(res.headers.get('content-security-policy')).toContain("script-src 'self'");
+    const csp = res.headers.get('content-security-policy') ?? '';
+    expect(csp).toContain("script-src 'self' https://static.cloudflareinsights.com;");
+    expect(csp).not.toContain('unsafe-eval');
     expect(res.headers.get('content-security-policy')).toContain("frame-ancestors 'none'");
   });
 });

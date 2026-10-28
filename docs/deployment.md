@@ -148,4 +148,4 @@ Critère de sortie de phase 0 (`development-plan.md`) : un push sur `staging` d�
 | Erreur 525/526 Cloudflare | certificat d'origine absent/invalide en `Full (strict)` | §4.2 (option A : challenge bloqué par une redirection ; option B : certificat non installé) |
 | L'app ne se met pas à jour après déploiement | `index.html`/`sw.js` mis en cache par une règle Cloudflare | supprimer la règle, *Purge Everything* une fois |
 | Build Coolify : 429 sur `node:22-alpine` | limite Docker Hub | build arg `NODE_IMAGE=mirror.gcr.io/library/node:22-alpine` ou identifiants Docker Hub sur le serveur |
-| Page blanche, erreurs CSP en console | script/style tiers ajouté | l'ajouter explicitement dans `apps/server/src/app.ts` (CSP), jamais `unsafe-eval` |
+| Page blanche, erreurs CSP en console | script/style tiers ajouté | l'ajouter explicitement dans `apps/server/src/app.ts` (CSP), jamais `unsafe-eval`. Déjà autorisé : le beacon Cloudflare Web Analytics (`static.cloudflareinsights.com`, `cloudflareinsights.com`) injecté par la zone |
