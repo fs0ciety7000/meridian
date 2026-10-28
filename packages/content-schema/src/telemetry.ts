@@ -43,6 +43,13 @@ export const TelemetryEvent = z.discriminatedUnion('type', [
     spyglass: z.boolean(),
     /** Rarity tier awarded (null on a false trail or when unknown). */
     tier: TelemetryTier.nullable(),
+    /** First attempts measure spontaneous answers; replays do not (QA MVP review T4). */
+    attempt: z.enum(['first', 'replay']).optional(),
+    /** Country planted on a false trail: which decoy fooled players. */
+    falseIso3: z
+      .string()
+      .regex(/^[A-Z]{3}$/)
+      .optional(),
   }),
   z.object({
     type: z.literal('expedition_finished'),
@@ -52,6 +59,10 @@ export const TelemetryEvent = z.discriminatedUnion('type', [
     durationMs: Millis,
     falseTrails: Count(64),
     attempt: z.enum(['first', 'replay']),
+    /** Calibration of BALANCE.meridianBonus and mission orders (QA MVP review T2). */
+    meridianCrossings: Count(64).optional(),
+    missionsDone: Count(8).optional(),
+    missions: Count(8).optional(),
   }),
   z.object({ type: z.literal('abandoned'), code: ExpeditionCode, leg: Leg }),
   /** kind: e.g. 'native', 'clipboard', 'challenge'. */

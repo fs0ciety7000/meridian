@@ -274,10 +274,14 @@ describe('GET /api/telemetry/summary', () => {
         meanRenown: 420,
         meanDistanceKm: 12_346,
         legFalseTrailRate: 0.5,
+        meanMeridianCrossings: null,
+        missionCompletionRate: null,
       },
     ]);
     expect(s.plantFailed).toEqual({
       total: 3,
+      rate: 0.4286, // 3 failed taps for 4 resolved legs
+
       byReason: [
         { reason: 'disputed', n: 2 },
         { reason: 'sea', n: 1 },
@@ -290,6 +294,30 @@ describe('GET /api/telemetry/summary', () => {
       })
     ).json()) as TelemetrySummary;
     expect(filtered.prompts.map((p) => p.promptId)).toEqual(['geo.landlocked']);
+  });
+});
+
+describe('calibration fields (QA MVP review T1, T2)', () => {
+  it('reports meridian crossings, mission completion and the plant failure rate', async () => {
+    const { app } = setup();
+    await post(app, {
+      v: 1,
+      session: SESSION,
+      events: [
+        { type: 'expedition_started', code: 'MER-0001', difficulty: 'easy', source: 'catalog' },
+        leg({ code: 'MER-0001' }),
+        leg({ code: 'MER-0001', valid: false, tier: null, falseIso3: 'FRA', attempt: 'first' }),
+        { ...finished(200_000, 'MER-0001'), meridianCrossings: 2, missionsDone: 1, missions: 2 },
+        { ...finished(100_000, 'MER-0001'), meridianCrossings: 1, missionsDone: 0, missions: 2 },
+        { type: 'plant_failed', reason: 'sea' },
+      ],
+    });
+    const s = (await (await summary(app)).json()) as TelemetrySummary;
+    const e = s.expeditions.find((x) => x.code === 'MER-0001')!;
+    expect(e.meanMeridianCrossings).toBe(1.5);
+    expect(e.missionCompletionRate).toBe(0.25);
+    // 1 failed tap for 2 resolved legs.
+    expect(s.plantFailed.rate).toBeCloseTo(1 / 3, 3);
   });
 });
 

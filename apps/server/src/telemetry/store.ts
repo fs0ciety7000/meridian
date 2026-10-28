@@ -86,6 +86,9 @@ export interface ExpeditionSummary {
   meanRenown: number | null;
   meanDistanceKm: number | null;
   legFalseTrailRate: number | null;
+  /** From raw events (retention window): meridian crossings and mission orders. */
+  meanMeridianCrossings: number | null;
+  missionCompletionRate: number | null;
 }
 
 export interface TelemetrySummary {
@@ -94,7 +97,8 @@ export interface TelemetrySummary {
   totals: { events: number; sessions: number; firstDay: string | null; lastDay: string | null };
   prompts: PromptSummary[];
   expeditions: ExpeditionSummary[];
-  plantFailed: { total: number; byReason: { reason: string; n: number }[] };
+  /** rate = failed attempts / (failed + resolved legs): the MVP « Précis » criterion (< 2 %). */
+  plantFailed: { total: number; rate: number | null; byReason: { reason: string; n: number }[] };
 }
 
 const ratio = (a: number, b: number): number | null => (b > 0 ? a / b : null);
@@ -286,6 +290,25 @@ export class TelemetryStore {
       durations.set(code, list);
     }
 
+    const extras = new Map(
+      (
+        this.db
+          .prepare(
+            `select code,
+               avg(json_extract(payload, '$.meridianCrossings')) as crossings,
+               sum(json_extract(payload, '$.missionsDone')) as done,
+               sum(json_extract(payload, '$.missions')) as missions
+             from events where type = 'expedition_finished' group by code`,
+          )
+          .all() as {
+          code: string;
+          crossings: number | null;
+          done: number | null;
+          missions: number | null;
+        }[]
+      ).map((r) => [r.code, r]),
+    );
+
     const expeditions = (
       this.db.prepare('select * from code_stats order by started desc, code').all() as Row[]
     ).map((r): ExpeditionSummary => {
@@ -305,6 +328,13 @@ export class TelemetryStore {
         meanRenown: mean('sum_renown', 1),
         meanDistanceKm: mean('sum_distance_km', 0),
         legFalseTrailRate: round(ratio(Number(r.legs) - Number(r.valid_legs), Number(r.legs))),
+        meanMeridianCrossings: round(extras.get(String(r.code))?.crossings ?? null),
+        missionCompletionRate: round(
+          ratio(
+            Number(extras.get(String(r.code))?.done ?? 0),
+            Number(extras.get(String(r.code))?.missions ?? 0),
+          ),
+        ),
       };
     });
 
@@ -312,13 +342,22 @@ export class TelemetryStore {
       .prepare('select reason, n from plant_failures order by n desc, reason')
       .all() as { reason: string; n: number }[];
 
+    const failed = byReason.reduce((s, r) => s + r.n, 0);
+    // All resolved legs, not only the prompts shown (minN filters the prompt list).
+    const resolvedLegs = Number(
+      (this.db.prepare('select coalesce(sum(n), 0) as n from prompt_stats').get() as Row).n,
+    );
     return {
       generatedAt: (options.now ?? new Date()).toISOString(),
       retentionDays: RAW_RETENTION_DAYS,
       totals,
       prompts,
       expeditions,
-      plantFailed: { total: byReason.reduce((s, r) => s + r.n, 0), byReason },
+      plantFailed: {
+        total: failed,
+        rate: round(ratio(failed, failed + resolvedLegs), 4),
+        byReason,
+      },
     };
   }
 
