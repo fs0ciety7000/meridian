@@ -35,8 +35,8 @@
             "eq": "AF"
           },
           "text": {
-            "fr": "Plante ton camp n’importe où en Afrique",
-            "en": "Pitch your camp anywhere in Africa"
+            "fr": "Plante ton camp dans un pays d’Afrique",
+            "en": "Pitch your camp in an African country"
           },
           "explain": {
             "fr": "Il fallait l'un des 54 pays d'Afrique, Égypte et îles comprises. Les Canaries, Madère, la Réunion ou Mayotte sont africaines par la géographie, mais appartiennent à l'Espagne, au Portugal ou à la France.",
@@ -181,7 +181,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "140854e2d6bf4c67fd81aa4113b039f275fd8533c52eab51ccedb914eb86ab28"
+      "hash": "91e5d8045842f992a3f791101b536b687f24773ae498d9817e89566b5353cdd2"
     },
     {
       "code": "MER-0002",
@@ -1043,8 +1043,8 @@
             "en": "A country crossed by either tropic"
           },
           "explain": {
-            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
-            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -1112,7 +1112,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "e92dbc48c33925f35951b928a42c2841bf7eeeba928aabf8604df68340620775"
+      "hash": "a776ba08261146c2466fd298b3ccc81f0e537209115eb522722b2e1bd86965f4"
     },
     {
       "code": "MER-0007",
@@ -1263,18 +1263,18 @@
         },
         {
           "index": 5,
-          "promptId": "position.giants",
+          "promptId": "relief.over-5000",
           "predicate": {
-            "fact": "areaKm2",
-            "gt": 2500000
+            "fact": "highestPointM",
+            "gt": 5000
           },
           "text": {
-            "fr": "Un géant de plus de 2,5 millions de km²",
-            "en": "A giant of over 2.5 million km²"
+            "fr": "Un pays qui culmine au-delà de 5 000 m",
+            "en": "A country whose summit tops 5,000 m"
           },
           "explain": {
-            "fr": "Il fallait plus de 2,5 millions de km² : le Kazakhstan, plus vaste pays sans littoral, en fait partie avec l'Argentine et l'Inde.",
-            "en": "More than 2.5 million km² were needed: Kazakhstan, the largest landlocked country, makes the list with Argentina and India."
+            "fr": "Il fallait un point culminant au-dessus de 5 000 m : le Kilimandjaro (5 895 m) offre ce privilège à la Tanzanie, l'Elbrouz à la Russie.",
+            "en": "The highest point had to exceed 5,000 m: Kilimanjaro (5,895 m) gives Tanzania that honour, Mount Elbrus gives it to Russia."
           }
         },
         {
@@ -1300,7 +1300,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "0482ed168411a9e37a957fb69c0f0aae05241d3d49a3c8c1cf3a10f4a6012fd4"
+      "hash": "08dd71861ca4c6004824f5ec1037152180fff7e2ee7abe580470155d85bced81"
     },
     {
       "code": "MER-0008",
@@ -1558,8 +1558,8 @@
             "en": "A country crossed by either tropic"
           },
           "explain": {
-            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
-            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -1654,7 +1654,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "4fe2f488f4ae760991790d4af042d6bf4e1ce0fb4c946370409f152d67d70b30"
+      "hash": "82300cb25c7d5ad4bc1e644272254363d5f9fc03cafd04086d359d61d1776977"
     },
     {
       "code": "MER-0010",
@@ -1765,16 +1765,48 @@
           "index": 6,
           "promptId": "borders.exactly-four",
           "predicate": {
-            "fact": "landBorders",
-            "eq": 4
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 4
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GRC"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MNE"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "DZA"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SEN"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 3
+                  }
+                ]
+              }
+            ]
           },
           "text": {
             "fr": "Un pays qui a exactement quatre voisins",
             "en": "A country with exactly four neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre.",
-            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each."
+            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre. L'Albanie (avec le Kosovo) et la Mauritanie (avec le Sahara occidental), territoires non plantables, sont aussi acceptées.",
+            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each. Albania (counting Kosovo) and Mauritania (counting Western Sahara), which cannot be claimed, are accepted too."
           }
         }
       ],
@@ -1787,7 +1819,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "34fd595fff8c83c4a2bf8cf320f4752a25c093a29e42e77e2aec62c434838d3c"
+      "hash": "80abe24c8dbeef90965234b14c501cbd42b222241d6132eddc7a605e512b35ef"
     },
     {
       "code": "MER-0011",
@@ -1838,12 +1870,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière sous les tropiques",
-            "en": "An island nation lying wholly in the tropics"
+            "fr": "Sans frontière terrestre, tout entier sous les tropiques",
+            "en": "No land border, lying wholly in the tropics"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
-            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -1926,8 +1958,8 @@
             ]
           },
           "text": {
-            "fr": "Austral, aux couleurs rouge, blanc et bleu",
-            "en": "Southern, flying red, white and blue"
+            "fr": "Tout entier au sud de l’équateur, drapeau rouge, blanc et bleu",
+            "en": "Wholly south of the equator, flying red, white and blue"
           },
           "explain": {
             "fr": "Il fallait un pays tout entier dans l'hémisphère sud dont le drapeau porte du rouge, du blanc et du bleu : l'Australie, le Chili ou la Namibie. Les armoiries (écus, blasons) ne comptent pas.",
@@ -1950,12 +1982,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation qui a un monarque",
-            "en": "An island nation with a monarch"
+            "fr": "Une monarchie sans frontière terrestre",
+            "en": "A monarchy with no land border"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre dont le chef d'État est un monarque : le Japon, Tonga ou la Jamaïque, royaume du Commonwealth.",
-            "en": "A country without land borders headed by a monarch was needed: Japan, Tonga or Jamaica, a Commonwealth realm."
+            "fr": "Il fallait un pays sans frontière terrestre dont le chef d'État est un monarque : le Japon, Tonga ou la Jamaïque, royaume du Commonwealth. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders headed by a monarch was needed: Japan, Tonga or Jamaica, a Commonwealth realm. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -1990,12 +2022,12 @@
               ]
             },
             "text": {
-              "fr": "Une île-nation dont un sommet dépasse 2 000 m",
-              "en": "An island nation with a peak above 2,000 m"
+              "fr": "Sans frontière terrestre, un sommet au-delà de 2 000 m",
+              "en": "No land border, and a peak above 2,000 m"
             },
             "explain": {
-              "fr": "Il fallait un pays sans frontière terrestre culminant au-dessus de 2 000 m : le volcan Fogo du Cap-Vert ou le Karthala des Comores comptent.",
-              "en": "A country without land borders rising above 2,000 m was needed: Cape Verde's Fogo volcano and the Comoros' Karthala both count."
+              "fr": "Il fallait un pays sans frontière terrestre culminant au-dessus de 2 000 m : le volcan Fogo du Cap-Vert ou le Karthala des Comores comptent. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+              "en": "A country without land borders rising above 2,000 m was needed: Cape Verde's Fogo volcano and the Comoros' Karthala both count. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
             }
           }
         }
@@ -2012,7 +2044,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "3f307ff322ee8470b92e644fafb3c74bd2ae38518f879037963b542b328105f6"
+      "hash": "3dec29d8cfb50aff6b8ece884b2cc58ee055158fa9f6bbf445816a2de17e4673"
     },
     {
       "code": "MER-0012",
@@ -2095,12 +2127,12 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical au sommet passé 4 500 m",
-            "en": "A tropical country with a peak above 4,500 m"
+            "fr": "Tout entier sous les tropiques, un sommet passé 4 500 m",
+            "en": "Wholly within the tropics, with a peak above 4,500 m"
           },
           "explain": {
-            "fr": "Il fallait un pays entièrement entre les tropiques dont un sommet dépasse 4 500 m : des glaciers survivent encore sur le Kilimandjaro et le Rwenzori.",
-            "en": "A country wholly between the tropics with a peak above 4,500 m was needed: glaciers still survive on Kilimanjaro and the Rwenzori."
+            "fr": "Il fallait un pays entièrement entre les tropiques dont un sommet dépasse 4 500 m : des glaciers survivent encore sur le Kilimandjaro et le Rwenzori. Le Mexique, dont le pic d'Orizaba est tropical, déborde au nord du tropique.",
+            "en": "A country wholly between the tropics with a peak above 4,500 m was needed: glaciers still survive on Kilimanjaro and the Rwenzori. Mexico, whose Pico de Orizaba is tropical, reaches north of the tropic."
           }
         },
         {
@@ -2123,6 +2155,34 @@
                     "includes": "MAR"
                   }
                 ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BGR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SRB"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BIH"
+                  }
+                ]
               }
             ]
           },
@@ -2131,8 +2191,8 @@
             "en": "A country with exactly five neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
-            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, la Macédoine du Nord et le Monténégro si l'on compte le Kosovo, tous deux non plantables.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar is counted, and so do North Macedonia and Montenegro if Kosovo is — neither can be claimed."
           }
         },
         {
@@ -2151,12 +2211,12 @@
             ]
           },
           "text": {
-            "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
-            "en": "A southern-hemisphere country with a peak above 3,000 m"
+            "fr": "Tout entier au sud de l’équateur, un sommet passé 3 000 m",
+            "en": "Wholly south of the equator, with a peak above 3,000 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
-            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont. L'Équateur, l'Indonésie ou le Kenya, dont le sommet est pourtant au sud, débordent au nord.",
+            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify. Ecuador, Indonesia and Kenya, whose summits do lie south of it, spill over to the north."
           }
         },
         {
@@ -2183,12 +2243,12 @@
             ]
           },
           "text": {
-            "fr": "Espagnol ou portugais, dans l’hémisphère sud",
-            "en": "Spanish or Portuguese, in the southern hemisphere"
+            "fr": "Espagnol ou portugais, tout entier au sud de l’équateur",
+            "en": "Spanish or Portuguese, wholly south of the equator"
           },
           "explain": {
-            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili.",
-            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile."
+            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili. Le Brésil, l'Équateur ou la Colombie débordent au nord.",
+            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile. Brazil, Ecuador and Colombia spill over to the north."
           }
         }
       ],
@@ -2201,7 +2261,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "3858de5beb36e29692dd8e89632abdf3b40748da2ca36f259b8cde5b79a00ebd"
+      "hash": "51d2b1550783c3ca727200659cead24490a229f2c82ac711d0b157b744b30a5d"
     },
     {
       "code": "MER-0013",
@@ -2408,8 +2468,24 @@
                   "eq": false
                 },
                 {
-                  "fact": "hasLandBorder",
-                  "eq": true
+                  "any": [
+                    {
+                      "fact": "hasLandBorder",
+                      "eq": true
+                    },
+                    {
+                      "all": [
+                        {
+                          "fact": "hasLandBorder",
+                          "eq": false
+                        },
+                        {
+                          "fact": "subregion",
+                          "eq": "145"
+                        }
+                      ]
+                    }
+                  ]
                 },
                 {
                   "fact": "areaKm2",
@@ -2422,8 +2498,8 @@
               "en": "Under 30,000 km², a coastline and neighbours"
             },
             "explain": {
-              "fr": "Il fallait un pays de moins de 30 000 km² ayant à la fois une côte et une frontière terrestre : Monaco, la Gambie ou le Belize.",
-              "en": "A country under 30,000 km² with both a coastline and a land border was needed: Monaco, the Gambia or Belize."
+              "fr": "Il fallait un pays de moins de 30 000 km² ayant à la fois une côte et une frontière terrestre : Monaco, la Gambie ou le Belize. Bahreïn, dont la frontière avec l'Arabie saoudite passe sur une chaussée, est aussi accepté.",
+              "en": "A country under 30,000 km² with both a coastline and a land border was needed: Monaco, the Gambia or Belize. Bahrain, whose border with Saudi Arabia lies on a causeway, is accepted too."
             }
           }
         }
@@ -2440,7 +2516,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "2f0bb978355073fa1f2c4b526b9427922f52eada12aaa7bf419eafd9b9fd789e"
+      "hash": "71a7fea504ceb6f19955527bd00d35c28be5599a82193dac70d4248f205b1693"
     },
     {
       "code": "MER-0014",
@@ -2491,12 +2567,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière sous les tropiques",
-            "en": "An island nation lying wholly in the tropics"
+            "fr": "Sans frontière terrestre, tout entier sous les tropiques",
+            "en": "No land border, lying wholly in the tropics"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
-            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -2587,12 +2663,12 @@
             ]
           },
           "text": {
-            "fr": "Une grande île-nation, plus de 50 000 km²",
-            "en": "A large island nation, over 50,000 km²"
+            "fr": "Sans frontière terrestre, plus de 50 000 km²",
+            "en": "No land border, over 50,000 km²"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie.",
-            "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them."
+            "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -2624,7 +2700,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "5c25f38b3eafc040b92949cc823dd3537c3f89124c2c528c2191f1944a4f0c01"
+      "hash": "a46511f061625dc4396dbd972ac03fcf4f24736430788e1a9c971a0110bf8a9b"
     },
     {
       "code": "MER-0015",
@@ -2689,12 +2765,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation de l’hémisphère nord",
-            "en": "An island nation in the northern hemisphere"
+            "fr": "Sans frontière terrestre, tout entier au nord de l’équateur",
+            "en": "No land border, wholly north of the equator"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques.",
-            "en": "An island state lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -2829,7 +2905,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "ec53d0fc5c97e001eea69f49603885f67b268e045a2bc1ced9a322ee8806e45a"
+      "hash": "a9715eb3f04cf8982d2288ef6ac092d9f8e4a5c27074188685f5cc60dcac979b"
     },
     {
       "code": "MER-0016",
@@ -2868,8 +2944,8 @@
             "en": "A country crossed by the Tropic of Cancer"
           },
           "explain": {
-            "fr": "Il fallait un pays que coupe le tropique du Cancer (23° 26′ N) : il traverse le Sahara, l'Arabie, l'Inde, la Chine, le Mexique et les Bahamas.",
-            "en": "The country had to be crossed by the Tropic of Cancer (23°26′ N): it runs through the Sahara, Arabia, India, China, Mexico and the Bahamas."
+            "fr": "Il fallait un pays que coupe le tropique du Cancer (23° 26′ N) : il traverse le Sahara, l'Arabie, l'Inde, la Chine, le Mexique et les Bahamas. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer (23°26′ N): it runs through the Sahara, Arabia, India, China, Mexico and the Bahamas. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -3059,7 +3135,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "f2278c80bf7b08413a10d4ad1f259175c9c80483a3ea2bbee7b0d400eb8591f8"
+      "hash": "321d96e7b77e11d5e622caf7b8dbc180a52068ef1254b1ac992cf79c9ee4c7b2"
     },
     {
       "code": "MER-0017",
@@ -3150,12 +3226,12 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical au sommet passé 4 500 m",
-            "en": "A tropical country with a peak above 4,500 m"
+            "fr": "Tout entier sous les tropiques, un sommet passé 4 500 m",
+            "en": "Wholly within the tropics, with a peak above 4,500 m"
           },
           "explain": {
-            "fr": "Il fallait un pays entièrement entre les tropiques dont un sommet dépasse 4 500 m : des glaciers survivent encore sur le Kilimandjaro et le Rwenzori.",
-            "en": "A country wholly between the tropics with a peak above 4,500 m was needed: glaciers still survive on Kilimanjaro and the Rwenzori."
+            "fr": "Il fallait un pays entièrement entre les tropiques dont un sommet dépasse 4 500 m : des glaciers survivent encore sur le Kilimandjaro et le Rwenzori. Le Mexique, dont le pic d'Orizaba est tropical, déborde au nord du tropique.",
+            "en": "A country wholly between the tropics with a peak above 4,500 m was needed: glaciers still survive on Kilimanjaro and the Rwenzori. Mexico, whose Pico de Orizaba is tropical, reaches north of the tropic."
           }
         },
         {
@@ -3238,7 +3314,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "284518eceb82646ff8ff7cab38b0c965489ab3e48824a4b6c21ea09f83c6ed1d"
+      "hash": "72835995c48aaf59809c01ccfe7adfc5a9cc7ff4d929dd72db2da96d47349731"
     },
     {
       "code": "MER-0018",
@@ -3303,12 +3379,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation de plus d’un million d’habitants",
-            "en": "An island nation of over a million people"
+            "fr": "Sans frontière terrestre, plus d’un million d’habitants",
+            "en": "No land border, over a million people"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil.",
-            "en": "An island state of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark."
+            "fr": "Il fallait un pays sans frontière terrestre de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -3459,12 +3535,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation du quart nord-est du globe",
-            "en": "An island nation in the north-eastern quarter"
+            "fr": "Sans frontière terrestre, tout entier dans le quart nord-est",
+            "en": "No land border, wholly in the north-eastern quarter"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte, Chypre ou Palaos.",
-            "en": "An island state lying wholly north of the equator and east of Greenwich was needed: Japan, Malta, Cyprus or Palau."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte, Chypre ou Palaos. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying wholly north of the equator and east of Greenwich was needed: Japan, Malta, Cyprus or Palau. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -3509,7 +3585,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "49bc0fb99618643a1ec4717f0b19eaf356c39c6782356090fb280841b0997ab0"
+      "hash": "637c2cbf513c69abafb3a84204ca53e45a2e6118fc85d5fedf2e8edcb7423b5c"
     },
     {
       "code": "MER-0019",
@@ -3973,8 +4049,8 @@
             "en": "An OPEC member"
           },
           "explain": {
-            "fr": "Il fallait un membre de l'Organisation des pays exportateurs de pétrole : le Gabon et la Guinée équatoriale en sont, l'Angola l'a quittée en 2024.",
-            "en": "The country had to be an OPEC member: Gabon and Equatorial Guinea belong, Angola left in 2024."
+            "fr": "Il fallait l'un des 11 membres de l'Organisation des pays exportateurs de pétrole : le Gabon et la Guinée équatoriale en sont ; l'Angola l'a quittée en 2024, les Émirats arabes unis en mai 2026.",
+            "en": "One of the 11 members of the Organization of the Petroleum Exporting Countries was needed: Gabon and Equatorial Guinea belong; Angola left in 2024, the United Arab Emirates in May 2026."
           }
         }
       ],
@@ -3987,7 +4063,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "b0b54b2401402ff31fe76f5ba2f5dd30f20e63033fe6777a8fb91211e0487708"
+      "hash": "2af71e2c92fb3f2b08fed09fd2be7165f9f53acc2c4803249afd503d5a650f40"
     },
     {
       "code": "MER-0021",
@@ -4122,12 +4198,12 @@
             ]
           },
           "text": {
-            "fr": "Austral et vaste, plus de 500 000 km²",
-            "en": "Southern and vast, over 500,000 km²"
+            "fr": "Tout entier au sud de l’équateur, plus de 500 000 km²",
+            "en": "Wholly south of the equator, over 500,000 km²"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
-            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie. Le Brésil, la RD Congo ou l'Indonésie débordent au nord.",
+            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia. Brazil, DR Congo and Indonesia spill over to the north."
           }
         },
         {
@@ -4161,12 +4237,12 @@
               ]
             },
             "text": {
-              "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
-              "en": "A southern-hemisphere country with a peak above 3,000 m"
+              "fr": "Tout entier au sud de l’équateur, un sommet passé 3 000 m",
+              "en": "Wholly south of the equator, with a peak above 3,000 m"
             },
             "explain": {
-              "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
-              "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+              "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont. L'Équateur, l'Indonésie ou le Kenya, dont le sommet est pourtant au sud, débordent au nord.",
+              "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify. Ecuador, Indonesia and Kenya, whose summits do lie south of it, spill over to the north."
             }
           }
         }
@@ -4183,7 +4259,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "07eece31ddc63476d694ae59f878b1b7791ac1675186ff7a8bc9935d1b224b3b"
+      "hash": "560ac91a215985fc2a1e067df7d47043211e9c5324963febff380d285f63ebf3"
     },
     {
       "code": "MER-0022",
@@ -4214,16 +4290,44 @@
           "index": 1,
           "promptId": "borders.eight-plus",
           "predicate": {
-            "fact": "landBorders",
-            "gte": 8
+            "any": [
+              {
+                "fact": "landBorders",
+                "gte": 8
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ROU"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MNE"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "YEM"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "JOR"
+                  }
+                ]
+              }
+            ]
           },
           "text": {
             "fr": "Un pays qui a au moins huit voisins",
             "en": "A country with at least eight neighbours"
           },
           "explain": {
-            "fr": "Il fallait au moins huit voisins terrestres : la Tanzanie et l'Autriche en ont huit, l'Allemagne et la RD Congo neuf.",
-            "en": "At least eight land neighbours were needed: Tanzania and Austria have eight, Germany and DR Congo nine."
+            "fr": "Il fallait au moins huit voisins terrestres : la Tanzanie et l'Autriche en ont huit, l'Allemagne et la RD Congo neuf. La Serbie (avec le Kosovo) et l'Arabie saoudite (avec Bahreïn, relié par une chaussée) sont aussi acceptées.",
+            "en": "At least eight land neighbours were needed: Tanzania and Austria have eight, Germany and DR Congo nine. Serbia (counting Kosovo) and Saudi Arabia (counting Bahrain, linked by a causeway) are accepted too."
           }
         },
         {
@@ -4340,8 +4444,24 @@
                 "lt": 50000
               },
               {
-                "fact": "landBorders",
-                "gte": 4
+                "any": [
+                  {
+                    "fact": "landBorders",
+                    "gte": 4
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GRC"
+                      },
+                      {
+                        "fact": "borders",
+                        "includes": "MNE"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -4350,8 +4470,8 @@
             "en": "Under 50,000 km², at least four neighbours"
           },
           "explain": {
-            "fr": "Il fallait un pays de moins de 50 000 km² touchant au moins quatre voisins : la Suisse en a cinq, le Monténégro quatre.",
-            "en": "A country under 50,000 km² with at least four land neighbours was needed: Switzerland has five, Montenegro four."
+            "fr": "Il fallait un pays de moins de 50 000 km² touchant au moins quatre voisins : la Suisse en a cinq, le Monténégro quatre. L'Albanie, qui en a quatre avec le Kosovo, est aussi acceptée.",
+            "en": "A country under 50,000 km² with at least four land neighbours was needed: Switzerland has five, Montenegro four. Albania, which has four counting Kosovo, is accepted too."
           }
         },
         {
@@ -4380,7 +4500,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "11cf26e9f301ef1557dcf5f0ac95860ea07d727a4cd1c7e092983c6880c72eb9"
+      "hash": "5364fa77aac94f5ac1e799f9c992a58cf24125c0d84521cd864cb4adeaa48df3"
     },
     {
       "code": "MER-0023",
@@ -4475,12 +4595,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation où l’on roule à droite",
-            "en": "An island nation that drives on the right"
+            "fr": "Sans frontière terrestre, et l’on y roule à droite",
+            "en": "No land border, and traffic keeps to the right"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines.",
-            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines."
+            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -4574,7 +4694,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "6aae536464a830107033930beeba29e6dd107b64d33dde066914473b0eaf8f50"
+      "hash": "3fe97881f73e4bd71ced641f429f6c424009500f8d0e176f34794e6a9145eff1"
     },
     {
       "code": "MER-0024",
@@ -4617,12 +4737,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation au drapeau marqué de noir",
-            "en": "An island nation with black on its flag"
+            "fr": "Sans frontière terrestre, du noir sur le drapeau",
+            "en": "No land border, and black on the flag"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu. Les armoiries (écus, blasons) ne comptent pas.",
-            "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu. Coats of arms do not count."
+            "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu. Les armoiries (écus, blasons) ne comptent pas. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu. Coats of arms do not count. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -4725,12 +4845,12 @@
             ]
           },
           "text": {
-            "fr": "Une île tropicale dont un sommet passe 1 000 m",
-            "en": "A tropical island nation with a peak above 1,000 m"
+            "fr": "Sans frontière terrestre, tout entier tropical, sommet passé 1 000 m",
+            "en": "No land border, wholly tropical, a peak above 1,000 m"
           },
           "explain": {
-            "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
-            "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders, wholly tropical, with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -4749,7 +4869,7 @@
             ]
           },
           "text": {
-            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "fr": "Tout entier entre l’équateur et le 10e parallèle nord",
             "en": "Wholly between the equator and 10° N"
           },
           "explain": {
@@ -4770,7 +4890,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "9be629b207170211b9fd66f22015d48c24be1bd408ac4a09aa00c2841ecb39b3"
+      "hash": "cb5c4faa6ebb32c8e91e9ee337cc2ae8c22b1b77bb7e75d0a45bc3fb3531a06b"
     },
     {
       "code": "MER-0025",
@@ -4821,8 +4941,8 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical qui n’a que deux voisins",
-            "en": "A tropical country with just two neighbours"
+            "fr": "Tout entier sous les tropiques, et deux voisins seulement",
+            "en": "Wholly within the tropics, with just two neighbours"
           },
           "explain": {
             "fr": "Il fallait un pays tout entier entre les tropiques ayant exactement deux voisins : le Costa Rica, le Panama ou la Sierra Leone.",
@@ -4861,7 +4981,7 @@
             ]
           },
           "text": {
-            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "fr": "Tout entier entre l’équateur et le 10e parallèle nord",
             "en": "Wholly between the equator and 10° N"
           },
           "explain": {
@@ -4887,12 +5007,12 @@
             ]
           },
           "text": {
-            "fr": "Austral, et pas de rouge sur le drapeau",
-            "en": "Southern, with no red on the flag"
+            "fr": "Tout entier au sud de l’équateur, sans rouge au drapeau",
+            "en": "Wholly south of the equator, with no red on the flag"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda. Les armoiries (écus, blasons) ne comptent pas.",
-            "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda. Coats of arms do not count."
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda. Les armoiries (écus, blasons) ne comptent pas. Le Brésil déborde au nord de l'équateur.",
+            "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda. Coats of arms do not count. Brazil spills over north of the equator."
           }
         },
         {
@@ -4911,12 +5031,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation où l’on roule à droite",
-            "en": "An island nation that drives on the right"
+            "fr": "Sans frontière terrestre, et l’on y roule à droite",
+            "en": "No land border, and traffic keeps to the right"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines.",
-            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines."
+            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -4943,12 +5063,12 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical où rien ne dépasse 300 m",
-            "en": "A tropical country where nothing tops 300 m"
+            "fr": "Tout entier sous les tropiques, rien au-dessus de 300 m",
+            "en": "Wholly within the tropics, nothing above 300 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement.",
-            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres."
+            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement. Les Bahamas, à cheval sur le tropique du Cancer, ne comptent pas.",
+            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres. The Bahamas, astride the Tropic of Cancer, do not count."
           }
         }
       ],
@@ -4970,7 +5090,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "ea6860cd804a510a0b8f153320de7044a407941de7dca32eb14102d001d75f6a"
+      "hash": "1b39c5e43c1f956ad4dd7f3fd4ab4a7934de35238dea090b9e2645cacf7b598b"
     },
     {
       "code": "MER-0026",
@@ -5013,7 +5133,7 @@
             ]
           },
           "text": {
-            "fr": "Tout au sud de l’équateur, et passé 25° S",
+            "fr": "Tout entier au sud de l’équateur, et passé 25° S",
             "en": "Wholly south of the equator, reaching past 25° S"
           },
           "explain": {
@@ -5039,12 +5159,12 @@
             ]
           },
           "text": {
-            "fr": "Austral, et pas de rouge sur le drapeau",
-            "en": "Southern, with no red on the flag"
+            "fr": "Tout entier au sud de l’équateur, sans rouge au drapeau",
+            "en": "Wholly south of the equator, with no red on the flag"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda. Les armoiries (écus, blasons) ne comptent pas.",
-            "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda. Coats of arms do not count."
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud au drapeau sans rouge : l'Argentine, le Botswana ou le Rwanda. Les armoiries (écus, blasons) ne comptent pas. Le Brésil déborde au nord de l'équateur.",
+            "en": "A country entirely in the southern hemisphere with no red on its flag was needed: Argentina, Botswana or Rwanda. Coats of arms do not count. Brazil spills over north of the equator."
           }
         },
         {
@@ -5063,12 +5183,12 @@
             ]
           },
           "text": {
-            "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
-            "en": "A southern-hemisphere country with a peak above 3,000 m"
+            "fr": "Tout entier au sud de l’équateur, un sommet passé 3 000 m",
+            "en": "Wholly south of the equator, with a peak above 3,000 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
-            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont. L'Équateur, l'Indonésie ou le Kenya, dont le sommet est pourtant au sud, débordent au nord.",
+            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify. Ecuador, Indonesia and Kenya, whose summits do lie south of it, spill over to the north."
           }
         },
         {
@@ -5095,12 +5215,12 @@
             ]
           },
           "text": {
-            "fr": "Espagnol ou portugais, dans l’hémisphère sud",
-            "en": "Spanish or Portuguese, in the southern hemisphere"
+            "fr": "Espagnol ou portugais, tout entier au sud de l’équateur",
+            "en": "Spanish or Portuguese, wholly south of the equator"
           },
           "explain": {
-            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili.",
-            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile."
+            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili. Le Brésil, l'Équateur ou la Colombie débordent au nord.",
+            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile. Brazil, Ecuador and Colombia spill over to the north."
           }
         },
         {
@@ -5143,12 +5263,12 @@
             ]
           },
           "text": {
-            "fr": "Austral et vaste, plus de 500 000 km²",
-            "en": "Southern and vast, over 500,000 km²"
+            "fr": "Tout entier au sud de l’équateur, plus de 500 000 km²",
+            "en": "Wholly south of the equator, over 500,000 km²"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
-            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie. Le Brésil, la RD Congo ou l'Indonésie débordent au nord.",
+            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia. Brazil, DR Congo and Indonesia spill over to the north."
           }
         }
       ],
@@ -5170,7 +5290,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "edb3fe2db4bd96fe11c1a6a036d1caa80e6d96129ad503586e75fb9dee0847ad"
+      "hash": "933e16e7a17d98f3ca26c1a401fef63b6f8b0210f3de9228d4dccc3da3307f47"
     },
     {
       "code": "MER-0027",
@@ -5221,12 +5341,12 @@
             ]
           },
           "text": {
-            "fr": "Un géant tropical de plus d’un million de km²",
-            "en": "A tropical giant of over a million km²"
+            "fr": "Tout entier sous les tropiques, plus d’un million de km²",
+            "en": "Wholly within the tropics, over a million km²"
           },
           "explain": {
-            "fr": "Il fallait un pays de plus d'un million de km² tout entier entre les tropiques : le Pérou, la Colombie ou l'Éthiopie.",
-            "en": "A country over one million km² lying wholly between the tropics was needed: Peru, Colombia or Ethiopia."
+            "fr": "Il fallait un pays de plus d'un million de km² tout entier entre les tropiques : le Pérou, la Colombie ou l'Éthiopie. Le Brésil, le Mexique ou l'Inde débordent des tropiques.",
+            "en": "A country over one million km² lying wholly between the tropics was needed: Peru, Colombia or Ethiopia. Brazil, Mexico and India reach beyond the tropics."
           }
         },
         {
@@ -5263,16 +5383,32 @@
           "index": 3,
           "promptId": "borders.lone-neighbour",
           "predicate": {
-            "all": [
+            "any": [
               {
-                "fact": "landBorders",
-                "eq": 1
+                "all": [
+                  {
+                    "fact": "landBorders",
+                    "eq": 1
+                  },
+                  {
+                    "not": {
+                      "fact": "continent",
+                      "eq": "EU"
+                    }
+                  }
+                ]
               },
               {
-                "not": {
-                  "fact": "continent",
-                  "eq": "EU"
-                }
+                "all": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": false
+                  },
+                  {
+                    "fact": "subregion",
+                    "eq": "145"
+                  }
+                ]
               }
             ]
           },
@@ -5281,8 +5417,8 @@
             "en": "Outside Europe, a country with a single neighbour"
           },
           "explain": {
-            "fr": "Il fallait un pays hors d'Europe n'ayant qu'un seul voisin terrestre : Haïti et la République dominicaine se partagent une île, comme le Timor oriental et l'Indonésie.",
-            "en": "A country outside Europe with a single land neighbour was needed: Haiti and the Dominican Republic share one island, as do East Timor and Indonesia."
+            "fr": "Il fallait un pays hors d'Europe n'ayant qu'un seul voisin terrestre : Haïti et la République dominicaine se partagent une île, comme le Timor oriental et l'Indonésie. Bahreïn, dont la frontière avec l'Arabie saoudite passe sur une chaussée, est aussi accepté.",
+            "en": "A country outside Europe with a single land neighbour was needed: Haiti and the Dominican Republic share one island, as do East Timor and Indonesia. Bahrain, whose border with Saudi Arabia lies on a causeway, is accepted too."
           }
         },
         {
@@ -5335,12 +5471,12 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical où rien ne dépasse 300 m",
-            "en": "A tropical country where nothing tops 300 m"
+            "fr": "Tout entier sous les tropiques, rien au-dessus de 300 m",
+            "en": "Wholly within the tropics, nothing above 300 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement.",
-            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres."
+            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement. Les Bahamas, à cheval sur le tropique du Cancer, ne comptent pas.",
+            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres. The Bahamas, astride the Tropic of Cancer, do not count."
           }
         },
         {
@@ -5374,12 +5510,12 @@
               ]
             },
             "text": {
-              "fr": "Une île-nation où l’on roule à droite",
-              "en": "An island nation that drives on the right"
+              "fr": "Sans frontière terrestre, et l’on y roule à droite",
+              "en": "No land border, and traffic keeps to the right"
             },
             "explain": {
-              "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines.",
-              "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines."
+              "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+              "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
             }
           }
         }
@@ -5399,7 +5535,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "270b272baab1fa83c0593f18dc6c25296f318c1f5d3923a332b3a5010cb5c30a"
+      "hash": "83bd7907447152eb077a9623b565fc8547804a09d5e8512bafd70b98cfdaa401"
     },
     {
       "code": "MER-0028",
@@ -5430,16 +5566,32 @@
           "index": 1,
           "promptId": "borders.exactly-seven",
           "predicate": {
-            "fact": "landBorders",
-            "eq": 7
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 7
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "MAR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "TUN"
+                  }
+                ]
+              }
+            ]
           },
           "text": {
             "fr": "Un pays qui a exactement sept voisins",
             "en": "A country with exactly seven neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement sept voisins terrestres : la Pologne, l'Ukraine, l'Iran ou le Mali en ont sept.",
-            "en": "Exactly seven land neighbours were needed: Poland, Ukraine, Iran and Mali have seven each."
+            "fr": "Il fallait exactement sept voisins terrestres : la Pologne, l'Ukraine, l'Iran ou le Mali en ont sept. L'Algérie, qui en a sept avec le Sahara occidental, non plantable, est aussi acceptée.",
+            "en": "Exactly seven land neighbours were needed: Poland, Ukraine, Iran and Mali have seven each. Algeria, which has seven counting Western Sahara (which cannot be claimed), is accepted too."
           }
         },
         {
@@ -5612,7 +5764,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "71d0c17ef05da3f697e3ee5f5d5b985db0612e19260b85bc7246b146105cfa9d"
+      "hash": "ecba9878948f58f08d08641b815564bdf80288db3cc5b70acb52d0c681c0b9f7"
     },
     {
       "code": "MER-0029",
@@ -5655,12 +5807,12 @@
             ]
           },
           "text": {
-            "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
-            "en": "A southern-hemisphere country with a peak above 3,000 m"
+            "fr": "Tout entier au sud de l’équateur, un sommet passé 3 000 m",
+            "en": "Wholly south of the equator, with a peak above 3,000 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
-            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont. L'Équateur, l'Indonésie ou le Kenya, dont le sommet est pourtant au sud, débordent au nord.",
+            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify. Ecuador, Indonesia and Kenya, whose summits do lie south of it, spill over to the north."
           }
         },
         {
@@ -5679,8 +5831,8 @@
             ]
           },
           "text": {
-            "fr": "Un pays enclavé de l’hémisphère sud",
-            "en": "A landlocked country in the southern hemisphere"
+            "fr": "Un pays enclavé tout entier dans l’hémisphère sud",
+            "en": "A landlocked country wholly in the southern hemisphere"
           },
           "explain": {
             "fr": "Il fallait un pays sans accès à la mer tout entier au sud de l'équateur : la Bolivie et le Paraguay sont les seuls hors d'Afrique.",
@@ -5731,12 +5883,12 @@
             ]
           },
           "text": {
-            "fr": "Une île tropicale dont un sommet passe 1 000 m",
-            "en": "A tropical island nation with a peak above 1,000 m"
+            "fr": "Sans frontière terrestre, tout entier tropical, sommet passé 1 000 m",
+            "en": "No land border, wholly tropical, a peak above 1,000 m"
           },
           "explain": {
-            "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
-            "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders, wholly tropical, with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -5830,7 +5982,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "20aa8e938a0ea6142ef9051657509192444325a5ab48d4641be4baa1f65830ea"
+      "hash": "4eb838feea11ab89e51a0cb384e11d8447f9dcce11c62353460e7ca0d310319b"
     },
     {
       "code": "MER-0030",
@@ -5873,12 +6025,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière à l’ouest de Greenwich",
-            "en": "An island nation wholly west of Greenwich"
+            "fr": "Sans frontière terrestre, tout entier à l’ouest de Greenwich",
+            "en": "No land border, wholly west of Greenwich"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre entièrement à l'ouest du méridien de Greenwich : les Caraïbes, l'Islande, le Cap-Vert ou les Samoa.",
-            "en": "A country without land borders lying wholly west of Greenwich was needed: the Caribbean, Iceland, Cape Verde or Samoa."
+            "fr": "Il fallait un pays sans frontière terrestre entièrement à l'ouest du méridien de Greenwich : les Caraïbes, l'Islande, le Cap-Vert ou les Samoa. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying wholly west of Greenwich was needed: the Caribbean, Iceland, Cape Verde or Samoa. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -5921,7 +6073,7 @@
             ]
           },
           "text": {
-            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "fr": "Tout entier entre l’équateur et le 10e parallèle nord",
             "en": "Wholly between the equator and 10° N"
           },
           "explain": {
@@ -6002,12 +6154,12 @@
               ]
             },
             "text": {
-              "fr": "Une grande île-nation, plus de 50 000 km²",
-              "en": "A large island nation, over 50,000 km²"
+              "fr": "Sans frontière terrestre, plus de 50 000 km²",
+              "en": "No land border, over 50,000 km²"
             },
             "explain": {
-              "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie.",
-              "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them."
+              "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+              "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
             }
           }
         }
@@ -6030,7 +6182,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "e5c034245cd4896b16969d90276174b2bc4df4c85924bd0ce8b0d0dfe832db11"
+      "hash": "db08e695f66a36d2975c2253d285a0a440612b59b6976e5b1626cf03f4214067"
     },
     {
       "code": "MER-0031",
@@ -6095,12 +6247,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation de l’hémisphère nord",
-            "en": "An island nation in the northern hemisphere"
+            "fr": "Sans frontière terrestre, tout entier au nord de l’équateur",
+            "en": "No land border, wholly north of the equator"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques.",
-            "en": "An island state lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -6203,8 +6355,8 @@
             "en": "A country crossed by either tropic"
           },
           "explain": {
-            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
-            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -6249,7 +6401,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "eafd3f54aebe99e405b777e2fe24266679b442bbb5d56aeaacf2e3ba8162e5f7"
+      "hash": "cd1e1150985561c5131b4b2da8af8f0cbfdaa1c3b3b8df0c0b77151a7881a843"
     },
     {
       "code": "MER-0032",
@@ -6330,12 +6482,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation de l’hémisphère nord",
-            "en": "An island nation in the northern hemisphere"
+            "fr": "Sans frontière terrestre, tout entier au nord de l’équateur",
+            "en": "No land border, wholly north of the equator"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques.",
-            "en": "An island state lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur : de l'Islande à Palaos, et Chypre, malgré les bases britanniques. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely north of the equator was needed: from Iceland to Palau, and Cyprus despite the British bases. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -6424,8 +6576,8 @@
             "en": "A country crossed by either tropic"
           },
           "explain": {
-            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
-            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -6470,7 +6622,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "4b8a28a066ef1fcb03590f0cab3501664a2e452a89237a3076fed6b4b4840f80"
+      "hash": "4e611fa3d56a4f9b8cda25d54ecef8cc5995c1af5ed7130ca5b38721bcd3f99e"
     },
     {
       "code": "MER-0033",
@@ -6567,6 +6719,34 @@
                     "includes": "MAR"
                   }
                 ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BGR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SRB"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BIH"
+                  }
+                ]
               }
             ]
           },
@@ -6575,8 +6755,8 @@
             "en": "A country with exactly five neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
-            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, la Macédoine du Nord et le Monténégro si l'on compte le Kosovo, tous deux non plantables.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar is counted, and so do North Macedonia and Montenegro if Kosovo is — neither can be claimed."
           }
         },
         {
@@ -6635,7 +6815,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "5e30aeabd3bd19502ad1a44dd7e9a7b0317d8ebd667bafcb77a83179263b459d"
+      "hash": "455f50709ad76afd3956d55ed66797a7acbfa63a02e4556f51180ce15335e178"
     },
     {
       "code": "MER-0034",
@@ -6714,16 +6894,48 @@
           "index": 4,
           "promptId": "borders.exactly-four",
           "predicate": {
-            "fact": "landBorders",
-            "eq": 4
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 4
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GRC"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MNE"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "DZA"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SEN"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 3
+                  }
+                ]
+              }
+            ]
           },
           "text": {
             "fr": "Un pays qui a exactement quatre voisins",
             "en": "A country with exactly four neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre.",
-            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each."
+            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre. L'Albanie (avec le Kosovo) et la Mauritanie (avec le Sahara occidental), territoires non plantables, sont aussi acceptées.",
+            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each. Albania (counting Kosovo) and Mauritania (counting Western Sahara), which cannot be claimed, are accepted too."
           }
         },
         {
@@ -6832,7 +7044,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "582c35400e9919ade64455d6884fac9e67d329adbdf077238d993931936fec19"
+      "hash": "b914641c1a2693d8c58dc0c544fef0d78aa085baf1bd5e5b87142065a4ed7c73"
     },
     {
       "code": "MER-0035",
@@ -6923,12 +7135,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière sous les tropiques",
-            "en": "An island nation lying wholly in the tropics"
+            "fr": "Sans frontière terrestre, tout entier sous les tropiques",
+            "en": "No land border, lying wholly in the tropics"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
-            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -7017,8 +7229,8 @@
             "en": "A country crossed by either tropic"
           },
           "explain": {
-            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
-            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -7047,7 +7259,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "41d80eab9d17f2cc7f7c10ca6596c1cefe583d17ea141b9986e443fbc6535384"
+      "hash": "0ff9003e82ccb97cd1b7f0423dcebdd170cf08fffbe45e2da9ddd1042a967359"
     },
     {
       "code": "MER-0036",
@@ -7086,8 +7298,8 @@
             "en": "A country crossed by the Tropic of Cancer"
           },
           "explain": {
-            "fr": "Il fallait un pays que coupe le tropique du Cancer (23° 26′ N) : il traverse le Sahara, l'Arabie, l'Inde, la Chine, le Mexique et les Bahamas.",
-            "en": "The country had to be crossed by the Tropic of Cancer (23°26′ N): it runs through the Sahara, Arabia, India, China, Mexico and the Bahamas."
+            "fr": "Il fallait un pays que coupe le tropique du Cancer (23° 26′ N) : il traverse le Sahara, l'Arabie, l'Inde, la Chine, le Mexique et les Bahamas. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer (23°26′ N): it runs through the Sahara, Arabia, India, China, Mexico and the Bahamas. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -7156,12 +7368,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière sous les tropiques",
-            "en": "An island nation lying wholly in the tropics"
+            "fr": "Sans frontière terrestre, tout entier sous les tropiques",
+            "en": "No land border, lying wholly in the tropics"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
-            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -7184,6 +7396,34 @@
                     "includes": "MAR"
                   }
                 ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BGR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SRB"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BIH"
+                  }
+                ]
               }
             ]
           },
@@ -7192,8 +7432,8 @@
             "en": "A country with exactly five neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
-            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, la Macédoine du Nord et le Monténégro si l'on compte le Kosovo, tous deux non plantables.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar is counted, and so do North Macedonia and Montenegro if Kosovo is — neither can be claimed."
           }
         },
         {
@@ -7227,7 +7467,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "4e6b94936c9047c0dc38bc739e3f270ff0d60f5cfad27b601e79b8af457d6fb2"
+      "hash": "2414f3842905f990e51c5b2092bb9a789236d314785c60c1eb18e67a593d1825"
     },
     {
       "code": "MER-0037",
@@ -7362,16 +7602,32 @@
           "index": 4,
           "promptId": "borders.seven-plus",
           "predicate": {
-            "fact": "landBorders",
-            "gte": 7
+            "any": [
+              {
+                "fact": "landBorders",
+                "gte": 7
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "MAR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "TUN"
+                  }
+                ]
+              }
+            ]
           },
           "text": {
             "fr": "Un pays qui a au moins sept voisins",
             "en": "A country with at least seven neighbours"
           },
           "explain": {
-            "fr": "Il fallait au moins sept voisins terrestres : la Hongrie en a sept, la Turquie huit, le Brésil dix.",
-            "en": "At least seven land neighbours were needed: Hungary has seven, Turkey eight, Brazil ten."
+            "fr": "Il fallait au moins sept voisins terrestres : la Hongrie en a sept, la Turquie huit, le Brésil dix. L'Algérie, qui en a sept avec le Sahara occidental, non plantable, est aussi acceptée.",
+            "en": "At least seven land neighbours were needed: Hungary has seven, Turkey eight, Brazil ten. Algeria, which has seven counting Western Sahara (which cannot be claimed), is accepted too."
           }
         },
         {
@@ -7440,7 +7696,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "d048d40418c984f6d7639847fc7452bc42c3e8adad40c69f0acf5c1d4d711101"
+      "hash": "d9cd9d8d2d06b31aa01669fe67b8f38762e1b66c017d78663fe7a2c07032f27b"
     },
     {
       "code": "MER-0038",
@@ -7613,12 +7869,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation qui déborde des tropiques",
-            "en": "An island nation reaching beyond the tropics"
+            "fr": "Sans frontière terrestre, débordant des tropiques",
+            "en": "No land border, reaching beyond the tropics"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée.",
-            "en": "An island state not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean."
+            "fr": "Il fallait un pays sans frontière terrestre qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -7663,7 +7919,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "6ff9fd11d6cbf2350addc7596c31bcbd60479e4e0ccaf35fa437ecb1baa6d218"
+      "hash": "7ce3645b5b0dab930706972404d277142eb999966a042d56410064b4d6a00d54"
     },
     {
       "code": "MER-0039",
@@ -7748,8 +8004,24 @@
                 "eq": false
               },
               {
-                "fact": "hasLandBorder",
-                "eq": true
+                "any": [
+                  {
+                    "fact": "hasLandBorder",
+                    "eq": true
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "hasLandBorder",
+                        "eq": false
+                      },
+                      {
+                        "fact": "subregion",
+                        "eq": "145"
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "fact": "areaKm2",
@@ -7762,8 +8034,8 @@
             "en": "Under 30,000 km², a coastline and neighbours"
           },
           "explain": {
-            "fr": "Il fallait un pays de moins de 30 000 km² ayant à la fois une côte et une frontière terrestre : Monaco, la Gambie ou le Belize.",
-            "en": "A country under 30,000 km² with both a coastline and a land border was needed: Monaco, the Gambia or Belize."
+            "fr": "Il fallait un pays de moins de 30 000 km² ayant à la fois une côte et une frontière terrestre : Monaco, la Gambie ou le Belize. Bahreïn, dont la frontière avec l'Arabie saoudite passe sur une chaussée, est aussi accepté.",
+            "en": "A country under 30,000 km² with both a coastline and a land border was needed: Monaco, the Gambia or Belize. Bahrain, whose border with Saudi Arabia lies on a causeway, is accepted too."
           }
         },
         {
@@ -7896,7 +8168,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "0310f8aea3836ea85b8ce85daaee9743354e4227bc272de0db90e4f44743ccbc"
+      "hash": "fd45411fd200281b0fcdab91df7ea96adc4a6e209aad0286a64c52b2cbf9429b"
     },
     {
       "code": "MER-0040",
@@ -7977,12 +8249,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation de plus d’un million d’habitants",
-            "en": "An island nation of over a million people"
+            "fr": "Sans frontière terrestre, plus d’un million d’habitants",
+            "en": "No land border, over a million people"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil.",
-            "en": "An island state of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark."
+            "fr": "Il fallait un pays sans frontière terrestre de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -8055,16 +8327,48 @@
           "index": 4,
           "promptId": "borders.exactly-four",
           "predicate": {
-            "fact": "landBorders",
-            "eq": 4
+            "any": [
+              {
+                "fact": "landBorders",
+                "eq": 4
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "GRC"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "MNE"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "DZA"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SEN"
+                  },
+                  {
+                    "fact": "landBorders",
+                    "eq": 3
+                  }
+                ]
+              }
+            ]
           },
           "text": {
             "fr": "Un pays qui a exactement quatre voisins",
             "en": "A country with exactly four neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre.",
-            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each."
+            "fr": "Il fallait exactement quatre voisins terrestres : la Belgique, la Grèce ou la Thaïlande en ont quatre. L'Albanie (avec le Kosovo) et la Mauritanie (avec le Sahara occidental), territoires non plantables, sont aussi acceptées.",
+            "en": "Exactly four land neighbours were needed: Belgium, Greece and Thailand have four each. Albania (counting Kosovo) and Mauritania (counting Western Sahara), which cannot be claimed, are accepted too."
           }
         },
         {
@@ -8095,12 +8399,12 @@
             ]
           },
           "text": {
-            "fr": "Une île tropicale dont un sommet passe 1 000 m",
-            "en": "A tropical island nation with a peak above 1,000 m"
+            "fr": "Sans frontière terrestre, tout entier tropical, sommet passé 1 000 m",
+            "en": "No land border, wholly tropical, a peak above 1,000 m"
           },
           "explain": {
-            "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
-            "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders, wholly tropical, with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -8149,7 +8453,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "8ebe3ead492bc638f2285d3197dcef31a4179f7ace00b956786e6dc17346925b"
+      "hash": "33468ba35d3dd56d0b1772d46057d41f1310793466d8eb4002738888e9fec101"
     },
     {
       "code": "MER-0041",
@@ -8220,6 +8524,34 @@
                     "includes": "MAR"
                   }
                 ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BGR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SRB"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BIH"
+                  }
+                ]
               }
             ]
           },
@@ -8228,8 +8560,8 @@
             "en": "A country with exactly five neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
-            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, la Macédoine du Nord et le Monténégro si l'on compte le Kosovo, tous deux non plantables.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar is counted, and so do North Macedonia and Montenegro if Kosovo is — neither can be claimed."
           }
         },
         {
@@ -8342,8 +8674,8 @@
             "en": "An OPEC member"
           },
           "explain": {
-            "fr": "Il fallait un membre de l'Organisation des pays exportateurs de pétrole : le Gabon et la Guinée équatoriale en sont, l'Angola l'a quittée en 2024.",
-            "en": "The country had to be an OPEC member: Gabon and Equatorial Guinea belong, Angola left in 2024."
+            "fr": "Il fallait l'un des 11 membres de l'Organisation des pays exportateurs de pétrole : le Gabon et la Guinée équatoriale en sont ; l'Angola l'a quittée en 2024, les Émirats arabes unis en mai 2026.",
+            "en": "One of the 11 members of the Organization of the Petroleum Exporting Countries was needed: Gabon and Equatorial Guinea belong; Angola left in 2024, the United Arab Emirates in May 2026."
           }
         },
         {
@@ -8383,7 +8715,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "a7d9b1ca369c7e62bff4bae4987cc9e9cd187dce419083234a5d6b3e53fbc289"
+      "hash": "e5b11a1ab2bfb9affe4afed4e4e393094d3fe134430424df167209e9145647ff"
     },
     {
       "code": "MER-0042",
@@ -8482,12 +8814,12 @@
             ]
           },
           "text": {
-            "fr": "Une grande île-nation, plus de 50 000 km²",
-            "en": "A large island nation, over 50,000 km²"
+            "fr": "Sans frontière terrestre, plus de 50 000 km²",
+            "en": "No land border, over 50,000 km²"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie.",
-            "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them."
+            "fr": "Il fallait un pays sans frontière terrestre de plus de 50 000 km² : Madagascar, l'Islande ou le Sri Lanka en font partie. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders larger than 50,000 km² was needed: Madagascar, Iceland and Sri Lanka are among them. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -8514,8 +8846,8 @@
             ]
           },
           "text": {
-            "fr": "Austral, aux couleurs rouge, blanc et bleu",
-            "en": "Southern, flying red, white and blue"
+            "fr": "Tout entier au sud de l’équateur, drapeau rouge, blanc et bleu",
+            "en": "Wholly south of the equator, flying red, white and blue"
           },
           "explain": {
             "fr": "Il fallait un pays tout entier dans l'hémisphère sud dont le drapeau porte du rouge, du blanc et du bleu : l'Australie, le Chili ou la Namibie. Les armoiries (écus, blasons) ne comptent pas.",
@@ -8538,12 +8870,12 @@
             ]
           },
           "text": {
-            "fr": "Austral et vaste, plus de 500 000 km²",
-            "en": "Southern and vast, over 500,000 km²"
+            "fr": "Tout entier au sud de l’équateur, plus de 500 000 km²",
+            "en": "Wholly south of the equator, over 500,000 km²"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
-            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+            "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie. Le Brésil, la RD Congo ou l'Indonésie débordent au nord.",
+            "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia. Brazil, DR Congo and Indonesia spill over to the north."
           }
         },
         {
@@ -8566,6 +8898,34 @@
                     "includes": "MAR"
                   }
                 ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BGR"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "SRB"
+                  }
+                ]
+              },
+              {
+                "all": [
+                  {
+                    "fact": "borders",
+                    "includes": "ALB"
+                  },
+                  {
+                    "fact": "borders",
+                    "includes": "BIH"
+                  }
+                ]
               }
             ]
           },
@@ -8574,8 +8934,8 @@
             "en": "A country with exactly five neighbours"
           },
           "explain": {
-            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, non plantable.",
-            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar, which cannot be claimed, is counted."
+            "fr": "Il fallait exactement cinq voisins terrestres : la Suisse, le Kazakhstan ou le Pérou en ont cinq ; l'Espagne aussi si l'on compte Gibraltar, la Macédoine du Nord et le Monténégro si l'on compte le Kosovo, tous deux non plantables.",
+            "en": "Exactly five land neighbours were needed: Switzerland, Kazakhstan and Peru each have five; so does Spain if Gibraltar is counted, and so do North Macedonia and Montenegro if Kosovo is — neither can be claimed."
           }
         }
       ],
@@ -8591,7 +8951,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "2d0a2b1238dab211ecb44f984b8da7979d5df6ec8f4829ffb0ce235a97e1cccb"
+      "hash": "da1c34a59ced97b727f87a7d07ee2e69377c2db3b92c37ced570846d912976f3"
     },
     {
       "code": "MER-0043",
@@ -8634,12 +8994,12 @@
             ]
           },
           "text": {
-            "fr": "Dans l’hémisphère sud, un sommet passé 3 000 m",
-            "en": "A southern-hemisphere country with a peak above 3,000 m"
+            "fr": "Tout entier au sud de l’équateur, un sommet passé 3 000 m",
+            "en": "Wholly south of the equator, with a peak above 3,000 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont.",
-            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify."
+            "fr": "Il fallait un pays tout entier au sud de l'équateur dont un sommet dépasse 3 000 m : le Malawi (mont Mulanje) et la Papouasie-Nouvelle-Guinée en sont. L'Équateur, l'Indonésie ou le Kenya, dont le sommet est pourtant au sud, débordent au nord.",
+            "en": "A country entirely south of the equator with a peak above 3,000 m was needed: Malawi (Mount Mulanje) and Papua New Guinea qualify. Ecuador, Indonesia and Kenya, whose summits do lie south of it, spill over to the north."
           }
         },
         {
@@ -8666,12 +9026,12 @@
             ]
           },
           "text": {
-            "fr": "Espagnol ou portugais, dans l’hémisphère sud",
-            "en": "Spanish or Portuguese, in the southern hemisphere"
+            "fr": "Espagnol ou portugais, tout entier au sud de l’équateur",
+            "en": "Spanish or Portuguese, wholly south of the equator"
           },
           "explain": {
-            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili.",
-            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile."
+            "fr": "Il fallait l'espagnol ou le portugais comme langue officielle et un pays tout entier au sud de l'équateur : l'Angola, le Mozambique ou le Chili. Le Brésil, l'Équateur ou la Colombie débordent au nord.",
+            "en": "Spanish or Portuguese had to be official, in a country lying entirely south of the equator: Angola, Mozambique or Chile. Brazil, Ecuador and Colombia spill over to the north."
           }
         },
         {
@@ -8722,12 +9082,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation qui déborde des tropiques",
-            "en": "An island nation reaching beyond the tropics"
+            "fr": "Sans frontière terrestre, débordant des tropiques",
+            "en": "No land border, reaching beyond the tropics"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée.",
-            "en": "An island state not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean."
+            "fr": "Il fallait un pays sans frontière terrestre qui n'est pas tout entier entre les tropiques : Madagascar franchit le tropique du Capricorne, Chypre et Malte sont en Méditerranée. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders not lying wholly between the tropics was needed: Madagascar crosses the Tropic of Capricorn, Cyprus and Malta lie in the Mediterranean. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -8813,12 +9173,12 @@
               ]
             },
             "text": {
-              "fr": "Austral et vaste, plus de 500 000 km²",
-              "en": "Southern and vast, over 500,000 km²"
+              "fr": "Tout entier au sud de l’équateur, plus de 500 000 km²",
+              "en": "Wholly south of the equator, over 500,000 km²"
             },
             "explain": {
-              "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie.",
-              "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia."
+              "fr": "Il fallait un pays tout entier dans l'hémisphère sud de plus de 500 000 km² : Madagascar, la Zambie ou la Bolivie. Le Brésil, la RD Congo ou l'Indonésie débordent au nord.",
+              "en": "A country entirely in the southern hemisphere larger than 500,000 km² was needed: Madagascar, Zambia or Bolivia. Brazil, DR Congo and Indonesia spill over to the north."
             }
           }
         }
@@ -8838,7 +9198,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "b0acb6bad85eca93fb4176931334c58d9da4db2965fcb96217da084fa202f3c1"
+      "hash": "f633c1bb02acff64cacfa93c77ebadb968ab72442b0e14ac8bd500c3c6a7df27"
     },
     {
       "code": "MER-0044",
@@ -8889,12 +9249,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière sous les tropiques",
-            "en": "An island nation lying wholly in the tropics"
+            "fr": "Sans frontière terrestre, tout entier sous les tropiques",
+            "en": "No land border, lying wholly in the tropics"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles.",
-            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les deux tropiques : Cuba, Fidji ou les Seychelles. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying entirely between the two tropics was needed: Cuba, Fiji or the Seychelles. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -8941,8 +9301,8 @@
             "en": "A country crossed by either tropic"
           },
           "explain": {
-            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux.",
-            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both."
+            "fr": "Il fallait un pays coupé par le tropique du Cancer ou du Capricorne : aucun pays n'est traversé par les deux. Les États-Unis ne sont pas comptés : le tropique du Cancer passe en mer, entre deux îles d'Hawaï.",
+            "en": "The country had to be crossed by the Tropic of Cancer or of Capricorn: no country is crossed by both. The United States is not counted: the Tropic of Cancer runs through open sea between two Hawaiian islands."
           }
         },
         {
@@ -9053,12 +9413,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation du quart nord-est du globe",
-            "en": "An island nation in the north-eastern quarter"
+            "fr": "Sans frontière terrestre, tout entier dans le quart nord-est",
+            "en": "No land border, wholly in the north-eastern quarter"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte, Chypre ou Palaos.",
-            "en": "An island state lying wholly north of the equator and east of Greenwich was needed: Japan, Malta, Cyprus or Palau."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier au nord de l'équateur et à l'est de Greenwich : le Japon, Malte, Chypre ou Palaos. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying wholly north of the equator and east of Greenwich was needed: Japan, Malta, Cyprus or Palau. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -9114,7 +9474,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "e4e9108256975e8e78c3260d96da7da03ca617d516357b6ce4cacfa5842978a4"
+      "hash": "2350afb6a419c1f47ea6e527cfc0c322f6d93a7e5c9582ddc6c045fe5259b9ee"
     },
     {
       "code": "MER-0045",
@@ -9169,12 +9529,12 @@
             ]
           },
           "text": {
-            "fr": "Une île tropicale dont un sommet passe 1 000 m",
-            "en": "A tropical island nation with a peak above 1,000 m"
+            "fr": "Sans frontière terrestre, tout entier tropical, sommet passé 1 000 m",
+            "en": "No land border, wholly tropical, a peak above 1,000 m"
           },
           "explain": {
-            "fr": "Il fallait une île-nation tout entière entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer.",
-            "en": "A tropical island nation with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea."
+            "fr": "Il fallait un pays sans frontière terrestre tout entier entre les tropiques culminant au-dessus de 1 000 m : la Dominique et Saint-Vincent sont des volcans sortis de la mer. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders, wholly tropical, with a summit above 1,000 m was needed: Dominica and Saint Vincent are volcanoes rising from the sea. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -9219,12 +9579,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation au drapeau marqué de noir",
-            "en": "An island nation with black on its flag"
+            "fr": "Sans frontière terrestre, du noir sur le drapeau",
+            "en": "No land border, and black on the flag"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu. Les armoiries (écus, blasons) ne comptent pas.",
-            "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu. Coats of arms do not count."
+            "fr": "Il fallait un pays sans frontière terrestre dont le drapeau porte du noir : la Jamaïque, la Barbade ou Vanuatu. Les armoiries (écus, blasons) ne comptent pas. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders whose flag shows black was needed: Jamaica, Barbados or Vanuatu. Coats of arms do not count. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -9243,12 +9603,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation où l’on roule à droite",
-            "en": "An island nation that drives on the right"
+            "fr": "Sans frontière terrestre, et l’on y roule à droite",
+            "en": "No land border, and traffic keeps to the right"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines.",
-            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines."
+            "fr": "Il fallait un pays sans frontière terrestre où l'on roule à droite : la plupart des îles roulent à gauche, mais pas Cuba ni les Philippines. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders that drives on the right was needed: most islands drive on the left, but not Cuba or the Philippines. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -9331,7 +9691,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "a98f199d22a0af05ecca1b1e89868cb20382d0c26e4669ac14545d66fb079323"
+      "hash": "dc54ec6544e6257bf38c6fc5747f567f7774a4571e14140fa74d4a0585e866b7"
     },
     {
       "code": "MER-0046",
@@ -9368,8 +9728,24 @@
                 "lt": 50000
               },
               {
-                "fact": "landBorders",
-                "gte": 4
+                "any": [
+                  {
+                    "fact": "landBorders",
+                    "gte": 4
+                  },
+                  {
+                    "all": [
+                      {
+                        "fact": "borders",
+                        "includes": "GRC"
+                      },
+                      {
+                        "fact": "borders",
+                        "includes": "MNE"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -9378,8 +9754,8 @@
             "en": "Under 50,000 km², at least four neighbours"
           },
           "explain": {
-            "fr": "Il fallait un pays de moins de 50 000 km² touchant au moins quatre voisins : la Suisse en a cinq, le Monténégro quatre.",
-            "en": "A country under 50,000 km² with at least four land neighbours was needed: Switzerland has five, Montenegro four."
+            "fr": "Il fallait un pays de moins de 50 000 km² touchant au moins quatre voisins : la Suisse en a cinq, le Monténégro quatre. L'Albanie, qui en a quatre avec le Kosovo, est aussi acceptée.",
+            "en": "A country under 50,000 km² with at least four land neighbours was needed: Switzerland has five, Montenegro four. Albania, which has four counting Kosovo, is accepted too."
           }
         },
         {
@@ -9510,12 +9886,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation dont un sommet dépasse 2 000 m",
-            "en": "An island nation with a peak above 2,000 m"
+            "fr": "Sans frontière terrestre, un sommet au-delà de 2 000 m",
+            "en": "No land border, and a peak above 2,000 m"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre culminant au-dessus de 2 000 m : le volcan Fogo du Cap-Vert ou le Karthala des Comores comptent.",
-            "en": "A country without land borders rising above 2,000 m was needed: Cape Verde's Fogo volcano and the Comoros' Karthala both count."
+            "fr": "Il fallait un pays sans frontière terrestre culminant au-dessus de 2 000 m : le volcan Fogo du Cap-Vert ou le Karthala des Comores comptent. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders rising above 2,000 m was needed: Cape Verde's Fogo volcano and the Comoros' Karthala both count. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -9561,7 +9937,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "200d84f2e7978f91009b8b7de2f13b0c6369f27b8d7f34d65fd4038d2b74fd80"
+      "hash": "e761c6e42f8226766819ce9b76a736045a1655bf597d1938aa259ff6d52b2a94"
     },
     {
       "code": "MER-0047",
@@ -9620,12 +9996,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation tout entière à l’ouest de Greenwich",
-            "en": "An island nation wholly west of Greenwich"
+            "fr": "Sans frontière terrestre, tout entier à l’ouest de Greenwich",
+            "en": "No land border, wholly west of Greenwich"
           },
           "explain": {
-            "fr": "Il fallait un pays sans frontière terrestre entièrement à l'ouest du méridien de Greenwich : les Caraïbes, l'Islande, le Cap-Vert ou les Samoa.",
-            "en": "A country without land borders lying wholly west of Greenwich was needed: the Caribbean, Iceland, Cape Verde or Samoa."
+            "fr": "Il fallait un pays sans frontière terrestre entièrement à l'ouest du méridien de Greenwich : les Caraïbes, l'Islande, le Cap-Vert ou les Samoa. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders lying wholly west of Greenwich was needed: the Caribbean, Iceland, Cape Verde or Samoa. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -9732,7 +10108,7 @@
             ]
           },
           "text": {
-            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "fr": "Tout entier entre l’équateur et le 10e parallèle nord",
             "en": "Wholly between the equator and 10° N"
           },
           "explain": {
@@ -9759,16 +10135,32 @@
           "fallback": {
             "promptId": "borders.lone-neighbour",
             "predicate": {
-              "all": [
+              "any": [
                 {
-                  "fact": "landBorders",
-                  "eq": 1
+                  "all": [
+                    {
+                      "fact": "landBorders",
+                      "eq": 1
+                    },
+                    {
+                      "not": {
+                        "fact": "continent",
+                        "eq": "EU"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "not": {
-                    "fact": "continent",
-                    "eq": "EU"
-                  }
+                  "all": [
+                    {
+                      "fact": "hasLandBorder",
+                      "eq": false
+                    },
+                    {
+                      "fact": "subregion",
+                      "eq": "145"
+                    }
+                  ]
                 }
               ]
             },
@@ -9777,8 +10169,8 @@
               "en": "Outside Europe, a country with a single neighbour"
             },
             "explain": {
-              "fr": "Il fallait un pays hors d'Europe n'ayant qu'un seul voisin terrestre : Haïti et la République dominicaine se partagent une île, comme le Timor oriental et l'Indonésie.",
-              "en": "A country outside Europe with a single land neighbour was needed: Haiti and the Dominican Republic share one island, as do East Timor and Indonesia."
+              "fr": "Il fallait un pays hors d'Europe n'ayant qu'un seul voisin terrestre : Haïti et la République dominicaine se partagent une île, comme le Timor oriental et l'Indonésie. Bahreïn, dont la frontière avec l'Arabie saoudite passe sur une chaussée, est aussi accepté.",
+              "en": "A country outside Europe with a single land neighbour was needed: Haiti and the Dominican Republic share one island, as do East Timor and Indonesia. Bahrain, whose border with Saudi Arabia lies on a causeway, is accepted too."
             }
           }
         }
@@ -9798,7 +10190,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "d8bb9dbbcb39d5e06031125443b6bdc56cdd8705b65b522b7ca20948258adb2f"
+      "hash": "da7a86b636fe5d200261bbb40d59033b670c9d27951b2965cdd9be93f6bad53a"
     },
     {
       "code": "MER-0048",
@@ -9985,12 +10377,12 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical où rien ne dépasse 300 m",
-            "en": "A tropical country where nothing tops 300 m"
+            "fr": "Tout entier sous les tropiques, rien au-dessus de 300 m",
+            "en": "Wholly within the tropics, nothing above 300 m"
           },
           "explain": {
-            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement.",
-            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres."
+            "fr": "Il fallait un pays tout entier entre les tropiques dont le point culminant reste sous 300 m : les Maldives culminent à quelques mètres seulement. Les Bahamas, à cheval sur le tropique du Cancer, ne comptent pas.",
+            "en": "A country entirely between the tropics with no point above 300 m was needed: the Maldives peak at just a few metres. The Bahamas, astride the Tropic of Cancer, do not count."
           }
         },
         {
@@ -10012,16 +10404,32 @@
           "fallback": {
             "promptId": "borders.exactly-seven",
             "predicate": {
-              "fact": "landBorders",
-              "eq": 7
+              "any": [
+                {
+                  "fact": "landBorders",
+                  "eq": 7
+                },
+                {
+                  "all": [
+                    {
+                      "fact": "borders",
+                      "includes": "MAR"
+                    },
+                    {
+                      "fact": "borders",
+                      "includes": "TUN"
+                    }
+                  ]
+                }
+              ]
             },
             "text": {
               "fr": "Un pays qui a exactement sept voisins",
               "en": "A country with exactly seven neighbours"
             },
             "explain": {
-              "fr": "Il fallait exactement sept voisins terrestres : la Pologne, l'Ukraine, l'Iran ou le Mali en ont sept.",
-              "en": "Exactly seven land neighbours were needed: Poland, Ukraine, Iran and Mali have seven each."
+              "fr": "Il fallait exactement sept voisins terrestres : la Pologne, l'Ukraine, l'Iran ou le Mali en ont sept. L'Algérie, qui en a sept avec le Sahara occidental, non plantable, est aussi acceptée.",
+              "en": "Exactly seven land neighbours were needed: Poland, Ukraine, Iran and Mali have seven each. Algeria, which has seven counting Western Sahara (which cannot be claimed), is accepted too."
             }
           }
         }
@@ -10044,7 +10452,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "a05a8f8bba61d9438a8c7b3754a516b2f9a582be66a20817fa2feafe8f27cc2c"
+      "hash": "9ace221ba76310b5b9f148036c8f748d25a7d3f8ab92e268c6d081433f5eacf4"
     },
     {
       "code": "MER-0049",
@@ -10199,12 +10607,12 @@
             ]
           },
           "text": {
-            "fr": "Une île-nation de plus d’un million d’habitants",
-            "en": "An island nation of over a million people"
+            "fr": "Sans frontière terrestre, plus d’un million d’habitants",
+            "en": "No land border, over a million people"
           },
           "explain": {
-            "fr": "Il fallait un État insulaire de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil.",
-            "en": "An island state of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark."
+            "fr": "Il fallait un pays sans frontière terrestre de plus d'un million d'habitants : Maurice, Trinité-et-Tobago ou Chypre, malgré les bases britanniques, passent le seuil. Les îles partagées (Irlande, Hispaniola, Bornéo, Timor, Nouvelle-Guinée) donnent une frontière terrestre : le Royaume-Uni, Haïti ou l'Indonésie ne comptent pas.",
+            "en": "A country without land borders of over a million inhabitants was needed: Mauritius, Trinidad and Tobago and Cyprus, despite the British bases, pass the mark. Shared islands (Ireland, Hispaniola, Borneo, Timor, New Guinea) mean a land border: the UK, Haiti or Indonesia do not count."
           }
         },
         {
@@ -10262,12 +10670,12 @@
               ]
             },
             "text": {
-              "fr": "Un pays tropical de plus de 50 M d’habitants",
-              "en": "A tropical country of over 50 million people"
+              "fr": "Tout entier sous les tropiques, plus de 50 M d’habitants",
+              "en": "Wholly within the tropics, over 50 million people"
             },
             "explain": {
-              "fr": "Il fallait un pays tout entier entre les tropiques comptant plus de 50 millions d'habitants : le Nigeria, les Philippines ou la Colombie.",
-              "en": "A country lying wholly between the tropics with over 50 million people was needed: Nigeria, the Philippines or Colombia."
+              "fr": "Il fallait un pays tout entier entre les tropiques comptant plus de 50 millions d'habitants : le Nigeria, les Philippines ou la Colombie. Le Brésil, l'Inde ou le Mexique débordent des tropiques.",
+              "en": "A country lying wholly between the tropics with over 50 million people was needed: Nigeria, the Philippines or Colombia. Brazil, India and Mexico reach beyond the tropics."
             }
           }
         }
@@ -10290,7 +10698,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "f854ceb358d25eda9b2fa44d4ef904eba44e239187d7e1fdceb25a3a0e345c87"
+      "hash": "8b63ec8f30830c2b603fd5e041e3744763b187bf3b14426b0b721f7a26436216"
     },
     {
       "code": "MER-0050",
@@ -10341,8 +10749,8 @@
             ]
           },
           "text": {
-            "fr": "Un pays tropical qui n’a que deux voisins",
-            "en": "A tropical country with just two neighbours"
+            "fr": "Tout entier sous les tropiques, et deux voisins seulement",
+            "en": "Wholly within the tropics, with just two neighbours"
           },
           "explain": {
             "fr": "Il fallait un pays tout entier entre les tropiques ayant exactement deux voisins : le Costa Rica, le Panama ou la Sierra Leone.",
@@ -10477,7 +10885,7 @@
             ]
           },
           "text": {
-            "fr": "Entre l’équateur et le 10e parallèle nord",
+            "fr": "Tout entier entre l’équateur et le 10e parallèle nord",
             "en": "Wholly between the equator and 10° N"
           },
           "explain": {
@@ -10528,7 +10936,7 @@
         }
       ],
       "dataVersion": "facts-1+wd-2026-10-28+ne-5.1.2+policy-2+pipeline-4",
-      "hash": "eff012a48178c7f37fee9918a70606dbe104884f12f1d4287d15616e0759209c"
+      "hash": "31a43e32f574f2ceb5f2f7a3099cc10c7cf8d7d76c117136f31f75b0b1e3c5cd"
     }
   ]
 }
