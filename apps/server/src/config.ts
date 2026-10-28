@@ -17,8 +17,9 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): ServerConfig {
   const here = dirname(fileURLToPath(import.meta.url));
   return {
     port: Number(env.PORT ?? 3000),
-    // '::' is dual-stack: `localhost` resolves to ::1 first in Alpine (Coolify's health check).
-    host: env.HOST ?? '::',
+    // '::' is dual-stack: `localhost` resolves to ::1 first in Alpine. Not `HOST`, which
+    // platforms such as Coolify inject (HOST=0.0.0.0) and would silently override.
+    host: env.LISTEN_HOST ?? '::',
     staticDir: resolve(env.STATIC_DIR ?? resolve(here, 'public')),
     dataDir: env.DATA_DIR ? resolve(env.DATA_DIR) : null,
     version: env.APP_VERSION ?? 'dev',

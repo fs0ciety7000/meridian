@@ -10,7 +10,7 @@
 | Source | GitHub App privée, dépôt `fs0ciety7000/meridian`, branche **`ccr-2d971156-1rp7as`** (auto-deploy à chaque push) — à basculer sur `main` une fois la branche fusionnée |
 | Build | Dockerfile `/deploy/Dockerfile`, port 3000, *Include Source Commit in Build* activé |
 | Stockage | volume nommé `pxpelh5odsogybzd8qnw6ry3-meridian-data` → `/data` |
-| Health check | `GET /api/health` port 3000 |
+| Health check | `GET http://127.0.0.1:3000/api/health` (hôte forcé à `127.0.0.1` : indépendant de la résolution IPv6 de `localhost`) |
 | Variables | `APP_VERSION=0.1.0` |
 | DNS | `A meridian.cardormedia.com → 152.53.176.13`, proxifié (créé via l'API Cloudflare) |
 | Zone `cardormedia.com` (déjà en place, partagée avec les autres sites) | SSL **Full (strict)**, *Always Use HTTPS* **off** (le challenge Let's Encrypt de Coolify passe), Rocket Loader **off** |
@@ -51,7 +51,7 @@ ou `docker compose -f deploy/docker-compose.yml up --build`.
 | Variable | Défaut (image) | Rôle |
 |---|---|---|
 | `PORT` | `3000` | port HTTP du conteneur |
-| `HOST` | `::` | interface d'écoute (double pile ; `localhost` résout en `::1` sous Alpine) |
+| `LISTEN_HOST` | `::` | interface d'écoute, double pile (`localhost` résout en `::1` sous Alpine). Volontairement **pas** `HOST`, que Coolify injecte (`HOST=0.0.0.0`) |
 | `STATIC_DIR` | `/app/public` | front buildé |
 | `DATA_DIR` | `/data` | volume persistant ; `/api/health` renvoie **503** s'il n'est pas accessible en écriture |
 | `APP_VERSION` | `0.0.0` (build arg) | affiché dans `/api/health` |
@@ -71,7 +71,7 @@ Aucun secret n'est nécessaire en phase 0. Les secrets futurs se déclarent **un
    - *Ports Exposes* : `3000`
 3. **Domains** : `https://meridian.cardormedia.com` (le `https://` indique à Coolify de gérer le certificat).
 4. **Persistent Storage → + Add → Volume Mount** : destination `/data` (nom libre, p. ex. `meridian-data`). Ne pas utiliser de *bind mount* vers un dossier `root` : le conteneur tourne en `node`, et la santé passerait à 503 (c'est voulu, c'est le signal).
-5. **Health Check** : activé, chemin `/api/health`, port `3000`, schéma `http`.
+5. **Health Check** : activé, hôte `127.0.0.1`, chemin `/api/health`, port `3000`, schéma `http`.
 6. **Advanced** : activer *Include Source Commit in Build* (Coolify passe alors `SOURCE_COMMIT` à l'image → visible dans `/api/health`).
 7. **Environment Variables** : `APP_VERSION=0.1.0` (optionnel en phase 0).
 8. **Webhooks / Auto Deploy** : activé (déploiement à chaque push sur la branche via la GitHub App).

@@ -37,7 +37,7 @@ FROM ${NODE_IMAGE} AS runtime
 ARG SOURCE_COMMIT=unknown
 ARG APP_VERSION=0.0.0
 ENV NODE_ENV=production \
-    HOST=:: \
+    LISTEN_HOST=:: \
     PORT=3000 \
     STATIC_DIR=/app/public \
     DATA_DIR=/data \
