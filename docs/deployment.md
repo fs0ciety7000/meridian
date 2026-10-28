@@ -1,6 +1,23 @@
 # Meridian — Déploiement (Coolify + Cloudflare)
 
-> **Auteur :** Tech Lead · **Statut :** phase 0 (front + `/api/health`) · **Prérequis :** `docs/architecture.md` §7
+> **Auteur :** Tech Lead · **Statut :** phase 0 déployée (front + `/api/health`) · **Prérequis :** `docs/architecture.md` §7
+
+## État actuel (2026-10-28)
+| Élément | Valeur |
+|---|---|
+| Projet Coolify | **Meridian** (`ipi43b1wwzcakgj5evtuchy5`), environnement `production` |
+| Application | **meridian** (`pxpelh5odsogybzd8qnw6ry3`), serveur `localhost` (152.53.176.13) |
+| Source | GitHub App privée, dépôt `fs0ciety7000/meridian`, branche **`ccr-2d971156-1rp7as`** (auto-deploy à chaque push) — à basculer sur `main` une fois la branche fusionnée |
+| Build | Dockerfile `/deploy/Dockerfile`, port 3000, *Include Source Commit in Build* activé |
+| Stockage | volume nommé `pxpelh5odsogybzd8qnw6ry3-meridian-data` → `/data` |
+| Health check | `GET /api/health` port 3000 |
+| Variables | `APP_VERSION=0.1.0` |
+| DNS | `A meridian.cardormedia.com → 152.53.176.13`, proxifié (créé via l'API Cloudflare) |
+| Zone `cardormedia.com` (déjà en place, partagée avec les autres sites) | SSL **Full (strict)**, *Always Use HTTPS* **off** (le challenge Let's Encrypt de Coolify passe), Rocket Loader **off** |
+| Recette | pas encore créée (pas de branche `staging`) |
+
+Les sections suivantes décrivent la procédure complète, utile pour recréer l'environnement ou ajouter la recette.
+
 
 | | Production | Recette (proposé) |
 |---|---|---|
