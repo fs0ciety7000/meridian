@@ -11,8 +11,22 @@ export function useMapInsets(deps: unknown[]): Insets {
     const measure = () => {
       const h = window.innerHeight;
       const w = window.innerWidth;
-      const rect = (sel: string) =>
-        document.querySelector<HTMLElement>(sel)?.getBoundingClientRect();
+      // Wrappers are zero-height boxes around absolutely positioned chrome: measure the
+      // union of their visible children, not the wrapper itself.
+      const rect = (sel: string) => {
+        const el = document.querySelector<HTMLElement>(sel);
+        if (!el) return undefined;
+        const boxes = [el, ...el.querySelectorAll<HTMLElement>(':scope > *')]
+          .map((e) => e.getBoundingClientRect())
+          .filter((r) => r.width > 0 && r.height > 0);
+        if (!boxes.length) return undefined;
+        return {
+          top: Math.min(...boxes.map((r) => r.top)),
+          bottom: Math.max(...boxes.map((r) => r.bottom)),
+          left: Math.min(...boxes.map((r) => r.left)),
+          right: Math.max(...boxes.map((r) => r.right)),
+        };
+      };
       const top = rect('[data-inset="top"]');
       const bottom = rect('[data-inset="bottom"]');
       const left = w >= 900 ? rect('[data-inset="left"]') : undefined;
@@ -34,7 +48,7 @@ export function useMapInsets(deps: unknown[]): Insets {
     };
     measure();
     const ro = new ResizeObserver(measure);
-    document.querySelectorAll('[data-inset]').forEach((el) => ro.observe(el));
+    document.querySelectorAll('[data-inset], [data-inset] > *').forEach((el) => ro.observe(el));
     window.addEventListener('resize', measure);
     return () => {
       ro.disconnect();

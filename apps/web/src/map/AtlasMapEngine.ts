@@ -165,11 +165,7 @@ export class AtlasMapEngine {
     host.classList.add('atlas-map');
     host.tabIndex = 0;
     host.setAttribute('role', 'application');
-    host.setAttribute('aria-roledescription', 'carte');
-    host.setAttribute(
-      'aria-label',
-      'Atlas du monde : touchez un pays pour y poser votre camp, ou utilisez la recherche.',
-    );
+    this.labelHost();
 
     this.base = this.canvas('atlas-map__base');
     this.highlight = this.canvas('atlas-map__highlight');
@@ -262,10 +258,22 @@ export class AtlasMapEngine {
     this.insets = insets;
   }
 
-  /** Language of the map's own labels (oceans, parallels). */
+  private labelHost() {
+    const fr = this.locale === 'fr';
+    this.host.setAttribute('aria-roledescription', fr ? 'carte' : 'map');
+    this.host.setAttribute(
+      'aria-label',
+      fr
+        ? 'Atlas du monde : touchez un pays pour y poser votre camp, ou utilisez la recherche.'
+        : 'World atlas: tap a country to pitch your camp there, or use the search.',
+    );
+  }
+
+  /** Language of the map's own labels (oceans, parallels, accessible name). */
   setLocale(locale: MapLocale) {
     if (locale === this.locale) return;
     this.locale = locale;
+    this.labelHost();
     this.frozenAt = null;
     this.requestDraw(false);
   }
@@ -304,9 +312,23 @@ export class AtlasMapEngine {
   }
 
   setProjection(kind: ProjectionKind, centerLon = this.centerLon) {
+    if (kind === this.kind && centerLon === this.centerLon) return;
+    // Rotating the world must not move the camera: keep the geographic centre and zoom.
+    const centre = this.width ? this.invert([this.width / 2, this.height / 2]) : null;
+    const k = this.transform.k;
+    if (this.flying) {
+      this.flying = 0; // a flight computed in the old projection would land elsewhere
+      this.settle();
+    }
     this.kind = kind;
     this.centerLon = centerLon;
     this.rebuild(true);
+    const p = centre && k > 1 ? this.projection(centre) : null;
+    this.setTransform(
+      p
+        ? zoomIdentity.translate(this.width / 2 - k * p[0], this.height / 2 - k * p[1]).scale(k)
+        : this.homeTransform(),
+    );
   }
 
   resetView() {
@@ -708,7 +730,8 @@ export class AtlasMapEngine {
       const t = Math.min(1, (now - start) / duration);
       const e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
       const [cx, cy, vw] = interp(e);
-      const k = w / vw;
+      // Van Wijk zooms out on long flights; below ×1 the world would shrink off its frame.
+      const k = Math.max(1, w / vw);
       this.setTransform(zoomIdentity.translate(w / 2 - k * cx, this.height / 2 - k * cy).scale(k));
       if (t < 1) requestAnimationFrame(step);
       else {
@@ -803,13 +826,21 @@ export class AtlasMapEngine {
         const entity = this.data.entities.get(hit.unit.id)!;
         return { ...resolvePick(this.data, entity.aimPoint as [number, number]), snapped: true };
       }
-      const key = `${hit.unit.id}:${hit.x >> 2}:${hit.y >> 2}`;
-      if (tried.has(key) || tried.size > 40) continue;
+      // Blended edge pixels can decode to any unit: dedupe by screen cell, not by id.
+      const key = `${hit.x >> 1}:${hit.y >> 1}`;
+      if (tried.has(key) || tried.size > 60) continue;
       tried.add(key);
-      const at = this.invert([hit.x + 0.5, hit.y + 0.5]);
-      if (!at) continue;
-      const pick = resolvePick(this.data, at);
-      if (pick.kind !== 'sea') return { ...pick, snapped: true };
+      // An edge pixel's centre may sit just offshore: also probe 1–2 px further along the
+      // tap → pixel ray, i.e. inland.
+      const len = Math.max(hit.d, 0.5);
+      const ux = (hit.x + 0.5 - x) / len;
+      const uy = (hit.y + 0.5 - y) / len;
+      for (const step of [0, 1, 2]) {
+        const at = this.invert([hit.x + 0.5 + ux * step, hit.y + 0.5 + uy * step]);
+        if (!at) continue;
+        const pick = resolvePick(this.data, at);
+        if (pick.kind !== 'sea') return { ...pick, snapped: true };
+      }
     }
     return {
       ...(lonLat

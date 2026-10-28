@@ -61,7 +61,7 @@ function play(
       a = {
         type: 'CONFIRM_CAMP',
         iso3: iso,
-        lonLat: [at[0] + s.dLon!, at[1] + s.dLat!],
+        lonLat: [at[0]! + s.dLon!, at[1]! + s.dLat!],
         ms: 1,
         provisionalMoves: 0,
         now: '2026-01-01T00:10:00Z',

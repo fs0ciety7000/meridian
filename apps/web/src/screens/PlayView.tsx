@@ -63,6 +63,8 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
   /** The leg being resolved (choreography), or null while playing. */
   const [resolving, setResolving] = useState<{ leg: number; valid: boolean } | null>(null);
   const legStart = useRef(0);
+  /** Leg to frame once the projection has settled (prev camp → new camp). */
+  const [frame, setFrame] = useState<[[number, number], [number, number]] | null>(null);
   const moves = useRef(0);
   const reduced = useMemo(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches, []);
 
@@ -166,6 +168,17 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
 
   const insets = useMapInsets([resolving, logOpen]);
 
+  // Child effects (projection) run before this one: the flight targets the rotated world.
+  useEffect(() => {
+    if (!frame) return;
+    const [a, b] = frame;
+    const w = Math.min(a[0], b[0]);
+    const e = Math.max(a[0], b[0]);
+    const s = Math.min(a[1], b[1]);
+    const n = Math.max(a[1], b[1]);
+    engine.current?.flyToBounds(e - w > 180 ? [e, s, w, n] : [w, s, e, n], 6);
+  }, [frame, centerLon]);
+
   // ── Choreography ─────────────────────────────────────────────────────────
   const finishResolution = useCallback(() => {
     setResolving(null);
@@ -213,16 +226,9 @@ export function PlayView({ run, friend }: { run: RunState; friend: RunState | nu
       setPick(null);
       setHint(null);
       if (planted?.type === 'CAMP_PLANTED') {
-        const to = engine.current && pick ? pick.lonLat : prev;
-        const w = Math.min(prev[0], to[0]);
-        const e = Math.max(prev[0], to[0]);
-        const crosses = e - w > 180;
-        engine.current?.flyToBounds(
-          crosses
-            ? [e, Math.min(prev[1], to[1]), w, Math.max(prev[1], to[1])]
-            : [w, Math.min(prev[1], to[1]), e, Math.max(prev[1], to[1])],
-          6,
-        );
+        // Framed after the render: the world may rotate to keep the new leg uncut.
+        const to = pick ? pick.lonLat : prev;
+        setFrame([prev, to]);
         if (events.some((x) => x.type === 'MERIDIAN_CROSSED')) say(t('meridianCrossed'));
       } else if (falseTrail?.type === 'FALSE_TRAIL') {
         const l = exp.legs[leg - 1]!;

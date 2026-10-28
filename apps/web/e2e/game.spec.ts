@@ -6,6 +6,8 @@ import { expect, test, type Page } from '@playwright/test';
  */
 
 test.use({ locale: 'en-GB' });
+// Full runs (6–12 legs with choreography) take longer than the default 30 s on a loaded runner.
+test.setTimeout(90_000);
 
 const answers = (page: Page) => page.evaluate(() => window.__meridianTest!.answers());
 const wrong = (page: Page) => page.evaluate(() => window.__meridianTest!.wrong());
