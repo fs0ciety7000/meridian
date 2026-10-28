@@ -1,18 +1,24 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useLocale, useT } from '../game/i18n';
 import { useLocation } from '../game/router';
 import { useGame } from '../game/store';
-import { MapLab } from '../lab/MapLab';
-import { Specimen } from '../lab/Specimen';
 import { ExpeditionScreen } from '../screens/ExpeditionScreen';
 import { Launcher } from '../screens/Launcher';
 import { PassportScreen } from '../screens/PassportScreen';
 import styles from '../screens/screens.module.css';
 
+// Development pages: loaded on demand, never in the game bundle.
+const MapLab = lazy(() => import('../lab/MapLab').then((m) => ({ default: m.MapLab })));
+const Specimen = lazy(() => import('../lab/Specimen').then((m) => ({ default: m.Specimen })));
+
 export function App() {
   const { path, params } = useLocation();
-  if (path === '/lab/specimen') return <Specimen />;
-  if (path === '/lab/map') return <MapLab />;
+  if (path === '/lab/specimen' || path === '/lab/map')
+    return (
+      <Suspense fallback={<div className={`${styles.loading} paper`} aria-busy="true" />}>
+        {path === '/lab/map' ? <MapLab /> : <Specimen />}
+      </Suspense>
+    );
   return <Game path={path} share={params.get('r')} />;
 }
 

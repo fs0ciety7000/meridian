@@ -1,6 +1,7 @@
 import type { Difficulty, Expedition } from '@meridian/content-schema';
 import {
   dryInk,
+  remainingAnswers,
   encodeGeneratedCode,
   reduce,
   type Action,
@@ -65,6 +66,8 @@ export const useGame = create<GameStore>((set, get) => ({
         return d.state;
       });
       set({ status: 'ready', geo, content, runs, dried });
+      (window as unknown as { __meridianIso2?: Record<string, string> }).__meridianIso2 =
+        Object.fromEntries([...content.deps.entities.values()].map((e) => [e.iso3, e.iso2]));
     } catch (e) {
       set({ status: 'error', error: (e as Error).message });
     }
@@ -123,3 +126,32 @@ export const useGame = create<GameStore>((set, get) => ({
 
 /** First attempts (finished or not): what the passport and the atlas are made of. */
 export const countingRuns = (runs: RunState[]) => runs.filter((r) => r.attempt === 'first');
+
+declare global {
+  interface Window {
+    /** Test hook (Playwright): answers of the current leg, to play a run end to end. */
+    __meridianTest?: { answers: (runId?: string) => string[]; wrong: (runId?: string) => string[] };
+  }
+}
+
+const currentRun = (runId?: string) => {
+  const { runs } = useGame.getState();
+  return runId
+    ? runs.find((r) => r.runId === runId)
+    : runs.filter((r) => r.status === 'in_progress').at(-1);
+};
+
+window.__meridianTest = {
+  answers: (runId) => {
+    const { content } = useGame.getState();
+    const run = currentRun(runId);
+    return run && content ? remainingAnswers(run, content.deps) : [];
+  },
+  wrong: (runId) => {
+    const { content } = useGame.getState();
+    const run = currentRun(runId);
+    if (!run || !content) return [];
+    const ok = new Set(remainingAnswers(run, content.deps));
+    return [...content.deps.entities.keys()].filter((c) => !ok.has(c) && !run.usedIso3.includes(c));
+  },
+};
