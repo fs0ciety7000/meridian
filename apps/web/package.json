@@ -20,13 +20,25 @@
     "@meridian/design-tokens": "workspace:*",
     "@meridian/engine": "workspace:*",
     "@meridian/geo": "workspace:*",
+    "d3-geo": "^3.1.1",
+    "d3-interpolate": "^3.0.1",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "topojson-client": "^3.1.0"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
+    "@types/d3-geo": "^3.1.1",
+    "@types/d3-interpolate": "^3.0.4",
+    "@types/d3-selection": "^3.0.12",
+    "@types/d3-zoom": "^3.0.9",
+    "@types/geojson": "^7946.0.16",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.2.0",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-specification": "^1.0.5",
     "@vitejs/plugin-react": "^6.1.2",
     "sharp": "^0.35.5",
     "vite": "^8.3.5"

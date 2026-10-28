@@ -1,6 +1,9 @@
+import { MapLab } from '../lab/MapLab';
 import { Specimen } from '../lab/Specimen';
 
-/** Phase 0: the specimen sheet is the home page until the atlas map lands (phase 1). */
+/** Until the game screens land (phase 2), the map lab is the home page. */
 export function App() {
-  return <Specimen />;
+  const path = window.location.pathname.replace(/\/+$/, '');
+  if (path === '/lab/specimen') return <Specimen />;
+  return <MapLab />;
 }

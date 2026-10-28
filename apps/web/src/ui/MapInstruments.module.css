@@ -1,0 +1,61 @@
+.scale {
+  display: inline-grid;
+  gap: 2px;
+  justify-items: start;
+}
+
+.scaleDark {
+  fill: var(--color-ink-900);
+  stroke: var(--color-ink-900);
+  stroke-width: 0.75;
+}
+
+.scaleLight {
+  fill: var(--color-paper-100);
+  stroke: var(--color-ink-900);
+  stroke-width: 0.75;
+}
+
+.scaleLabel {
+  font-family: var(--font-mono);
+  font-size: var(--type-coord-size);
+  line-height: var(--type-coord-line);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-700);
+}
+
+.compass {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-seal);
+  background: transparent;
+  cursor: pointer;
+}
+
+.compass:focus-visible {
+  outline: 2px solid var(--color-vermilion-600);
+  outline-offset: 2px;
+}
+
+.compassRing {
+  fill: color-mix(in srgb, var(--color-paper-100) 70%, transparent);
+  stroke: var(--color-ink-900);
+  stroke-width: 0.75;
+}
+
+.compassRay {
+  fill: var(--color-ink-700);
+}
+
+.compassNorth {
+  fill: var(--color-ink-900);
+}
+
+.compassN {
+  font: 500 6px var(--font-map);
+  fill: var(--color-paper-100);
+}

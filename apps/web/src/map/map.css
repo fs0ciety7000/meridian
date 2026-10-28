@@ -1,0 +1,225 @@
+/* AtlasMap layers (architecture §4.6, design-system §5–6). Plain CSS: the engine creates the DOM. */
+.atlas-map {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  outline: none;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--color-paper-100);
+}
+
+.atlas-map:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--color-vermilion-600);
+}
+
+.atlas-map > canvas,
+.atlas-map > .atlas-overlay,
+.atlas-map > .atlas-map__texture,
+.atlas-map > .atlas-map__surface {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.atlas-map__texture {
+  pointer-events: none;
+  background-image: image-set(
+    url('../assets/textures/paper.avif') type('image/avif'),
+    url('../assets/textures/paper.webp') type('image/webp')
+  );
+  background-size: 512px 512px;
+  mix-blend-mode: multiply;
+}
+
+:root[data-theme='nocturne'] .atlas-map__texture {
+  opacity: 0.5;
+}
+
+.atlas-map__surface {
+  z-index: 3;
+  cursor: grab;
+}
+
+.atlas-map__surface:active {
+  cursor: grabbing;
+}
+
+.atlas-overlay {
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.atlas-map > .atlas-map__loupe {
+  z-index: 4;
+  inset: auto;
+  top: 0;
+  left: 0;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 1px var(--color-ink-900),
+    0 0 0 4px var(--color-paper-100),
+    0 0 0 4.5px var(--color-ink-900),
+    var(--shadow-paper);
+  pointer-events: none;
+}
+
+/* Meridian of the expedition (gold, reserved meaning) */
+.atlas-meridian {
+  fill: none;
+  stroke: var(--color-meridian-500);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.atlas-meridian__label {
+  font: 500 11px var(--font-map);
+  letter-spacing: 0.16em;
+  font-variant-caps: all-small-caps;
+  fill: var(--color-meridian-500);
+  text-anchor: start;
+  transform-box: fill-box;
+  translate: 6px 0;
+}
+
+/* Route (vermilion, reserved meaning) */
+.atlas-route__leg {
+  fill: none;
+  stroke: var(--color-vermilion-600);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-opacity: 0.85;
+  vector-effect: non-scaling-stroke;
+}
+
+.atlas-route__leg--current {
+  stroke-width: 2;
+  stroke-opacity: 1;
+}
+
+.atlas-route__leg--ghost {
+  stroke: var(--color-ink-700);
+  stroke-dasharray: 2 4;
+}
+
+.atlas-route__tip {
+  fill: var(--color-vermilion-600);
+}
+
+/* Micro-state halos: a discreet finger target */
+.atlas-halo {
+  fill: none;
+  stroke: var(--color-ink-500);
+  stroke-opacity: 0.55;
+  stroke-width: 0.75;
+  stroke-dasharray: 2 2;
+  display: none;
+}
+
+.atlas-overlay--halos .atlas-halo {
+  display: inline;
+}
+
+/* Camps (design-system §6.3) */
+.atlas-camp__shadow {
+  fill: var(--color-ink-900);
+  opacity: 0.18;
+}
+
+.atlas-camp__mast {
+  stroke: var(--color-ink-900);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.atlas-camp__pennant {
+  fill: var(--color-vermilion-600);
+  stroke: var(--color-vermilion-700);
+  stroke-width: 0.75;
+  stroke-linejoin: round;
+}
+
+.atlas-camp__foot {
+  fill: var(--color-ink-900);
+}
+
+.atlas-camp__sight {
+  stroke: var(--color-ink-900);
+  stroke-width: 0.75;
+}
+
+.atlas-camp--provisional .atlas-camp__pennant {
+  fill: var(--color-paper-100);
+  stroke: var(--color-vermilion-600);
+  stroke-width: 1.25;
+}
+
+.atlas-camp--provisional .atlas-camp__flag {
+  transform-origin: 0 -22px;
+  animation: atlas-flutter 2.4s var(--ease-ink) infinite alternate;
+}
+
+.atlas-camp--planted .atlas-camp__flag {
+  animation: atlas-plant var(--dur-paper) var(--ease-stamp) both;
+}
+
+.atlas-camp--invalid .atlas-camp__pennant {
+  fill: var(--color-paper-400);
+  stroke: var(--color-ink-500);
+}
+
+.atlas-camp--invalid .atlas-camp__tear {
+  fill: none;
+  stroke: var(--color-paper-100);
+  stroke-width: 1.5;
+}
+
+.atlas-camp__disc {
+  fill: var(--color-paper-100);
+  stroke: var(--color-ink-900);
+  stroke-width: 1;
+}
+
+.atlas-camp__num {
+  font: 500 9px var(--font-mono);
+  fill: var(--color-ink-900);
+}
+
+.atlas-camp__anchor {
+  fill: none;
+  stroke: var(--color-ink-900);
+  stroke-width: 1.25;
+  stroke-linecap: round;
+}
+
+@keyframes atlas-flutter {
+  from {
+    transform: skewY(0deg);
+  }
+  to {
+    transform: skewY(-6deg) scaleX(0.94);
+  }
+}
+
+@keyframes atlas-plant {
+  from {
+    transform: translateY(-6px);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-camp__flag {
+    animation: none !important;
+  }
+}
