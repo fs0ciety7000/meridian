@@ -577,3 +577,20 @@
     min-height: 44px;
   }
 }
+
+.settings > p {
+  margin: 0;
+}
+
+.primary[aria-disabled='true'],
+.ghostButton[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+@media (max-width: 899px) {
+  /* The static shell in index.html has the same height: no jump when React takes over (A1). */
+  .launcher {
+    min-height: min(50dvh, 360px);
+  }
+}

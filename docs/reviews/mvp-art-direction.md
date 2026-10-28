@@ -78,18 +78,18 @@ Points C de la phase 2 : **C3** (chorégraphie) est soldé, à B3 près. **C4** 
 
 | Fichier | Écran |
 |---|---|
-| `01-pixel-launcher-first-time.png` | Lanceur, nouveau joueur |
-| `02-pixel-onboarding-leg1.png` | Étape 1 au repos, note de geste |
-| `03-pixel-false-trail-note.png` | Fausse piste et note de marge (montre B1) |
+| `01-pixel-launcher-first-time.png` | Lanceur, nouveau joueur (régénérée sur `8985250`) |
+| `02-pixel-onboarding-leg1.png` | Étape 1, note de geste toujours affichée à 7 s (régénérée sur `8985250`) |
+| `03-pixel-false-trail-note.png` | Fausse piste et note de marge (B1 levé, régénérée sur `8985250`) |
 | `04-pixel-resolution-stamp.png` | Chorégraphie : tampon posé (montre C5) |
-| `05-pixel-summary.png` | Récapitulatif |
+| `05-pixel-summary.png` | Récapitulatif après des taps qui passent la chorégraphie (C1 soldé, régénérée sur `8985250`) |
 | `06-pixel-challenge.png` | Écran de défi (montre C2) |
-| `07-desktop-onboarding-leg1.png` | Étape 1 au repos, carnet ouvert |
+| `07-desktop-onboarding-leg1.png` | Étape 1 au repos, carnet ouvert (régénérée sur `8985250`) |
 | `08-desktop-spyglass.png` | Longue-vue |
 | `09-desktop-summary.png` | Récapitulatif |
 | `10-desktop-passport.png` | Passeport (montre C3) |
 | `11-desktop-challenge.png` | Écran de défi |
-| `12-postcard-mer-0001-1080x1350.png` | Carte postale téléchargée, sans perte (montre B2) |
+| `12-postcard-mer-0001-1080x1350.png` | Carte postale téléchargée, sans perte (B2 levé, régénérée sur `8985250`) |
 
 Pour tenir le budget de 3 Mo, les captures d'écran sont réduites en palette de 256 couleurs, sans tramage. Les **couleurs des tokens sont forcées dans la palette**, ce qui garde exactes les teintes vermillon, or, encres de rareté, encre et papier. Les captures Pixel 7 sont ramenées à la résolution CSS (412 × 839). La carte postale est conservée sans perte. Ces images sont une **référence de revue**, pas une base de comparaison au pixel. Les références de régression visuelle restent celles des tests Playwright.
 
@@ -104,3 +104,38 @@ Pour tenir le budget de 3 Mo, les captures d'écran sont réduites en palette de
 3. B3 : une séquence de chorégraphie image par image, dans laquelle la valeur de l'odomètre ne décroît jamais.
 
 Les points C1 à C11 doivent être soldés avant la v1.1. C1 (tap qui pose un camp) et C2 (port masqué) sont prioritaires.
+
+---
+
+## Vérification des bloquants (Art Director, 2026-10-28)
+
+> **Build relu :** `8985250`, extrait par `git archive` et reconstruit hors du dépôt (`pnpm build`, serveur sur le port 4192). Desktop 1440 × 900 et Pixel 7, Atlas, FR. Mêmes parcours que pour la revue, avec en plus : relevé de l'odomètre à chaque image (`requestAnimationFrame`, 3,6 s), taps sur la terre pendant la chorégraphie des étapes 3 à 6, et chargement de l'accueil d'un nouveau joueur, sans limitation puis en 4G simulée (150 ms, 1,6 Mb/s, CPU ×4), avec l'état du DOM relevé toutes les 50 ms.
+
+### Bloquants et points vérifiés
+
+| # | Constat | Statut |
+|---|---|---|
+| B1 | La note de fausse piste est coupée net à 4 lignes, avec points de suspension : plus aucune demi-ligne sous le filet (réf. `03`). Carnet ouvert en mobile : la note est masquée (0 élément `status`). La note de geste de l'onboarding est toujours affichée à 7 s, puis disparaît à la pose du camp. Le texte (« le sceau, en bas à droite, rougit ») désigne l'élément par sa position et son changement d'état, et non plus par une couleur qu'il n'a pas. | **Levé.** C4 est soldé en mobile. En desktop, la note reste posée sur la carte sans papier et dit « Touchez » : le point reste ouvert. |
+| B2 | L'oblitération porte « MERIDIAN · MER-0001 » sur l'arc et « 28 OCT / 2026 » au centre, à 70 % d'`ink-900` (5,46:1, calculé). Elle mord sur le cadre du timbre sans toucher le tampon, et reste à 4 px au-dessus du cadre de la carte (réf. `12`). | **Levé.** Suggestion : la dentelure pointillée traverse le « 0 » de « 0001 ». Tourner le texte de l'anneau de −0,25 rad pour qu'il finisse avant le cadre du timbre. |
+| B3 | Valeur de l'odomètre relevée à chaque image : 0 décroissance en desktop (0 → 142 → … → 4 887) comme en Pixel 7 (0 → 453 → … → 4 887). Le compteur reste sur le total précédent pendant le cadrage. | **Levé.** |
+| C1 | Un tap sur la terre à 300 ms, aux étapes 3 à 6 : après la chorégraphie, la `CampBar` revient à « Touchez un pays », sans aucune sélection. Le récapitulatif est propre (réf. `05`). | **Soldé.** |
+| C10 | `/a-propos` : titre à 40 px (`type-display`), intertitres à 22 px. | **Soldé.** |
+| C11 | Liens de réglages à 44 px de haut en mobile (mesuré sur les six liens). | **Soldé.** Conséquence : la feuille du lanceur défile, et « À propos » est coupé par le bas de l'écran (bas du lien à 852 px pour un viewport de 839). Voir A2. |
+
+### Nouveau constat : arrivée sur l'accueil (coquille statique et écrans à la demande)
+
+| # | Élément | Constat | Gravité | Correction proposée avec token |
+|---|---|---|---|---|
+| B4 | Lanceur, nouveau joueur, premier affichage | Le lanceur s'affiche avant que les parties ne soient lues. Pendant cette attente, un nouveau joueur voit « **Nouvelle expédition** » en action principale, **désactivée** (sceau couleur papier), **sans** « Commencer le premier carnet ». Ensuite, le bouton d'onboarding s'insère au-dessus et repousse tout le bloc d'environ 70 px, et « Nouvelle expédition » passe en secondaire. Durée relevée : 1,0 à 1,5 s sans limitation (desktop 163 → 1 175 ms, Pixel 7 164 → 1 626 ms) et **4,1 à 4,3 s en 4G simulée**. C'est le premier écran du produit : la mauvaise action principale s'affiche d'abord, puis la mise en page saute à l'endroit même où le doigt va se poser. | bloquant | Décider `firstTime` **de façon synchrone** au démarrage : un drapeau `localStorage['meridian.returning'] = '1'` est écrit à la première partie lancée et lu avant le premier rendu (sans drapeau, c'est un nouveau joueur). Le lanceur s'affiche alors d'emblée dans sa forme finale. Tant que le contenu n'est pas prêt, les boutons gardent leur style définitif avec `aria-disabled`, sans repli sur un style papier. Critère : pendant le chargement, l'ordre et la position des boutons ne changent jamais (relevé DOM en 4G simulée). |
+| A1 | Coquille statique, `sm` | Pendant 0,1 à 3 s, la coquille est une bande d'environ 56 px en bas de l'écran (« ATLAS D'EXPÉDITION / Meridian »). La feuille du lanceur la remplace ensuite, haute d'environ 50 % de l'écran : le titre saute d'environ 300 px vers le haut. En desktop, la coquille est à la place du cartouche et le titre ne bouge pas. | à corriger | Sur `sm`, la coquille prend la géométrie de la feuille finale : `min-height` réservé, et le titre au même retrait (24 px / 16 px). Token à ajouter : `launcher.sheet.minHeightSm` = 50dvh, partagé par la coquille et la feuille. |
+| A2 | Coquille statique : couleurs et thème | Couleurs en dur : le surtitre est en `#5B5866`, qui n'est pas un token (6,16:1 sur `paper-100`, calculé), au lieu d'`ink-700`. Le thème sombre suit `prefers-color-scheme` même quand le joueur a choisi Atlas : coquille Nocturne, puis bascule en clair. | à corriger | Surtitre en `ink-700` (`#45434F`, 8,61:1). Un script en ligne dans `<head>` lit `meridian.theme` et pose `data-theme` avant le premier rendu. La coquille se règle sur `[data-theme]`, avec repli sur `prefers-color-scheme` seulement sans choix enregistré. Ligne de réglages sur `sm` : deux lignes groupées (C11 de la revue) pour que « À propos » ne soit plus coupé. |
+
+La police Fraunces limitée à l'axe `opsz` est conforme : le jeu n'utilisait ni `SOFT` ni `WONK`. La planche d'épreuve garde la police complète.
+
+### Captures régénérées
+
+`01`, `02`, `03`, `05`, `07` et `12` sont régénérées sur `8985250`, avec la même règle de poids (palette de 256 couleurs avec les tokens imposés, Pixel 7 en résolution CSS, carte postale sans perte). `04`, `06`, `08`, `09`, `10` et `11` ne sont pas touchées par ce commit et restent celles de `0d8e60c`. Total : 12 PNG, 2,06 Mo.
+
+### Signature
+
+**❌ Pas encore signée.** B1, B2 et B3 sont levés, et C1, C10 et C11 sont soldés. La carte postale est désormais partageable sans réserve. Mais la coquille et le lanceur affiché avant les données introduisent un nouveau bloquant, **B4** : sur le tout premier écran, la mauvaise action principale s'affiche d'abord, puis la mise en page saute. La signature sera acquise dès que B4 sera levé, vérifié par le même relevé DOM en 4G simulée : ordre et position des boutons stables du premier rendu jusqu'à l'état final. A1 et A2, ainsi que C2 à C9 de la revue, restent à corriger avant la v1.1.

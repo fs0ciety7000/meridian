@@ -5,6 +5,7 @@ import { DIFFICULTIES } from '../game/content';
 import { formatNumber, useLocale, useT } from '../game/i18n';
 import { atlasMarks, lifetimeKm } from '../game/progress';
 import { navigate } from '../game/router';
+import { isReturning } from '../game/returning';
 import { useGame } from '../game/store';
 import { setSound, useSound } from '../game/sound';
 import { reportSlowDevice, setMaterial, useMaterial } from '../game/material';
@@ -21,11 +22,12 @@ export function Launcher() {
   const t = useT();
   const locale = useLocale((s) => s.locale);
   const setLocale = useLocale((s) => s.setLocale);
-  const { geo, content, runs, newCode, status } = useGame();
+  const { geo, content, runs, newCode } = useGame();
   const material = useMaterial();
   const sound = useSound();
   // Onboarding (development-plan 3.5): a first-time player starts with MER-0001.
-  const firstTime = status === 'ready' && runs.length === 0;
+  // Known before the first render, so the actions never reshuffle (AD B4).
+  const [firstTime] = useState(() => !isReturning());
   const engine = useRef<AtlasMapEngine | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>('normal');
   const [code, setCode] = useState('');
@@ -117,8 +119,9 @@ export function Launcher() {
             <button
               type="button"
               className={firstTime ? styles.ghostButton : styles.primary}
-              onClick={start}
-              disabled={!content?.latestLibrary}
+              onClick={() => content?.latestLibrary && start()}
+              // aria-disabled, not disabled: the button keeps its final look while content loads.
+              aria-disabled={!content?.latestLibrary}
             >
               {t('newExpedition')}
             </button>
@@ -192,63 +195,70 @@ export function Launcher() {
               </section>
             )}
 
-            <p className={styles.small}>
-              {formatNumber(locale, lifetimeKm(runs))} km ·{' '}
-              <button
-                type="button"
-                className={styles.inlineLink}
-                onClick={() => navigate('/passeport')}
-              >
-                {t('passport')}
-              </button>{' '}
-              ·{' '}
-              <button
-                type="button"
-                className={styles.inlineLink}
-                onClick={() => setLocale(locale === 'fr' ? 'en' : 'fr')}
-              >
-                {t('language')}
-              </button>{' '}
-              ·{' '}
-              <button
-                type="button"
-                className={styles.inlineLink}
-                onClick={() => {
-                  const root = document.documentElement;
-                  const dark = root.dataset.theme
-                    ? root.dataset.theme === 'nocturne'
-                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  root.dataset.theme = dark ? 'atlas' : 'nocturne';
-                  try {
-                    localStorage.setItem('meridian.theme', root.dataset.theme);
-                  } catch {
-                    /* storage unavailable */
-                  }
-                }}
-              >
-                {t('theme')}
-              </button>{' '}
-              ·{' '}
-              <button
-                type="button"
-                className={styles.inlineLink}
-                onClick={() => setMaterial(material === 'light' ? 'full' : 'light')}
-              >
-                {t(material === 'light' ? 'fullMaterial' : 'lightMaterial')}
-              </button>{' '}
-              ·{' '}
-              <button type="button" className={styles.inlineLink} onClick={() => setSound(!sound)}>
-                {t(sound ? 'soundOff' : 'soundOn')}
-              </button>{' '}
-              ·{' '}
-              <button
-                type="button"
-                className={styles.inlineLink}
-                onClick={() => navigate('/a-propos')}
-              >
-                {t('about')}
-              </button>
-            </p>
+            <div className={styles.settings}>
+              <p className={styles.small}>
+                {formatNumber(locale, lifetimeKm(runs))} km ·{' '}
+                <button
+                  type="button"
+                  className={styles.inlineLink}
+                  onClick={() => navigate('/passeport')}
+                >
+                  {t('passport')}
+                </button>{' '}
+                ·{' '}
+                <button
+                  type="button"
+                  className={styles.inlineLink}
+                  onClick={() => navigate('/a-propos')}
+                >
+                  {t('about')}
+                </button>
+              </p>
+              <p className={styles.small}>
+                <button
+                  type="button"
+                  className={styles.inlineLink}
+                  onClick={() => setLocale(locale === 'fr' ? 'en' : 'fr')}
+                >
+                  {t('language')}
+                </button>{' '}
+                ·{' '}
+                <button
+                  type="button"
+                  className={styles.inlineLink}
+                  onClick={() => {
+                    const root = document.documentElement;
+                    const dark = root.dataset.theme
+                      ? root.dataset.theme === 'nocturne'
+                      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    root.dataset.theme = dark ? 'atlas' : 'nocturne';
+                    try {
+                      localStorage.setItem('meridian.theme', root.dataset.theme);
+                    } catch {
+                      /* storage unavailable */
+                    }
+                  }}
+                >
+                  {t('theme')}
+                </button>{' '}
+                ·{' '}
+                <button
+                  type="button"
+                  className={styles.inlineLink}
+                  onClick={() => setMaterial(material === 'light' ? 'full' : 'light')}
+                >
+                  {t(material === 'light' ? 'fullMaterial' : 'lightMaterial')}
+                </button>{' '}
+                ·{' '}
+                <button
+                  type="button"
+                  className={styles.inlineLink}
+                  onClick={() => setSound(!sound)}
+                >
+                  {t(sound ? 'soundOff' : 'soundOn')}
+                </button>
+              </p>
+            </div>
           </>
         ) : (
           <>

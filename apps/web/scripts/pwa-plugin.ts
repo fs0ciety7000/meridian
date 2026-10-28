@@ -22,6 +22,7 @@ export function pwa(): Plugin {
       const publicFiles = [
         '/favicon.svg',
         '/manifest.webmanifest',
+        '/theme-init.js',
         '/icons/icon-192.png',
         '/icons/icon-512.png',
         '/icons/apple-touch-icon.png',

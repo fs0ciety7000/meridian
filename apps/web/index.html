@@ -15,18 +15,41 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Meridian" />
     <title>Meridian</title>
+    <script src="/theme-init.js"></script>
     <style>
+      /* App shell colours mirror the design tokens (paper-100, ink-900, ink-700). */
+      :root {
+        --shell-paper: #f7f1e5;
+        --shell-ink: #24232b;
+        --shell-ink-700: #45434f;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme='atlas']) {
+          --shell-paper: #141b22;
+          --shell-ink: #e9e1cf;
+          --shell-ink-700: #c7beab;
+        }
+      }
+      :root[data-theme='nocturne'] {
+        --shell-paper: #141b22;
+        --shell-ink: #e9e1cf;
+        --shell-ink-700: #c7beab;
+      }
       html,
       body {
         margin: 0;
-        background: #f7f1e5;
-        color: #24232b;
+        background: var(--shell-paper);
+        color: var(--shell-ink);
       }
       .shell {
         position: fixed;
         inset: auto 0 0 0;
-        padding: 24px 16px 32px;
-        border-top: 1px solid #24232b;
+        box-sizing: border-box;
+        /* Same height as the launcher sheet that replaces it (no jump, AD A1). */
+        min-height: min(50dvh, 360px);
+        padding: 16px;
+        border-top: 1px solid var(--shell-ink);
+        background: var(--shell-paper);
         font-family: Georgia, 'Iowan Old Style', serif;
       }
       .shell-over {
@@ -34,7 +57,7 @@
         font-size: 12px;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #5b5866;
+        color: var(--shell-ink-700);
       }
       .shell-title {
         margin: 4px 0 0;
@@ -44,18 +67,10 @@
       @media (min-width: 900px) {
         .shell {
           inset: 24px auto auto 24px;
-          width: 300px;
-          border: 1px solid #24232b;
-          background: #f7f1e5;
-        }
-      }
-      @media (prefers-color-scheme: dark) {
-        html,
-        body,
-        .shell {
-          background: #141b22;
-          color: #e9e1cf;
-          border-color: #e9e1cf;
+          min-height: 0;
+          width: 340px;
+          padding: 32px;
+          border: 1px solid var(--shell-ink);
         }
       }
     </style>

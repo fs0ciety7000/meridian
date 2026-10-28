@@ -14,6 +14,7 @@ import { loadGeoData } from '../map/loadGeoData';
 import { loadGameContent, newSeed, resolveExpedition, type GameContent } from './content';
 import { loadRuns, saveRun } from './db';
 import { useLocale } from './i18n';
+import { markReturning } from './returning';
 import { track } from './telemetry';
 
 interface GameStore {
@@ -69,6 +70,7 @@ export const useGame = create<GameStore>((set, get) => ({
         return d.state;
       });
       set({ status: 'ready', geo, content, runs, dried });
+      if (runs.length) markReturning(); // players from before the flag existed
       (window as unknown as { __meridianIso2?: Record<string, string> }).__meridianIso2 =
         Object.fromEntries([...content.deps.entities.values()].map((e) => [e.iso3, e.iso2]));
     } catch (e) {
@@ -100,6 +102,7 @@ export const useGame = create<GameStore>((set, get) => ({
     );
     set({ runs: [...runs, state] });
     void saveRun(state);
+    markReturning();
     track({
       type: 'expedition_started',
       code: expedition.code,
